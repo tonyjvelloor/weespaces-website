@@ -22,6 +22,7 @@ export default function Footer() {
               <li><Link href="/services/conference-hall" className="hover:text-accent transition-colors">Conference Hall</Link></li>
               <li><Link href="/services/virtual-office" className="hover:text-accent transition-colors">Virtual Office</Link></li>
               <li><Link href="/services/incubation" className="hover:text-accent transition-colors">Startup Incubation</Link></li>
+              <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>
@@ -37,7 +38,7 @@ export default function Footer() {
           </div>
           <div>
             <h4 className="text-lg font-bold mb-6 font-heading">Contact Us</h4>
-            <ul className="space-y-4 text-sm text-white/70">
+            <ul className="space-y-4 text-sm text-white/70 mb-6">
               <li className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-accent text-[20px]">call</span>
                 <a href="tel:+919207189111" className="hover:text-accent transition-colors">+91 92071 89111</a>
@@ -51,6 +52,17 @@ export default function Footer() {
                 <Link href="/investors/" className="hover:text-accent transition-colors font-bold text-accent">Investors & Partners</Link>
               </li>
             </ul>
+            <div className="flex items-center gap-4">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Facebook">
+                <span className="text-lg font-bold">f</span>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Instagram">
+                <span className="text-lg font-bold">ig</span>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="LinkedIn">
+                <span className="text-lg font-bold">in</span>
+              </a>
+            </div>
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50">

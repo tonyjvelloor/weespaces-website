@@ -45,6 +45,7 @@ export default function Header() {
               </Link>
             </div>
           </div>
+          <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
           <Link href="/faq" className="hover:text-accent transition-colors">FAQ</Link>
           <Link href="/investors/" className="hover:text-accent transition-colors font-bold text-accent">Investors</Link>
           <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>
@@ -98,9 +99,11 @@ export default function Header() {
                 </div>
               </div>
               
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Blog</Link>
               <Link href="/faq" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">FAQ</Link>
               <Link href="/investors/" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors font-bold text-accent py-2 border-b border-white/5">Investors</Link>
               <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Contact</Link>
+
             </nav>
             
             <div className="flex flex-col gap-4 mt-2">

@@ -84,7 +84,7 @@ export default function PricingPage() {
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> Unlimited Tea/Coffee</li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> Lounge Access</li>
               </ul>
-              <button className="w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</button>
+              <Link href={`/contact?plan=Hot Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</Link>
             </MouseGlowCard>
           </ScrollReveal>
 
@@ -100,7 +100,7 @@ export default function PricingPage() {
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> Fixed Personal Desk</li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> 2hrs Conference Room</li>
               </ul>
-              <button className="w-full mt-auto py-3 rounded-xl bg-accent hover:bg-accent-hover text-navy transition-colors font-bold relative z-10">Select Plan</button>
+              <Link href={`/contact?plan=Dedicated Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl bg-accent hover:bg-accent-hover text-navy transition-colors font-bold relative z-10">Select Plan</Link>
             </MouseGlowCard>
           </ScrollReveal>
 
@@ -115,7 +115,7 @@ export default function PricingPage() {
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> Biometric Access</li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> 5hrs Conference Room</li>
               </ul>
-              <button className="w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</button>
+              <Link href={`/contact?plan=Private Cabin&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</Link>
             </MouseGlowCard>
           </ScrollReveal>
 
@@ -130,7 +130,7 @@ export default function PricingPage() {
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> Mail Handling</li>
                 <li className="flex items-center gap-3"><span className="material-symbols-outlined text-accent text-[20px]">check_circle</span> GST Registration Proof</li>
               </ul>
-              <button className="w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</button>
+              <Link href={`/contact?plan=Virtual Office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</Link>
             </MouseGlowCard>
           </ScrollReveal>
         </div>

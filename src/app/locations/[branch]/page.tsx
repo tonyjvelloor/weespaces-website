@@ -91,6 +91,7 @@ export async function generateMetadata({ params }: { params: Promise<{ branch: s
   return {
     title: `Coworking Space in ${branchName} | WeeSpaces`,
     description: `Premium coworking and private offices in ${branchName}. High-speed WiFi, ergonomic setups, and a vibrant community. Book your tour today!`,
+    keywords: [`Coworking space ${branchName}`, `Office space ${branchName}`, `Managed offices ${branchName}`, `Private cabin ${branchName}`, `Shared workspace ${branchName}`],
   };
 }
 

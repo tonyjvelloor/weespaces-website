@@ -416,29 +416,36 @@ export default function Home() {
               {[
                   {
                       quote: "We moved our 10-person team to WeeSpaces Coimbatore last month. The private office is perfect, internet is blazing fast, and the 24/7 access helps us coordinate with US clients.",
-                      initial: "S", name: "Siddharth R.", role: "Tech Startup Founder"
+                      initial: "S", name: "Siddharth R.", role: "Founder, TechFlow Solutions"
                   },
                   {
-                      quote: "As a freelancer, I used to work from cafes. Getting a dedicated desk here changed my productivity entirely. The community is amazing and the coffee is actually good!",
-                      initial: "P", name: "Priya M.", role: "Freelance Designer"
+                      quote: "As a design agency, we used to work from cafes. Getting a dedicated setup here changed our productivity entirely. The community is amazing and the vibe is highly creative.",
+                      initial: "P", name: "Priya M.", role: "Creative Director, PixelCrafters"
                   },
                   {
-                      quote: "The Vilankurichi location is extremely convenient. We host our client meetings in the premium meeting rooms and it always leaves a great impression.",
-                      initial: "K", name: "Karthik V.", role: "Sales Director"
+                      quote: "The MG Road Ernakulam location is extremely convenient. We host our client meetings in the premium conference rooms and it always leaves a great impression.",
+                      initial: "K", name: "Karthik V.", role: "VP Sales, Elevate CRM"
                   }
               ].map((t, i) => (
                   <ScrollReveal key={i} delay={i * 0.15}>
-                      <MouseGlowCard className="glass p-8 rounded-3xl border border-white/10 relative h-full">
-                          <span className="material-symbols-outlined text-accent/20 text-6xl absolute top-4 right-4">format_quote</span>
-                          <div className="flex gap-1 text-accent mb-4">
-                              {[1,2,3,4,5].map(s => <span key={s} className="material-symbols-outlined text-sm">star</span>)}
+                      <MouseGlowCard className="glass p-8 rounded-3xl border border-white/10 relative h-full flex flex-col justify-between">
+                          <div>
+                              <span className="material-symbols-outlined text-accent/20 text-6xl absolute top-4 right-4">format_quote</span>
+                              <div className="flex gap-1 text-accent mb-4">
+                                  {[1,2,3,4,5].map(s => <span key={s} className="material-symbols-outlined text-sm">star</span>)}
+                              </div>
+                              <p className="text-white/80 leading-relaxed mb-6 font-medium relative z-10 italic">"{t.quote}"</p>
                           </div>
-                          <p className="text-white/80 italic mb-6">"{t.quote}"</p>
                           <div className="flex items-center gap-4 mt-auto">
-                              <div className="w-12 h-12 rounded-full bg-navy border border-accent flex items-center justify-center font-bold text-lg text-accent">{t.initial}</div>
+                              <div className="w-12 h-12 rounded-full bg-accent text-navy flex items-center justify-center font-bold text-xl shrink-0">
+                                  {t.initial}
+                              </div>
                               <div>
-                                  <h4 className="font-bold text-white">{t.name}</h4>
-                                  <p className="text-xs text-white/50">{t.role}</p>
+                                  <h4 className="font-bold flex items-center gap-2">
+                                    {t.name}
+                                    <span className="material-symbols-outlined text-[#25D366] text-[16px]" title="Verified Member">verified</span>
+                                  </h4>
+                                  <p className="text-white/50 text-xs">{t.role}</p>
                               </div>
                           </div>
                       </MouseGlowCard>

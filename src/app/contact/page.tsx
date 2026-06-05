@@ -1,5 +1,77 @@
+"use client";
+
+import { Suspense, useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
+
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const planParam = searchParams.get('plan');
+  const branchParam = searchParams.get('branch');
+
+  const [selectedPlan, setSelectedPlan] = useState("Private Cabin");
+  const [selectedBranch, setSelectedBranch] = useState("Trivandrum");
+
+  useEffect(() => {
+    if (planParam) setSelectedPlan(planParam);
+    if (branchParam) {
+      // capitalize first letter
+      setSelectedBranch(branchParam.charAt(0).toUpperCase() + branchParam.slice(1));
+    }
+  }, [planParam, branchParam]);
+
+  return (
+    <form className="space-y-6" action="https://formspree.io/f/placeholder" method="POST">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-white/70 mb-2">Name</label>
+          <input type="text" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="John Doe" required />
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-white/70 mb-2">Phone</label>
+          <input type="tel" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="+91 90000 00000" required />
+        </div>
+      </div>
+      
+      <div>
+        <label className="block text-sm font-bold text-white/70 mb-2">Email</label>
+        <input type="email" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="john@company.com" required />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label className="block text-sm font-bold text-white/70 mb-2">Service Type</label>
+          <select value={selectedPlan} onChange={(e) => setSelectedPlan(e.target.value)} className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors appearance-none">
+            <option>Private Cabin</option>
+            <option>Dedicated Desk</option>
+            <option>Hot Desk</option>
+            <option>Virtual Office</option>
+            <option>Conference Room</option>
+          </select>
+        </div>
+        <div>
+          <label className="block text-sm font-bold text-white/70 mb-2">Preferred Branch</label>
+          <select value={selectedBranch} onChange={(e) => setSelectedBranch(e.target.value)} className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors appearance-none">
+            <option>Trivandrum</option>
+            <option>Ernakulam</option>
+            <option>Calicut</option>
+            <option>Coimbatore</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label className="block text-sm font-bold text-white/70 mb-2">Message</label>
+        <textarea rows={4} className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="How can we help you?" required></textarea>
+      </div>
+
+      <button type="submit" className="w-full bg-accent hover:bg-accent-hover text-navy font-bold py-4 rounded-xl transition-colors text-lg glow">
+        Submit Enquiry
+      </button>
+    </form>
+  );
+}
 
 export default function ContactPage() {
   return (
@@ -18,54 +90,9 @@ export default function ContactPage() {
           <ScrollReveal direction="right">
             <MouseGlowCard className="glass p-8 md:p-10 rounded-3xl h-full border border-white/10">
               <h2 className="text-2xl font-bold mb-8">Send an Enquiry</h2>
-            <form className="space-y-6" action="https://formspree.io/f/placeholder" method="POST">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-bold text-white/70 mb-2">Name</label>
-                  <input type="text" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="John Doe" required />
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-white/70 mb-2">Phone</label>
-                  <input type="tel" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="+91 90000 00000" required />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-bold text-white/70 mb-2">Email</label>
-                <input type="email" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="john@company.com" required />
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-bold text-white/70 mb-2">Service Type</label>
-                  <select className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors appearance-none">
-                    <option>Private Cabin</option>
-                    <option>Dedicated Desk</option>
-                    <option>Hot Desk</option>
-                    <option>Virtual Office</option>
-                    <option>Conference Room</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-white/70 mb-2">Preferred Branch</label>
-                  <select className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors appearance-none">
-                    <option>Trivandrum</option>
-                    <option>Ernakulam</option>
-                    <option>Calicut</option>
-                    <option>Coimbatore</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-bold text-white/70 mb-2">Message</label>
-                <textarea rows={4} className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="How can we help you?" required></textarea>
-              </div>
-
-              <button type="submit" className="w-full bg-accent hover:bg-accent-hover text-navy font-bold py-4 rounded-xl transition-colors text-lg glow">
-                Submit Enquiry
-              </button>
-            </form>
+              <Suspense fallback={<div className="h-64 flex items-center justify-center"><div className="w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin"></div></div>}>
+                <ContactForm />
+              </Suspense>
             </MouseGlowCard>
           </ScrollReveal>
 
