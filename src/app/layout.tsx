@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -55,6 +56,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${spaceGrotesk.variable} scroll-smooth`}>
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+        {/* Google Analytics */}
+        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-89N19DEH2N" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-89N19DEH2N');
+          `}
+        </Script>
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 relative">
         <Header />
