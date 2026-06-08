@@ -2,21 +2,27 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 glass border-b border-white/10 transition-all duration-300">
-      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy border-b border-white/5 shadow-2xl py-2' : 'glass border-b border-white/10 py-4'}`}>
+      <div className="container mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover shadow-[0_0_15px_rgba(242,156,31,0.3)]" unoptimized />
-          <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-wide">WeeSpaces</span>
-            <span className="text-[9px] tracking-widest text-accent uppercase font-semibold">Work. Connect. Grow.</span>
-          </div>
+          <span className="text-2xl font-bold tracking-wide">WeeSpaces</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           <Link href="/about" className="hover:text-accent transition-colors">About</Link>
@@ -51,9 +57,20 @@ export default function Header() {
           <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/contact" className="bg-accent hover:bg-accent-hover text-navy font-bold py-2.5 px-6 rounded-full transition-colors text-sm shadow-[0_0_15px_rgba(242,156,31,0.2)] hover:shadow-[0_0_20px_rgba(242,156,31,0.4)]">
-            Book a Tour
-          </Link>
+          <AnimatePresence>
+            {isScrolled && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Link href="/contact" className="bg-accent hover:bg-accent-hover text-navy font-bold py-2 px-5 rounded-full transition-colors text-sm shadow-[0_0_15px_rgba(242,156,31,0.2)] hover:shadow-[0_0_20px_rgba(242,156,31,0.4)] flex items-center gap-1">
+                  Book a Tour <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </Link>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
         <button 
           className="md:hidden text-white hover:text-accent transition-colors"

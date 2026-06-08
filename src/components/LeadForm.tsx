@@ -57,6 +57,16 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
       <p className="text-sm text-white/70 mb-8">Secure your premium workspace {branch ? `in ${branch}` : 'today'}.</p>
       
       <form onSubmit={handleSubmit} className="space-y-4 text-left">
+        <div className="mb-6">
+            <div className="flex justify-between items-center mb-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-white/50">Step 1 of 2: Basic Details</span>
+                <span className="text-xs font-bold text-accent">50%</span>
+            </div>
+            <div className="w-full bg-white/10 rounded-full h-1.5">
+                <div className="bg-accent h-1.5 rounded-full" style={{ width: '50%' }}></div>
+            </div>
+        </div>
+
         <div>
             <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Full Name *</label>
             <input name="fullName" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none" placeholder="Enter your full name" type="text" required/>
@@ -68,58 +78,19 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
                 <input name="phoneNumber" className="w-full bg-navy-dark/50 border border-white/10 rounded-r-xl px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none" placeholder="Enter 10 digit number" type="tel" required/>
             </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Team Size</label>
-                <select name="teamSize" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white/80 focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none appearance-none" required defaultValue="">
-                    <option value="" disabled>Select size</option>
-                    <option value="1">1 Person</option>
-                    <option value="2-5">2-5 People</option>
-                    <option value="6-15">6-15 People</option>
-                    <option value="15+">15+ People</option>
-                </select>
-            </div>
-            <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Timeline</label>
-                <select name="timeline" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white/80 focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none appearance-none" required defaultValue="">
-                    <option value="" disabled>When?</option>
-                    <option value="Immediately">Immediately</option>
-                    <option value="Within 1 Month">Within 1 Month</option>
-                    <option value="Just Browsing">Just Browsing</option>
-                </select>
-            </div>
-        </div>
-        <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Requirement</label>
-            <select name="workspaceType" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white/80 focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none appearance-none" required defaultValue="">
-                <option value="" disabled>Select workspace type</option>
-                <option value="Hot Desk">Hot Desk</option>
-                <option value="Dedicated Desk">Dedicated Desk</option>
-                <option value="Private Office">Private Office</option>
-                <option value="Virtual Office">Virtual Office</option>
-            </select>
-        </div>
-
-        {!branch && (
-          <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Preferred Location</label>
-              <select name="preferredBranch" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white/80 focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none appearance-none" required defaultValue="">
-                  <option value="" disabled>Where do you want to work?</option>
-                  <option value="Trivandrum">Trivandrum</option>
-                  <option value="Ernakulam">Ernakulam</option>
-                  <option value="Calicut">Calicut</option>
-                  <option value="Coimbatore">Coimbatore</option>
-              </select>
-          </div>
-        )}
         
-        <button 
-          disabled={isSubmitting} 
-          className="w-full bg-accent text-navy font-bold text-lg py-4 rounded-xl mt-4 hover:bg-accent-hover transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0" 
-          type="submit"
-        >
-            {isSubmitting ? "Submitting..." : "Request a Call Back"}
-        </button>
+        <div className="pt-2">
+            <button 
+            disabled={isSubmitting} 
+            className="w-full bg-accent text-navy font-bold text-lg py-4 rounded-xl mt-4 hover:bg-accent-hover transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0" 
+            type="submit"
+            >
+                {isSubmitting ? "Submitting..." : "Continue"}
+            </button>
+            <p className="text-center text-xs text-white/50 mt-3 flex items-center justify-center gap-1">
+                <span className="text-accent">⚡</span> Limited desks available this month.
+            </p>
+        </div>
 
         {formStatus.type && (
           <div className={`text-center mt-4 text-sm font-bold block ${formStatus.type === 'success' ? 'text-green-400' : 'text-red-400'}`}>

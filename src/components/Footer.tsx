@@ -7,10 +7,11 @@ export default function Footer() {
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" unoptimized />
               <span className="text-xl font-bold">WeeSpaces</span>
             </div>
+            <h3 className="text-accent text-xs font-bold tracking-widest uppercase mb-4">Work. Connect. Grow.</h3>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Premium coworking spaces designed for productivity, collaboration, and business growth across Kerala and Tamil Nadu.
             </p>
@@ -53,9 +54,6 @@ export default function Footer() {
               </li>
             </ul>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Facebook">
-                <span className="text-lg font-bold">f</span>
-              </a>
               <a href="https://www.instagram.com/weespaces.coworking/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Instagram">
                 <span className="text-lg font-bold">ig</span>
               </a>

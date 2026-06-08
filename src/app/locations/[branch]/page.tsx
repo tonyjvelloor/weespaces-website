@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import LeadForm from '@/components/LeadForm';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { MapPin, ArrowRight } from 'lucide-react';
 
 export function generateStaticParams() {
   return [
@@ -22,7 +23,8 @@ const branchData: Record<string, {
   description: string, 
   cta: string,
   heroImage: string,
-  galleryImages: string[]
+  galleryImages: string[],
+  pricing: { hotDesk: string, dedicatedDesk: string, privateCabin: string, virtualOffice: string }
 }> = {
   trivandrum: {
     name: 'Trivandrum',
@@ -38,7 +40,8 @@ const branchData: Record<string, {
       "/images/branches/trivandrum/image2.jpg", 
       "/images/branches/trivandrum/image3.jpg",
       "/images/branches/trivandrum/image4.jpg"
-    ]
+    ],
+    pricing: { hotDesk: '₹4,500/mo', dedicatedDesk: '₹6,000/mo', privateCabin: '₹18,000/mo', virtualOffice: '₹10,000/yr' }
   },
   ernakulam: {
     name: 'Ernakulam',
@@ -54,7 +57,8 @@ const branchData: Record<string, {
       "/images/branches/kochi/workspace2.jpg", 
       "/images/branches/kochi/workspace3.jpg",
       "/images/branches/kochi/workspace4.jpg"
-    ]
+    ],
+    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateCabin: '₹20,000/mo', virtualOffice: '₹10,000/yr' }
   },
   calicut: {
     name: 'Calicut',
@@ -69,7 +73,8 @@ const branchData: Record<string, {
       "/images/branches/calicut/workspace1.jpg", 
       "/images/branches/calicut/workspace2.jpg", 
       "/images/branches/calicut/reception.jpg"
-    ]
+    ],
+    pricing: { hotDesk: '₹4,000/mo', dedicatedDesk: '₹5,500/mo', privateCabin: '₹16,000/mo', virtualOffice: '₹10,000/yr' }
   },
   coimbatore: {
     name: 'Coimbatore',
@@ -80,7 +85,8 @@ const branchData: Record<string, {
     description: "Strategically located just 1.5km from Tidel Park, this newly launched hub bridges Coimbatore's rich industrial legacy with its exploding IT ecosystem. Built for massive growth.",
     cta: "Secure your spot in our newest Coimbatore hub!",
     heroImage: "/images/amenity3.jpg",
-    galleryImages: ["/images/amenity1.jpg", "/images/exterior.jpg", "/images/amenity2.jpg"]
+    galleryImages: ["/images/amenity1.jpg", "/images/exterior.jpg", "/images/amenity2.jpg"],
+    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateCabin: '₹22,000/mo', virtualOffice: '₹10,000/yr' }
   }
 };
 
@@ -130,7 +136,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
           </div>
       )}
       <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
-          <span className="material-symbols-outlined text-[16px]">location_on</span>
+          <MapPin className="w-4 h-4" />
           {data.name}, {branchId === 'coimbatore' ? 'Tamil Nadu' : 'Kerala'}
       </div>
       
@@ -181,7 +187,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
             <div className="container mx-auto px-6 w-full relative z-10 flex flex-col items-center max-w-5xl">
                 <ScrollReveal direction="up" className="flex flex-col items-center space-y-6 mb-12">
                     <div className="inline-flex items-center gap-2 bg-navy-light/40 backdrop-blur-md border border-accent/40 text-accent text-xs font-bold uppercase tracking-wider px-5 py-2 rounded-full shadow-[0_0_20px_rgba(242,156,31,0.15)]">
-                        <span className="material-symbols-outlined text-[16px]">location_on</span> {data.name}, Kerala
+                        <MapPin className="w-4 h-4" /> {data.name}, Kerala
                     </div>
                     <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-2xl">
                         Inspiring Workspace in <br className="hidden md:block" />
@@ -193,8 +199,8 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
                 </ScrollReveal>
                 
                 <ScrollReveal direction="up" delay={0.2} className="w-full max-w-4xl text-left relative">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-3xl blur opacity-20"></div>
-                    <div className="relative glass p-2 rounded-3xl border border-white/10 shadow-2xl">
+                    <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-xl blur opacity-20"></div>
+                    <div className="relative glass p-2 rounded-xl border border-white/10 shadow-2xl">
                         <LeadForm branch={data.name} />
                     </div>
                 </ScrollReveal>
@@ -206,7 +212,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
       {branchId === 'trivandrum' && (
         <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 bg-navy-dark overflow-hidden">
             <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
-                <div className="relative h-[750px] w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl hidden md:flex flex-col justify-end p-8">
+                <div className="relative h-[750px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl hidden md:flex flex-col justify-end p-8">
                     <Image src={data.heroImage} alt={data.name} fill className="object-cover" unoptimized />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-90"></div>
                     <div className="relative z-10">
@@ -230,7 +236,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
                   <HeroContent />
                   <div className="mt-8"><LeadForm branch={data.name} /></div>
                 </div>
-                <div className="hidden md:block relative h-[700px] w-full rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(242,156,31,0.1)]">
+                <div className="hidden md:block relative h-[700px] w-full rounded-xl overflow-hidden shadow-[0_0_50px_rgba(242,156,31,0.1)]">
                    <Image src={data.heroImage} alt={data.name} fill className="object-cover" unoptimized />
                 </div>
             </div>
@@ -241,18 +247,27 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
       {/* --- LOCATION DETAILS SECTION --- */}
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-gradient-to-b from-transparent to-navy-light/20">
           <div className={`grid md:grid-cols-2 gap-8 md:gap-12 items-center ${branchId === 'trivandrum' ? 'md:grid-cols-reverse' : ''}`}>
-              <ScrollReveal direction={branchId === 'trivandrum' ? 'right' : 'left'} className="relative rounded-3xl overflow-hidden shadow-[0_0_40px_rgba(242,156,31,0.15)] h-[300px] md:h-[500px] bg-navy-light/20 flex items-center justify-center">
-                  <iframe 
-                      title={`${data.name} Location Map`}
-                      width="100%" 
-                      height="100%" 
-                      style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.1)' }} // Makes it dark mode to match theme
-                      allowFullScreen
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      src={`https://maps.google.com/maps?q=${data.geo.lat},${data.geo.lon}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
-                  ></iframe>
-                  <div className="absolute inset-0 pointer-events-none rounded-3xl border border-white/20"></div>
+              <ScrollReveal direction={branchId === 'trivandrum' ? 'right' : 'left'} className="relative rounded-xl overflow-hidden shadow-[0_0_40px_rgba(242,156,31,0.15)] bg-navy-light/20 flex flex-col justify-center p-8 border border-white/10">
+                  <h3 className="text-2xl font-bold mb-6 border-b border-white/10 pb-4">Pricing Summary</h3>
+                  <div className="grid grid-cols-2 gap-y-6 gap-x-4">
+                    <div>
+                      <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Hot Desk</p>
+                      <p className="text-xl font-bold text-white">{data.pricing.hotDesk}</p>
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Dedicated Desk</p>
+                      <p className="text-xl font-bold text-accent">{data.pricing.dedicatedDesk}</p>
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Private Cabin</p>
+                      <p className="text-xl font-bold text-white">{data.pricing.privateCabin}</p>
+                    </div>
+                    <div>
+                      <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-1">Virtual Office</p>
+                      <p className="text-xl font-bold text-white">{data.pricing.virtualOffice}</p>
+                    </div>
+                  </div>
+                  <Link href={`/pricing`} className="mt-8 text-accent font-bold hover:text-white transition-colors text-sm flex items-center gap-2">View Full Pricing <ArrowRight className="w-4 h-4" /></Link>
               </ScrollReveal>
               <ScrollReveal direction={branchId === 'trivandrum' ? 'left' : 'right'} className={branchId === 'trivandrum' ? 'md:order-first' : ''}>
                   <h2 className="text-4xl md:text-5xl font-bold mb-6">Prime Location in <span className="text-accent">{data.name}</span></h2>
@@ -265,8 +280,8 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
                      </div>
                   )}
 
-                  <div className="flex items-start gap-4 mb-8 bg-navy-light/30 p-6 rounded-2xl border border-white/10">
-                      <span className="material-symbols-outlined text-accent text-3xl shrink-0">location_on</span>
+                  <div className="flex items-start gap-4 mb-8 bg-navy-light/30 p-6 rounded-xl border border-white/10">
+                      <MapPin className="w-8 h-8 text-accent shrink-0" />
                       <div>
                           <h4 className="text-xl font-bold text-white mb-2">Workspace Hub</h4>
                           <p className="text-white/70 leading-relaxed">
@@ -277,7 +292,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
                       </div>
                   </div>
                   <a href={data.mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-transparent border border-accent text-accent hover:bg-accent hover:text-navy font-bold py-3 px-8 rounded-xl transition-all w-max">
-                      Get Directions <span className="material-symbols-outlined">arrow_forward</span>
+                      Get Directions <ArrowRight className="w-5 h-5" />
                   </a>
               </ScrollReveal>
           </div>
@@ -293,14 +308,14 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
           {/* Calicut gets a Masonry Layout, others get standard grid */}
           {branchId === 'calicut' ? (
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <ScrollReveal direction="up" delay={0.1} className="relative rounded-3xl overflow-hidden shadow-lg h-96">
+                <ScrollReveal direction="up" delay={0.1} className="relative rounded-xl overflow-hidden shadow-lg h-96">
                    <Image src={data.galleryImages[0]} alt="Gallery 1" fill className="object-cover" unoptimized />
                 </ScrollReveal>
                 <div className="flex flex-col gap-6 h-96">
-                   <ScrollReveal direction="left" delay={0.2} className="relative rounded-3xl overflow-hidden shadow-lg flex-1">
+                   <ScrollReveal direction="left" delay={0.2} className="relative rounded-xl overflow-hidden shadow-lg flex-1">
                       <Image src={data.galleryImages[1]} alt="Gallery 2" fill className="object-cover" unoptimized />
                    </ScrollReveal>
-                   <ScrollReveal direction="left" delay={0.3} className="relative rounded-3xl overflow-hidden shadow-lg flex-1">
+                   <ScrollReveal direction="left" delay={0.3} className="relative rounded-xl overflow-hidden shadow-lg flex-1">
                       <Image src={data.galleryImages[2]} alt="Gallery 3" fill className="object-cover" unoptimized />
                    </ScrollReveal>
                 </div>
@@ -308,7 +323,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
           ) : (
             <div className={`grid grid-cols-1 sm:grid-cols-2 ${data.galleryImages.length === 4 ? 'lg:grid-cols-4' : 'md:grid-cols-3'} gap-6`}>
                 {data.galleryImages.map((src, idx) => (
-                  <ScrollReveal key={idx} delay={idx * 0.15} className="relative rounded-2xl overflow-hidden group shadow-md border border-white/10 h-64 md:h-80">
+                  <ScrollReveal key={idx} delay={idx * 0.15} className="relative rounded-xl overflow-hidden group shadow-md border border-white/10 h-64 md:h-80">
                       <Image src={src} alt={`Gallery ${idx}`} fill className="object-cover transform group-hover:scale-110 transition-transform duration-700" unoptimized />
                       <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </ScrollReveal>
