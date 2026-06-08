@@ -36,6 +36,35 @@ export async function POST(request: Request) {
     }
 
     const data = await response.json();
+
+    // 2. Send Email Notification (Fire and forget, don't await/block the response)
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const notificationEmail = process.env.LEAD_NOTIFICATION_EMAIL;
+
+    if (resendApiKey && notificationEmail) {
+      // Send asynchronously to avoid slowing down the user's Thank You page redirect
+      fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: 'WeeSpaces Leads <onboarding@resend.dev>',
+          to: notificationEmail,
+          subject: `New Lead: ${body.name} (${body.source})`,
+          html: `
+            <h2>New Lead Captured!</h2>
+            <p><strong>Name:</strong> ${body.name}</p>
+            <p><strong>Phone:</strong> ${body.phone}</p>
+            <p><strong>Source/Branch:</strong> ${body.source}</p>
+            <br/>
+            <p>This lead has also been saved to your Growth OS.</p>
+          `
+        })
+      }).catch(err => console.error("Failed to send email notification:", err));
+    }
+
     return NextResponse.json(data, { status: 201 });
 
   } catch (err: any) {
