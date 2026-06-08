@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import TourBookingWidget from '@/components/TourBookingWidget';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
