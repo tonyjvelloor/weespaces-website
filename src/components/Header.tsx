@@ -90,7 +90,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-full left-0 w-full glass border-b border-white/10 shadow-2xl py-6 px-6 flex flex-col gap-6 origin-top"
+            className="md:hidden absolute top-full left-0 w-full bg-navy/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-6 px-6 flex flex-col gap-6 origin-top"
           >
             <nav className="flex flex-col gap-4 text-sm font-medium">
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">About</Link>
