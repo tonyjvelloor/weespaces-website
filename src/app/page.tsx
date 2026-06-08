@@ -378,7 +378,6 @@ export default function Home() {
           <InteractiveAmenities />
       </section>
 
-      <ScrollReveal direction="up" className="text-center mb-16 relative">
       {/* Photo Gallery */}
       <PhotoGallery />
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
