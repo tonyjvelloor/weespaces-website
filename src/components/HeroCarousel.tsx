@@ -14,13 +14,8 @@ const heroImages = [
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(timer);
-  }, []);
+  // We are removing the auto-play functionality to align with best practices (anti-pattern fix)
+  // which improves LCP and accessibility.
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-navy-dark">
