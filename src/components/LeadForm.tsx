@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function LeadForm({ branch = "" }: { branch?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
+  const router = useRouter();
 
   // Update this to your deployed script URL when ready
   const scriptURL = 'https://script.google.com/macros/s/AKfycbybC2s6MI2grPl7HjMJfgny_UcfO8VGb5hwzmRV54HhqH8JiWC1l82YRLV4g8qe0-sG/exec';
@@ -36,9 +38,9 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
         mode: 'no-cors' 
       });
       
-      setFormStatus({ message: "Success! We'll call you back soon.", type: 'success' });
-      form.reset();
-      setTimeout(() => setFormStatus({ message: '', type: null }), 5000);
+      // Redirect to thank you page on success
+      router.push('/landing/thank-you');
+
     } catch (error) {
       setFormStatus({ message: "Network Error. Please try again or call us.", type: 'error' });
       console.error('Submission error:', error);
