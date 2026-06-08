@@ -1,7 +1,27 @@
+"use client";
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  // Show a minimal footer on landing pages
+  if (pathname?.startsWith('/landing')) {
+    return (
+      <footer className="bg-navy-dark border-t border-white/10 pt-8 pb-8">
+        <div className="container mx-auto px-6 text-center text-xs text-white/50">
+          <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
+          <div className="flex justify-center gap-6 mt-4">
+            <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="bg-navy-dark border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-7xl">

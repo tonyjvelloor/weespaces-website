@@ -4,10 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,20 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Hide the navigation header completely on ad landing pages to maximize conversion
+  if (pathname?.startsWith('/landing')) {
+    return (
+      <header className="fixed top-0 left-0 w-full z-50 glass border-b border-white/10 py-4">
+        <div className="container mx-auto px-6 flex items-center justify-center">
+          <div className="flex items-center gap-3">
+            <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover shadow-[0_0_15px_rgba(242,156,31,0.3)]" unoptimized />
+            <span className="text-2xl font-bold tracking-wide">WeeSpaces</span>
+          </div>
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy border-b border-white/5 shadow-2xl py-2' : 'glass border-b border-white/10 py-4'}`}>
