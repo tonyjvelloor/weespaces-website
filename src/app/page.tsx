@@ -5,6 +5,9 @@ import { Metadata } from 'next';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import Marquee from '@/components/ui/Marquee';
+import HeroCarousel from '@/components/HeroCarousel';
+import InteractiveAmenities from '@/components/InteractiveAmenities';
+import PhotoGallery from '@/components/PhotoGallery';
 
 export const metadata: Metadata = {
   title: 'WeeSpaces | Premium Coworking in Kerala & Tamil Nadu',
@@ -92,11 +95,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-              <Image src="/images/amenity1.jpg" alt="Premium Coworking Workspace with high speed internet in Kerala" fill className="object-cover object-center opacity-30" unoptimized />
-              <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy-light/90 to-navy-dark/90 bg-[length:200%_200%] animate-mesh mix-blend-multiply"></div>
-              <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent/20 rounded-full blur-[120px] -mr-[20vw] -mt-[10vw] pointer-events-none animate-pulse"></div>
-          </div>
+          <HeroCarousel />
           
           <div className="container mx-auto px-6 w-full relative z-10 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center mt-8 lg:mt-0">
               <ScrollReveal direction="left" className="space-y-6 md:space-y-8 lg:col-span-7">
@@ -111,12 +110,12 @@ export default function Home() {
                   </h1>
                   
                   <p className="text-base md:text-lg text-white/70 max-w-xl font-medium">
-                      Premium Coworking Spaces Designed for <span className="text-white font-semibold">productivity</span>. Built for <span className="text-white font-semibold">growth</span>. Position your business in South India's premier hubs.
+                      Coworking Spaces Designed for <span className="text-white font-semibold">productivity</span>. Built for <span className="text-white font-semibold">growth</span>. Position your business in South India's key hubs.
                   </p>
                   
                   <div className="flex flex-wrap gap-4 pt-2">
                       <span className="glass px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-white flex items-center gap-2">
-                          <span className="material-symbols-outlined text-accent text-sm">workspace_premium</span> Premium Workspaces
+                          <span className="material-symbols-outlined text-accent text-sm">workspace_premium</span> Comfortable Workspaces
                       </span>
                       <span className="glass px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase text-white flex items-center gap-2">
                           <span className="material-symbols-outlined text-accent text-sm">wifi</span> High Speed Wi-Fi
@@ -196,7 +195,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
               <ScrollReveal delay={0}>
-                  <div className="glass rounded-3xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 transition-all">
+                  <div className="glass rounded-3xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-white mb-3 relative z-10">Freelancers & Solopreneurs</h3>
                       <p className="text-white/60 mb-6 relative z-10">Escape the cafe noise. Enjoy flexible hot desks, fast Wi-Fi, and a thriving community of independent professionals.</p>
@@ -204,7 +203,7 @@ export default function Home() {
                   </div>
               </ScrollReveal>
               <ScrollReveal delay={0.15}>
-                  <div className="glass rounded-3xl p-8 border border-accent/30 h-full relative overflow-hidden group bg-navy-light/20 hover:border-accent transition-all">
+                  <div className="glass rounded-3xl p-8 border border-accent/30 h-full relative overflow-hidden group bg-navy-light/20 hover:border-accent hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/20 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-white mb-3 relative z-10">Startups & SMEs</h3>
                       <p className="text-white/60 mb-6 relative z-10">Scale without friction. Get private cabins, meeting room credits, and incubation support to grow your business.</p>
@@ -212,7 +211,7 @@ export default function Home() {
                   </div>
               </ScrollReveal>
               <ScrollReveal delay={0.3}>
-                  <div className="glass rounded-3xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 transition-all">
+                  <div className="glass rounded-3xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-white mb-3 relative z-10">Enterprise Teams</h3>
                       <p className="text-white/60 mb-6 relative z-10">Custom-built workspaces, dedicated floors, and enterprise-grade security tailored to your corporate standards.</p>
@@ -233,7 +232,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {/* Hot Desk */}
               <ScrollReveal delay={0}>
-                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full">
+                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <span className="material-symbols-outlined text-3xl">chair</span>
                       </div>
@@ -254,7 +253,7 @@ export default function Home() {
 
               {/* Dedicated Desk */}
               <ScrollReveal delay={0.15}>
-                  <MouseGlowCard className="glass rounded-3xl p-8 border border-accent/50 shadow-[0_0_30px_rgba(242,156,31,0.15)] transform md:-translate-y-4 bg-navy-light/40 h-full">
+                  <MouseGlowCard className="glass rounded-3xl p-8 border border-accent/50 shadow-[0_0_30px_rgba(242,156,31,0.15)] transform md:-translate-y-4 bg-navy-light/40 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="absolute top-0 right-0 bg-accent text-navy text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">Most Popular</div>
                       <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center text-navy mb-6 shadow-lg shadow-accent/30">
                           <span className="material-symbols-outlined text-3xl">desk</span>
@@ -276,7 +275,7 @@ export default function Home() {
 
               {/* Private Office */}
               <ScrollReveal delay={0.3}>
-                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full">
+                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <span className="material-symbols-outlined text-3xl">meeting_room</span>
                       </div>
@@ -296,7 +295,7 @@ export default function Home() {
               </ScrollReveal>
               {/* Meeting Rooms Spotlight */}
               <ScrollReveal delay={0.45}>
-                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full relative overflow-hidden group">
+                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
                       <div className="absolute top-0 right-0 w-14 h-14 bg-accent/10 rounded-full blur-[20px] pointer-events-none"></div>
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <span className="material-symbols-outlined text-3xl">handshake</span>
@@ -318,7 +317,7 @@ export default function Home() {
 
               {/* Virtual Office Spotlight */}
               <ScrollReveal delay={0.6}>
-                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full">
+                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <span className="material-symbols-outlined text-3xl">mail</span>
                       </div>
@@ -344,7 +343,7 @@ export default function Home() {
 
               {/* Incubation Services Spotlight */}
               <ScrollReveal delay={0.75}>
-                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full">
+                  <MouseGlowCard className="glass rounded-3xl p-8 border border-white/10 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <span className="material-symbols-outlined text-3xl">rocket_launch</span>
                       </div>
@@ -372,41 +371,16 @@ export default function Home() {
       {/* Workspace Gallery & Amenities */}
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 overflow-hidden">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Premium <span className="text-accent">Amenities</span> & Workspace</h2>
-              <p className="text-xl text-white/70 relative z-10">Take a peek inside our premium managed offices.</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Workspace <span className="text-accent">Amenities</span></h2>
+              <p className="text-xl text-white/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-12 gap-8 mb-20">
-              <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { icon: 'chair', text: 'Ergonomic workstations' },
-                    { icon: 'bolt', text: 'Plug & Play setup' },
-                    { icon: 'receipt_long', text: 'Seamless operations' },
-                    { icon: 'key', text: '24/7 access (holidays incl.)' },
-                    { icon: 'coffee', text: 'Unlimited tea & coffee' },
-                    { icon: 'local_parking', text: 'Spacious Parking' }
-                  ].map((amenity, i) => (
-                    <ScrollReveal key={i} delay={i * 0.1}>
-                        <MouseGlowCard className="glass border border-white/10 rounded-2xl p-5 flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent shrink-0">
-                                <span className="material-symbols-outlined">{amenity.icon}</span>
-                            </div>
-                            <span className="text-white/80 font-medium">{amenity.text}</span>
-                        </MouseGlowCard>
-                    </ScrollReveal>
-                  ))}
-              </div>
-              
-              <ScrollReveal direction="left" delay={0.3} className="md:col-span-5 relative rounded-3xl overflow-hidden group border border-white/10 shadow-lg min-h-[250px]">
-                  <Image src="/images/amenity1.jpg" alt="Premium Coworking Hub Amenities and Ergonomic Workspaces" fill className="object-cover transform group-hover:scale-105 transition-transform duration-700" unoptimized />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent flex items-end p-8">
-                      <div className="bg-accent text-navy font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-lg shadow-lg">Premium Hub</div>
-                  </div>
-              </ScrollReveal>
-          </div>
+          <InteractiveAmenities />
       </section>
 
-      {/* Social Proof / Testimonials */}
+      <ScrollReveal direction="up" className="text-center mb-16 relative">
+      {/* Photo Gallery */}
+      <PhotoGallery />
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <h2 className="text-4xl font-bold mb-4">Trusted by <span className="text-accent">Growing Teams</span></h2>
