@@ -91,8 +91,8 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <ScrollReveal delay={0.1}>
                 <MouseGlowCard className="glass p-10 rounded-3xl text-center flex flex-col items-center h-full border border-white/10 group hover:border-accent/30 transition-colors">
-                  <div className="w-40 h-40 rounded-full bg-white/10 mb-8 flex items-center justify-center overflow-hidden border-[3px] border-white/10 group-hover:border-accent relative transition-colors shadow-xl">
-                    <Image src="/images/founder_sankesh.jpg" alt="Sankesh Sreenivas" fill className="object-cover object-center group-hover:scale-110 transition-transform duration-700" unoptimized />
+                  <div className="w-40 h-40 rounded-full bg-white mb-8 flex items-center justify-center overflow-hidden border-[3px] border-white/10 group-hover:border-accent relative transition-colors shadow-xl">
+                    <Image src="/images/founder_sankesh.jpg" alt="Sankesh Sreenivas" fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" unoptimized />
                   </div>
                   <h3 className="text-3xl font-bold mb-2">Sankesh Sreenivas</h3>
                   <p className="text-accent text-sm font-bold tracking-widest uppercase mb-6 bg-accent/10 px-4 py-1.5 rounded-full inline-block">Co-Founder & CEO</p>
@@ -107,8 +107,8 @@ export default function AboutPage() {
 
             <ScrollReveal delay={0.2}>
                 <MouseGlowCard className="glass p-10 rounded-3xl text-center flex flex-col items-center h-full border border-white/10 group hover:border-accent/30 transition-colors">
-                  <div className="w-40 h-40 rounded-full bg-white/10 mb-8 flex items-center justify-center overflow-hidden border-[3px] border-white/10 group-hover:border-accent relative transition-colors shadow-xl">
-                    <Image src="/images/founder_shudhi.jpg" alt="Shudhi Sankesh" fill className="object-cover object-[center_15%] group-hover:scale-110 transition-transform duration-700" unoptimized />
+                  <div className="w-40 h-40 rounded-full bg-white mb-8 flex items-center justify-center overflow-hidden border-[3px] border-white/10 group-hover:border-accent relative transition-colors shadow-xl">
+                    <Image src="/images/founder_shudhi.jpg" alt="Shudhi Sankesh" fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" unoptimized />
                   </div>
                   <h3 className="text-3xl font-bold mb-2">Shudhi Sankesh</h3>
                   <p className="text-accent text-sm font-bold tracking-widest uppercase mb-6 bg-accent/10 px-4 py-1.5 rounded-full inline-block">Co-Founder & COO</p>
