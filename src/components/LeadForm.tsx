@@ -8,9 +8,6 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
   const router = useRouter();
 
-  // Update this to your deployed script URL when ready
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbybC2s6MI2grPl7HjMJfgny_UcfO8VGb5hwzmRV54HhqH8JiWC1l82YRLV4g8qe0-sG/exec';
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -20,23 +17,27 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
     const formData = new FormData(form);
     
     // Format phone number
-    const phone = formData.get('phoneNumber');
-    if (phone) {
-      formData.set('phoneNumber', '+91' + phone);
-    }
-    
-    if (branch) {
-      formData.append('preferredBranch', branch);
-    }
+    const phoneRaw = formData.get('phoneNumber') as string;
+    const phone = phoneRaw ? '+91' + phoneRaw : undefined;
+    const name = formData.get('fullName') as string;
+    const source = branch || 'Website Organic';
 
     try {
-      // mode: 'no-cors' is used as a fallback to prevent browser hard crashes, 
-      // but it means we can't read the response body.
-      await fetch(scriptURL, { 
+      const response = await fetch('/api/capture-lead', { 
         method: 'POST', 
-        body: formData,
-        mode: 'no-cors' 
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          phone,
+          source
+        })
       });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit lead');
+      }
       
       // Redirect to thank you page on success
       router.push('/landing/thank-you');
