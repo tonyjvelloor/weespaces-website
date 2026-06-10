@@ -27,6 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
       keywords: ["Coworking space Coimbatore", "Office space near Tidel Park Coimbatore", "Managed offices Avinashi Road", "Premium coworking Coimbatore", "Private cabins Coimbatore", "IT workspace Coimbatore"],
       openGraph: {
         images: [{ url: '/images/exterior-tall.jpg' }]
+      },
+      twitter: {
+        card: 'summary_large_image',
+        images: ['/images/exterior-tall.jpg'],
       }
     };
   }
@@ -49,7 +53,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
       {/* Scarcity Banner */}
       <div className="bg-gradient-to-r from-accent to-accent-light text-navy font-bold text-center py-2 px-4 text-sm flex items-center justify-center gap-2 animate-pulse">
         <AlertCircle className="w-4 h-4" />
-        <span>High Demand: Only 2 Private Cabins remaining in {data.name}. Secure yours today.</span>
+        <span>High Demand: Only 8 Private Cabins remaining in {data.name}. Secure yours today.</span>
       </div>
 
       {/* Hero Section */}
@@ -105,20 +109,6 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 {data.description} Step into a premium environment designed for high-performing teams and individuals.
               </p>
 
-              <div className="space-y-5 mb-12">
-                {[
-                  "Ergonomic workstations with natural lighting",
-                  "Plug & Play setup with Seamless Operations",
-                  "Zero CapEx with flexible lease terms",
-                  "Exclusive networking & business events"
-                ].map((benefit, idx) => (
-                  <div key={idx} className="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/5 hover:border-accent/30 transition-colors">
-                    <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-0.5" />
-                    <span className="text-white/90 text-lg font-medium">{benefit}</span>
-                  </div>
-                ))}
-              </div>
-
               {locationId === 'coimbatore' ? (
                 <div className="flex flex-col gap-3 bg-gradient-to-r from-accent/10 to-transparent p-6 rounded-2xl border border-accent/30 w-max shadow-[0_0_20px_rgba(242,156,31,0.1)]">
                    <div className="flex items-center gap-4">
@@ -163,7 +153,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                     </h3>
                     <p className="text-white/70 text-base">Fill out the form and our workspace expert will call you within 10 minutes.</p>
                   </div>
-                  <LeadForm branch={`Ads - ${data.name}`} />
+                  <LeadForm branch={data.name} />
                   <p className="text-center text-xs text-white/40 mt-6 flex items-center justify-center gap-1">
                      <ShieldCheck className="w-3 h-3" /> Your information is 100% secure.
                   </p>
@@ -367,12 +357,56 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
         </div>
       </section>
 
+      {/* Amenities Section */}
+      <section className="py-20 bg-navy-dark border-t border-white/5">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Premium Amenities</h2>
+            <p className="text-xl text-white/60">Everything your team needs to focus, collaborate, and scale.</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <Wifi className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">Enterprise-grade Wi-Fi</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <Coffee className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">Unlimited Coffee & Tea</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <Clock className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">24/7 Member Access</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <ShieldCheck className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">CCTV & Biometric Security</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <Building2 className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">High-Tech Meeting Rooms</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <Zap className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">Uninterrupted Power Backup</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <MapPin className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">Dedicated Parking</div>
+            </div>
+            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:border-accent/30 transition-colors">
+              <Star className="w-8 h-8 text-accent shrink-0" />
+              <div className="text-white font-bold text-sm">Daily Cleaning Staff</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Exterior Highlight Section (Specific to Coimbatore or fallback) */}
       {locationId === 'coimbatore' && data.heroImage && (
         <section className="py-12 relative">
           <div className="container mx-auto px-6 max-w-7xl">
             <div className="flex flex-col md:flex-row items-center gap-12 bg-navy-light/20 border border-white/5 rounded-[2.5rem] p-6 md:p-10">
-              <div className="w-full md:w-1/2 order-2 md:order-1">
+              <div className="w-full md:w-1/2 order-2">
                 <div className="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">Premium Architecture</div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">A Landmark Building</h2>
                 <p className="text-lg text-white/70 mb-8 leading-relaxed">
@@ -384,7 +418,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                   <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Fully monitored 24/7 security</li>
                 </ul>
               </div>
-              <div className="w-full md:w-1/2 order-1 md:order-2">
+              <div className="w-full md:w-1/2 order-1">
                 <div className="relative h-[500px] sm:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/20">
                   <Image src={data.heroImage} alt="Workspace Exterior" fill className="object-cover" unoptimized />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"></div>
@@ -420,7 +454,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
             <div className="w-full h-[400px] rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl bg-navy-dark">
               {/* Using a generic Coimbatore Tidel Park maps embed as requested */}
               <iframe 
-                src="https://maps.google.com/maps?q=Wee+Spaces+Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.314815197022!2d77.03501977504543!3d11.029390154746682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8571e10b7da8d%3A0x28e2b748bc11f7fa!2sWee%20Spaces!5e0!3m2!1sen!2sin!4v1718040000000!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

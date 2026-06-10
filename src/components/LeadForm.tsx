@@ -41,6 +41,7 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
     const source = branch || 'Website Organic';
     const teamSize = formData.get('teamSize') as string;
     const timeline = formData.get('timeline') as string;
+    const plan = formData.get('plan') as string;
 
     try {
       const response = await fetch('/api/capture-lead/', { 
@@ -51,7 +52,7 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
         body: JSON.stringify({
           name,
           phone,
-          source: `${source} (Team: ${teamSize}, Timeline: ${timeline})`
+          source: `${source} (Team: ${teamSize}, Plan: ${plan}, Timeline: ${timeline})`
         })
       });
 
@@ -76,7 +77,6 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
       
       <div className="bg-accent text-navy text-xs font-bold uppercase tracking-wider px-3 py-1 rounded inline-block mb-4">Limited Seats</div>
       
-      <h3 className="text-2xl font-bold mb-2">Prebook Your Seat Today!</h3>
       <p className="text-sm text-white/70 mb-8">Secure your premium workspace {branch ? `in ${branch}` : 'today'}.</p>
       
       <form onSubmit={handleSubmit} className="space-y-4 text-left">
@@ -124,6 +124,16 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
                   <option value="6-15">6 - 15 People</option>
                   <option value="16-50">16 - 50 People</option>
                   <option value="50+">50+ Enterprise</option>
+                </select>
+            </div>
+            <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Preferred Plan *</label>
+                <select name="plan" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none" required>
+                  <option value="" disabled selected>Select plan</option>
+                  <option value="Private Cabin">Private Cabin</option>
+                  <option value="Dedicated Desk">Dedicated Desk</option>
+                  <option value="Hot Desk">Hot Desk</option>
+                  <option value="Enterprise / GCC">Enterprise / GCC</option>
                 </select>
             </div>
             <div>

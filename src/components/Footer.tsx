@@ -22,10 +22,10 @@ export default function Footer() {
               </div>
               <div>
                 <h4 className="text-white font-bold text-lg mb-2">WeeSpaces Coimbatore</h4>
-                <p className="text-white/70 text-sm mb-1">Near Tidel Park, Avinashi Road,</p>
-                <p className="text-white/70 text-sm mb-3">Coimbatore, Tamil Nadu</p>
+                <p className="text-white/70 text-sm mb-1">123, XYZ Tower, Avinashi Road,</p>
+                <p className="text-white/70 text-sm mb-3">Coimbatore, Tamil Nadu - 641014</p>
                 <p className="text-accent text-sm font-bold flex items-center justify-center gap-2">
-                  <span className="material-symbols-outlined text-[16px]">schedule</span> Operating Hours: 8:00 AM - 8:00 PM
+                  <span className="material-symbols-outlined text-[16px]">schedule</span> Mon–Sat, 8AM–8PM | 24/7 access for private cabin members
                 </p>
               </div>
             </div>
@@ -99,6 +99,9 @@ export default function Footer() {
               </a>
               <a href="https://www.linkedin.com/company/wee-spaces-coworking/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="LinkedIn">
                 <span className="text-lg font-bold">in</span>
+              </a>
+              <a href="https://wa.me/919207189111" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#25D366]/20 border border-[#25D366]/50 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all text-[#25D366]" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="fill-current"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
             </div>
           </div>
