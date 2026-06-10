@@ -165,8 +165,11 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
           </div>
 
           {locationId === 'coimbatore' ? (
-            <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl overflow-x-auto shadow-2xl">
-              <table className="w-full text-left border-collapse min-w-[600px]">
+            <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl overflow-x-auto shadow-2xl relative">
+              <div className="absolute top-0 right-8 -translate-y-1/2 bg-gradient-to-r from-accent to-accent-light text-navy text-sm font-bold uppercase tracking-wider py-1 px-4 rounded-full animate-pulse shadow-[0_0_15px_rgba(242,156,31,0.4)]">
+                Inaugural Offer
+              </div>
+              <table className="w-full text-left border-collapse min-w-[600px] mt-2">
                 <thead>
                   <tr className="border-b border-white/10">
                     <th className="py-4 px-6 text-white font-bold text-lg">Plan</th>
@@ -185,8 +188,8 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-6 px-6 font-semibold text-white">Dedicated Desk</td>
                     <td className="py-6 px-6 text-white/50 line-through">₹9,500/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,500/mo</td>
-                    <td className="py-6 px-6 text-green-400 font-semibold">₹36,000</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,999/mo</td>
+                    <td className="py-6 px-6 text-green-400 font-semibold">₹30,000+</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors bg-accent/5">
                     <td className="py-6 px-6 font-semibold text-white">Private Cabins</td>

@@ -76,7 +76,12 @@ export const branchData: Record<string, BranchData> = {
     description: "Strategically located just 1.5km from Tidel Park and within walking distance to Coimbatore International Airport, this newly launched hub bridges Coimbatore's rich industrial legacy with its exploding IT ecosystem. Built for massive growth.",
     cta: "Secure your spot in our newest Coimbatore hub!",
     heroImage: "/images/exterior.jpg",
-    galleryImages: ["/images/amenity1.jpg", "/images/amenity3.jpg", "/images/amenity2.jpg"],
+    galleryImages: [
+      "/images/branches/coimbatore/amenity1.jpg", 
+      "/images/branches/coimbatore/amenity2.jpg", 
+      "/images/branches/coimbatore/amenity3.jpg",
+      "/images/branches/coimbatore/amenity4.jpg"
+    ],
     pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateCabin: '₹22,000/mo', virtualOffice: '₹10,000/yr' }
   }
 };
