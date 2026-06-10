@@ -420,7 +420,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
             <div className="w-full h-[400px] rounded-[2rem] overflow-hidden border border-white/20 shadow-2xl bg-navy-dark">
               {/* Using a generic Coimbatore Tidel Park maps embed as requested */}
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15664.120025287315!2d77.0169389!3d11.036611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857a224a18ea7%3A0x6b4fbda49b4931a7!2sTIDEL%20Park%20Coimbatore!5e0!3m2!1sen!2sin!4v1718040000000!5m2!1sen!2sin" 
+                src="https://maps.google.com/maps?q=Wee+Spaces+Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
