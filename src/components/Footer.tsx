@@ -7,15 +7,35 @@ import { usePathname } from 'next/navigation';
 export default function Footer() {
   const pathname = usePathname();
 
+  const locationMatch = pathname?.match(/^\/landing\/(.+)$/);
+  const locationId = locationMatch ? locationMatch[1] : null;
+
   // Show a minimal footer on landing pages
   if (pathname?.startsWith('/landing')) {
     return (
-      <footer className="bg-navy-dark border-t border-white/10 pt-8 pb-8">
-        <div className="container mx-auto px-6 text-center text-xs text-white/50">
-          <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
-          <div className="flex justify-center gap-6 mt-4">
-            <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+      <footer className="bg-navy-dark border-t border-white/10 pt-12 pb-8">
+        <div className="container mx-auto px-6 text-center">
+          {locationId === 'coimbatore' && (
+            <div className="mb-8 p-6 bg-navy-light/30 border border-white/10 rounded-2xl max-w-2xl mx-auto text-center flex flex-col items-center gap-4 shadow-lg">
+              <div className="bg-navy p-3 rounded-xl border border-white/10 shrink-0 inline-flex">
+                <span className="material-symbols-outlined text-accent text-[32px]">location_on</span>
+              </div>
+              <div>
+                <h4 className="text-white font-bold text-lg mb-2">WeeSpaces Coimbatore</h4>
+                <p className="text-white/70 text-sm mb-1">Near Tidel Park, Avinashi Road,</p>
+                <p className="text-white/70 text-sm mb-3">Coimbatore, Tamil Nadu</p>
+                <p className="text-accent text-sm font-bold flex items-center justify-center gap-2">
+                  <span className="material-symbols-outlined text-[16px]">schedule</span> Operating Hours: 8:00 AM - 8:00 PM
+                </p>
+              </div>
+            </div>
+          )}
+          <div className="text-xs text-white/50">
+            <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
+            <div className="flex justify-center gap-6 mt-4">
+              <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+            </div>
           </div>
         </div>
       </footer>
