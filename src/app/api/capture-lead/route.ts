@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     }
 
     // 3. Google Sheets Webhook Fallback (Fire and forget)
-    const sheetsWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    const sheetsWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby-ZZi3pA2o7oW_i0ESKH3qAPc4UT2KZSfTQcGCNxk5a1q0AV3Jq7KSeEdxWqCAhViF/exec";
     if (sheetsWebhook) {
       fetch(sheetsWebhook, {
         method: 'POST',
