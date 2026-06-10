@@ -60,16 +60,23 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 Upgrade Your Workspace in <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">{data.name}</span>
               </h1>
               
+              <div className="flex flex-wrap gap-2 mb-8">
+                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">🚀 Prime Business Locations</div>
+                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">🚆 Seamless Connectivity</div>
+                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">🏢 Grade-A Infrastructure</div>
+                 <div className="bg-white/10 backdrop-blur-md border border-accent/50 text-accent text-xs font-bold px-4 py-2 rounded-full">💰 Zero Brokerage | Zero CapEx</div>
+              </div>
+
               <p className="text-xl sm:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light">
                 {data.description} Step into a premium environment designed for high-performing teams and individuals.
               </p>
 
               <div className="space-y-5 mb-12">
                 {[
-                  "Move-in ready private cabins & dedicated desks",
-                  "0 CapEx. No setup costs, no hidden fees.",
-                  "Enterprise-grade Wi-Fi & 100% power backup",
-                  "Premium meeting rooms & vibrant community events"
+                  "Ergonomic workstations with natural lighting",
+                  "Plug & Play setup with Seamless Operations",
+                  "Zero CapEx with flexible lease terms",
+                  "Exclusive networking & business events"
                 ].map((benefit, idx) => (
                   <div key={idx} className="flex items-start gap-4 bg-white/5 p-4 rounded-xl border border-white/5 hover:border-accent/30 transition-colors">
                     <CheckCircle2 className="w-6 h-6 text-accent shrink-0 mt-0.5" />
@@ -95,13 +102,13 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
             </div>
 
             {/* Right Form Column - Premium Glassmorphism */}
-            <div className="lg:col-span-5 relative">
+            <div className="lg:col-span-5 relative" id="form-id">
               <div className="sticky top-24 z-20">
                 <div className="absolute -inset-1 bg-gradient-to-br from-accent/60 to-transparent rounded-[2rem] blur-2xl opacity-40"></div>
                 <div className="relative bg-navy-light/70 backdrop-blur-2xl p-8 sm:p-10 rounded-[2rem] border border-white/20 shadow-2xl">
                   <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-white mb-3">Book a Free Tour</h3>
-                    <p className="text-white/70 text-base">Fill out the form and our workspace expert will call you within 30 minutes.</p>
+                    <h3 className="text-3xl font-bold text-white mb-3">Get a Quote in 10 mins</h3>
+                    <p className="text-white/70 text-base">Fill out the form and our workspace expert will call you within 10 minutes.</p>
                   </div>
                   <LeadForm branch={`Ads - ${data.name}`} />
                   <p className="text-center text-xs text-white/40 mt-6 flex items-center justify-center gap-1">
@@ -242,6 +249,23 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               </div>
             </div>
           )}
+
+          {/* Enterprise & Managed Offices Banner */}
+          <div className="mt-8 bg-gradient-to-r from-navy-light/80 to-navy/90 border border-white/10 p-8 sm:p-10 rounded-3xl relative overflow-hidden group hover:border-accent/30 transition-all duration-300">
+             <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[80px] -mr-[200px] -mt-[200px] pointer-events-none group-hover:bg-accent/20 transition-all duration-500"></div>
+             <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                <div>
+                   <div className="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wide">For Large Teams & GCCs</div>
+                   <h3 className="text-3xl font-bold text-white mb-3">Customised Managed Offices</h3>
+                   <p className="text-white/70 max-w-2xl text-lg">Grade-A infrastructure, scalable layouts, zero CapEx, and seamless end-to-end operations for teams up to <span className="text-white font-bold">200+ seats</span>.</p>
+                </div>
+                <div className="shrink-0">
+                   <a href="#form-id" className="inline-flex items-center justify-center bg-transparent border-2 border-accent text-accent font-bold px-8 py-4 rounded-xl hover:bg-accent hover:text-navy transition-all duration-300 shadow-[0_0_15px_rgba(242,156,31,0.2)]">
+                      Discuss Enterprise Needs
+                   </a>
+                </div>
+             </div>
+          </div>
         </div>
       </section>
 
