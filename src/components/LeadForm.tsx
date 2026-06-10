@@ -23,7 +23,7 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
     const source = branch || 'Website Organic';
 
     try {
-      const response = await fetch('/api/capture-lead', { 
+      const response = await fetch('/api/capture-lead/', { 
         method: 'POST', 
         headers: {
           'Content-Type': 'application/json'
