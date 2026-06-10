@@ -72,11 +72,15 @@ export const branchData: Record<string, BranchData> = {
     mapUrl: 'https://share.google/svMVWe13062cYNDlr',
     address: 'Vidyanagar 3rd street, Vidya Nagar, Civil Aerodrome Post, Kalapatti, Coimbatore, Tamil Nadu 641014',
     geo: { lat: 11.0168, lon: 76.9558 },
-    highlight: "The Manchester of South India's Tech Boom.",
-    description: "Strategically located just 1.5km from Tidel Park, this newly launched hub bridges Coimbatore's rich industrial legacy with its exploding IT ecosystem. Built for massive growth.",
-    cta: "Secure your spot in our newest Coimbatore hub!",
-    heroImage: "/images/amenity3.jpg",
-    galleryImages: ["/images/amenity1.jpg", "/images/exterior.jpg", "/images/amenity2.jpg"],
+    highlight: "Coimbatore's Most Exclusive Corporate Hub.",
+    description: "Designed for elite enterprises and high-growth teams, our ultra-premium Coimbatore hub offers world-class amenities just 1.5km from Tidel Park. Experience unparalleled luxury, high-tech infrastructure, and maximum productivity.",
+    cta: "Secure your premium suite in Coimbatore today!",
+    heroImage: "/images/branches/coimbatore/hero.jpg",
+    galleryImages: [
+      "/images/branches/coimbatore/gallery1.jpg", 
+      "/images/branches/coimbatore/gallery2.jpg", 
+      "/images/branches/coimbatore/gallery3.jpg"
+    ],
     pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateCabin: '₹22,000/mo', virtualOffice: '₹10,000/yr' }
   }
 };
