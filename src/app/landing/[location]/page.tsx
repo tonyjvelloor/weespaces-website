@@ -269,6 +269,34 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
         </div>
       </section>
 
+      {/* Exterior Highlight Section (Specific to Coimbatore or fallback) */}
+      {locationId === 'coimbatore' && data.heroImage && (
+        <section className="py-12 relative">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <div className="flex flex-col md:flex-row items-center gap-12 bg-navy-light/20 border border-white/5 rounded-[2.5rem] p-6 md:p-10">
+              <div className="w-full md:w-1/2 order-2 md:order-1">
+                <div className="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">Premium Architecture</div>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">A Landmark Building</h2>
+                <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                  Our Coimbatore hub is housed in a stunning standalone building featuring a modern facade with expansive glass windows. This premium architecture not only floods the workspace with natural light but also sets an elite tone for your team and visiting clients from the moment they arrive.
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Dedicated covered parking area</li>
+                  <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Prominent, highly-visible frontage</li>
+                  <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Fully monitored 24/7 security</li>
+                </ul>
+              </div>
+              <div className="w-full md:w-1/2 order-1 md:order-2">
+                <div className="relative h-[500px] sm:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/20">
+                  <Image src={data.heroImage} alt="Workspace Exterior" fill className="object-cover" unoptimized />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Image Gallery */}
       <section className="py-12 border-t border-white/10 bg-navy-dark">
         <div className="container mx-auto px-6 max-w-7xl">

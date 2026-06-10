@@ -75,7 +75,7 @@ export const branchData: Record<string, BranchData> = {
     highlight: "Walkable distance to Coimbatore International Airport.",
     description: "Strategically located just 1.5km from Tidel Park and within walking distance to Coimbatore International Airport, this newly launched hub bridges Coimbatore's rich industrial legacy with its exploding IT ecosystem. Built for massive growth.",
     cta: "Secure your spot in our newest Coimbatore hub!",
-    heroImage: "/images/exterior.jpg",
+    heroImage: "/images/branches/coimbatore/exterior-tall.jpg",
     galleryImages: [
       "/images/branches/coimbatore/amenity1.jpg", 
       "/images/branches/coimbatore/amenity2.jpg", 
