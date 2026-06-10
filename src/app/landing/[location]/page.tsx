@@ -164,46 +164,81 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
             <p className="text-xl text-white/60">No hidden fees. Choose the perfect workspace solution in {data.name}.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Hot Desk */}
-            <div className="bg-navy-light/30 border border-white/10 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
-              <h3 className="text-2xl font-bold mb-2">Hot Desk</h3>
-              <p className="text-white/60 text-sm mb-6">Perfect for freelancers needing flexible access.</p>
-              <div className="text-4xl font-bold text-white mb-8">{data.pricing.hotDesk}</div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Any available desk</li>
-                <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> High-speed Wi-Fi</li>
-                <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Premium Cafe access</li>
-              </ul>
+          {locationId === 'coimbatore' ? (
+            <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl overflow-x-auto shadow-2xl">
+              <table className="w-full text-left border-collapse min-w-[600px]">
+                <thead>
+                  <tr className="border-b border-white/10">
+                    <th className="py-4 px-6 text-white font-bold text-lg">Plan</th>
+                    <th className="py-4 px-6 text-white/50 font-bold text-lg">Typical Coimbatore Premium Rate</th>
+                    <th className="py-4 px-6 text-accent font-bold text-lg">The Offer Price</th>
+                    <th className="py-4 px-6 text-green-400 font-bold text-lg">Annual Savings</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-6 px-6 font-semibold text-white">Hot Desk</td>
+                    <td className="py-6 px-6 text-white/50 line-through">₹8,500/mo</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,000/mo</td>
+                    <td className="py-6 px-6 text-green-400 font-semibold">₹30,000</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-6 px-6 font-semibold text-white">Dedicated Desk</td>
+                    <td className="py-6 px-6 text-white/50 line-through">₹9,500/mo</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,500/mo</td>
+                    <td className="py-6 px-6 text-green-400 font-semibold">₹36,000</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors bg-accent/5">
+                    <td className="py-6 px-6 font-semibold text-white">Private Cabins</td>
+                    <td className="py-6 px-6 text-white/50">-</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">Rate on Request</td>
+                    <td className="py-6 px-6 text-green-400 font-semibold">Massive CapEx Savings</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-            {/* Dedicated Desk */}
-            <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
-              <h3 className="text-2xl font-bold mb-2">Dedicated Desk</h3>
-              <p className="text-white/60 text-sm mb-6">A permanent desk for your daily deep work.</p>
-              <div className="text-4xl font-bold text-white mb-8">{data.pricing.dedicatedDesk}</div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Your own reserved desk</li>
-                <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Lockable storage</li>
-                <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Meeting room credits</li>
-              </ul>
-            </div>
-
-            {/* Private Cabin */}
-            <div className="bg-navy-light/80 border-2 border-accent p-8 rounded-3xl relative shadow-[0_0_30px_rgba(242,156,31,0.15)] flex flex-col transform md:-translate-y-4">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-navy text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full">
-                Selling Fast
+          ) : (
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Hot Desk */}
+              <div className="bg-navy-light/30 border border-white/10 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
+                <h3 className="text-2xl font-bold mb-2">Hot Desk</h3>
+                <p className="text-white/60 text-sm mb-6">Perfect for freelancers needing flexible access.</p>
+                <div className="text-4xl font-bold text-white mb-8">{data.pricing.hotDesk}</div>
+                <ul className="space-y-4 mb-8 flex-grow">
+                  <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Any available desk</li>
+                  <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> High-speed Wi-Fi</li>
+                  <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Premium Cafe access</li>
+                </ul>
               </div>
-              <h3 className="text-2xl font-bold mb-2">Private Cabin</h3>
-              <p className="text-white/60 text-sm mb-6">Secure, enclosed offices for growing teams.</p>
-              <div className="text-4xl font-bold text-accent mb-8">{data.pricing.privateCabin}</div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Fully furnished office</li>
-                <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Custom branding options</li>
-                <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> 24/7 Secure access</li>
-              </ul>
+
+              {/* Dedicated Desk */}
+              <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
+                <h3 className="text-2xl font-bold mb-2">Dedicated Desk</h3>
+                <p className="text-white/60 text-sm mb-6">A permanent desk for your daily deep work.</p>
+                <div className="text-4xl font-bold text-white mb-8">{data.pricing.dedicatedDesk}</div>
+                <ul className="space-y-4 mb-8 flex-grow">
+                  <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Your own reserved desk</li>
+                  <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Lockable storage</li>
+                  <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Meeting room credits</li>
+                </ul>
+              </div>
+
+              {/* Private Cabin */}
+              <div className="bg-navy-light/80 border-2 border-accent p-8 rounded-3xl relative shadow-[0_0_30px_rgba(242,156,31,0.15)] flex flex-col transform md:-translate-y-4">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-navy text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-full">
+                  Selling Fast
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Private Cabin</h3>
+                <p className="text-white/60 text-sm mb-6">Secure, enclosed offices for growing teams.</p>
+                <div className="text-4xl font-bold text-accent mb-8">{data.pricing.privateCabin}</div>
+                <ul className="space-y-4 mb-8 flex-grow">
+                  <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Fully furnished office</li>
+                  <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Custom branding options</li>
+                  <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> 24/7 Secure access</li>
+                </ul>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </section>
 
