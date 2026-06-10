@@ -65,6 +65,25 @@ export async function POST(request: Request) {
       }).catch(err => console.error("Failed to send email notification:", err));
     }
 
+    // 3. Google Sheets Webhook Fallback (Fire and forget)
+    const sheetsWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL;
+    if (sheetsWebhook) {
+      fetch(sheetsWebhook, {
+        method: 'POST',
+        // Important: Google Apps Script Web Apps often prefer no-cors or simple form data
+        // but passing standard JSON is usually fine if handled correctly in doPost(e)
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: body.name,
+          phone: body.phone,
+          source: body.source,
+          timestamp: new Date().toISOString()
+        })
+      }).catch(err => console.error("Failed to push to Google Sheets Webhook:", err));
+    }
+
     return NextResponse.json(data, { status: 201 });
 
   } catch (err: any) {
