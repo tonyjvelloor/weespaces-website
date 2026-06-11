@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 import { CheckCircle2, ArrowRight, Calendar, Phone } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -11,6 +12,10 @@ export const metadata: Metadata = {
 export default function ThankYouPage() {
   return (
     <div className="bg-navy min-h-screen font-sans pb-24 pt-24">
+      {/* Event snippet for Page view conversion page */}
+      <Script id="google-ads-conversion" strategy="afterInteractive">
+        {`gtag('event', 'conversion', {'send_to': 'AW-11477720476/9J3rCNmWrIsZEJy7gOEq'});`}
+      </Script>
       <div className="container mx-auto px-6 max-w-3xl text-center">
         
         <div className="bg-navy-light/50 border border-white/10 rounded-3xl p-10 md:p-16 shadow-2xl relative overflow-hidden mt-12">
