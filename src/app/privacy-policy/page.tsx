@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">4. Contact Us</h2>
-            <p>If you have any questions about this privacy policy or our privacy practices, please contact us at <a href="mailto:corporate@weespaces.co.in" className="text-accent hover:underline">corporate@weespaces.co.in</a>.</p>
+            <p>If you have any questions about this privacy policy or our privacy practices, please contact us at <a href="mailto:corporate@weespaces.in" className="text-accent hover:underline">corporate@weespaces.in</a>.</p>
           </section>
         </ScrollReveal>
       </div>

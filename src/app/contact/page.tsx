@@ -115,7 +115,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Email Us</h3>
-                <a href="mailto:corporate@weespaces.co.in" className="text-xl text-white/90 hover:text-accent transition-colors">corporate@weespaces.co.in</a>
+                <a href="mailto:corporate@weespaces.in" className="text-xl text-white/90 hover:text-accent transition-colors">corporate@weespaces.in</a>
               </div>
             </MouseGlowCard>
 

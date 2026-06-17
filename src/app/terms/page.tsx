@@ -22,7 +22,7 @@ export default function TermsPage() {
         <ScrollReveal direction="up" delay={0.1} className="glass p-8 md:p-12 rounded-3xl border border-white/10 text-white/80 space-y-8 leading-relaxed">
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
-            <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and WeeSpaces ("we," "us" or "our"), concerning your access to and use of our coworking spaces, virtual offices, and the https://weespaces.co.in website.</p>
+            <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and WeeSpaces ("we," "us" or "our"), concerning your access to and use of our coworking spaces, virtual offices, and the https://weespaces.in website.</p>
           </section>
 
           <section>
@@ -48,7 +48,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">5. Contact Us</h2>
-            <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at <a href="mailto:corporate@weespaces.co.in" className="text-accent hover:underline">corporate@weespaces.co.in</a>.</p>
+            <p>In order to resolve a complaint regarding the Services or to receive further information regarding use of the Services, please contact us at <a href="mailto:corporate@weespaces.in" className="text-accent hover:underline">corporate@weespaces.in</a>.</p>
           </section>
         </ScrollReveal>
       </div>

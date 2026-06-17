@@ -109,7 +109,7 @@ export default async function SubAreaPage({ params }: { params: Promise<{ branch
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": `WeeSpaces ${data.name}`,
-    "image": "https://weespaces.co.in/images/exterior.jpg",
+    "image": "https://weespaces.in/images/exterior.jpg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": data.address,

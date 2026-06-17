@@ -16,7 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://weespaces.co.in'),
+  metadataBase: new URL('https://weespaces.in'),
   title: "WeeSpaces | Premium Coworking & Managed Offices",
   description: "Top-rated premium coworking spaces, private cabins, and managed offices in Trivandrum, Ernakulam, Calicut, and Coimbatore. Book your workspace today.",
   keywords: ["Coworking space Kerala", "Office space Coimbatore", "Managed offices Trivandrum", "Premium coworking Ernakulam", "Private cabins Calicut"],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'WeeSpaces | Premium Coworking & Managed Offices',
     description: 'Top-rated premium coworking spaces, private cabins, and managed offices in Trivandrum, Ernakulam, Calicut, and Coimbatore.',
-    url: 'https://weespaces.co.in',
+    url: 'https://weespaces.in',
     siteName: 'WeeSpaces',
     locale: 'en_IN',
     type: 'website',

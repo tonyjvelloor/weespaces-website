@@ -11,7 +11,7 @@ const subareasMap: Record<string, string[]> = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://weespaces.co.in';
+  const baseUrl = 'https://weespaces.in';
 
   // Dynamic Branches
   const branches = ['trivandrum', 'ernakulam', 'calicut', 'coimbatore'].map((branch) => ({

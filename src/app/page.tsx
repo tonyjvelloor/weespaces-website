@@ -23,10 +23,10 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "WeeSpaces",
-    "url": "https://weespaces.co.in",
+    "url": "https://weespaces.in",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://weespaces.co.in/locations/{search_term_string}",
+      "target": "https://weespaces.in/locations/{search_term_string}",
       "query-input": "required name=search_term_string"
     }
   };
@@ -35,8 +35,8 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "WeeSpaces",
-    "url": "https://weespaces.co.in",
-    "logo": "https://weespaces.co.in/images/logo.png",
+    "url": "https://weespaces.in",
+    "logo": "https://weespaces.in/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+919207189111",
@@ -54,7 +54,7 @@ export default function Home() {
         "item": {
           "@type": "LocalBusiness",
           "name": "WeeSpaces Trivandrum",
-          "url": "https://weespaces.co.in/locations/trivandrum",
+          "url": "https://weespaces.in/locations/trivandrum",
           "address": "1st Floor, Relcon Plaza, Pattom, Thiruvananthapuram, Kerala 695004"
         }
       },
@@ -64,7 +64,7 @@ export default function Home() {
         "item": {
           "@type": "LocalBusiness",
           "name": "WeeSpaces Ernakulam",
-          "url": "https://weespaces.co.in/locations/ernakulam",
+          "url": "https://weespaces.in/locations/ernakulam",
           "address": "4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram, Perumanoor, Kochi, Kerala 682016"
         }
       },
@@ -74,7 +74,7 @@ export default function Home() {
         "item": {
           "@type": "LocalBusiness",
           "name": "WeeSpaces Calicut",
-          "url": "https://weespaces.co.in/locations/calicut",
+          "url": "https://weespaces.in/locations/calicut",
           "address": "Wee Spaces, Ground floor, Neeloth Plaza, East Nadakkave, Kozhikode, Kerala 673001"
         }
       },
@@ -84,7 +84,7 @@ export default function Home() {
         "item": {
           "@type": "LocalBusiness",
           "name": "WeeSpaces Coimbatore",
-          "url": "https://weespaces.co.in/locations/coimbatore",
+          "url": "https://weespaces.in/locations/coimbatore",
           "address": "Vidya Nagar, Civil Aerodrome Post, Kalapatti, Coimbatore, Tamil Nadu 641014"
         }
       }

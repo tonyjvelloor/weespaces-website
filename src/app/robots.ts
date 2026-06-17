@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://weespaces.co.in/sitemap.xml',
+    sitemap: 'https://weespaces.in/sitemap.xml',
   };
 }

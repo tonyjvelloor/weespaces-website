@@ -86,7 +86,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="material-symbols-outlined text-accent text-[20px]">mail</span>
-                <a href="mailto:corporate@weespaces.co.in" className="hover:text-accent transition-colors">corporate@weespaces.co.in</a>
+                <a href="mailto:corporate@weespaces.in" className="hover:text-accent transition-colors">corporate@weespaces.in</a>
               </li>
               <li className="flex items-start gap-3 pt-4 border-t border-white/10 mt-4">
                 <span className="material-symbols-outlined text-accent text-[20px]">handshake</span>
