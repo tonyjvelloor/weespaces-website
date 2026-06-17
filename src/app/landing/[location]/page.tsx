@@ -25,7 +25,11 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
       title: `Premium Coworking & Managed Offices in Coimbatore | WeeSpaces`,
       description: data.description,
       keywords: ["Coworking space Coimbatore", "Office space near Tidel Park Coimbatore", "Managed offices Avinashi Road", "Premium coworking Coimbatore", "Private cabins Coimbatore", "IT workspace Coimbatore"],
+      alternates: {
+        canonical: `/landing/${locationId}`,
+      },
       openGraph: {
+        url: `/landing/${locationId}`,
         images: [{ url: '/images/exterior-tall.jpg' }]
       },
       twitter: {
@@ -38,6 +42,15 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
   return {
     title: `Premium Coworking in ${data.name} | WeeSpaces`,
     description: data.description,
+    alternates: {
+      canonical: `/landing/${locationId}`,
+    },
+    openGraph: {
+      title: `Premium Coworking in ${data.name} | WeeSpaces`,
+      description: data.description,
+      url: `/landing/${locationId}`,
+      images: [{ url: data.heroImage }],
+    },
   };
 }
 

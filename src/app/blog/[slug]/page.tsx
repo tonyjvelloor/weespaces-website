@@ -21,6 +21,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.title} | WeeSpaces Blog`,
     description: post.excerpt,
+    alternates: {
+      canonical: `/blog/${resolvedParams.slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | WeeSpaces Blog`,
+      description: post.excerpt,
+      url: `/blog/${resolvedParams.slug}`,
+      type: 'article',
+    },
   };
 }
 

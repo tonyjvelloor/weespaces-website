@@ -24,6 +24,28 @@ export async function generateMetadata({ params }: { params: Promise<{ branch: s
     title: `Coworking Space in ${branchName} | WeeSpaces`,
     description: `Premium coworking and private offices in ${branchName}. High-speed WiFi, ergonomic setups, and a vibrant community. Book your tour today!`,
     keywords: [`Coworking space ${branchName}`, `Office space ${branchName}`, `Managed offices ${branchName}`, `Private cabin ${branchName}`, `Shared workspace ${branchName}`],
+    alternates: {
+      canonical: `/locations/${resolvedParams.branch}`,
+    },
+    openGraph: {
+      title: `Coworking Space in ${branchName} | WeeSpaces`,
+      description: `Premium coworking and private offices in ${branchName}. High-speed WiFi, ergonomic setups, and a vibrant community. Book your tour today!`,
+      url: `/locations/${resolvedParams.branch}`,
+      images: [
+        {
+          url: branchData[resolvedParams.branch]?.heroImage || '/images/exterior.jpg',
+          width: 1200,
+          height: 630,
+          alt: `WeeSpaces ${branchName}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Coworking Space in ${branchName} | WeeSpaces`,
+      description: `Premium coworking and private offices in ${branchName}.`,
+      images: [branchData[resolvedParams.branch]?.heroImage || '/images/exterior.jpg'],
+    },
   };
 }
 

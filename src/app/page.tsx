@@ -16,6 +16,14 @@ import PhotoGallery from '@/components/PhotoGallery';
 export const metadata: Metadata = {
   title: 'WeeSpaces | Premium Coworking in Kerala & Tamil Nadu',
   description: 'Flexible coworking spaces, dedicated desks, and private offices designed for startups, freelancers, and enterprise teams in Trivandrum, Ernakulam, Calicut, and Coimbatore.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'WeeSpaces | Premium Coworking in Kerala & Tamil Nadu',
+    description: 'Flexible coworking spaces, dedicated desks, and private offices designed for startups, freelancers, and enterprise teams in Trivandrum, Ernakulam, Calicut, and Coimbatore.',
+    url: '/',
+  },
 };
 
 export default function Home() {
