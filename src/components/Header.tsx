@@ -1,7 +1,7 @@
 "use client";
 
 import Link from 'next/link';
-import { ChevronDown, ArrowRight, Menu } from 'lucide-react';
+import { ChevronDown, ArrowRight, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -93,9 +93,7 @@ export default function Header() {
           className="md:hidden text-white hover:text-accent transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <Menu className="w-8 h-8" />
-            {isMobileMenuOpen ? 'close' : 'menu'}
-          </span>
+          {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
         </button>
       </div>
 
