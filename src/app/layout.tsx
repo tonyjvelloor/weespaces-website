@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "WeeSpaces | Premium Coworking & Managed Offices",
   description: "Top-rated premium coworking spaces, private cabins, and managed offices in Trivandrum, Ernakulam, Calicut, and Coimbatore. Book your workspace today.",
   keywords: ["Coworking space Kerala", "Office space Coimbatore", "Managed offices Trivandrum", "Premium coworking Ernakulam", "Private cabins Calicut"],
+  verification: {
+    google: "DTBR2769JCtmLJI1De2C1NQYp590lwOBA1951QTbSKQ",
+  },
   openGraph: {
     title: 'WeeSpaces | Premium Coworking & Managed Offices',
     description: 'Top-rated premium coworking spaces, private cabins, and managed offices in Trivandrum, Ernakulam, Calicut, and Coimbatore.',
