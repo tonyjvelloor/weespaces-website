@@ -140,89 +140,65 @@ export default function Home() {
           </div>
       </section>
 
-      {/* Trusted By Strip */}
-      <section className="bg-navy-dark border-b border-white/10 relative z-20 py-8 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6">
-              <p className="text-center text-xs font-bold text-white/40 uppercase tracking-widest mb-6">Trusted by 500+ members from growing companies</p>
-              <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                  {/* Placeholder logos */}
-                  <div className="text-xl font-bold font-serif">Acme Corp</div>
-                  <div className="text-xl font-bold tracking-tighter">TechFlow</div>
-                  <div className="text-xl font-bold italic">PixelCrafters</div>
-                  <div className="text-xl font-bold uppercase">Elevate</div>
-                  <div className="text-xl font-bold">Nimbus</div>
-              </div>
-          </div>
-      </section>
+{/* Photo Gallery */}
+      <PhotoGallery />
 
-      {/* Quick Actions Bar */}
-      <section className="bg-navy border-b border-white/10 relative z-20 shadow-2xl">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex flex-wrap justify-center gap-2 md:gap-4">
-              <Link href="/contact" className="bg-accent hover:bg-accent-hover text-navy font-bold py-2.5 px-8 rounded-full text-sm flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(242,156,31,0.2)]">
-                  <MapPin className="w-4 h-4" /> Book a Tour
-              </Link>
-              <Link href="/pricing" className="glass hover:bg-white/10 text-white font-medium py-2.5 px-6 rounded-full text-sm flex items-center gap-2 transition-all">
-                  <Handshake className="w-4 h-4 text-accent" /> Book Meeting Room
-              </Link>
-              <Link href="/contact" className="glass hover:bg-white/10 text-white font-medium py-2.5 px-6 rounded-full text-sm flex items-center gap-2 transition-all">
-                  <FileText className="w-4 h-4 text-accent" /> Get a Quote
-              </Link>
-          </div>
-      </section>
-
-      {/* Static Stat Block */}
-      <section className="bg-navy-dark border-b border-white/10 py-16 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                  <ScrollReveal delay={0.1}>
-                      <div className="text-5xl font-bold text-white mb-2">4</div>
-                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Prime Locations</div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={0.2}>
-                      <div className="text-5xl font-bold text-white mb-2">50K+</div>
-                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Sq. Ft. Managed</div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={0.3}>
-                      <div className="text-5xl font-bold text-white mb-2">500+</div>
-                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Active Members</div>
-                  </ScrollReveal>
-                  <ScrollReveal delay={0.4}>
-                      <div className="text-5xl font-bold text-white mb-2">100%</div>
-                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Power Backup</div>
-                  </ScrollReveal>
-              </div>
-          </div>
-      </section>
-
-      {/* Horizontal Timeline */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
-          <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Growth <span className="text-accent">Story</span></h2>
-              <p className="text-white/70">Building South India's premier coworking network since 2018.</p>
+{/* Workspace Gallery & Amenities */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 overflow-hidden">
+          <ScrollReveal direction="up" className="text-center mb-16 relative">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Workspace <span className="text-accent">Amenities</span></h2>
+              <p className="text-xl text-white/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
           </ScrollReveal>
-          
-          <div className="relative">
-              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 hidden md:block"></div>
-              <div className="grid md:grid-cols-4 gap-8">
-                  {[
-                      { year: '2018', title: 'Trivandrum', desc: 'Started our journey in the capital city.' },
-                      { year: '2021', title: 'Ernakulam', desc: 'Expanded to the commercial hub of Kerala.' },
-                      { year: '2023', title: 'Calicut', desc: 'Opened The Work Lounge in Malabar.' },
-                      { year: '2024', title: 'Coimbatore', desc: 'First location in Tamil Nadu launched.' }
-                  ].map((item, idx) => (
-                      <ScrollReveal key={idx} delay={idx * 0.1} className="relative z-10 glass p-6 rounded-xl border border-white/10 text-center hover:border-accent/50 transition-colors">
-                          <div className="w-12 h-12 bg-accent text-navy font-bold rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-navy-dark shadow-[0_0_15px_rgba(242,156,31,0.3)]">
-                              {item.year.slice(2)}'
+
+          <InteractiveAmenities />
+      </section>
+
+<section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+          <ScrollReveal direction="up" className="text-center mb-16 relative">
+              <h2 className="text-4xl font-bold mb-4">Trusted by <span className="text-accent">Growing Teams</span></h2>
+              <p className="text-xl text-white/70">Join a vibrant community of startups, freelancers, and established companies.</p>
+          </ScrollReveal>
+          <div className="grid md:grid-cols-3 gap-8">
+              {[
+                  {
+                      quote: "We moved our 10-person team to WeeSpaces Coimbatore last month. The private office is perfect, internet is blazing fast, and the 24/7 access helps us coordinate with US clients.",
+                      initial: "S", name: "Siddharth R.", role: "Founder, TechFlow Solutions"
+                  },
+                  {
+                      quote: "As a design agency, we used to work from cafes. Getting a dedicated setup here changed our productivity entirely. The community is amazing and the vibe is highly creative.",
+                      initial: "P", name: "Priya M.", role: "Creative Director, PixelCrafters"
+                  },
+                  {
+                      quote: "The MG Road Ernakulam location is extremely convenient. We host our client meetings in the premium conference rooms and it always leaves a great impression.",
+                      initial: "K", name: "Karthik V.", role: "VP Sales, Elevate CRM"
+                  }
+              ].map((t, i) => (
+                  <MouseGlowCard key={i} className="glass p-8 rounded-xl border border-white/10 relative h-full flex flex-col justify-between">
+                      <div>
+                          <Quote className="w-12 h-12 text-accent/20 absolute top-4 right-4" />
+                          <div className="flex gap-1 text-accent mb-4">
+                              {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4" fill="currentColor" />)}
                           </div>
-                          <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                          <p className="text-white/50 text-sm">{item.desc}</p>
-                      </ScrollReveal>
-                  ))}
-              </div>
+                          <p className="text-white/80 leading-relaxed mb-6 font-medium relative z-10 italic">"{t.quote}"</p>
+                      </div>
+                      <div className="flex items-center gap-4 mt-auto">
+                          <div className="w-12 h-12 rounded-full bg-accent text-navy flex items-center justify-center font-bold text-xl shrink-0">
+                              {t.initial}
+                          </div>
+                          <div>
+                              <h4 className="font-bold flex items-center gap-2 text-white">
+                                {t.name}
+                                <BadgeCheck className="w-4 h-4 text-[#25D366]" />
+                              </h4>
+                              <p className="text-white/50 text-xs">{t.role}</p>
+                          </div>
+                      </div>
+                  </MouseGlowCard>
+              ))}
           </div>
       </section>
 
-      {/* Audience Segmentation */}
+{/* Audience Segmentation */}
       <section className="py-24 max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Built for Businesses of <span className="text-accent">Every Size</span></h2>
@@ -251,7 +227,18 @@ export default function Home() {
           </div>
       </section>
 
-      {/* Pricing Preview Section */}
+      {/* Mobile Divider Image (Before Pricing) */}
+      <div className="md:hidden max-w-7xl mx-auto px-6 mb-16">
+         <div className="relative w-full h-48 rounded-2xl overflow-hidden glass border border-white/10 shadow-[0_0_20px_rgba(242,156,31,0.15)]">
+             <Image src="/images/branches/calicut/workspace1.jpg" alt="WeeSpaces Premium Workspace" fill className="object-cover" />
+             <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent flex items-end p-6">
+                 <p className="text-white font-bold text-lg">Your Workspace, Redefined.</p>
+             </div>
+         </div>
+      </div>
+
+
+{/* Pricing Preview Section */}
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-dark">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
@@ -307,8 +294,8 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-white mb-2">Private Office</h3>
                       <p className="text-sm text-white/50 mb-6 h-10">Fully enclosed, secure office space for growing teams.</p>
                       <div className="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
-                          <span className="text-4xl font-bold text-white">Custom</span>
-                          <span className="text-white/50 text-sm uppercase tracking-wider font-bold">Pricing</span>
+                          <span className="text-4xl font-bold text-white">₹18,000</span>
+                          <span className="text-white/50 text-sm uppercase tracking-wider font-bold">/ Mo</span>
                       </div>
                       <ul className="space-y-4 mb-8">
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Fully furnished office</li>
@@ -386,60 +373,55 @@ export default function Home() {
           </div>
       </section>
 
-      {/* Workspace Gallery & Amenities */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 overflow-hidden">
-          <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Workspace <span className="text-accent">Amenities</span></h2>
-              <p className="text-xl text-white/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
+{/* Horizontal Timeline */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+          <ScrollReveal direction="up" className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Growth <span className="text-accent">Story</span></h2>
+              <p className="text-white/70">Building South India's premier coworking network since 2018.</p>
           </ScrollReveal>
-
-          <InteractiveAmenities />
+          
+          <div className="relative">
+              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 hidden md:block"></div>
+              <div className="grid md:grid-cols-4 gap-8">
+                  {[
+                      { year: '2018', title: 'Trivandrum', desc: 'Started our journey in the capital city.' },
+                      { year: '2021', title: 'Ernakulam', desc: 'Expanded to the commercial hub of Kerala.' },
+                      { year: '2023', title: 'Calicut', desc: 'Opened The Work Lounge in Malabar.' },
+                      { year: '2024', title: 'Coimbatore', desc: 'First location in Tamil Nadu launched.' }
+                  ].map((item, idx) => (
+                      <ScrollReveal key={idx} delay={idx * 0.1} className="relative z-10 glass p-6 rounded-xl border border-white/10 text-center hover:border-accent/50 transition-colors">
+                          <div className="w-12 h-12 bg-accent text-navy font-bold rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-navy-dark shadow-[0_0_15px_rgba(242,156,31,0.3)]">
+                              {item.year.slice(2)}'
+                          </div>
+                          <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
+                          <p className="text-white/50 text-sm">{item.desc}</p>
+                      </ScrollReveal>
+                  ))}
+              </div>
+          </div>
       </section>
 
-      {/* Photo Gallery */}
-      <PhotoGallery />
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
-          <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl font-bold mb-4">Trusted by <span className="text-accent">Growing Teams</span></h2>
-              <p className="text-xl text-white/70">Join a vibrant community of startups, freelancers, and established companies.</p>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-8">
-              {[
-                  {
-                      quote: "We moved our 10-person team to WeeSpaces Coimbatore last month. The private office is perfect, internet is blazing fast, and the 24/7 access helps us coordinate with US clients.",
-                      initial: "S", name: "Siddharth R.", role: "Founder, TechFlow Solutions"
-                  },
-                  {
-                      quote: "As a design agency, we used to work from cafes. Getting a dedicated setup here changed our productivity entirely. The community is amazing and the vibe is highly creative.",
-                      initial: "P", name: "Priya M.", role: "Creative Director, PixelCrafters"
-                  },
-                  {
-                      quote: "The MG Road Ernakulam location is extremely convenient. We host our client meetings in the premium conference rooms and it always leaves a great impression.",
-                      initial: "K", name: "Karthik V.", role: "VP Sales, Elevate CRM"
-                  }
-              ].map((t, i) => (
-                  <MouseGlowCard key={i} className="glass p-8 rounded-xl border border-white/10 relative h-full flex flex-col justify-between">
-                      <div>
-                          <Quote className="w-12 h-12 text-accent/20 absolute top-4 right-4" />
-                          <div className="flex gap-1 text-accent mb-4">
-                              {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4" fill="currentColor" />)}
-                          </div>
-                          <p className="text-white/80 leading-relaxed mb-6 font-medium relative z-10 italic">"{t.quote}"</p>
-                      </div>
-                      <div className="flex items-center gap-4 mt-auto">
-                          <div className="w-12 h-12 rounded-full bg-accent text-navy flex items-center justify-center font-bold text-xl shrink-0">
-                              {t.initial}
-                          </div>
-                          <div>
-                              <h4 className="font-bold flex items-center gap-2 text-white">
-                                {t.name}
-                                <BadgeCheck className="w-4 h-4 text-[#25D366]" />
-                              </h4>
-                              <p className="text-white/50 text-xs">{t.role}</p>
-                          </div>
-                      </div>
-                  </MouseGlowCard>
-              ))}
+{/* Static Stat Block */}
+      <section className="bg-navy-dark border-b border-white/10 py-16 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                  <ScrollReveal delay={0.1}>
+                      <div className="text-5xl font-bold text-white mb-2">4</div>
+                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Prime Locations</div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={0.2}>
+                      <div className="text-5xl font-bold text-white mb-2">50K+</div>
+                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Sq. Ft. Managed</div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={0.3}>
+                      <div className="text-5xl font-bold text-white mb-2">500+</div>
+                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Active Members</div>
+                  </ScrollReveal>
+                  <ScrollReveal delay={0.4}>
+                      <div className="text-5xl font-bold text-white mb-2">100%</div>
+                      <div className="text-xs font-bold text-accent uppercase tracking-wider">Power Backup</div>
+                  </ScrollReveal>
+              </div>
           </div>
       </section>
     </>

@@ -9,12 +9,14 @@ const galleryImages = [
   { src: '/images/branches/trivandrum/image1.jpg', title: 'Trivandrum', location: 'Trivandrum', colSpan: 'md:col-span-8', rowSpan: 'md:row-span-2' },
   { src: '/images/branches/kochi/workspace2.jpg', title: 'Ernakulam', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
   { src: '/images/branches/calicut/workspace1.jpg', title: 'Calicut', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/coimbatore/exterior-tall.jpg', title: 'Coimbatore Exterior', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
   { src: '/images/branches/kochi/reception.jpg', title: 'Welcoming Receptions', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/coimbatore/gallery1.jpg', title: 'Coimbatore Workspace', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
   { src: '/images/branches/calicut/workspace2.jpg', title: 'Productive Desks', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
   { src: '/images/branches/trivandrum/image4.jpg', title: 'Collaborative Areas', location: 'Trivandrum', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
 ];
 
-const locations = ['All', 'Trivandrum', 'Ernakulam', 'Calicut'];
+const locations = ['All', 'Trivandrum', 'Ernakulam', 'Calicut', 'Coimbatore'];
 
 export default function PhotoGallery() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -51,12 +53,12 @@ export default function PhotoGallery() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Explore Our <span className="text-accent">Spaces</span></h2>
           <p className="text-xl text-white/70 relative z-10">A glimpse into our functional workspaces designed for productivity.</p>
           
-          <div className="flex flex-wrap justify-center gap-2 mt-8">
+          <div className="flex overflow-x-auto no-scrollbar justify-start md:justify-center gap-2 mt-8 px-2 pb-4">
             {locations.map(loc => (
               <button 
                 key={loc}
                 onClick={() => setActiveLocation(loc)}
-                className={`px-6 py-2 rounded-full text-sm font-bold transition-colors ${activeLocation === loc ? 'bg-accent text-navy' : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'}`}
+                className={`shrink-0 whitespace-nowrap px-6 py-2 rounded-full text-sm font-bold transition-colors ${activeLocation === loc ? 'bg-accent text-navy' : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'}`}
               >
                 {loc}
               </button>
@@ -64,12 +66,12 @@ export default function PhotoGallery() {
           </div>
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[250px]">
+      <div className="flex overflow-x-auto no-scrollbar md:grid md:grid-cols-12 gap-4 md:auto-rows-[250px] pb-4 px-2 -mx-2 md:mx-0 snap-x snap-mandatory">
         {filteredImages.map((image, index) => (
           <ScrollReveal 
             key={image.src} 
             delay={index * 0.05} 
-            className={`relative rounded-xl overflow-hidden group cursor-pointer ${activeLocation === 'All' ? `${image.colSpan} ${image.rowSpan}` : 'md:col-span-4 md:row-span-1'}`}
+            className={`relative rounded-xl overflow-hidden group cursor-pointer shrink-0 w-[85vw] h-[250px] md:w-auto md:h-auto snap-center ${activeLocation === 'All' ? `${image.colSpan} ${image.rowSpan}` : 'md:col-span-4 md:row-span-1'}`}
             onClick={() => setLightboxIndex(index)}
           >
             <div 

@@ -246,6 +246,19 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
                    </ScrollReveal>
                 </div>
              </div>
+          ) : branchId === 'coimbatore' ? (
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {data.galleryImages.length > 0 && (
+                   <ScrollReveal direction="up" delay={0.1} className="relative rounded-xl overflow-hidden shadow-lg h-96 md:col-span-2">
+                      <Image src={data.galleryImages[0]} alt="Gallery 1" fill className="object-cover" unoptimized />
+                   </ScrollReveal>
+                )}
+                {data.galleryImages.slice(1).map((src, idx) => (
+                   <ScrollReveal key={idx + 1} direction="up" delay={0.2 + (idx * 0.1)} className="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80">
+                      <Image src={src} alt={`Gallery ${idx + 2}`} fill className="object-cover transform hover:scale-110 transition-transform duration-700" unoptimized />
+                   </ScrollReveal>
+                ))}
+             </div>
           ) : (
             <div className={`grid grid-cols-1 sm:grid-cols-2 ${data.galleryImages.length === 4 ? 'lg:grid-cols-4' : 'md:grid-cols-3'} gap-6`}>
                 {data.galleryImages.map((src, idx) => (

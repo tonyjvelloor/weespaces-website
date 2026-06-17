@@ -75,9 +75,7 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
     <div className="glass rounded-3xl p-6 md:p-8 relative overflow-hidden glow border-t border-l border-white/20">
       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-2xl -mr-16 -mt-16 pointer-events-none"></div>
       
-      <div className="bg-accent text-navy text-xs font-bold uppercase tracking-wider px-3 py-1 rounded inline-block mb-4">Limited Seats</div>
-      
-      <p className="text-sm text-white/70 mb-8">Secure your premium workspace {branch ? `in ${branch}` : 'today'}.</p>
+      <p className="text-sm text-white/70 mb-8 mt-2">Secure your premium workspace {branch ? `in ${branch}` : 'today'}.</p>
       
       <form onSubmit={handleSubmit} className="space-y-4 text-left">
         <div className="mb-6">
@@ -164,7 +162,7 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
 
         {step === 1 && (
           <p className="text-center text-xs text-white/50 mt-3 flex items-center justify-center gap-1">
-              <span className="text-accent">⚡</span> Limited desks available this month.
+              Step 2 will ask your preferred space type. No commitment, no payment.
           </p>
         )}
 

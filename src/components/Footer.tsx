@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import { MapPin, Clock, Phone, Mail, Handshake } from 'lucide-react';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -18,14 +19,14 @@ export default function Footer() {
           {locationId === 'coimbatore' && (
             <div className="mb-8 p-6 bg-navy-light/30 border border-white/10 rounded-2xl max-w-2xl mx-auto text-center flex flex-col items-center gap-4 shadow-lg">
               <div className="bg-navy p-3 rounded-xl border border-white/10 shrink-0 inline-flex">
-                <span className="material-symbols-outlined text-accent text-[32px]">location_on</span>
+                <MapPin className="text-accent w-8 h-8" />
               </div>
               <div>
                 <h4 className="text-white font-bold text-lg mb-2">WeeSpaces Coimbatore</h4>
                 <p className="text-white/70 text-sm mb-1">123, XYZ Tower, Avinashi Road,</p>
                 <p className="text-white/70 text-sm mb-3">Coimbatore, Tamil Nadu - 641014</p>
                 <p className="text-accent text-sm font-bold flex items-center justify-center gap-2">
-                  <span className="material-symbols-outlined text-[16px]">schedule</span> Mon–Sat, 8AM–8PM | 24/7 access for private cabin members
+                  <Clock className="w-4 h-4" /> Mon–Sat, 8AM–8PM | 24/7 access for private cabin members
                 </p>
               </div>
             </div>
@@ -81,15 +82,15 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-heading">Contact Us</h4>
             <ul className="space-y-4 text-sm text-white/70 mb-6">
               <li className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-accent text-[20px]">call</span>
+                <Phone className="text-accent w-5 h-5" />
                 <a href="tel:+919207189111" className="hover:text-accent transition-colors">+91 92071 89111</a>
               </li>
               <li className="flex items-start gap-3">
-                <span className="material-symbols-outlined text-accent text-[20px]">mail</span>
+                <Mail className="text-accent w-5 h-5" />
                 <a href="mailto:corporate@weespaces.in" className="hover:text-accent transition-colors">corporate@weespaces.in</a>
               </li>
               <li className="flex items-start gap-3 pt-4 border-t border-white/10 mt-4">
-                <span className="material-symbols-outlined text-accent text-[20px]">handshake</span>
+                <Handshake className="text-accent w-5 h-5" />
                 <Link href="/investors/" className="hover:text-accent transition-colors font-bold text-accent">Investors & Partners</Link>
               </li>
             </ul>

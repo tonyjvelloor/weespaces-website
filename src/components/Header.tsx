@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { ChevronDown, ArrowRight, Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -45,7 +46,7 @@ export default function Header() {
           
           <div className="group relative">
             <button className="hover:text-accent transition-colors flex items-center gap-1 py-4">
-              Services <span className="material-symbols-outlined text-[16px]">expand_more</span>
+              Services <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-0 w-56 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
               <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Coworking & Offices</Link>
@@ -56,7 +57,7 @@ export default function Header() {
 
           <div className="group relative">
             <button className="hover:text-accent transition-colors flex items-center gap-1 py-4">
-              Locations <span className="material-symbols-outlined text-[16px]">expand_more</span>
+              Locations <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-0 w-48 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
               <Link href="/locations/trivandrum" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Trivandrum</Link>
@@ -82,7 +83,7 @@ export default function Header() {
                 transition={{ duration: 0.2 }}
               >
                 <Link href="/contact" className="bg-accent hover:bg-accent-hover text-navy font-bold py-2 px-5 rounded-full transition-colors text-sm shadow-[0_0_15px_rgba(242,156,31,0.2)] hover:shadow-[0_0_20px_rgba(242,156,31,0.4)] flex items-center gap-1">
-                  Book a Tour <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                  Book a Tour <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             )}
@@ -92,7 +93,7 @@ export default function Header() {
           className="md:hidden text-white hover:text-accent transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
-          <span className="material-symbols-outlined text-3xl">
+          <Menu className="w-8 h-8" />
             {isMobileMenuOpen ? 'close' : 'menu'}
           </span>
         </button>
