@@ -83,13 +83,13 @@ export default function PricingPage() {
           <ScrollReveal direction="up" delay={0.2} className="mb-16">
             <div className="grid grid-cols-3 gap-4 md:gap-6 h-48 md:h-80 max-w-5xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden glass border border-white/10 hidden md:block">
-                <Image src="/images/gallery/workspace1.jpg" alt="Workspace" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/branches/kochi/workspace1.jpg" alt="Workspace" fill className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="relative rounded-2xl overflow-hidden glass border border-accent/20 col-span-3 md:col-span-1 shadow-[0_0_30px_rgba(242,156,31,0.1)]">
-                <Image src="/images/gallery/workspace3.jpg" alt="Private Cabin" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/branches/kochi/workspace2.jpg" alt="Private Cabin" fill className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="relative rounded-2xl overflow-hidden glass border border-white/10 hidden md:block">
-                <Image src="/images/gallery/amenity1.jpg" alt="Conference Room" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/branches/trivandrum/image3.jpg" alt="Conference Room" fill className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </ScrollReveal>
