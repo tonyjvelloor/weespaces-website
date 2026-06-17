@@ -11,7 +11,7 @@ const galleryImages = [
   { src: '/images/branches/calicut/workspace1.jpg', title: 'Calicut', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
   { src: '/images/branches/coimbatore/exterior-tall.jpg', title: 'Coimbatore Exterior', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
   { src: '/images/branches/kochi/reception.jpg', title: 'Welcoming Receptions', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
-  { src: '/images/branches/coimbatore/gallery1.jpg', title: 'Coimbatore Workspace', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/coimbatore/amenity1.jpg', title: 'Coimbatore Workspace', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
   { src: '/images/branches/calicut/workspace2.jpg', title: 'Productive Desks', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
   { src: '/images/branches/trivandrum/image4.jpg', title: 'Collaborative Areas', location: 'Trivandrum', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
 ];
