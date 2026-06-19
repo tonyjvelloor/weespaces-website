@@ -39,62 +39,81 @@ export default function Home() {
     }
   };
 
-  const orgSchema = {
+  const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "WeeSpaces",
-    "url": "https://weespaces.in",
-    "logo": "https://weespaces.in/images/logo.png",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+919207189111",
-      "contactType": "customer service"
-    }
-  };
-
-  const locationsSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "LocalBusiness",
-          "name": "WeeSpaces Trivandrum",
-          "url": "https://weespaces.in/locations/trivandrum",
-          "address": "1st Floor, Relcon Plaza, Pattom, Thiruvananthapuram, Kerala 695004"
-        }
+        "@type": "Organization",
+        "@id": "https://www.weespaces.in/#organization",
+        "name": "WeeSpaces",
+        "url": "https://www.weespaces.in/",
+        "logo": "https://www.weespaces.in/logo.png", 
+        "description": "Premium flexible coworking spaces, private managed offices, and meeting rooms tailored for startups, freelancers, and enterprises.",
+        "sameAs": [
+          "https://www.instagram.com/weespaces_in/",
+          "https://www.linkedin.com/company/weespaces-coworking"
+        ]
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "LocalBusiness",
-          "name": "WeeSpaces Ernakulam",
-          "url": "https://weespaces.in/locations/ernakulam",
-          "address": "4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram, Perumanoor, Kochi, Kerala 682016"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "LocalBusiness",
-          "name": "WeeSpaces Calicut",
-          "url": "https://weespaces.in/locations/calicut",
-          "address": "Wee Spaces, Ground floor, Neeloth Plaza, East Nadakkave, Kozhikode, Kerala 673001"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "LocalBusiness",
-          "name": "WeeSpaces Coimbatore",
-          "url": "https://weespaces.in/locations/coimbatore",
-          "address": "Vidya Nagar, Civil Aerodrome Post, Kalapatti, Coimbatore, Tamil Nadu 641014"
-        }
+        "@type": "CoworkingSpace",
+        "@id": "https://www.weespaces.in/#headquarters",
+        "name": "WeeSpaces Coworking",
+        "url": "https://www.weespaces.in/",
+        "image": "https://www.weespaces.in/images/gallery/exterior.jpg",
+        "priceRange": "$$",
+        "parentOrganization": {
+          "@id": "https://www.weespaces.in/#organization"
+        },
+        "location": [
+          {
+            "@type": "Place",
+            "name": "WeeSpaces Trivandrum",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1st Floor, Relcon Plaza, Pattom",
+              "addressLocality": "Trivandrum",
+              "addressRegion": "Kerala",
+              "postalCode": "695004",
+              "addressCountry": "IN"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "WeeSpaces Ernakulam",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram",
+              "addressLocality": "Kochi",
+              "addressRegion": "Kerala",
+              "postalCode": "682016",
+              "addressCountry": "IN"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "WeeSpaces Calicut",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Wee Spaces, Ground floor, Neeloth Plaza, East Nadakkave",
+              "addressLocality": "Calicut",
+              "addressRegion": "Kerala",
+              "postalCode": "673001",
+              "addressCountry": "IN"
+            }
+          },
+          {
+            "@type": "Place",
+            "name": "WeeSpaces Coimbatore",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Vidya Nagar, Civil Aerodrome Post, Kalapatti",
+              "addressLocality": "Coimbatore",
+              "addressRegion": "Tamil Nadu",
+              "postalCode": "641014",
+              "addressCountry": "IN"
+            }
+          }
+        ]
       }
     ]
   };
@@ -102,8 +121,7 @@ export default function Home() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden bg-navy-dark">
