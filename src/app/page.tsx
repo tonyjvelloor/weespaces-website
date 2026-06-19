@@ -27,17 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "WeeSpaces",
-    "url": "https://weespaces.in",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://weespaces.in/locations/{search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  };
+
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -120,7 +110,6 @@ export default function Home() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
 
       {/* Hero Section */}
@@ -139,8 +128,8 @@ export default function Home() {
                   </div>
                   
                   <h1 className="text-display flex flex-col">
-                      <span className="text-white">THE RIGHT SPACE.</span>
-                      <span className="text-accent/80 font-serif italic text-h1 mt-2">The right move.</span>
+                      <span className="text-white">WeeSpaces Coworking.</span>
+                      <span className="text-accent/80 font-serif italic text-h1 mt-2">The right space. The right move.</span>
                   </h1>
                   
                   <p className="text-body md:text-lg text-white/70 max-w-xl font-medium">
