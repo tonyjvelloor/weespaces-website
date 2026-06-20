@@ -122,9 +122,14 @@ export default function Home() {
           
           <div className="container mx-auto px-6 w-full relative z-20 grid lg:grid-cols-12 gap-12 lg:gap-8 items-center mt-8 lg:mt-0">
               <ScrollReveal direction="left" className="space-y-6 md:space-y-8 lg:col-span-7">
-                  <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
-                      <Map className="w-4 h-4" />
-                      4 Prime Locations
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
+                        <Map className="w-4 h-4" />
+                        4 Prime Locations
+                    </div>
+                    <Link href="/locations/coimbatore" className="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-accent-light text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(242,156,31,0.5)] hover:scale-105 transition-transform animate-pulse-soft">
+                        🚀 Coimbatore Branch Launching Next Month
+                    </Link>
                   </div>
                   
                   <h1 className="text-display flex flex-col">
