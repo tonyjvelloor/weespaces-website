@@ -212,6 +212,7 @@ export default async function SubAreaPage({ params }: { params: Promise<{ branch
               </ScrollReveal>
           </div>
       </section>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
     </>
   );
 }

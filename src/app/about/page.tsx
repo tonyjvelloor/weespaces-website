@@ -3,9 +3,21 @@ import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import Image from 'next/image';
 
 export default function AboutPage() {
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About WeeSpaces Coworking",
+    "description": "WeeSpaces is a premium coworking and managed office provider in Kerala and Tamil Nadu, founded in 2018. Operating in Trivandrum, Ernakulam, Calicut, and Coimbatore with over 50,000 Sq.Ft managed.",
+    "publisher": {
+      "@id": "https://www.weespaces.in/#organization"
+    }
+  };
+
   return (
-    <div className="pt-20 pb-32">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }} />
+      <div className="pt-20 pb-32">
+        <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-32 pt-10">
@@ -17,8 +29,8 @@ export default function AboutPage() {
               Redefining <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Workspaces</span> in South India
             </h1>
             <p className="text-white/70 text-lg leading-relaxed mb-8">
-              Founded in 2018, WeeSpaces has grown from a single coworking lounge in Calicut to a multi-city enterprise 
-              powering the ambitions of freelancers, startups, and massive corporations across Kerala and Tamil Nadu.
+              <strong>WeeSpaces is a premium coworking and managed office provider in Kerala and Tamil Nadu, founded in 2018.</strong> 
+              What started as a single coworking lounge in Calicut has grown into a multi-city enterprise operating in Trivandrum, Ernakulam, Calicut, and Coimbatore. We power the ambitions of freelancers, startups, and enterprise corporations by managing over 50,000 Sq.Ft of Grade-A commercial real estate.
             </p>
             <div className="flex items-center gap-6">
               <div className="flex flex-col">
@@ -164,9 +176,9 @@ export default function AboutPage() {
                 </div>
               </div>
             </MouseGlowCard>
-        </ScrollReveal>
-
+          </ScrollReveal>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

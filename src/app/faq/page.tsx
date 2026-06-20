@@ -16,8 +16,25 @@ export default function FAQPage() {
     }
   };
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.flatMap(category => 
+      category.questions.map(q => ({
+        "@type": "Question",
+        "name": q.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": q.answer
+        }
+      }))
+    )
+  };
+
   return (
-    <div className="pt-20 pb-32">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <div className="pt-20 pb-32">
       <div className="container mx-auto px-6 max-w-4xl">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-accent tracking-widest uppercase mb-6">
@@ -61,6 +78,7 @@ export default function FAQPage() {
           ))}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
