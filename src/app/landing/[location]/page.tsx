@@ -289,20 +289,20 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 <tbody className="divide-y divide-white/5">
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-6 px-6 font-semibold text-white">Hot Desk <span className="block text-xs text-accent mt-1">12 spots left</span></td>
-                    <td className="py-6 px-6 text-white/50 line-through">₹8,500/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,000/mo</td>
-                    <td className="py-6 px-6 text-green-400 font-semibold">₹30,000</td>
+                    <td className="py-6 px-6 text-white/50 line-through">₹7,000/mo</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">{data.pricing.hotDesk}</td>
+                    <td className="py-6 px-6 text-green-400 font-semibold">Save ₹24,000/yr</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-6 px-6 font-semibold text-white">Dedicated Desk <span className="block text-xs text-accent mt-1">30 spots left</span></td>
-                    <td className="py-6 px-6 text-white/50 line-through">₹9,500/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,999/mo</td>
-                    <td className="py-6 px-6 text-green-400 font-semibold">₹30,000+</td>
+                    <td className="py-6 px-6 text-white/50 line-through">₹8,500/mo</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">{data.pricing.dedicatedDesk}</td>
+                    <td className="py-6 px-6 text-green-400 font-semibold">Save ₹24,000/yr</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors bg-accent/5">
                     <td className="py-6 px-6 font-semibold text-white">Private Cabins <span className="block text-xs text-accent mt-1">8 cabins left</span></td>
-                    <td className="py-6 px-6 text-white/50">₹35,000/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">From ₹25,000/mo</td>
+                    <td className="py-6 px-6 text-white/50 line-through">₹28,000/mo</td>
+                    <td className="py-6 px-6 text-accent font-bold text-xl">From {data.pricing.privateCabin}</td>
                     <td className="py-6 px-6 text-green-400 font-semibold">Massive CapEx Savings</td>
                   </tr>
                 </tbody>
@@ -485,7 +485,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-navy-light/95 backdrop-blur-md border-t border-white/10 shadow-[0_-10px_30px_rgba(0,0,0,0.5)] z-40 md:hidden flex items-center justify-between gap-4 animate-in slide-in-from-bottom-full duration-500 delay-1000 fill-mode-both">
            <div>
              <div className="text-xs text-accent font-bold mb-0.5">Inaugural Offer</div>
-             <div className="text-white font-bold text-sm">Cabins from ₹25k</div>
+             <div className="text-white font-bold text-sm">Cabins from {data.pricing.privateCabin}</div>
            </div>
            <a href="#form-id" className="bg-accent text-navy font-bold px-6 py-3 rounded-xl text-sm whitespace-nowrap shadow-lg shadow-accent/20">
               Reserve a Seat

@@ -7,6 +7,7 @@ import TourBookingWidget from '@/components/TourBookingWidget';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import { CheckCircle } from 'lucide-react';
+import { branchData } from '@/data/branches';
 
 const branches = [
   { id: 'all', name: 'Compare All', isNew: false },
@@ -16,37 +17,12 @@ const branches = [
   { id: 'coimbatore', name: 'Coimbatore', isNew: true },
 ];
 
-const pricingData = {
-  trivandrum: {
-    hotDesk: '₹4,500/mo',
-    dedicatedDesk: '₹6,000/mo',
-    privateCabin: '₹18,000/mo',
-    virtualOffice: '₹10,000/yr',
-  },
-  ernakulam: {
-    hotDesk: '₹5,000/mo',
-    dedicatedDesk: '₹6,500/mo',
-    privateCabin: '₹20,000/mo',
-    virtualOffice: '₹10,000/yr',
-  },
-  calicut: {
-    hotDesk: '₹4,000/mo',
-    dedicatedDesk: '₹5,500/mo',
-    privateCabin: '₹16,000/mo',
-    virtualOffice: '₹10,000/yr',
-  },
-  coimbatore: {
-    hotDesk: '₹5,000/mo',
-    dedicatedDesk: '₹6,500/mo',
-    privateCabin: '₹22,000/mo',
-    virtualOffice: '₹10,000/yr',
-  }
-};
+// Remove duplicated pricingData and use branchData directly
 
 export default function PricingPage() {
   const [activeBranch, setActiveBranch] = useState('trivandrum');
   
-  const currentPricing = activeBranch !== 'all' ? pricingData[activeBranch as keyof typeof pricingData] : null;
+  const currentPricing = activeBranch !== 'all' ? branchData[activeBranch].pricing : null;
 
   return (
     <div className="pt-20 pb-32">
