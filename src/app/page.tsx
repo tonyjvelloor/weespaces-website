@@ -128,7 +128,7 @@ export default function Home() {
                         4 Prime Locations
                     </div>
                     <Link href="/locations/coimbatore" className="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-accent-light text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(242,156,31,0.5)] hover:scale-105 transition-transform animate-pulse-soft">
-                        🚀 Coimbatore Branch Launching Next Month
+                        🎉 Inauguration Offer for Coimbatore Branch Now Live
                     </Link>
                   </div>
                   
