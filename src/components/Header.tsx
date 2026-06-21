@@ -26,7 +26,7 @@ export default function Header() {
       <header className="fixed top-0 left-0 w-full z-50 glass border-b border-white/10 py-4">
         <div className="container mx-auto px-6 flex items-center justify-center">
           <div className="flex items-center gap-3">
-            <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover shadow-[0_0_15px_rgba(242,156,31,0.3)]" unoptimized />
+            <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover shadow-[0_0_15px_rgba(242,156,31,0.3)]" />
             <span className="text-2xl font-bold tracking-wide">WeeSpaces</span>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function Header() {
       )}
       <div className={`container mx-auto px-6 flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover shadow-[0_0_15px_rgba(242,156,31,0.3)]" unoptimized />
+          <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover shadow-[0_0_15px_rgba(242,156,31,0.3)]" />
           <span className="text-2xl font-bold tracking-wide">WeeSpaces</span>
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">

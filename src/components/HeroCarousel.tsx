@@ -33,7 +33,6 @@ export default function HeroCarousel() {
             alt="Premium Coworking Workspace" 
             fill 
             className="object-cover object-center" 
-            unoptimized 
             priority
           />
         </motion.div>

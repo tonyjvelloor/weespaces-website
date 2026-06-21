@@ -57,7 +57,6 @@ export default function InteractiveAmenities() {
                     alt="Premium Coworking Hub Amenities" 
                     fill 
                     className="object-cover" 
-                    unoptimized 
                   />
                 </motion.div>
               </AnimatePresence>
@@ -78,7 +77,6 @@ export default function InteractiveAmenities() {
                     alt="Premium Coworking Hub Amenities" 
                     fill 
                     className="object-cover" 
-                    unoptimized 
                   />
                 </motion.div>
               </AnimatePresence>

@@ -112,7 +112,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
       {branchId === 'coimbatore' && (
         <section className="relative min-h-screen flex items-center pt-24 pb-20 justify-center">
             <div className="absolute inset-0 z-0">
-                <Image src={data.heroImage} alt={data.name} fill className="object-cover object-center opacity-40" unoptimized />
+                <Image src={data.heroImage} alt={data.name} fill className="object-cover object-center opacity-40" />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/40 mix-blend-multiply"></div>
             </div>
             <div className="container mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
@@ -127,7 +127,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
         <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 text-center overflow-hidden">
             {/* Moody, dark background image */}
             <div className="absolute inset-0 z-0">
-                <Image src={data.heroImage} alt={data.name} fill className="object-cover object-center scale-105 opacity-30 blur-sm" unoptimized />
+                <Image src={data.heroImage} alt={data.name} fill className="object-cover object-center scale-105 opacity-30 blur-sm" />
                 <div className="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy/90 to-navy"></div>
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-accent/20 rounded-full blur-[150px] pointer-events-none"></div>
             </div>
@@ -161,7 +161,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
         <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 bg-navy-dark overflow-hidden">
             <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
                 <div className="relative h-[750px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl hidden md:flex flex-col justify-end p-8">
-                    <Image src={data.heroImage} alt={data.name} fill className="object-cover" unoptimized />
+                    <Image src={data.heroImage} alt={data.name} fill className="object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-90"></div>
                     <div className="relative z-10">
                         <HeroContent />
@@ -185,7 +185,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
                   <div className="mt-8"><LeadForm branch={data.name} /></div>
                 </div>
                 <div className="hidden md:block relative h-[700px] w-full rounded-xl overflow-hidden shadow-[0_0_50px_rgba(242,156,31,0.1)]">
-                   <Image src={data.heroImage} alt={data.name} fill className="object-cover" unoptimized />
+                   <Image src={data.heroImage} alt={data.name} fill className="object-cover" />
                 </div>
             </div>
         </section>
@@ -257,14 +257,14 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
           {branchId === 'calicut' ? (
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <ScrollReveal direction="up" delay={0.1} className="relative rounded-xl overflow-hidden shadow-lg h-96">
-                   <Image src={data.galleryImages[0]} alt="Gallery 1" fill className="object-cover" unoptimized />
+                   <Image src={data.galleryImages[0]} alt="Gallery 1" fill className="object-cover" />
                 </ScrollReveal>
                 <div className="flex flex-col gap-6 h-96">
                    <ScrollReveal direction="left" delay={0.2} className="relative rounded-xl overflow-hidden shadow-lg flex-1">
-                      <Image src={data.galleryImages[1]} alt="Gallery 2" fill className="object-cover" unoptimized />
+                      <Image src={data.galleryImages[1]} alt="Gallery 2" fill className="object-cover" />
                    </ScrollReveal>
                    <ScrollReveal direction="left" delay={0.3} className="relative rounded-xl overflow-hidden shadow-lg flex-1">
-                      <Image src={data.galleryImages[2]} alt="Gallery 3" fill className="object-cover" unoptimized />
+                      <Image src={data.galleryImages[2]} alt="Gallery 3" fill className="object-cover" />
                    </ScrollReveal>
                 </div>
              </div>
@@ -272,12 +272,12 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {data.galleryImages.length > 0 && (
                    <ScrollReveal direction="up" delay={0.1} className="relative rounded-xl overflow-hidden shadow-lg h-96 md:col-span-2">
-                      <Image src={data.galleryImages[0]} alt="Gallery 1" fill className="object-cover" unoptimized />
+                      <Image src={data.galleryImages[0]} alt="Gallery 1" fill className="object-cover" />
                    </ScrollReveal>
                 )}
                 {data.galleryImages.slice(1).map((src, idx) => (
                    <ScrollReveal key={idx + 1} direction="up" delay={0.2 + (idx * 0.1)} className="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80">
-                      <Image src={src} alt={`Gallery ${idx + 2}`} fill className="object-cover transform hover:scale-110 transition-transform duration-700" unoptimized />
+                      <Image src={src} alt={`Gallery ${idx + 2}`} fill className="object-cover transform hover:scale-110 transition-transform duration-700" />
                    </ScrollReveal>
                 ))}
              </div>
@@ -285,7 +285,7 @@ export default async function BranchPage({ params }: { params: Promise<{ branch:
             <div className={`grid grid-cols-1 sm:grid-cols-2 ${data.galleryImages.length === 4 ? 'lg:grid-cols-4' : 'md:grid-cols-3'} gap-6`}>
                 {data.galleryImages.map((src, idx) => (
                   <ScrollReveal key={idx} delay={idx * 0.15} className="relative rounded-xl overflow-hidden group shadow-md border border-white/10 h-64 md:h-80">
-                      <Image src={src} alt={`Gallery ${idx}`} fill className="object-cover transform group-hover:scale-110 transition-transform duration-700" unoptimized />
+                      <Image src={src} alt={`Gallery ${idx}`} fill className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </ScrollReveal>
                 ))}

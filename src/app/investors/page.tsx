@@ -15,7 +15,7 @@ export default function InvestorsPage() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="absolute inset-0 z-0">
-              <Image src="/images/amenity2.jpg" alt="WeeSpaces Premium Workspace" fill className="object-cover object-center opacity-20" unoptimized />
+              <Image src="/images/amenity2.jpg" alt="WeeSpaces Premium Workspace" fill className="object-cover object-center opacity-20" />
               <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy/90 to-navy"></div>
               <div className="absolute top-1/4 left-1/4 w-[40vw] h-[40vw] bg-accent/10 rounded-full blur-[100px] pointer-events-none"></div>
           </div>

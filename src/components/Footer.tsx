@@ -49,7 +49,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" unoptimized />
+              <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
               <span className="text-xl font-bold">WeeSpaces</span>
             </div>
             <h3 className="text-accent text-xs font-bold tracking-widest uppercase mb-4">Work. Connect. Grow.</h3>

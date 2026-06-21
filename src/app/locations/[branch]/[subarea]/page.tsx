@@ -159,7 +159,7 @@ export default async function SubAreaPage({ params }: { params: Promise<{ branch
           </div>
           <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
               <div className="relative h-[600px] w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl hidden md:block">
-                  <Image src={data.heroImage} alt={`Coworking near ${subareaFormatted}`} fill className="object-cover" unoptimized />
+                  <Image src={data.heroImage} alt={`Coworking near ${subareaFormatted}`} fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-90"></div>
                   <div className="absolute bottom-8 left-8 right-8">
                       <HeroContent />

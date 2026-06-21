@@ -84,7 +84,6 @@ export default function PhotoGallery() {
                 alt={image.title} 
                 fill 
                 className={`object-cover transition-transform duration-700 ease-in-out ${hoveredIndex === index ? 'scale-110' : 'scale-100'}`} 
-                unoptimized 
               />
               <div className={`absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent flex items-end p-8 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-70'}`}>
                 <div className="transform transition-transform duration-300 translate-y-0">
@@ -119,7 +118,6 @@ export default function PhotoGallery() {
               alt={filteredImages[lightboxIndex].title}
               fill
               className="object-contain"
-              unoptimized
             />
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-navy/80 to-transparent text-center">
               <h3 className="text-white font-bold text-2xl">{filteredImages[lightboxIndex].title}</h3>
