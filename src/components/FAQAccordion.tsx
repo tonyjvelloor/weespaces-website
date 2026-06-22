@@ -33,7 +33,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
   return (
     <div className="space-y-4">
       {/* Inject FAQ JSON-LD */}
-      <Script id={`faq-schema-${Math.random().toString(36).substr(2, 9)}`} type="application/ld+json" strategy="afterInteractive">
+      <Script id={`faq-schema-${faqs.length}-${faqs[0]?.question?.slice(0, 10).replace(/\s+/g, '-').toLowerCase() || 'default'}`} type="application/ld+json" strategy="afterInteractive">
         {JSON.stringify(schema)}
       </Script>
 

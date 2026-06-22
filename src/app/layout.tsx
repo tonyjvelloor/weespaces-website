@@ -18,20 +18,26 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL('https://weespaces.in'),
   title: "WeeSpaces | Premium Coworking & Managed Offices",
-  description: "Top-rated premium coworking spaces, private cabins, and managed offices in Trivandrum, Ernakulam, Calicut, and Coimbatore. Book your workspace today.",
+  description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
   keywords: ["Coworking space Kerala", "Office space Coimbatore", "Managed offices Trivandrum", "Premium coworking Ernakulam", "Private cabins Calicut"],
+  alternates: {
+    canonical: 'https://weespaces.in',
+    languages: {
+      'en-IN': 'https://weespaces.in',
+    },
+  },
   verification: {
     google: "DTBR2769JCtmLJI1De2C1NQYp590lwOBA1951QTbSKQ",
   },
   openGraph: {
     title: 'WeeSpaces | Premium Coworking & Managed Offices',
-    description: 'Top-rated premium coworking spaces, private cabins, and managed offices in Trivandrum, Ernakulam, Calicut, and Coimbatore.',
+    description: 'Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore.',
     siteName: 'WeeSpaces',
     locale: 'en_IN',
     type: 'website',
     images: [
       {
-        url: '/images/amenity1.jpg', // Placeholder for OG image
+        url: '/images/amenity1.jpg',
         width: 1200,
         height: 630,
         alt: 'WeeSpaces Premium Coworking',
@@ -41,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'WeeSpaces | Premium Coworking & Managed Offices',
-    description: 'Top-rated premium coworking spaces, private cabins, and managed offices in South India.',
+    description: 'Premium coworking spaces & managed offices in South India.',
     images: ['/images/amenity1.jpg'],
   },
 };
@@ -60,8 +66,8 @@ export default function RootLayout({
           <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         </noscript>
         {/* Google Analytics */}
-        <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-89N19DEH2N" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-89N19DEH2N" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -72,7 +78,7 @@ export default function RootLayout({
         </Script>
 
         {/* Meta Pixel Code */}
-        <Script id="meta-pixel" strategy="afterInteractive">
+        <Script id="meta-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -106,8 +112,11 @@ export default function RootLayout({
                   "availableLanguage": ["English", "Malayalam", "Hindi", "Tamil"]
                 },
                 "sameAs": [
-                  "https://www.instagram.com/weespaces.in/",
-                  "https://www.linkedin.com/company/weespaces/"
+                  "https://www.instagram.com/weespaces.coworking/",
+                  "https://www.linkedin.com/company/wee-spaces-coworking/",
+                  "https://www.facebook.com/weespaces/",
+                  "https://www.youtube.com/@weespaces",
+                  "https://x.com/weespaces"
                 ]
               },
               {
@@ -176,7 +185,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 relative">
         <noscript>
-          <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1702816221138883&ev=PageView&noscript=1" alt="" />
+          <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1702816221138883&ev=PageView&noscript=1" alt="" aria-hidden="true" />
         </noscript>
         <Header />
         <main className="flex-grow">{children}</main>
