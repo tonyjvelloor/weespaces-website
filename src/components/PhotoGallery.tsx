@@ -82,7 +82,7 @@ export default function PhotoGallery() {
               <Image 
                 src={image.src} 
                 alt={image.title} 
-                fill 
+                fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                 className={`object-cover transition-transform duration-700 ease-in-out ${hoveredIndex === index ? 'scale-110' : 'scale-100'}`} 
               />
               <div className={`absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent flex items-end p-8 transition-opacity duration-300 ${hoveredIndex === index ? 'opacity-100' : 'opacity-70'}`}>
@@ -116,7 +116,7 @@ export default function PhotoGallery() {
             <Image 
               src={filteredImages[lightboxIndex].src}
               alt={filteredImages[lightboxIndex].title}
-              fill
+              fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-contain"
             />
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-navy/80 to-transparent text-center">

@@ -31,7 +31,7 @@ export default function HeroCarousel() {
           <Image 
             src={heroImages[currentIndex]} 
             alt="Premium Coworking Workspace" 
-            fill 
+            fill sizes="100vw" 
             className="object-cover object-center" 
             priority
           />

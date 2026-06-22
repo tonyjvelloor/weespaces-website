@@ -72,10 +72,10 @@ export default function Footer() {
               4 Active Branches <span className="flex h-2 w-2 relative"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span><span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span></span>
             </h4>
             <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/locations/trivandrum" className="hover:text-accent transition-colors">Trivandrum (Head Office)</Link></li>
-              <li><Link href="/locations/ernakulam" className="hover:text-accent transition-colors">Ernakulam</Link></li>
-              <li><Link href="/locations/calicut" className="hover:text-accent transition-colors">Calicut (The Work Lounge)</Link></li>
-              <li><Link href="/locations/coimbatore" className="hover:text-accent transition-colors flex items-center gap-2">Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full border border-accent/30 font-bold tracking-wide">NEW</span></Link></li>
+              <li><Link href="/coworking-space-in-trivandrum" className="hover:text-accent transition-colors">Trivandrum (Head Office)</Link></li>
+              <li><Link href="/coworking-space-in-kochi" className="hover:text-accent transition-colors">Kochi (Ernakulam)</Link></li>
+              <li><Link href="/coworking-space-in-calicut" className="hover:text-accent transition-colors">Calicut (The Work Lounge)</Link></li>
+              <li><Link href="/coworking-space-in-coimbatore" className="hover:text-accent transition-colors flex items-center gap-2">Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full border border-accent/30 font-bold tracking-wide">NEW</span></Link></li>
             </ul>
           </div>
           <div>

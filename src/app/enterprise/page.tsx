@@ -43,7 +43,7 @@ export default function EnterprisePage() {
           <Image 
             src="/images/branches/trivandrum/image4.jpg" 
             alt="Enterprise Workspace" 
-            fill 
+            fill sizes="100vw" 
             className="object-cover opacity-30" 
             priority 
           />

@@ -29,7 +29,7 @@ export default function VirtualOfficePage() {
               Get a premium business address in Kerala's top commercial hubs without the overhead of physical office space. Ideal for remote teams, freelancers, and growing startups.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="bg-accent text-navy font-bold py-3 px-8 rounded-xl hover:bg-accent-hover transition-all w-full sm:w-auto shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+              <Link href="/book-tour" className="bg-accent text-navy font-bold py-3 px-8 rounded-xl hover:bg-accent-hover transition-all w-full sm:w-auto shadow-[0_0_20px_rgba(242,156,31,0.3)]">
                 Get Your Virtual Office
               </Link>
               <Link href="#features" className="border border-white/20 text-white font-bold py-3 px-8 rounded-xl hover:bg-white/5 transition-all w-full sm:w-auto">
@@ -94,7 +94,7 @@ export default function VirtualOfficePage() {
             <p className="text-white/70 mb-8 text-lg">
               Set up your virtual office today and give your business the professional foundation it deserves.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-navy font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+            <Link href="/book-tour" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-navy font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(242,156,31,0.3)]">
               Get a Custom Quote <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </ScrollReveal>

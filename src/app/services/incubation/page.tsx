@@ -29,7 +29,7 @@ export default function IncubationPage() {
               More than just workspace. Our incubation services provide the operational foundation, mentorship, and network required to scale your startup effectively.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact" className="bg-accent text-navy font-bold py-3 px-8 rounded-xl hover:bg-accent-hover transition-all w-full sm:w-auto shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+              <Link href="/book-tour" className="bg-accent text-navy font-bold py-3 px-8 rounded-xl hover:bg-accent-hover transition-all w-full sm:w-auto shadow-[0_0_20px_rgba(242,156,31,0.3)]">
                 Apply for Incubation
               </Link>
             </div>
@@ -90,7 +90,7 @@ export default function IncubationPage() {
             <p className="text-white/70 mb-8 text-lg">
               Let's discuss how our incubation services can support your company's unique journey.
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-navy font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+            <Link href="/book-tour" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-navy font-bold py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(242,156,31,0.3)]">
               Schedule a Consultation <span className="material-symbols-outlined">arrow_forward</span>
             </Link>
           </ScrollReveal>

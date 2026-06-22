@@ -1,4 +1,4 @@
-import { blogPosts } from '@/data/blogPosts';
+import { getAllPosts } from '@/lib/mdx';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
@@ -9,6 +9,8 @@ export const metadata = {
 };
 
 export default function BlogIndex() {
+  const posts = getAllPosts();
+
   return (
     <div className="pt-24 pb-32 min-h-screen">
       <div className="container mx-auto px-6 max-w-7xl">
@@ -20,7 +22,7 @@ export default function BlogIndex() {
         </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <ScrollReveal key={post.slug} delay={index * 0.1}>
               <Link href={`/blog/${post.slug}`} className="block h-full group">
                 <MouseGlowCard className="glass p-8 rounded-3xl h-full flex flex-col border border-white/10 hover:border-accent transition-all">

@@ -11,7 +11,7 @@ export interface BranchData {
   pricing: {
     hotDesk: string;
     dedicatedDesk: string;
-    privateCabin: string;
+    privateOffice: string;
     virtualOffice: string;
   };
 }
@@ -32,7 +32,7 @@ export const branchData: Record<string, BranchData> = {
       "/images/branches/trivandrum/image3.jpg",
       "/images/branches/trivandrum/image4.jpg"
     ],
-    pricing: { hotDesk: '₹4,500/mo', dedicatedDesk: '₹6,000/mo', privateCabin: '₹18,000/mo', virtualOffice: '₹10,000/yr' }
+    pricing: { hotDesk: '₹4,500/mo', dedicatedDesk: '₹6,000/mo', privateOffice: '₹18,000/mo', virtualOffice: '₹10,000/yr' }
   },
   ernakulam: {
     name: 'Ernakulam',
@@ -49,7 +49,7 @@ export const branchData: Record<string, BranchData> = {
       "/images/branches/kochi/workspace3.jpg",
       "/images/branches/kochi/workspace4.jpg"
     ],
-    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateCabin: '₹20,000/mo', virtualOffice: '₹10,000/yr' }
+    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateOffice: '₹20,000/mo', virtualOffice: '₹10,000/yr' }
   },
   calicut: {
     name: 'Calicut',
@@ -65,7 +65,7 @@ export const branchData: Record<string, BranchData> = {
       "/images/branches/calicut/workspace2.jpg", 
       "/images/branches/calicut/reception.jpg"
     ],
-    pricing: { hotDesk: '₹4,000/mo', dedicatedDesk: '₹5,500/mo', privateCabin: '₹16,000/mo', virtualOffice: '₹10,000/yr' }
+    pricing: { hotDesk: '₹4,000/mo', dedicatedDesk: '₹5,500/mo', privateOffice: '₹16,000/mo', virtualOffice: '₹10,000/yr' }
   },
   coimbatore: {
     name: 'Coimbatore',
@@ -82,6 +82,6 @@ export const branchData: Record<string, BranchData> = {
       "/images/branches/coimbatore/amenity3.jpg",
       "/images/branches/coimbatore/amenity4.jpg"
     ],
-    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateCabin: '₹22,000/mo', virtualOffice: '₹10,000/yr' }
+    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateOffice: '₹22,000/mo', virtualOffice: '₹10,000/yr' }
   }
 };

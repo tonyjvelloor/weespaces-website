@@ -55,7 +55,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${spaceGrotesk.variable} scroll-smooth`}>
       <head>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" />
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" media="print" onLoad="this.media='all'" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <noscript>
           <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         </noscript>
@@ -85,6 +85,93 @@ export default function RootLayout({
             fbq('init', '1702816221138883');
             fbq('track', 'PageView');
           `}
+        </Script>
+
+        {/* JSON-LD Schemas */}
+        <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": "https://weespaces.in/#organization",
+                "name": "WeeSpaces",
+                "url": "https://weespaces.in",
+                "logo": "https://weespaces.in/images/weespaces-logo.png",
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "telephone": "+91-9207189111",
+                  "contactType": "sales",
+                  "areaServed": "IN",
+                  "availableLanguage": ["English", "Malayalam", "Hindi", "Tamil"]
+                },
+                "sameAs": [
+                  "https://www.instagram.com/weespaces.in/",
+                  "https://www.linkedin.com/company/weespaces/"
+                ]
+              },
+              {
+                "@type": "CoworkingSpace",
+                "name": "WeeSpaces Trivandrum",
+                "image": "https://weespaces.in/images/branches/trivandrum/image4.jpg",
+                "telephone": "+91-9207189111",
+                "url": "https://weespaces.in/coworking-space-in-trivandrum",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "1st Floor, Relcon Plaza, Pattom",
+                  "addressLocality": "Thiruvananthapuram",
+                  "addressRegion": "Kerala",
+                  "postalCode": "695004",
+                  "addressCountry": "IN"
+                }
+              },
+              {
+                "@type": "CoworkingSpace",
+                "name": "WeeSpaces Ernakulam",
+                "image": "https://weespaces.in/images/branches/kochi/workspace2.jpg",
+                "telephone": "+91-9207189111",
+                "url": "https://weespaces.in/coworking-space-in-kochi",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram",
+                  "addressLocality": "Kochi",
+                  "addressRegion": "Kerala",
+                  "postalCode": "682016",
+                  "addressCountry": "IN"
+                }
+              },
+              {
+                "@type": "CoworkingSpace",
+                "name": "WeeSpaces Calicut",
+                "image": "https://weespaces.in/images/branches/calicut/reception.jpg",
+                "telephone": "+91-9207189111",
+                "url": "https://weespaces.in/coworking-space-in-calicut",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Door No. 2951/A, Ground floor, Neeloth Plaza, Wayanad Rd, East Nadakkave",
+                  "addressLocality": "Kozhikode",
+                  "addressRegion": "Kerala",
+                  "postalCode": "673001",
+                  "addressCountry": "IN"
+                }
+              },
+              {
+                "@type": "CoworkingSpace",
+                "name": "WeeSpaces Coimbatore",
+                "image": "https://weespaces.in/images/branches/coimbatore/exterior-tall.jpg",
+                "telephone": "+91-9207189111",
+                "url": "https://weespaces.in/coworking-space-in-coimbatore",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Vidyanagar 3rd street, Civil Aerodrome Post, Kalapatti",
+                  "addressLocality": "Coimbatore",
+                  "addressRegion": "Tamil Nadu",
+                  "postalCode": "641014",
+                  "addressCountry": "IN"
+                }
+              }
+            ]
+          })}
         </Script>
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 relative">

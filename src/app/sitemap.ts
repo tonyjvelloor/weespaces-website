@@ -1,14 +1,14 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/data/blogPosts';
+import { getAllPosts } from '@/lib/mdx';
 import { branchData } from '@/data/branches';
 
 export const dynamic = 'force-static';
 
-const subareasMap: Record<string, string[]> = {
-  trivandrum: ['technopark', 'kazhakootam', 'pattom'],
-  ernakulam: ['kadavanthra', 'mg-road', 'kaloor', 'kakkanad'],
-  calicut: ['cyberpark', 'nadakkavu', 'thondayad'],
-  coimbatore: ['rs-puram', 'peelamedu', 'kalapatti'],
+const cityUrlMap: Record<string, string> = {
+  trivandrum: '/coworking-space-in-trivandrum',
+  ernakulam: '/coworking-space-in-kochi',
+  calicut: '/coworking-space-in-calicut',
+  coimbatore: '/coworking-space-in-coimbatore',
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,19 +34,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }));
 
-  const branchRoutes = Object.keys(branchData).map((branchId) => ({
-    url: `${baseUrl}/locations/${branchId}`,
+  // New SEO city pages (high priority)
+  const cityRoutes = Object.keys(branchData).map((branchId) => ({
+    url: `${baseUrl}${cityUrlMap[branchId]}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.9,
+    priority: 0.95,
   }));
 
-  const blogRoutes = blogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.7,
-  }));
+  // Blog posts from filesystem
+  let blogRoutes: MetadataRoute.Sitemap = [];
+  try {
+    const posts = getAllPosts();
+    blogRoutes = posts.map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    }));
+  } catch {
+    // Gracefully handle if blog content dir doesn't exist yet
+  }
 
   const landingRoutes = Object.keys(branchData).map((branchId) => ({
     url: `${baseUrl}/landing/${branchId}`,
@@ -79,25 +87,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const subareas: MetadataRoute.Sitemap = [];
-  for (const [branch, areas] of Object.entries(subareasMap)) {
-    for (const area of areas) {
-      subareas.push({
-        url: `${baseUrl}/locations/${branch}/${area}`,
-        lastModified: new Date(),
-        changeFrequency: 'monthly' as const,
-        priority: 0.8,
-      });
-    }
-  }
-
   return [
     ...staticRoutes,
-    ...branchRoutes,
+    ...cityRoutes,
     ...blogRoutes,
     ...landingRoutes,
     ...serviceRoutes,
     ...productRoutes,
-    ...subareas,
   ];
 }

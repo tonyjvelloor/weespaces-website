@@ -8,6 +8,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import { CheckCircle } from 'lucide-react';
 import { branchData } from '@/data/branches';
+import LeadForm from '@/components/LeadForm';
 
 const branches = [
   { id: 'all', name: 'Compare All', isNew: false },
@@ -16,8 +17,6 @@ const branches = [
   { id: 'calicut', name: 'Calicut', isNew: false },
   { id: 'coimbatore', name: 'Coimbatore', isNew: true },
 ];
-
-// Remove duplicated pricingData and use branchData directly
 
 export default function PricingPage() {
   const [activeBranch, setActiveBranch] = useState('trivandrum');
@@ -59,13 +58,13 @@ export default function PricingPage() {
           <ScrollReveal direction="up" delay={0.2} className="mb-16">
             <div className="grid grid-cols-3 gap-4 md:gap-6 h-48 md:h-80 max-w-5xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden glass border border-white/10 hidden md:block">
-                <Image src="/images/branches/kochi/workspace1.jpg" alt="Workspace" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/branches/kochi/workspace1.jpg" alt="Workspace" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="relative rounded-2xl overflow-hidden glass border border-accent/20 col-span-3 md:col-span-1 shadow-[0_0_30px_rgba(242,156,31,0.1)]">
-                <Image src="/images/branches/kochi/workspace2.jpg" alt="Private Cabin" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/branches/kochi/workspace2.jpg" alt="Private Office" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="relative rounded-2xl overflow-hidden glass border border-white/10 hidden md:block">
-                <Image src="/images/branches/trivandrum/image3.jpg" alt="Conference Room" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/branches/trivandrum/image3.jpg" alt="Conference Room" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </ScrollReveal>
@@ -88,31 +87,31 @@ export default function PricingPage() {
                 <tbody className="text-white/80">
                   <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                     <td className="py-6 px-4 font-bold">Hot Desk</td>
-                    <td className="py-6 px-4">{pricingData.trivandrum.hotDesk}</td>
-                    <td className="py-6 px-4">{pricingData.ernakulam.hotDesk}</td>
-                    <td className="py-6 px-4">{pricingData.calicut.hotDesk}</td>
-                    <td className="py-6 px-4">{pricingData.coimbatore.hotDesk}</td>
+                    <td className="py-6 px-4">From {branchData.trivandrum.pricing.hotDesk}</td>
+                    <td className="py-6 px-4">From {branchData.ernakulam.pricing.hotDesk}</td>
+                    <td className="py-6 px-4">From {branchData.calicut.pricing.hotDesk}</td>
+                    <td className="py-6 px-4">From {branchData.coimbatore.pricing.hotDesk}</td>
                   </tr>
                   <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                     <td className="py-6 px-4 font-bold">Dedicated Desk</td>
-                    <td className="py-6 px-4">{pricingData.trivandrum.dedicatedDesk}</td>
-                    <td className="py-6 px-4">{pricingData.ernakulam.dedicatedDesk}</td>
-                    <td className="py-6 px-4">{pricingData.calicut.dedicatedDesk}</td>
-                    <td className="py-6 px-4">{pricingData.coimbatore.dedicatedDesk}</td>
+                    <td className="py-6 px-4">From {branchData.trivandrum.pricing.dedicatedDesk}</td>
+                    <td className="py-6 px-4">From {branchData.ernakulam.pricing.dedicatedDesk}</td>
+                    <td className="py-6 px-4">From {branchData.calicut.pricing.dedicatedDesk}</td>
+                    <td className="py-6 px-4">From {branchData.coimbatore.pricing.dedicatedDesk}</td>
                   </tr>
                   <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                    <td className="py-6 px-4 font-bold">Private Cabin</td>
-                    <td className="py-6 px-4">{pricingData.trivandrum.privateCabin}</td>
-                    <td className="py-6 px-4">{pricingData.ernakulam.privateCabin}</td>
-                    <td className="py-6 px-4">{pricingData.calicut.privateCabin}</td>
-                    <td className="py-6 px-4">{pricingData.coimbatore.privateCabin}</td>
+                    <td className="py-6 px-4 font-bold">Private Office</td>
+                    <td className="py-6 px-4 text-accent/80 font-medium">Custom Quote</td>
+                    <td className="py-6 px-4 text-accent/80 font-medium">Custom Quote</td>
+                    <td className="py-6 px-4 text-accent/80 font-medium">Custom Quote</td>
+                    <td className="py-6 px-4 text-accent/80 font-medium">Custom Quote</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-6 px-4 font-bold">Virtual Office</td>
-                    <td className="py-6 px-4">{pricingData.trivandrum.virtualOffice}</td>
-                    <td className="py-6 px-4">{pricingData.ernakulam.virtualOffice}</td>
-                    <td className="py-6 px-4">{pricingData.calicut.virtualOffice}</td>
-                    <td className="py-6 px-4">{pricingData.coimbatore.virtualOffice}</td>
+                    <td className="py-6 px-4">{branchData.trivandrum.pricing.virtualOffice}</td>
+                    <td className="py-6 px-4">{branchData.ernakulam.pricing.virtualOffice}</td>
+                    <td className="py-6 px-4">{branchData.calicut.pricing.virtualOffice}</td>
+                    <td className="py-6 px-4">{branchData.coimbatore.pricing.virtualOffice}</td>
                   </tr>
                 </tbody>
               </table>
@@ -126,13 +125,17 @@ export default function PricingPage() {
                 <MouseGlowCard className="glass p-8 rounded-xl border-t-4 border-t-white/10 hover:border-t-accent transition-all flex flex-col h-full">
                   <h3 className="text-xl font-bold mb-2">Hot Desk</h3>
                   <p className="text-white/60 text-sm mb-6 h-10">Flexible seating in our premium open coworking area.</p>
-                  <div className="text-3xl font-bold mb-6 text-accent">{currentPricing.hotDesk}</div>
+                  <div className="flex items-baseline gap-2 mb-6 text-accent">
+                      <span className="text-xs text-white/50 uppercase font-bold tracking-wider">Starting from</span>
+                      <span className="text-3xl font-bold">{currentPricing.hotDesk.split('/')[0]}</span>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">/ Mo*</span>
+                  </div>
                   <ul className="space-y-4 mb-8 text-sm text-white/80 flex-grow">
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> High-speed Wi-Fi</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Unlimited Tea/Coffee</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Lounge Access</li>
                   </ul>
-                  <Link href={`/contact?plan=Hot Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</Link>
+                  <Link href={`/book-tour?plan=Hot Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>
                 </MouseGlowCard>
               </ScrollReveal>
 
@@ -142,28 +145,34 @@ export default function PricingPage() {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-navy text-xs font-bold px-4 py-1 rounded-full shadow-lg z-20">MOST POPULAR</div>
                   <h3 className="text-xl font-bold mb-2">Dedicated Desk</h3>
                   <p className="text-white/60 text-sm mb-6 h-10">Your own fixed desk setup with lockable storage.</p>
-                  <div className="text-3xl font-bold mb-6 text-accent">{currentPricing.dedicatedDesk}</div>
+                  <div className="flex items-baseline gap-2 mb-6 text-accent">
+                      <span className="text-xs text-white/50 uppercase font-bold tracking-wider">Starting from</span>
+                      <span className="text-3xl font-bold">{currentPricing.dedicatedDesk.split('/')[0]}</span>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">/ Mo*</span>
+                  </div>
                   <ul className="space-y-4 mb-8 text-sm text-white/80 flex-grow">
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Everything in Hot Desk</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Fixed Personal Desk</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> 2hrs Conference Room</li>
                   </ul>
-                  <Link href={`/contact?plan=Dedicated Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl bg-accent hover:bg-accent-hover text-navy transition-colors font-bold relative z-10">Select Plan</Link>
+                  <Link href={`/book-tour?plan=Dedicated Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl bg-accent hover:bg-accent-hover text-navy transition-colors font-bold relative z-10 text-sm">Check Availability & Offers</Link>
                 </MouseGlowCard>
               </ScrollReveal>
 
-              {/* Card 3 */}
+              {/* Card 3 (Private Office - Custom Pricing) */}
               <ScrollReveal delay={0.3} className="h-full">
-                <MouseGlowCard className="glass p-8 rounded-xl border-t-4 border-t-white/10 hover:border-t-accent transition-all flex flex-col h-full">
-                  <h3 className="text-xl font-bold mb-2">Private Cabin</h3>
-                  <p className="text-white/60 text-sm mb-6 h-10">Secure, enclosed office space for your team.</p>
-                  <div className="text-3xl font-bold mb-6 text-accent">{currentPricing.privateCabin}</div>
+                <MouseGlowCard className="glass p-8 rounded-xl border-t-4 border-t-white/10 hover:border-t-accent transition-all flex flex-col h-full bg-navy-light/20">
+                  <h3 className="text-xl font-bold mb-2">Private Office</h3>
+                  <p className="text-white/60 text-sm mb-6 h-10">Custom workspace solutions for teams of 2–100+ members.</p>
+                  <div className="mb-6">
+                      <span className="text-lg font-bold text-white">Built Around Your Team</span>
+                  </div>
                   <ul className="space-y-4 mb-8 text-sm text-white/80 flex-grow">
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Fully Furnished</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Biometric Access</li>
-                    <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> 5hrs Conference Room</li>
+                    <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Custom Branding</li>
                   </ul>
-                  <Link href={`/contact?plan=Private Cabin&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</Link>
+                  <Link href={`/book-tour?plan=Private Office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-accent text-accent transition-colors font-bold relative z-10 hover:bg-accent hover:text-navy text-sm">Build My Office Plan</Link>
                 </MouseGlowCard>
               </ScrollReveal>
 
@@ -172,28 +181,82 @@ export default function PricingPage() {
                 <MouseGlowCard className="glass p-8 rounded-xl border-t-4 border-t-white/10 hover:border-t-accent transition-all flex flex-col h-full">
                   <h3 className="text-xl font-bold mb-2">Virtual Office</h3>
                   <p className="text-white/60 text-sm mb-6 h-10">Premium address for GST and business registration.</p>
-                  <div className="text-3xl font-bold mb-6 text-accent">{currentPricing.virtualOffice}</div>
+                  <div className="flex items-baseline gap-2 mb-6 text-accent">
+                      <span className="text-xs text-white/50 uppercase font-bold tracking-wider">Starting from</span>
+                      <span className="text-3xl font-bold">{currentPricing.virtualOffice.split('/')[0]}</span>
+                      <span className="text-white/50 text-xs uppercase tracking-wider">/ Yr*</span>
+                  </div>
                   <ul className="space-y-4 mb-8 text-sm text-white/80 flex-grow">
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Prime Business Address</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Mail Handling</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> GST Registration Proof</li>
                   </ul>
-                  <Link href={`/contact?plan=Virtual Office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10">Select Plan</Link>
+                  <Link href={`/book-tour?plan=Virtual Office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>
                 </MouseGlowCard>
               </ScrollReveal>
             </div>
           )
         )}
 
-        {/* WhatsApp CTA */}
-        <ScrollReveal direction="up" delay={0.4} className="mb-24 flex justify-center">
+        {/* ROI Calculator / Comparison Section (Added) */}
+        <ScrollReveal direction="up" className="max-w-4xl mx-auto mb-24 border-t border-b border-white/10 py-16">
+          <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">How Much Would Your <span className="text-accent">Own Office Cost?</span></h2>
+              <p className="text-lg text-white/70 max-w-2xl mx-auto">Save up to 60% compared to a traditional office setup while getting premium amenities instantly.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-navy rounded-full border border-white/20 flex items-center justify-center font-bold text-white/50 z-10 hidden md:flex">VS</div>
+              
+              <div className="glass rounded-2xl p-6 md:p-8 border border-red-500/20 bg-red-500/5">
+                  <h3 className="text-xl font-bold text-white mb-6 text-center">Traditional Office (10 Team)</h3>
+                  <ul className="space-y-4 mb-8 text-sm md:text-base">
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Setup/Deposit</span> <span className="text-white font-bold">₹2,00,000+</span></li>
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Furniture/Fit-outs</span> <span className="text-white font-bold">₹5,00,000+</span></li>
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Internet/IT</span> <span className="text-white font-bold">₹10,000/mo</span></li>
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Maintenance</span> <span className="text-white font-bold">₹15,000/mo</span></li>
+                      <li className="flex justify-between pt-2"><span>Lock-in Period</span> <span className="text-white font-bold">3-5 Years</span></li>
+                  </ul>
+                  <div className="p-4 bg-red-500/10 rounded-xl text-center text-sm">
+                      <p className="text-red-300 font-bold">Huge CapEx & Long Term Risk</p>
+                  </div>
+              </div>
+
+              <div className="glass rounded-2xl p-6 md:p-8 border border-accent/40 bg-accent/5 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
+                  <h3 className="text-xl font-bold text-white mb-6 text-center">WeeSpaces (10 Team)</h3>
+                  <ul className="space-y-4 mb-8 relative z-10 text-sm md:text-base">
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Setup/Deposit</span> <span className="text-accent font-bold">Zero</span></li>
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Furniture/Fit-outs</span> <span className="text-accent font-bold">Included</span></li>
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Internet/IT</span> <span className="text-accent font-bold">Included</span></li>
+                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Maintenance</span> <span className="text-accent font-bold">Included</span></li>
+                      <li className="flex justify-between pt-2"><span>Lock-in Period</span> <span className="text-accent font-bold">Highly Flexible</span></li>
+                  </ul>
+                  <div className="p-4 bg-accent/20 rounded-xl text-center relative z-10 text-sm">
+                      <p className="text-accent font-bold">Move-in Ready, Scale Anytime</p>
+                  </div>
+              </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Lead Form CTA */}
+        <ScrollReveal direction="up" className="max-w-4xl mx-auto mb-24">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-4">Ready to upgrade your workspace?</h2>
+            <p className="text-white/70">Fill out the form below to check availability or schedule a tour at {branches.find(b => b.id === activeBranch)?.name}.</p>
+          </div>
+          <div className="mx-auto" style={{ maxWidth: '600px' }}>
+            <LeadForm branch={activeBranch !== 'all' ? branches.find(b => b.id === activeBranch)?.name : undefined} />
+          </div>
+        </ScrollReveal>
+        <ScrollReveal direction="up" className="mb-24 flex justify-center">
            <a href="https://wa.me/919207189111" target="_blank" rel="noopener noreferrer" className="glass bg-[#25D366]/10 border-[#25D366]/30 hover:bg-[#25D366]/20 border rounded-full px-8 py-4 flex items-center gap-3 transition-all hover:scale-105">
               <svg viewBox="0 0 24 24" className="w-6 h-6 fill-[#25D366]">
                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-              </svg>
-              <span className="text-white font-bold">Not sure which plan? <span className="text-[#25D366]">Chat with us on WhatsApp</span></span>
-           </a>
-        </ScrollReveal>
+193:               </svg>
+194:               <span className="text-white font-bold">Not sure which plan? <span className="text-[#25D366]">Chat with us on WhatsApp</span></span>
+195:            </a>
+196:         </ScrollReveal>
 
         {/* Calendly Booking Widget Section */}
         <ScrollReveal direction="up" className="max-w-4xl mx-auto">

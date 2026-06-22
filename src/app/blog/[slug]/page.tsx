@@ -1,18 +1,19 @@
-import { blogPosts } from '@/data/blogPosts';
+import { getAllPosts, getPostBySlug } from '@/lib/mdx';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 export function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  const posts = getAllPosts();
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
+  const post = await getPostBySlug(resolvedParams.slug);
   
   if (!post) {
     return { title: 'Post Not Found | WeeSpaces' };
@@ -33,16 +34,47 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+/**
+ * Convert a human-readable date like "June 18, 2026" to ISO format "2026-06-18".
+ */
+function toISODate(dateStr: string): string {
+  const d = new Date(dateStr);
+  return d.toISOString().split('T')[0];
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const post = blogPosts.find((p) => p.slug === resolvedParams.slug);
+  const post = await getPostBySlug(resolvedParams.slug);
 
   if (!post) {
     return <div className="pt-32 text-center text-white">Article not found.</div>;
   }
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: toISODate(post.date),
+    author: {
+      '@type': 'Organization',
+      name: 'WeeSpaces',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'WeeSpaces',
+      url: 'https://weespaces.in',
+    },
+  };
+
   return (
     <article className="pt-24 pb-32 min-h-screen">
+      {/* Article JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Article Header */}
       <header className="container mx-auto px-6 max-w-4xl mb-16 pt-12">
         <ScrollReveal direction="up" className="text-center">

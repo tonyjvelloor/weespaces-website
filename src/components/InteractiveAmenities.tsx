@@ -55,7 +55,7 @@ export default function InteractiveAmenities() {
                   <Image 
                     src={activeAmenity.image} 
                     alt="Premium Coworking Hub Amenities" 
-                    fill 
+                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                     className="object-cover" 
                   />
                 </motion.div>
@@ -75,7 +75,7 @@ export default function InteractiveAmenities() {
                   <Image 
                     src={activeAmenity.image2} 
                     alt="Premium Coworking Hub Amenities" 
-                    fill 
+                    fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                     className="object-cover" 
                   />
                 </motion.div>

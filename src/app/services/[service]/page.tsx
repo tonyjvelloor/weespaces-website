@@ -24,7 +24,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           <span className="material-symbols-outlined text-6xl text-accent mb-6 animate-pulse">construction</span>
           <h2 className="text-2xl font-bold mb-4">Detailed page coming soon!</h2>
           <p className="text-white/70 mb-8">We are actively gathering the specific media assets and pricing details for the {serviceName} page.</p>
-          <Link href="/contact" className="bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-8 rounded-full transition-colors">
+          <Link href="/book-tour" className="bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-8 rounded-full transition-colors">
             Enquire Now
           </Link>
         </div>

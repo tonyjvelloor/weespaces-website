@@ -48,10 +48,10 @@ export default function AboutPage() {
           <ScrollReveal direction="left" delay={0.2} className="relative h-[500px] w-full hidden md:block">
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full blur-[80px]"></div>
             <div className="absolute top-0 right-4 w-2/3 h-4/5 rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-10">
-              <Image src="/images/exterior.jpg" alt="WeeSpaces Exterior" fill className="object-cover" />
+              <Image src="/images/exterior.jpg" alt="WeeSpaces Exterior" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
             </div>
             <div className="absolute bottom-0 left-4 w-3/5 h-2/3 rounded-3xl overflow-hidden border border-white/10 shadow-2xl z-20 shadow-black/50">
-              <Image src="/images/amenity2.jpg" alt="WeeSpaces Interior" fill className="object-cover" />
+              <Image src="/images/amenity2.jpg" alt="WeeSpaces Interior" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
             </div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-navy p-4 rounded-full shadow-2xl z-30 border border-white/10 flex items-center justify-center">
               <Image src="/images/logo.png" alt="WeeSpaces" width={60} height={60} className="rounded-full" />
@@ -104,7 +104,7 @@ export default function AboutPage() {
             <ScrollReveal delay={0.1}>
                 <MouseGlowCard className="glass p-10 rounded-3xl text-center flex flex-col items-center h-full border border-white/10 group hover:border-accent/30 transition-colors">
                   <div className="w-40 h-40 rounded-full bg-white mb-8 flex items-center justify-center overflow-hidden border-[3px] border-white/10 group-hover:border-accent relative transition-colors shadow-xl">
-                    <Image src="/images/founder_sankesh.jpg" alt="Sankesh Sreenivas" fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src="/images/founder_sankesh.jpg" alt="Sankesh Sreenivas" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <h3 className="text-3xl font-bold mb-2">Sankesh Sreenivas</h3>
                   <p className="text-accent text-sm font-bold tracking-widest uppercase mb-6 bg-accent/10 px-4 py-1.5 rounded-full inline-block">Co-Founder & CEO</p>
@@ -120,7 +120,7 @@ export default function AboutPage() {
             <ScrollReveal delay={0.2}>
                 <MouseGlowCard className="glass p-10 rounded-3xl text-center flex flex-col items-center h-full border border-white/10 group hover:border-accent/30 transition-colors">
                   <div className="w-40 h-40 rounded-full bg-white mb-8 flex items-center justify-center overflow-hidden border-[3px] border-white/10 group-hover:border-accent relative transition-colors shadow-xl">
-                    <Image src="/images/founder_shudhi.jpg" alt="Shudhi Sankesh" fill className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
+                    <Image src="/images/founder_shudhi.jpg" alt="Shudhi Sankesh" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover object-top group-hover:scale-110 transition-transform duration-700" />
                   </div>
                   <h3 className="text-3xl font-bold mb-2">Shudhi Sankesh</h3>
                   <p className="text-accent text-sm font-bold tracking-widest uppercase mb-6 bg-accent/10 px-4 py-1.5 rounded-full inline-block">Co-Founder & COO</p>
@@ -146,7 +146,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-10 relative z-10">
                 <div className="flex flex-col items-center p-6 rounded-2xl hover:bg-white/5 transition-colors">
                   <div className="relative w-28 h-28 mb-6 rounded-full overflow-hidden border-[3px] border-white/20 bg-white shadow-lg">
-                    <Image src="/images/logo_weespaces.jpg" alt="WeeSpaces Logo" fill className="object-contain p-4" />
+                    <Image src="/images/logo_weespaces.jpg" alt="WeeSpaces Logo" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-contain p-4" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">WeeSpaces</h3>
                   <p className="text-accent text-xs font-bold uppercase tracking-wider mb-3">Parent Brand</p>
@@ -157,7 +157,7 @@ export default function AboutPage() {
                 
                 <div className="flex flex-col items-center p-6 rounded-2xl hover:bg-white/5 transition-colors">
                   <div className="relative w-28 h-28 mb-6 rounded-full overflow-hidden border-[3px] border-white/20 bg-white shadow-lg">
-                    <Image src="/images/logo_worklounge.jpg" alt="The Work Lounge Logo" fill className="object-contain p-4" />
+                    <Image src="/images/logo_worklounge.jpg" alt="The Work Lounge Logo" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-contain p-4" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">The Work Lounge</h3>
                   <p className="text-accent text-xs font-bold uppercase tracking-wider mb-3">Flagship Entity</p>
@@ -168,7 +168,7 @@ export default function AboutPage() {
                 
                 <div className="flex flex-col items-center p-6 rounded-2xl hover:bg-white/5 transition-colors">
                   <div className="relative w-28 h-28 mb-6 rounded-full overflow-hidden border-[3px] border-white/20 bg-navy shadow-lg">
-                    <Image src="/images/logo_xhub.png" alt="X-Hub Logo" fill className="object-contain p-4" />
+                    <Image src="/images/logo_xhub.png" alt="X-Hub Logo" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-contain p-4" />
                   </div>
                   <h3 className="text-2xl font-bold text-white mb-2">X-Hub</h3>
                   <p className="text-accent text-xs font-bold uppercase tracking-wider mb-3">Incubator</p>
