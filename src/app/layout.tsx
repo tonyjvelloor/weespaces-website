@@ -93,6 +93,9 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Ahrefs Analytics */}
+        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="EoDkvoeJsqmIyH1dOOZ37w" strategy="lazyOnload" />
+
         {/* JSON-LD Schemas */}
         <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
