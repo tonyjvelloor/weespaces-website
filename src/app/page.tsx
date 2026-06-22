@@ -488,7 +488,7 @@ export default function Home() {
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 w-full z-50 md:hidden flex shadow-[0_-10px_20px_rgba(0,0,0,0.5)]">
-        <a href="tel:+919000000000" className="w-1/2 bg-navy border-t border-r border-white/20 py-4 flex items-center justify-center gap-2 text-white font-bold text-sm">
+        <a href="tel:+919207189111" className="w-1/2 bg-navy border-t border-r border-white/20 py-4 flex items-center justify-center gap-2 text-white font-bold text-sm">
           <Phone className="w-4 h-4 text-accent" /> Call
         </a>
         <Link href="/pricing" className="w-1/2 bg-accent py-4 flex items-center justify-center gap-2 text-navy font-bold text-sm">
