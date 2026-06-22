@@ -94,7 +94,15 @@ export default function RootLayout({
         </Script>
 
         {/* Ahrefs Analytics */}
-        <Script src="https://analytics.ahrefs.com/analytics.js" data-key="EoDkvoeJsqmIyH1dOOZ37w" strategy="lazyOnload" />
+        <Script id="ahrefs-analytics" strategy="lazyOnload">
+          {`
+            var ahrefs_analytics_script = document.createElement('script');
+            ahrefs_analytics_script.async = true;
+            ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
+            ahrefs_analytics_script.setAttribute('data-key', 'EoDkvoeJsqmIyH1dOOZ37w');
+            document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
+          `}
+        </Script>
 
         {/* JSON-LD Schemas */}
         <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive">
