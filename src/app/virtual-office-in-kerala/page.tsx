@@ -153,10 +153,12 @@ export default function VirtualOfficeKeralaPage() {
           </div>
         </ScrollReveal>
         
-        <ScrollReveal direction="up" delay={0.2} id="contact" className="glass p-8 rounded-2xl border border-white/10">
-          <h3 className="text-2xl font-bold mb-6 text-center">Get Your Virtual Office</h3>
-          <LeadForm />
-        </ScrollReveal>
+        <div id="contact">
+          <ScrollReveal direction="up" delay={0.2} className="glass p-8 rounded-2xl border border-white/10">
+            <h3 className="text-2xl font-bold mb-6 text-center">Get Your Virtual Office</h3>
+            <LeadForm />
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* FAQ */}
