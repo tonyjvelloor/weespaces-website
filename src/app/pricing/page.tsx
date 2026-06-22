@@ -54,17 +54,17 @@ export default function PricingPage() {
         </ScrollReveal>
 
         {/* Branch Image Showcase */}
-        {activeBranch !== 'all' && (
+        {activeBranch !== 'all' && currentPricing && (
           <ScrollReveal direction="up" delay={0.2} className="mb-16">
-            <div className="grid grid-cols-3 gap-4 md:gap-6 h-48 md:h-80 max-w-5xl mx-auto">
+            <div key={activeBranch} className="grid grid-cols-3 gap-4 md:gap-6 h-48 md:h-80 max-w-5xl mx-auto animate-fade-in">
               <div className="relative rounded-2xl overflow-hidden glass border border-white/10 hidden md:block">
-                <Image src="/images/branches/kochi/workspace1.jpg" alt="Workspace" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src={branchData[activeBranch].galleryImages?.[0] || branchData[activeBranch].heroImage} alt="Workspace" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="relative rounded-2xl overflow-hidden glass border border-accent/20 col-span-3 md:col-span-1 shadow-[0_0_30px_rgba(242,156,31,0.1)]">
-                <Image src="/images/branches/kochi/workspace2.jpg" alt="Private Office" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src={branchData[activeBranch].galleryImages?.[1] || branchData[activeBranch].heroImage} alt="Private Office" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="relative rounded-2xl overflow-hidden glass border border-white/10 hidden md:block">
-                <Image src="/images/branches/trivandrum/image3.jpg" alt="Conference Room" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
+                <Image src={branchData[activeBranch].galleryImages?.[2] || branchData[activeBranch].heroImage} alt="Conference Room" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
           </ScrollReveal>

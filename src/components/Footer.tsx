@@ -60,11 +60,10 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 font-heading">Services</h4>
             <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/services/coworking" className="hover:text-accent transition-colors">Co-working Space</Link></li>
-              <li><Link href="/services/conference-hall" className="hover:text-accent transition-colors">Conference Hall</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Co-working Space</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Conference Hall</Link></li>
               <li><Link href="/services/virtual-office" className="hover:text-accent transition-colors">Virtual Office</Link></li>
               <li><Link href="/services/incubation" className="hover:text-accent transition-colors">Startup Incubation</Link></li>
-              <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>

@@ -165,9 +165,15 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
           )}
         </div>
 
+        {/* Custom Fixed Toast for Form Status */}
         {formStatus.message && (
-            <div className={`mt-4 p-3 rounded-lg text-sm border ${formStatus.type === 'error' ? 'bg-red-500/10 border-red-500/20 text-red-400' : 'bg-[#25D366]/10 border-[#25D366]/20 text-[#25D366]'}`}>
-                {formStatus.message}
+            <div className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] px-6 py-3 rounded-xl shadow-2xl flex items-center gap-3 animate-bounce-up ${formStatus.type === 'error' ? 'bg-red-500 text-white border border-red-400' : 'bg-[#25D366] text-white border border-[#1DA851]'}`}>
+                {formStatus.type === 'error' ? (
+                  <span className="material-symbols-outlined">error</span>
+                ) : (
+                  <span className="material-symbols-outlined">check_circle</span>
+                )}
+                <span className="font-bold">{formStatus.message}</span>
             </div>
         )}
 
