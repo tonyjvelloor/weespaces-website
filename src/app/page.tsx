@@ -228,10 +228,10 @@ export default function Home() {
           
           <div className="grid md:grid-cols-4 gap-6">
               {[
-                { city: 'Kochi', href: '/coworking-space-in-kochi', img: '/images/branches/kochi/exterior.jpg' },
-                { city: 'Trivandrum', href: '/coworking-space-in-trivandrum', img: '/images/branches/trivandrum/exterior.jpg' },
-                { city: 'Calicut', href: '/coworking-space-in-calicut', img: '/images/branches/calicut/exterior.jpg' },
-                { city: 'Coimbatore', href: '/coworking-space-in-coimbatore', img: '/images/branches/coimbatore/exterior.jpg' },
+                { city: 'Kochi', href: '/coworking-space-in-kochi', img: '/images/branches/kochi/reception.jpg' },
+                { city: 'Trivandrum', href: '/coworking-space-in-trivandrum', img: '/images/branches/trivandrum/image4.jpg' },
+                { city: 'Calicut', href: '/coworking-space-in-calicut', img: '/images/branches/calicut/reception.jpg' },
+                { city: 'Coimbatore', href: '/coworking-space-in-coimbatore', img: '/images/branches/coimbatore/exterior-tall.jpg' },
               ].map((item, idx) => (
                   <Link key={idx} href={item.href} className="group relative h-64 rounded-2xl overflow-hidden block">
                       <Image src={item.img} alt={`${item.city} Coworking Space`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
