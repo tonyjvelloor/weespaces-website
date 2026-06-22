@@ -181,7 +181,10 @@ export default function CoworkingSpaceInTrivandrum() {
           <ScrollReveal delay={0.1}>
             <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Hot Desk</p>
-              <p className="text-3xl font-bold text-white mb-1">{data.pricing.hotDesk.split('/')[0]}</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-white">{data.pricing.hotDesk.split('/')[0]}</p>
+              </div>
               <p className="text-white/40 text-sm mb-4">per month</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Flexible seating</li>
@@ -195,7 +198,10 @@ export default function CoworkingSpaceInTrivandrum() {
             <MouseGlowCard className="glass p-8 rounded-2xl border border-accent/30 glow transition-all h-full relative">
               <div className="absolute -top-3 left-6 bg-accent text-navy text-[10px] font-bold px-3 py-1 rounded-full">POPULAR</div>
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Dedicated Desk</p>
-              <p className="text-3xl font-bold text-accent mb-1">{data.pricing.dedicatedDesk.split('/')[0]}</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-accent">{data.pricing.dedicatedDesk.split('/')[0]}</p>
+              </div>
               <p className="text-white/40 text-sm mb-4">per month</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fixed personal desk</li>
@@ -221,7 +227,10 @@ export default function CoworkingSpaceInTrivandrum() {
           <ScrollReveal delay={0.4}>
             <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Virtual Office</p>
-              <p className="text-3xl font-bold text-white mb-1">{data.pricing.virtualOffice.split('/')[0]}</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-white">{data.pricing.virtualOffice.split('/')[0]}</p>
+              </div>
               <p className="text-white/40 text-sm mb-4">per year</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Pattom address</li>

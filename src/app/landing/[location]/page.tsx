@@ -314,7 +314,10 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               <div className="bg-navy-light/30 border border-white/10 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Hot Desk</h3>
                 <p className="text-white/60 text-sm mb-6">Perfect for freelancers needing flexible access.</p>
-                <div className="text-4xl font-bold text-white mb-8">{data.pricing.hotDesk}</div>
+                <div className="flex items-baseline gap-2 mb-8">
+                  <span className="text-sm text-white/50 uppercase font-bold tracking-wider">From</span>
+                  <div className="text-4xl font-bold text-white">{data.pricing.hotDesk}</div>
+                </div>
                 <ul className="space-y-4 mb-8 flex-grow">
                   <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Any available desk</li>
                   <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> High-speed Wi-Fi</li>
@@ -326,7 +329,10 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Dedicated Desk</h3>
                 <p className="text-white/60 text-sm mb-6">A permanent desk for your daily deep work.</p>
-                <div className="text-4xl font-bold text-white mb-8">{data.pricing.dedicatedDesk}</div>
+                <div className="flex items-baseline gap-2 mb-8">
+                  <span className="text-sm text-white/50 uppercase font-bold tracking-wider">From</span>
+                  <div className="text-4xl font-bold text-white">{data.pricing.dedicatedDesk}</div>
+                </div>
                 <ul className="space-y-4 mb-8 flex-grow">
                   <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Your own reserved desk</li>
                   <li className="flex items-center gap-3 text-white/80"><CheckCircle2 className="w-5 h-5 text-accent" /> Lockable storage</li>
@@ -341,7 +347,10 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Private Cabin</h3>
                 <p className="text-white/60 text-sm mb-6">Secure, enclosed offices for growing teams.</p>
-                <div className="text-4xl font-bold text-accent mb-8">{data.pricing.privateCabin}</div>
+                <div className="flex items-baseline gap-2 mb-8">
+                  <span className="text-sm text-accent/50 uppercase font-bold tracking-wider">From</span>
+                  <div className="text-4xl font-bold text-accent">{data.pricing.privateCabin}</div>
+                </div>
                 <ul className="space-y-4 mb-8 flex-grow">
                   <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Fully furnished office</li>
                   <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Custom branding options</li>
