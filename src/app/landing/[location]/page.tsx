@@ -349,7 +349,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 <p className="text-white/60 text-sm mb-6">Secure, enclosed offices for growing teams.</p>
                 <div className="flex items-baseline gap-2 mb-8">
                   <span className="text-sm text-accent/50 uppercase font-bold tracking-wider">From</span>
-                  <div className="text-4xl font-bold text-accent">{data.pricing.privateCabin}</div>
+                  <div className="text-4xl font-bold text-accent">{data.pricing.privateOffice}</div>
                 </div>
                 <ul className="space-y-4 mb-8 flex-grow">
                   <li className="flex items-center gap-3 text-white"><CheckCircle2 className="w-5 h-5 text-accent" /> Fully furnished office</li>
