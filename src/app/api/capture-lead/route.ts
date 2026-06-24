@@ -20,8 +20,15 @@ export async function POST(request: Request) {
             phone: body.phone,
             source: body.source,
             timestamp: new Date().toISOString()
-          })
-        }).catch(err => console.error("Failed to push to Google Sheets Webhook:", err))
+          }),
+          redirect: 'manual' // Prevent Next.js from following the 302 redirect, which can cause network errors
+        })
+        .then(res => {
+          if (res.status >= 400) {
+            console.error(`Google Sheets Webhook failed with status: ${res.status}`);
+          }
+        })
+        .catch(err => console.error("Failed to push to Google Sheets Webhook:", err))
       );
     }
 
