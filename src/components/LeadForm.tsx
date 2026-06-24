@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function LeadForm({ branch = "" }: { branch?: string }) {
+export default function LeadForm({ branch = "", source: defaultSource }: { branch?: string, source?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
   const router = useRouter();
@@ -47,7 +47,7 @@ export default function LeadForm({ branch = "" }: { branch?: string }) {
     const phoneRaw = formDataState.phone;
     const phone = phoneRaw ? '+91' + phoneRaw : undefined;
     const name = formDataState.name;
-    const source = `Website Lead (Type: ${formDataState.workspaceType}, Location: ${formDataState.location}, Timeline: ${formDataState.timeline})`;
+    const source = defaultSource ? `${defaultSource} (Type: ${formDataState.workspaceType}, Location: ${formDataState.location}, Timeline: ${formDataState.timeline})` : `Website Lead (Type: ${formDataState.workspaceType}, Location: ${formDataState.location}, Timeline: ${formDataState.timeline})`;
 
     try {
       const response = await fetch('/api/capture-lead/', { 
