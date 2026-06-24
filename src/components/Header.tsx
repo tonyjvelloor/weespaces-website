@@ -70,23 +70,13 @@ export default function Header() {
               <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Private Office</Link>
               <Link href="/services/virtual-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Virtual Office</Link>
               <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Meeting Room</Link>
-              <Link href="/services/incubation" className="block px-4 py-3 hover:bg-white/10">Incubation Services</Link>
-            </div>
-          </div>
-
-          <div className="group relative">
-            <button className="hover:text-accent transition-colors flex items-center gap-1 py-4">
-              Who It's For <ChevronDown className="w-4 h-4" />
-            </button>
-            <div className="absolute top-full left-0 mt-0 w-48 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Freelancer</Link>
-              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Startup / SME</Link>
-              <Link href="/book-tour" className="block px-4 py-3 hover:bg-white/10">Enterprise</Link>
+              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10">Managed Office</Link>
             </div>
           </div>
 
           <Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link>
-          <Link href="/about" className="hover:text-accent transition-colors">About</Link>
+          <Link href="/resources" className="hover:text-accent transition-colors">Resources</Link>
+          <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Book Tour</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <AnimatePresence>

@@ -198,46 +198,7 @@ export default function PricingPage() {
           )
         )}
 
-        {/* ROI Calculator / Comparison Section (Added) */}
-        <ScrollReveal direction="up" className="max-w-4xl mx-auto mb-24 border-t border-b border-white/10 py-16">
-          <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">How Much Would Your <span className="text-accent">Own Office Cost?</span></h2>
-              <p className="text-lg text-white/70 max-w-2xl mx-auto">Save up to 60% compared to a traditional office setup while getting premium amenities instantly.</p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-8 relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-navy rounded-full border border-white/20 flex items-center justify-center font-bold text-white/50 z-10 hidden md:flex">VS</div>
-              
-              <div className="glass rounded-2xl p-6 md:p-8 border border-red-500/20 bg-red-500/5">
-                  <h3 className="text-xl font-bold text-white mb-6 text-center">Traditional Office (10 Team)</h3>
-                  <ul className="space-y-4 mb-8 text-sm md:text-base">
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Setup/Deposit</span> <span className="text-white font-bold">₹2,00,000+</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Furniture/Fit-outs</span> <span className="text-white font-bold">₹5,00,000+</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Internet/IT</span> <span className="text-white font-bold">₹10,000/mo</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Maintenance</span> <span className="text-white font-bold">₹15,000/mo</span></li>
-                      <li className="flex justify-between pt-2"><span>Lock-in Period</span> <span className="text-white font-bold">3-5 Years</span></li>
-                  </ul>
-                  <div className="p-4 bg-red-500/10 rounded-xl text-center text-sm">
-                      <p className="text-red-300 font-bold">Huge CapEx & Long Term Risk</p>
-                  </div>
-              </div>
-
-              <div className="glass rounded-2xl p-6 md:p-8 border border-accent/40 bg-accent/5 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
-                  <h3 className="text-xl font-bold text-white mb-6 text-center">WeeSpaces (10 Team)</h3>
-                  <ul className="space-y-4 mb-8 relative z-10 text-sm md:text-base">
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Setup/Deposit</span> <span className="text-accent font-bold">Zero</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Furniture/Fit-outs</span> <span className="text-accent font-bold">Included</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Internet/IT</span> <span className="text-accent font-bold">Included</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Maintenance</span> <span className="text-accent font-bold">Included</span></li>
-                      <li className="flex justify-between pt-2"><span>Lock-in Period</span> <span className="text-accent font-bold">Highly Flexible</span></li>
-                  </ul>
-                  <div className="p-4 bg-accent/20 rounded-xl text-center relative z-10 text-sm">
-                      <p className="text-accent font-bold">Move-in Ready, Scale Anytime</p>
-                  </div>
-              </div>
-          </div>
-        </ScrollReveal>
 
         {/* Lead Form CTA */}
         <ScrollReveal direction="up" className="max-w-4xl mx-auto mb-24">

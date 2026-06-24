@@ -10,25 +10,26 @@ import { branchData } from '@/data/branches';
 const data = branchData.coimbatore;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Coimbatore | Office Space Near Tidel Park | WeeSpaces',
-  description: 'Newly launched premium coworking space in Coimbatore near Tidel Park & the airport. Hot desks from ₹5,000/mo, dedicated desks, private cabins & virtual offices. Inauguration offer: 20% off!',
+  title: 'Coworking Space in Coimbatore | Managed Offices | WeeSpaces',
+  description: 'Explore premium coworking spaces near Tidel Park, Coimbatore. Find dedicated desks, private cabins, and scalable workspace options for your team.',
   keywords: [
     'coworking space in Coimbatore',
-    'office space for rent Coimbatore',
-    'coworking near Tidel Park Coimbatore',
-    'managed office Coimbatore',
+    'coworking spaces Coimbatore',
+    'coworking office Coimbatore',
     'shared workspace Coimbatore',
-    'virtual office Coimbatore',
     'best coworking space Coimbatore',
-    'office near Coimbatore airport',
+    'coworking near me Coimbatore',
+    'premium coworking Coimbatore',
+    'flexible workspace Coimbatore',
+    'coworking near Tidel Park Coimbatore'
   ],
   alternates: {
-    canonical: '/coworking-space-in-coimbatore',
+    canonical: '/coworking-space-coimbatore',
   },
   openGraph: {
     title: 'Coworking Space in Coimbatore | Office Space Near Tidel Park | WeeSpaces',
     description: 'Newly launched premium coworking near Tidel Park & Coimbatore Airport. High-speed WiFi, ergonomic setups, meeting rooms. Hot desks from ₹5,000/mo. Inauguration offer live!',
-    url: '/coworking-space-in-coimbatore',
+    url: '/coworking-space-coimbatore',
     images: [
       {
         url: data.heroImage,
@@ -84,7 +85,7 @@ const localBusinessSchema = {
   telephone: '+919207189111',
   openingHours: 'Mo-Sa 08:00-20:00',
   priceRange: '₹5,000 - ₹22,000',
-  url: 'https://weespaces.in/coworking-space-in-coimbatore',
+  url: 'https://weespaces.in/coworking-space-coimbatore',
 };
 
 const faqSchema = {
@@ -136,7 +137,7 @@ export default function CoworkingSpaceInCoimbatore() {
             <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
               <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
               <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
-                {data.description}
+                Experience the best coworking space in Coimbatore. Whether you need a shared workspace, a dedicated desk, or a flexible workspace near Tidel Park, our newly launched hub is built for massive growth.
               </p>
             </div>
 
@@ -235,7 +236,7 @@ export default function CoworkingSpaceInCoimbatore() {
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fully furnished</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Biometric access</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/private-office-space-coimbatore" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 

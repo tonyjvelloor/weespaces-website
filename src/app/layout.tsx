@@ -197,7 +197,7 @@ export default function RootLayout({
           })}
         </Script>
       </head>
-      <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 relative">
+      <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-16 md:pb-0 relative">
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1702816221138883&ev=PageView&noscript=1" alt="" aria-hidden="true" />
         </noscript>

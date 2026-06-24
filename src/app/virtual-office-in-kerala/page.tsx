@@ -4,38 +4,46 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import LeadForm from '@/components/LeadForm';
 import { CheckCircle, MapPin } from 'lucide-react';
-import FAQAccordion from '@/components/FAQAccordion';
+import SEOFAQ from '@/components/SEOFAQ';
+import { virtualOfficeFAQs } from '@/data/faqs';
 
 export const metadata: Metadata = {
-  title: 'Virtual Office in Kerala - Premium Business Address | WeeSpaces',
-  description: 'Get a premium Virtual Office in Kerala for company registration, GST compliance, and mail handling. Access business addresses in Kochi, Trivandrum, Calicut, and Coimbatore.',
+  title: 'Virtual Office Kerala for GST Registration | WeeSpaces',
+  description: 'Get a professional business address with WeeSpaces virtual office solutions for startups, freelancers and companies.',
   alternates: {
     canonical: '/virtual-office-in-kerala',
   },
 };
 
-const faqs = [
-  {
-    question: "What is a Virtual Office?",
-    answer: "A virtual office provides your business with a premium professional address for registration and correspondence, without the need to rent physical workspace. It includes mail handling, receptionist support, and access to meeting rooms on demand."
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Virtual Office in Kerala',
+  serviceType: 'Virtual Office and Business Address',
+  provider: {
+    '@type': 'Organization',
+    name: 'WeeSpaces'
   },
-  {
-    question: "Can I use the Virtual Office for GST registration in Kerala?",
-    answer: "Yes! Our virtual office plans provide all the necessary legal documentation, including NOCs and rental agreements, required for you to successfully register for GST in Kerala."
+  areaServed: {
+    '@type': 'State',
+    name: 'Kerala'
   },
-  {
-    question: "Which cities in Kerala do you provide Virtual Offices?",
-    answer: "We offer premium virtual office addresses in Kochi (Ernakulam), Trivandrum, and Calicut. We also have locations in Coimbatore, Tamil Nadu."
-  },
-  {
-    question: "How do you handle my company's mail?",
-    answer: "Our dedicated front desk team receives your mail, courier packages, and official government correspondence. We store it securely and notify you immediately. You can collect it or have it forwarded to your location."
+  description: 'Get a professional business address in Kochi, Trivandrum, or Calicut for company registration, GST compliance, and mail handling.',
+  offers: {
+    '@type': 'Offer',
+    price: '10000',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/InStock',
   }
-];
+};
 
 export default function VirtualOfficeKeralaPage() {
   return (
     <div className="pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden bg-navy-dark border-b border-white/10">
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-10"></div>
@@ -162,12 +170,11 @@ export default function VirtualOfficeKeralaPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 max-w-3xl mx-auto px-6">
-        <ScrollReveal direction="up" className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-        </ScrollReveal>
-        <FAQAccordion faqs={faqs} />
-      </section>
+      <SEOFAQ 
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about our virtual offices."
+        faqs={virtualOfficeFAQs} 
+      />
     </div>
   );
 }

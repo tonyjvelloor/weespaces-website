@@ -8,7 +8,8 @@ const nextConfig: NextConfig = {
       { source: '/locations/ernakulam', destination: '/coworking-space-in-kochi', permanent: true },
       { source: '/locations/kochi', destination: '/coworking-space-in-kochi', permanent: true },
       { source: '/locations/calicut', destination: '/coworking-space-in-calicut', permanent: true },
-      { source: '/locations/coimbatore', destination: '/coworking-space-in-coimbatore', permanent: true },
+      { source: '/locations/coimbatore', destination: '/coworking-space-coimbatore', permanent: true },
+      { source: '/coworking-space-in-coimbatore', destination: '/coworking-space-coimbatore', permanent: true },
     ];
   },
   async headers() {

@@ -13,10 +13,13 @@ import {
 import HeroCarousel from '@/components/HeroCarousel';
 import InteractiveAmenities from '@/components/InteractiveAmenities';
 import PhotoGallery from '@/components/PhotoGallery';
+import OfficeCalculator from '@/components/OfficeCalculator';
+import SEOFAQ from '@/components/SEOFAQ';
+import { homepageFAQs } from '@/data/faqs';
 
 export const metadata: Metadata = {
-  title: 'WeeSpaces | Premium Coworking in Kerala & Tamil Nadu',
-  description: 'Flexible coworking spaces, dedicated desks, and private offices designed for startups, freelancers, and enterprise teams in Trivandrum, Ernakulam, Calicut, and Coimbatore.',
+  title: 'Coworking Spaces & Private Offices in Kerala | WeeSpaces',
+  description: 'Move into fully furnished coworking spaces, private offices, meeting rooms & virtual offices across Kochi, Calicut and Trivandrum.',
   alternates: {
     canonical: '/',
   },
@@ -29,81 +32,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is a coworking space?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A coworking space is a shared workspace where individuals, freelancers, and teams from different companies work together in a professional, fully-equipped environment with shared amenities like internet, meeting rooms, and coffee."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does coworking cost in Kochi and Kerala?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The average coworking space cost in Kerala ranges from ₹4,999 to ₹15,000 per month depending on whether you need a hot desk, dedicated desk, or private office. WeeSpaces offers flexible workspace plans to fit individual and team budgets."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I register GST with WeeSpaces virtual office?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, WeeSpaces provides virtual office services across Kerala and Tamil Nadu that include a premium business address, mail handling, and documentation support for official GST and company registration."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide private offices for teams?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. We offer fully-furnished, managed private offices and custom cabins that can accommodate teams ranging from 2 to 100+ members with zero setup costs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which WeeSpaces location is closest to me?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "WeeSpaces currently operates premium coworking hubs in Kochi (Ernakulam), Trivandrum, Calicut, and Coimbatore. Check our locations page for detailed maps and addresses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What amenities are included in my membership?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "All memberships include high-speed Wi-Fi, air conditioning, daily housekeeping, ergonomic furniture, unlimited tea/coffee, access to breakout zones, and secure entry."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I book a meeting room for just a few hours?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our meeting and conference rooms are available on an hourly or daily basis for both members and non-members, complete with smart TVs and whiteboards."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Are there any hidden setup fees or lock-in periods?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Unlike traditional offices, WeeSpaces offers zero-setup, plug-and-play workspaces. We have highly flexible agreements so you can scale up or down without long-term lock-ins."
-        }
-      }
-    ]
-  };
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
           <HeroCarousel />
@@ -116,7 +46,7 @@ export default function Home() {
                   <div className="inline-block bg-accent/10 border border-accent/20 rounded-full px-4 py-1.5 mb-6 backdrop-blur-md">
                       <p className="text-accent text-sm font-bold tracking-wider flex items-center gap-2">
                           <MapPin className="w-4 h-4" />
-                          PREMIUM COWORKING SPACES & PRIVATE OFFICES ACROSS KERALA
+                          PREMIUM COWORKING SPACES & PRIVATE OFFICES ACROSS KERALA & TAMIL NADU
                       </p>
                   </div>
                   
@@ -126,16 +56,27 @@ export default function Home() {
                   </h1>
                   
                   <p className="text-xl text-white/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-                      Move into fully furnished workspaces in <strong className="text-white">Kochi, Calicut & Trivandrum</strong> without deposits, setup costs, or long-term commitments.
+                      Move into fully furnished workspaces in <strong className="text-white">Kochi, Calicut, Trivandrum & Coimbatore</strong> without deposits, setup costs, or long-term commitments.
                   </p>
                   
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
-                      <Link href="/book-tour" className="bg-accent text-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-hover transition-all shadow-[0_0_20px_rgba(242,156,31,0.3)] hover:shadow-[0_0_30px_rgba(242,156,31,0.5)] transform hover:-translate-y-1 flex justify-center items-center gap-2">
-                          Schedule a Free Workspace Tour <ChevronRight className="w-5 h-5" />
-                      </Link>
-                      <Link href="#locations" className="bg-transparent border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition-all flex justify-center items-center gap-2">
-                          Explore Locations
-                      </Link>
+                  <div className="mb-10">
+                      <p className="text-white/60 mb-4 font-medium uppercase tracking-wider text-sm flex items-center gap-2 justify-center lg:justify-start">
+                        I am looking for:
+                      </p>
+                      <div className="grid grid-cols-2 sm:grid-cols-2 gap-3">
+                          <Link href="/pricing" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
+                              Workspace for Myself <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
+                          </Link>
+                          <Link href="/pricing" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
+                              Office for My Team <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
+                          </Link>
+                          <Link href="/pricing" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
+                              Meeting Room <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
+                          </Link>
+                          <Link href="/services/virtual-office" className="glass border border-accent/40 bg-accent/10 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-accent/20 transition-all flex items-center justify-between group">
+                              Virtual Office <ChevronRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                      </div>
                   </div>
 
                   <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
@@ -143,7 +84,7 @@ export default function Home() {
                           <CheckCircle className="w-4 h-4 text-accent" /> Established 2018
                       </span>
                       <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/80 flex items-center gap-2">
-                          <CheckCircle className="w-4 h-4 text-accent" /> Multiple Kerala Locations
+                          <CheckCircle className="w-4 h-4 text-accent" /> Multiple Kerala & TN Locations
                       </span>
                       <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/80 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Fully Managed Offices
@@ -158,6 +99,55 @@ export default function Home() {
                 <LeadForm />
               </ScrollReveal>
           </div>
+      </section>
+
+      {/* Problem Agitation Section */}
+      <section className="py-20 max-w-7xl mx-auto px-6 border-b border-white/10 bg-navy-light/10">
+          <ScrollReveal direction="up" className="text-center mb-16">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Setting Up An Office <span className="text-accent">Shouldn't Take Months</span></h2>
+              <p className="text-xl text-white/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
+          </ScrollReveal>
+
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-navy rounded-full border border-white/20 flex items-center justify-center font-bold text-white/50 z-10 hidden md:flex">VS</div>
+              
+              <div className="glass rounded-2xl p-8 lg:p-10 border border-red-500/20 bg-red-500/5 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] -mr-10 -mt-10"></div>
+                  <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Traditional Office</h3>
+                  <ul className="space-y-5 mb-8 relative z-10">
+                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> ₹5L+ interior investment</li>
+                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Long rental agreements</li>
+                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Furniture purchase</li>
+                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Internet & utilities setup</li>
+                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Daily admin management</li>
+                  </ul>
+              </div>
+
+              <div className="glass rounded-2xl p-8 lg:p-10 border border-accent/40 bg-accent/5 relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-accent/20 rounded-full blur-[60px] -mr-10 -mt-10"></div>
+                  <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">WeeSpaces</h3>
+                  <ul className="space-y-5 mb-10 relative z-10">
+                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Walk in tomorrow</li>
+                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Fully furnished & designed</li>
+                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Flexible scaling (up or down)</li>
+                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Zero internet setup required</li>
+                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> One simple monthly cost</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div className="text-center mt-12">
+            <Link href="#calculator" className="bg-accent text-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-hover transition-all inline-flex items-center justify-center gap-2">
+                Calculate Your Savings <ChevronRight className="w-5 h-5" />
+            </Link>
+          </div>
+      </section>
+
+      {/* Build Cost Calculator */}
+      <section className="py-20 max-w-7xl mx-auto px-6 relative z-10">
+          <ScrollReveal direction="up">
+              <OfficeCalculator />
+          </ScrollReveal>
       </section>
 
       {/* Trust Markers Stat Block */}
@@ -245,52 +235,6 @@ export default function Home() {
           </div>
       </section>
 
-      {/* ROI Calculator / Comparison */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-b border-white/10 bg-navy-light/10">
-          <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Why Companies Choose WeeSpaces <span className="text-accent">Instead of Renting</span></h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
-          </ScrollReveal>
-
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-navy rounded-full border border-white/20 flex items-center justify-center font-bold text-white/50 z-10 hidden md:flex">VS</div>
-              
-              <div className="glass rounded-2xl p-8 border border-red-500/20 bg-red-500/5">
-                  <h3 className="text-2xl font-bold text-white mb-6 text-center">Traditional Office (10 Team)</h3>
-                  <ul className="space-y-4 mb-8">
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Setup/Deposit</span> <span className="text-white font-bold">₹2,00,000+</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Furniture/Fit-outs</span> <span className="text-white font-bold">₹5,00,000+</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Internet/IT</span> <span className="text-white font-bold">₹10,000/mo</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Maintenance</span> <span className="text-white font-bold">₹15,000/mo</span></li>
-                      <li className="flex justify-between pt-2"><span>Lock-in Period</span> <span className="text-white font-bold">3-5 Years</span></li>
-                  </ul>
-                  <div className="p-4 bg-red-500/10 rounded-xl text-center">
-                      <p className="text-red-300 font-bold">Huge CapEx & Long Term Risk</p>
-                  </div>
-              </div>
-
-              <div className="glass rounded-2xl p-8 border border-accent/40 bg-accent/5 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
-                  <h3 className="text-2xl font-bold text-white mb-6 text-center">WeeSpaces (10 Team)</h3>
-                  <ul className="space-y-4 mb-8 relative z-10">
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Setup/Deposit</span> <span className="text-accent font-bold">Zero</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Furniture/Fit-outs</span> <span className="text-accent font-bold">Included</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Internet/IT</span> <span className="text-accent font-bold">Included</span></li>
-                      <li className="flex justify-between border-b border-white/5 pb-2 text-white/70"><span>Maintenance</span> <span className="text-accent font-bold">Included</span></li>
-                      <li className="flex justify-between pt-2"><span>Lock-in Period</span> <span className="text-accent font-bold">Highly Flexible</span></li>
-                  </ul>
-                  <div className="p-4 bg-accent/20 rounded-xl text-center relative z-10">
-                      <p className="text-accent font-bold">Move-in Ready, Scale Anytime</p>
-                  </div>
-              </div>
-          </div>
-          
-          <div className="text-center mt-12">
-              <Link href="/pricing" className="inline-flex bg-accent text-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-hover transition-all shadow-[0_0_20px_rgba(242,156,31,0.3)]">
-                  Get a Custom Office Quote
-              </Link>
-          </div>
-      </section>
 
       {/* Workspace Gallery & Amenities */}
       <section className="py-24 max-w-7xl mx-auto px-6 overflow-hidden">
@@ -465,26 +409,11 @@ export default function Home() {
       </section>
 
       {/* SEO FAQ Section */}
-      <section className="py-24 max-w-4xl mx-auto px-6 border-t border-white/10">
-          <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked <span className="text-accent">Questions</span></h2>
-              <p className="text-white/70">Everything you need to know about working at WeeSpaces.</p>
-          </ScrollReveal>
-
-          <div className="space-y-4">
-              {faqSchema.mainEntity.map((faq, idx) => (
-                  <details key={idx} className="group glass p-6 rounded-xl border border-white/10 [&_summary::-webkit-details-marker]:hidden cursor-pointer">
-                      <summary className="flex justify-between items-center font-bold text-white text-lg">
-                          {faq.name}
-                          <ChevronRight className="w-5 h-5 transition group-open:rotate-90 text-accent" />
-                      </summary>
-                      <div className="text-white/70 mt-4 leading-relaxed pl-2 border-l-2 border-accent">
-                          {faq.acceptedAnswer.text}
-                      </div>
-                  </details>
-              ))}
-          </div>
-      </section>
+      <SEOFAQ 
+        title="Everything You Need To Know About WeeSpaces"
+        subtitle="Frequently asked questions about our coworking spaces and services."
+        faqs={homepageFAQs} 
+      />
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 w-full z-50 md:hidden flex shadow-[0_-10px_20px_rgba(0,0,0,0.5)]">

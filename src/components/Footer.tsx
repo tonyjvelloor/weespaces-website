@@ -60,10 +60,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 font-heading">Services</h4>
             <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Co-working Space</Link></li>
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Conference Hall</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Coworking Space</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Private Office</Link></li>
               <li><Link href="/services/virtual-office" className="hover:text-accent transition-colors">Virtual Office</Link></li>
-              <li><Link href="/services/incubation" className="hover:text-accent transition-colors">Startup Incubation</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Meeting Room</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Managed Office</Link></li>
             </ul>
           </div>
           <div>
@@ -74,7 +75,7 @@ export default function Footer() {
               <li><Link href="/coworking-space-in-trivandrum" className="hover:text-accent transition-colors">Trivandrum (Head Office)</Link></li>
               <li><Link href="/coworking-space-in-kochi" className="hover:text-accent transition-colors">Kochi (Ernakulam)</Link></li>
               <li><Link href="/coworking-space-in-calicut" className="hover:text-accent transition-colors">Calicut (The Work Lounge)</Link></li>
-              <li><Link href="/coworking-space-in-coimbatore" className="hover:text-accent transition-colors flex items-center gap-2">Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full border border-accent/30 font-bold tracking-wide">NEW</span></Link></li>
+              <li><Link href="/coworking-space-coimbatore" className="hover:text-accent transition-colors flex items-center gap-2">Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full border border-accent/30 font-bold tracking-wide">NEW</span></Link></li>
             </ul>
           </div>
           <div>

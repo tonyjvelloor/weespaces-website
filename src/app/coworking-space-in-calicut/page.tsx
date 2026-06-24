@@ -4,30 +4,32 @@ import LeadForm from '@/components/LeadForm';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
-import { MapPin, ArrowRight, CheckCircle, ChevronRight, Star, BadgeCheck } from 'lucide-react';
+import { MapPin, ArrowRight, CheckCircle, Star, BadgeCheck, Users, Briefcase, Zap, Coffee, Shield, Lightbulb } from 'lucide-react';
 import { branchData } from '@/data/branches';
+import SEOFAQ from '@/components/SEOFAQ';
+import { coworkingFAQs } from '@/data/faqs';
 
 const data = branchData.calicut;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Calicut | Affordable Office Space for Rent | WeeSpaces',
-  description: 'Discover affordable coworking space in Calicut (Kozhikode) near Cyberpark. Hot desks from ₹4,000/mo, dedicated desks, private cabins & virtual offices. Book your free tour at WeeSpaces!',
+  title: 'Coworking Space in Calicut | Private Offices | WeeSpaces',
+  description: 'Rent affordable and premium coworking spaces in Calicut near Cyberpark. Fully furnished offices tailored for local businesses, freelancers, and entrepreneurs.',
   keywords: [
     'coworking space in Calicut',
     'office space for rent Kozhikode',
-    'coworking near Cyberpark',
-    'managed office Calicut',
-    'shared workspace Kozhikode',
-    'virtual office Calicut',
-    'best coworking space Calicut',
-    'freelancer workspace Kozhikode',
+    'affordable office Calicut',
+    'shared workspace Cyberpark',
+    'private office Calicut',
+    'virtual office Kozhikode',
+    'startup workspace Calicut',
+    'best coworking space Kozhikode',
   ],
   alternates: {
     canonical: '/coworking-space-in-calicut',
   },
   openGraph: {
     title: 'Coworking Space in Calicut | Affordable Office Space for Rent | WeeSpaces',
-    description: 'Creative coworking space near Cyberpark, Calicut. High-speed WiFi, meeting rooms & a vibrant freelancer community. Hot desks from ₹4,000/mo.',
+    description: 'Discover affordable coworking space in Calicut (Kozhikode) near Cyberpark. Hot desks from ₹4,000/mo, dedicated desks, private cabins & virtual offices.',
     url: '/coworking-space-in-calicut',
     images: [
       {
@@ -40,29 +42,6 @@ export const metadata: Metadata = {
   },
 };
 
-const faqs = [
-  {
-    question: 'How much does coworking cost in Calicut?',
-    answer: 'At WeeSpaces Calicut, hot desks start at just ₹4,000/month — one of the most affordable options in Kerala. Dedicated desks are ₹5,500/month, and virtual office plans start at ₹10,000/year. Private cabins are available with custom quotes based on your team size.',
-  },
-  {
-    question: 'Which is the best coworking space in Calicut?',
-    answer: 'WeeSpaces at East Nadakkave, Kozhikode is one of the top-rated coworking spaces in Calicut. Close to Cyberpark, our space offers a creative, relaxed yet highly driven atmosphere perfect for designers, freelancers, and agile teams. We provide premium amenities at the most competitive pricing in the city.',
-  },
-  {
-    question: 'Does WeeSpaces Calicut offer virtual offices?',
-    answer: 'Yes! Our virtual office plan in Calicut starts at ₹10,000/year. You get a premium business address at Neeloth Plaza for GST registration and company registration, along with mail handling and pay-per-use meeting room access.',
-  },
-  {
-    question: 'Where is WeeSpaces Calicut located?',
-    answer: 'WeeSpaces Calicut is located at Door No. 2951/A, Ground Floor, Neeloth Plaza, Holy Cross IMT Road, Wayanad Road, opposite Malayalam Manorama, East Nadakkave, Kozhikode, Kerala 673001. It is close to Cyberpark and the central business area of Calicut.',
-  },
-  {
-    question: 'Is WeeSpaces Calicut suitable for freelancers and creative professionals?',
-    answer: 'Absolutely! Our Calicut hub is designed with freelancers and creative professionals in mind. The space offers a relaxed yet productive atmosphere, high-speed internet, comfortable ergonomic furniture, and a community of like-minded creatives and tech professionals. Our affordable hot desk plans make it perfect for independent workers.',
-  },
-];
-
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
@@ -70,7 +49,7 @@ const localBusinessSchema = {
   image: 'https://weespaces.in' + data.heroImage,
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Door No. 2951/A, Ground Floor, Neeloth Plaza, Holy Cross IMT Road, Wayanad Road',
+    streetAddress: 'Door No. 2951/A, Ground floor, Neeloth Plaza, Holy Cross IMT Road, Wayanad Rd, East Nadakkave',
     addressLocality: 'Kozhikode',
     addressRegion: 'Kerala',
     postalCode: '673001',
@@ -87,92 +66,168 @@ const localBusinessSchema = {
   url: 'https://weespaces.in/coworking-space-in-calicut',
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
-    },
-  })),
-};
-
 export default function CoworkingSpaceInCalicut() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 text-center overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src={data.heroImage} alt="Coworking Space in Calicut - WeeSpaces Near Cyberpark" fill sizes="100vw" className="object-cover object-center scale-105 opacity-30 blur-sm" priority />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-dark via-navy/90 to-navy"></div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[50vw] bg-accent/20 rounded-full blur-[150px] pointer-events-none"></div>
+          <Image src={data.heroImage} alt="Coworking Space in Calicut - WeeSpaces Kozhikode" fill sizes="100vw" className="object-cover object-center opacity-30" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60"></div>
+          <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent/20 rounded-full blur-[120px] -mr-[20vw] -mt-[10vw] pointer-events-none"></div>
         </div>
-
-        <div className="container mx-auto px-6 w-full relative z-10 flex flex-col items-center max-w-5xl">
-          <ScrollReveal direction="up" className="flex flex-col items-center space-y-6 mb-12">
-            <div className="inline-flex items-center gap-2 bg-navy-light/40 backdrop-blur-md border border-accent/40 text-accent text-xs font-bold uppercase tracking-wider px-5 py-2 rounded-full shadow-[0_0_20px_rgba(242,156,31,0.15)]">
-              <MapPin className="w-4 h-4" /> Calicut, Kerala
+        <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
+          <ScrollReveal direction="up" className="space-y-6 md:space-y-8">
+            <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
+              <MapPin className="w-4 h-4" />
+              Kozhikode, Kerala
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight drop-shadow-2xl">
-              Premium Coworking <br className="hidden md:block" />
-              in <span className="text-transparent bg-clip-text bg-gradient-to-br from-accent via-accent-light to-white">Calicut.</span>
+
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
+              Inspiring <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
+              in Calicut
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 max-w-2xl font-light leading-relaxed">
-              {data.description}
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
+
+            <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
+              <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
+              <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
+                Unlock your potential in Kozhikode. Close to Cyberpark, our Calicut space offers an affordable, creative, and highly driven atmosphere tailored for local businesses, ambitious freelancers, and rising entrepreneurs.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2 text-white/60 text-sm">
                 <BadgeCheck className="w-5 h-5 text-accent" />
-                <span>Near Cyberpark</span>
+                <span>Loved by Calicut Entrepreneurs</span>
               </div>
               <div className="flex items-center gap-2 text-white/60 text-sm">
                 <Star className="w-5 h-5 text-accent fill-accent" />
-                <span>4.7/5 Google Rating</span>
+                <span>4.8/5 Google Rating</span>
               </div>
             </div>
+
+            <p className="text-white/70 italic text-sm">{data.cta}</p>
           </ScrollReveal>
 
-          <ScrollReveal direction="up" delay={0.2} className="w-full max-w-4xl text-left relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-xl blur opacity-20"></div>
-            <div className="relative glass p-2 rounded-xl border border-white/10 shadow-2xl">
+          <ScrollReveal direction="up" delay={0.2} className="w-full max-w-md mx-auto md:mx-0 md:ml-auto">
+            <div className="glass p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent-light"></div>
+              <h3 className="text-2xl font-bold mb-2">Book a Free Tour</h3>
+              <p className="text-white/70 text-sm mb-6">Experience our creative workspace in Kozhikode.</p>
               <LeadForm branch={data.name} />
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* --- PRICING SUMMARY --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+      {/* --- INTRODUCTION & WHO IS IT FOR --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <ScrollReveal direction="up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Designed for Calicut's Creative and Business Community</h2>
+            <div className="space-y-4 text-white/80 leading-relaxed text-lg">
+              <p>
+                Kozhikode has always been a hub of trade and culture, and now it's transforming into a booming destination for modern businesses and tech startups. However, finding affordable, professional office space in Calicut can be a challenge for new entrepreneurs.
+              </p>
+              <p>
+                WeeSpaces Calicut solves this by offering budget-friendly, premium coworking spaces. Whether you're a local agency making your mark, an e-commerce entrepreneur, or a freelancer looking for a productive environment away from coffee shops, our space provides the community, high-speed internet, and professional atmosphere you need to thrive.
+              </p>
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal direction="left" className="space-y-6">
+            <h3 className="text-2xl font-bold mb-6 text-accent">Who is WeeSpaces Calicut For?</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Lightbulb className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Local Entrepreneurs</h4>
+                <p className="text-sm text-white/70">Move out of your living room and into a professional environment that boosts productivity.</p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Briefcase className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Agencies & Consultancies</h4>
+                <p className="text-sm text-white/70">Host clients in professional meeting rooms instead of noisy cafes.</p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Users className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Growing Startups</h4>
+                <p className="text-sm text-white/70">Scale your team with flexible dedicated desks or a private cabin near Cyberpark.</p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Coffee className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Freelancers & Creators</h4>
+                <p className="text-sm text-white/70">Join a community of like-minded professionals. Collaborate, network, and grow.</p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* --- BENEFITS & AMENITIES --- */}
+      <section className="py-24 bg-navy-light/10 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal direction="up" className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything You Need to Succeed</h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">Affordable doesn't mean compromising on quality. Enjoy premium amenities.</p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <ScrollReveal delay={0.1} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Zap className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Fast WiFi</h4>
+              <p className="text-xs text-white/60">Reliable, high-speed internet so your video calls never drop.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Shield className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Secure Access</h4>
+              <p className="text-xs text-white/60">Work when you want with secure biometric entry to the facility.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Users className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Meeting Rooms</h4>
+              <p className="text-xs text-white/60">Bookable rooms for team huddles or client presentations.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Coffee className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Community Vibe</h4>
+              <p className="text-xs text-white/60">A welcoming atmosphere with unlimited coffee to keep you energized.</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* --- WORKSPACE OPTIONS / PRICING GUIDANCE --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
         <ScrollReveal direction="up" className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Affordable <span className="text-accent">Pricing</span> in Calicut</h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">Budget-friendly plans for freelancers, designers, and growing teams in Kozhikode.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Affordable Workspace <span className="text-accent">Pricing</span></h2>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">Budget-friendly plans designed for Kozhikode's business community.</p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <ScrollReveal delay={0.1}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full flex flex-col">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Hot Desk</p>
               <div className="flex items-baseline gap-2 mb-1">
                  <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
                  <p className="text-3xl font-bold text-white">{data.pricing.hotDesk.split('/')[0]}</p>
               </div>
               <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">The most affordable way to work in a professional setting. Bring your laptop, pick any open seat, and start working.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Flexible seating</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> High-speed WiFi</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">View Details <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-accent/30 glow transition-all h-full relative">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-accent/30 glow transition-all h-full relative flex flex-col">
               <div className="absolute -top-3 left-6 bg-accent text-navy text-[10px] font-bold px-3 py-1 rounded-full">POPULAR</div>
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Dedicated Desk</p>
               <div className="flex items-baseline gap-2 mb-1">
@@ -180,65 +235,116 @@ export default function CoworkingSpaceInCalicut() {
                  <p className="text-3xl font-bold text-accent">{data.pricing.dedicatedDesk.split('/')[0]}</p>
               </div>
               <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">Your own personal reserved desk. Great for designers or anyone who wants to leave their setup overnight.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fixed personal desk</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Lockable storage</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">View Details <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full bg-navy-light/20">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full bg-navy-light/20 flex flex-col">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Private Office</p>
-              <p className="text-2xl font-bold text-white mb-1">Custom Quote</p>
-              <p className="text-white/40 text-sm mb-4">tailored to your team</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-white">{data.pricing.privateOffice.split('/')[0]}</p>
+              </div>
+              <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">A secure, enclosed cabin for your agency or startup team. Enjoy privacy while still having access to the community.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fully furnished</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Biometric access</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full flex flex-col">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Virtual Office</p>
               <div className="flex items-baseline gap-2 mb-1">
                  <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
                  <p className="text-3xl font-bold text-white">{data.pricing.virtualOffice.split('/')[0]}</p>
               </div>
               <p className="text-white/40 text-sm mb-4">per year</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">Get a professional Kozhikode business address for your company registration and GST compliance without renting physical space.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
-                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Kozhikode address</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Business address</li>
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> GST registration</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">View Details <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/virtual-office-in-kerala" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* --- LOCATION DETAILS --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-gradient-to-b from-transparent to-navy-light/20">
+      {/* --- COMPARISON: Coworking vs Traditional in Calicut --- */}
+      <section className="py-24 bg-navy-light/10 border-y border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal direction="up" className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Coworking Space vs Traditional Office in Calicut</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">Why lock your capital in real estate when you can invest it in your business?</p>
+          </ScrollReveal>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+             <div className="relative h-96 rounded-2xl overflow-hidden hidden md:block border border-white/10">
+                <Image src="/images/branches/calicut/workspace1.jpg" alt="Calicut Office Space Comparison" fill className="object-cover" />
+             </div>
+             <div>
+                <ul className="space-y-6">
+                   <li className="flex gap-4">
+                      <div className="mt-1 bg-red-500/10 p-2 rounded-full h-10 w-10 flex items-center justify-center shrink-0">
+                         <span className="text-red-500 font-bold">VS</span>
+                      </div>
+                      <div>
+                         <h4 className="font-bold text-lg mb-1 line-through text-white/50">Traditional Office Rent in Kozhikode</h4>
+                         <p className="text-white/60 text-sm">Requires hefty 6-10 month security deposits, buying your own furniture, setting up internet, and paying electricity bills separately.</p>
+                      </div>
+                   </li>
+                   <li className="flex gap-4">
+                      <div className="mt-1 bg-accent/20 p-2 rounded-full h-10 w-10 flex items-center justify-center shrink-0">
+                         <CheckCircle className="text-accent w-6 h-6" />
+                      </div>
+                      <div>
+                         <h4 className="font-bold text-lg text-accent mb-1">WeeSpaces Coworking</h4>
+                         <p className="text-white/80 text-sm">One simple monthly bill covering rent, electricity, high-speed internet, and maintenance. Zero setup costs. Cancel or upgrade anytime.</p>
+                         <Link href="/coworking-vs-traditional-office" className="text-accent text-sm font-bold inline-flex items-center gap-2 mt-3 hover:text-white transition-colors">See full comparison <ArrowRight className="w-4 h-4" /></Link>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- LOCATION ADVANTAGES --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <ScrollReveal direction="left">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Creative Hub in <span className="text-accent">Calicut</span></h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Central Location in <span className="text-accent">Nadakkave</span></h2>
+            <p className="text-white/80 text-lg mb-8 leading-relaxed">
+              Situated in East Nadakkave, our Calicut hub offers easy access from all parts of the city, keeping you close to both commercial centers and tech zones like Cyberpark.
+            </p>
 
             <div className="mb-6 flex gap-4">
-              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">Near</span><span className="text-xs text-white/50">Cyberpark</span></div>
-              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">₹4K</span><span className="text-xs text-white/50">Starting From</span></div>
+              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">Central</span><span className="text-xs text-white/50">Location</span></div>
+              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">Easy</span><span className="text-xs text-white/50">Commute</span></div>
             </div>
 
             <div className="flex items-start gap-4 mb-8 bg-navy-light/30 p-6 rounded-xl border border-white/10">
               <MapPin className="w-8 h-8 text-accent shrink-0" />
               <div>
-                <h4 className="text-xl font-bold text-white mb-2">Workspace Hub</h4>
-                <p className="text-white/70 leading-relaxed">
+                <h4 className="text-xl font-bold text-white mb-2">WeeSpaces Calicut</h4>
+                <p className="text-white/70 leading-relaxed text-sm">
                   {data.address}
-                  <br /><br />
-                  {data.description}
                 </p>
+                <ul className="mt-4 space-y-2 text-sm text-white/80">
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent" /> Accessible from Wayanad Road</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent" /> Proximity to cafes and restaurants</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent" /> Quiet, productive neighborhood</li>
+                </ul>
               </div>
             </div>
             <a href={data.mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-transparent border border-accent text-accent hover:bg-accent hover:text-navy font-bold py-3 px-8 rounded-xl transition-all w-max">
@@ -247,63 +353,35 @@ export default function CoworkingSpaceInCalicut() {
           </ScrollReveal>
 
           <ScrollReveal direction="right" className="relative rounded-xl overflow-hidden shadow-[0_0_40px_rgba(242,156,31,0.15)] h-[400px] md:h-[500px]">
-            <Image src={data.heroImage} alt="WeeSpaces Calicut Location - Near Cyberpark Kozhikode" fill sizes="100vw" className="object-cover" />
+            <Image src={data.heroImage} alt="WeeSpaces Calicut Location - Kozhikode" fill sizes="100vw" className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* --- IMAGE GALLERY (Masonry Layout) --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+      {/* --- IMAGE GALLERY --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-light/5">
         <ScrollReveal direction="up" className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Inside Our <span className="text-accent">Calicut</span> Hub</h2>
-          <p className="text-xl text-white/70">Take a peek inside our creative workspace in Kozhikode.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Inside Our <span className="text-accent">Calicut</span> Space</h2>
+          <p className="text-xl text-white/70">Take a peek inside our creative and affordable workspace.</p>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <ScrollReveal direction="up" delay={0.1} className="relative rounded-xl overflow-hidden shadow-lg h-96 group">
-            <Image src={data.galleryImages[0]} alt="WeeSpaces Calicut workspace 1" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-          </ScrollReveal>
-          <div className="flex flex-col gap-6 h-96">
-            <ScrollReveal direction="left" delay={0.2} className="relative rounded-xl overflow-hidden shadow-lg flex-1 group">
-              <Image src={data.galleryImages[1]} alt="WeeSpaces Calicut workspace 2" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {data.galleryImages.map((src, idx) => (
+            <ScrollReveal key={idx} delay={idx * 0.15} className="relative rounded-xl overflow-hidden group shadow-md border border-white/10 h-64 md:h-80">
+              <Image src={src} alt={`WeeSpaces Calicut workspace ${idx + 1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
               <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </ScrollReveal>
-            <ScrollReveal direction="left" delay={0.3} className="relative rounded-xl overflow-hidden shadow-lg flex-1 group">
-              <Image src={data.galleryImages[2]} alt="WeeSpaces Calicut workspace 3" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* --- FAQ SECTION --- */}
-      <section className="py-24 max-w-4xl mx-auto px-6 border-t border-white/10">
-        <ScrollReveal direction="up" className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-accent tracking-widest uppercase mb-6">
-            FAQ
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-white/70">Everything you need to know about coworking in Calicut.</p>
-        </ScrollReveal>
-
-        <div className="space-y-4">
-          {faqs.map((faq, idx) => (
-            <ScrollReveal key={idx} delay={idx * 0.1}>
-              <details className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all group">
-                <summary className="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-lg cursor-pointer list-none">
-                  {faq.question}
-                  <ChevronRight className="w-5 h-5 text-white/50 group-open:rotate-90 group-open:text-accent transition-transform duration-300 shrink-0 ml-4" />
-                </summary>
-                <div className="px-6 pb-5">
-                  <p className="text-white/70 leading-relaxed">{faq.answer}</p>
-                </div>
-              </details>
             </ScrollReveal>
           ))}
         </div>
       </section>
+
+      {/* --- FAQ SECTION --- */}
+      <SEOFAQ 
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about coworking in Calicut."
+        faqs={coworkingFAQs} 
+      />
     </>
   );
 }

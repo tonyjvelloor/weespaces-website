@@ -4,30 +4,32 @@ import LeadForm from '@/components/LeadForm';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
-import { MapPin, ArrowRight, CheckCircle, ChevronRight, Star, BadgeCheck } from 'lucide-react';
+import { MapPin, ArrowRight, CheckCircle, Star, BadgeCheck, Users, Briefcase, Zap, Coffee, Shield, Laptop } from 'lucide-react';
 import { branchData } from '@/data/branches';
+import SEOFAQ from '@/components/SEOFAQ';
+import { coworkingFAQs } from '@/data/faqs';
 
 const data = branchData.trivandrum;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Trivandrum | Office Space Near Technopark | WeeSpaces',
-  description: 'Premium coworking space in Trivandrum near Technopark. Hot desks from ₹4,500/mo, dedicated desks, private cabins & virtual offices at Pattom. Book a free tour at WeeSpaces!',
+  title: 'Coworking Space in Trivandrum | IT Park Offices | WeeSpaces',
+  description: 'Discover flexible coworking spaces near Technopark in Trivandrum. Dedicated desks, managed IT offices, and enterprise workspace solutions.',
   keywords: [
     'coworking space in Trivandrum',
     'office space for rent Trivandrum',
-    'coworking near Technopark',
-    'managed office Thiruvananthapuram',
+    'managed office Technopark',
     'shared workspace Trivandrum',
+    'IT office space Pattom',
     'virtual office Trivandrum',
-    'private cabin Pattom',
-    'best coworking space Trivandrum',
+    'private office cabin Trivandrum',
+    'best coworking near Technopark',
   ],
   alternates: {
     canonical: '/coworking-space-in-trivandrum',
   },
   openGraph: {
-    title: 'Coworking Space in Trivandrum | Office Space Near Technopark | WeeSpaces',
-    description: 'Premium coworking & managed offices near Technopark, Trivandrum. High-speed WiFi, ergonomic setups, meeting rooms & a vibrant IT community. Hot desks from ₹4,500/mo.',
+    title: 'Coworking Space in Trivandrum | IT Park Offices | WeeSpaces',
+    description: 'Premium coworking & managed IT offices in Pattom, Trivandrum. High-speed leased lines, ergonomic setups & enterprise-grade security. Hot desks from ₹4,500/mo.',
     url: '/coworking-space-in-trivandrum',
     images: [
       {
@@ -40,33 +42,10 @@ export const metadata: Metadata = {
   },
 };
 
-const faqs = [
-  {
-    question: 'How much does coworking cost in Trivandrum?',
-    answer: 'At WeeSpaces Trivandrum, hot desks start at ₹4,500/month, dedicated desks at ₹6,000/month, and virtual office plans at ₹10,000/year. Private cabins are available with custom quotes based on team size and configuration needs.',
-  },
-  {
-    question: 'Which is the best coworking space in Trivandrum?',
-    answer: 'WeeSpaces at Pattom, Trivandrum is rated one of the best coworking spaces in the city. Nestled adjacent to Technopark — Kerala\'s largest IT hub — we offer a high-focus environment with premium amenities, ergonomic furniture, high-speed WiFi, and a thriving community of IT enterprises and deep-tech startups.',
-  },
-  {
-    question: 'Does WeeSpaces Trivandrum offer virtual offices?',
-    answer: 'Yes! Our virtual office plan in Trivandrum starts at just ₹10,000/year. It includes a premium Pattom business address suitable for GST and company registration, mail handling, and access to meeting rooms on a pay-per-use basis.',
-  },
-  {
-    question: 'Where is WeeSpaces Trivandrum located?',
-    answer: 'WeeSpaces Trivandrum is located at 1st Floor, Relcon Plaza, Pattom, Thiruvananthapuram, Kerala 695004. It is strategically positioned adjacent to Technopark with excellent connectivity to the city center and major IT parks.',
-  },
-  {
-    question: 'Is WeeSpaces Trivandrum suitable for IT companies and startups?',
-    answer: 'Absolutely! Our Trivandrum hub is specifically designed for IT enterprises and deep-tech startups. With proximity to Technopark, a serene high-focus environment, dedicated high-speed internet lines, and a community of like-minded tech professionals, it is the ideal workspace for technology companies.',
-  },
-];
-
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'WeeSpaces Trivandrum - Coworking Space Near Technopark',
+  name: 'WeeSpaces Trivandrum - IT Coworking Space',
   image: 'https://weespaces.in' + data.heroImage,
   address: {
     '@type': 'PostalAddress',
@@ -87,115 +66,168 @@ const localBusinessSchema = {
   url: 'https://weespaces.in/coworking-space-in-trivandrum',
 };
 
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
-    },
-  })),
-};
-
 export default function CoworkingSpaceInTrivandrum() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
 
       {/* --- HERO SECTION --- */}
-      <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 bg-navy-dark overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image src={data.heroImage} alt="Coworking Space in Trivandrum - WeeSpaces Pattom" fill sizes="100vw" className="object-cover object-center opacity-30" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60"></div>
+          <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent/20 rounded-full blur-[120px] -mr-[20vw] -mt-[10vw] pointer-events-none"></div>
+        </div>
         <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[750px] w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl hidden md:flex flex-col justify-end p-8">
-            <Image src={data.heroImage} alt="Coworking Space in Trivandrum - WeeSpaces Near Technopark" fill sizes="100vw" className="object-cover" priority />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent opacity-90"></div>
-            <div className="relative z-10">
-              <ScrollReveal direction="up" className="space-y-6 md:space-y-8 z-10 relative">
-                <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
-                  <MapPin className="w-4 h-4" />
-                  Trivandrum, Kerala
-                </div>
-
-                <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-tight">
-                  Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
-                  in Trivandrum
-                </h1>
-
-                <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
-                  <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
-                  <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
-                    {data.description}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-4">
-                  <div className="flex items-center gap-2 text-white/60 text-sm">
-                    <BadgeCheck className="w-5 h-5 text-accent" />
-                    <span>Adjacent to Technopark</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-white/60 text-sm">
-                    <Star className="w-5 h-5 text-accent fill-accent" />
-                    <span>4.8/5 Google Rating</span>
-                  </div>
-                </div>
-
-                <p className="text-white/70 italic text-sm">{data.cta}</p>
-              </ScrollReveal>
+          <ScrollReveal direction="up" className="space-y-6 md:space-y-8">
+            <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
+              <MapPin className="w-4 h-4" />
+              Trivandrum, Kerala
             </div>
-          </div>
 
-          {/* Mobile Hero */}
-          <div className="md:hidden mb-8">
-            <ScrollReveal direction="up" className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full">
-                <MapPin className="w-4 h-4" />
-                Trivandrum, Kerala
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
+              Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
+              in Trivandrum
+            </h1>
+
+            <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
+              <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
+              <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
+                Empower your IT enterprise in the tech capital of Kerala. Located in Pattom with close proximity to Technopark, our Trivandrum hub is engineered for deep-tech startups and global software teams requiring high-focus environments.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2 text-white/60 text-sm">
+                <BadgeCheck className="w-5 h-5 text-accent" />
+                <span>Trusted by Global IT Firms</span>
               </div>
-              <h1 className="text-4xl font-bold leading-tight">
-                Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span> in Trivandrum
-              </h1>
-              <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg">
-                <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
-                <p className="text-sm text-white/90 font-medium leading-relaxed">{data.description}</p>
+              <div className="flex items-center gap-2 text-white/60 text-sm">
+                <Star className="w-5 h-5 text-accent fill-accent" />
+                <span>4.9/5 Google Rating</span>
               </div>
+            </div>
+
+            <p className="text-white/70 italic text-sm">{data.cta}</p>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0.2} className="w-full max-w-md mx-auto md:mx-0 md:ml-auto">
+            <div className="glass p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent-light"></div>
+              <h3 className="text-2xl font-bold mb-2">Book a Free Tour</h3>
+              <p className="text-white/70 text-sm mb-6">Experience our enterprise-grade IT workspace.</p>
+              <LeadForm branch={data.name} />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* --- INTRODUCTION & WHO IS IT FOR --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <ScrollReveal direction="up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Built for Trivandrum's IT Ecosystem</h2>
+            <div className="space-y-4 text-white/80 leading-relaxed text-lg">
+              <p>
+                As the home to Technopark, India's largest IT park, Trivandrum requires workspaces that can keep up with the demands of global software development and deep-tech innovation.
+              </p>
+              <p>
+                WeeSpaces in Pattom bridges the gap between premium infrastructure and ultimate flexibility. Forget complex multi-year commercial leases inside SEZs. We offer plug-and-play managed offices and coworking desks with enterprise-grade networking, biometric security, and uninterrupted power. We handle the facilities, so your engineers can handle the code.
+              </p>
+            </div>
+          </ScrollReveal>
+          
+          <ScrollReveal direction="left" className="space-y-6">
+            <h3 className="text-2xl font-bold mb-6 text-accent">Who is WeeSpaces Trivandrum For?</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Laptop className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">IT & Software Enterprises</h4>
+                <p className="text-sm text-white/70">Establish a satellite development center rapidly with zero CapEx and flexible scaling.</p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Users className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Deep-Tech Startups</h4>
+                <p className="text-sm text-white/70">A serene, distraction-free environment perfect for deep work, AI modeling, and intense coding sprints.</p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Briefcase className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Offshore Development Centers</h4>
+                <p className="text-sm text-white/70">Provide your offshore teams with premium infrastructure and 24/7 access control.</p>
+              </div>
+              <div className="glass p-6 rounded-2xl border border-white/10">
+                <Coffee className="w-8 h-8 text-accent mb-4" />
+                <h4 className="font-bold mb-2">Remote Tech Workers</h4>
+                <p className="text-sm text-white/70">Upgrade from WFH. Connect with other developers in our premium shared workspace areas.</p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* --- BENEFITS & AMENITIES --- */}
+      <section className="py-24 bg-navy-light/10 border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal direction="up" className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Tech-Ready Infrastructure</h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">Designed to meet the stringent demands of modern IT companies.</p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <ScrollReveal delay={0.1} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Zap className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Dual Leased Lines</h4>
+              <p className="text-xs text-white/60">Failover internet architecture ensuring 99.9% uptime for critical deployments.</p>
             </ScrollReveal>
-          </div>
-
-          <div>
-            <LeadForm branch={data.name} />
+            <ScrollReveal delay={0.2} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Shield className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Data Security</h4>
+              <p className="text-xs text-white/60">Biometric access controls, secure VLANs, and enterprise firewalls.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Users className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Boardrooms</h4>
+              <p className="text-xs text-white/60">Acoustically treated meeting rooms with 4K video conferencing equipment.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Coffee className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Cafeteria</h4>
+              <p className="text-xs text-white/60">Hygienic pantry, unlimited coffee, and relaxed zones for your team's breaks.</p>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* --- PRICING SUMMARY --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+      {/* --- WORKSPACE OPTIONS / PRICING GUIDANCE --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
         <ScrollReveal direction="up" className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Transparent <span className="text-accent">Pricing</span> in Trivandrum</h2>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">Affordable plans for IT professionals, startups, and enterprises near Technopark.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">IT Workspace <span className="text-accent">Pricing</span></h2>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">Scalable solutions for individual developers to full engineering teams.</p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <ScrollReveal delay={0.1}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full flex flex-col">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Hot Desk</p>
               <div className="flex items-baseline gap-2 mb-1">
                  <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
                  <p className="text-3xl font-bold text-white">{data.pricing.hotDesk.split('/')[0]}</p>
               </div>
               <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">Perfect for agile remote workers. Drop in, grab a desk, connect to our high-speed network, and code.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Flexible seating</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> High-speed WiFi</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Dual-band WiFi</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">View Details <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-accent/30 glow transition-all h-full relative">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-accent/30 glow transition-all h-full relative flex flex-col">
               <div className="absolute -top-3 left-6 bg-accent text-navy text-[10px] font-bold px-3 py-1 rounded-full">POPULAR</div>
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Dedicated Desk</p>
               <div className="flex items-baseline gap-2 mb-1">
@@ -203,84 +235,132 @@ export default function CoworkingSpaceInTrivandrum() {
                  <p className="text-3xl font-bold text-accent">{data.pricing.dedicatedDesk.split('/')[0]}</p>
               </div>
               <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">A permanent setup for focused work. Leave your monitors and hardware securely at your desk overnight.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fixed personal desk</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Lockable storage</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Lockable drawer</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">View Details <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full bg-navy-light/20">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full bg-navy-light/20 flex flex-col">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Private Office</p>
               <p className="text-2xl font-bold text-white mb-1">Custom Quote</p>
               <p className="text-white/40 text-sm mb-4">tailored to your team</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">A fully enclosed, private environment for your engineering team. Customizable IT infrastructure and branding.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
-                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fully furnished</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Biometric access</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Dedicated LAN/VLAN</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Biometric cabin access</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
 
           <ScrollReveal delay={0.4}>
-            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full">
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full flex flex-col">
               <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Virtual Office</p>
               <div className="flex items-baseline gap-2 mb-1">
                  <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
                  <p className="text-3xl font-bold text-white">{data.pricing.virtualOffice.split('/')[0]}</p>
               </div>
               <p className="text-white/40 text-sm mb-4">per year</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">Register your IT company with a premium Pattom address. We handle mail forwarding and provide meeting room access.</p>
               <ul className="space-y-2 text-sm text-white/70 mb-6">
                 <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Pattom address</li>
-                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> GST registration</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Company registration</li>
               </ul>
-              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors">View Details <ArrowRight className="w-4 h-4" /></Link>
+              <Link href="/virtual-office-in-kerala" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
             </MouseGlowCard>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* --- LOCATION DETAILS --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-gradient-to-b from-transparent to-navy-light/20">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <ScrollReveal direction="right" className="md:order-last relative rounded-xl overflow-hidden shadow-[0_0_40px_rgba(242,156,31,0.15)] h-[400px] md:h-[500px]">
-            <Image src={data.heroImage} alt="WeeSpaces Trivandrum Location - Near Technopark" fill sizes="100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+      {/* --- COMPARISON: Coworking vs Traditional in Trivandrum --- */}
+      <section className="py-24 bg-navy-light/10 border-y border-white/5">
+        <div className="max-w-6xl mx-auto px-6">
+          <ScrollReveal direction="up" className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">WeeSpaces Managed IT Office vs Traditional Tech Parks</h2>
+            <p className="text-white/70 max-w-2xl mx-auto">Why wait months for SEZ approvals when your team can start shipping code today?</p>
           </ScrollReveal>
+          
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+             <div className="relative h-96 rounded-2xl overflow-hidden hidden md:block border border-white/10">
+                <Image src="/images/branches/trivandrum/image2.jpg" alt="Trivandrum IT Office Comparison" fill className="object-cover" />
+             </div>
+             <div>
+                <ul className="space-y-6">
+                   <li className="flex gap-4">
+                      <div className="mt-1 bg-red-500/10 p-2 rounded-full h-10 w-10 flex items-center justify-center shrink-0">
+                         <span className="text-red-500 font-bold">VS</span>
+                      </div>
+                      <div>
+                         <h4 className="font-bold text-lg mb-1 line-through text-white/50">Traditional IT Park Lease</h4>
+                         <p className="text-white/60 text-sm">Complex 5-year leases, massive upfront deposits, months of bare-shell interior fit-outs, and you still have to hire facility managers, IT admins, and security staff.</p>
+                      </div>
+                   </li>
+                   <li className="flex gap-4">
+                      <div className="mt-1 bg-accent/20 p-2 rounded-full h-10 w-10 flex items-center justify-center shrink-0">
+                         <CheckCircle className="text-accent w-6 h-6" />
+                      </div>
+                      <div>
+                         <h4 className="font-bold text-lg text-accent mb-1">WeeSpaces Managed Workspace</h4>
+                         <p className="text-white/80 text-sm">Move in within 24 hours. Zero fit-out costs. Scale up desks as you hire. We handle the AC, the internet, and the coffee so you can focus entirely on your product.</p>
+                         <Link href="/coworking-vs-traditional-office" className="text-accent text-sm font-bold inline-flex items-center gap-2 mt-3 hover:text-white transition-colors">See full comparison <ArrowRight className="w-4 h-4" /></Link>
+                      </div>
+                   </li>
+                </ul>
+             </div>
+          </div>
+        </div>
+      </section>
 
-          <ScrollReveal direction="left" className="md:order-first">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Prime Location in <span className="text-accent">Trivandrum</span></h2>
+      {/* --- LOCATION ADVANTAGES --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <ScrollReveal direction="left">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Strategic Location in <span className="text-accent">Pattom</span></h2>
+            <p className="text-white/80 text-lg mb-8 leading-relaxed">
+              Situated in Pattom, our Trivandrum hub strikes the perfect balance between city-center convenience and close proximity to the Technopark ecosystem.
+            </p>
 
             <div className="mb-6 flex gap-4">
-              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">IT Hub</span><span className="text-xs text-white/50">Technopark Adjacent</span></div>
-              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">24/7</span><span className="text-xs text-white/50">Power Backup</span></div>
+              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">30+</span><span className="text-xs text-white/50">Tech Firms</span></div>
+              <div className="glass p-4 rounded-xl flex-1 text-center"><span className="block text-2xl font-bold text-accent">24/7</span><span className="text-xs text-white/50">Access</span></div>
             </div>
 
             <div className="flex items-start gap-4 mb-8 bg-navy-light/30 p-6 rounded-xl border border-white/10">
               <MapPin className="w-8 h-8 text-accent shrink-0" />
               <div>
-                <h4 className="text-xl font-bold text-white mb-2">Workspace Hub</h4>
-                <p className="text-white/70 leading-relaxed">
+                <h4 className="text-xl font-bold text-white mb-2">WeeSpaces Trivandrum</h4>
+                <p className="text-white/70 leading-relaxed text-sm">
                   {data.address}
-                  <br /><br />
-                  {data.description}
                 </p>
+                <ul className="mt-4 space-y-2 text-sm text-white/80">
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent" /> Premium facility in Relcon Plaza</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent" /> Easy access to Technopark and city center</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent" /> Ample parking for employees and clients</li>
+                </ul>
               </div>
             </div>
             <a href={data.mapUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-3 bg-transparent border border-accent text-accent hover:bg-accent hover:text-navy font-bold py-3 px-8 rounded-xl transition-all w-max">
               Get Directions <ArrowRight className="w-5 h-5" />
             </a>
           </ScrollReveal>
+
+          <ScrollReveal direction="right" className="relative rounded-xl overflow-hidden shadow-[0_0_40px_rgba(242,156,31,0.15)] h-[400px] md:h-[500px]">
+            <Image src={data.heroImage} alt="WeeSpaces Trivandrum Location - Near Technopark" fill sizes="100vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent"></div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* --- IMAGE GALLERY --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-light/5">
         <ScrollReveal direction="up" className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Inside Our <span className="text-accent">Trivandrum</span> Hub</h2>
-          <p className="text-xl text-white/70">Take a peek inside our premium managed offices near Technopark.</p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Inside Our <span className="text-accent">Trivandrum</span> IT Hub</h2>
+          <p className="text-xl text-white/70">Take a peek inside our enterprise-grade managed offices.</p>
         </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -294,31 +374,11 @@ export default function CoworkingSpaceInTrivandrum() {
       </section>
 
       {/* --- FAQ SECTION --- */}
-      <section className="py-24 max-w-4xl mx-auto px-6 border-t border-white/10">
-        <ScrollReveal direction="up" className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-accent tracking-widest uppercase mb-6">
-            FAQ
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-white/70">Everything you need to know about coworking in Trivandrum.</p>
-        </ScrollReveal>
-
-        <div className="space-y-4">
-          {faqs.map((faq, idx) => (
-            <ScrollReveal key={idx} delay={idx * 0.1}>
-              <details className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all group">
-                <summary className="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-lg cursor-pointer list-none">
-                  {faq.question}
-                  <ChevronRight className="w-5 h-5 text-white/50 group-open:rotate-90 group-open:text-accent transition-transform duration-300 shrink-0 ml-4" />
-                </summary>
-                <div className="px-6 pb-5">
-                  <p className="text-white/70 leading-relaxed">{faq.answer}</p>
-                </div>
-              </details>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
+      <SEOFAQ 
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about coworking in Trivandrum."
+        faqs={coworkingFAQs} 
+      />
     </>
   );
 }

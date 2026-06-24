@@ -22,7 +22,7 @@ function ContactForm() {
   }, [planParam, branchParam]);
 
   return (
-    <form className="space-y-6" action="https://formspree.io/f/placeholder" method="POST">
+    <form className="space-y-6" action="#" method="POST" onSubmit={(e) => { e.preventDefault(); alert('Please use the number/email above to contact us directly or use the Get a Quote form on the homepage.'); }}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label className="block text-sm font-bold text-white/70 mb-2">Name</label>

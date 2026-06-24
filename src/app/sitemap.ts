@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/virtual-office',
     '/services/incubation',
     '/investors',
+    '/coworking-vs-traditional-office',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -66,25 +67,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const serviceRoutes = [
     '/services/conference-hall',
     '/services/coworking',
+    '/virtual-office-kochi-gst-registration',
+    '/virtual-office-trivandrum',
+    '/virtual-office-calicut',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
-  }));
-
-  const productRoutes = [
-    '/products/workstation',
-    '/products/work-lounge',
-    '/products/premium-cabin',
-    '/products/executive-cabin',
-    '/products/office-desk',
-    '/products/individual-desk',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
   }));
 
   return [
@@ -93,6 +83,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogRoutes,
     ...landingRoutes,
     ...serviceRoutes,
-    ...productRoutes,
   ];
 }

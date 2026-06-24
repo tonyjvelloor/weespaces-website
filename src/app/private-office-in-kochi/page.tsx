@@ -5,38 +5,77 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import LeadForm from '@/components/LeadForm';
 import { CheckCircle, MapPin, Users, Wifi, Coffee } from 'lucide-react';
-import FAQAccordion from '@/components/FAQAccordion';
+import SEOFAQ from '@/components/SEOFAQ';
+import { privateOfficeFAQs } from '@/data/faqs';
+
+import { branchData } from '@/data/branches';
+
+const data = branchData.ernakulam;
 
 export const metadata: Metadata = {
-  title: 'Private Office in Kochi | Premium Cabins & Team Workspaces',
-  description: 'Rent a fully furnished private office in Kochi (Ernakulam). Zero setup costs, flexible terms, biometric access, and high-speed internet. Built for teams of 2 to 100+.',
+  title: 'Private Office in Kochi | Managed Team Workspaces | WeeSpaces',
+  description: 'Move your team into a secure, fully furnished private office in Ernakulam. Enjoy zero setup costs, ergonomic furniture, and premium IT infrastructure.',
   alternates: {
     canonical: '/private-office-in-kochi',
   },
 };
 
-const faqs = [
-  {
-    question: "What is included in a Private Office at WeeSpaces?",
-    answer: "Our private offices in Kochi come fully furnished with ergonomic chairs, desks, high-speed Wi-Fi, biometric access control, IT infrastructure, power backup, and access to all shared amenities like lounges, pantries, and meeting rooms."
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'WeeSpaces Kochi - Private Offices',
+  image: 'https://weespaces.in' + data.heroImage,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram, Perumanoor',
+    addressLocality: 'Kochi',
+    addressRegion: 'Kerala',
+    postalCode: '682016',
+    addressCountry: 'IN',
   },
-  {
-    question: "Can we customize the private office layout?",
-    answer: "Yes, for larger team offices, we offer custom layouts and branding options. You can choose the desk configurations, add private manager cabins, or include internal meeting rooms."
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: data.geo.lat,
+    longitude: data.geo.lon,
   },
-  {
-    question: "Are there any hidden costs or setup fees?",
-    answer: "No. Unlike traditional leasing, WeeSpaces private offices have zero setup costs, no brokerage, and no capital expenditure. You pay a single all-inclusive monthly fee."
+  telephone: '+919207189111',
+  openingHours: 'Mo-Sa 08:00-20:00',
+  url: 'https://weespaces.in/private-office-in-kochi',
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Private Office in Kochi',
+  serviceType: 'Private Managed Office Space',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'WeeSpaces Kochi'
   },
-  {
-    question: "What are the lock-in periods for a private office?",
-    answer: "We offer highly flexible agreements starting from just a few months to long-term multi-year lock-ins, depending on your business needs and the size of the customized space."
+  areaServed: {
+    '@type': 'City',
+    name: 'Kochi'
+  },
+  description: 'Move your team into a secure, fully furnished private office in Ernakulam. Enjoy zero setup costs, ergonomic furniture, and premium IT infrastructure.',
+  offers: {
+    '@type': 'Offer',
+    price: '18000',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/InStock',
   }
-];
+};
 
 export default function PrivateOfficeKochiPage() {
   return (
     <div className="pt-24 pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden bg-navy-dark border-b border-white/10">
         <div className="absolute inset-0 z-0">
@@ -152,12 +191,11 @@ export default function PrivateOfficeKochiPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 max-w-3xl mx-auto px-6">
-        <ScrollReveal direction="up" className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-        </ScrollReveal>
-        <FAQAccordion faqs={faqs} />
-      </section>
+      <SEOFAQ 
+        title="Frequently Asked Questions"
+        subtitle="Everything you need to know about our private offices."
+        faqs={privateOfficeFAQs} 
+      />
     </div>
   );
 }

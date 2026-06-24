@@ -84,3 +84,91 @@ export const faqs = [
     ]
   }
 ];
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export const homepageFAQs: FAQ[] = [
+  {
+    question: "What is WeeSpaces?",
+    answer: "WeeSpaces is a flexible workspace provider offering coworking spaces, private offices, meeting rooms, managed offices, and virtual office solutions across Kerala. WeeSpaces helps freelancers, startups, and growing companies move into fully-equipped professional workspaces without the cost and complexity of setting up a traditional office."
+  },
+  {
+    question: "Who is WeeSpaces designed for?",
+    answer: "WeeSpaces is designed for freelancers, remote professionals, startups, small businesses, and enterprise teams looking for flexible office solutions. Whether you need a single dedicated desk, private team office, or complete managed workspace, WeeSpaces provides scalable options."
+  },
+  {
+    question: "Where are WeeSpaces locations available?",
+    answer: "WeeSpaces provides coworking and office spaces across key business locations in Kerala including Kochi, Trivandrum, and Calicut."
+  },
+  {
+    question: "Why choose WeeSpaces instead of renting an office?",
+    answer: "Unlike traditional offices that require deposits, furniture investment, maintenance, and long-term commitments, WeeSpaces provides ready-to-use offices with flexible plans, professional amenities, and the ability to scale as your business grows."
+  },
+  {
+    question: "Does WeeSpaces provide private offices for companies?",
+    answer: "Yes. WeeSpaces offers fully furnished private offices for teams that need dedicated workspace with privacy, flexibility, meeting rooms, internet, and professional office facilities without managing office operations."
+  }
+];
+
+export const coworkingFAQs: FAQ[] = [
+  {
+    question: "What is the best coworking space in Kochi for startups?",
+    answer: "WeeSpaces offers coworking spaces in Kochi designed for startups, entrepreneurs, and growing teams who need flexible, ready-to-use offices. Members get access to professional workspaces, meeting rooms, internet, and business amenities without traditional office setup costs."
+  },
+  {
+    question: "How much does coworking space cost in Kochi?",
+    answer: "Coworking space pricing in Kochi depends on workspace type, location, and requirements. Flexible desks usually have lower monthly costs, while private offices and managed workspaces are customized based on team size and business needs."
+  },
+  {
+    question: "Can I get a private office inside a coworking space in Kochi?",
+    answer: "Yes. WeeSpaces provides private offices inside coworking environments for companies that need dedicated team spaces while still benefiting from shared amenities and flexible workspace services."
+  },
+  {
+    question: "Is coworking better than renting an office in Kochi?",
+    answer: "Coworking can be more cost-effective than renting a traditional office because businesses avoid upfront investment in interiors, furniture, internet setup, maintenance, and long-term commitments."
+  }
+];
+
+export const privateOfficeFAQs: FAQ[] = [
+  {
+    question: "What is a private office?",
+    answer: "A private office is a dedicated, fully furnished workspace exclusively used by your team while providing access to shared business facilities such as meeting rooms, internet, reception areas, and workspace services."
+  },
+  {
+    question: "Who should choose a private office?",
+    answer: "Private offices are ideal for startups, agencies, IT companies, consultants, and growing teams that need privacy, collaboration space, and a professional environment without managing office infrastructure."
+  },
+  {
+    question: "How quickly can a company move into a private office?",
+    answer: "With WeeSpaces, businesses can move into ready-to-use private offices quickly because essential infrastructure including furniture, internet, and workspace facilities are already available."
+  }
+];
+
+export const virtualOfficeFAQs: FAQ[] = [
+  {
+    question: "What is a virtual office?",
+    answer: "A virtual office gives businesses a professional office address without renting physical workspace. Companies use virtual offices for business registration, communication, and establishing presence in a preferred location."
+  },
+  {
+    question: "Can I use a virtual office for GST registration in Kerala?",
+    answer: "Yes. A virtual office can be used for GST registration when it provides the required business address documentation according to applicable regulations."
+  },
+  {
+    question: "Who needs a virtual office?",
+    answer: "Virtual offices are useful for startups, ecommerce sellers, consultants, freelancers, and remote businesses that need a professional address without maintaining a physical office."
+  }
+];
+
+export const comparisonFAQs: FAQ[] = [
+  {
+    question: "Is coworking cheaper than renting an office?",
+    answer: "Coworking spaces usually reduce upfront expenses because companies do not need to separately invest in interiors, furniture, utilities, and office management."
+  },
+  {
+    question: "When should a company move from coworking to a private office?",
+    answer: "Businesses usually move into private offices when they require dedicated team areas, more privacy, stronger branding, or additional operational control."
+  }
+];
