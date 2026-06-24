@@ -8,7 +8,7 @@ const cityUrlMap: Record<string, string> = {
   trivandrum: '/coworking-space-in-trivandrum',
   ernakulam: '/coworking-space-in-kochi',
   calicut: '/coworking-space-in-calicut',
-  coimbatore: '/coworking-space-in-coimbatore',
+  coimbatore: '/coworking-space-coimbatore',
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -70,6 +70,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/virtual-office-kochi-gst-registration',
     '/virtual-office-trivandrum',
     '/virtual-office-calicut',
+    '/office-space-for-rent-coimbatore',
+    '/private-office-space-coimbatore',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

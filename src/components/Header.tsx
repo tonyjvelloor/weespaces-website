@@ -38,7 +38,7 @@ export default function Header() {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy border-b border-white/5 shadow-2xl' : 'glass border-b border-white/10'}`}>
       {!pathname?.startsWith('/landing') && (
         <div className="bg-gradient-to-r from-accent to-accent-light text-navy-dark py-1.5 px-4 text-center text-xs sm:text-sm font-bold w-full">
-          🎉 Inauguration Offer for Coimbatore Branch Now Live! <Link href="/coworking-space-in-coimbatore" className="underline underline-offset-2 ml-1 hover:text-white transition-colors">Claim your 20% off</Link>
+          🎉 Inauguration Offer for Coimbatore Branch Now Live! <Link href="/coworking-space-coimbatore" className="underline underline-offset-2 ml-1 hover:text-white transition-colors">Claim your 20% off</Link>
         </div>
       )}
       <div className={`container mx-auto px-6 flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>
@@ -55,7 +55,7 @@ export default function Header() {
               <Link href="/coworking-space-in-kochi" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Kochi</Link>
               <Link href="/coworking-space-in-trivandrum" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Trivandrum</Link>
               <Link href="/coworking-space-in-calicut" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Calicut</Link>
-              <Link href="/coworking-space-in-coimbatore" className="block px-4 py-3 hover:bg-white/10 flex items-center justify-between">
+              <Link href="/coworking-space-coimbatore" className="block px-4 py-3 hover:bg-white/10 flex items-center justify-between">
                 Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
               </Link>
             </div>
@@ -75,7 +75,7 @@ export default function Header() {
           </div>
 
           <Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link>
-          <Link href="/resources" className="hover:text-accent transition-colors">Resources</Link>
+          <Link href="/about" className="hover:text-accent transition-colors">About</Link>
           <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Book Tour</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
@@ -119,7 +119,7 @@ export default function Header() {
                   <Link href="/coworking-space-in-kochi" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Kochi</Link>
                   <Link href="/coworking-space-in-trivandrum" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Trivandrum</Link>
                   <Link href="/coworking-space-in-calicut" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Calicut</Link>
-                  <Link href="/coworking-space-in-coimbatore" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors flex items-center justify-between">
+                  <Link href="/coworking-space-coimbatore" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors flex items-center justify-between">
                     Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
                   </Link>
                 </div>
