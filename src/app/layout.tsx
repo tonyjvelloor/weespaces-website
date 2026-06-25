@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "DTBR2769JCtmLJI1De2C1NQYp590lwOBA1951QTbSKQ",
+    google: "XN0i_JTKrBVCjj37Hp_zuSl38bfGQR2qhsuUEzWdee4",
     other: {
       'ahrefs-site-verification': 'd3997787cfaac2252dbec64bf63beebe9e91a31a5df4d755b5a570eba7beee86',
     },
