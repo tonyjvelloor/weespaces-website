@@ -13,7 +13,7 @@ import NAPBlock from '@/components/NAPBlock';
 const data = branchData.trivandrum;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Trivandrum | WeeSpaces',
+  title: 'Coworking Space Trivandrum (Thiruvananthapuram)',
   description: 'Discover flexible coworking spaces near Technopark in Trivandrum. Dedicated desks, managed IT offices, and enterprise workspace solutions.',
   keywords: [
     'coworking space Trivandrum',
@@ -114,13 +114,13 @@ export default function CoworkingSpaceInTrivandrum() {
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
               Enterprise <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
-              in Trivandrum
+              in Trivandrum (Thiruvananthapuram)
             </h1>
 
             <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
               <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
               <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
-                Empower your IT enterprise in the tech capital of Kerala. Located in Pattom with close proximity to Technopark, our Trivandrum hub is engineered for deep-tech startups and global software teams requiring high-focus environments.
+                Empower your IT enterprise in the tech capital of Kerala. Located in Pattom with close proximity to Technopark, our Trivandrum (Thiruvananthapuram) hub is engineered for deep-tech startups and global software teams requiring high-focus environments.
               </p>
             </div>
 

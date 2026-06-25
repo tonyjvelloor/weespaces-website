@@ -13,7 +13,7 @@ import NAPBlock from '@/components/NAPBlock';
 const data = branchData.calicut;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Calicut (Kozhikode) | WeeSpaces',
+  title: 'Coworking Space Calicut (Kozhikode)',
   description: 'Rent affordable and premium coworking spaces in Calicut near Cyberpark. Fully furnished offices tailored for local businesses, freelancers, and entrepreneurs.',
   keywords: [
     'coworking space Calicut',
@@ -114,14 +114,14 @@ export default function CoworkingSpaceInCalicut() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-              Inspiring <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
+              Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
               in Calicut (Kozhikode)
             </h1>
 
             <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
               <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
               <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
-                Unlock your potential in Kozhikode. Close to Cyberpark, our Calicut space offers an affordable, creative, and highly driven atmosphere tailored for local businesses, ambitious freelancers, and rising entrepreneurs.
+                Unlock your potential in Calicut (Kozhikode). Close to Cyberpark, our premium coworking space offers an affordable, creative, and highly driven atmosphere tailored for local businesses, ambitious freelancers, and rising entrepreneurs.
               </p>
             </div>
 

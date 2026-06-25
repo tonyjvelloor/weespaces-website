@@ -11,7 +11,7 @@ import NAPBlock from '@/components/NAPBlock';
 const data = branchData.coimbatore;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Coimbatore | Managed Offices | WeeSpaces',
+  title: 'Coworking Space Coimbatore | Private Offices & Managed Workspace | WeeSpaces',
   description: 'Explore premium coworking spaces near Tidel Park, Coimbatore. Find dedicated desks, private cabins, and scalable workspace options for your team.',
   keywords: [
     'coworking space in Coimbatore',
@@ -157,8 +157,7 @@ export default function CoworkingSpaceInCoimbatore() {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-              Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Coworking Space</span><br />
-              in Coimbatore
+              Premium Coworking Space in Coimbatore for Growing Teams
             </h1>
 
             <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
@@ -324,57 +323,35 @@ export default function CoworkingSpaceInCoimbatore() {
 
       {/* --- SEO DEEP DIVE SECTION --- */}
       <section className="py-24 max-w-5xl mx-auto px-6 border-t border-white/10">
-        <ScrollReveal direction="up" className="prose prose-invert prose-lg max-w-none">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">The Ultimate Guide to Coworking Space in Coimbatore</h2>
-          <p>
-            Coimbatore, often dubbed the "Manchester of South India," has rapidly transformed into a bustling IT and industrial hub. With major tech parks like Tidel Park and CHIL SEZ driving massive employment, the demand for a premium <strong>coworking space in Coimbatore</strong> has skyrocketed. Whether you are a solo entrepreneur, a fast-growing startup, or a massive enterprise looking to decentralize your workforce, WeeSpaces provides the ultimate ecosystem for success.
-          </p>
+        <div className="space-y-16">
+          <ScrollReveal direction="up" className="prose prose-invert prose-lg max-w-none">
+            <h2>Shared Office Space in Coimbatore</h2>
+            <p>
+              Step into a vibrant ecosystem designed for collaboration and growth. Our premium shared office space in Coimbatore provides everything modern professionals need—from enterprise-grade WiFi and ergonomic seating to unlimited artisan coffee. Located just 1.5km from Tidel Park, WeeSpaces connects you with a dynamic community of founders, freelancers, and tech innovators. Reduce your overheads while scaling your business in a workspace that inspires productivity every single day.
+            </p>
+          </ScrollReveal>
 
-          <h3 className="text-2xl font-bold mt-12 mb-4">Why Rent Office Space in Coimbatore?</h3>
-          <p>
-            Choosing an <strong>office space for rent in Coimbatore</strong> offers incredible strategic advantages. The city boasts a lower cost of living compared to Bangalore or Chennai, while offering the same caliber of engineering talent from premier institutions like PSG Tech and CIT. By opting for a <strong>managed office space in Coimbatore</strong>, companies can reduce capital expenditure (CapEx) to zero and operate entirely on a predictable operational expenditure (OpEx) model.
-          </p>
+          <ScrollReveal direction="up" className="prose prose-invert prose-lg max-w-none">
+            <h2>Office Space for Rent in Coimbatore</h2>
+            <p>
+              Finding the perfect office space for rent in Coimbatore has never been easier. We eliminate the hassle of long-term leases, heavy deposits, and hidden maintenance costs. At WeeSpaces, you get a fully managed, plug-and-play operational model. Whether you're a lean startup or an expanding enterprise, our customized rental solutions allow you to focus 100% on your core business while we handle the facility management, security, and IT infrastructure.
+            </p>
+          </ScrollReveal>
 
-          <h3 className="text-2xl font-bold mt-12 mb-4">Our Workspace Solutions</h3>
-          <div className="grid md:grid-cols-2 gap-8 not-prose mt-6 mb-12">
-            <div className="glass p-6 rounded-2xl border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-3">Private Offices</h4>
-              <p className="text-white/70 text-sm">Our <strong>private office space in Coimbatore</strong> is designed for teams of 5 to 50+. Fully furnished, acoustically treated, and equipped with biometric access, it offers the privacy of a traditional office with the flexibility of coworking.</p>
-            </div>
-            <div className="glass p-6 rounded-2xl border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-3">Dedicated Desks</h4>
-              <p className="text-white/70 text-sm">Perfect for freelancers and remote workers. Leave your monitors and equipment securely at your desk overnight in our vibrant <strong>shared workspace in Coimbatore</strong>.</p>
-            </div>
-            <div className="glass p-6 rounded-2xl border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-3">Managed Offices</h4>
-              <p className="text-white/70 text-sm">For enterprises requiring 100+ seats, our <strong>managed office space in Coimbatore</strong> offers custom build-outs, dedicated IT infrastructure, and personalized branding.</p>
-            </div>
-            <div className="glass p-6 rounded-2xl border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-3">Meeting Rooms</h4>
-              <p className="text-white/70 text-sm">Book our state-of-the-art <strong>meeting room in Coimbatore</strong> by the hour. Equipped with smart TVs, whiteboards, and high-speed internet for seamless presentations.</p>
-            </div>
-          </div>
+          <ScrollReveal direction="up" className="prose prose-invert prose-lg max-w-none">
+            <h2>Private Cabin Office in Coimbatore</h2>
+            <p>
+              Give your team the focus they deserve with a secure, acoustically-treated private cabin office in Coimbatore. Designed for teams of 2 to 50+, our private suites come fully furnished with premium amenities, biometric access, and customizable layouts. It's the perfect blend of privacy and community—enjoy your own enclosed workspace while retaining full access to our collaborative lounges, state-of-the-art meeting rooms, and networking events.
+            </p>
+          </ScrollReveal>
 
-          <h3 className="text-2xl font-bold mt-12 mb-4">Location is Everything: Near Tidel Park & Airport</h3>
-          <p>
-            Location dictates the convenience of your team and the impression you leave on your clients. WeeSpaces is strategically located at Vidya Nagar, Kalapatti—just 1.5km from Tidel Park and a stone's throw from the Coimbatore International Airport. This prime positioning makes us the most accessible <strong>coworking space near Tidel Park Coimbatore</strong>. Avoid the crushing traffic of Avinashi Road while staying connected to the city's main commercial arteries.
-          </p>
-          <p>
-            Our facility is surrounded by top-tier residential layouts, making the daily commute a breeze for your employees. We are also rapidly expanding our footprint with upcoming centers to serve as a premier <strong>coworking space in Peelamedu</strong>, <strong>Saravanampatti</strong>, and <strong>Gandhipuram</strong>.
-          </p>
-
-          <h3 className="text-2xl font-bold mt-12 mb-4">Amenities Designed for Productivity</h3>
-          <p>
-            When you search for the <strong>best coworking space in Coimbatore</strong>, you aren't just looking for a desk and a chair. You are looking for an environment that fosters growth. WeeSpaces provides:
-          </p>
-          <ul className="list-disc pl-6 space-y-2 mt-4 text-white/80">
-            <li><strong>Enterprise-Grade WiFi:</strong> Dual-ISP leased lines with 100% uptime guarantee.</li>
-            <li><strong>24/7 Access:</strong> Work on your own schedule with round-the-clock security and biometric entry.</li>
-            <li><strong>Power Backup:</strong> 100% DG backup ensures your work is never interrupted.</li>
-            <li><strong>Community Events:</strong> Network with fellow founders, investors, and tech leaders at our weekly events.</li>
-            <li><strong>Pantry & Cafeteria:</strong> Unlimited artisan coffee, tea, and a fully stocked pantry to keep your team energized.</li>
-          </ul>
-        </ScrollReveal>
+          <ScrollReveal direction="up" className="prose prose-invert prose-lg max-w-none">
+            <h2>Dedicated Desk & Hot Desk Coimbatore</h2>
+            <p>
+              Enjoy absolute flexibility with our dedicated desk and hot desk options in Coimbatore. A hot desk allows you to drop in and work from any open seat in our inspiring lounges—perfect for digital nomads. If you prefer a fixed spot where you can securely leave your monitors and equipment overnight, our dedicated desks are the ideal choice. Both plans offer 24/7 access, secure lockable storage options, and unparalleled networking opportunities to accelerate your career.
+            </p>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* --- LOCATION DETAILS --- */}

@@ -13,7 +13,7 @@ import NAPBlock from '@/components/NAPBlock';
 const data = branchData.ernakulam;
 
 export const metadata: Metadata = {
-  title: 'Coworking Space in Kochi | Private Offices & Managed Workspace | WeeSpaces',
+  title: 'Coworking Space Kochi (Ernakulam) | Premium Office Spaces',
   description: 'Discover flexible coworking spaces in Kochi with dedicated desks, private offices, meeting rooms and managed workspace solutions.',
   keywords: [
     'coworking space Kochi',
@@ -433,6 +433,34 @@ export default function CoworkingSpaceInKochi() {
               <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
             </ScrollReveal>
           ))}
+        </div>
+      </section>
+
+      {/* --- SEO CONTENT SECTIONS --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 [&>div>h2]:text-2xl [&>div>h2]:md:text-3xl [&>div>h2]:font-bold [&>div>h2]:mb-4 [&>div>h2]:text-white">
+          
+          <ScrollReveal direction="up" delay={0.1} className="glass p-8 rounded-2xl border border-white/10 flex flex-col h-full">
+            <h2>Shared Office Space in Kochi</h2>
+            <p className="text-white/70 leading-relaxed text-sm mt-4 flex-grow">
+              Experience the perfect blend of productivity and community at our premier shared office space in Kochi. Located on MG Road, WeeSpaces provides a collaborative environment tailored for modern professionals. From high-speed internet to endless networking opportunities, our workspaces are designed to help your business thrive without the overhead of a traditional office.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0.2} className="glass p-8 rounded-2xl border border-white/10 flex flex-col h-full">
+            <h2>Office Space for Rent in Ernakulam</h2>
+            <p className="text-white/70 leading-relaxed text-sm mt-4 flex-grow">
+              Finding the right office space for rent in Ernakulam has never been easier. We offer flexible, fully-managed private offices and customizable workspaces that cater to startups and established enterprises alike. Skip long-term leases and heavy capital expenditures—move into a plug-and-play office today and scale your operations effortlessly in the heart of Kerala's commercial capital.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal direction="up" delay={0.3} className="glass p-8 rounded-2xl border border-white/10 flex flex-col h-full">
+            <h2>Dedicated Desk Kochi</h2>
+            <p className="text-white/70 leading-relaxed text-sm mt-4 flex-grow">
+              Secure your own personal workspace with a dedicated desk at WeeSpaces Kochi. Perfect for freelancers, remote workers, and small teams who need a consistent, professional environment every day. Enjoy the perks of a fixed desk, lockable storage, and full access to our premium amenities while staying connected to a vibrant, like-minded community of innovators.
+            </p>
+          </ScrollReveal>
+
         </div>
       </section>
 
