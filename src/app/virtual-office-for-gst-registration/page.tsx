@@ -1,210 +1,198 @@
-import Image from 'next/image';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import LeadForm from '@/components/LeadForm';
-import Link from 'next/link';
-import ScrollReveal from '@/components/ui/ScrollReveal';
-import MouseGlowCard from '@/components/ui/MouseGlowCard';
-import { MapPin, ArrowRight, CheckCircle, ChevronRight, Star, BadgeCheck } from 'lucide-react';
-import { branchData } from '@/data/branches';
-import NAPBlock from '@/components/NAPBlock';
-
-const data = branchData.ernakulam;
+import { CheckCircle, MapPin, ShieldCheck, Building2, FileText, FileBadge, Check } from 'lucide-react';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Virtual Office for GST Registration India | WeeSpaces',
-  description: 'Get a premium virtual office for GST registration in India. Prime business addresses in Kochi, Trivandrum, Calicut, and Coimbatore.',
-  keywords: ["virtual office for GST registration India", "virtual office GST", "virtual address India"],
+  title: 'Virtual Office for GST Registration in Kerala & Tamil Nadu | WeeSpaces',
+  description: 'Get a professional virtual office address for GST registration across Kerala (Kochi, Trivandrum, Calicut) and Tamil Nadu (Coimbatore). Starting at ₹1,500/month.',
   alternates: {
-    canonical: 'https://www.weespaces.in/virtual-office-for-gst-registration',
-  },
-  openGraph: {
-    title: 'Virtual Office for GST Registration India | WeeSpaces',
-    description: 'Get a premium virtual office for GST registration in India. Prime business addresses in Kochi, Trivandrum, Calicut, and Coimbatore.',
-    url: 'https://www.weespaces.in/virtual-office-for-gst-registration',
-    images: [
+    canonical: 'https://weespaces.in/virtual-office-for-gst-registration',
+  }
+};
+
+export default function GSTRegistrationVirtualOfficePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
       {
-        url: data.heroImage,
-        width: 1200,
-        height: 630,
-        alt: 'Virtual Office for GST Registration India | WeeSpaces',
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://weespaces.in/"
       },
-    ],
-  },
-};
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Virtual Office",
+        "item": "https://weespaces.in/virtual-office"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "GST Registration",
+        "item": "https://weespaces.in/virtual-office-for-gst-registration"
+      }
+    ]
+  };
 
-const faqs = [
-  { question: 'Can I use a virtual office for GST registration?', answer: 'Yes! The government allows GST registration using a virtual office address, provided you have the right documentation, which we supply (NOC and rent agreement).' },
-  { question: 'How much does a virtual office cost?', answer: 'Our virtual office plans start at just ₹10,000/year, offering incredible value for startups and remote businesses.' },
-];
-
-const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Virtual Office for GST Registration India | WeeSpaces',
-  image: 'https://www.weespaces.in' + data.heroImage,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: data.address.split(',')[0],
-    addressLocality: data.name,
-    addressCountry: 'IN',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: data.geo.lat,
-    longitude: data.geo.lon,
-  },
-  telephone: '+919207189111',
-  openingHours: 'Mo-Sa 08:00-20:00',
-  priceRange: '₹4,000 - ₹22,000',
-  url: 'https://www.weespaces.in/virtual-office-for-gst-registration',
-};
-
-const faqSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqs.map((faq) => ({
-    '@type': 'Question',
-    name: faq.question,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: faq.answer,
-    },
-  })),
-};
-
-export default function Page() {
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+    <div className="bg-navy min-h-screen text-white pt-8 pb-20">
+      <Script id="breadcrumb-schema" type="application/ld+json" strategy="afterInteractive">
+        {JSON.stringify(breadcrumbSchema)}
+      </Script>
 
-      {/* --- INAUGURATION OFFER BANNER --- */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-accent via-accent-light to-accent text-navy text-center py-2.5 px-4 text-sm font-bold shadow-[0_4px_20px_rgba(242,156,31,0.4)]">
-        🎉 Inauguration Offer Now Live! <span className="hidden sm:inline">Get 20% off on all plans.</span>
-        <Link href={`/contact?branch=${data.name.toLowerCase()}`} className="ml-2 underline underline-offset-2 hover:text-navy/70 transition-colors">Claim Now →</Link>
-      </div>
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 lg:px-12 relative">
+        <div className="absolute top-20 -left-20 w-72 h-72 bg-accent/10 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-accent/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      {/* --- HERO SECTION --- */}
-      <section className="relative min-h-screen flex items-center pt-32 pb-20 justify-center">
-        <div className="absolute inset-0 z-0">
-          <Image src={data.heroImage} alt="Virtual Office for GST Registration India | WeeSpaces" fill sizes="100vw" className="object-cover object-center opacity-40" priority />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/40 mix-blend-multiply"></div>
-        </div>
-        <div className="container mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
-          <ScrollReveal direction="up" className="space-y-6 md:space-y-8 z-10 relative">
-            <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
-              <MapPin className="w-4 h-4" />
-              {data.name}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="space-y-8 z-10">
+            <div className="inline-flex items-center gap-2 bg-accent/10 border border-accent/20 px-4 py-2 rounded-full text-accent font-medium text-sm">
+              <ShieldCheck size={18} />
+              <span>Compliant with Govt. Regulations</span>
             </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight">
+              Virtual Office for <span className="text-accent">GST Registration</span> in Kerala & Tamil Nadu
+            </h1>
+            
+            <p className="text-lg text-white/80 leading-relaxed max-w-xl">
+              Get a premium business address for your company registration and GST compliance without the overhead of a physical office. Complete documentation provided within 48 hours.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10 text-accent">
+                  <span className="font-bold text-xl">₹</span>
+                </div>
+                <div>
+                  <p className="text-xs text-white/50 uppercase tracking-wider font-bold">Starting from</p>
+                  <p className="text-xl font-bold">₹1,500<span className="text-sm font-normal text-white/60">/month</span></p>
+                </div>
+              </div>
+              
+              <div className="hidden sm:block w-px h-12 bg-white/10 mx-4"></div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10 text-accent">
+                  <Building2 size={24} />
+                </div>
+                <div>
+                  <p className="text-xs text-white/50 uppercase tracking-wider font-bold">Trusted By</p>
+                  <p className="text-xl font-bold">500+ <span className="text-sm font-normal text-white/60">Businesses</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative z-10 w-full max-w-md mx-auto lg:max-w-none lg:ml-auto">
+            <LeadForm source="GST Registration Landing Page" />
+          </div>
+        </div>
+      </section>
 
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight" dangerouslySetInnerHTML={{__html: `Premium <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Virtual Office</span><br />for GST Registration in India`}}></h1>
+      {/* What You Get Section */}
+      <section className="container mx-auto px-6 lg:px-12 mt-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">Everything You Need for <span className="text-accent">Compliance</span></h2>
+          <p className="text-white/70 max-w-2xl mx-auto">We provide all mandatory documents required by the GST department for successful registration.</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <div className="bg-navy-dark border border-white/10 p-8 rounded-3xl hover:border-accent/30 transition-all group">
+            <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+              <FileBadge size={28} />
+            </div>
+            <h3 className="text-xl font-bold mb-3">NOC from Owner</h3>
+            <p className="text-white/60 leading-relaxed">
+              A legally drafted No Objection Certificate from the actual property owner, specifically mentioning permission for GST registration.
+            </p>
+          </div>
+          
+          <div className="bg-navy-dark border border-white/10 p-8 rounded-3xl hover:border-accent/30 transition-all group">
+            <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+              <FileText size={28} />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Utility Bill</h3>
+            <p className="text-white/60 leading-relaxed">
+              Latest electricity or property tax receipt of the premises to establish the authenticity of the address provided.
+            </p>
+          </div>
+          
+          <div className="bg-navy-dark border border-white/10 p-8 rounded-3xl hover:border-accent/30 transition-all group">
+            <div className="w-14 h-14 bg-accent/10 rounded-2xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+              <CheckCircle size={28} />
+            </div>
+            <h3 className="text-xl font-bold mb-3">Rent Agreement</h3>
+            <p className="text-white/60 leading-relaxed">
+              A formal, stamped rental/virtual office agreement valid for 11 months, establishing your legal right to use the premises.
+            </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
-              <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">{data.highlight}</p>
-              <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
-                Establish your business presence legally and professionally. Get a prestigious virtual office for GST registration across prime locations in India.
+      {/* Locations Section */}
+      <section className="container mx-auto px-6 lg:px-12 mt-24">
+        <div className="bg-navy-dark border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="absolute right-0 top-0 w-1/2 h-full bg-accent/5 blur-3xl pointer-events-none"></div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">Prime Locations Across South India</h2>
+              <p className="text-white/70 mb-8 leading-relaxed">
+                Choose from our premium business centers located in major commercial hubs. Establishing your business in a recognized commercial building boosts your brand credibility.
               </p>
+              
+              <ul className="space-y-4">
+                {[
+                  { city: 'Kochi', desc: 'Ernakulam CBD' },
+                  { city: 'Trivandrum', desc: 'Pattom' },
+                  { city: 'Calicut', desc: 'East Nadakkave' },
+                  { city: 'Coimbatore', desc: 'Kalapatti' }
+                ].map((loc, i) => (
+                  <li key={i} className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-accent shrink-0">
+                      <MapPin size={18} />
+                    </div>
+                    <div>
+                      <p className="font-bold text-lg">{loc.city}</p>
+                      <p className="text-sm text-white/50">{loc.desc}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <p className="text-white/70 italic text-sm">{data.cta}</p>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up" delay={0.2} className="w-full max-w-md">
-            <LeadForm branch={data.name} />
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* --- NAP BLOCK + PRICING --- */}
-      <section className="py-10 max-w-7xl mx-auto px-6">
-        <ScrollReveal direction="up">
-          <NAPBlock
-            name={`WeeSpaces ${data.name}`}
-            address={data.address}
-            mapUrl={data.mapUrl}
-            hours="Mon–Sat: 8:00 AM – 8:00 PM | 24/7 access for members"
-          />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.15} className="mt-8">
-          <div className="bg-navy-light/10 border border-white/10 rounded-2xl p-6">
-            <p className="text-xs font-bold uppercase tracking-wider text-accent mb-4">Pricing Plans in {data.name}</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { label: 'Hot Desk', price: data.pricing.hotDesk, note: 'Flexible seating' },
-                { label: 'Dedicated Desk', price: data.pricing.dedicatedDesk, note: 'Your own fixed desk' },
-                { label: 'Private Office', price: data.pricing.privateOffice, note: 'Enclosed cabin' },
-                { label: 'Virtual Office', price: data.pricing.virtualOffice, note: 'Premium address' },
-              ].map((item) => (
-                <div key={item.label} className="glass rounded-xl p-4 text-center border border-white/10 hover:border-accent/30 transition-all">
-                  <p className="text-xs text-white/50 uppercase tracking-wider mb-1">{item.label}</p>
-                  <p className="text-xl font-bold text-accent">{item.price.split('/')[0]}</p>
-                  <p className="text-[11px] text-white/40 mt-1">{item.note}</p>
+            
+            <div className="space-y-6">
+              <div className="bg-navy border border-white/10 p-6 rounded-2xl flex items-start gap-4">
+                <Check className="text-accent shrink-0 mt-1" size={24} />
+                <div>
+                  <h4 className="font-bold mb-1">Commercial Property Status</h4>
+                  <p className="text-sm text-white/60">All our spaces are registered commercial properties, ensuring zero rejections from the GST department.</p>
                 </div>
-              ))}
+              </div>
+              <div className="bg-navy border border-white/10 p-6 rounded-2xl flex items-start gap-4">
+                <Check className="text-accent shrink-0 mt-1" size={24} />
+                <div>
+                  <h4 className="font-bold mb-1">Mail & Courier Handling</h4>
+                  <p className="text-sm text-white/60">We receive and notify you of all official letters from government departments.</p>
+                </div>
+              </div>
+              <div className="bg-navy border border-white/10 p-6 rounded-2xl flex items-start gap-4">
+                <Check className="text-accent shrink-0 mt-1" size={24} />
+                <div>
+                  <h4 className="font-bold mb-1">Signage Display</h4>
+                  <p className="text-sm text-white/60">Mandatory name board display at the premises for physical verification by officers.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </ScrollReveal>
-      </section>
-
-      {/* --- SEO DEEP DIVE SECTION --- */}
-      <section className="py-24 max-w-5xl mx-auto px-6 border-t border-white/10">
-        <ScrollReveal direction="up" className="prose prose-invert prose-lg max-w-none">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Get Your Virtual Office for GST Registration in India</h2>
-          <p dangerouslySetInnerHTML={{__html: `Starting a business requires a professional address. A <strong>virtual office for GST registration in India</strong> allows you to comply with legal requirements without the massive overhead of physical office space.`}}></p>
-
-          <h3 className="text-2xl font-bold mt-12 mb-4">Why Choose WeeSpaces for Your Virtual Office?</h3>
-          <p dangerouslySetInnerHTML={{__html: `We provide premium business addresses in Ernakulam, Trivandrum, Calicut, and Coimbatore. Our virtual office plans include mail handling, GST registration support, and access to meeting rooms when you need them.`}}></p>
-        </ScrollReveal>
-      </section>
-
-      {/* --- IMAGE GALLERY --- */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
-        <ScrollReveal direction="up" className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Inside Our <span className="text-accent">{data.name}</span> Hub</h2>
-          <p className="text-xl text-white/70">Take a peek inside our premium workspace.</p>
-        </ScrollReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {data.galleryImages.length > 0 && (
-            <ScrollReveal direction="up" delay={0.1} className="relative rounded-xl overflow-hidden shadow-lg h-96 md:col-span-2 group">
-              <Image src={data.galleryImages[0]} alt={`WeeSpaces ${data.name} workspace featured`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </ScrollReveal>
-          )}
-          {data.galleryImages.slice(1).map((src, idx) => (
-            <ScrollReveal key={idx + 1} direction="up" delay={0.2 + (idx * 0.1)} className="relative rounded-xl overflow-hidden shadow-lg h-64 md:h-80 group">
-              <Image src={src} alt={`WeeSpaces ${data.name} workspace ${idx + 2}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-            </ScrollReveal>
-          ))}
         </div>
       </section>
 
-      {/* --- FAQ SECTION --- */}
-      <section className="py-24 max-w-4xl mx-auto px-6 border-t border-white/10">
-        <ScrollReveal direction="up" className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold text-accent tracking-widest uppercase mb-6">
-            FAQ
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
-        </ScrollReveal>
-
-        <div className="space-y-4">
-          {faqs.map((faq, idx) => (
-            <ScrollReveal key={idx} delay={idx * 0.1}>
-              <details className="glass rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all group">
-                <summary className="w-full px-6 py-5 text-left flex items-center justify-between font-bold text-lg cursor-pointer list-none">
-                  {faq.question}
-                  <ChevronRight className="w-5 h-5 text-white/50 group-open:rotate-90 group-open:text-accent transition-transform duration-300 shrink-0 ml-4" />
-                </summary>
-                <div className="px-6 pb-5">
-                  <p className="text-white/70 leading-relaxed">{faq.answer}</p>
-                </div>
-              </details>
-            </ScrollReveal>
-          ))}
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
