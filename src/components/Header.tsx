@@ -76,6 +76,7 @@ export default function Header() {
 
           <Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link>
           <Link href="/about" className="hover:text-accent transition-colors">About</Link>
+          <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
           <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Book Tour</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
@@ -137,6 +138,7 @@ export default function Header() {
               
               <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Pricing</Link>
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">About</Link>
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Blog</Link>
             </nav>
             
             <div className="flex flex-col gap-4 mt-2">

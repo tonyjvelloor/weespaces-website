@@ -34,6 +34,7 @@ export default function Footer() {
           <div className="text-xs text-white/50">
             <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
             <div className="flex justify-center gap-6 mt-4">
+              <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
               <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
             </div>
@@ -120,6 +121,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50">
           <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
+            <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
             <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
           </div>
