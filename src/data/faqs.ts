@@ -101,7 +101,7 @@ export const homepageFAQs: FAQ[] = [
   },
   {
     question: "Where are WeeSpaces locations available?",
-    answer: "WeeSpaces provides coworking and office spaces across key business locations in Kerala including Kochi, Trivandrum, and Calicut."
+    answer: "WeeSpaces provides coworking and office spaces across key business locations in Kerala & Tamil Nadu including Kochi, Trivandrum, Calicut and Coimbatore."
   },
   {
     question: "Why choose WeeSpaces instead of renting an office?",
@@ -115,7 +115,7 @@ export const homepageFAQs: FAQ[] = [
 
 export const coworkingFAQs: FAQ[] = [
   {
-    question: "What is the best coworking space in Kochi for startups?",
+    question: "What is the best coworking space in Trivandrum for startups?",
     answer: "WeeSpaces offers coworking spaces in Kochi designed for startups, entrepreneurs, and growing teams who need flexible, ready-to-use offices. Members get access to professional workspaces, meeting rooms, internet, and business amenities without traditional office setup costs."
   },
   {

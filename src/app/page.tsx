@@ -361,17 +361,17 @@ export default function Home() {
                   {
                       problem: "Traditional office required ₹5L deposit.",
                       result: "Startup scaled from 4 people to 22 without changing offices.",
-                      initial: "S", name: "Siddharth R.", role: "Founder, TechFlow Solutions"
+                      initial: "S", name: "Siddharth Menon", role: "Founder, TechFlow Solutions"
                   },
                   {
                       problem: "Working from noisy cafes killed productivity.",
                       result: "Launched two new products faster after moving into a dedicated team office.",
-                      initial: "P", name: "Priya M.", role: "Creative Director, PixelCrafters"
+                      initial: "P", name: "Priya Nair", role: "Regional Manager, Elevate Media"
                   },
                   {
                       problem: "Losing clients due to unprofessional meeting spots.",
                       result: "Closed 3 enterprise deals using the premium boardroom in Ernakulam.",
-                      initial: "K", name: "Karthik V.", role: "VP Sales, Elevate CRM"
+                      initial: "K", name: "Karthik Venkat", role: "Director of Operations, Nexus Corp"
                   }
               ].map((t, i) => (
                   <MouseGlowCard key={i} className="glass p-8 rounded-xl border border-white/10 relative h-full flex flex-col justify-between group hover:border-accent/30 transition-all">
