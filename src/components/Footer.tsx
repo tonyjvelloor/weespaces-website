@@ -70,9 +70,12 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-heading">Services</h4>
             <ul className="space-y-4 text-sm text-white/70">
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Private Offices</Link></li>
-              <li><Link href="/managed-office-space-coimbatore" className="hover:text-accent transition-colors">Managed Offices</Link></li>
-              <li><Link href="/virtual-office-in-kerala" className="hover:text-accent transition-colors">Virtual Offices</Link></li>
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Dedicated Desks</Link></li>
+              <li><Link href="/managed-office-space-kochi" className="hover:text-accent transition-colors">Managed Offices</Link></li>
+              <li><Link href="/virtual-office" className="hover:text-accent transition-colors font-semibold text-white/90">Virtual Office India</Link></li>
+              <li><Link href="/virtual-office-kochi-gst-registration" className="hover:text-accent transition-colors">Virtual Office Kochi</Link></li>
+              <li><Link href="/virtual-office-trivandrum" className="hover:text-accent transition-colors">Virtual Office Trivandrum</Link></li>
+              <li><Link href="/virtual-office-calicut" className="hover:text-accent transition-colors">Virtual Office Calicut</Link></li>
+              <li><Link href="/virtual-office-coimbatore" className="hover:text-accent transition-colors">Virtual Office Coimbatore</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Meeting Rooms</Link></li>
             </ul>
           </div>

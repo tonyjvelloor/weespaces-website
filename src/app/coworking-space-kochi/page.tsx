@@ -8,6 +8,7 @@ import { MapPin, ArrowRight, CheckCircle, Star, BadgeCheck, Users, Briefcase, Za
 import { branchData } from '@/data/branches';
 import SEOFAQ from '@/components/SEOFAQ';
 import { coworkingFAQs } from '@/data/faqs';
+import NAPBlock from '@/components/NAPBlock';
 
 const data = branchData.ernakulam;
 
@@ -148,6 +149,44 @@ export default function CoworkingSpaceInKochi() {
             </div>
           </ScrollReveal>
         </div>
+      </section>
+
+      {/* --- NAP BLOCK + PRICING (after hero, before intro) --- */}
+      <section className="py-10 max-w-7xl mx-auto px-6">
+        <ScrollReveal direction="up">
+          <NAPBlock
+            name="WeeSpaces Kochi — MG Road, Ernakulam"
+            address={data.address}
+            mapUrl={data.mapUrl}
+            hours="Mon–Sat: 8:00 AM – 8:00 PM | 24/7 access for members"
+          />
+        </ScrollReveal>
+
+        {/* Pricing strip */}
+        <ScrollReveal direction="up" delay={0.15} className="mt-8">
+          <div className="bg-navy-light/10 border border-white/10 rounded-2xl p-6">
+            <p className="text-xs font-bold uppercase tracking-wider text-accent mb-4">Coworking Space Pricing in Kochi</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { label: 'Hot Desk', price: data.pricing.hotDesk, note: 'Flexible seating' },
+                { label: 'Dedicated Desk', price: data.pricing.dedicatedDesk, note: 'Your own fixed desk' },
+                { label: 'Private Office', price: data.pricing.privateOffice, note: 'Enclosed cabin' },
+                { label: 'Virtual Office', price: data.pricing.virtualOffice, note: 'Premium address' },
+              ].map((item) => (
+                <div key={item.label} className="glass rounded-xl p-4 text-center border border-white/10 hover:border-accent/30 transition-all">
+                  <p className="text-xs text-white/50 uppercase tracking-wider mb-1">{item.label}</p>
+                  <p className="text-xl font-bold text-accent">{item.price.split('/')[0]}</p>
+                  <p className="text-[11px] text-white/40 mt-1">{item.note}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 text-center">
+              <a href="#book-tour" className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-2.5 px-6 rounded-xl hover:bg-accent-hover transition-all text-sm shadow-[0_0_15px_rgba(242,156,31,0.3)]">
+                Check Availability
+              </a>
+            </div>
+          </div>
+        </ScrollReveal>
       </section>
 
       {/* --- INTRODUCTION & WHO IS IT FOR --- */}

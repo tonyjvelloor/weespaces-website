@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -75,8 +76,13 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+            gtag('config', 'G-89N19DEH2N', { send_page_view: true });
 
-            gtag('config', 'G-89N19DEH2N');
+            /* Fire location_view on page load for city pages */
+            var path = window.location.pathname;
+            if (path.indexOf('coworking-space') !== -1 || path.indexOf('virtual-office') !== -1 || path.indexOf('private-office') !== -1 || path.indexOf('managed-office') !== -1) {
+              gtag('event', 'location_view', { event_category: 'engagement', page: path });
+            }
           `}
         </Script>
 
@@ -197,13 +203,14 @@ export default function RootLayout({
           })}
         </Script>
       </head>
-      <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-16 md:pb-0 relative">
+      <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-[4.5rem] md:pb-0 relative">
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1702816221138883&ev=PageView&noscript=1" alt="" aria-hidden="true" />
         </noscript>
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <MobileStickyCTA />
         
         {/* Floating WhatsApp Widget */}
         <a 

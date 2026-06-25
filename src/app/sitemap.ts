@@ -36,6 +36,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }));
 
+  // High-priority national SEO pages
+  const nationalSeoRoutes = [
+    { url: `${baseUrl}/virtual-office`, priority: 0.9 },
+  ].map((r) => ({
+    ...r,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+  }));
+
   // New SEO city pages (high priority)
   const cityRoutes = Object.keys(branchData).map((branchId) => ({
     url: `${baseUrl}${cityUrlMap[branchId]}`,
@@ -86,6 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes,
+    ...nationalSeoRoutes,
     ...cityRoutes,
     ...blogRoutes,
     ...landingRoutes,
