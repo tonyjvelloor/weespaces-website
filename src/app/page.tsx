@@ -132,20 +132,20 @@ export default function Home() {
                   
                   <div className="mb-10">
                       <p className="text-white/60 mb-4 font-medium uppercase tracking-wider text-sm flex items-center gap-2 justify-center lg:justify-start">
-                        I am looking for:
+                        Quick Links:
                       </p>
                       <div className="grid grid-cols-2 sm:grid-cols-2 gap-3">
-                          <Link href="/pricing" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
-                              Workspace for Myself <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
+                          <Link href="/locations" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
+                              Locations <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
+                          </Link>
+                          <Link href="/virtual-office" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
+                              Virtual Office <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
                           </Link>
                           <Link href="/pricing" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
-                              Office for My Team <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
+                              Pricing <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
                           </Link>
-                          <Link href="/pricing" className="glass border border-white/20 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-white/10 transition-all flex items-center justify-between group">
-                              Meeting Room <ChevronRight className="w-4 h-4 text-white/50 group-hover:text-accent transition-colors" />
-                          </Link>
-                          <Link href="/services/virtual-office" className="glass border border-accent/40 bg-accent/10 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-accent/20 transition-all flex items-center justify-between group">
-                              Virtual Office <ChevronRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />
+                          <Link href="/contact" className="glass border border-accent/40 bg-accent/10 hover:border-accent text-white px-4 py-3 rounded-xl font-medium text-sm hover:bg-accent/20 transition-all flex items-center justify-between group">
+                              Contact <ChevronRight className="w-4 h-4 text-accent group-hover:translate-x-1 transition-transform" />
                           </Link>
                       </div>
                   </div>

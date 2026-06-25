@@ -4,6 +4,7 @@ import LeadForm from '@/components/LeadForm';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { MapPin, ArrowRight, CheckCircle, ChevronRight, Star, BadgeCheck } from 'lucide-react';
 import { branchData } from '@/data/branches';
 import NAPBlock from '@/components/NAPBlock';
@@ -148,6 +149,7 @@ export default function CoworkingSpaceInCoimbatore() {
         </div>
         <div className="container mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <ScrollReveal direction="up" className="space-y-6 md:space-y-8 z-10 relative">
+            <Breadcrumbs segments={[{ name: 'Locations', url: '/locations' }, { name: 'Coworking Space Coimbatore', url: '/coworking-space-coimbatore' }]} />
             <div className="inline-flex items-center gap-2 bg-accent text-navy text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(242,156,31,0.5)] animate-pulse">
               ✨ Newly Launched 2026!
             </div>

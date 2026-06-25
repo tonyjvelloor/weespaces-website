@@ -4,6 +4,7 @@ import LeadForm from '@/components/LeadForm';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import { MapPin, ArrowRight, CheckCircle, Star, BadgeCheck, Users, Briefcase, Zap, Coffee, Shield, Laptop } from 'lucide-react';
 import { branchData } from '@/data/branches';
 import SEOFAQ from '@/components/SEOFAQ';
@@ -107,6 +108,7 @@ export default function CoworkingSpaceInTrivandrum() {
         </div>
         <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal direction="up" className="space-y-6 md:space-y-8">
+            <Breadcrumbs segments={[{ name: 'Locations', url: '/locations' }, { name: 'Coworking Space Trivandrum', url: '/coworking-space-trivandrum' }]} />
             <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
               <MapPin className="w-4 h-4" />
               Trivandrum, Kerala

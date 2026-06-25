@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import LeadForm from '@/components/LeadForm';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import NAPBlock from '@/components/NAPBlock';
 import Link from 'next/link';
 import { branchData } from '@/data/branches';
@@ -214,14 +215,7 @@ export default function VirtualOfficeIndia() {
 
         <div className="container mx-auto px-6 w-full relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           <ScrollReveal direction="up" className="space-y-6 md:space-y-8 max-w-2xl">
-            {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-xs text-white/40">
-              <Link href="/" className="hover:text-white/70 transition-colors">
-                Home
-              </Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-white/60">Virtual Office India</span>
-            </nav>
+            <Breadcrumbs segments={[{ name: 'Virtual Office for GST', url: '/virtual-office' }]} />
 
             <div className="inline-flex items-center gap-2 bg-accent/10 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full border border-accent/20">
               🏢 Premium Virtual Office Plans

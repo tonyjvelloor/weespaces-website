@@ -52,9 +52,9 @@ export default function Header() {
               Locations <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-0 w-48 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/coworking-space-in-kochi" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Kochi</Link>
-              <Link href="/coworking-space-in-trivandrum" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Trivandrum</Link>
-              <Link href="/coworking-space-in-calicut" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Calicut</Link>
+              <Link href="/coworking-space-kochi" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Kochi</Link>
+              <Link href="/coworking-space-trivandrum" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Trivandrum</Link>
+              <Link href="/coworking-space-calicut" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Calicut</Link>
               <Link href="/coworking-space-coimbatore" className="block px-4 py-3 hover:bg-white/10 flex items-center justify-between">
                 Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
               </Link>
@@ -63,20 +63,20 @@ export default function Header() {
 
           <div className="group relative">
             <button className="hover:text-accent transition-colors flex items-center gap-1 py-4">
-              Solutions <ChevronDown className="w-4 h-4" />
+              Workspace Solutions <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-0 w-56 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Coworking Space</Link>
-              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Private Office</Link>
-              <Link href="/services/virtual-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Virtual Office</Link>
-              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Meeting Room</Link>
-              <Link href="/pricing" className="block px-4 py-3 hover:bg-white/10">Managed Office</Link>
+              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Coworking Space</Link>
+              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Private Office</Link>
+              <Link href="/virtual-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Virtual Office</Link>
+              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Meeting Room</Link>
+              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10">Managed Office</Link>
             </div>
           </div>
 
           <Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link>
           <Link href="/about" className="hover:text-accent transition-colors">About</Link>
-          <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
+          <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>
           <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Book Tour</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
@@ -117,9 +117,9 @@ export default function Header() {
               <div className="py-2 border-b border-white/5">
                 <span className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2 block">Locations</span>
                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
-                  <Link href="/coworking-space-in-kochi" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Kochi</Link>
-                  <Link href="/coworking-space-in-trivandrum" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Trivandrum</Link>
-                  <Link href="/coworking-space-in-calicut" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Calicut</Link>
+                  <Link href="/coworking-space-kochi" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Kochi</Link>
+                  <Link href="/coworking-space-trivandrum" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Trivandrum</Link>
+                  <Link href="/coworking-space-calicut" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Calicut</Link>
                   <Link href="/coworking-space-coimbatore" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors flex items-center justify-between">
                     Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
                   </Link>
@@ -127,18 +127,19 @@ export default function Header() {
               </div>
 
               <div className="py-2 border-b border-white/5">
-                <span className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2 block">Solutions</span>
+                <span className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2 block">Workspace Solutions</span>
                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
-                  <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Coworking Space</Link>
-                  <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Private Office</Link>
-                  <Link href="/services/virtual-office" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Virtual Office</Link>
-                  <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Meeting Room</Link>
+                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Coworking Space</Link>
+                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Private Office</Link>
+                  <Link href="/virtual-office" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Virtual Office</Link>
+                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Meeting Room</Link>
+                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Managed Office</Link>
                 </div>
               </div>
               
               <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Pricing</Link>
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">About</Link>
-              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Blog</Link>
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors py-2 border-b border-white/5">Contact</Link>
             </nav>
             
             <div className="flex flex-col gap-4 mt-2">

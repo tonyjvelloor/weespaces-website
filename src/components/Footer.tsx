@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { MapPin, Clock, Phone, Mail, Handshake } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -57,45 +57,6 @@ export default function Footer() {
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               Premium coworking spaces designed for productivity, collaboration, and business growth across Kerala and Tamil Nadu.
             </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-6 font-heading text-accent"><Link href="/locations" className="hover:text-white transition-colors">Locations</Link></h4>
-            <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/coworking-space-coimbatore" className="hover:text-accent transition-colors">Coworking Space Coimbatore</Link></li>
-              <li><Link href="/coworking-space-kochi" className="hover:text-accent transition-colors">Coworking Space Kochi</Link></li>
-              <li><Link href="/coworking-space-trivandrum" className="hover:text-accent transition-colors">Coworking Space Trivandrum</Link></li>
-              <li><Link href="/coworking-space-calicut" className="hover:text-accent transition-colors">Coworking Space Calicut</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-6 font-heading">Services</h4>
-            <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Private Offices</Link></li>
-              <li><Link href="/managed-office-space-kochi" className="hover:text-accent transition-colors">Managed Offices</Link></li>
-              <li><Link href="/virtual-office" className="hover:text-accent transition-colors font-semibold text-white/90">Virtual Office India</Link></li>
-              <li><Link href="/virtual-office-kochi-gst-registration" className="hover:text-accent transition-colors">Virtual Office Kochi</Link></li>
-              <li><Link href="/virtual-office-trivandrum" className="hover:text-accent transition-colors">Virtual Office Trivandrum</Link></li>
-              <li><Link href="/virtual-office-calicut" className="hover:text-accent transition-colors">Virtual Office Calicut</Link></li>
-              <li><Link href="/virtual-office-coimbatore" className="hover:text-accent transition-colors">Virtual Office Coimbatore</Link></li>
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Meeting Rooms</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-6 font-heading">Contact Us</h4>
-            <ul className="space-y-4 text-sm text-white/70 mb-6">
-              <li className="flex items-start gap-3">
-                <Phone className="text-accent w-5 h-5" />
-                <a href="tel:+919207189111" className="hover:text-accent transition-colors">+91 92071 89111</a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Mail className="text-accent w-5 h-5" />
-                <a href="mailto:corporate@weespaces.in" className="hover:text-accent transition-colors">corporate@weespaces.in</a>
-              </li>
-              <li className="flex items-start gap-3 pt-4 border-t border-white/10 mt-4">
-                <Handshake className="text-accent w-5 h-5" />
-                <Link href="/investors/" className="hover:text-accent transition-colors font-bold text-accent">Investors & Partners</Link>
-              </li>
-            </ul>
             <div className="flex items-center gap-4 flex-wrap">
               <a href="https://www.instagram.com/weespaces.coworking/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Instagram">
                 <span className="text-lg font-bold">ig</span>
@@ -116,6 +77,33 @@ export default function Footer() {
                 <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="fill-current"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
               </a>
             </div>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-heading">Locations</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><Link href="/coworking-space-coimbatore" className="hover:text-accent transition-colors">Coworking Space Coimbatore</Link></li>
+              <li><Link href="/coworking-space-kochi" className="hover:text-accent transition-colors">Coworking Space Kochi</Link></li>
+              <li><Link href="/coworking-space-trivandrum" className="hover:text-accent transition-colors">Coworking Space Trivandrum</Link></li>
+              <li><Link href="/coworking-space-calicut" className="hover:text-accent transition-colors">Coworking Space Calicut</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-heading">Solutions</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><Link href="/locations" className="hover:text-accent transition-colors">Private Office</Link></li>
+              <li><Link href="/virtual-office" className="hover:text-accent transition-colors">Virtual Office</Link></li>
+              <li><Link href="/locations" className="hover:text-accent transition-colors">Managed Office</Link></li>
+              <li><Link href="/locations" className="hover:text-accent transition-colors">Meeting Room</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-heading">Company</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><Link href="/about" className="hover:text-accent transition-colors">About</Link></li>
+              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+              <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
+              <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
+            </ul>
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50">
