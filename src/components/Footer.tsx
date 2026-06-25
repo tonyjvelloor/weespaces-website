@@ -46,7 +46,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-dark border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-16">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
@@ -61,10 +61,11 @@ export default function Footer() {
             <h4 className="text-lg font-bold mb-6 font-heading">Services</h4>
             <ul className="space-y-4 text-sm text-white/70">
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Coworking Space</Link></li>
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Private Office</Link></li>
-              <li><Link href="/services/virtual-office" className="hover:text-accent transition-colors">Virtual Office</Link></li>
+              <li><Link href="/dedicated-desk-coimbatore" className="hover:text-accent transition-colors">Dedicated Desk</Link></li>
+              <li><Link href="/virtual-office-coimbatore" className="hover:text-accent transition-colors">Virtual Office</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Meeting Room</Link></li>
-              <li><Link href="/pricing" className="hover:text-accent transition-colors">Managed Office</Link></li>
+              <li><Link href="/managed-office-space-coimbatore" className="hover:text-accent transition-colors">Managed Office</Link></li>
+              <li><Link href="/coworking-space-for-startups-coimbatore" className="hover:text-accent transition-colors">For Startups</Link></li>
             </ul>
           </div>
           <div>
@@ -76,6 +77,16 @@ export default function Footer() {
               <li><Link href="/coworking-space-in-kochi" className="hover:text-accent transition-colors">Kochi (Ernakulam)</Link></li>
               <li><Link href="/coworking-space-in-calicut" className="hover:text-accent transition-colors">Calicut (The Work Lounge)</Link></li>
               <li><Link href="/coworking-space-coimbatore" className="hover:text-accent transition-colors flex items-center gap-2">Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full border border-accent/30 font-bold tracking-wide">NEW</span></Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-heading">Coimbatore Locations</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><Link href="/coworking-space-near-tidel-park-coimbatore" className="hover:text-accent transition-colors">Near Tidel Park</Link></li>
+              <li><Link href="/coworking-space-peelamedu" className="hover:text-accent transition-colors">Peelamedu</Link></li>
+              <li><Link href="/coworking-space-avinashi-road" className="hover:text-accent transition-colors">Avinashi Road</Link></li>
+              <li><Link href="/coworking-space-saravanampatti" className="hover:text-accent transition-colors">Saravanampatti</Link></li>
+              <li><Link href="/coworking-space-gandhipuram" className="hover:text-accent transition-colors">Gandhipuram</Link></li>
             </ul>
           </div>
           <div>

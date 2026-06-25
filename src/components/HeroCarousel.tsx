@@ -5,10 +5,10 @@ import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const heroImages = [
-  '/images/branches/trivandrum/image1.jpg',
-  '/images/branches/kochi/workspace1.jpg',
-  '/images/branches/calicut/workspace1.jpg',
-  '/images/branches/trivandrum/image3.jpg'
+  { src: '/images/branches/trivandrum/image1.jpg', alt: 'Premium coworking space in Trivandrum - WeeSpaces' },
+  { src: '/images/branches/kochi/workspace1.jpg', alt: 'Private office space in Kochi for startups' },
+  { src: '/images/branches/calicut/workspace1.jpg', alt: 'Shared office space in Calicut' },
+  { src: '/images/branches/trivandrum/image3.jpg', alt: 'Managed workspace near IT Hub Trivandrum' }
 ];
 
 export default function HeroCarousel() {
@@ -29,8 +29,8 @@ export default function HeroCarousel() {
           className="absolute inset-0"
         >
           <Image 
-            src={heroImages[currentIndex]} 
-            alt="Premium Coworking Workspace" 
+            src={heroImages[currentIndex].src} 
+            alt={heroImages[currentIndex].alt} 
             fill sizes="100vw" 
             className="object-cover object-center" 
             priority

@@ -12,7 +12,7 @@ const cityUrlMap: Record<string, string> = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://weespaces.in';
+  const baseUrl = 'https://www.weespaces.in';
 
   const staticRoutes = [
     '',

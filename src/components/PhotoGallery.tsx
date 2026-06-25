@@ -6,14 +6,14 @@ import { useState, useEffect } from 'react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryImages = [
-  { src: '/images/branches/trivandrum/image1.jpg', title: 'Trivandrum', location: 'Trivandrum', colSpan: 'md:col-span-8', rowSpan: 'md:row-span-2' },
-  { src: '/images/branches/kochi/workspace2.jpg', title: 'Ernakulam', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
-  { src: '/images/branches/calicut/workspace1.jpg', title: 'Calicut', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
-  { src: '/images/branches/coimbatore/exterior-tall.jpg', title: 'Coimbatore Exterior', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
-  { src: '/images/branches/kochi/reception.jpg', title: 'Welcoming Receptions', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
-  { src: '/images/branches/coimbatore/amenity1.jpg', title: 'Coimbatore Workspace', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
-  { src: '/images/branches/calicut/workspace2.jpg', title: 'Productive Desks', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
-  { src: '/images/branches/trivandrum/image4.jpg', title: 'Collaborative Areas', location: 'Trivandrum', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/trivandrum/image1.jpg', title: 'Premium Coworking Space in Trivandrum', location: 'Trivandrum', colSpan: 'md:col-span-8', rowSpan: 'md:row-span-2' },
+  { src: '/images/branches/kochi/workspace2.jpg', title: 'Shared Office Space for Startups Ernakulam', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/calicut/workspace1.jpg', title: 'Fully Furnished Office Space in Calicut', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/coimbatore/exterior-tall.jpg', title: 'Managed Workspace near Tidel Park Coimbatore', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-2' },
+  { src: '/images/branches/kochi/reception.jpg', title: 'Welcoming Reception at Kochi Coworking', location: 'Ernakulam', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/coimbatore/amenity1.jpg', title: 'Private Office Space in Coimbatore - WeeSpaces', location: 'Coimbatore', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/calicut/workspace2.jpg', title: 'Dedicated Desk Rental Calicut', location: 'Calicut', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
+  { src: '/images/branches/trivandrum/image4.jpg', title: 'Collaborative Workspace in Trivandrum', location: 'Trivandrum', colSpan: 'md:col-span-4', rowSpan: 'md:row-span-1' },
 ];
 
 const locations = ['All', 'Trivandrum', 'Ernakulam', 'Calicut', 'Coimbatore'];

@@ -32,8 +32,64 @@ export const metadata: Metadata = {
 
 export default function Home() {
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.weespaces.in/#organization",
+        "name": "WeeSpaces",
+        "url": "https://www.weespaces.in",
+        "logo": "https://www.weespaces.in/images/weespaces-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/weespaces",
+          "https://www.instagram.com/weespaces"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.weespaces.in/#website",
+        "url": "https://www.weespaces.in",
+        "name": "WeeSpaces",
+        "publisher": {
+          "@id": "https://www.weespaces.in/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.weespaces.in/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "WeeSpaces Coimbatore",
+        "image": "https://www.weespaces.in/images/branches/coimbatore/exterior-tall.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Vidyanagar 3rd Street, Vidya Nagar, Civil Aerodrome Post, Kalapatti",
+          "addressLocality": "Coimbatore",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "641014",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 11.0367,
+          "longitude": 77.0373
+        },
+        "url": "https://www.weespaces.in/coworking-space-coimbatore",
+        "telephone": "+919999999999",
+        "priceRange": "₹4000 - ₹50000"
+      }
+    ]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
           <HeroCarousel />

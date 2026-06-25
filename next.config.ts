@@ -10,6 +10,18 @@ const nextConfig: NextConfig = {
       { source: '/locations/calicut', destination: '/coworking-space-in-calicut', permanent: true },
       { source: '/locations/coimbatore', destination: '/coworking-space-coimbatore', permanent: true },
       { source: '/coworking-space-in-coimbatore', destination: '/coworking-space-coimbatore', permanent: true },
+      // Force non-www to www 301 redirect
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'weespaces.in',
+          },
+        ],
+        destination: 'https://www.weespaces.in/:path*',
+        permanent: true,
+      },
     ];
   },
   async headers() {
