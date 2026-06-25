@@ -501,7 +501,6 @@ export default function VirtualOfficeIndia() {
           </p>
           <a
             href="#"
-            onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-3 px-8 rounded-xl hover:bg-accent-hover transition-all glow text-sm"
           >
             Get Your Virtual Office Today <ArrowRight className="w-4 h-4" />
