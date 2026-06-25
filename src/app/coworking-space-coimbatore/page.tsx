@@ -24,12 +24,12 @@ export const metadata: Metadata = {
     'coworking near Tidel Park Coimbatore'
   ],
   alternates: {
-    canonical: '/coworking-space-coimbatore',
+    canonical: 'https://www.weespaces.in/coworking-space-coimbatore',
   },
   openGraph: {
     title: 'Coworking Space in Coimbatore | Office Space Near Tidel Park | WeeSpaces',
     description: 'Newly launched premium coworking near Tidel Park & Coimbatore Airport. High-speed WiFi, ergonomic setups, meeting rooms. Hot desks from ₹5,000/mo. Inauguration offer live!',
-    url: '/coworking-space-coimbatore',
+    url: 'https://www.weespaces.in/coworking-space-coimbatore',
     images: [
       {
         url: data.heroImage,
@@ -68,7 +68,7 @@ const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'WeeSpaces Coimbatore - Coworking Space Near Tidel Park',
-  image: 'https://weespaces.in' + data.heroImage,
+  image: 'https://www.weespaces.in' + data.heroImage,
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Vidyanagar 3rd Street, Vidya Nagar, Civil Aerodrome Post, Kalapatti',
@@ -85,7 +85,7 @@ const localBusinessSchema = {
   telephone: '+919207189111',
   openingHours: 'Mo-Sa 08:00-20:00',
   priceRange: '₹5,000 - ₹22,000',
-  url: 'https://weespaces.in/coworking-space-coimbatore',
+  url: 'https://www.weespaces.in/coworking-space-coimbatore',
 };
 
 const faqSchema = {
@@ -101,11 +101,37 @@ const faqSchema = {
   })),
 };
 
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://www.weespaces.in/'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Locations',
+      item: 'https://www.weespaces.in/locations'
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Coworking Space in Coimbatore',
+      item: 'https://www.weespaces.in/coworking-space-coimbatore'
+    }
+  ]
+};
+
 export default function CoworkingSpaceInCoimbatore() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* --- INAUGURATION OFFER BANNER --- */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-accent via-accent-light to-accent text-navy text-center py-2.5 px-4 text-sm font-bold shadow-[0_4px_20px_rgba(242,156,31,0.4)]">

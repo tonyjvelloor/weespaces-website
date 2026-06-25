@@ -5,9 +5,9 @@ import { branchData } from '@/data/branches';
 export const dynamic = 'force-static';
 
 const cityUrlMap: Record<string, string> = {
-  trivandrum: '/coworking-space-in-trivandrum',
-  ernakulam: '/coworking-space-in-kochi',
-  calicut: '/coworking-space-in-calicut',
+  trivandrum: '/coworking-space-trivandrum',
+  ernakulam: '/coworking-space-kochi',
+  calicut: '/coworking-space-calicut',
   coimbatore: '/coworking-space-coimbatore',
 };
 
@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = [
     '',
+    '/locations',
     '/about',
     '/contact',
     '/enterprise',
@@ -72,6 +73,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/virtual-office-calicut',
     '/office-space-for-rent-coimbatore',
     '/private-office-space-coimbatore',
+    '/coworking-space-near-infopark-kochi',
+    '/coworking-space-near-technopark-trivandrum',
+    '/private-office-space-kochi',
+    '/managed-office-space-kochi',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

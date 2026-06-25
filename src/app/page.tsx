@@ -80,6 +80,21 @@ export default function Home() {
         "url": "https://www.weespaces.in/coworking-space-coimbatore",
         "telephone": "+919999999999",
         "priceRange": "₹4000 - ₹50000"
+      },
+      {
+        "@type": "ServiceAreaBusiness",
+        "name": "WeeSpaces South India",
+        "url": "https://www.weespaces.in",
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "Kerala"
+          },
+          {
+            "@type": "City",
+            "name": "Coimbatore"
+          }
+        ]
       }
     ]
   };

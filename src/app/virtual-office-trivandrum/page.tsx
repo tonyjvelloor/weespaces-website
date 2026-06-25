@@ -37,8 +37,8 @@ export default function VirtualOfficeTrivandrumPage() {
             </div>
           </ScrollReveal>
           
-          <ScrollReveal direction="left" delay={0.2} className="relative" id="get-started">
-            <div className="glass p-8 rounded-3xl border border-white/10 relative z-10">
+          <ScrollReveal direction="left" delay={0.2} className="relative">
+            <div id="get-started" className="glass p-8 rounded-3xl border border-white/10 relative z-10">
                <h3 className="text-2xl font-bold mb-6">Request Virtual Office in Trivandrum</h3>
                <LeadForm branch="Trivandrum" />
             </div>
