@@ -44,7 +44,7 @@ export default function MobileStickyCTA() {
 
         {/* WhatsApp — Primary / Largest */}
         <a
-          href="https://wa.me/919207189111?text=Hi%20WeeSpaces!%20I'm%20interested%20in%20a%20workspace."
+          href="https://wa.me/919207189111?text=Hi%20WeeSpaces,%20I%20am%20interested%20in%20workspace..."
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => fireEvent('whatsapp_click')}

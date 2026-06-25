@@ -4,6 +4,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   async redirects() {
     return [
+      // --- Service redirects ---
+      { source: '/services/virtual-office', destination: '/virtual-office', permanent: true },
+
       // --- Old location slug redirects ---
       { source: '/locations/trivandrum', destination: '/coworking-space-trivandrum', permanent: true },
       { source: '/locations/ernakulam', destination: '/coworking-space-kochi', permanent: true },

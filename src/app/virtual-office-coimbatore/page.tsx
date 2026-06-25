@@ -24,7 +24,7 @@ export default function VirtualOfficeCoimbatorePage() {
       "addressCountry": "IN"
     },
     "url": "https://www.weespaces.in/virtual-office-coimbatore",
-    "telephone": "+919999999999"
+    "telephone": "+919207189111"
   };
 
   return (

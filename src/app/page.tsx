@@ -78,7 +78,7 @@ export default function Home() {
           "longitude": 77.0373
         },
         "url": "https://www.weespaces.in/coworking-space-coimbatore",
-        "telephone": "+919999999999",
+        "telephone": "+919207189111",
         "priceRange": "₹4000 - ₹50000"
       },
       {

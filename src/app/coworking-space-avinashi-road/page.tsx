@@ -25,7 +25,7 @@ export default function SEOPage() {
       "addressCountry": "IN"
     },
     "url": "https://www.weespaces.in/coworking-space-avinashi-road",
-    "telephone": "+919999999999"
+    "telephone": "+919207189111"
   };
 
   return (

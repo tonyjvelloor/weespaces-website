@@ -139,6 +139,15 @@ export default function CoworkingSpaceInKochi() {
               </div>
             </div>
 
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-3 px-7 rounded-xl hover:bg-accent-hover transition-all glow text-sm"
+              >
+                See Plans & Availability <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
             <p className="text-white/70 italic text-sm">{data.cta}</p>
           </ScrollReveal>
 
@@ -183,9 +192,9 @@ export default function CoworkingSpaceInKochi() {
               ))}
             </div>
             <div className="mt-4 text-center">
-              <a href="#book-tour" className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-2.5 px-6 rounded-xl hover:bg-accent-hover transition-all text-sm shadow-[0_0_15px_rgba(242,156,31,0.3)]">
-                Check Availability
-              </a>
+              <Link href="/pricing" className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-2.5 px-6 rounded-xl hover:bg-accent-hover transition-all text-sm shadow-[0_0_15px_rgba(242,156,31,0.3)]">
+                See Plans & Availability
+              </Link>
             </div>
           </div>
         </ScrollReveal>

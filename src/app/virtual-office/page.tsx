@@ -256,12 +256,12 @@ export default function VirtualOfficeIndia() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <a
-                href="#pricing"
+              <Link
+                href="/pricing"
                 className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-3 px-7 rounded-xl hover:bg-accent-hover transition-all glow text-sm"
               >
-                View Pricing <ArrowRight className="w-4 h-4" />
-              </a>
+                See Plans & Availability <ArrowRight className="w-4 h-4" />
+              </Link>
               <a
                 href="#features"
                 className="inline-flex items-center gap-2 bg-transparent border border-white/20 text-white font-bold py-3 px-7 rounded-xl hover:border-accent hover:text-accent transition-all text-sm"
@@ -493,12 +493,12 @@ export default function VirtualOfficeIndia() {
           <p className="text-white/50 text-sm mb-4">
             Ready to get your virtual office address?
           </p>
-          <a
-            href="#"
+          <Link
+            href="/pricing"
             className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-3 px-8 rounded-xl hover:bg-accent-hover transition-all glow text-sm"
           >
-            Get Your Virtual Office Today <ArrowRight className="w-4 h-4" />
-          </a>
+            See Plans & Availability <ArrowRight className="w-4 h-4" />
+          </Link>
         </ScrollReveal>
       </section>
     </>

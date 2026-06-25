@@ -104,55 +104,35 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               </div>
               
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 text-white drop-shadow-xl">
-                {locationId === 'coimbatore' ? (
-                  <>New Launch Near <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Tidel Park & Airport</span></>
-                ) : (
-                  <>Upgrade Your Workspace in <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">{data.name}</span></>
-                )}
+                Move Into a Fully Furnished Office in <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">{data.name}</span> This Week
               </h1>
               
-              <div className="flex flex-wrap gap-2 mb-8">
-                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">🚀 Prime Business Locations</div>
-                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">🚆 Seamless Connectivity</div>
-                 <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-medium px-4 py-2 rounded-full">🏢 Grade-A Infrastructure</div>
-                 <div className="bg-white/10 backdrop-blur-md border border-accent/50 text-accent text-xs font-bold px-4 py-2 rounded-full">💰 Zero Brokerage | Zero CapEx</div>
-              </div>
-
-              <p className="text-xl sm:text-2xl text-white/80 mb-10 max-w-2xl leading-relaxed font-light">
-                {data.description} Step into a premium environment designed for high-performing teams and individuals.
+              <p className="text-xl sm:text-2xl text-white/80 mb-8 max-w-2xl leading-relaxed font-light">
+                Private offices, coworking desks & managed workspace near {data.name}&apos;s business hubs.
               </p>
 
-              {locationId === 'coimbatore' ? (
-                <div className="flex flex-col gap-3 bg-gradient-to-r from-accent/10 to-transparent p-6 rounded-2xl border border-accent/30 w-max shadow-[0_0_20px_rgba(242,156,31,0.1)]">
-                   <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-accent text-navy flex items-center justify-center shrink-0">
-                         <Star className="w-6 h-6 fill-navy" />
-                      </div>
-                      <div>
-                         <h4 className="text-xl font-bold text-white">Be among the first 20 members!</h4>
-                         <p className="text-sm text-white/70">Lock in your inaugural rate and get priority desk choice.</p>
-                      </div>
-                   </div>
-                   <div className="inline-flex items-center gap-2 text-xs font-bold bg-accent text-navy px-3 py-1 rounded-full w-max mt-2 uppercase tracking-wide">
-                     <AlertCircle className="w-3 h-3" /> Founding Member Badge Included
-                   </div>
-                </div>
-              ) : (
-                <div className="flex items-center gap-4 bg-navy-dark/50 p-6 rounded-2xl border border-white/10 w-max">
-                  <div className="flex -space-x-4">
-                     <div className="w-12 h-12 rounded-full border-2 border-navy bg-white/20"></div>
-                     <div className="w-12 h-12 rounded-full border-2 border-navy bg-white/30"></div>
-                     <div className="w-12 h-12 rounded-full border-2 border-navy bg-white/40"></div>
+              <div className="flex flex-wrap items-center gap-4 mb-10">
+                {[
+                  'Starting from ₹5,000/mo',
+                  'Premium Location',
+                  'High-Speed WiFi',
+                  '5-Star Rated'
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full shadow-sm">
+                    <CheckCircle2 className="w-4 h-4 text-accent" />
+                    <span className="text-sm text-white/90 font-medium">{item}</span>
                   </div>
-                  <div>
-                     <div className="flex gap-1 text-accent mb-1">
-                        {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-current" />)}
-                     </div>
-                     <p className="text-sm font-bold text-white">4.9/5 Average Rating</p>
-                     <p className="text-xs text-white/50">From 200+ Professionals</p>
-                  </div>
-                </div>
-              )}
+                ))}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-4">
+                <a href="#pricing" className="inline-flex items-center justify-center bg-accent text-navy font-bold px-8 py-4 rounded-xl hover:bg-accent-light transition-all duration-300 shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+                  See Plans & Availability
+                </a>
+                <a href="#form-id" className="inline-flex items-center justify-center bg-transparent border-2 border-white/20 text-white font-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-all duration-300">
+                  Book Free Tour
+                </a>
+              </div>
             </div>
 
             {/* Right Form Column - Premium Glassmorphism */}
@@ -265,7 +245,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
       </section>
 
       {/* Pricing / Options Section */}
-      <section className="py-24 relative">
+      <section id="pricing" className="py-24 relative">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Transparent Pricing</h2>

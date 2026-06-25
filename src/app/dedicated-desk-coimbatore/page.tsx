@@ -26,7 +26,7 @@ export default function DedicatedDeskCoimbatorePage() {
       "addressCountry": "IN"
     },
     "url": "https://www.weespaces.in/dedicated-desk-coimbatore",
-    "telephone": "+919999999999"
+    "telephone": "+919207189111"
   };
 
   return (
