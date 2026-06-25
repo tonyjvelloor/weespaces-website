@@ -69,6 +69,10 @@ export default function RootLayout({
         <noscript>
           <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         </noscript>
+
+        {/* Secure Privacy */}
+        <Script strategy="beforeInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
+
         {/* Google Analytics */}
         <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-9BP90YRWBN" />
         <Script id="google-analytics" strategy="lazyOnload">
