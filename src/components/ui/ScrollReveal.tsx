@@ -9,6 +9,7 @@ interface ScrollRevealProps {
   direction?: "up" | "down" | "left" | "right";
   className?: string;
   onClick?: () => void;
+  id?: string;
 }
 
 export default function ScrollReveal({
@@ -17,6 +18,7 @@ export default function ScrollReveal({
   direction = "up",
   className = "",
   onClick,
+  id,
 }: ScrollRevealProps) {
   const directions = {
     up: { y: 40, x: 0 },
@@ -44,6 +46,7 @@ export default function ScrollReveal({
       }}
       className={className}
       onClick={onClick}
+      id={id}
     >
       {children}
     </motion.div>
