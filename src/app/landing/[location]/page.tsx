@@ -125,6 +125,16 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 ))}
               </div>
 
+              <div className="py-4 border-t border-b border-white/10 mb-8 max-w-2xl">
+                <p className="text-white/60 text-sm flex flex-wrap items-center gap-3">
+                  <span className="font-semibold text-white/90">Trusted by 500+ Businesses</span>
+                  <span className="text-white/20">|</span>
+                  <span className="flex items-center gap-1"><Star className="w-4 h-4 text-accent fill-accent" /> 4.8 Google Rating</span>
+                  <span className="text-white/20">|</span>
+                  <span>Locations Across: Coimbatore, Kochi, Trivandrum, Calicut</span>
+                </p>
+              </div>
+
               <div className="flex flex-wrap items-center gap-4">
                 <a href="#pricing" className="inline-flex items-center justify-center bg-accent text-navy font-bold px-8 py-4 rounded-xl hover:bg-accent-light transition-all duration-300 shadow-[0_0_20px_rgba(242,156,31,0.3)]">
                   See Plans & Availability
@@ -154,6 +164,69 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               </div>
             </div>
             
+          </div>
+        </div>
+      </section>
+
+      {/* Experience the Space */}
+      <section className="py-20 bg-navy-dark border-t border-white/5">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Experience the Space</h2>
+            <p className="text-xl text-white/60">Premium workspaces designed for productivity and growth.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="group relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/amenity1.jpg" alt="Private Office" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6">
+                <h3 className="text-2xl font-bold text-white">Private Office</h3>
+              </div>
+            </div>
+            <div className="group relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/amenity2.jpg" alt="Open Workspace" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6">
+                <h3 className="text-2xl font-bold text-white">Open Workspace</h3>
+              </div>
+            </div>
+            <div className="group relative h-64 md:h-80 rounded-3xl overflow-hidden shadow-2xl">
+              <Image src="/images/amenity3.jpg" alt="Meeting Room" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent"></div>
+              <div className="absolute bottom-6 left-6">
+                <h3 className="text-2xl font-bold text-white">Meeting Room</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Choose Your Workspace */}
+      <section className="py-20 relative bg-navy border-t border-white/5">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Choose Your Workspace</h2>
+            <p className="text-xl text-white/60">Find the perfect fit for your working style and team size.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-navy-light/40 border border-white/10 p-8 rounded-3xl hover:border-accent/30 transition-colors flex flex-col">
+              <div className="text-accent font-bold mb-2">Solo Professional</div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Dedicated Desk</h3>
+              <p className="text-white/60 mb-8 flex-grow">Your own personal desk in a shared, vibrant environment. Perfect for focused work and networking.</p>
+              <a href="#pricing" className="inline-flex justify-center items-center py-3 px-6 bg-white/10 hover:bg-white/20 rounded-xl font-bold text-white transition-colors">Explore Desk</a>
+            </div>
+            <div className="bg-navy-light/40 border border-white/10 p-8 rounded-3xl hover:border-accent/30 transition-colors flex flex-col">
+              <div className="text-accent font-bold mb-2">Startup Team</div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Private Office</h3>
+              <p className="text-white/60 mb-8 flex-grow">Fully enclosed, secure cabins for your team to collaborate in private while enjoying community perks.</p>
+              <a href="#pricing" className="inline-flex justify-center items-center py-3 px-6 bg-white/10 hover:bg-white/20 rounded-xl font-bold text-white transition-colors">View Cabins</a>
+            </div>
+            <div className="bg-navy-light/40 border border-white/10 p-8 rounded-3xl hover:border-accent/30 transition-colors flex flex-col">
+              <div className="text-accent font-bold mb-2">Growing Company</div>
+              <h3 className="text-2xl font-bold mb-4 text-white">Managed Office</h3>
+              <p className="text-white/60 mb-8 flex-grow">Custom-built private wings tailored to your enterprise needs, with dedicated branding and access.</p>
+              <a href="#form-id" className="inline-flex justify-center items-center py-3 px-6 bg-white/10 hover:bg-white/20 rounded-xl font-bold text-white transition-colors">Talk To Expert</a>
+            </div>
           </div>
         </div>
       </section>
@@ -218,10 +291,10 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                    <h3 className="text-2xl font-bold text-white/50">Traditional Lease</h3>
                 </div>
                 <ul className="space-y-4">
-                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Heavy upfront CapEx</li>
-                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Rigid 3-5 year lock-ins</li>
-                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> You manage IT & maintenance</li>
-                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Hidden operational costs</li>
+                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Deposit: 6-10 months</li>
+                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Setup: Lakhs in CapEx</li>
+                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Internet: Arrange yourself</li>
+                   <li className="flex items-center gap-3 text-white/60"><span className="text-red-400">✗</span> Move-in: Takes months</li>
                 </ul>
              </div>
              
@@ -234,10 +307,10 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                    <h3 className="text-2xl font-bold text-white">WeeSpaces Managed</h3>
                 </div>
                 <ul className="space-y-4">
-                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> 0 Setup costs or CapEx</li>
-                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> Flexible month-to-month terms</li>
-                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> We handle IT, cleaning, & security</li>
-                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> All-inclusive predictable billing</li>
+                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> Deposit: Low & Flexible</li>
+                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> Setup: Fully Included</li>
+                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> Internet: Ready & High-Speed</li>
+                   <li className="flex items-center gap-3 text-white font-medium"><CheckCircle2 className="w-5 h-5 text-accent" /> Move-in: Ready in Days</li>
                 </ul>
              </div>
           </div>
@@ -247,9 +320,16 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
       {/* Pricing / Options Section */}
       <section id="pricing" className="py-24 relative">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Transparent Pricing</h2>
-            <p className="text-xl text-white/60">No hidden fees. Choose the perfect workspace solution in {data.name}.</p>
+            <p className="text-xl text-white/60 mb-6">No hidden fees. Choose the perfect workspace solution in {data.name}.</p>
+            <div className="inline-flex flex-wrap justify-center items-center gap-4 bg-navy-dark/80 border border-white/10 rounded-full py-2 px-6 shadow-inner">
+              <span className="flex items-center gap-2 text-sm text-white/80"><span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Private Offices: Limited</span>
+              <span className="text-white/20 hidden md:inline">|</span>
+              <span className="flex items-center gap-2 text-sm text-white/80"><span className="w-2 h-2 rounded-full bg-green-500"></span> Dedicated Desks: Available</span>
+              <span className="text-white/20 hidden md:inline">|</span>
+              <span className="flex items-center gap-2 text-sm text-white/80"><span className="w-2 h-2 rounded-full bg-green-500"></span> Meeting Rooms: Available</span>
+            </div>
           </div>
 
           {locationId === 'coimbatore' ? (
@@ -442,6 +522,51 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                  </div>
               ))}
            </div>
+        </div>
+      </section>
+
+      {/* Buyer-Focused FAQs */}
+      <section className="py-20 relative bg-navy border-t border-white/5">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-white/60">Everything you need to know about setting up your workspace.</p>
+          </div>
+          <div className="space-y-6">
+            {[
+              {
+                q: `What is the price of coworking space in ${data.name}?`,
+                a: `Our pricing is designed to be fully transparent and flexible. Hot desks start from as low as ${data.pricing?.hotDesk || '₹5,000/mo'}, and private cabins from ${data.pricing?.privateOffice || '₹25,000/mo'}. All plans include enterprise-grade internet, unlimited coffee, daily cleaning, and premium amenities with zero hidden costs or heavy CapEx.`
+              },
+              {
+                q: "Can I get a private cabin?",
+                a: "Yes! We offer fully furnished, secure private cabins tailored for teams of all sizes. Each cabin is move-in ready with ergonomic furniture, biometric access, and customizable branding options so your team can work productively from day one."
+              },
+              {
+                q: "Can my team move immediately?",
+                a: "Absolutely. Unlike traditional leases that take months of setup, interiors, and IT deployment, our workspaces are 100% plug-and-play. You can sign the agreement today and have your team working from their new premium office by tomorrow morning."
+              },
+              {
+                q: "Do you provide GST registration?",
+                a: "Yes, we provide all the necessary NOCs, rental agreements, and legal documentation required for your company's GST registration and ROC filings at our premium address. We make the compliance process seamless for your business."
+              },
+              {
+                q: "Can I customize my office?",
+                a: "Yes, our Managed Office solutions and larger Private Cabins can be fully customized to reflect your brand identity. We work with you to design bespoke layouts, branding elements, and IT infrastructure that align perfectly with your enterprise requirements."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-navy-light/30 border border-white/10 rounded-2xl p-6 md:p-8 hover:border-accent/30 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-3 flex items-start gap-3">
+                  <span className="text-accent shrink-0">Q.</span>
+                  {faq.q}
+                </h3>
+                <p className="text-white/70 leading-relaxed flex items-start gap-3">
+                  <span className="text-white/20 font-bold shrink-0">A.</span>
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
