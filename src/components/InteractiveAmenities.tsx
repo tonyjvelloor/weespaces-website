@@ -54,7 +54,7 @@ export default function InteractiveAmenities() {
                 >
                   <Image 
                     src={activeAmenity.image} 
-                    alt={`${activeAmenity.title} - WeeSpaces Coworking`} 
+                    alt={`${activeAmenity.text} - WeeSpaces Coworking`} 
                     fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                     className="object-cover" 
                   />
@@ -74,7 +74,7 @@ export default function InteractiveAmenities() {
                 >
                   <Image 
                     src={activeAmenity.image2} 
-                    alt={`${activeAmenity.title} - WeeSpaces Coworking Workspace`} 
+                    alt={`${activeAmenity.text} - WeeSpaces Coworking Workspace`} 
                     fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
                     className="object-cover" 
                   />
