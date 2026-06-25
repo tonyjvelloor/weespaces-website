@@ -70,13 +70,13 @@ export default function RootLayout({
           <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         </noscript>
         {/* Google Analytics */}
-        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-89N19DEH2N" />
+        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-9BP90YRWBN" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-89N19DEH2N', { send_page_view: true });
+            gtag('config', 'G-9BP90YRWBN', { send_page_view: true });
 
             /* Fire location_view on page load for city pages */
             var path = window.location.pathname;
