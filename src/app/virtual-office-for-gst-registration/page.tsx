@@ -4,8 +4,8 @@ import { CheckCircle, MapPin, ShieldCheck, Building2, FileText, FileBadge, Check
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Virtual Office for GST Registration in Kerala & Tamil Nadu | WeeSpaces',
-  description: 'Get a professional virtual office address for GST registration across Kerala (Kochi, Trivandrum, Calicut) and Tamil Nadu (Coimbatore). Starting at ₹1,500/month.',
+  title: 'Virtual Office for GST Registration | WeeSpaces',
+  description: 'Get a professional virtual office for GST registration in Kerala and Tamil Nadu. Starting at ₹1,500/month.',
   alternates: {
     canonical: 'https://weespaces.in/virtual-office-for-gst-registration',
   }

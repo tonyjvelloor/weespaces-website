@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
 
   if (locationId === 'coimbatore') {
     return {
-      title: `Premium Coworking & Managed Offices in Coimbatore | WeeSpaces`,
+      title: `Coworking & Managed Offices in Coimbatore | WeeSpaces`,
       description: data.description,
       keywords: ["Coworking space Coimbatore", "Office space near Tidel Park Coimbatore", "Managed offices Avinashi Road", "Premium coworking Coimbatore", "Private cabins Coimbatore", "IT workspace Coimbatore"],
       alternates: {

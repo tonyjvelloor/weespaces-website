@@ -23,7 +23,7 @@ export const branchData: Record<string, BranchData> = {
     address: '1st Floor, Relcon Plaza, Pattom, Thiruvananthapuram, Kerala 695004',
     geo: { lat: 8.5241, lon: 76.9366 },
     highlight: "Kerala's largest IT hub ecosystem.",
-    description: "Nestled adjacent to Technopark, our Trivandrum hub is designed for IT enterprises and deep-tech startups. Experience a serene, high-focus environment surrounded by industry leaders.",
+    description: "Nestled adjacent to Technopark, our Trivandrum hub is designed for IT enterprises and deep-tech startups. Experience a serene, high-focus environment.",
     cta: "Book your tour in Trivandrum today!",
     heroImage: "/images/branches/trivandrum/image4.jpg",
     galleryImages: [
@@ -40,7 +40,7 @@ export const branchData: Record<string, BranchData> = {
     address: '4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram, Perumanoor, Kochi, Ernakulam, Kerala 682016',
     geo: { lat: 9.9816, lon: 76.2999 },
     highlight: "The commercial heart of Kerala.",
-    description: "Located in the bustling central business district, our Ernakulam hub thrives on networking and commerce. Ideal for sales teams, agencies, and rapidly scaling startups looking for a central footprint.",
+    description: "Located in Ernakulam's business district, this hub thrives on networking and commerce. Ideal for sales teams, agencies, and rapidly scaling startups.",
     cta: "Schedule a visit at our MG Road Hub.",
     heroImage: "/images/branches/kochi/reception.jpg",
     galleryImages: [
@@ -57,7 +57,7 @@ export const branchData: Record<string, BranchData> = {
     address: 'Wee Spaces, Door No. 2951/A, Ground floor, Neeloth Plaza, Holy Cross IMT Road, Wayanad Rd, opposite Malayalam Manorama, East Nadakkave, Kozhikode, Kerala 673001',
     geo: { lat: 11.2588, lon: 75.7804 },
     highlight: "Where culture meets modern tech.",
-    description: "Close to Cyberpark, our Calicut space offers a creative, relaxed, yet highly driven atmosphere. Perfect for designers, freelancers, and agile teams building the future.",
+    description: "Close to Cyberpark, our Calicut space offers a creative, relaxed, yet highly driven atmosphere. Perfect for agile teams, freelancers, and designers.",
     cta: "Inquire about availability in Calicut.",
     heroImage: "/images/branches/calicut/reception.jpg",
     galleryImages: [
@@ -73,7 +73,7 @@ export const branchData: Record<string, BranchData> = {
     address: 'Vidyanagar 3rd street, Vidya Nagar, Civil Aerodrome Post, Kalapatti, Coimbatore, Tamil Nadu 641014',
     geo: { lat: 11.0168, lon: 76.9558 },
     highlight: "Walkable distance to Coimbatore International Airport.",
-    description: "Strategically located just 1.5km from Tidel Park and within walking distance to Coimbatore International Airport, this newly launched hub bridges Coimbatore's rich industrial legacy with its exploding IT ecosystem. Built for massive growth.",
+    description: "Just 1.5km from Tidel Park and near Coimbatore Airport, this newly launched coworking hub is built for massive growth in a rapidly exploding IT ecosystem.",
     cta: "Secure your spot in our newest Coimbatore hub!",
     heroImage: "/images/branches/coimbatore/exterior-tall.jpg",
     galleryImages: [
