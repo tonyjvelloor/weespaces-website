@@ -7,13 +7,14 @@ import SEOFAQ from '@/components/SEOFAQ';
 import { MapPin, Building, Briefcase, ChevronRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
-export async function generateMetadata({ params }: { params: { service: string, city: string, microLocation: string } }): Promise<Metadata> {
-  const service = services.find(s => s.slug === params.service);
-  const city = cities[params.city];
+export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string, microLocation: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const service = services.find(s => s.slug === resolvedParams.service);
+  const city = cities[resolvedParams.city];
   
   if (!service || !city) return notFound();
   
-  const microLoc = city.microLocations.find(m => m.slug === params.microLocation) || city.landmarks.find(l => l.slug === params.microLocation);
+  const microLoc = city.microLocations.find(m => m.slug === resolvedParams.microLocation) || city.landmarks.find(l => l.slug === resolvedParams.microLocation);
   
   if (!microLoc) return notFound();
 
@@ -60,14 +61,15 @@ export function generateStaticParams() {
   return paths;
 }
 
-export default function MicroLocationPage({ params }: { params: { service: string, city: string, microLocation: string } }) {
-  const service = services.find(s => s.slug === params.service);
-  const city = cities[params.city];
+export default async function MicroLocationPage({ params }: { params: Promise<{ service: string, city: string, microLocation: string }> }) {
+  const resolvedParams = await params;
+  const service = services.find(s => s.slug === resolvedParams.service);
+  const city = cities[resolvedParams.city];
   
   if (!service || !city) return notFound();
   
-  const microLoc = city.microLocations.find(m => m.slug === params.microLocation);
-  const landmark = city.landmarks.find(l => l.slug === params.microLocation);
+  const microLoc = city.microLocations.find(m => m.slug === resolvedParams.microLocation);
+  const landmark = city.landmarks.find(l => l.slug === resolvedParams.microLocation);
   
   const locationObj = microLoc || landmark;
   if (!locationObj) return notFound();

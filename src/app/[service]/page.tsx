@@ -7,8 +7,9 @@ import SEOFAQ from '@/components/SEOFAQ';
 import { MapPin, Building, ChevronRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 
-export async function generateMetadata({ params }: { params: { service: string } }): Promise<Metadata> {
-  const service = services.find(s => s.slug === params.service);
+export async function generateMetadata({ params }: { params: Promise<{ service: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const service = services.find(s => s.slug === resolvedParams.service);
   
   if (!service) return notFound();
 
@@ -27,8 +28,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ServicePage({ params }: { params: { service: string } }) {
-  const service = services.find(s => s.slug === params.service);
+export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
+  const resolvedParams = await params;
+  const service = services.find(s => s.slug === resolvedParams.service);
   
   if (!service) return notFound();
 

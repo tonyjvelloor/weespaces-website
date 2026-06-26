@@ -8,9 +8,10 @@ import { MapPin, Building, ChevronRight, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export async function generateMetadata({ params }: { params: { service: string, city: string } }): Promise<Metadata> {
-  const service = services.find(s => s.slug === params.service);
-  const city = cities[params.city];
+export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const service = services.find(s => s.slug === resolvedParams.service);
+  const city = cities[resolvedParams.city];
   
   if (!service || !city) return notFound();
 
@@ -38,9 +39,10 @@ export function generateStaticParams() {
   return paths;
 }
 
-export default function CityServicePage({ params }: { params: { service: string, city: string } }) {
-  const service = services.find(s => s.slug === params.service);
-  const city = cities[params.city];
+export default async function CityServicePage({ params }: { params: Promise<{ service: string, city: string }> }) {
+  const resolvedParams = await params;
+  const service = services.find(s => s.slug === resolvedParams.service);
+  const city = cities[resolvedParams.city];
   
   if (!service || !city) return notFound();
 
