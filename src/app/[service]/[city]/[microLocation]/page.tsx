@@ -101,7 +101,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
     <>
       {/* 1. HERO (CONVERSION) */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-20 overflow-hidden bg-navy">
-        <div className="absolute inset-0 bg-[url('/images/branches/kochi/reception.jpg')] bg-cover bg-center opacity-30"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('${(microLoc?.gallery || city.gallery)[0]}')` }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/40"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center py-20">
@@ -123,7 +123,9 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
               {service.shortDesc} Located perfectly in {locationName}, offering flexible scaling and premium amenities for your team.
             </p>
             
-            <div className="flex flex-wrap gap-4 mb-8">
+
+
+            <div className="flex flex-wrap gap-4">
               <div className="glass rounded-xl px-4 py-3 border border-white/10 flex items-center gap-3 text-white">
                 <MapPin className="w-5 h-5 text-accent" />
                 <span className="text-sm font-bold">{isLandmark ? `Near ${locationName}` : `${locationName}, ${city.name}`}</span>
@@ -151,13 +153,15 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
       {/* 2. TRUST STRIP */}
       <section className="bg-white py-8 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-between gap-8 opacity-60 grayscale">
+          <div className="flex flex-wrap items-center justify-between gap-8">
             <h3 className="text-sm font-bold text-navy uppercase tracking-widest whitespace-nowrap">Trusted by 500+ Companies</h3>
             <div className="flex items-center gap-2"><Star className="w-5 h-5 text-yellow-500 fill-yellow-500" /><span className="font-bold text-navy">4.9/5 Average Rating</span></div>
-            <div className="text-lg font-bold font-serif italic">TCS</div>
-            <div className="text-lg font-bold font-serif italic">Cognizant</div>
-            <div className="text-lg font-bold font-serif italic">Wipro</div>
-            <div className="text-lg font-bold font-serif italic">KPMG</div>
+            <div className="flex items-center gap-8 opacity-60 grayscale">
+              <div className="text-lg font-bold font-serif italic">TCS</div>
+              <div className="text-lg font-bold font-serif italic">Cognizant</div>
+              <div className="text-lg font-bold font-serif italic">Wipro</div>
+              <div className="text-lg font-bold font-serif italic">KPMG</div>
+            </div>
           </div>
         </div>
       </section>
@@ -169,21 +173,21 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             <h2 className="text-3xl font-bold mb-4 text-navy">Why businesses in {locationName} choose us</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
-            <ScrollReveal delay={0.1} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+            <ScrollReveal delay={0.1} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
                 <Zap className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-navy mb-3">Zero CapEx</h3>
               <p className="text-gray-600">Don't block your capital in interior fit-outs and deposits. Our spaces are ready to move in.</p>
             </ScrollReveal>
-            <ScrollReveal delay={0.2} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+            <ScrollReveal delay={0.2} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-bold text-navy mb-3">Enterprise Security</h3>
               <p className="text-gray-600">Dedicated VLANs, biometric access, and 24/7 CCTV surveillance ensure your data and team are safe.</p>
             </ScrollReveal>
-            <ScrollReveal delay={0.3} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+            <ScrollReveal delay={0.3} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
                 <Building className="w-8 h-8" />
               </div>
@@ -229,14 +233,26 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-navy mb-6">Everything You Need is Included</h2>
             <p className="text-gray-600 mb-8 leading-relaxed">Focus on growing your business while we take care of the operations at our {locationName} workspace.</p>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent shrink-0" /><span className="text-gray-600 font-medium">High-speed enterprise internet</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent shrink-0" /><span className="text-gray-600 font-medium">Professional reception & mail handling</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent shrink-0" /><span className="text-gray-600 font-medium">{microLoc ? microLoc.parking : 'Ample parking space'}</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent shrink-0" /><span className="text-gray-600 font-medium">Access to meeting rooms & boardrooms</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent shrink-0" /><span className="text-gray-600 font-medium">Unlimited tea, coffee & pantry access</span></li>
-              <li className="flex items-start gap-3"><CheckCircle className="w-5 h-5 text-accent shrink-0" /><span className="text-gray-600 font-medium">24/7 security & CCTV surveillance</span></li>
-            </ul>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Enterprise Internet</span>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Reception & Mail</span>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">{microLoc ? microLoc.parking : 'Ample Parking'}</span>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Meeting Rooms</span>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Pantry Access</span>
+              </div>
+              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">24/7 Security</span>
+              </div>
+            </div>
           </ScrollReveal>
           <ScrollReveal direction="right">
             <div className="bg-navy rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
