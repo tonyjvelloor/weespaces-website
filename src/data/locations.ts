@@ -29,6 +29,15 @@ export type CityData = {
   gallery: string[];
   microLocations: MicroLocation[];
   landmarks: { name: string; slug: string }[];
+  citations?: string[];
+  occupancy?: string;
+  caseStudy?: {
+    client: string;
+    outcome: string;
+    metrics: string[];
+  };
+  nearbyCompaniesList?: string[];
+  localGuideExpanded?: { title: string; content: string }[];
 };
 
 export const services: ServiceType[] = [
@@ -50,7 +59,19 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Kochi is driven by IT/ITES, logistics, and maritime trade. Infopark and SmartCity host hundreds of tech companies, while MG Road and Marine Drive cater to traditional businesses, finance, and consulting.',
     transportHubs: 'Well-connected by the Kochi Metro, extensive bus networks, and the innovative Water Metro system. Cochin International Airport ensures global connectivity.',
     gstRegistrationRules: 'Kerala follows standard GST procedures. A virtual office or physical workspace in Kochi provides a highly credible business address required for quick GST registration and state compliance.',
-    gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+    occupancy: '82% of seats currently occupied',
+    caseStudy: {
+      client: 'A leading SaaS company',
+      outcome: 'Moved from a 600 sq ft leased office into WeeSpaces and expanded from 6 to 18 employees seamlessly.',
+      metrics: ['Saved ₹12 lakh in setup costs', 'Zero maintenance overhead', 'Expanded team 3x']
+    },
+    nearbyCompaniesList: ['TCS', 'Cognizant', 'Wipro', 'KPMG', 'UST Global', 'Ernst & Young'],
+    localGuideExpanded: [
+      { title: 'Why Kakkanad is Kochi\'s Next Business Hub', content: 'Kakkanad is witnessing explosive growth driven by Phase 2 of Infopark and SmartCity. With the upcoming Water Metro extensions and Phase 2 of the Kochi Metro, connectivity will be unmatched.' },
+      { title: 'Talent Availability', content: 'Proximity to institutions like CUSAT and Model Engineering College ensures a steady pipeline of top-tier engineering and management talent.' }
+    ],
+    citations: ['https://www.google.com/maps?cid=weespaces-kochi', 'https://www.justdial.com/Ernakulam/WeeSpaces-Coworking', 'https://www.coworker.com/india/kochi/weespaces'],
     microLocations: [
       {
         id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'IT companies, startups, corporates',
@@ -151,7 +172,19 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Trivandrum is synonymous with government administration, R&D, and enterprise IT. Technopark is one of India’s largest IT parks, driving significant economic activity.',
     transportHubs: 'Trivandrum Central Railway Station and Trivandrum International Airport offer excellent connectivity. Local transit relies heavily on KSRTC buses and a growing highway infrastructure.',
     gstRegistrationRules: 'Registering a business in the capital city provides unparalleled credibility. Our virtual and managed offices supply all required NOCs and rental agreements needed for rapid GST clearance in Kerala.',
-    gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+    occupancy: '88% of seats currently occupied',
+    caseStudy: {
+      client: 'A Healthcare IT Startup',
+      outcome: 'Set up an enterprise-grade private office for their engineering team within 48 hours without any IT infrastructure delays.',
+      metrics: ['Zero CapEx on IT setup', 'Ready-to-use secure VLANs', '24/7 operations enabled']
+    },
+    nearbyCompaniesList: ['Infosys', 'TCS', 'UST', 'IBS Software', 'Allianz', 'Oracle'],
+    localGuideExpanded: [
+      { title: 'The Technopark Ecosystem', content: 'Trivandrum houses India\'s largest IT park by built-up area. Positioning your company near Technopark signals enterprise credibility and offers massive networking opportunities.' },
+      { title: 'Infrastructure Boom', content: 'With the development of Taurus Downtown and new highway expansions, the Kazhakkoottam corridor is the undisputed center for IT scaling in Kerala.' }
+    ],
+    citations: ['https://www.google.com/maps?cid=weespaces-trivandrum', 'https://www.justdial.com/Thiruvananthapuram/WeeSpaces-Coworking', 'https://www.coworker.com/india/trivandrum/weespaces'],
     microLocations: [
       {
         id: 'technopark-phase-1', name: 'Technopark Phase 1', slug: 'technopark-phase-1', intent: 'IT, government, consulting',
@@ -250,7 +283,19 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Historically a major trading center, Calicut is now a booming IT and startup hub. Government Cyberpark and UL CyberPark are transforming the city into a digital powerhouse.',
     transportHubs: 'Calicut International Airport and Kozhikode Railway Station serve the city. The expanding Bypass road network provides excellent connectivity for logistics and daily commuting.',
     gstRegistrationRules: 'A registered office address in Calicut is mandatory for local GST compliance. Our workspaces offer premium addresses in commercial hubs to ensure your business meets all state regulations effortlessly.',
-    gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+    occupancy: '75% of seats currently occupied',
+    caseStudy: {
+      client: 'A leading E-commerce Logistics firm',
+      outcome: 'Required a highly professional regional headquarters for their logistics managers and sales teams. Moved in over a weekend.',
+      metrics: ['Zero downtime during transition', 'Premium meeting rooms for client pitches', 'Flexible scaling options']
+    },
+    nearbyCompaniesList: ['UL CyberPark IT firms', 'Government Cyberpark startups', 'Major Retailers', 'Logistics HQs'],
+    localGuideExpanded: [
+      { title: 'The Rise of Calicut Bypass', content: 'The NH 66 Bypass is rapidly evolving into Calicut\'s premier commercial corridor. By positioning here, you bypass inner-city traffic while maintaining access to premium talent.' },
+      { title: 'Startup Ecosystem', content: 'Calicut is shedding its traditional trading image and embracing a robust tech ecosystem driven by local engineering colleges and incubator programs.' }
+    ],
+    citations: ['https://www.google.com/maps?cid=weespaces-calicut', 'https://www.justdial.com/Kozhikode/WeeSpaces-Coworking', 'https://www.coworker.com/india/calicut/weespaces'],
     microLocations: [
       {
         id: 'cyberpark', name: 'Cyberpark', slug: 'cyberpark', intent: 'IT, SMEs, trading businesses',
@@ -349,7 +394,19 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Coimbatore is a diversified economic engine. It leads in textiles, auto components, and manufacturing, while rapidly expanding its IT footprint through hubs like Tidel Park and Saravanampatti.',
     transportHubs: 'Coimbatore International Airport, Coimbatore Junction, and major national highways connect the city. Avinashi Road acts as the primary commercial and transit artery.',
     gstRegistrationRules: 'As a major commercial hub in Tamil Nadu, GST registration requires a credible physical address. Our managed and virtual offices in Coimbatore provide the necessary documentation for swift approval.',
-    gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+    occupancy: 'Grand Opening - Pre-book now!',
+    caseStudy: {
+      client: 'A SaaS company (Case Study from Kochi)',
+      outcome: 'Moved from a 600 sq ft leased office into WeeSpaces and expanded from 6 to 18 employees seamlessly.',
+      metrics: ['Saved ₹12 lakh in setup costs', 'Zero maintenance overhead', 'Expanded team 3x']
+    },
+    nearbyCompaniesList: ['Bosch', 'Cognizant', 'Capgemini', 'ThoughtWorks', 'TCS', 'Zoho Teams', 'L&T Technology', 'Tech Mahindra'],
+    localGuideExpanded: [
+      { title: 'Why Kalapatti is Coimbatore\'s next business hub', content: 'Kalapatti is strategically positioned between the Airport, Tidel Park, and major residential corridors. It offers the perfect blend of enterprise infrastructure without the congestion of Avinashi Road.' },
+      { title: 'Talent Availability', content: 'Proximity to premier institutions like PSG Tech and CIT ensures that IT and manufacturing companies have unparalleled access to world-class engineering talent.' }
+    ],
+    citations: ['https://www.google.com/maps?cid=weespaces-coimbatore', 'https://www.justdial.com/Coimbatore/WeeSpaces-Coworking', 'https://www.coworker.com/india/coimbatore/weespaces'],
     microLocations: [
       {
         id: 'peelamedu', name: 'Peelamedu', slug: 'peelamedu', intent: 'Manufacturing, IT, startups',

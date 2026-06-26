@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,38 +13,21 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
 });
 
+import { constructMetadata } from '@/utils/metadata';
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.weespaces.in'),
-  title: "WeeSpaces | Premium Coworking & Managed Offices",
-  description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
+  ...constructMetadata({
+    title: "WeeSpaces | Premium Coworking & Managed Offices",
+    description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
+    canonicalPath: "/",
+  }),
   keywords: ["Coworking space Kerala", "Office space Coimbatore", "Managed offices Trivandrum", "Premium coworking Ernakulam", "Private cabins Calicut"],
-
   verification: {
     google: "XN0i_JTKrBVCjj37Hp_zuSl38bfGQR2qhsuUEzWdee4",
     other: {
       'ahrefs-site-verification': 'd3997787cfaac2252dbec64bf63beebe9e91a31a5df4d755b5a570eba7beee86',
     },
-  },
-  openGraph: {
-    title: 'WeeSpaces | Premium Coworking & Managed Offices',
-    description: 'Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore.',
-    siteName: 'WeeSpaces',
-    locale: 'en_IN',
-    type: 'website',
-    images: [
-      {
-        url: '/images/amenity1.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'WeeSpaces Premium Coworking',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'WeeSpaces | Premium Coworking & Managed Offices',
-    description: 'Premium coworking spaces & managed offices in South India.',
-    images: ['/images/amenity1.jpg'],
   },
 };
 
@@ -150,19 +130,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   "availableLanguage": ["English", "Malayalam", "Hindi", "Tamil"]
                 },
                 "sameAs": [
-                  "https://www.instagram.com/weespaces.coworking/",
-                  "https://www.linkedin.com/company/wee-spaces-coworking/",
-                  "https://www.facebook.com/weespaces/",
-                  "https://www.youtube.com/@weespaces",
-                  "https://x.com/weespaces"
+                  "https://www.instagram.com/weespaces.in/",
+                  "https://in.linkedin.com/company/weespaces-coworking",
+                  "https://www.facebook.com/WeeSpaces/"
                 ]
               },
               {
-                "@type": "CoworkingSpace",
                 "name": "WeeSpaces Trivandrum",
                 "image": "https://weespaces.in/images/branches/trivandrum/image4.jpg",
                 "telephone": "+91-9207189111",
-                "url": "https://weespaces.in/coworking-space-in-trivandrum",
+                "url": "https://weespaces.in/coworking-space/trivandrum",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "1st Floor, Relcon Plaza, Pattom",
@@ -177,7 +154,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "WeeSpaces Ernakulam",
                 "image": "https://weespaces.in/images/branches/kochi/workspace2.jpg",
                 "telephone": "+91-9207189111",
-                "url": "https://weespaces.in/coworking-space-in-kochi",
+                "url": "https://weespaces.in/coworking-space/kochi",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram",
@@ -192,7 +169,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "WeeSpaces Calicut",
                 "image": "https://weespaces.in/images/branches/calicut/reception.jpg",
                 "telephone": "+91-9207189111",
-                "url": "https://weespaces.in/coworking-space-in-calicut",
+                "url": "https://weespaces.in/coworking-space/calicut",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Door No. 2951/A, Ground floor, Neeloth Plaza, Wayanad Rd, East Nadakkave",
@@ -207,7 +184,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 "name": "WeeSpaces Coimbatore",
                 "image": "https://weespaces.in/images/branches/coimbatore/exterior-tall.jpg",
                 "telephone": "+91-9207189111",
-                "url": "https://weespaces.in/coworking-space-in-coimbatore",
+                "url": "https://weespaces.in/coworking-space/coimbatore",
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "Vidyanagar 3rd street, Civil Aerodrome Post, Kalapatti",
@@ -229,10 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <noscript>
           <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1702816221138883&ev=PageView&noscript=1" alt="" aria-hidden="true" />
         </noscript>
-        <Header />
-        <main className="flex-grow">{children}</main>
-        <Footer />
-        <MobileStickyCTA />
+        {children}
         
         {/* Floating WhatsApp Widget */}
         <a 

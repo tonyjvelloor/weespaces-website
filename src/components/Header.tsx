@@ -52,7 +52,7 @@ export default function Header() {
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-navy border-b border-white/5 shadow-2xl' : 'glass border-b border-white/10'}`}>
       {!pathname?.startsWith('/landing') && (
         <div className="bg-gradient-to-r from-accent to-accent-light text-navy-dark py-1.5 px-4 text-center text-xs sm:text-sm font-bold w-full">
-          🎉 Inauguration Offer for Coimbatore Branch Now Live! <Link href="/coworking-space-coimbatore" className="underline underline-offset-2 ml-1 hover:text-white transition-colors">Claim your 20% off</Link>
+          🎉 Inauguration Offer for Coimbatore Branch Now Live! <Link href="/coworking-space/coimbatore" className="underline underline-offset-2 ml-1 hover:text-white transition-colors">Claim your 20% off</Link>
         </div>
       )}
       <div className={`container mx-auto px-6 flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}>

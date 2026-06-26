@@ -57,15 +57,16 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
     const phoneRaw = formDataState.phone;
     const phone = phoneRaw ? '+91' + phoneRaw : undefined;
     const name = formDataState.name;
+    const pageUrl = typeof window !== 'undefined' ? window.location.href : 'Unknown URL';
     const source = defaultSource
-      ? `${defaultSource} (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline})`
-      : `Website Lead (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline})`;
+      ? `${defaultSource} (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline}) - URL: ${pageUrl}`
+      : `Website Lead (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline}) - URL: ${pageUrl}`;
 
     try {
       const response = await fetch('/api/capture-lead/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, source })
+        body: JSON.stringify({ name, phone, source, pageUrl })
       });
 
       if (!response.ok) throw new Error('Failed to submit lead');
@@ -299,8 +300,9 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
               >
                 {isSubmitting ? 'Checking...' : 'Get Workspace Availability'}
               </button>
-              <p className="text-center text-xs text-white/40 mt-3 flex items-center justify-center gap-1">
-                No spam. Our workspace consultant calls within 15 minutes.
+              <p className="text-center text-xs text-white/50 mt-4 flex items-center justify-center gap-2">
+                <span className="material-symbols-outlined text-[14px]">lock</span>
+                No Credit Card Required • No Hidden Fees
               </p>
             </div>
           )}
