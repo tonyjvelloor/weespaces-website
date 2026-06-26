@@ -21,12 +21,7 @@ export const metadata: Metadata = {
   title: "WeeSpaces | Premium Coworking & Managed Offices",
   description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
   keywords: ["Coworking space Kerala", "Office space Coimbatore", "Managed offices Trivandrum", "Premium coworking Ernakulam", "Private cabins Calicut"],
-  alternates: {
-    canonical: 'https://www.weespaces.in',
-    languages: {
-      'en-IN': 'https://www.weespaces.in',
-    },
-  },
+
   verification: {
     google: "XN0i_JTKrBVCjj37Hp_zuSl38bfGQR2qhsuUEzWdee4",
     other: {
