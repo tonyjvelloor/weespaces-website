@@ -42,7 +42,8 @@ export default function BlogIndex() {
                   </div>
                 </MouseGlowCard>
               </Link>
-            );
+            </ScrollReveal>
+          );
           })}
         </div>
       </div>

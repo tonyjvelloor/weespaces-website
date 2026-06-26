@@ -1,6 +1,5 @@
-import { Metadata }
+import { Metadata } from 'next';
 import { constructMetadata } from '@/utils/metadata';
- from 'next';
 import { notFound } from 'next/navigation';
 import { comparisons } from '@/data/comparisons';
 import ScrollReveal from '@/components/ui/ScrollReveal';

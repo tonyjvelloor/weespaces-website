@@ -100,7 +100,7 @@ export default function AboutPage() {
             <ScrollReveal direction="left" delay={0.1} className="relative group">
               <div className="absolute -left-[51px] md:-left-[75px] bg-navy border-[3px] border-accent w-6 h-6 rounded-full mt-1.5 group-hover:scale-125 transition-transform shadow-[0_0_15px_rgba(242,156,31,0.5)]"></div>
               <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-accent transition-colors">2018: The Work Lounge</h3>
-              <p className="text-white/70 text-lg leading-relaxed">Our journey began in Calicut with the launch of "The Work Lounge", setting a new benchmark for premium, community-driven coworking spaces in Kerala.</p>
+              <p className="text-white/70 text-lg leading-relaxed">Our journey began in Calicut with the launch of &quot;The Work Lounge&quot;, setting a new benchmark for premium, community-driven coworking spaces in Kerala.</p>
             </ScrollReveal>
 
             <ScrollReveal direction="left" delay={0.2} className="relative group">
@@ -141,7 +141,7 @@ export default function AboutPage() {
                   </div>
                   <h3 className="text-3xl font-bold mb-2">Sankesh Sreenivas</h3>
                   <p className="text-accent text-sm font-bold tracking-widest uppercase mb-6 bg-accent/10 px-4 py-1.5 rounded-full inline-block">Co-Founder & CEO</p>
-                  <p className="text-white/70 text-base leading-relaxed mb-8">Visionary leader driving the strategic expansion of WeeSpaces. Mastered highly profitable unit economics across 4 branches, proving the model's scalability in emerging tech hubs.</p>
+                  <p className="text-white/70 text-base leading-relaxed mb-8">Visionary leader driving the strategic expansion of WeeSpaces. Mastered highly profitable unit economics across 4 branches, proving the model&apos;s scalability in emerging tech hubs.</p>
                   <div className="mt-auto">
                     <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center opacity-50 cursor-not-allowed">
                       <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>

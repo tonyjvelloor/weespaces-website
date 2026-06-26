@@ -8,7 +8,7 @@ import { constructMetadata } from '@/utils/metadata';
 
 export const metadata: Metadata = constructMetadata({
   title: "Investors & Partners | WeeSpaces",
-  description: "Join us in building the Operating System for South India\",
+  description: "Join us in building the Operating System for South India",
   canonicalPath: "/investors"
 });
 
