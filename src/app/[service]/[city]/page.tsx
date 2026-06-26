@@ -106,7 +106,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             <div className="flex flex-wrap gap-4 mb-8">
               <div className="glass rounded-xl px-4 py-3 border border-white/10 flex items-center gap-3 text-white">
                 <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-sm font-bold">{city.microLocations.length} Hubs in {city.name}</span>
+                <span className="text-sm font-bold">Prime Locations in {city.name}</span>
               </div>
               <div className="glass rounded-xl px-4 py-3 border border-white/10 flex items-center gap-3 text-white">
                 <Zap className="w-5 h-5 text-accent" />
@@ -259,7 +259,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
       {/* ======================================================== */}
 
       {/* 7. WHY THIS CITY & LOCAL GUIDE (SEO) */}
-      <section className="py-20 bg-navy-light/5 border-b border-gray-100">
+      <section className="py-20 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-navy mb-6">Doing Business in {city.name}</h2>
@@ -334,7 +334,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
       </section>
 
       {/* 9. SEO FAQ */}
-      <div className="bg-navy-light/5">
+      <div className="bg-white">
         <SEOFAQ 
           title={`Frequently Asked Questions`}
           subtitle={`Everything you need to know about ${service.name.toLowerCase()}s in ${city.name}.`}

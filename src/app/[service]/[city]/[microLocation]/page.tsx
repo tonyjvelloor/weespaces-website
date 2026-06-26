@@ -272,7 +272,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
       {/* ======================================================== */}
 
       {/* 6. WHY THIS LOCALITY (SEO) */}
-      <section className="py-20 bg-navy-light/5 border-b border-gray-100">
+      <section className="py-20 bg-gray-50 border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
           <ScrollReveal direction="left">
             <h2 className="text-3xl font-bold text-navy mb-6">Why Choose {locationName}?</h2>
