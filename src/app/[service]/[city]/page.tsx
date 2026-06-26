@@ -184,18 +184,17 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="col-span-2 row-span-2 aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group">
-              <div className="absolute inset-0 bg-[url('/images/branches/kochi/reception.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-            </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group">
-               <div className="absolute inset-0 bg-[url('/images/branches/kochi/reception.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-            </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group">
-               <div className="absolute inset-0 bg-[url('/images/branches/kochi/reception.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-            </div>
-            <div className="aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group">
-               <div className="absolute inset-0 bg-[url('/images/branches/kochi/reception.jpg')] bg-cover bg-center transition-transform duration-700 group-hover:scale-105"></div>
-            </div>
+            {city.gallery.slice(0, 4).map((image, idx) => (
+              <div 
+                key={idx} 
+                className={`${idx === 0 ? 'col-span-2 row-span-2' : ''} aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group`}
+              >
+                 <div 
+                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
+                   style={{ backgroundImage: `url('${image}')` }}
+                 ></div>
+              </div>
+            ))}
             <div className="aspect-square bg-accent/10 rounded-2xl flex flex-col items-center justify-center p-6 text-center text-navy font-bold cursor-pointer hover:bg-accent hover:text-white transition-colors">
                <ImageIcon className="w-8 h-8 mb-2" />
                <span>View All Photos</span>

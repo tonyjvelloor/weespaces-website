@@ -14,6 +14,7 @@ export type MicroLocation = {
   landmarks: string[];
   transit: string;
   parking: string;
+  gallery: string[];
 };
 
 export type CityData = {
@@ -25,6 +26,7 @@ export type CityData = {
   businessEcosystem: string;
   transportHubs: string;
   gstRegistrationRules: string;
+  gallery: string[];
   microLocations: MicroLocation[];
   landmarks: { name: string; slug: string }[];
 };
@@ -48,76 +50,87 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Kochi is driven by IT/ITES, logistics, and maritime trade. Infopark and SmartCity host hundreds of tech companies, while MG Road and Marine Drive cater to traditional businesses, finance, and consulting.',
     transportHubs: 'Well-connected by the Kochi Metro, extensive bus networks, and the innovative Water Metro system. Cochin International Airport ensures global connectivity.',
     gstRegistrationRules: 'Kerala follows standard GST procedures. A virtual office or physical workspace in Kochi provides a highly credible business address required for quick GST registration and state compliance.',
+    gallery: ['/images/branches/kochi/reception.jpg'],
     microLocations: [
       {
         id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'IT companies, startups, corporates',
         nearbyCompanies: ['TCS', 'Cognizant', 'Wipro', 'KPMG'],
         landmarks: ['Infopark', 'SmartCity', 'CUSAT'],
         transit: 'Water Metro, Kakkanad Bus Stand, 5 mins to upcoming Metro',
-        parking: 'Dedicated ample covered parking'
+        parking: 'Dedicated ample covered parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'infopark', name: 'Infopark', slug: 'infopark', intent: 'IT companies, tech startups',
         nearbyCompanies: ['TCS', 'Cognizant', 'UST Global'],
         landmarks: ['Infopark Express Way', 'SmartCity'],
         transit: 'Infopark Bus Stop, Auto Stand',
-        parking: 'Multi-level car parking available'
+        parking: 'Multi-level car parking available',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'edappally', name: 'Edappally', slug: 'edappally', intent: 'Retail, startups, SMEs',
         nearbyCompanies: ['Lulu Group', 'Various Retailers'],
         landmarks: ['Lulu Mall', 'Oberon Mall', 'Edappally Church'],
         transit: 'Edappally Metro Station (2 mins walk)',
-        parking: 'On-site visitor and dedicated tenant parking'
+        parking: 'On-site visitor and dedicated tenant parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'mg-road', name: 'MG Road', slug: 'mg-road', intent: 'Corporates, finance, consulting',
         nearbyCompanies: ['HDFC', 'Kalyan Silks', 'Various Banks'],
         landmarks: ['Maharaja College', 'Kavitha Junction'],
         transit: 'MG Road Metro Station',
-        parking: 'Limited on-site, nearby paid parking available'
+        parking: 'Limited on-site, nearby paid parking available',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'marine-drive', name: 'Marine Drive', slug: 'marine-drive', intent: 'Consulting, agencies, high-end',
         nearbyCompanies: ['Various MNCs', 'Shipping Companies'],
         landmarks: ['GCDA Complex', 'Rainbow Bridge'],
         transit: 'Boat Jetty, High Court Bus Stand',
-        parking: 'Paid public parking, building basement parking'
+        parking: 'Paid public parking, building basement parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'kalamassery', name: 'Kalamassery', slug: 'kalamassery', intent: 'Manufacturing, startups, tech',
         nearbyCompanies: ['Startup Village', 'Maker Village'],
         landmarks: ['CUSAT', 'KINFRA Hi-Tech Park'],
         transit: 'Kalamassery Metro Station',
-        parking: 'Ample on-site parking'
+        parking: 'Ample on-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'vyttila', name: 'Vyttila', slug: 'vyttila', intent: 'SMEs, logistics, corporates',
         nearbyCompanies: ['Logistics firms', 'Retail chains'],
         landmarks: ['Vyttila Mobility Hub', 'Gold Souk Grande'],
         transit: 'Vyttila Metro, Vyttila Mobility Hub (Bus/Water Metro)',
-        parking: 'Dedicated building parking'
+        parking: 'Dedicated building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'palarivattom', name: 'Palarivattom', slug: 'palarivattom', intent: 'SMEs, agencies, healthcare',
         nearbyCompanies: ['Renai Medicity', 'Various Agencies'],
         landmarks: ['Palarivattom Junction', 'Jawaharlal Nehru Stadium (nearby)'],
         transit: 'Palarivattom Metro Station',
-        parking: 'On-site basement parking'
+        parking: 'On-site basement parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'kadavanthra', name: 'Kadavanthra', slug: 'kadavanthra', intent: 'Consulting, creatives, SMEs',
         nearbyCompanies: ['Architectural firms', 'Media agencies'],
         landmarks: ['GCDA', 'Panampilly Nagar Walkway (nearby)'],
         transit: 'Kadavanthra Metro Station',
-        parking: 'On-street and dedicated building parking'
+        parking: 'On-street and dedicated building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'panampilly-nagar', name: 'Panampilly Nagar', slug: 'panampilly-nagar', intent: 'Boutique agencies, premium consulting',
         nearbyCompanies: ['Design studios', 'Boutique agencies', 'Law firms'],
         landmarks: ['Panampilly Nagar Walkway', 'Avenue Center'],
         transit: 'South Railway Station (10 mins)',
-        parking: 'Premium on-site parking'
+        parking: 'Premium on-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       }
     ],
     landmarks: [
@@ -138,76 +151,87 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Trivandrum is synonymous with government administration, R&D, and enterprise IT. Technopark is one of India’s largest IT parks, driving significant economic activity.',
     transportHubs: 'Trivandrum Central Railway Station and Trivandrum International Airport offer excellent connectivity. Local transit relies heavily on KSRTC buses and a growing highway infrastructure.',
     gstRegistrationRules: 'Registering a business in the capital city provides unparalleled credibility. Our virtual and managed offices supply all required NOCs and rental agreements needed for rapid GST clearance in Kerala.',
+    gallery: ['/images/branches/kochi/reception.jpg'],
     microLocations: [
       {
         id: 'technopark-phase-1', name: 'Technopark Phase 1', slug: 'technopark-phase-1', intent: 'IT, government, consulting',
         nearbyCompanies: ['Infosys', 'TCS', 'UST', 'IBS'],
         landmarks: ['Technopark Front Gate', 'Kazhakkoottam Junction'],
         transit: 'Kazhakkoottam Railway Station, KSRTC Bus Stand',
-        parking: 'Technopark campus parking'
+        parking: 'Technopark campus parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'technopark-phase-2', name: 'Technopark Phase 2', slug: 'technopark-phase-2', intent: 'IT, tech startups',
         nearbyCompanies: ['Infosys'],
         landmarks: ['Infosys Campus', 'UST Campus'],
         transit: 'Bypass Road Bus Stops',
-        parking: 'Campus parking'
+        parking: 'Campus parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'technopark-phase-3', name: 'Technopark Phase 3', slug: 'technopark-phase-3', intent: 'Enterprise IT, scaling startups',
         nearbyCompanies: ['Taurus Downtown', 'Various MNCs'],
         landmarks: ['Taurus Downtown'],
         transit: 'Bypass Road',
-        parking: 'Ample campus parking'
+        parking: 'Ample campus parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'kazhakkoottam', name: 'Kazhakkoottam', slug: 'kazhakkoottam', intent: 'Startups, SMEs serving IT',
         nearbyCompanies: ['Local vendors', 'IT service companies'],
         landmarks: ['Kazhakkoottam Junction', 'Al Saj'],
         transit: 'Kazhakkoottam Railway Station',
-        parking: 'Building-specific parking'
+        parking: 'Building-specific parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'kowdiar', name: 'Kowdiar', slug: 'kowdiar', intent: 'Premium consulting, HNIs, agencies',
         nearbyCompanies: ['Financial advisors', 'Boutique firms'],
         landmarks: ['Kowdiar Palace', 'Golf Club'],
         transit: 'Kowdiar Bus Stop',
-        parking: 'Premium on-site parking'
+        parking: 'Premium on-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'pattom', name: 'Pattom', slug: 'pattom', intent: 'SMEs, coaching, consulting',
         nearbyCompanies: ['LIC', 'Kendriya Vidyalaya'],
         landmarks: ['Pattom Junction', 'St. Marys School'],
         transit: 'Pattom Bus Stand',
-        parking: 'Dedicated building parking'
+        parking: 'Dedicated building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'palayam', name: 'Palayam', slug: 'palayam', intent: 'Government contractors, traditional businesses',
         nearbyCompanies: ['Kerala University', 'Legislative Assembly'],
         landmarks: ['Connemara Market', 'Martyrs Column'],
         transit: 'Trivandrum Central (10 mins)',
-        parking: 'Paid public parking, building basement'
+        parking: 'Paid public parking, building basement',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'statue', name: 'Statue', slug: 'statue', intent: 'Legal, government, consulting',
         nearbyCompanies: ['Secretariat', 'AGs Office'],
         landmarks: ['Secretariat', 'Statue Junction'],
         transit: 'Statue Bus Stop',
-        parking: 'Extremely limited, public parking'
+        parking: 'Extremely limited, public parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'vazhuthacaud', name: 'Vazhuthacaud', slug: 'vazhuthacaud', intent: 'Corporate branch offices, agencies',
         nearbyCompanies: ['RBI', 'All India Radio', 'Forest Headquarters'],
         landmarks: ['Womens College', 'Cotton Hill'],
         transit: 'Vazhuthacaud Bus Stop',
-        parking: 'Dedicated building parking'
+        parking: 'Dedicated building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'akkulam', name: 'Akkulam', slug: 'akkulam', intent: 'Tech startups, SMEs',
         nearbyCompanies: ['Various tech firms'],
         landmarks: ['Akkulam Tourist Village', 'Lulu Mall Trivandrum'],
         transit: 'Bypass Road Bus Stops',
-        parking: 'Ample on-site parking'
+        parking: 'Ample on-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       }
     ],
     landmarks: [
@@ -226,76 +250,87 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Historically a major trading center, Calicut is now a booming IT and startup hub. Government Cyberpark and UL CyberPark are transforming the city into a digital powerhouse.',
     transportHubs: 'Calicut International Airport and Kozhikode Railway Station serve the city. The expanding Bypass road network provides excellent connectivity for logistics and daily commuting.',
     gstRegistrationRules: 'A registered office address in Calicut is mandatory for local GST compliance. Our workspaces offer premium addresses in commercial hubs to ensure your business meets all state regulations effortlessly.',
+    gallery: ['/images/branches/kochi/reception.jpg'],
     microLocations: [
       {
         id: 'cyberpark', name: 'Cyberpark', slug: 'cyberpark', intent: 'IT, SMEs, trading businesses',
         nearbyCompanies: ['Various IT firms in Govt Cyberpark'],
         landmarks: ['Government Cyberpark'],
         transit: 'Bypass Road, 15 mins to Calicut Railway Station',
-        parking: 'Dedicated park parking'
+        parking: 'Dedicated park parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'ul-cyberpark', name: 'UL CyberPark', slug: 'ul-cyberpark', intent: 'Enterprise IT, corporates',
         nearbyCompanies: ['TCS (upcoming)', 'Various MNCs'],
         landmarks: ['UL CyberPark IT Building'],
         transit: 'NH Bypass',
-        parking: 'Ample covered campus parking'
+        parking: 'Ample covered campus parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'hilite-business-park', name: 'HiLite Business Park', slug: 'hilite-business-park', intent: 'Retail brands, consulting, branch offices',
         nearbyCompanies: ['HiLite Builders', 'Retail HQs'],
         landmarks: ['HiLite Mall', 'Thondayad Bypass'],
         transit: 'Thondayad Bypass Bus Stop',
-        parking: 'Massive mall and business park parking'
+        parking: 'Massive mall and business park parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'mavoor-road', name: 'Mavoor Road', slug: 'mavoor-road', intent: 'Traditional businesses, healthcare, trading',
         nearbyCompanies: ['Baby Memorial Hospital', 'Various Retailers'],
         landmarks: ['Mofussil Bus Stand', 'Focus Mall'],
         transit: 'New Bus Stand (Mofussil)',
-        parking: 'Building basement parking, paid parking nearby'
+        parking: 'Building basement parking, paid parking nearby',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'palazhi', name: 'Palazhi', slug: 'palazhi', intent: 'SMEs, logistics, tech startups',
         nearbyCompanies: ['Logistics and trading firms'],
         landmarks: ['HiLite City (nearby)', 'Bypass Junction'],
         transit: 'Bypass Road',
-        parking: 'On-site building parking'
+        parking: 'On-site building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'kozhikode-bypass', name: 'Kozhikode Bypass', slug: 'kozhikode-bypass', intent: 'Showrooms, corporate offices, logistics',
         nearbyCompanies: ['Automobile showrooms', 'Logistics'],
         landmarks: ['Thondayad', 'Ramanattukara Highway'],
         transit: 'Highway Bus Stops',
-        parking: 'Excellent surface parking'
+        parking: 'Excellent surface parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'ramanattukara', name: 'Ramanattukara', slug: 'ramanattukara', intent: 'Trading, warehousing, SMEs',
         nearbyCompanies: ['Wholesale traders'],
         landmarks: ['Ramanattukara Junction', 'Farook College (nearby)'],
         transit: 'Ramanattukara Bus Stand, Highway access',
-        parking: 'Ample on-site parking'
+        parking: 'Ample on-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'west-hill', name: 'West Hill', slug: 'west-hill', intent: 'Agencies, branch offices, SMEs',
         nearbyCompanies: ['Educational institutions', 'Local businesses'],
         landmarks: ['West Hill Railway Station', 'Govt Engineering College'],
         transit: 'West Hill Railway Station, Kannur Road',
-        parking: 'Dedicated building parking'
+        parking: 'Dedicated building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'nadakkavu', name: 'Nadakkavu', slug: 'nadakkavu', intent: 'Automobile, trading, traditional businesses',
         nearbyCompanies: ['Auto dealerships', 'Retail chains'],
         landmarks: ['Vandipetta', 'English Church'],
         transit: 'Kannur Road Bus Stops',
-        parking: 'On-street and building parking'
+        parking: 'On-street and building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'sm-street', name: 'SM Street', slug: 'sm-street', intent: 'Retail, wholesale, trading',
         nearbyCompanies: ['Hundreds of retail/wholesale shops'],
         landmarks: ['Mananchira Square (nearby)', 'Mittai Theruvu'],
         transit: 'Palayam Bus Stand, Calicut Railway Station (10 mins)',
-        parking: 'Public parking lots (highly congested)'
+        parking: 'Public parking lots (highly congested)',
+        gallery: ['/images/branches/kochi/reception.jpg']
       }
     ],
     landmarks: [
@@ -314,76 +349,87 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Coimbatore is a diversified economic engine. It leads in textiles, auto components, and manufacturing, while rapidly expanding its IT footprint through hubs like Tidel Park and Saravanampatti.',
     transportHubs: 'Coimbatore International Airport, Coimbatore Junction, and major national highways connect the city. Avinashi Road acts as the primary commercial and transit artery.',
     gstRegistrationRules: 'As a major commercial hub in Tamil Nadu, GST registration requires a credible physical address. Our managed and virtual offices in Coimbatore provide the necessary documentation for swift approval.',
+    gallery: ['/images/branches/kochi/reception.jpg'],
     microLocations: [
       {
         id: 'peelamedu', name: 'Peelamedu', slug: 'peelamedu', intent: 'Manufacturing, IT, startups',
         nearbyCompanies: ['PSG Tech', 'Various IT firms in Tidel Park'],
         landmarks: ['PSG College of Technology', 'Fun Republic Mall'],
         transit: 'Avinashi Road, Peelamedu Railway Station',
-        parking: 'Dedicated building parking'
+        parking: 'Dedicated building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'avinashi-road', name: 'Avinashi Road', slug: 'avinashi-road', intent: 'Corporates, premium consulting, retail',
         nearbyCompanies: ['Major Banks', 'Corporate Branch HQs'],
         landmarks: ['Coimbatore Airport (nearby)', 'KMCH'],
         transit: 'Arterial Road, Frequent Buses',
-        parking: 'Premium on-site parking'
+        parking: 'Premium on-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'hope-college', name: 'Hope College', slug: 'hope-college', intent: 'IT, tech startups, SMEs',
         nearbyCompanies: ['Tech startups', 'Educational institutions'],
         landmarks: ['Tidel Park (nearby)', 'Hope College Junction'],
         transit: 'Avinashi Road',
-        parking: 'On-site parking'
+        parking: 'On-site parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'sitra', name: 'SITRA', slug: 'sitra', intent: 'Textiles, research, manufacturing, IT',
         nearbyCompanies: ['SITRA', 'KMCH', 'Coimbatore Airport Offices'],
         landmarks: ['SITRA Junction', 'Coimbatore International Airport'],
         transit: 'Airport Road',
-        parking: 'Ample campus/building parking'
+        parking: 'Ample campus/building parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'Enterprise IT, scaling startups',
         nearbyCompanies: ['Cognizant', 'Bosch', 'KGISL'],
         landmarks: ['CHIL SEZ', 'KGISL Tech Park'],
         transit: 'Sathy Road',
-        parking: 'Tech park scale parking'
+        parking: 'Tech park scale parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'race-course', name: 'Race Course', slug: 'race-course', intent: 'Premium consulting, HNIs, financial services',
         nearbyCompanies: ['Wealth management firms', 'Boutique agencies'],
         landmarks: ['Race Course Walking Track', 'Taj Vivanta'],
         transit: 'Coimbatore Junction Railway Station (5 mins)',
-        parking: 'Premium dedicated parking'
+        parking: 'Premium dedicated parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'gandhipuram', name: 'Gandhipuram', slug: 'gandhipuram', intent: 'Trading, traditional businesses, retail',
         nearbyCompanies: ['Hundreds of commercial shops', 'Hotels'],
         landmarks: ['Cross Cut Road', 'Gandhipuram Bus Stand'],
         transit: 'Central Bus Stand (Gandhipuram)',
-        parking: 'Paid public parking, building basements'
+        parking: 'Paid public parking, building basements',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'rs-puram', name: 'RS Puram', slug: 'rs-puram', intent: 'Retail, consulting, medical, agencies',
         nearbyCompanies: ['Jewellery brands', 'High-end retail'],
         landmarks: ['DB Road', 'Annapoorna'],
         transit: 'DB Road, Thadagam Road',
-        parking: 'On-street parking (often congested)'
+        parking: 'On-street parking (often congested)',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'tidel-park-area', name: 'Tidel Park Area', slug: 'tidel-park-area', intent: 'Enterprise IT, SMEs serving IT',
         nearbyCompanies: ['Wipro', 'TCS', 'Payoda', 'State Street HCL'],
         landmarks: ['Tidel Park Coimbatore', 'ELCOT SEZ'],
         transit: 'Avinashi Road, Peelamedu',
-        parking: 'SEZ scale parking'
+        parking: 'SEZ scale parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       },
       {
         id: 'neelambur', name: 'Neelambur', slug: 'neelambur', intent: 'Logistics, manufacturing, large corporates',
         nearbyCompanies: ['L&T Bypass companies', 'Logistics hubs'],
         landmarks: ['L&T Bypass', 'PSG Itech'],
         transit: 'Highway access',
-        parking: 'Massive surface parking'
+        parking: 'Massive surface parking',
+        gallery: ['/images/branches/kochi/reception.jpg']
       }
     ],
     landmarks: [
