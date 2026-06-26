@@ -21,6 +21,10 @@ export type CityData = {
   name: string;
   slug: string;
   description: string;
+  localRentalCosts: string;
+  businessEcosystem: string;
+  transportHubs: string;
+  gstRegistrationRules: string;
   microLocations: MicroLocation[];
   landmarks: { name: string; slug: string }[];
 };
@@ -40,6 +44,10 @@ export const cities: Record<string, CityData> = {
     name: 'Kochi',
     slug: 'kochi',
     description: 'The commercial capital of Kerala, home to a thriving IT and startup ecosystem.',
+    localRentalCosts: 'Commercial rents in Kochi range from ₹40 to ₹80 per sq.ft depending on the location. Prime areas like Kakkanad and MG Road command a premium. Coworking spaces offer highly cost-effective alternatives starting with zero setup costs.',
+    businessEcosystem: 'Kochi is driven by IT/ITES, logistics, and maritime trade. Infopark and SmartCity host hundreds of tech companies, while MG Road and Marine Drive cater to traditional businesses, finance, and consulting.',
+    transportHubs: 'Well-connected by the Kochi Metro, extensive bus networks, and the innovative Water Metro system. Cochin International Airport ensures global connectivity.',
+    gstRegistrationRules: 'Kerala follows standard GST procedures. A virtual office or physical workspace in Kochi provides a highly credible business address required for quick GST registration and state compliance.',
     microLocations: [
       {
         id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'IT companies, startups, corporates',
@@ -126,6 +134,10 @@ export const cities: Record<string, CityData> = {
     name: 'Trivandrum',
     slug: 'trivandrum',
     description: 'The capital city of Kerala, known for its massive IT parks and government infrastructure.',
+    localRentalCosts: 'Office rentals in Trivandrum vary from ₹35 to ₹70 per sq.ft. Areas close to Technopark often command higher rates due to IT demand, but flexible spaces eliminate the need for long-term lease lock-ins.',
+    businessEcosystem: 'Trivandrum is synonymous with government administration, R&D, and enterprise IT. Technopark is one of India’s largest IT parks, driving significant economic activity.',
+    transportHubs: 'Trivandrum Central Railway Station and Trivandrum International Airport offer excellent connectivity. Local transit relies heavily on KSRTC buses and a growing highway infrastructure.',
+    gstRegistrationRules: 'Registering a business in the capital city provides unparalleled credibility. Our virtual and managed offices supply all required NOCs and rental agreements needed for rapid GST clearance in Kerala.',
     microLocations: [
       {
         id: 'technopark-phase-1', name: 'Technopark Phase 1', slug: 'technopark-phase-1', intent: 'IT, government, consulting',
@@ -210,6 +222,10 @@ export const cities: Record<string, CityData> = {
     name: 'Calicut',
     slug: 'calicut',
     description: 'A rapidly growing IT hub and historical trading city in Northern Kerala.',
+    localRentalCosts: 'Office space in Calicut is highly affordable, typically ranging from ₹30 to ₹60 per sq.ft. However, setting up an office involves significant CapEx, making coworking spaces in Cyberpark or Bypass areas highly attractive.',
+    businessEcosystem: 'Historically a major trading center, Calicut is now a booming IT and startup hub. Government Cyberpark and UL CyberPark are transforming the city into a digital powerhouse.',
+    transportHubs: 'Calicut International Airport and Kozhikode Railway Station serve the city. The expanding Bypass road network provides excellent connectivity for logistics and daily commuting.',
+    gstRegistrationRules: 'A registered office address in Calicut is mandatory for local GST compliance. Our workspaces offer premium addresses in commercial hubs to ensure your business meets all state regulations effortlessly.',
     microLocations: [
       {
         id: 'cyberpark', name: 'Cyberpark', slug: 'cyberpark', intent: 'IT, SMEs, trading businesses',
@@ -294,6 +310,10 @@ export const cities: Record<string, CityData> = {
     name: 'Coimbatore',
     slug: 'coimbatore',
     description: 'The Manchester of South India, a powerhouse of manufacturing, textiles, and growing IT.',
+    localRentalCosts: 'Commercial rents in Coimbatore generally span from ₹45 to ₹85 per sq.ft. Prime corridors like Avinashi Road and Race Course are premium markets. Plug-and-play offices offer an ROI-positive alternative to traditional leases.',
+    businessEcosystem: 'Coimbatore is a diversified economic engine. It leads in textiles, auto components, and manufacturing, while rapidly expanding its IT footprint through hubs like Tidel Park and Saravanampatti.',
+    transportHubs: 'Coimbatore International Airport, Coimbatore Junction, and major national highways connect the city. Avinashi Road acts as the primary commercial and transit artery.',
+    gstRegistrationRules: 'As a major commercial hub in Tamil Nadu, GST registration requires a credible physical address. Our managed and virtual offices in Coimbatore provide the necessary documentation for swift approval.',
     microLocations: [
       {
         id: 'peelamedu', name: 'Peelamedu', slug: 'peelamedu', intent: 'Manufacturing, IT, startups',

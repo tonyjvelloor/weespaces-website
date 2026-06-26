@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function LeadForm({ branch = "", source: defaultSource }: { branch?: string, source?: string }) {
+export default function LeadForm({ branch = "", source: defaultSource, hidePricing }: { branch?: string, source?: string, hidePricing?: boolean }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
   const router = useRouter();
