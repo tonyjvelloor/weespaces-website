@@ -390,13 +390,8 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": city.name,
-                "addressRegion": city.state,
+                "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                 "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": city.coordinates?.lat || "10.8505",
-                "longitude": city.coordinates?.lng || "76.2711"
               }
             },
             {

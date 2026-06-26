@@ -453,13 +453,8 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": city.name,
-                "addressRegion": city.state,
+                "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                 "addressCountry": "IN"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": city.coordinates?.lat || "10.8505",
-                "longitude": city.coordinates?.lng || "76.2711"
               },
               ...(city.citations && city.citations.length > 0 ? { "sameAs": city.citations } : {})
             },
