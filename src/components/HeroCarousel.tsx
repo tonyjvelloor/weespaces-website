@@ -33,7 +33,8 @@ export default function HeroCarousel() {
             alt={heroImages[currentIndex].alt} 
             fill sizes="100vw" 
             className="object-cover object-center" 
-            priority
+            priority={true}
+            fetchPriority="high"
           />
         </motion.div>
       </AnimatePresence>

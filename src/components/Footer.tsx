@@ -85,6 +85,8 @@ export default function Footer() {
               <li><Link href="/coworking-space-kochi" className="hover:text-accent transition-colors">Coworking Space Kochi</Link></li>
               <li><Link href="/coworking-space-trivandrum" className="hover:text-accent transition-colors">Coworking Space Trivandrum</Link></li>
               <li><Link href="/coworking-space-calicut" className="hover:text-accent transition-colors">Coworking Space Calicut</Link></li>
+              <li><Link href="/office-space-for-rent-kochi" className="hover:text-accent transition-colors">Office Space Kochi</Link></li>
+              <li><Link href="/office-space-for-rent-coimbatore" className="hover:text-accent transition-colors">Office Space Coimbatore</Link></li>
             </ul>
           </div>
           <div>
@@ -92,6 +94,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-white/70">
               <li><Link href="/locations" className="hover:text-accent transition-colors">Private Office</Link></li>
               <li><Link href="/virtual-office" className="hover:text-accent transition-colors">Virtual Office</Link></li>
+              <li><Link href="/virtual-office-for-gst-registration" className="hover:text-accent transition-colors">Virtual Office for GST</Link></li>
               <li><Link href="/locations" className="hover:text-accent transition-colors">Managed Office</Link></li>
               <li><Link href="/locations" className="hover:text-accent transition-colors">Meeting Room</Link></li>
             </ul>

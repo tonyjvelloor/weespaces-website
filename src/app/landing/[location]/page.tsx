@@ -61,8 +61,27 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
 
   if (!data) return <div className="text-white text-center pt-32">Location not found.</div>;
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": `WeeSpaces ${data.name}`,
+    "image": `https://www.weespaces.in${data.heroImage}`,
+    "address": data.address,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": data.geo.lat,
+      "longitude": data.geo.lon
+    },
+    "url": `https://www.weespaces.in/landing/${locationId}`,
+    "telephone": "+91-9207189111"
+  };
+
   return (
     <div className="bg-navy min-h-screen font-sans pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       {/* Scarcity Banner */}
       <div className="bg-gradient-to-r from-accent to-accent-light text-navy font-bold text-center py-2 px-4 text-sm flex items-center justify-center gap-2 animate-pulse">
         <AlertCircle className="w-4 h-4" />
@@ -502,7 +521,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               </div>
               <div className="w-full md:w-1/2 order-1">
                 <div className="relative h-[500px] sm:h-[650px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-white/20">
-                  <Image src={data.heroImage} alt="Workspace Exterior" fill sizes="100vw" className="object-cover" />
+                  <Image src={data.heroImage} alt="Workspace Exterior" fill sizes="100vw" className="object-cover" priority={true} fetchPriority="high" />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent"></div>
                 </div>
               </div>
