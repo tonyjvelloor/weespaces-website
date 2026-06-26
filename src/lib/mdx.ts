@@ -1,8 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
 
@@ -14,7 +12,7 @@ export interface BlogPost {
   readTime: string;
   category: string;
   author: string;
-  content: string; // rendered HTML
+  content: string; // raw MDX content
 }
 
 /**
@@ -70,11 +68,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Process the markdown body through remark → remark-html
-  // allowDangerousHtml: true lets existing HTML tags pass through untouched
-  const processed = await remark().use(html, { allowDangerousHtml: true }).process(content);
-  const contentHtml = processed.toString();
-
   return {
     slug,
     title: data.title as string,
@@ -83,6 +76,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     readTime: data.readTime as string,
     category: data.category as string,
     author: (data.author as string) || 'WeeSpaces Team',
-    content: contentHtml,
+    content: content,
   };
 }

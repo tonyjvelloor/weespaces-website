@@ -1,14 +1,16 @@
 "use client";
 
 import Link from 'next/link';
-import { ChevronDown, ArrowRight, Menu, X } from 'lucide-react';
+import { ChevronDown, ArrowRight, Menu, X, Search } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import GlobalSearch from './GlobalSearch';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -18,6 +20,18 @@ export default function Header() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Global hotkey listener for the header to open search
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   // Hide the navigation header completely on ad landing pages to maximize conversion
@@ -80,6 +94,13 @@ export default function Header() {
           <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Book Tour</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
+          <button 
+            onClick={() => setIsSearchOpen(true)}
+            className="flex items-center justify-between w-40 px-3 py-1.5 bg-white/5 border border-white/10 rounded-full text-white/50 hover:bg-white/10 hover:text-white transition-colors"
+          >
+            <span className="flex items-center gap-2 text-sm"><Search className="w-4 h-4" /> Search</span>
+            <span className="text-xs border border-white/20 rounded px-1.5 py-0.5">⌘K</span>
+          </button>
           <AnimatePresence>
             {isScrolled && (
               <motion.div
@@ -95,12 +116,17 @@ export default function Header() {
             )}
           </AnimatePresence>
         </div>
-        <button 
-          className="md:hidden text-white hover:text-accent transition-colors"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-        </button>
+        <div className="flex md:hidden items-center gap-4">
+          <button onClick={() => setIsSearchOpen(true)} className="text-white hover:text-accent transition-colors">
+            <Search className="w-6 h-6" />
+          </button>
+          <button 
+            className="text-white hover:text-accent transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -150,6 +176,9 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Global Search Modal */}
+      <GlobalSearch isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </header>
   );
 }

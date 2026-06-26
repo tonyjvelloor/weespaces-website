@@ -3,6 +3,13 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import LeadForm from '@/components/LeadForm';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import Image from 'next/image';
+
+const components = {
+  LeadForm,
+  Image,
+};
 
 export function generateStaticParams() {
   const posts = getAllPosts();
@@ -95,9 +102,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="container mx-auto px-6 max-w-3xl">
         <ScrollReveal direction="up" delay={0.2}>
           <div 
-            className="[&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-accent [&>h2]:mb-4 [&>h2]:mt-12 [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-white [&>h3]:mb-3 [&>h3]:mt-8 [&>p]:text-white/80 [&>p]:leading-relaxed [&>p]:mb-6 [&>strong]:text-white [&>em]:text-white/60"
-            dangerouslySetInnerHTML={{ __html: post.content }} 
-          />
+            className="[&>h2]:text-3xl [&>h2]:font-bold [&>h2]:text-accent [&>h2]:mb-4 [&>h2]:mt-12 [&>h3]:text-2xl [&>h3]:font-bold [&>h3]:text-white [&>h3]:mb-3 [&>h3]:mt-8 [&>p]:text-white/80 [&>p]:leading-relaxed [&>p]:mb-6 [&>strong]:text-white [&>em]:text-white/60 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:mb-6 [&>ul>li]:text-white/80 [&>ul>li]:mb-2"
+          >
+            <MDXRemote source={post.content} components={components} />
+          </div>
         </ScrollReveal>
         
         {/* Article Footer / CTA */}
