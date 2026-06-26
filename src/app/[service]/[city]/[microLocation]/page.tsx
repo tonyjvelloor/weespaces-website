@@ -101,8 +101,8 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
     <>
       {/* 1. HERO (CONVERSION) */}
       <section className="relative min-h-[85vh] flex items-center justify-center pt-20 overflow-hidden bg-navy">
-        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: `url('${(microLoc?.gallery || city.gallery)[0]}')` }}></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/90 to-navy/40"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${(microLoc?.gallery || city.gallery)[0]}')` }}></div>
+        <div className="absolute inset-0 bg-navy/80"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center py-20">
           <ScrollReveal className="lg:col-span-7">
