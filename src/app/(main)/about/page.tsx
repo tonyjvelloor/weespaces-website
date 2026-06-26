@@ -210,7 +210,6 @@ export default function AboutPage() {
               </div>
             </MouseGlowCard>
           </ScrollReveal>
-        </div>
       </div>
     </>
   );
