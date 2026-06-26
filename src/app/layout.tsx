@@ -4,8 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import dynamic from "next/dynamic";
-const MobileStickyCTA = dynamic(() => import('@/components/MobileStickyCTA'), { ssr: false });
+import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
