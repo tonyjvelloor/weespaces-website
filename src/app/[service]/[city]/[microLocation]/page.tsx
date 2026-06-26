@@ -1,372 +1,364 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { services, cities } from '@/data/locations';
-import ScrollReveal from '@/components/ui/ScrollReveal';
+import { coworkingFAQs } from '@/data/faqs';
+import Link from 'next/link';
+import Image from 'next/image';
 import LeadForm from '@/components/LeadForm';
 import SEOFAQ from '@/components/SEOFAQ';
-import { MapPin, Building, Briefcase, ChevronRight, CheckCircle, Star, Shield, Zap, Image as ImageIcon } from 'lucide-react';
-import Link from 'next/link';
+import ScrollReveal from '@/components/ui/ScrollReveal';
+import MouseGlowCard from '@/components/ui/MouseGlowCard';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { MapPin, ArrowRight, CheckCircle, Star, BadgeCheck, Users, Briefcase, Zap, Coffee, Shield, Lightbulb, ChevronRight, Building } from 'lucide-react';
 
-export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string, microLocation: string }> }): Promise<Metadata> {
-  const resolvedParams = await params;
-  const service = services.find(s => s.slug === resolvedParams.service);
-  const city = cities[resolvedParams.city];
-  
-  if (!service || !city) return notFound();
-  
-  const microLoc = city.microLocations.find(m => m.slug === resolvedParams.microLocation) || city.landmarks.find(l => l.slug === resolvedParams.microLocation);
-  
-  if (!microLoc) return notFound();
+export async function generateMetadata({ params }: { params: Promise<{ service: string; city: string; microLocation: string }> }): Promise<Metadata> {
+  const { service, city, microLocation } = await params;
+  const serviceObj = services.find(s => s.slug === service || s.id === service);
+  const cityObj = cities[city as keyof typeof cities];
 
-  const isLandmark = 'name' in microLoc && !('intent' in microLoc);
-  const locationName = microLoc.name;
+  if (!serviceObj || !cityObj) return {};
 
-  const title = `${service.name} ${isLandmark ? '' : 'in'} ${locationName}, ${city.name} | WeeSpaces`;
-  const description = `Looking for ${service.name.toLowerCase()} ${isLandmark ? '' : 'in'} ${locationName}, ${city.name}? Premium workspaces, 0 setup cost, flexible terms. Perfect for ${!isLandmark ? (microLoc as any).intent : 'startups and businesses'}.`;
+  const microLoc = cityObj.microLocations.find(m => m.slug === microLocation);
+  const isLandmark = cityObj.landmarks.some(l => l.slug === microLocation);
+  const locationName = microLoc?.name || cityObj.landmarks.find(l => l.slug === microLocation)?.name || microLocation.replace(/-/g, ' ');
 
   return {
-    title,
-    description,
+    title: `${serviceObj.name} near ${locationName}, ${cityObj.name} | WeeSpaces`,
+    description: `Looking for a ${serviceObj.name.toLowerCase()} near ${locationName}? Position your business strategically in ${cityObj.name} with WeeSpaces. Premium amenities & no deposits.`,
     alternates: {
-      canonical: `/${service.slug}/${city.slug}/${microLoc.slug}`,
-    }
+      canonical: `https://www.weespaces.in/${service}/${city}/${microLocation}`,
+    },
   };
 }
 
-export function generateStaticParams() {
-  const paths: { service: string, city: string, microLocation: string }[] = [];
-  
-  services.forEach(service => {
-    Object.values(cities).forEach(city => {
+export async function generateStaticParams() {
+  const params: { service: string; city: string; microLocation: string }[] = [];
+  services.forEach((serviceObj) => {
+    const serviceSlug = serviceObj.slug;
+    Object.keys(cities).forEach((citySlug) => {
+      const city = cities[citySlug as keyof typeof cities];
       city.microLocations.forEach(micro => {
-        paths.push({
-          service: service.slug,
-          city: city.slug,
-          microLocation: micro.slug
-        });
+        params.push({ service: serviceSlug, city: citySlug, microLocation: micro.slug });
       });
       city.landmarks.forEach(landmark => {
-        paths.push({
-          service: service.slug,
-          city: city.slug,
-          microLocation: landmark.slug
-        });
+        params.push({ service: serviceSlug, city: citySlug, microLocation: landmark.slug });
       });
     });
   });
-  
-  return paths;
+  return params;
 }
 
-export default async function MicroLocationPage({ params }: { params: Promise<{ service: string, city: string, microLocation: string }> }) {
-  const resolvedParams = await params;
-  const service = services.find(s => s.slug === resolvedParams.service);
-  const city = cities[resolvedParams.city];
-  
-  if (!service || !city) return notFound();
-  
-  const microLoc = city.microLocations.find(m => m.slug === resolvedParams.microLocation);
-  const landmark = city.landmarks.find(l => l.slug === resolvedParams.microLocation);
-  
-  const locationObj = microLoc || landmark;
-  if (!locationObj) return notFound();
+export default async function MicroLocationPage({ params }: { params: Promise<{ service: string; city: string; microLocation: string }> }) {
+  const { service, city, microLocation } = await params;
+  const serviceObj = services.find(s => s.slug === service || s.id === service);
+  const cityObj = cities[city as keyof typeof cities];
 
-  const isLandmark = !!landmark;
-  const locationName = locationObj.name;
-  
-  const faqs = [
-    {
-      question: `Is parking available at the ${service.name.toLowerCase()} ${isLandmark ? '' : 'in'} ${locationName}?`,
-      answer: microLoc ? `Yes, this location features: ${microLoc.parking}. We ensure ample space for you and your visitors.` : `Yes, we provide dedicated parking facilities for our members near ${locationName}.`
-    },
-    {
-      question: `How far is the nearest transit from ${locationName}?`,
-      answer: microLoc ? `The workspace is highly accessible. Nearby transit includes: ${microLoc.transit}.` : `It is conveniently located near major transit routes in ${city.name}.`
-    },
-    {
-      question: `Can I register my company for GST using this ${locationName} address?`,
-      answer: `Absolutely. You can use our premium address in ${locationName}, ${city.name} for official GST and company registration, subject to the chosen plan.`
-    },
-    {
-      question: `What companies are nearby in ${locationName}?`,
-      answer: microLoc ? `The area is a bustling business hub. You'll be near ${microLoc.nearbyCompanies.join(', ')} and other major enterprises.` : `You'll be surrounded by top companies and startups operating in ${city.name}.`
-    },
-    {
-      question: `Can I access meeting rooms at this location?`,
-      answer: `Yes, members have access to fully equipped meeting and conference rooms at ${locationName}, which can be booked on demand via our app.`
-    }
-  ];
+  if (!serviceObj || !cityObj) notFound();
+
+  const microLoc = cityObj.microLocations.find(m => m.slug === microLocation);
+  const isLandmark = cityObj.landmarks.some(l => l.slug === microLocation);
+  const locationName = microLoc?.name || cityObj.landmarks.find(l => l.slug === microLocation)?.name || microLocation.replace(/-/g, ' ');
+
+  // Get gallery from microLocation if available, otherwise fallback to city gallery
+  const gallery = microLoc?.gallery || cityObj.gallery;
 
   return (
     <>
-      {/* 1. HERO (CONVERSION) */}
-      <section className="relative min-h-[85vh] flex items-center justify-center pt-20 overflow-hidden bg-navy">
-        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: `url('${(microLoc?.gallery || city.gallery)[0]}')` }}></div>
-        <div className="absolute inset-0 bg-navy/80"></div>
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center py-20">
-          <ScrollReveal className="lg:col-span-7">
-            <div className="flex items-center gap-2 text-accent text-sm font-bold tracking-wider mb-6">
-              <Link href="/" className="hover:text-white transition-colors">HOME</Link>
-              <ChevronRight className="w-4 h-4 text-white/30" />
-              <Link href={`/${service.slug}/${city.slug}`} className="hover:text-white transition-colors uppercase">{city.name}</Link>
-              <ChevronRight className="w-4 h-4 text-white/30" />
-              <span className="uppercase">{locationName}</span>
+      {/* --- HERO SECTION --- */}
+      <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image src={gallery[0] || '/images/hero-home.jpg'} alt={`${serviceObj.name} near ${locationName}`} fill sizes="100vw" className="object-cover object-center opacity-30" priority />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60"></div>
+          <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent/20 rounded-full blur-[120px] -mr-[20vw] -mt-[10vw] pointer-events-none"></div>
+        </div>
+        <div className="container mx-auto px-6 w-full relative z-10 grid md:grid-cols-2 gap-12 items-center">
+          <ScrollReveal direction="up" className="space-y-6 md:space-y-8">
+            <Breadcrumbs segments={[
+              { name: 'Locations', url: '/locations' }, 
+              { name: cityObj.name, url: `/${service}/${city}` },
+              { name: locationName, url: `/${service}/${city}/${microLocation}` }
+            ]} />
+            <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-[0_0_10px_rgba(242,156,31,0.2)]">
+              <MapPin className="w-4 h-4" />
+              Strategic Location in {cityObj.name}
             </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Premium {service.name} <br/>
-              <span className="text-accent">{isLandmark ? 'Near' : 'in'} {locationName}</span>
+
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">{serviceObj.name}</span><br />
+              near {locationName}
             </h1>
-            
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-xl leading-relaxed font-light">
-              {service.shortDesc} Located perfectly in {locationName}, offering flexible scaling and premium amenities for your team.
-            </p>
-            
 
+            <div className="bg-navy-dark/40 border-l-4 border-accent p-4 rounded-r-lg max-w-xl">
+              <p className="text-accent font-semibold tracking-wider text-sm uppercase mb-1">Scale your business</p>
+              <p className="text-sm md:text-base text-white/90 font-medium leading-relaxed">
+                Renting an office space near {locationName} gives you strategic access to top talent and commercial hubs in {cityObj.name}. Skip the deposits and move into our premium {serviceObj.name.toLowerCase()} today.
+              </p>
+            </div>
 
-            <div className="flex flex-wrap gap-4">
-              <div className="glass rounded-xl px-4 py-3 border border-white/10 flex items-center gap-3 text-white">
-                <MapPin className="w-5 h-5 text-accent" />
-                <span className="text-sm font-bold">{isLandmark ? `Near ${locationName}` : `${locationName}, ${city.name}`}</span>
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2 text-white/60 text-sm">
+                <BadgeCheck className="w-5 h-5 text-accent" />
+                <span>Loved by {cityObj.name} Entrepreneurs</span>
               </div>
-              <div className="glass rounded-xl px-4 py-3 border border-white/10 flex items-center gap-3 text-white">
-                <Zap className="w-5 h-5 text-accent" />
-                <span className="text-sm font-bold">0 Setup Cost</span>
+              <div className="flex items-center gap-2 text-white/60 text-sm">
+                <Star className="w-5 h-5 text-accent fill-accent" />
+                <span>4.8/5 Google Rating</span>
               </div>
             </div>
-          </ScrollReveal>
-          
-          <ScrollReveal direction="right" delay={0.2} className="lg:col-span-5 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden relative">
-              <div className="bg-accent text-navy p-4 text-center font-bold text-lg">
-                Get Your Custom Quote
-              </div>
-              <div className="p-6">
-                <LeadForm branch={`${city.name} - ${locationName}`} source={`${service.name} Page`} hidePricing />
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
 
-      {/* 2. TRUST STRIP */}
-      <section className="bg-white py-8 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-wrap items-center justify-between gap-8">
-            <h3 className="text-sm font-bold text-navy uppercase tracking-widest whitespace-nowrap">Trusted by 500+ Companies</h3>
-            <div className="flex items-center gap-2"><Star className="w-5 h-5 text-yellow-500 fill-yellow-500" /><span className="font-bold text-navy">4.9/5 Average Rating</span></div>
-            <div className="flex items-center gap-8 opacity-60 grayscale">
-              <div className="text-lg font-bold font-serif italic">TCS</div>
-              <div className="text-lg font-bold font-serif italic">Cognizant</div>
-              <div className="text-lg font-bold font-serif italic">Wipro</div>
-              <div className="text-lg font-bold font-serif italic">KPMG</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. WORKSPACE HIGHLIGHTS */}
-      <section className="py-20 bg-navy-light/10">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-navy">Why businesses in {locationName} choose us</h2>
-          </ScrollReveal>
-          <div className="grid md:grid-cols-3 gap-8">
-            <ScrollReveal delay={0.1} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-3">Zero CapEx</h3>
-              <p className="text-gray-600">Don't block your capital in interior fit-outs and deposits. Our spaces are ready to move in.</p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.2} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <Shield className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-3">Enterprise Security</h3>
-              <p className="text-gray-600">Dedicated VLANs, biometric access, and 24/7 CCTV surveillance ensure your data and team are safe.</p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.3} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                <Building className="w-8 h-8" />
-              </div>
-              <h3 className="text-xl font-bold text-navy mb-3">Flexible Scaling</h3>
-              <p className="text-gray-600">Start with 5 desks, expand to 50 next month. Our flexible terms mean you only pay for what you use.</p>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. PHOTO GALLERY */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl font-bold text-navy mb-2">Inside Our {locationName} Facility</h2>
-              <p className="text-gray-600">Premium design that impresses your clients and inspires your team.</p>
-            </div>
-          </ScrollReveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {(microLoc?.gallery || city.gallery).slice(0, 4).map((image, idx) => (
-              <div 
-                key={idx} 
-                className={`${idx === 0 ? 'col-span-2 row-span-2' : ''} aspect-square bg-gray-200 rounded-2xl overflow-hidden relative group`}
+            <div className="flex flex-wrap gap-4 pt-2">
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-2 bg-accent text-navy font-bold py-3 px-7 rounded-xl hover:bg-accent-hover transition-all glow text-sm"
               >
-                 <div 
-                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-                   style={{ backgroundImage: `url('${image}')` }}
-                 ></div>
-              </div>
-            ))}
-            <div className="aspect-square bg-accent/10 rounded-2xl flex flex-col items-center justify-center p-6 text-center text-navy font-bold cursor-pointer hover:bg-accent hover:text-white transition-colors">
-               <ImageIcon className="w-8 h-8 mb-2" />
-               <span>View All Photos</span>
+                See Plans & Availability <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* 5. AMENITIES */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          <ScrollReveal>
-            <h2 className="text-3xl font-bold text-navy mb-6">Everything You Need is Included</h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">Focus on growing your business while we take care of the operations at our {locationName} workspace.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Enterprise Internet</span>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Reception & Mail</span>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">{microLoc ? microLoc.parking : 'Ample Parking'}</span>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Meeting Rooms</span>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Pantry Access</span>
-              </div>
-              <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">24/7 Security</span>
-              </div>
-            </div>
+            <p className="text-white/70 italic text-sm">Cancel anytime. Move in tomorrow.</p>
           </ScrollReveal>
-          <ScrollReveal direction="right">
-            <div className="bg-navy rounded-2xl p-8 text-white shadow-xl relative overflow-hidden">
-               <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/20 rounded-full blur-3xl"></div>
-               <h3 className="text-2xl font-bold mb-6">Want exact pricing for your team?</h3>
-               <p className="text-white/80 mb-8">We offer highly flexible plans from single hot desks to custom-built 100+ seater managed offices.</p>
-               <Link href="/book-tour" className="inline-block bg-accent text-navy px-8 py-4 rounded-xl font-bold hover:bg-white transition-colors w-full text-center">
-                 Request a Quote
-               </Link>
+
+          <ScrollReveal direction="up" delay={0.2} className="w-full max-w-md mx-auto md:mx-0 md:ml-auto">
+            <div className="glass p-6 md:p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent to-accent-light"></div>
+              <h3 className="text-2xl font-bold mb-2 text-white">Book a Free Tour</h3>
+              <p className="text-white/70 text-sm mb-6">Experience our creative workspace in {cityObj.name}.</p>
+              <LeadForm branch={cityObj.name} source={`${serviceObj.name} near ${locationName}`} />
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* ======================================================== */}
-      {/* BOTTOM 40%: BUILT FOR SEO & DISCOVERY                      */}
-      {/* ======================================================== */}
-
-      {/* 6. WHY THIS LOCALITY (SEO) */}
-      <section className="py-20 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
-          <ScrollReveal direction="left">
-            <h2 className="text-3xl font-bold text-navy mb-6">Why Choose {locationName}?</h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              {isLandmark 
-                ? `Positioning your office near ${locationName} gives you an immediate strategic advantage in ${city.name}. Enjoy premium connectivity and access to top talent.`
-                : `Our ${service.name.toLowerCase()} in ${locationName} is custom-built for ${microLoc?.intent || 'modern businesses'}. Join a vibrant ecosystem of growing companies.`
-              }
-            </p>
-            
-            {microLoc && (
-              <div className="space-y-6 bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-                <div>
-                  <h4 className="font-bold text-navy mb-2 flex items-center gap-2"><MapPin className="w-4 h-4 text-accent" /> Transit & Accessibility</h4>
-                  <p className="text-gray-600 text-sm">{microLoc.transit}</p>
-                </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <h4 className="font-bold text-navy mb-2 flex items-center gap-2"><Building className="w-4 h-4 text-accent" /> Nearby Landmarks</h4>
-                  <p className="text-gray-600 text-sm">{microLoc.landmarks.join(', ')}</p>
-                </div>
-                <div className="border-t border-gray-100 pt-4">
-                  <h4 className="font-bold text-navy mb-2 flex items-center gap-2"><Briefcase className="w-4 h-4 text-accent" /> Corporate Neighbors</h4>
-                  <p className="text-gray-600 text-sm">{microLoc.nearbyCompanies.join(', ')}</p>
-                </div>
-              </div>
-            )}
+      {/* --- WHY CHOOSE THIS LOCALITY (SEO TEXT FIX) --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
+          <ScrollReveal direction="up">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">Why Position Near <span className="text-accent">{locationName}?</span></h2>
+            <div className="space-y-4 text-white/80 leading-relaxed text-lg">
+              <p>
+                {isLandmark 
+                  ? `Positioning your office near ${locationName} gives you an immediate strategic advantage in ${cityObj.name}. Enjoy premium connectivity and access to a vibrant ecosystem.`
+                  : `Strategic proximity to ${locationName} is custom-built for ${microLoc?.intent || 'modern businesses'}. Join a vibrant ecosystem of growing companies in ${cityObj.name}.`
+                }
+              </p>
+              <p>
+                While we do not operate a separate physical branch precisely inside {locationName}, our central {cityObj.name} coworking hub is strategically located to serve professionals who need easy access to this area, without the massive overhead costs of traditional commercial real estate in the immediate vicinity.
+              </p>
+            </div>
           </ScrollReveal>
           
-          <ScrollReveal direction="right">
-            <h2 className="text-3xl font-bold text-navy mb-6">Nearby Areas in {city.name}</h2>
-            <div className="grid grid-cols-2 gap-4">
-               {city.microLocations.filter(m => m.slug !== locationObj.slug).slice(0, 8).map(micro => (
-                 <Link 
-                   key={micro.id}
-                   href={`/${service.slug}/${city.slug}/${micro.slug}`}
-                   className="bg-white p-4 rounded-xl border border-gray-100 text-navy hover:border-accent hover:shadow-md transition-all text-sm font-bold flex items-center justify-between"
-                 >
-                   {micro.name}
-                   <ChevronRight className="w-4 h-4 text-gray-400" />
-                 </Link>
-               ))}
-            </div>
-            
-            <div className="mt-8 bg-navy p-6 rounded-xl text-white">
-               <h3 className="text-xl font-bold mb-2">Need GST Registration?</h3>
-               <p className="text-white/80 text-sm mb-4">You can use our premium {locationName} address to register your company and GST locally.</p>
-               <Link href={`/virtual-office/${city.slug}`} className="text-accent text-sm font-bold hover:underline">Learn about Virtual Offices →</Link>
+          <ScrollReveal direction="left" className="space-y-6">
+            <div className="glass p-6 rounded-2xl border border-white/10">
+              <h3 className="text-xl font-bold mb-4 text-white">Area Overview</h3>
+              <ul className="space-y-4">
+                {microLoc?.transit && (
+                  <li className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-bold text-white text-sm">Transit & Accessibility</p>
+                      <p className="text-sm text-white/70">{microLoc.transit}</p>
+                    </div>
+                  </li>
+                )}
+                {microLoc?.landmarks && (
+                  <li className="flex items-start gap-3">
+                    <Building className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-bold text-white text-sm">Nearby Landmarks</p>
+                      <p className="text-sm text-white/70">{microLoc.landmarks.join(', ')}</p>
+                    </div>
+                  </li>
+                )}
+                {microLoc?.nearbyCompanies && (
+                  <li className="flex items-start gap-3">
+                    <Users className="w-5 h-5 text-accent mt-0.5 shrink-0" />
+                    <div>
+                      <p className="font-bold text-white text-sm">Corporate Neighbors</p>
+                      <p className="text-sm text-white/70">{microLoc.nearbyCompanies.join(', ')}</p>
+                    </div>
+                  </li>
+                )}
+              </ul>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* 7. SEO FAQ */}
-      <div className="bg-white border-b border-gray-100">
-        <SEOFAQ 
-          title={`Frequently Asked Questions`}
-          subtitle={`Everything you need to know about our workspaces ${isLandmark ? 'near' : 'in'} ${locationName}.`}
-          faqs={faqs}
-          textColor="text-navy"
-        />
-      </div>
-
-      {/* 8. RELATED INSIGHTS & INTERNAL LINKING CLUSTER */}
-      <section className="py-20 bg-navy text-white">
+      {/* --- BENEFITS & AMENITIES --- */}
+      <section className="py-24 bg-navy-light/10 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <h3 className="text-2xl font-bold mb-12 text-center border-b border-white/10 pb-6">Compare Workspaces & Resources</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="space-y-4">
-              <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Other Services here</h4>
-              <ul className="space-y-3">
-                <li><Link href={`/coworking-space/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Coworking Space in {locationName}</Link></li>
-                <li><Link href={`/managed-office/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Managed Office in {locationName}</Link></li>
-                <li><Link href={`/virtual-office/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Virtual Office in {locationName}</Link></li>
-                <li><Link href={`/meeting-room/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Meeting Rooms in {locationName}</Link></li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Compare Workspaces</h4>
-              <ul className="space-y-3">
-                <li><Link href="/compare/coworking-vs-traditional-office" className="text-white/70 hover:text-white transition-colors">Coworking vs Traditional</Link></li>
-                <li><Link href="/compare/managed-office-vs-leasing" className="text-white/70 hover:text-white transition-colors">Managed Office vs Leasing</Link></li>
-                <li><Link href="/compare/private-office-vs-shared-office" className="text-white/70 hover:text-white transition-colors">Private vs Shared Office</Link></li>
-                <li><Link href="/compare/virtual-office-vs-physical-office" className="text-white/70 hover:text-white transition-colors">Virtual vs Physical Office</Link></li>
-              </ul>
-            </div>
-            <div className="lg:col-span-2 glass p-6 rounded-xl border border-white/10">
-              <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Business Guide</h4>
-              <h5 className="text-lg font-bold text-white mb-2">How to register your company in {city.name}</h5>
-              <p className="text-white/60 text-sm mb-4 line-clamp-3">Understand local compliance, GST registration processes, and how securing a premium business address can accelerate your setup.</p>
-              <Link href="/blog" className="text-sm font-bold text-accent hover:underline">Read the full guide →</Link>
-            </div>
+          <ScrollReveal direction="up" className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Everything You Need to Succeed</h2>
+            <p className="text-xl text-white/70 max-w-2xl mx-auto">Affordable doesn't mean compromising on quality. Enjoy premium amenities.</p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <ScrollReveal delay={0.1} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Zap className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Fast WiFi</h4>
+              <p className="text-xs text-white/60">Reliable, high-speed internet so your video calls never drop.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Shield className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Secure Access</h4>
+              <p className="text-xs text-white/60">Work when you want with secure biometric entry to the facility.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.3} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Users className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Meeting Rooms</h4>
+              <p className="text-xs text-white/60">Bookable rooms for team huddles or client presentations.</p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.4} className="glass p-6 rounded-2xl border border-white/10 text-center hover:border-accent/30 transition-all">
+              <Coffee className="w-10 h-10 text-accent mx-auto mb-4" />
+              <h4 className="font-bold text-white mb-2">Community Vibe</h4>
+              <p className="text-xs text-white/60">A welcoming atmosphere with unlimited coffee to keep you energized.</p>
+            </ScrollReveal>
           </div>
         </div>
       </section>
+
+      {/* --- WORKSPACE OPTIONS / PRICING GUIDANCE --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <ScrollReveal direction="up" className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Affordable Workspace <span className="text-accent">Pricing</span></h2>
+          <p className="text-xl text-white/70 max-w-2xl mx-auto">Budget-friendly plans designed for {cityObj.name}'s business community.</p>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <ScrollReveal delay={0.1}>
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full flex flex-col">
+              <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Hot Desk</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-white">₹4,000</p>
+              </div>
+              <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">The most affordable way to work in a professional setting. Bring your laptop, pick any open seat, and start working.</p>
+              <ul className="space-y-2 text-sm text-white/70 mb-6">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Flexible seating</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> High-speed WiFi</li>
+              </ul>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
+            </MouseGlowCard>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.2}>
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-accent/30 glow transition-all h-full relative flex flex-col">
+              <div className="absolute -top-3 left-6 bg-accent text-navy text-[10px] font-bold px-3 py-1 rounded-full">POPULAR</div>
+              <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Dedicated Desk</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-accent">₹5,500</p>
+              </div>
+              <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">Your own personal reserved desk. Great for designers or anyone who wants to leave their setup overnight.</p>
+              <ul className="space-y-2 text-sm text-white/70 mb-6">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fixed personal desk</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Lockable storage</li>
+              </ul>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
+            </MouseGlowCard>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.3}>
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full bg-navy-light/20 flex flex-col">
+              <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Private Office</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-white">₹16,000</p>
+              </div>
+              <p className="text-white/40 text-sm mb-4">per month</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">A secure, enclosed cabin for your agency or startup team. Enjoy privacy while still having access to the community.</p>
+              <ul className="space-y-2 text-sm text-white/70 mb-6">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Fully furnished</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Biometric access</li>
+              </ul>
+              <Link href="/pricing" className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">Get a Quote <ArrowRight className="w-4 h-4" /></Link>
+            </MouseGlowCard>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.4}>
+            <MouseGlowCard className="glass p-8 rounded-2xl border border-white/10 hover:border-accent/30 transition-all h-full flex flex-col">
+              <p className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2">Virtual Office</p>
+              <div className="flex items-baseline gap-2 mb-1">
+                 <span className="text-xs text-white/50 uppercase font-bold tracking-wider">From</span>
+                 <p className="text-3xl font-bold text-white">₹12,000</p>
+              </div>
+              <p className="text-white/40 text-sm mb-4">per year</p>
+              <p className="text-sm text-white/80 mb-6 flex-grow">Get a professional {cityObj.name} business address for your company registration and GST compliance without renting physical space.</p>
+              <ul className="space-y-2 text-sm text-white/70 mb-6">
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> Business address</li>
+                <li className="flex items-center gap-2"><CheckCircle className="w-4 h-4 text-accent shrink-0" /> GST registration</li>
+              </ul>
+              <Link href={`/virtual-office/${cityObj.slug}`} className="text-accent font-bold text-sm flex items-center gap-2 hover:text-white transition-colors mt-auto">View Details <ArrowRight className="w-4 h-4" /></Link>
+            </MouseGlowCard>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* --- NEARBY AREAS (INTERNAL LINKING) --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <ScrollReveal direction="up">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">Explore Other Locations in <span className="text-accent">{cityObj.name}</span></h2>
+            <p className="text-white/70 mb-8">WeeSpaces connects you to all major business hubs across the city.</p>
+            <div className="flex flex-wrap gap-3">
+              {cityObj.microLocations.filter(m => m.slug !== microLocation).map(micro => (
+                <Link 
+                  key={micro.slug}
+                  href={`/${service}/${city}/${micro.slug}`}
+                  className="bg-navy-light/30 px-4 py-2 rounded-full border border-white/10 text-sm font-medium text-white hover:border-accent hover:text-accent transition-colors"
+                >
+                  Near {micro.name}
+                </Link>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          {cityObj.landmarks.length > 0 && (
+            <ScrollReveal direction="left" delay={0.2} className="glass p-8 rounded-2xl border border-white/10">
+              <h3 className="text-xl font-bold text-white mb-6">Popular Landmarks</h3>
+              <ul className="space-y-3">
+                {cityObj.landmarks.filter(l => l.slug !== microLocation).map(landmark => (
+                  <li key={landmark.slug}>
+                    <Link 
+                      href={`/${service}/${city}/${landmark.slug}`}
+                      className="text-white/70 hover:text-accent flex items-center gap-2 text-sm transition-colors"
+                    >
+                      <MapPin className="w-4 h-4" /> Near {landmark.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </ScrollReveal>
+          )}
+        </div>
+      </section>
+
+      {/* --- IMAGE GALLERY --- */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-light/5">
+        <ScrollReveal direction="up" className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Inside Our <span className="text-accent">{cityObj.name}</span> Space</h2>
+          <p className="text-xl text-white/70">Take a peek inside our creative and affordable workspace.</p>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gallery.map((src, idx) => (
+            <ScrollReveal key={idx} delay={idx * 0.15} className="relative rounded-xl overflow-hidden group shadow-md border border-white/10 h-64 md:h-80">
+              <Image src={src} alt={`WeeSpaces ${cityObj.name} workspace ${idx + 1}`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transform group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* --- FAQ SECTION --- */}
+      <SEOFAQ 
+        title="Frequently Asked Questions"
+        subtitle={`Everything you need to know about ${serviceObj.name.toLowerCase()} near ${locationName}.`}
+        faqs={coworkingFAQs} 
+      />
+
     </>
   );
 }
