@@ -49,7 +49,7 @@ export default function VirtualOfficeCalicutPage() {
       {/* Features Grid */}
       <section id="features" className="py-24 max-w-7xl mx-auto px-6">
         <ScrollReveal direction="up" className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">What's Included in Your <span className="text-accent">Virtual Office</span>?</h2>
+          <h2 className="text-4xl font-bold mb-4">What's Included in Your Calicut <span className="text-accent">Virtual Office</span>?</h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">Everything you need to legally register and operate your business in Kerala.</p>
         </ScrollReveal>
 

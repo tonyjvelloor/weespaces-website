@@ -52,10 +52,10 @@ export default function Header() {
               Locations <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-0 w-48 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/coworking-space-kochi" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Kochi</Link>
-              <Link href="/coworking-space-trivandrum" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Trivandrum</Link>
-              <Link href="/coworking-space-calicut" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Calicut</Link>
-              <Link href="/coworking-space-coimbatore" className="block px-4 py-3 hover:bg-white/10 flex items-center justify-between">
+              <Link href="/coworking-space/kochi" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Kochi</Link>
+              <Link href="/coworking-space/trivandrum" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Trivandrum</Link>
+              <Link href="/coworking-space/calicut" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Calicut</Link>
+              <Link href="/coworking-space/coimbatore" className="block px-4 py-3 hover:bg-white/10 flex items-center justify-between">
                 Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
               </Link>
             </div>
@@ -66,11 +66,11 @@ export default function Header() {
               Workspace Solutions <ChevronDown className="w-4 h-4" />
             </button>
             <div className="absolute top-full left-0 mt-0 w-56 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Coworking Space</Link>
-              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Private Office</Link>
+              <Link href="/coworking-space" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Coworking Space</Link>
+              <Link href="/private-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Private Office</Link>
               <Link href="/virtual-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Virtual Office</Link>
-              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Meeting Room</Link>
-              <Link href="/locations" className="block px-4 py-3 hover:bg-white/10">Managed Office</Link>
+              <Link href="/meeting-room" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Meeting Room</Link>
+              <Link href="/managed-office" className="block px-4 py-3 hover:bg-white/10">Managed Office</Link>
             </div>
           </div>
 
@@ -117,10 +117,10 @@ export default function Header() {
               <div className="py-2 border-b border-white/5">
                 <span className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2 block">Locations</span>
                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
-                  <Link href="/coworking-space-kochi" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Kochi</Link>
-                  <Link href="/coworking-space-trivandrum" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Trivandrum</Link>
-                  <Link href="/coworking-space-calicut" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Calicut</Link>
-                  <Link href="/coworking-space-coimbatore" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors flex items-center justify-between">
+                  <Link href="/coworking-space/kochi" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Kochi</Link>
+                  <Link href="/coworking-space/trivandrum" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Trivandrum</Link>
+                  <Link href="/coworking-space/calicut" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Calicut</Link>
+                  <Link href="/coworking-space/coimbatore" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors flex items-center justify-between">
                     Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
                   </Link>
                 </div>
@@ -129,11 +129,11 @@ export default function Header() {
               <div className="py-2 border-b border-white/5">
                 <span className="text-white/50 text-xs font-bold uppercase tracking-wider mb-2 block">Workspace Solutions</span>
                 <div className="flex flex-col gap-3 pl-4 border-l border-white/10">
-                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Coworking Space</Link>
-                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Private Office</Link>
+                  <Link href="/coworking-space" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Coworking Space</Link>
+                  <Link href="/private-office" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Private Office</Link>
                   <Link href="/virtual-office" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Virtual Office</Link>
-                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Meeting Room</Link>
-                  <Link href="/locations" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Managed Office</Link>
+                  <Link href="/meeting-room" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Meeting Room</Link>
+                  <Link href="/managed-office" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-accent transition-colors">Managed Office</Link>
                 </div>
               </div>
               

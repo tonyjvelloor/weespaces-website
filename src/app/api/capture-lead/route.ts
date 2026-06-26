@@ -19,6 +19,11 @@ export async function POST(request: Request) {
             name: body.name,
             phone: body.phone,
             source: body.source,
+            requirement: body.requirement || '',
+            teamSize: body.teamSize || '',
+            location: body.location || '',
+            budget: body.budget || '',
+            timeline: body.timeline || '',
             timestamp: new Date().toISOString()
           }),
           redirect: 'manual' // Prevent Next.js from following the 302 redirect, which can cause network errors
@@ -52,7 +57,12 @@ export async function POST(request: Request) {
               <h2>New Lead Captured!</h2>
               <p><strong>Name:</strong> ${body.name}</p>
               <p><strong>Phone:</strong> ${body.phone}</p>
-              <p><strong>Source/Branch:</strong> ${body.source}</p>
+              <p><strong>Source:</strong> ${body.source}</p>
+              <p><strong>Requirement:</strong> ${body.requirement || 'N/A'}</p>
+              <p><strong>Team Size:</strong> ${body.teamSize || 'N/A'}</p>
+              <p><strong>Location Pref:</strong> ${body.location || 'N/A'}</p>
+              <p><strong>Budget:</strong> ${body.budget || 'N/A'}</p>
+              <p><strong>Timeline:</strong> ${body.timeline || 'N/A'}</p>
               <br/>
               <p>This lead has also been saved to your Google Sheet.</p>
             `

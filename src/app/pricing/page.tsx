@@ -135,7 +135,7 @@ export default function PricingPage() {
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Unlimited Tea/Coffee</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Lounge Access</li>
                   </ul>
-                  <Link href={`/book-tour?plan=Hot Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>
+                  <Link href={`/book-tour?plan=hot-desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>
                 </MouseGlowCard>
               </ScrollReveal>
 
@@ -155,7 +155,7 @@ export default function PricingPage() {
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Fixed Personal Desk</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> 2hrs Conference Room</li>
                   </ul>
-                  <Link href={`/book-tour?plan=Dedicated Desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl bg-accent hover:bg-accent-hover text-navy transition-colors font-bold relative z-10 text-sm">Check Availability & Offers</Link>
+                  <Link href={`/book-tour?plan=dedicated-desk&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl bg-accent hover:bg-accent-hover text-navy transition-colors font-bold relative z-10 text-sm">Check Availability & Offers</Link>
                 </MouseGlowCard>
               </ScrollReveal>
 
@@ -172,7 +172,7 @@ export default function PricingPage() {
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Biometric Access</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Custom Branding</li>
                   </ul>
-                  <Link href={`/book-tour?plan=Private Office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-accent text-accent transition-colors font-bold relative z-10 hover:bg-accent hover:text-navy text-sm">Build My Office Plan</Link>
+                  <Link href={`/book-tour?plan=private-office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-accent text-accent transition-colors font-bold relative z-10 hover:bg-accent hover:text-navy text-sm">Build My Office Plan</Link>
                 </MouseGlowCard>
               </ScrollReveal>
 
@@ -191,7 +191,7 @@ export default function PricingPage() {
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Mail Handling</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> GST Registration Proof</li>
                   </ul>
-                  <Link href={`/book-tour?plan=Virtual Office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>
+                  <Link href={`/book-tour?plan=virtual-office&branch=${activeBranch}`} className="block text-center w-full mt-auto py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>
                 </MouseGlowCard>
               </ScrollReveal>
             </div>

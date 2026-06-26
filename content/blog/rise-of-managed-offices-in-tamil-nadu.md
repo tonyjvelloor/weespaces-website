@@ -1,5 +1,5 @@
 ---
-title: "The Rise of Managed Offices in Tamil Nadu: Why Enterprises are Making the Switch"
+title: "The Rise of Managed Offices in Tamil Nadu"
 excerpt: "Managed offices are transforming the commercial real estate landscape in Tamil Nadu. We explore the driving factors behind the surge in enterprise demand for tailored workspaces."
 date: "June 25, 2026"
 readTime: "5 min read"

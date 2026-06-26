@@ -1,5 +1,5 @@
 ---
-title: "Why Kerala Startups are Shifting from Leased Offices to Managed Workspaces"
+title: "Why Kerala Startups Shift to Managed Workspaces"
 excerpt: "The hidden costs of traditional leases in Trivandrum and Kochi, and why agile companies are moving to premium coworking hubs like WeeSpaces."
 date: "June 18, 2026"
 readTime: "7 min read"

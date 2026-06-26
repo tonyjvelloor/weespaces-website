@@ -8,17 +8,21 @@ const nextConfig: NextConfig = {
       { source: '/services/virtual-office', destination: '/virtual-office', permanent: true },
 
       // --- Old location slug redirects ---
-      { source: '/locations/trivandrum', destination: '/coworking-space-trivandrum', permanent: true },
-      { source: '/locations/ernakulam', destination: '/coworking-space-kochi', permanent: true },
-      { source: '/locations/kochi', destination: '/coworking-space-kochi', permanent: true },
-      { source: '/locations/calicut', destination: '/coworking-space-calicut', permanent: true },
-      { source: '/locations/coimbatore', destination: '/coworking-space-coimbatore', permanent: true },
+      { source: '/locations/trivandrum', destination: '/coworking-space/trivandrum', permanent: true },
+      { source: '/locations/ernakulam', destination: '/coworking-space/kochi', permanent: true },
+      { source: '/locations/kochi', destination: '/coworking-space/kochi', permanent: true },
+      { source: '/locations/calicut', destination: '/coworking-space/calicut', permanent: true },
+      { source: '/locations/coimbatore', destination: '/coworking-space/coimbatore', permanent: true },
 
-      // --- "in" slug → clean slug (Coimbatore stays clean: no "in") ---
-      { source: '/coworking-space-in-coimbatore', destination: '/coworking-space-coimbatore', permanent: true },
-      { source: '/coworking-space-in-trivandrum', destination: '/coworking-space-trivandrum', permanent: true },
-      { source: '/coworking-space-in-kochi', destination: '/coworking-space-kochi', permanent: true },
-      { source: '/coworking-space-in-calicut', destination: '/coworking-space-calicut', permanent: true },
+      // --- Legacy Hardcoded Routes → New Programmatic Structure ---
+      { source: '/coworking-space-in-kochi', destination: '/coworking-space/kochi', permanent: true },
+      { source: '/coworking-space-kochi', destination: '/coworking-space/kochi', permanent: true },
+      { source: '/coworking-space-in-trivandrum', destination: '/coworking-space/trivandrum', permanent: true },
+      { source: '/coworking-space-trivandrum', destination: '/coworking-space/trivandrum', permanent: true },
+      { source: '/coworking-space-in-calicut', destination: '/coworking-space/calicut', permanent: true },
+      { source: '/coworking-space-calicut', destination: '/coworking-space/calicut', permanent: true },
+      { source: '/coworking-space-in-coimbatore', destination: '/coworking-space/coimbatore', permanent: true },
+      { source: '/coworking-space-coimbatore', destination: '/coworking-space/coimbatore', permanent: true },
 
       // --- Old domain .co.in → .in (rescues 14 authority backlinks) ---
       {

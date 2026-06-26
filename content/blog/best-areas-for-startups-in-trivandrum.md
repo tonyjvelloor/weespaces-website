@@ -1,5 +1,5 @@
 ---
-title: "Best Areas for IT Startups to Rent Office Space in Trivandrum"
+title: "Best Areas for Startups to Rent in Trivandrum"
 excerpt: "A guide to the top locations in Trivandrum for IT startups and software teams looking to set up an office."
 date: "June 26, 2026"
 readTime: "5 min read"

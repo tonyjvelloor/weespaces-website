@@ -1,5 +1,5 @@
 ---
-title: "Coworking Space vs Traditional Office in Calicut: Which is Better?"
+title: "Coworking vs Traditional Office in Calicut"
 excerpt: "A detailed comparison of coworking spaces and traditional office leases in Kozhikode to help you make the best financial decision for your business."
 date: "June 27, 2026"
 readTime: "4 min read"

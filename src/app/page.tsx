@@ -10,12 +10,13 @@ import {
   Quote, Star, BadgeCheck, TrendingUp, Calendar, FileText,
   Phone, CalendarCheck, HelpCircle
 } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import HeroCarousel from '@/components/HeroCarousel';
-import InteractiveAmenities from '@/components/InteractiveAmenities';
-import PhotoGallery from '@/components/PhotoGallery';
-import OfficeCalculator from '@/components/OfficeCalculator';
 import SEOFAQ from '@/components/SEOFAQ';
 import { homepageFAQs } from '@/data/faqs';
+
+const InteractiveAmenities = dynamic(() => import('@/components/InteractiveAmenities'), { ssr: true });
+const OfficeCalculator = dynamic(() => import('@/components/OfficeCalculator'), { ssr: true });
 
 export const metadata: Metadata = {
   title: 'Coworking Spaces & Private Offices in Kerala | WeeSpaces',
@@ -133,8 +134,8 @@ export default function Home() {
                   </div>
                   
                   <h1 className="text-display flex flex-col">
-                      <span className="text-white text-5xl md:text-6xl lg:text-7xl">Your Office Is Ready.</span>
-                      <span className="text-accent text-5xl md:text-6xl lg:text-7xl">Just Bring Your Team.</span>
+                      <span className="text-white text-5xl md:text-6xl lg:text-7xl">Premium Managed Offices</span>
+                      <span className="text-accent text-5xl md:text-6xl lg:text-7xl">in South India</span>
                   </h1>
                   
                   <p className="text-xl text-white/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
@@ -280,7 +281,7 @@ export default function Home() {
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Established</h3>
                       <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Enterprise and corporate (20+ employees).</p>
-                      <Link href="/book-tour" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Build Custom Office <ChevronRight className="w-4 h-4" /></Link>
+                      <Link href="/book-tour" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Book a Tour <ChevronRight className="w-4 h-4" /></Link>
                   </div>
                   <div className="glass rounded-xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
@@ -420,6 +421,20 @@ export default function Home() {
           </div>
       </section>
 
+      {/* Trust Logos Section */}
+      <section className="py-16 border-t border-white/10 bg-navy-light/10">
+          <div className="max-w-7xl mx-auto px-6">
+              <p className="text-center text-sm font-bold tracking-wider text-white/40 uppercase mb-10">Trusted by hundreds of innovative teams and enterprises</p>
+              <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 hover:opacity-100 transition-opacity duration-500">
+                  <div className="text-2xl font-bold font-serif text-white">Acme Corp</div>
+                  <div className="text-2xl font-bold tracking-tighter text-white">GLOBAL<span className="text-accent">TECH</span></div>
+                  <div className="text-2xl font-bold italic text-white">Stark Industries</div>
+                  <div className="text-2xl font-black uppercase text-white">Wayne Ent.</div>
+                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Nexus Corp</div>
+              </div>
+          </div>
+      </section>
+
       {/* Pricing Preview Section */}
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-dark">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
@@ -437,16 +452,14 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-white mb-2">Hot Desk</h3>
                       <p className="text-sm text-white/50 mb-6 h-10">Flexible seating in our open coworking area.</p>
                       <div className="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
-                          <span className="text-lg text-white/70 font-bold">Starting from</span>
-                          <span className="text-3xl font-bold text-white">₹4,999</span>
-                          <span className="text-white/50 text-xs uppercase tracking-wider">/ Mo</span>
+                          <span className="text-lg text-white/70 font-bold">Flexible plans for freelancers</span>
                       </div>
                       <ul className="space-y-4 mb-8">
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Flexible any-desk access</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> High-speed WiFi</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Unlimited Tea/Coffee</li>
                       </ul>
-                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Check Availability & Offers</Link>
+                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Book a Tour</Link>
                   </MouseGlowCard>
 
               {/* Dedicated Desk */}
@@ -458,16 +471,14 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-white mb-2">Dedicated Desk</h3>
                       <p className="text-sm text-white/50 mb-6 h-10">Your own reserved desk in a shared space.</p>
                       <div className="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
-                          <span className="text-lg text-white/70 font-bold">Starting from</span>
-                          <span className="text-3xl font-bold text-accent">₹6,499</span>
-                          <span className="text-white/50 text-xs uppercase tracking-wider">/ Mo</span>
+                          <span className="text-lg text-white/70 font-bold">Flexible plans for growing teams</span>
                       </div>
                       <ul className="space-y-4 mb-8">
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Reserved dedicated desk</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Lockable storage cabinet</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> 24/7 Access</li>
                       </ul>
-                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl bg-accent text-navy font-bold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20 relative z-20">Check Availability & Offers</Link>
+                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl bg-accent text-navy font-bold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20 relative z-20">Book a Tour</Link>
                   </MouseGlowCard>
 
               {/* Private Office */}
@@ -485,7 +496,7 @@ export default function Home() {
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Custom branding options</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Free meeting room credits</li>
                       </ul>
-                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Build My Office Plan</Link>
+                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Book a Tour</Link>
                   </MouseGlowCard>
           </div>
       </section>

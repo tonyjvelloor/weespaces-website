@@ -13,6 +13,8 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
     requirement: '',
     teamSize: '',
     location: branch || '',
+    budget: '',
+    timeline: '',
     name: '',
     phone: ''
   });
@@ -29,6 +31,14 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
     }
     if (step === 3 && !formDataState.location) {
       setFormStatus({ message: 'Please select a location', type: 'error' });
+      return;
+    }
+    if (step === 4 && !formDataState.budget) {
+      setFormStatus({ message: 'Please select your budget expectation', type: 'error' });
+      return;
+    }
+    if (step === 5 && !formDataState.timeline) {
+      setFormStatus({ message: 'Please select your timeline', type: 'error' });
       return;
     }
     setFormStatus({ message: '', type: null });
@@ -48,8 +58,8 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
     const phone = phoneRaw ? '+91' + phoneRaw : undefined;
     const name = formDataState.name;
     const source = defaultSource
-      ? `${defaultSource} (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Location: ${formDataState.location})`
-      : `Website Lead (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Location: ${formDataState.location})`;
+      ? `${defaultSource} (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline})`
+      : `Website Lead (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline})`;
 
     try {
       const response = await fetch('/api/capture-lead/', {
@@ -89,6 +99,8 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
     "What do you need?",
     "How big is your team?",
     "Which city?",
+    "Budget Expectation (Per Seat)",
+    "When do you need it?",
     "Your contact details"
   ];
 
@@ -102,8 +114,21 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
   const teamSizes = [
     { label: 'Just me', value: '1 person' },
     { label: '2–5 people', value: '2-5' },
-    { label: '6–15 people', value: '6-15' },
-    { label: '15+ people', value: '15+' },
+    { label: '6–20 people', value: '6-20' },
+    { label: '20+ people', value: '20+' },
+  ];
+
+  const budgets = [
+    { label: 'Standard (₹5k - 7k)', value: 'Standard' },
+    { label: 'Premium (₹7k - 10k)', value: 'Premium' },
+    { label: 'Enterprise/Custom', value: 'Enterprise' },
+  ];
+
+  const timelines = [
+    { label: 'Immediately', value: 'Immediate' },
+    { label: 'Within 1 Month', value: '1 Month' },
+    { label: '1 - 3 Months', value: '1-3 Months' },
+    { label: 'Just exploring', value: 'Exploring' },
   ];
 
   return (
@@ -116,11 +141,11 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-white/50">Step {step} of 4</span>
-            <span className="text-xs font-bold text-accent">{step * 25}%</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-white/50">Step {step} of 6</span>
+            <span className="text-xs font-bold text-accent">{Math.round((step / 6) * 100)}%</span>
           </div>
           <div className="w-full bg-white/10 rounded-full h-1.5">
-            <div className="bg-accent h-1.5 rounded-full transition-all duration-300" style={{ width: `${step * 25}%` }}></div>
+            <div className="bg-accent h-1.5 rounded-full transition-all duration-300" style={{ width: `${(step / 6) * 100}%` }}></div>
           </div>
         </div>
 
@@ -174,6 +199,36 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
           )}
 
           {step === 4 && (
+            <div className="grid grid-cols-1 gap-3">
+              {budgets.map(({ label, value }) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setFormDataState({ ...formDataState, budget: value })}
+                  className={`p-4 rounded-xl border text-center transition-all ${formDataState.budget === value ? 'border-accent bg-accent/10 text-accent font-bold' : 'border-white/10 bg-navy-dark/30 text-white/70 hover:border-white/30 hover:bg-navy-dark/50'}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {step === 5 && (
+            <div className="grid grid-cols-2 gap-3">
+              {timelines.map(({ label, value }) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setFormDataState({ ...formDataState, timeline: value })}
+                  className={`p-4 rounded-xl border text-center transition-all ${formDataState.timeline === value ? 'border-accent bg-accent/10 text-accent font-bold' : 'border-white/10 bg-navy-dark/30 text-white/70 hover:border-white/30 hover:bg-navy-dark/50'}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {step === 6 && (
             <div className="space-y-4">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Full Name *</label>
@@ -227,7 +282,7 @@ export default function LeadForm({ branch = "", source: defaultSource }: { branc
             </button>
           )}
 
-          {step < 4 ? (
+          {step < 6 ? (
             <button
               onClick={handleNextStep}
               className="flex-grow bg-accent text-navy font-bold text-lg py-3 rounded-xl hover:bg-accent-hover transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1"

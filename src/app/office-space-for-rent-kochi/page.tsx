@@ -145,7 +145,7 @@ export default function OfficeSpaceKochiPage() {
       <section className="py-20 relative bg-navy-dark border-t border-white/5">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose Our Managed Offices?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Choose Our Managed Offices in Kochi?</h2>
             <p className="text-xl text-white/60">Designed to eliminate the hassle of traditional commercial real estate.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
