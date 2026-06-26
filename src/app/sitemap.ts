@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 import { services, cities } from '@/data/locations';
+import { comparisons } from '@/data/comparisons';
+import { getAllPosts } from '@/lib/mdx';
 
 const BASE_URL = 'https://www.weespaces.in';
 
@@ -54,6 +56,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
           priority: 0.6,
         });
       });
+    });
+  });
+
+  // 6. Comparison Pages
+  comparisons.forEach((comparison) => {
+    routes.push({
+      url: `${BASE_URL}/compare/${comparison.slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    });
+  });
+
+  // 7. Blog Posts (MDX)
+  const posts = getAllPosts();
+  posts.forEach((post) => {
+    routes.push({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      // Use the post date if available, otherwise fallback
+      lastModified: new Date(post.date || new Date()),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     });
   });
 
