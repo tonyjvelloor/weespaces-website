@@ -22,9 +22,11 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
 }
 
 export function generateStaticParams() {
-  return services.map(service => ({
-    service: service.slug
-  }));
+  return services
+    .filter(service => service.slug !== 'virtual-office')
+    .map(service => ({
+      service: service.slug
+    }));
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ service: string }> }) {
