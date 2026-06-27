@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                   <MapPin className="w-8 h-8 text-accent" />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">{city.name}</h3>
-                <p className="text-sm text-white/60 mb-6">{city.microLocations.length} Micro-locations</p>
+                <p className="text-sm text-white/60 mb-6">Premium Workspaces</p>
                 <span className="inline-flex items-center gap-1 text-sm font-bold text-accent group-hover:text-white transition-colors">
                   View Locations <ChevronRight className="w-4 h-4" />
                 </span>

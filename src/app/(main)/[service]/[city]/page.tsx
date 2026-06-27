@@ -8,6 +8,7 @@ import SEOFAQ from '@/components/SEOFAQ';
 import { MapPin, Building, ChevronRight, CheckCircle, Star, Shield, Zap, Image as ImageIcon, Users, Clock, ArrowRight, XCircle } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import VirtualOfficeCityTemplate from '@/components/templates/VirtualOfficeCityTemplate';
 
 export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -59,6 +60,39 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
   ];
 
   const galleryLabels = ["📍 Reception", "📍 Hot Desk Zone", "📍 Private Cabins", "📍 Collaboration Area"];
+
+  // Inject Custom Virtual Office Template if service matches
+  if (service.slug === 'virtual-office') {
+    return (
+      <>
+        <VirtualOfficeCityTemplate city={city} service={service} />
+        {/* 12. JSON-LD SCHEMA INJECTION */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": `WeeSpaces ${city.name} - Virtual Office`,
+                "image": city.gallery[0],
+                "telephone": "+91-9207189111",
+                "url": `https://weespaces.in/${service.slug}/${city.slug}`,
+                "priceRange": "₹",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": city.name,
+                  "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
+                  "addressCountry": "IN"
+                },
+                ...(city.citations && city.citations.length > 0 ? { "sameAs": city.citations } : {})
+              }
+            ])
+          }}
+        />
+      </>
+    );
+  }
 
   return (
     <div className="relative">
