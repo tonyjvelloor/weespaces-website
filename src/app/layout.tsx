@@ -13,6 +13,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
 });
 
+import { GoogleTagManager } from '@next/third-parties/google';
+import TrackingProvider from '@/components/TrackingProvider';
 import { constructMetadata } from '@/utils/metadata';
 
 export const metadata: Metadata = {
@@ -40,13 +42,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${spaceGrotesk.variable} scroll-smooth`}>
       <head>
         {/* Google Tag Manager */}
-        <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N699QDRZ');`}
-        </Script>
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <noscript>
@@ -55,61 +50,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         {/* Secure Privacy */}
         <Script strategy="beforeInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
-
-        {/* Google Analytics */}
-        <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-9BP90YRWBN" />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-9BP90YRWBN', { send_page_view: true });
-
-            /* Fire location_view on page load for city pages */
-            var path = window.location.pathname;
-            if (path.indexOf('coworking-space') !== -1 || path.indexOf('virtual-office') !== -1 || path.indexOf('private-office') !== -1 || path.indexOf('managed-office') !== -1) {
-              gtag('event', 'location_view', { event_category: 'engagement', page: path });
-            }
-          `}
-        </Script>
-
-        {/* Meta Pixel Code */}
-        <Script id="meta-pixel" strategy="lazyOnload">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1702816221138883');
-            fbq('track', 'PageView');
-          `}
-        </Script>
-
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="lazyOnload">
-          {`
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "xczwvm5gp9");
-          `}
-        </Script>
-
-        {/* Ahrefs Analytics */}
-        <Script id="ahrefs-analytics" strategy="lazyOnload">
-          {`
-            var ahrefs_analytics_script = document.createElement('script');
-            ahrefs_analytics_script.async = true;
-            ahrefs_analytics_script.src = 'https://analytics.ahrefs.com/analytics.js';
-            ahrefs_analytics_script.setAttribute('data-key', 'EoDkvoeJsqmIyH1dOOZ37w');
-            document.getElementsByTagName('head')[0].appendChild(ahrefs_analytics_script);
-          `}
-        </Script>
 
         {/* JSON-LD Schemas */}
         <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive">
@@ -199,14 +139,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-[4.5rem] md:pb-0 relative">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N699QDRZ" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
-        </noscript>
-        <noscript>
-          <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1702816221138883&ev=PageView&noscript=1" alt="" aria-hidden="true" />
-        </noscript>
-        {children}
+        <GoogleTagManager gtmId="GTM-N699QDRZ" />
+        <TrackingProvider>
+          {children}
+        </TrackingProvider>
         
         {/* Floating WhatsApp Widget */}
         <a 

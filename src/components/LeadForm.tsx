@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
+import { pushToDataLayer } from '@/utils/analytics';
 
 export default function LeadForm({ branch = "", source: defaultSource, hidePricing }: { branch?: string, source?: string, hidePricing?: boolean }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -9,6 +10,12 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
   const router = useRouter();
 
   const [step, setStep] = useState(1);
+  const hasStartedRef = useRef(false);
+
+  useEffect(() => {
+    pushToDataLayer('lead_form_view');
+  }, []);
+
   const [formDataState, setFormDataState] = useState({
     requirement: '',
     teamSize: '',
@@ -21,23 +28,34 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
 
   const handleNextStep = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+
+    if (!hasStartedRef.current) {
+      hasStartedRef.current = true;
+      pushToDataLayer('lead_form_start');
+    }
+
     if (step === 1 && !formDataState.requirement) {
+      pushToDataLayer('lead_form_error', { field: 'requirement' });
       setFormStatus({ message: 'Please select your requirement', type: 'error' });
       return;
     }
     if (step === 2 && !formDataState.teamSize) {
+      pushToDataLayer('lead_form_error', { field: 'teamSize' });
       setFormStatus({ message: 'Please select your team size', type: 'error' });
       return;
     }
     if (step === 3 && !formDataState.location) {
+      pushToDataLayer('lead_form_error', { field: 'location' });
       setFormStatus({ message: 'Please select a location', type: 'error' });
       return;
     }
     if (step === 4 && !formDataState.budget) {
+      pushToDataLayer('lead_form_error', { field: 'budget' });
       setFormStatus({ message: 'Please select your budget expectation', type: 'error' });
       return;
     }
     if (step === 5 && !formDataState.timeline) {
+      pushToDataLayer('lead_form_error', { field: 'timeline' });
       setFormStatus({ message: 'Please select your timeline', type: 'error' });
       return;
     }
@@ -71,22 +89,14 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
 
       if (!response.ok) throw new Error('Failed to submit lead');
 
-      // Fire GA4 events
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'generate_lead', {
-          event_category: 'Lead',
-          event_label: source,
-          value: 1,
-        });
-      }
-
-      // Fire Meta Pixel event
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'Lead', {
-          content_name: formDataState.requirement,
-          content_category: formDataState.location,
-        });
-      }
+      // Unified GTM DataLayer Push
+      pushToDataLayer('generate_lead', {
+        service: formDataState.requirement,
+        city: formDataState.location,
+        team_size: formDataState.teamSize,
+        lead_source: source,
+        landing_page: pageUrl
+      });
 
       router.push('/landing/thank-you');
     } catch (error) {
