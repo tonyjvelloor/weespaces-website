@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { MapPin, Navigation, Car, Train, Footprints, Users, HelpCircle } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import SEOFAQ from './SEOFAQ';
+import SEOFAQ from '../SEOFAQ';
 
 type ProximityNode = {
   name: string;
