@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
+import { realWeeSpacesAddresses } from '@/utils/mapResolver';
 import { MapPin, ArrowRight, Building2, Phone } from 'lucide-react';
 import { branchData } from '@/data/branches';
 
@@ -72,9 +73,10 @@ export default function LocationsPage() {
             {branches.map((loc, idx) => {
               const seoUrl = `/coworking-space-${loc.id === 'ernakulam' ? 'kochi' : loc.id}`;
               
-              // We don't have map embed links stored in the data natively (we have regular gmaps links),
-              // but we can use the location name to load a generic Google Maps iframe
-              const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(loc.name + " Kerala India")}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+              // Use strict mapping to avoid deceptive or arbitrary map points
+              const normalizedCity = loc.id === 'ernakulam' ? 'kochi' : loc.id;
+              const activeLocation = realWeeSpacesAddresses[normalizedCity] || realWeeSpacesAddresses.kochi;
+              const mapEmbedSrc = activeLocation.mapEmbedUrl;
               
               return (
                 <ScrollReveal key={idx} delay={idx * 0.1}>
@@ -119,9 +121,9 @@ export default function LocationsPage() {
                     </div>
                     
                     <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
-                      <Link href={seoUrl} className="w-full sm:w-auto flex-1 bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all glow text-sm">
-                        Explore Space <ArrowRight className="w-4 h-4" />
-                      </Link>
+                      <a href={activeLocation.directionsUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex-1 bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all glow text-sm">
+                        Get Directions <ArrowRight className="w-4 h-4" />
+                      </a>
                       <a href="tel:+919207189111" className="w-full sm:w-auto flex items-center justify-center gap-2 py-3 px-6 border border-white/20 hover:bg-white/5 rounded-xl transition-colors text-sm font-medium">
                         <Phone className="w-4 h-4 text-accent" /> Call Now
                       </a>

@@ -5,6 +5,7 @@ import { services, cities } from '@/data/locations';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import LeadForm from '@/components/LeadForm';
 import SEOFAQ from '@/components/SEOFAQ';
+import MapSection from '@/components/ui/MapSection';
 import { MapPin, Building, Briefcase, ChevronRight, CheckCircle, Star, Shield, Zap, Image as ImageIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -305,6 +306,8 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
                 </div>
               </div>
             )}
+            
+            <MapSection currentCity={city.slug} />
           </ScrollReveal>
           
           <ScrollReveal direction="right">
