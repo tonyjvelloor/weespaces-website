@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import FAQAccordion from '@/components/FAQAccordion';
 import LocalContactBlock from '@/components/ui/LocalContactBlock';
 import TrustLayer from '@/components/ui/TrustLayer';
+import StrategicProximity from '@/components/ui/StrategicProximity';
 import { services, cities } from '@/data/locations';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import LeadForm from '@/components/LeadForm';
@@ -402,33 +403,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
         </div>
       </section>
 
-      {/* 9. MICRO-LOCATIONS (INTERNAL LINKING) */}
-      <section className="py-20 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <ScrollReveal direction="up" className="mb-12">
-            <h2 className="text-3xl font-bold text-navy mb-4">Explore {service.name} Locations in {city.name}</h2>
-            <p className="text-gray-600 max-w-2xl">Find a workspace perfectly situated near your clients and talent.</p>
-          </ScrollReveal>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {city.microLocations.map((micro) => (
-              <Link 
-                key={micro.id} 
-                href={`/${service.slug}/${city.slug}/${micro.slug}`}
-                className="bg-gray-50 rounded-xl p-6 border border-gray-100 hover:border-accent hover:shadow-md transition-all group"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-lg font-bold text-navy group-hover:text-accent transition-colors">{micro.name}</h3>
-                  <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                </div>
-                <div className="text-xs font-medium text-gray-500 uppercase tracking-wider flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-accent" /> {micro.landmarks[0]}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* 9. STRATEGIC PROXIMITY (REPLACES MICRO-LOCATIONS) */}
+      {city.hubTitle && city.hubDescription && city.proximityNodes && (
+        <StrategicProximity 
+          hubTitle={city.hubTitle} 
+          hubDescription={city.hubDescription}
+          proximityNodes={city.proximityNodes}
+          serviceSlug={service.slug}
+          citySlug={city.slug}
+        />
+      )}
 
       {/* 9.5 LOCAL CONTACT INFO */}
       {city.contactInfo && (

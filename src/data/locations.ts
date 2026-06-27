@@ -46,6 +46,9 @@ export type CityData = {
     timings: string;
     coordinates: { lat: number; lng: number };
   };
+  hubTitle?: string;
+  hubDescription?: string;
+  proximityNodes?: { name: string; distance: string; slug?: string }[];
 };
 
 export const services: ServiceType[] = [
@@ -88,6 +91,19 @@ export const cities: Record<string, CityData> = {
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
       coordinates: { lat: 10.0283526, lng: 76.3308332 }
     },
+    hubTitle: "Our Central MG Road Headquarters — Quick Transit to Kochi's Key Sub-markets",
+    hubDescription: "Our premium coworking space is located at Palal Tower, Ravipuram, right on MG Road, offering your team a prestigious CBD address. By basing your business at this central node, you avoid localized gridlocks while remaining minutes away from Kochi's primary commercial areas via the metro and highway networks:",
+    proximityNodes: [
+      { name: "MG Road Metro Station", distance: "5 minutes walk (500m)", slug: "mg-road" },
+      { name: "Kadavanthra Metro & GCDA", distance: "3 minutes drive / 1 stop via Metro", slug: "kadavanthra" },
+      { name: "Panampilly Nagar Walkway", distance: "8 minutes drive", slug: "panampilly-nagar" },
+      { name: "Marine Drive CBD (GCDA Complex)", distance: "10 minutes drive", slug: "marine-drive" },
+      { name: "Vyttila Mobility Hub", distance: "12 minutes drive", slug: "vyttila" },
+      { name: "Palarivattom Junction", distance: "15 minutes drive", slug: "palarivattom" },
+      { name: "Kakkanad (Infopark Phase 1 & 2 / SmartCity)", distance: "20 minutes drive via Expressway", slug: "kakkanad" },
+      { name: "Edappally (Lulu Mall & Transit Hub)", distance: "15 minutes via Metro", slug: "edappally" },
+      { name: "Cochin International Airport", distance: "45 minutes drive", slug: "airport" }
+    ],
     microLocations: [
       {
         id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'IT companies, startups, corporates',
@@ -209,6 +225,17 @@ export const cities: Record<string, CityData> = {
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
       coordinates: { lat: 8.5398295, lng: 76.8778841 }
     },
+    hubTitle: "Central Trivandrum Office Hub — Direct Access to the Technopark Corridor",
+    hubDescription: "Based on the first floor of Relcon Plaza in Pattom, our main Trivandrum coworking hub strikes the perfect balance between city-center convenience and close proximity to Kerala’s largest IT park:",
+    proximityNodes: [
+      { name: "Pattom Junction & LIC Area", distance: "Directly opposite", slug: "pattom" },
+      { name: "Palayam & Secretariat (Statue Area)", distance: "5 minutes drive", slug: "palayam" },
+      { name: "Vazhuthacaud & Kowdiar Palace Area", distance: "8 minutes drive", slug: "kowdiar" },
+      { name: "Technopark Phase 1 (Main Gate)", distance: "15 minutes drive via Highway", slug: "technopark" },
+      { name: "Technopark Phase 2 (Infosys Campus) & Phase 3 (Taurus Downtown)", distance: "18 minutes drive", slug: "technopark-phase-3" },
+      { name: "Kazhakkoottam Junction Corridor", distance: "15 minutes drive", slug: "kazhakkoottam" },
+      { name: "Trivandrum International Airport", distance: "20 minutes drive", slug: "airport" }
+    ],
     microLocations: [
       {
         id: 'technopark-phase-1', name: 'Technopark Phase 1', slug: 'technopark-phase-1', intent: 'IT, government, consulting',
@@ -328,6 +355,15 @@ export const cities: Record<string, CityData> = {
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
       coordinates: { lat: 11.2384725, lng: 75.8354728 }
     },
+    hubTitle: "Our Flagship Calicut Hub — Positioned Perfectly in the Heart of the City",
+    hubDescription: "Our premium shared workspace, The Work Lounge, is located at Neeloth Plaza, East Nadakkave. This highly central location gives startups and freelancers a premium business address inside the city while maintaining easy transit times to Kozhikode’s growing outer business parks:",
+    proximityNodes: [
+      { name: "Wayanad Road (Opposite Malayalam Manorama)", distance: "Immediate access", slug: "wayanad-road" },
+      { name: "Kozhikode Central Railway Station", distance: "8 minutes drive", slug: "railway-station" },
+      { name: "Mavoor Road Commercial Corridor", distance: "5 minutes drive", slug: "mavoor-road" },
+      { name: "Thondayad Bypass & Cyberpark Area", distance: "12 minutes drive", slug: "cyberpark" },
+      { name: "Vellayil Beach & West Hill Corridors", distance: "10 minutes drive", slug: "west-hill" }
+    ],
     microLocations: [
       {
         id: 'cyberpark', name: 'Cyberpark', slug: 'cyberpark', intent: 'IT, SMEs, trading businesses',
@@ -447,6 +483,19 @@ export const cities: Record<string, CityData> = {
       timings: "Mon-Sat: 8:00 AM - 8:00 PM",
       coordinates: { lat: 11.0118749, lng: 76.9751912 }
     },
+    hubTitle: "One Premium Coimbatore Hub — Strategically Connected to Every Major IT & Business Corridor",
+    hubDescription: "While our actual, state-of-the-art coworking facility is located in the rapidly growing business hub of Kalapatti (Vidyanagar 3rd street), our campus is strategically positioned to provide effortless, traffic-free access to Coimbatore’s primary commercial neighborhoods and transit points:",
+    proximityNodes: [
+      { name: "Coimbatore International Airport", distance: "Walkable distance", slug: "airport" },
+      { name: "Tidel Park Coimbatore", distance: "1.5 km (approx. 5 minutes drive)", slug: "tidel-park" },
+      { name: "Avinashi Road Corridor", distance: "10 minutes drive", slug: "avinashi-road" },
+      { name: "Peelamedu & PSG College of Technology", distance: "12 minutes drive", slug: "peelamedu" },
+      { name: "Saravanampatti & CHIL SEZ", distance: "15 minutes drive", slug: "saravanampatti" },
+      { name: "Race Course & Walking Track", distance: "18 minutes drive", slug: "race-course" },
+      { name: "Gandhipuram & Cross Cut Road", distance: "20 minutes drive", slug: "gandhipuram" },
+      { name: "RS Puram & DB Road", distance: "22 minutes drive", slug: "rs-puram" },
+      { name: "Neelambur & L&T Bypass", distance: "10 minutes drive", slug: "neelambur" }
+    ],
     microLocations: [
       {
         id: 'peelamedu', name: 'Peelamedu', slug: 'peelamedu', intent: 'Manufacturing, IT, startups',
