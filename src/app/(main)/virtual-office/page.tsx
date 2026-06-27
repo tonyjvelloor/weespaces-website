@@ -8,7 +8,7 @@ import InteractivePlanSelector from '@/components/ui/InteractivePlanSelector';
 import VoPricingCards from '@/components/ui/VoPricingCards';
 import VoDocumentChecklist from '@/components/ui/VoDocumentChecklist';
 import VoHowItWorks from '@/components/ui/VoHowItWorks';
-import LeadForm from '@/components/ui/LeadForm';
+import LeadForm from '@/components/LeadForm';
 
 export const metadata: Metadata = constructMetadata({
   title: "Virtual Office in Kerala & Tamil Nadu | GST & Business Address | WeeSpaces",

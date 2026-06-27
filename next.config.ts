@@ -1,29 +1,36 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  trailingSlash: true,
+  trailingSlash: false,
   async redirects() {
-    return [
+    const cities = ['kochi', 'trivandrum', 'calicut', 'coimbatore'];
+    const redirectsList = [
       // --- Service redirects ---
       { source: '/services/virtual-office', destination: '/virtual-office', permanent: true },
+      { source: '/pricing', destination: '/contact', permanent: true },
+    ];
 
-      // --- Old location slug redirects ---
-      { source: '/locations/trivandrum', destination: '/coworking-space/trivandrum', permanent: true },
-      { source: '/locations/ernakulam', destination: '/coworking-space/kochi', permanent: true },
-      { source: '/locations/kochi', destination: '/coworking-space/kochi', permanent: true },
-      { source: '/locations/calicut', destination: '/coworking-space/calicut', permanent: true },
-      { source: '/locations/coimbatore', destination: '/coworking-space/coimbatore', permanent: true },
+    // Build programmatic redirects for legacy flat URLs
+    cities.forEach(city => {
+      // Coworking
+      redirectsList.push({ source: `/coworking-space-in-${city}`, destination: `/coworking-space/${city}`, permanent: true });
+      redirectsList.push({ source: `/coworking-space-${city}`, destination: `/coworking-space/${city}`, permanent: true });
+      // Private Office
+      redirectsList.push({ source: `/private-office-space-in-${city}`, destination: `/private-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/private-office-space-${city}`, destination: `/private-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/office-space/${city}`, destination: `/private-office/${city}`, permanent: true });
+      // Managed Office
+      redirectsList.push({ source: `/managed-office-space-in-${city}`, destination: `/managed-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/managed-office-space-${city}`, destination: `/managed-office/${city}`, permanent: true });
+      // Locations
+      redirectsList.push({ source: `/locations/${city === 'kochi' ? 'ernakulam' : city}`, destination: `/coworking-space/${city}`, permanent: true });
+      if (city === 'kochi') {
+        redirectsList.push({ source: `/locations/kochi`, destination: `/coworking-space/kochi`, permanent: true });
+      }
+    });
 
-      // --- Legacy Hardcoded Routes → New Programmatic Structure ---
-      { source: '/coworking-space-in-kochi', destination: '/coworking-space/kochi', permanent: true },
-      { source: '/coworking-space-kochi', destination: '/coworking-space/kochi', permanent: true },
-      { source: '/coworking-space-in-trivandrum', destination: '/coworking-space/trivandrum', permanent: true },
-      { source: '/coworking-space-trivandrum', destination: '/coworking-space/trivandrum', permanent: true },
-      { source: '/coworking-space-in-calicut', destination: '/coworking-space/calicut', permanent: true },
-      { source: '/coworking-space-calicut', destination: '/coworking-space/calicut', permanent: true },
-      { source: '/coworking-space-in-coimbatore', destination: '/coworking-space/coimbatore', permanent: true },
-      { source: '/coworking-space-coimbatore', destination: '/coworking-space/coimbatore', permanent: true },
-
+    return [
+      ...redirectsList,
       // --- Old domain .co.in → .in (rescues 14 authority backlinks) ---
       {
         source: '/:path*',
@@ -37,7 +44,6 @@ const nextConfig: NextConfig = {
         destination: 'https://www.weespaces.in/:path*',
         permanent: true,
       },
-
       // --- HTTP → HTTPS + non-www → www ---
       {
         source: '/:path*',
