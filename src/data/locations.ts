@@ -48,7 +48,16 @@ export type CityData = {
   };
   hubTitle?: string;
   hubDescription?: string;
-  proximityNodes?: { name: string; distance: string; slug?: string }[];
+  proximityGroups?: {
+    title: string;
+    nodes: { name: string; distance: string; slug?: string }[];
+  }[];
+  whoChoosesThis?: {
+    description: string;
+    locations: string[];
+  };
+  geoSummary?: string;
+  proximityFaqs?: { question: string; answer: string }[];
 };
 
 export const services: ServiceType[] = [
@@ -93,16 +102,41 @@ export const cities: Record<string, CityData> = {
     },
     hubTitle: "Our Central MG Road Headquarters — Quick Transit to Kochi's Key Sub-markets",
     hubDescription: "Our premium coworking space is located at Palal Tower, Ravipuram, right on MG Road, offering your team a prestigious CBD address. By basing your business at this central node, you avoid localized gridlocks while remaining minutes away from Kochi's primary commercial areas via the metro and highway networks:",
-    proximityNodes: [
-      { name: "MG Road Metro Station", distance: "5 minutes walk (500m)", slug: "mg-road" },
-      { name: "Kadavanthra Metro & GCDA", distance: "3 minutes drive / 1 stop via Metro", slug: "kadavanthra" },
-      { name: "Panampilly Nagar Walkway", distance: "8 minutes drive", slug: "panampilly-nagar" },
-      { name: "Marine Drive CBD (GCDA Complex)", distance: "10 minutes drive", slug: "marine-drive" },
-      { name: "Vyttila Mobility Hub", distance: "12 minutes drive", slug: "vyttila" },
-      { name: "Palarivattom Junction", distance: "15 minutes drive", slug: "palarivattom" },
-      { name: "Kakkanad (Infopark Phase 1 & 2 / SmartCity)", distance: "20 minutes drive via Expressway", slug: "kakkanad" },
-      { name: "Edappally (Lulu Mall & Transit Hub)", distance: "15 minutes via Metro", slug: "edappally" },
-      { name: "Cochin International Airport", distance: "45 minutes drive", slug: "airport" }
+    proximityGroups: [
+      {
+        title: "Tech & IT Corridors",
+        nodes: [
+          { name: "Kakkanad (Infopark Phase 1 & 2 / SmartCity)", distance: "Approx. 20-25 mins drive", slug: "kakkanad" },
+          { name: "Palarivattom Junction", distance: "Approx. 15 mins drive", slug: "palarivattom" }
+        ]
+      },
+      {
+        title: "CBD & Commercial Centers",
+        nodes: [
+          { name: "MG Road Metro Station", distance: "5 minutes walk", slug: "mg-road" },
+          { name: "Marine Drive CBD", distance: "Approx. 10 mins drive", slug: "marine-drive" },
+          { name: "Panampilly Nagar", distance: "Approx. 8 mins drive", slug: "panampilly-nagar" }
+        ]
+      },
+      {
+        title: "Transit & Logistics Hubs",
+        nodes: [
+          { name: "Kadavanthra Metro & GCDA", distance: "1 Metro stop away", slug: "kadavanthra" },
+          { name: "Vyttila Mobility Hub", distance: "Approx. 12 mins drive", slug: "vyttila" },
+          { name: "Edappally (Lulu Mall)", distance: "Approx. 15 mins via Metro", slug: "edappally" },
+          { name: "Cochin International Airport", distance: "Approx. 45 mins drive", slug: "airport" }
+        ]
+      }
+    ],
+    whoChoosesThis: {
+      description: "Perfect for teams working across Kochi's major commercial hubs:",
+      locations: ["Infopark & SmartCity", "MG Road & Marine Drive", "Panampilly Nagar", "Edappally"]
+    },
+    geoSummary: "WeeSpaces' Kochi workspace is strategically located on MG Road, providing immediate Metro connectivity and quick road access to Kakkanad, Marine Drive, Kadavanthra, Panampilly Nagar, Vyttila, Edappally, and Palarivattom.",
+    proximityFaqs: [
+      { question: "Is WeeSpaces located inside Infopark Kakkanad?", answer: "No, our premium facility is centrally located on MG Road (Ravipuram). This strategic location allows you to bypass severe Kakkanad traffic while remaining just 20-25 minutes away via expressway." },
+      { question: "How far is WeeSpaces from the Kochi Metro?", answer: "We are extremely accessible. The MG Road Metro station is just a 5-minute walk away, providing rapid transit to Edappally, Kadavanthra, and Vyttila Mobility Hub." },
+      { question: "Is this location suitable for companies serving clients in Marine Drive?", answer: "Yes, Marine Drive CBD is only a 10-minute drive away, making it highly convenient for client meetings and legal or financial consulting." }
     ],
     microLocations: [
       {
@@ -227,14 +261,39 @@ export const cities: Record<string, CityData> = {
     },
     hubTitle: "Central Trivandrum Office Hub — Direct Access to the Technopark Corridor",
     hubDescription: "Based on the first floor of Relcon Plaza in Pattom, our main Trivandrum coworking hub strikes the perfect balance between city-center convenience and close proximity to Kerala’s largest IT park:",
-    proximityNodes: [
-      { name: "Pattom Junction & LIC Area", distance: "Directly opposite", slug: "pattom" },
-      { name: "Palayam & Secretariat (Statue Area)", distance: "5 minutes drive", slug: "palayam" },
-      { name: "Vazhuthacaud & Kowdiar Palace Area", distance: "8 minutes drive", slug: "kowdiar" },
-      { name: "Technopark Phase 1 (Main Gate)", distance: "15 minutes drive via Highway", slug: "technopark-phase-1" },
-      { name: "Technopark Phase 2 (Infosys Campus) & Phase 3 (Taurus Downtown)", distance: "18 minutes drive", slug: "technopark-phase-3" },
-      { name: "Kazhakkoottam Junction Corridor", distance: "15 minutes drive", slug: "kazhakkoottam" },
-      { name: "Trivandrum International Airport", distance: "20 minutes drive", slug: "airport" }
+    proximityGroups: [
+      {
+        title: "Technopark IT Corridor",
+        nodes: [
+          { name: "Technopark Phase 1 (Main Gate)", distance: "Approx. 15-20 mins drive", slug: "technopark-phase-1" },
+          { name: "Technopark Phase 2 & 3 (Taurus Downtown)", distance: "Approx. 18-22 mins drive", slug: "technopark-phase-3" },
+          { name: "Kazhakkoottam Junction", distance: "Approx. 15 mins drive", slug: "kazhakkoottam" }
+        ]
+      },
+      {
+        title: "City Center & Commercial",
+        nodes: [
+          { name: "Pattom Junction & LIC Area", distance: "Directly opposite", slug: "pattom" },
+          { name: "Palayam & Secretariat", distance: "Approx. 5-8 mins drive", slug: "palayam" },
+          { name: "Vazhuthacaud & Kowdiar", distance: "Approx. 8-10 mins drive", slug: "kowdiar" }
+        ]
+      },
+      {
+        title: "Transit Hubs",
+        nodes: [
+          { name: "Trivandrum International Airport", distance: "Approx. 20 mins drive" }
+        ]
+      }
+    ],
+    whoChoosesThis: {
+      description: "Perfect for teams working across Trivandrum's core business areas:",
+      locations: ["Technopark Phases 1, 2, 3", "Kazhakkoottam", "Palayam & Secretariat", "Pattom"]
+    },
+    geoSummary: "WeeSpaces' Trivandrum workspace is strategically located in Pattom, offering a prestigious city-center address with fast highway access to Technopark, Kazhakkoottam, Palayam, Vazhuthacaud, and Kowdiar.",
+    proximityFaqs: [
+      { question: "Is WeeSpaces located inside Technopark?", answer: "No, our primary hub is centrally located in Pattom. This allows your team to enjoy city-center convenience while remaining just a 15-20 minute drive from Technopark via the bypass." },
+      { question: "How far is WeeSpaces from the Secretariat?", answer: "Our workspace is highly accessible for government contractors and legal consultants, located just 5-8 minutes away from the Secretariat and Palayam." },
+      { question: "Is this location suitable for companies serving clients in Kowdiar?", answer: "Yes, Kowdiar and Vazhuthacaud are only an 8-10 minute drive away, making it highly convenient for premium consulting firms and agencies." }
     ],
     microLocations: [
       {
@@ -357,12 +416,37 @@ export const cities: Record<string, CityData> = {
     },
     hubTitle: "Our Flagship Calicut Hub — Positioned Perfectly in the Heart of the City",
     hubDescription: "Our premium shared workspace, The Work Lounge, is located at Neeloth Plaza, East Nadakkave. This highly central location gives startups and freelancers a premium business address inside the city while maintaining easy transit times to Kozhikode’s growing outer business parks:",
-    proximityNodes: [
-      { name: "Wayanad Road (Opposite Malayalam Manorama)", distance: "Immediate access" },
-      { name: "Kozhikode Central Railway Station", distance: "8 minutes drive" },
-      { name: "Mavoor Road Commercial Corridor", distance: "5 minutes drive", slug: "mavoor-road" },
-      { name: "Thondayad Bypass & Cyberpark Area", distance: "12 minutes drive", slug: "cyberpark" },
-      { name: "Vellayil Beach & West Hill Corridors", distance: "10 minutes drive", slug: "west-hill" }
+    proximityGroups: [
+      {
+        title: "IT & Bypass Corridors",
+        nodes: [
+          { name: "Thondayad Bypass & Cyberpark Area", distance: "Approx. 12 mins drive", slug: "cyberpark" }
+        ]
+      },
+      {
+        title: "Commercial Centers",
+        nodes: [
+          { name: "Wayanad Road", distance: "Immediate access" },
+          { name: "Mavoor Road Commercial Corridor", distance: "Approx. 5 mins drive", slug: "mavoor-road" },
+          { name: "Vellayil Beach & West Hill", distance: "Approx. 10 mins drive", slug: "west-hill" }
+        ]
+      },
+      {
+        title: "Transit Hubs",
+        nodes: [
+          { name: "Kozhikode Central Railway Station", distance: "Approx. 8 mins drive" }
+        ]
+      }
+    ],
+    whoChoosesThis: {
+      description: "Perfect for teams working across Calicut's major business areas:",
+      locations: ["Cyberpark & Bypass", "Mavoor Road", "Wayanad Road", "West Hill"]
+    },
+    geoSummary: "WeeSpaces' Calicut workspace is strategically located at East Nadakkave, providing an elegant city-center base with smooth access to Cyberpark, Thondayad Bypass, Mavoor Road, and the Railway Station.",
+    proximityFaqs: [
+      { question: "Is WeeSpaces located inside Cyberpark?", answer: "No, our flagship workspace is located centrally at East Nadakkave. This allows you to maintain a premium address inside the city while being just a 12-minute drive from Cyberpark." },
+      { question: "How far is WeeSpaces from Mavoor Road?", answer: "We are extremely close to the city's main commercial artery. Mavoor Road is just a 5-minute drive from our workspace." },
+      { question: "Is this location suitable for companies serving clients in West Hill?", answer: "Absolutely. West Hill and Vellayil are only a 10-minute drive away, making it highly convenient for businesses operating in North Calicut." }
     ],
     microLocations: [
       {
@@ -485,16 +569,42 @@ export const cities: Record<string, CityData> = {
     },
     hubTitle: "One Premium Coimbatore Hub — Strategically Connected to Every Major IT & Business Corridor",
     hubDescription: "While our actual, state-of-the-art coworking facility is located in the rapidly growing business hub of Kalapatti (Vidyanagar 3rd street), our campus is strategically positioned to provide effortless, traffic-free access to Coimbatore’s primary commercial neighborhoods and transit points:",
-    proximityNodes: [
-      { name: "Coimbatore International Airport", distance: "Walkable distance", slug: "airport" },
-      { name: "Tidel Park Coimbatore", distance: "1.5 km (approx. 5 minutes drive)", slug: "tidel-park" },
-      { name: "Avinashi Road Corridor", distance: "10 minutes drive", slug: "avinashi-road" },
-      { name: "Peelamedu & PSG College of Technology", distance: "12 minutes drive", slug: "peelamedu" },
-      { name: "Saravanampatti & CHIL SEZ", distance: "15 minutes drive", slug: "saravanampatti" },
-      { name: "Race Course & Walking Track", distance: "18 minutes drive", slug: "race-course" },
-      { name: "Gandhipuram & Cross Cut Road", distance: "20 minutes drive", slug: "gandhipuram" },
-      { name: "RS Puram & DB Road", distance: "22 minutes drive", slug: "rs-puram" },
-      { name: "Neelambur & L&T Bypass", distance: "10 minutes drive", slug: "neelambur" }
+    proximityGroups: [
+      {
+        title: "IT Corridor",
+        nodes: [
+          { name: "Tidel Park Coimbatore", distance: "Approx. 5 mins drive (1.5 km)", slug: "tidel-park" },
+          { name: "Peelamedu", distance: "Approx. 12 mins drive", slug: "peelamedu" },
+          { name: "Saravanampatti & CHIL SEZ", distance: "Approx. 15 mins drive", slug: "saravanampatti" },
+          { name: "Avinashi Road Corridor", distance: "Approx. 10 mins drive", slug: "avinashi-road" }
+        ]
+      },
+      {
+        title: "Business District",
+        nodes: [
+          { name: "Race Course", distance: "Approx. 18 mins drive", slug: "race-course" },
+          { name: "Gandhipuram", distance: "Approx. 20 mins drive", slug: "gandhipuram" },
+          { name: "RS Puram", distance: "Approx. 22 mins drive", slug: "rs-puram" }
+        ]
+      },
+      {
+        title: "Transit & Logistics",
+        nodes: [
+          { name: "Coimbatore International Airport", distance: "Walkable", slug: "airport" },
+          { name: "Neelambur & L&T Bypass", distance: "Approx. 10 mins drive", slug: "neelambur" }
+        ]
+      }
+    ],
+    whoChoosesThis: {
+      description: "Perfect for teams working across Coimbatore's major business districts:",
+      locations: ["Tidel Park & Peelamedu", "Saravanampatti", "Race Course", "Airport Road"]
+    },
+    geoSummary: "WeeSpaces' Coimbatore workspace is located in Kalapatti, providing convenient access to Tidel Park, Coimbatore International Airport, Peelamedu, Saravanampatti, Avinashi Road, Race Course, Gandhipuram, and RS Puram.",
+    proximityFaqs: [
+      { question: "Is WeeSpaces located inside Tidel Park?", answer: "No, our primary hub is located in Kalapatti. This gives you premium amenities and parking without the congestion of Tidel Park, while remaining just a 5-minute drive away." },
+      { question: "How far is WeeSpaces from Coimbatore International Airport?", answer: "We are extremely close to the airport. In fact, it is practically at a walkable distance from our Kalapatti workspace." },
+      { question: "Is WeeSpaces suitable for companies working near Saravanampatti?", answer: "Yes, we are highly accessible for tech companies, located just an approximate 15-minute drive from the Saravanampatti CHIL SEZ IT corridor." },
+      { question: "How long does it take to reach Race Course from WeeSpaces?", answer: "Race Course and the central business district are approximately an 18-20 minute drive by road, depending on traffic." }
     ],
     microLocations: [
       {

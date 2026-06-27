@@ -404,11 +404,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
       </section>
 
       {/* 9. STRATEGIC PROXIMITY (REPLACES MICRO-LOCATIONS) */}
-      {city.hubTitle && city.hubDescription && city.proximityNodes && (
+      {city.hubTitle && city.hubDescription && city.proximityGroups && (
         <StrategicProximity 
           hubTitle={city.hubTitle} 
           hubDescription={city.hubDescription}
-          proximityNodes={city.proximityNodes}
+          proximityGroups={city.proximityGroups}
+          whoChoosesThis={city.whoChoosesThis}
+          geoSummary={city.geoSummary}
+          proximityFaqs={city.proximityFaqs}
+          mapIframe={city.contactInfo?.mapIframe}
+          cityName={city.name}
           serviceSlug={service.slug}
           citySlug={city.slug}
         />
@@ -483,6 +488,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
                 "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                 "addressCountry": "IN"
               },
+              ...(city.contactInfo?.coordinates ? {
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": city.contactInfo.coordinates.lat,
+                  "longitude": city.contactInfo.coordinates.lng
+                }
+              } : {}),
+              ...(city.contactInfo?.mapIframe ? {
+                "hasMap": city.contactInfo.mapIframe
+              } : {}),
               ...(city.citations && city.citations.length > 0 ? { "sameAs": city.citations } : {})
             },
             {
