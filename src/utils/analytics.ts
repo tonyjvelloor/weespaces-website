@@ -1,6 +1,6 @@
 export const pushToDataLayer = (eventName: string, params?: Record<string, any>) => {
   if (typeof window !== 'undefined') {
-    window.dataLayer = window.dataLayer || [];
+    (window as any).dataLayer = (window as any).dataLayer || [];
     
     // Grab stored UTM parameters
     let storedParams = {};
@@ -11,7 +11,7 @@ export const pushToDataLayer = (eventName: string, params?: Record<string, any>)
       }
     } catch (e) {}
 
-    window.dataLayer.push({
+    (window as any).dataLayer.push({
       event: eventName,
       ...storedParams,
       ...params,
@@ -19,9 +19,4 @@ export const pushToDataLayer = (eventName: string, params?: Record<string, any>)
   }
 };
 
-// Global augmentation for TypeScript
-declare global {
-  interface Window {
-    dataLayer: any[];
-  }
-}
+// Removed global window augmentation to prevent TypeScript conflicts
