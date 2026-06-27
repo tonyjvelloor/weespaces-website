@@ -76,16 +76,16 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
   
   const faqs = [
     {
-      question: `Is parking available at the ${service.name.toLowerCase()} ${isLandmark ? '' : 'in'} ${locationName}?`,
-      answer: microLoc ? `Yes, this location features: ${microLoc.parking}. We ensure ample space for you and your visitors.` : `Yes, we provide dedicated parking facilities for our members near ${locationName}.`
+      question: `Is parking available at the ${service.name.toLowerCase()} near ${locationName}?`,
+      answer: microLoc ? `Yes, our central ${city.name} location features: ${microLoc.parking}. We ensure ample space for you and your visitors.` : `Yes, we provide dedicated parking facilities for our members near ${locationName}.`
     },
     {
       question: `How far is the nearest transit from ${locationName}?`,
       answer: microLoc ? `The workspace is highly accessible. Nearby transit includes: ${microLoc.transit}.` : `It is conveniently located near major transit routes in ${city.name}.`
     },
     {
-      question: `Can I register my company for GST using this ${locationName} address?`,
-      answer: `Absolutely. You can use our premium address in ${locationName}, ${city.name} for official GST and company registration, subject to the chosen plan.`
+      question: `Can I register my company for GST using this address near ${locationName}?`,
+      answer: `Absolutely. You can use our premium ${city.name} address near ${locationName} for official GST and company registration, subject to the chosen plan.`
     },
     {
       question: `What companies are nearby in ${locationName}?`,
@@ -176,7 +176,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
       <section className="py-20 bg-navy-light/10">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4 text-navy">Why businesses in {locationName} choose us</h2>
+            <h2 className="text-3xl font-bold mb-4 text-navy">Why businesses from {locationName} choose us</h2>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
             <ScrollReveal delay={0.1} className="bg-white/70 backdrop-blur-md p-8 rounded-2xl shadow-sm border border-gray-200 text-center hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
@@ -209,7 +209,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-navy mb-2">Inside Our {locationName} Facility</h2>
+              <h2 className="text-3xl font-bold text-navy mb-2">Inside Our {city.name} Facility (Near {locationName})</h2>
               <p className="text-gray-600">Premium design that impresses your clients and inspires your team.</p>
             </div>
           </ScrollReveal>
@@ -238,7 +238,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-navy mb-6">Everything You Need is Included</h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">Focus on growing your business while we take care of the operations at our {locationName} workspace.</p>
+            <p className="text-gray-600 mb-8 leading-relaxed">Focus on growing your business while we take care of the operations at our central {city.name} workspace.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-xl border border-gray-100 font-medium text-navy hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 <CheckCircle className="w-5 h-5 text-accent shrink-0" /> <span className="text-sm">Enterprise Internet</span>
@@ -285,7 +285,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             <p className="text-gray-600 mb-8 leading-relaxed">
               {isLandmark 
                 ? `Positioning your office near ${locationName} gives you an immediate strategic advantage in ${city.name}. Enjoy premium connectivity and access to top talent.`
-                : `Our ${service.name.toLowerCase()} in ${locationName} is custom-built for ${microLoc?.intent || 'modern businesses'}. Join a vibrant ecosystem of growing companies.`
+                : `Our ${service.name.toLowerCase()} near ${locationName} is custom-built for ${microLoc?.intent || 'modern businesses'}. Join a vibrant ecosystem of growing companies.`
               }
             </p>
             
@@ -324,7 +324,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             
             <div className="mt-8 bg-navy p-6 rounded-xl text-white">
                <h3 className="text-xl font-bold mb-2">Need GST Registration?</h3>
-               <p className="text-white/80 text-sm mb-4">You can use our premium {locationName} address to register your company and GST locally.</p>
+               <p className="text-white/80 text-sm mb-4">You can use our premium {city.name} address near {locationName} to register your company and GST locally.</p>
                <Link href={`/virtual-office/${city.slug}`} className="text-accent text-sm font-bold hover:underline">Learn about Virtual Offices →</Link>
             </div>
           </ScrollReveal>
@@ -335,7 +335,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
       <div className="bg-white border-b border-gray-100">
         <SEOFAQ 
           title={`Frequently Asked Questions`}
-          subtitle={`Everything you need to know about our workspaces ${isLandmark ? 'near' : 'in'} ${locationName}.`}
+          subtitle={`Everything you need to know about our workspaces near ${locationName}.`}
           faqs={faqs}
           textColor="text-navy"
         />

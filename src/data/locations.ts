@@ -231,7 +231,7 @@ export const cities: Record<string, CityData> = {
       { name: "Pattom Junction & LIC Area", distance: "Directly opposite", slug: "pattom" },
       { name: "Palayam & Secretariat (Statue Area)", distance: "5 minutes drive", slug: "palayam" },
       { name: "Vazhuthacaud & Kowdiar Palace Area", distance: "8 minutes drive", slug: "kowdiar" },
-      { name: "Technopark Phase 1 (Main Gate)", distance: "15 minutes drive via Highway", slug: "technopark" },
+      { name: "Technopark Phase 1 (Main Gate)", distance: "15 minutes drive via Highway", slug: "technopark-phase-1" },
       { name: "Technopark Phase 2 (Infosys Campus) & Phase 3 (Taurus Downtown)", distance: "18 minutes drive", slug: "technopark-phase-3" },
       { name: "Kazhakkoottam Junction Corridor", distance: "15 minutes drive", slug: "kazhakkoottam" },
       { name: "Trivandrum International Airport", distance: "20 minutes drive", slug: "airport" }
@@ -358,8 +358,8 @@ export const cities: Record<string, CityData> = {
     hubTitle: "Our Flagship Calicut Hub — Positioned Perfectly in the Heart of the City",
     hubDescription: "Our premium shared workspace, The Work Lounge, is located at Neeloth Plaza, East Nadakkave. This highly central location gives startups and freelancers a premium business address inside the city while maintaining easy transit times to Kozhikode’s growing outer business parks:",
     proximityNodes: [
-      { name: "Wayanad Road (Opposite Malayalam Manorama)", distance: "Immediate access", slug: "wayanad-road" },
-      { name: "Kozhikode Central Railway Station", distance: "8 minutes drive", slug: "railway-station" },
+      { name: "Wayanad Road (Opposite Malayalam Manorama)", distance: "Immediate access" },
+      { name: "Kozhikode Central Railway Station", distance: "8 minutes drive" },
       { name: "Mavoor Road Commercial Corridor", distance: "5 minutes drive", slug: "mavoor-road" },
       { name: "Thondayad Bypass & Cyberpark Area", distance: "12 minutes drive", slug: "cyberpark" },
       { name: "Vellayil Beach & West Hill Corridors", distance: "10 minutes drive", slug: "west-hill" }
