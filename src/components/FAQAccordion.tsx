@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { pushToDataLayer } from '@/utils/analytics';
 import Script from 'next/script';
 
 interface FAQ {
@@ -43,7 +44,13 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
           <div key={index} className={`glass rounded-2xl border transition-colors duration-300 ${isOpen ? 'border-accent/40 bg-white/5' : 'border-white/10 hover:border-white/20'}`}>
             <button
               className="w-full flex items-center justify-between p-6 text-left"
-              onClick={() => setOpenIndex(isOpen ? null : index)}
+              onClick={() => {
+                const willOpen = !isOpen;
+                setOpenIndex(willOpen ? index : null);
+                if (willOpen) {
+                  pushToDataLayer('faq_expand', { question: faq.question });
+                }
+              }}
             >
               <span className={`font-bold pr-8 transition-colors ${isOpen ? 'text-accent' : 'text-white'}`}>
                 {faq.question}
