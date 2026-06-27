@@ -94,7 +94,7 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-kochi', 'https://www.justdial.com/Ernakulam/WeeSpaces-Coworking', 'https://www.coworker.com/india/kochi/weespaces'],
     contactInfo: {
       address: "1st Floor, Kakkanad Business Center, Seaport Airport Road, Kakkanad, Kochi, Kerala - 682030",
-      mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15715.420658406567!2d76.3308332!3d10.0283526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c3548abeb05%3A0x67df0a7ed4d1264c!2sKakkanad%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000",
+      mapIframe: "https://maps.google.com/maps?q=Kaloor-Kadavanthra%20Road,%20Kaloor,%20Kochi&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43210",
       email: "kochi@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
@@ -124,7 +124,7 @@ export const cities: Record<string, CityData> = {
           { name: "Kadavanthra Metro & GCDA", distance: "1 Metro stop away", slug: "kadavanthra" },
           { name: "Vyttila Mobility Hub", distance: "Approx. 12 mins drive", slug: "vyttila" },
           { name: "Edappally (Lulu Mall)", distance: "Approx. 15 mins via Metro", slug: "edappally" },
-          { name: "Cochin International Airport", distance: "Approx. 45 mins drive", slug: "airport" }
+          { name: "Cochin International Airport", distance: "Approx. 45 mins drive" }
         ]
       }
     ],
@@ -253,7 +253,7 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-trivandrum', 'https://www.justdial.com/Thiruvananthapuram/WeeSpaces-Coworking', 'https://www.coworker.com/india/trivandrum/weespaces'],
     contactInfo: {
       address: "2nd Floor, Technopark Phase 3, Kazhakkoottam, Trivandrum, Kerala - 695582",
-      mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.8953182650074!2d76.8778841!3d8.5398295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05b8a07f0f0001%3A0x1337b03b1abeb05!2sTechnopark%2C%20Trivandrum!5e0!3m2!1sen!2sin!4v1700000000000",
+      mapIframe: "https://maps.google.com/maps?q=Relcon%20Plaza,%20Pattom,%20Trivandrum&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43211",
       email: "trivandrum@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
@@ -408,7 +408,7 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-calicut', 'https://www.justdial.com/Kozhikode/WeeSpaces-Coworking', 'https://www.coworker.com/india/calicut/weespaces'],
     contactInfo: {
       address: "Cyberpark IT Hub, Near Bypass Road, Kozhikode, Kerala - 673016",
-      mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.3361879777977!2d75.8354728!3d11.2384725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65b0c03473f1d%3A0x6a0f0a7ed4d1264c!2sCyberpark%2C%20Kozhikode!5e0!3m2!1sen!2sin!4v1700000000000",
+      mapIframe: "https://maps.google.com/maps?q=Neeloth%20Plaza,%20East%20Nadakkave,%20Kozhikode&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43212",
       email: "calicut@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
@@ -561,7 +561,7 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-coimbatore', 'https://www.justdial.com/Coimbatore/WeeSpaces-Coworking', 'https://www.coworker.com/india/coimbatore/weespaces'],
     contactInfo: {
       address: "123, XYZ Tower, Avinashi Road, Coimbatore, Tamil Nadu - 641014",
-      mapIframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.326880491873!2d76.9751912!3d11.0118749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859aeb8eb5b05%3A0x6a0f0a7ed4d1264c!2sAvinashi%20Rd%2C%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000000",
+      mapIframe: "https://maps.google.com/maps?q=Vidyanagar%203rd%20street,%20Kalapatti,%20Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43213",
       email: "coimbatore@weespaces.in",
       timings: "Mon-Sat: 8:00 AM - 8:00 PM",
@@ -573,7 +573,7 @@ export const cities: Record<string, CityData> = {
       {
         title: "IT Corridor",
         nodes: [
-          { name: "Tidel Park Coimbatore", distance: "Approx. 5 mins drive (1.5 km)", slug: "tidel-park" },
+          { name: "Tidel Park Coimbatore", distance: "Approx. 5 mins drive (1.5 km)", slug: "tidel-park-area" },
           { name: "Peelamedu", distance: "Approx. 12 mins drive", slug: "peelamedu" },
           { name: "Saravanampatti & CHIL SEZ", distance: "Approx. 15 mins drive", slug: "saravanampatti" },
           { name: "Avinashi Road Corridor", distance: "Approx. 10 mins drive", slug: "avinashi-road" }
@@ -590,8 +590,8 @@ export const cities: Record<string, CityData> = {
       {
         title: "Transit & Logistics",
         nodes: [
-          { name: "Coimbatore International Airport", distance: "Walkable", slug: "airport" },
-          { name: "Neelambur & L&T Bypass", distance: "Approx. 10 mins drive", slug: "neelambur" }
+          { name: "Coimbatore International Airport", distance: "Walkable" },
+          { name: "Neelambur & L&T Bypass", distance: "Approx. 10 mins drive" }
         ]
       }
     ],
