@@ -54,8 +54,8 @@ export default function Footer() {
               <span className="text-xl font-bold">WeeSpaces</span>
             </div>
             <h3 className="text-accent text-xs font-bold tracking-widest uppercase mb-4">Work. Connect. Grow.</h3>
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
-              Premium coworking spaces designed for productivity, collaboration, and business growth across Kerala and Tamil Nadu.
+            <p className="text-white/70 text-sm leading-relaxed mb-6" itemProp="description">
+              WeeSpaces is a premium managed workspace provider operating coworking spaces, private offices, managed offices, and virtual offices across Coimbatore, Kochi, Trivandrum, and Calicut.
             </p>
             <div className="flex items-center gap-4 flex-wrap">
               <a href="https://www.instagram.com/weespaces.coworking/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Instagram">

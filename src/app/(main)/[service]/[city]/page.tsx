@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import { constructMetadata } from '@/utils/metadata';
 import { notFound } from 'next/navigation';
+import FAQAccordion from '@/components/FAQAccordion';
+import LocalContactBlock from '@/components/ui/LocalContactBlock';
+import TrustLayer from '@/components/ui/TrustLayer';
 import { services, cities } from '@/data/locations';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import LeadForm from '@/components/LeadForm';
@@ -426,6 +429,12 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
           </div>
         </div>
       </section>
+
+      {/* 9.5 LOCAL CONTACT INFO */}
+      {city.contactInfo && (
+        <LocalContactBlock contactInfo={city.contactInfo} cityName={city.name} />
+      )}
+      <TrustLayer nearbyCompanies={city.nearbyCompaniesList} />
 
       {/* 10. SEO FAQ */}
       <div className="bg-gray-50 border-b border-gray-100 pb-12">

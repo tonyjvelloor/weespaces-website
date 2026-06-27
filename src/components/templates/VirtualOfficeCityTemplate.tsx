@@ -8,6 +8,8 @@ import SEOFAQ from '@/components/SEOFAQ';
 import VoPricingCards from '@/components/ui/VoPricingCards';
 import VoDocumentChecklist from '@/components/ui/VoDocumentChecklist';
 import VoHowItWorks from '@/components/ui/VoHowItWorks';
+import LocalContactBlock from '@/components/ui/LocalContactBlock';
+import TrustLayer from '@/components/ui/TrustLayer';
 import { virtualOfficeFaqs } from '@/data/pricing';
 
 export default function VirtualOfficeCityTemplate({ city, service }: { city: CityData, service: ServiceType }) {
@@ -109,6 +111,14 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
       {/* 3. DOCUMENTATION TRANSPARENCY */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
+          <VoHowItWorks />
+          
+          {city.contactInfo && (
+            <LocalContactBlock contactInfo={city.contactInfo} cityName={city.name} />
+          )}
+
+          <TrustLayer nearbyCompanies={city.nearbyCompaniesList} />
+
           <VoDocumentChecklist />
         </div>
       </section>
