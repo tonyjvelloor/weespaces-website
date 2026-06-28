@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   if (!service) return notFound();
 
   return constructMetadata({
-    title: `${service.name} in Kerala & Tamil Nadu | WeeSpaces`,
+    title: `${service.name} Space | Secure Team Cabins & Flexible Workspaces`,
     description: `Find premium ${service.name.toLowerCase()} across South India. ${service.shortDesc} Zero setup costs, flexible terms, and premium amenities.`,
     canonicalPath: `/${service.slug}`,
   });

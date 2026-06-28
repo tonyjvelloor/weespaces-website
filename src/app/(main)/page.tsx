@@ -21,7 +21,7 @@ const OfficeCalculator = dynamic(() => import('@/components/OfficeCalculator'), 
 import { constructMetadata } from '@/utils/metadata';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Coworking Spaces & Private Offices in Kerala | WeeSpaces",
+  title: "Coworking Spaces, Private Offices & Virtual Offices | WeeSpaces",
   description: "Move into fully furnished coworking spaces, private offices, meeting rooms & virtual offices across Kochi, Calicut and Trivandrum.",
   canonicalPath: "/"
 });

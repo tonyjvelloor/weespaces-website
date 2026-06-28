@@ -7,6 +7,8 @@ import SEOFAQ from '../SEOFAQ';
 type ProximityNode = {
   name: string;
   distance: string;
+  travelTime?: string;
+  mapsUrl?: string;
   slug?: string;
 };
 
@@ -101,9 +103,21 @@ export default function StrategicProximity({
                           )}
                         </div>
                         
-                        <div className="mt-3 pt-3 border-t border-gray-50 flex items-center gap-2 text-gray-500 text-sm font-medium">
-                          <MapPin className="w-4 h-4" />
-                          {node.distance}
+                        <div className="mt-auto pt-3 border-t border-gray-50 flex flex-col gap-2 text-gray-500 text-sm font-medium">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4 text-accent" />
+                            <span>{node.distance} {node.travelTime ? `• ${node.travelTime}` : ''}</span>
+                          </div>
+                          {node.mapsUrl && (
+                            <a 
+                              href={node.mapsUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-navy hover:text-accent font-bold text-xs flex items-center gap-1 mt-1 transition-colors"
+                            >
+                              View on Google Maps
+                            </a>
+                          )}
                         </div>
                       </div>
                     </ScrollReveal>

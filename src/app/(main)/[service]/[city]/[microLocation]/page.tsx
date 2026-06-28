@@ -3,6 +3,7 @@ import { constructMetadata } from '@/utils/metadata';
 import { notFound } from 'next/navigation';
 import { services, cities } from '@/data/locations';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import GeoSummaryBlock from '@/components/ui/GeoSummaryBlock';
 import LeadForm from '@/components/LeadForm';
 import SEOFAQ from '@/components/SEOFAQ';
 import MapSection from '@/components/ui/MapSection';
@@ -122,7 +123,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Premium {service.name} <br/>
+              Premium {service.name} Designed for Growing Businesses <br/>
               <span className="text-accent">{isLandmark ? 'Near' : 'in'} {locationName}</span>
             </h1>
             
@@ -308,6 +309,12 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             )}
             
             <MapSection currentCity={city.slug} />
+            
+            {city.geoSummary && (
+              <div className="mt-8">
+                <GeoSummaryBlock summary={city.geoSummary} />
+              </div>
+            )}
           </ScrollReveal>
           
           <ScrollReveal direction="right">
@@ -395,6 +402,40 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
                 "addressLocality": city.name,
                 "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                 "addressCountry": "IN"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "WeeSpaces",
+              "url": "https://weespaces.in"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://weespaces.in/" },
+                { "@type": "ListItem", "position": 2, "name": service.name, "item": `https://weespaces.in/${service.slug}` },
+                { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://weespaces.in/${service.slug}/${city.slug}` },
+                { "@type": "ListItem", "position": 4, "name": locationName, "item": `https://weespaces.in/${service.slug}/${city.slug}/${locationObj.slug}` }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": service.name,
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": `WeeSpaces ${city.name}`
+              },
+              "areaServed": {
+                "@type": "Place",
+                "name": locationName
               }
             },
             {

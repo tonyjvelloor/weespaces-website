@@ -50,7 +50,7 @@ export type CityData = {
   hubDescription?: string;
   proximityGroups?: {
     title: string;
-    nodes: { name: string; distance: string; slug?: string }[];
+    nodes: { name: string; distance: string; slug?: string; travelTime?: string; mapsUrl?: string; }[];
   }[];
   whoChoosesThis?: {
     description: string;
@@ -106,25 +106,25 @@ export const cities: Record<string, CityData> = {
       {
         title: "Tech & IT Corridors",
         nodes: [
-          { name: "Kakkanad (Infopark Phase 1 & 2 / SmartCity)", distance: "Approx. 20-25 mins drive", slug: "kakkanad" },
-          { name: "Palarivattom Junction", distance: "Approx. 15 mins drive", slug: "palarivattom" }
+          { name: "Kakkanad (Infopark Phase 1 & 2 / SmartCity)", distance: "12 km", travelTime: "25 min drive", mapsUrl: "#", slug: "kakkanad" },
+          { name: "Palarivattom Junction", distance: "5 km", travelTime: "15 min drive", mapsUrl: "#", slug: "palarivattom" }
         ]
       },
       {
         title: "CBD & Commercial Centers",
         nodes: [
-          { name: "MG Road Metro Station", distance: "5 minutes walk", slug: "mg-road" },
-          { name: "Marine Drive CBD", distance: "Approx. 10 mins drive", slug: "marine-drive" },
-          { name: "Panampilly Nagar", distance: "Approx. 8 mins drive", slug: "panampilly-nagar" }
+          { name: "MG Road Metro Station", distance: "0.5 km", travelTime: "5 min walk", mapsUrl: "#", slug: "mg-road" },
+          { name: "Marine Drive CBD", distance: "2 km", travelTime: "10 min drive", mapsUrl: "#", slug: "marine-drive" },
+          { name: "Panampilly Nagar", distance: "1.5 km", travelTime: "8 min drive", mapsUrl: "#", slug: "panampilly-nagar" }
         ]
       },
       {
         title: "Transit & Logistics Hubs",
         nodes: [
-          { name: "Kadavanthra Metro & GCDA", distance: "1 Metro stop away", slug: "kadavanthra" },
-          { name: "Vyttila Mobility Hub", distance: "Approx. 12 mins drive", slug: "vyttila" },
-          { name: "Edappally (Lulu Mall)", distance: "Approx. 15 mins via Metro", slug: "edappally" },
-          { name: "Cochin International Airport", distance: "Approx. 45 mins drive" }
+          { name: "Kadavanthra Metro & GCDA", distance: "1 km", travelTime: "3 min via Metro", mapsUrl: "#", slug: "kadavanthra" },
+          { name: "Vyttila Mobility Hub", distance: "4 km", travelTime: "12 min drive", mapsUrl: "#", slug: "vyttila" },
+          { name: "Edappally (Lulu Mall)", distance: "7 km", travelTime: "15 min via Metro", mapsUrl: "#", slug: "edappally" },
+          { name: "Cochin International Airport", distance: "30 km", travelTime: "45 min drive", mapsUrl: "#" }
         ]
       }
     ],
@@ -265,23 +265,23 @@ export const cities: Record<string, CityData> = {
       {
         title: "Technopark IT Corridor",
         nodes: [
-          { name: "Technopark Phase 1 (Main Gate)", distance: "Approx. 15-20 mins drive", slug: "technopark-phase-1" },
-          { name: "Technopark Phase 2 & 3 (Taurus Downtown)", distance: "Approx. 18-22 mins drive", slug: "technopark-phase-3" },
-          { name: "Kazhakkoottam Junction", distance: "Approx. 15 mins drive", slug: "kazhakkoottam" }
+          { name: "Technopark Phase 1 (Main Gate)", distance: "8 km", travelTime: "20 min drive", mapsUrl: "#", slug: "technopark-phase-1" },
+          { name: "Technopark Phase 2 & 3 (Taurus Downtown)", distance: "10 km", travelTime: "22 min drive", mapsUrl: "#", slug: "technopark-phase-3" },
+          { name: "Kazhakkoottam Junction", distance: "7 km", travelTime: "15 min drive", mapsUrl: "#", slug: "kazhakkoottam" }
         ]
       },
       {
         title: "City Center & Commercial",
         nodes: [
-          { name: "Pattom Junction & LIC Area", distance: "Directly opposite", slug: "pattom" },
-          { name: "Palayam & Secretariat", distance: "Approx. 5-8 mins drive", slug: "palayam" },
-          { name: "Vazhuthacaud & Kowdiar", distance: "Approx. 8-10 mins drive", slug: "kowdiar" }
+          { name: "Pattom Junction & LIC Area", distance: "0.2 km", travelTime: "2 min walk", mapsUrl: "#", slug: "pattom" },
+          { name: "Palayam & Secretariat", distance: "3 km", travelTime: "8 min drive", mapsUrl: "#", slug: "palayam" },
+          { name: "Vazhuthacaud & Kowdiar", distance: "4 km", travelTime: "10 min drive", mapsUrl: "#", slug: "kowdiar" }
         ]
       },
       {
         title: "Transit Hubs",
         nodes: [
-          { name: "Trivandrum International Airport", distance: "Approx. 20 mins drive" }
+          { name: "Trivandrum International Airport", distance: "7 km", travelTime: "20 min drive", mapsUrl: "#" }
         ]
       }
     ],
@@ -420,21 +420,21 @@ export const cities: Record<string, CityData> = {
       {
         title: "IT & Bypass Corridors",
         nodes: [
-          { name: "Thondayad Bypass & Cyberpark Area", distance: "Approx. 12 mins drive", slug: "cyberpark" }
+          { name: "Thondayad Bypass & Cyberpark Area", distance: "4 km", travelTime: "12 min drive", mapsUrl: "#", slug: "cyberpark" }
         ]
       },
       {
         title: "Commercial Centers",
         nodes: [
-          { name: "Wayanad Road", distance: "Immediate access" },
-          { name: "Mavoor Road Commercial Corridor", distance: "Approx. 5 mins drive", slug: "mavoor-road" },
-          { name: "Vellayil Beach & West Hill", distance: "Approx. 10 mins drive", slug: "west-hill" }
+          { name: "Wayanad Road", distance: "0.1 km", travelTime: "2 min walk", mapsUrl: "#" },
+          { name: "Mavoor Road Commercial Corridor", distance: "1.5 km", travelTime: "5 min drive", mapsUrl: "#", slug: "mavoor-road" },
+          { name: "Vellayil Beach & West Hill", distance: "4 km", travelTime: "10 min drive", mapsUrl: "#", slug: "west-hill" }
         ]
       },
       {
         title: "Transit Hubs",
         nodes: [
-          { name: "Kozhikode Central Railway Station", distance: "Approx. 8 mins drive" }
+          { name: "Kozhikode Central Railway Station", distance: "3 km", travelTime: "8 min drive", mapsUrl: "#" }
         ]
       }
     ],
@@ -573,25 +573,25 @@ export const cities: Record<string, CityData> = {
       {
         title: "IT Corridor",
         nodes: [
-          { name: "Tidel Park Coimbatore", distance: "Approx. 5 mins drive (1.5 km)", slug: "tidel-park-area" },
-          { name: "Peelamedu", distance: "Approx. 12 mins drive", slug: "peelamedu" },
-          { name: "Saravanampatti & CHIL SEZ", distance: "Approx. 15 mins drive", slug: "saravanampatti" },
-          { name: "Avinashi Road Corridor", distance: "Approx. 10 mins drive", slug: "avinashi-road" }
+          { name: "Tidel Park Coimbatore", distance: "1.5 km", travelTime: "5 min drive", mapsUrl: "#", slug: "tidel-park-area" },
+          { name: "Peelamedu", distance: "4.5 km", travelTime: "12 min drive", mapsUrl: "#", slug: "peelamedu" },
+          { name: "Saravanampatti & CHIL SEZ", distance: "8.0 km", travelTime: "15 min drive", mapsUrl: "#", slug: "saravanampatti" },
+          { name: "Avinashi Road Corridor", distance: "3.0 km", travelTime: "10 min drive", mapsUrl: "#", slug: "avinashi-road" }
         ]
       },
       {
         title: "Business District",
         nodes: [
-          { name: "Race Course", distance: "Approx. 18 mins drive", slug: "race-course" },
-          { name: "Gandhipuram", distance: "Approx. 20 mins drive", slug: "gandhipuram" },
-          { name: "RS Puram", distance: "Approx. 22 mins drive", slug: "rs-puram" }
+          { name: "Race Course", distance: "10 km", travelTime: "18 min drive", mapsUrl: "#", slug: "race-course" },
+          { name: "Gandhipuram", distance: "12 km", travelTime: "20 min drive", mapsUrl: "#", slug: "gandhipuram" },
+          { name: "RS Puram", distance: "14 km", travelTime: "22 min drive", mapsUrl: "#", slug: "rs-puram" }
         ]
       },
       {
         title: "Transit & Logistics",
         nodes: [
-          { name: "Coimbatore International Airport", distance: "Walkable" },
-          { name: "Neelambur & L&T Bypass", distance: "Approx. 10 mins drive" }
+          { name: "Coimbatore International Airport", distance: "0.5 km", travelTime: "10 min walk", mapsUrl: "#" },
+          { name: "Neelambur & L&T Bypass", distance: "5.0 km", travelTime: "10 min drive", mapsUrl: "#" }
         ]
       }
     ],

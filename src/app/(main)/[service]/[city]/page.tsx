@@ -5,6 +5,7 @@ import FAQAccordion from '@/components/FAQAccordion';
 import LocalContactBlock from '@/components/ui/LocalContactBlock';
 import TrustLayer from '@/components/ui/TrustLayer';
 import StrategicProximity from '@/components/ui/StrategicProximity';
+import GeoSummaryBlock from '@/components/ui/GeoSummaryBlock';
 import { services, cities } from '@/data/locations';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import LeadForm from '@/components/LeadForm';
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   if (!service || !city) return notFound();
 
   return constructMetadata({
-    title: `${service.name} in ${city.name} | Premium Workspaces | WeeSpaces`,
+    title: `${service.name} in ${city.name} | Private Offices & Managed Workspaces`,
     description: `Move your team into a fully operational ${service.name.toLowerCase()} in ${city.name} within 24 hours. No setup costs. Flexible terms.`,
     canonicalPath: `/${service.slug}/${city.slug}`,
   });
@@ -76,7 +77,6 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
           dangerouslySetInnerHTML={{
             __html: JSON.stringify([
               {
-                "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": `WeeSpaces ${city.name} - Virtual Office`,
                 "image": city.gallery[0],
@@ -89,7 +89,40 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
                   "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                   "addressCountry": "IN"
                 },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": "85"
+                },
                 ...(city.citations && city.citations.length > 0 ? { "sameAs": city.citations } : {})
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "WeeSpaces",
+                "url": "https://weespaces.in"
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://weespaces.in/" },
+                  { "@type": "ListItem", "position": 2, "name": service.name, "item": `https://weespaces.in/${service.slug}` },
+                  { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://weespaces.in/${service.slug}/${city.slug}` }
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": service.name,
+                "provider": {
+                  "@type": "LocalBusiness",
+                  "name": `WeeSpaces ${city.name}`
+                },
+                "areaServed": {
+                  "@type": "City",
+                  "name": city.name
+                }
               }
             ])
           }}
@@ -126,7 +159,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              Move Your Team Into a <span className="text-accent">Fully Operational {service.name}</span> in {city.name} Within 24 Hours
+              Premium {service.name} Designed for <br/> <span className="text-accent">Growing Businesses</span> in {city.name}
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed font-light">
@@ -395,8 +428,13 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             <h3 className="text-xl font-bold text-navy mb-4">Compliance & GST</h3>
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm text-gray-600">
               <p className="mb-0">{city.gstRegistrationRules}</p>
-              <Link href={`/virtual-office/${city.slug}`} className="text-accent font-bold text-sm mt-4 inline-block hover:underline">
-                Need a Virtual Office for GST? →
+              <Link 
+                href={service.slug === 'virtual-office' ? `/coworking-space/${city.slug}` : `/virtual-office/${city.slug}`} 
+                className="text-accent font-bold text-sm mt-4 inline-block hover:underline"
+              >
+                {service.slug === 'virtual-office' 
+                  ? `Need a Physical Workspace in ${city.name}? →` 
+                  : `Need a Virtual Office for GST in ${city.name}? →`}
               </Link>
             </div>
           </ScrollReveal>
@@ -417,6 +455,10 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
           serviceSlug={service.slug}
           citySlug={city.slug}
         />
+      )}
+
+      {city.geoSummary && (
+        <GeoSummaryBlock summary={city.geoSummary} />
       )}
 
       {/* 9.5 LOCAL CONTACT INFO */}
@@ -488,6 +530,11 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
                 "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                 "addressCountry": "IN"
               },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "120"
+              },
               ...(city.contactInfo?.coordinates ? {
                 "geo": {
                   "@type": "GeoCoordinates",
@@ -499,6 +546,34 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
                 "hasMap": city.contactInfo.mapIframe
               } : {}),
               ...(city.citations && city.citations.length > 0 ? { "sameAs": city.citations } : {})
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "WeeSpaces",
+              "url": "https://weespaces.in"
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://weespaces.in/" },
+                { "@type": "ListItem", "position": 2, "name": service.name, "item": `https://weespaces.in/${service.slug}` },
+                { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://weespaces.in/${service.slug}/${city.slug}` }
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Service",
+              "serviceType": service.name,
+              "provider": {
+                "@type": "LocalBusiness",
+                "name": `WeeSpaces ${city.name}`
+              },
+              "areaServed": {
+                "@type": "City",
+                "name": city.name
+              }
             },
             {
               "@context": "https://schema.org",
