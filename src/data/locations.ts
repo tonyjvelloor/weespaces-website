@@ -93,12 +93,12 @@ export const cities: Record<string, CityData> = {
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-kochi', 'https://www.justdial.com/Ernakulam/WeeSpaces-Coworking', 'https://www.coworker.com/india/kochi/weespaces'],
     contactInfo: {
-      address: "1st Floor, Kakkanad Business Center, Seaport Airport Road, Kakkanad, Kochi, Kerala - 682030",
-      mapIframe: "https://maps.google.com/maps?q=Kaloor-Kadavanthra%20Road,%20Kaloor,%20Kochi&t=&z=15&ie=UTF8&iwloc=&output=embed",
-      phone: "+91 98765 43210",
+      address: "4th Floor, Palal Tower, MG Road, Ravipuram, Kochi 682016",
+      mapIframe: "https://maps.google.com/maps?q=Palal%20Tower,%20MG%20Road,%20Kochi&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      phone: "+91 92071 89111",
       email: "kochi@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
-      coordinates: { lat: 10.0283526, lng: 76.3308332 }
+      coordinates: { lat: 9.9622, lng: 76.2442 }
     },
     hubTitle: "Our Central MG Road Headquarters — Quick Transit to Kochi's Key Sub-markets",
     hubDescription: "Our premium coworking space is located at Palal Tower, Ravipuram, right on MG Road, offering your team a prestigious CBD address. By basing your business at this central node, you avoid localized gridlocks while remaining minutes away from Kochi's primary commercial areas via the metro and highway networks:",

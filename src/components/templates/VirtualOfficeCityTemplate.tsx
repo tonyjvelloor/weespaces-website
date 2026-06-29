@@ -117,18 +117,13 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
             <LocalContactBlock contactInfo={city.contactInfo} cityName={city.name} />
           )}
 
-          <TrustLayer nearbyCompanies={city.nearbyCompaniesList} />
+          {/* Removed fake logos TrustLayer here */}
 
           <VoDocumentChecklist />
         </div>
       </section>
 
-      {/* 4. HOW IT WORKS */}
-      <section className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <VoHowItWorks />
-        </div>
-      </section>
+      {/* 4. Removed Duplicate How It Works */}
 
       {/* 5. PRICING */}
       <section className="py-24 bg-navy text-white relative overflow-hidden" id="pricing">
