@@ -14,25 +14,24 @@ const components = {
 export function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
-    category: post.category.toLowerCase().replace(/ /g, '-'),
     slug: post.slug,
   }));
 }
 
 import { constructMetadata } from '@/utils/metadata';
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string, slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const post = await getPostBySlug(resolvedParams.slug);
   
-  if (!post || post.category.toLowerCase().replace(/ /g, '-') !== resolvedParams.category) {
+  if (!post) {
     return { title: 'Post Not Found | WeeSpaces' };
   }
 
   return constructMetadata({
     title: `${post.title} | WeeSpaces Blog`,
     description: post.excerpt,
-    canonicalPath: `/blog/${resolvedParams.category}/${resolvedParams.slug}`,
+    canonicalPath: `/blog/${resolvedParams.slug}`,
     ogType: 'article',
   });
 }
@@ -45,11 +44,11 @@ function toISODate(dateStr: string): string {
   return d.toISOString().split('T')[0];
 }
 
-export default async function BlogPostPage({ params }: { params: Promise<{ category: string, slug: string }> }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const post = await getPostBySlug(resolvedParams.slug);
-
-  if (!post || post.category.toLowerCase().replace(/ /g, '-') !== resolvedParams.category) {
+  
+  if (!post) {
     return <div className="pt-32 text-center text-white">Article not found.</div>;
   }
 

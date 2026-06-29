@@ -7,7 +7,6 @@ const nextConfig: NextConfig = {
     const redirectsList = [
       // --- Service redirects ---
       { source: '/services/virtual-office', destination: '/virtual-office', permanent: true },
-      { source: '/pricing', destination: '/contact', permanent: true },
     ];
 
     // Build programmatic redirects for legacy flat URLs
@@ -18,7 +17,6 @@ const nextConfig: NextConfig = {
       // Private Office
       redirectsList.push({ source: `/private-office-space-in-${city}`, destination: `/private-office/${city}`, permanent: true });
       redirectsList.push({ source: `/private-office-space-${city}`, destination: `/private-office/${city}`, permanent: true });
-      redirectsList.push({ source: `/office-space/${city}`, destination: `/private-office/${city}`, permanent: true });
       // Managed Office
       redirectsList.push({ source: `/managed-office-space-in-${city}`, destination: `/managed-office/${city}`, permanent: true });
       redirectsList.push({ source: `/managed-office-space-${city}`, destination: `/managed-office/${city}`, permanent: true });

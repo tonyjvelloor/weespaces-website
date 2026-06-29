@@ -71,7 +71,7 @@ export default function LocationsPage() {
         <section className="py-12 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {branches.map((loc, idx) => {
-              const seoUrl = `/coworking-space-${loc.id === 'ernakulam' ? 'kochi' : loc.id}`;
+              const seoUrl = `/coworking-space/${loc.id === 'ernakulam' ? 'kochi' : loc.id}`;
               
               // Use strict mapping to avoid deceptive or arbitrary map points
               const normalizedCity = loc.id === 'ernakulam' ? 'kochi' : loc.id;

@@ -26,10 +26,10 @@ export default function BlogIndex() {
             const categorySlug = post.category.toLowerCase().replace(/ /g, '-');
             return (
               <ScrollReveal key={post.slug} delay={index * 0.1}>
-                <Link href={`/blog/${categorySlug}/${post.slug}`} className="block h-full group">
+                <Link href={`/blog/${post.slug}`} className="block h-full group">
                   <MouseGlowCard className="glass p-8 rounded-3xl h-full flex flex-col border border-white/10 hover:border-accent transition-all">
                     <div className="flex justify-between items-center mb-4 text-xs font-bold uppercase tracking-wider text-white/50">
-                      <Link href={`/blog/${categorySlug}`} className="bg-navy-light px-3 py-1 rounded-full text-accent hover:bg-accent hover:text-navy transition-colors z-10 relative">
+                      <Link href={`/blog/category/${categorySlug}`} className="bg-navy-light px-3 py-1 rounded-full text-accent hover:bg-accent hover:text-navy transition-colors z-10 relative">
                         {post.category}
                       </Link>
                     <span>{post.readTime}</span>
