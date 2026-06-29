@@ -378,7 +378,7 @@ export const cities: Record<string, CityData> = {
       }
     ],
     landmarks: [
-      { name: 'Technopark', slug: 'near-technopark' },
+      { name: 'Technopark', slug: 'technopark' },
       { name: 'Infosys', slug: 'near-infosys' },
       { name: 'UST', slug: 'near-ust' },
       { name: 'Kazhakkoottam', slug: 'near-kazhakkoottam' }

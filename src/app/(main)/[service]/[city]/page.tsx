@@ -477,6 +477,26 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
         />
       </div>
 
+      {/* 10.5 AREAS WE SERVE (MICRO-LOCATIONS INTERNAL LINKING) */}
+      {(city.microLocations?.length > 0 || city.landmarks?.length > 0) && (
+        <section className="py-12 bg-white border-b border-gray-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <h3 className="text-2xl font-bold text-navy mb-6">Areas We Serve in {city.name}</h3>
+            <div className="flex flex-wrap gap-3">
+              {[...(city.microLocations || []), ...(city.landmarks || [])].map((loc, idx) => (
+                <Link 
+                  key={idx} 
+                  href={`/${service.slug}/${city.slug}/${loc.slug}`}
+                  className="px-4 py-2 bg-gray-50 border border-gray-200 hover:bg-accent/5 rounded-full text-sm font-medium text-gray-700 hover:text-navy hover:border-accent transition-colors"
+                >
+                  {service.name} in {loc.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* 11. RELATED INSIGHTS & INTERNAL LINKING CLUSTER */}
       <section className="py-20 bg-navy text-white">
         <div className="max-w-7xl mx-auto px-6">
