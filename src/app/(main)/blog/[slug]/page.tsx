@@ -54,19 +54,46 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: toISODate(post.date),
-    author: {
-      '@type': 'Organization',
-      name: 'WeeSpaces',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'WeeSpaces',
-      url: 'https://weespaces.in',
-    },
+    '@graph': [
+      {
+        '@type': 'Article',
+        headline: post.title,
+        description: post.excerpt,
+        datePublished: toISODate(post.date),
+        author: {
+          '@type': 'Organization',
+          name: 'WeeSpaces',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'WeeSpaces',
+          url: 'https://weespaces.in',
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://weespaces.in/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://weespaces.in/blog',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.title,
+            item: `https://weespaces.in/blog/${post.slug}`,
+          },
+        ],
+      },
+    ],
   };
 
   return (

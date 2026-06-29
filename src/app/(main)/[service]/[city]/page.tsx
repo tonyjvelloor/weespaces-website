@@ -85,6 +85,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
                 "priceRange": "₹",
                 "address": {
                   "@type": "PostalAddress",
+                  ...(city.contactInfo?.address ? { "streetAddress": city.contactInfo.address } : {}),
                   "addressLocality": city.name,
                   "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                   "addressCountry": "IN"
@@ -505,11 +506,10 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             <div className="space-y-4">
               <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Other Services in {city.name}</h4>
               <ul className="space-y-3">
-                <li><Link href={`/coworking-space/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Coworking Space in {city.name}</Link></li>
-                <li><Link href={`/managed-office/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Managed Office in {city.name}</Link></li>
-                <li><Link href={`/private-office/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Private Office in {city.name}</Link></li>
-                <li><Link href={`/virtual-office/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Virtual Office in {city.name}</Link></li>
-                <li><Link href={`/meeting-room/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Meeting Rooms in {city.name}</Link></li>
+                {service.slug !== 'coworking-space' && <li><Link href={`/coworking-space/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Coworking Space in {city.name}</Link></li>}
+                {service.slug !== 'managed-office' && <li><Link href={`/managed-office/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Managed Office in {city.name}</Link></li>}
+                {service.slug !== 'private-office' && <li><Link href={`/private-office/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Private Office in {city.name}</Link></li>}
+                {service.slug !== 'virtual-office' && <li><Link href={`/virtual-office/${city.slug}`} className="text-white/70 hover:text-white transition-colors">Virtual Office in {city.name}</Link></li>}
               </ul>
             </div>
             <div className="space-y-4">
@@ -546,6 +546,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
               "priceRange": "₹₹",
               "address": {
                 "@type": "PostalAddress",
+                ...(city.contactInfo?.address ? { "streetAddress": city.contactInfo.address } : {}),
                 "addressLocality": city.name,
                 "addressRegion": city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala',
                 "addressCountry": "IN"

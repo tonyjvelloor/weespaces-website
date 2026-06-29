@@ -24,7 +24,6 @@ export const metadata: Metadata = {
     description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
     canonicalPath: "/",
   }),
-  keywords: ["Coworking space Kerala", "Office space Coimbatore", "Managed offices Trivandrum", "Premium coworking Ernakulam", "Private cabins Calicut"],
   verification: {
     google: "XN0i_JTKrBVCjj37Hp_zuSl38bfGQR2qhsuUEzWdee4",
     other: {

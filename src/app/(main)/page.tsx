@@ -20,11 +20,16 @@ const OfficeCalculator = dynamic(() => import('@/components/OfficeCalculator'), 
 
 import { constructMetadata } from '@/utils/metadata';
 
-export const metadata: Metadata = constructMetadata({
-  title: "Coworking Spaces, Private Offices & Virtual Offices | WeeSpaces",
-  description: "Move into fully furnished coworking spaces, private offices, meeting rooms & virtual offices across Kochi, Calicut and Trivandrum.",
-  canonicalPath: "/"
-});
+export const metadata: Metadata = {
+  ...constructMetadata({
+    title: "Coworking Spaces, Private Offices & Virtual Offices | WeeSpaces",
+    description: "Move into fully furnished coworking spaces, private offices, meeting rooms & virtual offices across Kochi, Calicut and Trivandrum.",
+    canonicalPath: "/"
+  }),
+  alternates: {
+    canonical: "https://www.weespaces.in/"
+  }
+};
 
 export default function Home() {
 
@@ -54,6 +59,13 @@ export default function Home() {
           "@type": "SearchAction",
           "target": "https://www.weespaces.in/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
+        },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "xpath": [
+            "/html/head/title",
+            "/html/head/meta[@name='description']/@content"
+          ]
         }
       },
       {
@@ -102,6 +114,39 @@ export default function Home() {
             "text": faq.answer
           }
         }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.weespaces.in/"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "How to Book a Premium Workspace at WeeSpaces",
+        "description": "A simple step-by-step guide to finding, customizing, and moving into your new fully-managed office space.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Book a Tour",
+            "text": "Visit our website and schedule a personalized tour at any of our prime locations."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Select Your Plan",
+            "text": "Choose from flexible Hot Desks, Dedicated Desks, Private Offices, or Custom Managed Offices."
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Move In",
+            "text": "Sign the agreement online and move into your fully furnished, plug-and-play workspace immediately."
+          }
+        ]
       }
     ]
   };
@@ -186,32 +231,42 @@ export default function Home() {
               <p className="text-xl text-white/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
           </ScrollReveal>
 
-          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-navy rounded-full border border-white/20 flex items-center justify-center font-bold text-white/50 z-10 hidden md:flex">VS</div>
-              
-              <div className="glass rounded-2xl p-8 lg:p-10 border border-red-500/20 bg-red-500/5 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full blur-[50px] -mr-10 -mt-10"></div>
-                  <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">Traditional Office</h3>
-                  <ul className="space-y-5 mb-8 relative z-10">
-                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> ₹5L+ interior investment</li>
-                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Long rental agreements</li>
-                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Furniture purchase</li>
-                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Internet & utilities setup</li>
-                      <li className="flex items-start gap-3 text-white/80"><span className="text-red-400 mt-1">❌</span> Daily admin management</li>
-                  </ul>
-              </div>
-
-              <div className="glass rounded-2xl p-8 lg:p-10 border border-accent/40 bg-accent/5 relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-accent/20 rounded-full blur-[60px] -mr-10 -mt-10"></div>
-                  <h3 className="text-2xl font-bold text-white mb-8 border-b border-white/10 pb-4">WeeSpaces</h3>
-                  <ul className="space-y-5 mb-10 relative z-10">
-                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Walk in tomorrow</li>
-                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Fully furnished & designed</li>
-                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Flexible scaling (up or down)</li>
-                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> Zero internet setup required</li>
-                      <li className="flex items-start gap-3 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" /> One simple monthly cost</li>
-                  </ul>
-              </div>
+          <div className="max-w-4xl mx-auto relative overflow-x-auto">
+              <table className="w-full text-left border-collapse glass rounded-2xl overflow-hidden border border-white/10 min-w-[600px]">
+                  <thead>
+                      <tr>
+                          <th className="p-6 md:p-8 text-xl md:text-2xl font-bold text-white border-b border-white/10 bg-red-500/5 w-1/2">
+                              Traditional Office
+                          </th>
+                          <th className="p-6 md:p-8 text-xl md:text-2xl font-bold text-white border-b border-white/10 border-l border-white/10 bg-accent/5 w-1/2 relative overflow-hidden">
+                              <div className="absolute top-0 right-0 w-40 h-40 bg-accent/20 rounded-full blur-[60px] -mr-10 -mt-10"></div>
+                              <span className="relative z-10">WeeSpaces</span>
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody className="text-white/80">
+                      <tr>
+                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> ₹5L+ interior investment</td>
+                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Walk in tomorrow</td>
+                      </tr>
+                      <tr>
+                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Long rental agreements</td>
+                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Fully furnished & designed</td>
+                      </tr>
+                      <tr>
+                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Furniture purchase</td>
+                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Flexible scaling (up or down)</td>
+                      </tr>
+                      <tr>
+                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Internet & utilities setup</td>
+                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Zero internet setup required</td>
+                      </tr>
+                      <tr>
+                          <td className="p-5 md:p-6 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Daily admin management</td>
+                          <td className="p-5 md:p-6 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> One simple monthly cost</td>
+                      </tr>
+                  </tbody>
+              </table>
           </div>
           
           <div className="text-center mt-12">
@@ -347,11 +402,6 @@ export default function Home() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
                   <div className="relative aspect-video rounded-2xl overflow-hidden glass border border-white/10 flex items-center justify-center bg-navy-dark">
                       <Image src="/images/branches/kochi/reception.jpg" alt="WeeSpaces Video" fill className="object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
-                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                          <div className="w-20 h-20 bg-accent/90 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(242,156,31,0.5)] backdrop-blur-sm group-hover:scale-110 transition-transform">
-                              <svg className="w-8 h-8 text-navy ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
-                          </div>
-                      </div>
                   </div>
               </ScrollReveal>
           </div>
@@ -366,19 +416,19 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
               {[
                   {
-                      problem: "Traditional office required ₹5L deposit.",
-                      result: "Startup scaled from 4 people to 22 without changing offices.",
-                      initial: "S", name: "Siddharth Menon", role: "Founder, TechFlow Solutions"
+                      problem: "Traditional office required huge deposits and long lock-ins.",
+                      result: "Scaled the team seamlessly without changing offices.",
+                      initial: "T", name: "Tech Founder", role: "Software Startup, Kochi"
                   },
                   {
-                      problem: "Working from noisy cafes killed productivity.",
-                      result: "Launched two new products faster after moving into a dedicated team office.",
-                      initial: "P", name: "Priya Nair", role: "Regional Manager, Elevate Media"
+                      problem: "Working from noisy cafes killed team productivity.",
+                      result: "Launched new products faster after moving into a dedicated office.",
+                      initial: "M", name: "Marketing Director", role: "Creative Agency, Calicut"
                   },
                   {
                       problem: "Losing clients due to unprofessional meeting spots.",
-                      result: "Closed 3 enterprise deals using the premium boardroom in Ernakulam.",
-                      initial: "K", name: "Karthik Venkat", role: "Director of Operations, Nexus Corp"
+                      result: "Closed 3 enterprise deals using the premium boardroom.",
+                      initial: "O", name: "Operations Head", role: "Logistics Firm, Trivandrum"
                   }
               ].map((t, i) => (
                   <MouseGlowCard key={i} className="glass p-8 rounded-xl border border-white/10 relative h-full flex flex-col justify-between group hover:border-accent/30 transition-all">
@@ -416,19 +466,7 @@ export default function Home() {
           </div>
       </section>
 
-      {/* Trust Logos Section */}
-      <section className="py-16 border-t border-white/10 bg-navy-light/10">
-          <div className="max-w-7xl mx-auto px-6">
-              <p className="text-center text-sm font-bold tracking-wider text-white/40 uppercase mb-10">Trusted by hundreds of innovative teams and enterprises</p>
-              <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-50 hover:opacity-100 transition-opacity duration-500">
-                  <div className="text-2xl font-bold font-serif text-white">Acme Corp</div>
-                  <div className="text-2xl font-bold tracking-tighter text-white">GLOBAL<span className="text-accent">TECH</span></div>
-                  <div className="text-2xl font-bold italic text-white">Stark Industries</div>
-                  <div className="text-2xl font-black uppercase text-white">Wayne Ent.</div>
-                  <div className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Nexus Corp</div>
-              </div>
-          </div>
-      </section>
+      {/* Trust Logos Section - Temporarily Hidden until real client logos are secured */}
 
       {/* Pricing Preview Section */}
       <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-dark">

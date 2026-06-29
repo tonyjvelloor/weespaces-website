@@ -86,7 +86,7 @@ export const cities: Record<string, CityData> = {
       outcome: 'Moved from a 600 sq ft leased office into WeeSpaces and expanded from 6 to 18 employees seamlessly.',
       metrics: ['Saved ₹12 lakh in setup costs', 'Zero maintenance overhead', 'Expanded team 3x']
     },
-    nearbyCompaniesList: ['TCS', 'Cognizant', 'Wipro', 'KPMG', 'UST Global', 'Ernst & Young'],
+    nearbyCompaniesList: ['Leading IT Firms', 'Global Consultancies', 'Fast-growing Startups', 'Logistics Companies', 'Healthcare Tech', 'Digital Agencies'],
     localGuideExpanded: [
       { title: 'Why Kakkanad is Kochi\'s Next Business Hub', content: 'Kakkanad is witnessing explosive growth driven by Phase 2 of Infopark and SmartCity. With the upcoming Water Metro extensions and Phase 2 of the Kochi Metro, connectivity will be unmatched.' },
       { title: 'Talent Availability', content: 'Proximity to institutions like CUSAT and Model Engineering College ensures a steady pipeline of top-tier engineering and management talent.' }

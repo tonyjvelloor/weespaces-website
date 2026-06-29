@@ -33,8 +33,8 @@ export default function SEOFAQ({ faqs, title = "Frequently Asked Questions", sub
         {faqs.map((faq, idx) => (
           <ScrollReveal key={idx} delay={idx * 0.1}>
             <details className={`glass rounded-2xl overflow-hidden border ${textColor === 'text-navy' ? 'border-gray-200 hover:border-gray-300' : 'border-white/10 hover:border-white/30'} transition-all group`}>
-              <summary className={`w-full px-6 py-5 text-left flex items-center justify-between font-bold text-lg cursor-pointer list-none ${textColor}`}>
-                {faq.question}
+              <summary className={`w-full px-6 py-5 text-left flex items-center justify-between cursor-pointer list-none ${textColor}`}>
+                <h3 className="font-bold text-lg m-0">{faq.question}</h3>
                 <ChevronRight className="w-5 h-5 text-gray-400 group-open:rotate-90 group-open:text-accent transition-transform duration-300 shrink-0 ml-4" />
               </summary>
               <div className="px-6 pb-5">

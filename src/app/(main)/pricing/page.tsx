@@ -13,7 +13,7 @@ import LeadForm from '@/components/LeadForm';
 const branches = [
   { id: 'all', name: 'Compare All', isNew: false },
   { id: 'trivandrum', name: 'Trivandrum', isNew: false },
-  { id: 'ernakulam', name: 'Ernakulam', isNew: false },
+  { id: 'ernakulam', name: 'Kochi', isNew: false },
   { id: 'calicut', name: 'Calicut', isNew: false },
   { id: 'coimbatore', name: 'Coimbatore', isNew: true },
 ];
@@ -79,7 +79,7 @@ export default function PricingPage() {
                   <tr className="border-b border-white/10">
                     <th scope="col" className="py-4 px-4 font-bold text-lg">Workspace</th>
                     <th scope="col" className="py-4 px-4 font-bold text-accent">Trivandrum</th>
-                    <th scope="col" className="py-4 px-4 font-bold text-accent">Ernakulam</th>
+                    <th scope="col" className="py-4 px-4 font-bold text-accent">Kochi</th>
                     <th scope="col" className="py-4 px-4 font-bold text-accent">Calicut</th>
                     <th scope="col" className="py-4 px-4 font-bold text-accent">Coimbatore</th>
                   </tr>
