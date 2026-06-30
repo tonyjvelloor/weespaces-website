@@ -3,13 +3,13 @@ import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import Image from 'next/image';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
+import { constructMetadata } from '@/utils/metadata';
+
+export const metadata: Metadata = constructMetadata({
   title: "About WeeSpaces | Premium Coworking in Kerala & Tamil Nadu",
   description: "Learn about WeeSpaces, the leading coworking and managed office provider in Trivandrum, Kochi, Calicut & Coimbatore.",
-  alternates: {
-    canonical: "https://www.weespaces.in/about",
-  },
-};
+  canonicalPath: "/about",
+});
 
 export default function AboutPage() {
   const aboutSchema = {

@@ -26,6 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
     title: `${service.name} in ${city.name} | ${service.slug === 'virtual-office' ? 'Business Address for GST' : 'Private Offices & Managed Workspaces'}`,
     description: `Move your team into a fully operational ${service.name.toLowerCase()} in ${city.name} within 24 hours. No setup costs. Flexible terms.`,
     canonicalPath: `/${service.slug}/${city.slug}`,
+    image: city.gallery[0],
   });
 }
 

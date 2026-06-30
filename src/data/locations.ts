@@ -141,7 +141,7 @@ export const cities: Record<string, CityData> = {
     microLocations: [
       {
         id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'IT companies, startups, corporates',
-        nearbyCompanies: ['TCS', 'Cognizant', 'Wipro', 'KPMG'],
+        nearbyCompanies: ['Leading IT Firms', 'Global Consultancies', 'SaaS Startups', 'Design Agencies'],
         landmarks: ['Infopark', 'SmartCity', 'CUSAT'],
         transit: 'Water Metro, Kakkanad Bus Stand, 5 mins to upcoming Metro',
         parking: 'Dedicated ample covered parking',
@@ -673,7 +673,7 @@ export const cities: Record<string, CityData> = {
       },
       {
         id: 'tidel-park-area', name: 'Tidel Park Area', slug: 'tidel-park-area', intent: 'Enterprise IT, SMEs serving IT',
-        nearbyCompanies: ['Wipro', 'TCS', 'Payoda', 'State Street HCL'],
+        nearbyCompanies: ['MNC Branches', 'Hardware Tech', 'EdTech Startups', 'Fintech Teams'],
         landmarks: ['Tidel Park Coimbatore', 'ELCOT SEZ'],
         transit: 'Avinashi Road, Peelamedu',
         parking: 'SEZ scale parking',
