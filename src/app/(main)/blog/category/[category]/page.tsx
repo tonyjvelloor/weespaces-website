@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export function generateStaticParams() {
   const posts = getAllPosts();
-  const categories = Array.from(new Set(posts.map((post) => post.category.toLowerCase().replace(/ /g, '-'))));
+  const categories = Array.from(new Set(posts.map((post) => (post.category || 'uncategorized').toLowerCase().replace(/ /g, '-'))));
   return categories.map((category) => ({
     category,
   }));
@@ -18,13 +18,13 @@ import { constructMetadata } from '@/utils/metadata';
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const posts = getAllPosts();
-  const categoryPosts = posts.filter(post => post.category.toLowerCase().replace(/ /g, '-') === resolvedParams.category);
+  const categoryPosts = posts.filter(post => (post.category || 'uncategorized').toLowerCase().replace(/ /g, '-') === resolvedParams.category);
   
   if (categoryPosts.length === 0) {
     return { title: 'Category Not Found | WeeSpaces' };
   }
 
-  const categoryName = categoryPosts[0].category;
+  const categoryName = categoryPosts[0].category || 'Uncategorized';
 
   return constructMetadata({
     title: `${categoryName} | WeeSpaces Blog`,
@@ -36,13 +36,13 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const resolvedParams = await params;
   const posts = getAllPosts();
-  const categoryPosts = posts.filter(post => post.category.toLowerCase().replace(/ /g, '-') === resolvedParams.category);
+  const categoryPosts = posts.filter(post => (post.category || 'uncategorized').toLowerCase().replace(/ /g, '-') === resolvedParams.category);
 
   if (categoryPosts.length === 0) {
     notFound();
   }
 
-  const categoryName = categoryPosts[0].category;
+  const categoryName = categoryPosts[0].category || 'Uncategorized';
 
   return (
     <div className="pt-24 pb-32 min-h-screen">
