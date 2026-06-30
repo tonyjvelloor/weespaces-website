@@ -23,7 +23,7 @@ export default function BlogIndex() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {posts.map((post, index) => {
-            const categorySlug = post.category.toLowerCase().replace(/ /g, '-');
+            const categorySlug = (post.category || 'uncategorized').toLowerCase().replace(/ /g, '-');
             return (
               <ScrollReveal key={post.slug} delay={index * 0.1}>
                 <Link href={`/blog/${post.slug}`} className="block h-full group">
