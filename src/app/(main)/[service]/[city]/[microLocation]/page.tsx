@@ -335,7 +335,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             <div className="mt-8 bg-navy p-6 rounded-xl text-white">
                <h3 className="text-xl font-bold mb-2">Need GST Registration?</h3>
                <p className="text-white/80 text-sm mb-4">You can use our premium {city.name} address near {locationName} to register your company and GST locally.</p>
-               <Link href={`/virtual-office/${city.slug}`} className="text-accent text-sm font-bold hover:underline">Learn about Virtual Offices →</Link>
+               <Link href={`/virtual-office/${city.slug}`} className="text-accent text-sm font-bold hover:underline">Learn about Virtual Offices in {city.name} →</Link>
             </div>
           </ScrollReveal>
         </div>
@@ -378,7 +378,7 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
               <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Business Guide</h4>
               <h5 className="text-lg font-bold text-white mb-2">How to register your company in {city.name}</h5>
               <p className="text-white/60 text-sm mb-4 line-clamp-3">Understand local compliance, GST registration processes, and how securing a premium business address can accelerate your setup.</p>
-              <Link href="/blog" className="text-sm font-bold text-accent hover:underline">Read the full guide →</Link>
+              <Link href="/blog" className="text-sm font-bold text-accent hover:underline">Read our Coworking & Office Guides →</Link>
             </div>
           </div>
         </div>

@@ -526,7 +526,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
               <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Business Guide</h4>
               <h5 className="text-lg font-bold text-white mb-2">How to register your company in {city.name}</h5>
               <p className="text-white/60 text-sm mb-4 line-clamp-3">Understand local compliance, GST registration processes, and how securing a premium business address can accelerate your setup in Kerala and Tamil Nadu.</p>
-              <Link href="/blog" className="text-sm font-bold text-accent hover:underline">Read the full guide →</Link>
+              <Link href="/blog" className="text-sm font-bold text-accent hover:underline">Read our Coworking & Office Guides →</Link>
             </div>
           </div>
         </div>

@@ -46,4 +46,4 @@ Coworking spaces offer fully furnished, managed workspaces where you pay a month
 
 At WeeSpaces, we have brought enterprise-grade coworking to the heart of Kozhikode. Located in East Nadakkave, our hub offers inspiring hot desks, secure private cabins, and state-of-the-art conference rooms designed for modern teams.
 
-*Ready to upgrade your workspace? [Check out WeeSpaces Calicut](/coworking-space-calicut) and join the community.*
+*Ready to upgrade your workspace? [Check out WeeSpaces Calicut](/coworking-space/calicut) and join the community.*
