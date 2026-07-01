@@ -483,7 +483,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
       {(city.microLocations?.length > 0 || city.landmarks?.length > 0) && (
         <section className="py-12 bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-6">
-            <h3 className="text-2xl font-bold text-navy mb-6">Areas We Serve in {city.name}</h3>
+            <h3 className="text-2xl font-bold text-navy mb-6">Areas near {city.name}</h3>
             <div className="flex flex-wrap gap-3">
               {[...(city.microLocations || []), ...(city.landmarks || [])].map((loc, idx) => (
                 <Link 
