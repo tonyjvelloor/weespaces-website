@@ -245,7 +245,7 @@ export default function MonsoonOfferPage() {
                 ))}
               </ul>
               <div className="relative h-64 md:h-auto rounded-3xl overflow-hidden border border-white/10">
-                <Image src="/media__1780489852680.png" alt="Premium Coworking Hub" fill className="object-cover" />
+                <Image src="/images/kochi_coworking.jpg" alt="Premium Coworking Hub" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-8">
                   <div className="text-white font-bold text-xl">Premium Addresses in IT Corridors</div>
                 </div>
