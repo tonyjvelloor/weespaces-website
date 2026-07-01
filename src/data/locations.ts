@@ -93,7 +93,7 @@ export const cities: Record<string, CityData> = {
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-kochi', 'https://www.justdial.com/Ernakulam/WeeSpaces-Coworking', 'https://www.coworker.com/india/kochi/weespaces'],
     contactInfo: {
-      address: "4th Floor, Palal Tower, MG Road, Ravipuram, Kochi 682016",
+      address: "Wee Spaces Ventures Pvt.Ltd (Ernakulam) 1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara, Kochi, Kerala – 682020",
       mapIframe: "https://maps.google.com/maps?q=Palal%20Tower,%20MG%20Road,%20Kochi&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 92071 89111",
       email: "kochi@weespaces.in",
@@ -252,7 +252,7 @@ export const cities: Record<string, CityData> = {
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-trivandrum', 'https://www.justdial.com/Thiruvananthapuram/WeeSpaces-Coworking', 'https://www.coworker.com/india/trivandrum/weespaces'],
     contactInfo: {
-      address: "2nd Floor, Technopark Phase 3, Kazhakkoottam, Trivandrum, Kerala - 695582",
+      address: "Wee Space Ventures Pvt.Ltd (Trivandrum) T.C 17/3478,1st Floor, RELCON PLAZA Opposite LIC, Pattom, Thiruvananthapuram – 695004",
       mapIframe: "https://maps.google.com/maps?q=Relcon%20Plaza,%20Pattom,%20Trivandrum&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43211",
       email: "trivandrum@weespaces.in",
@@ -407,7 +407,7 @@ export const cities: Record<string, CityData> = {
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-calicut', 'https://www.justdial.com/Kozhikode/WeeSpaces-Coworking', 'https://www.coworker.com/india/calicut/weespaces'],
     contactInfo: {
-      address: "Cyberpark IT Hub, Near Bypass Road, Kozhikode, Kerala - 673016",
+      address: "The Work Lounge (Calicut) Door No:2951/A, Ground Floor, Neeloth Plaza, Holy Cross IMT Road, East Nadakkavu, Kozhikode, Kerala – 673006 (Venture of Weespaces Private Limited)",
       mapIframe: "https://maps.google.com/maps?q=Neeloth%20Plaza,%20East%20Nadakkave,%20Kozhikode&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43212",
       email: "calicut@weespaces.in",
@@ -560,7 +560,7 @@ export const cities: Record<string, CityData> = {
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-coimbatore', 'https://www.justdial.com/Coimbatore/WeeSpaces-Coworking', 'https://www.coworker.com/india/coimbatore/weespaces'],
     contactInfo: {
-      address: "123, XYZ Tower, Avinashi Road, Coimbatore, Tamil Nadu - 641014",
+      address: "Weespace Ventures Pvt. Ltd (Coimbatore) Kaira Towers, No 8,Vidya nagar 3 rd Street, Civil erodrome post, Coimbatore – 641014",
       mapIframe: "https://maps.google.com/maps?q=Vidyanagar%203rd%20street,%20Kalapatti,%20Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 98765 43213",
       email: "coimbatore@weespaces.in",
