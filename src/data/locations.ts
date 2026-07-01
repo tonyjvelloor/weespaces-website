@@ -94,7 +94,7 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-kochi', 'https://www.justdial.com/Ernakulam/WeeSpaces-Coworking', 'https://www.coworker.com/india/kochi/weespaces'],
     contactInfo: {
       address: "Wee Spaces Ventures Pvt.Ltd (Ernakulam) 1st Floor, CC 54, 2593-5, Bose Nagar, Kadavanthara, Kochi, Kerala – 682020",
-      mapIframe: "https://maps.google.com/maps?q=Palal%20Tower,%20MG%20Road,%20Kochi&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      mapIframe: "https://maps.google.com/maps?q=WeeSpaces%20Kochi&t=&z=15&ie=UTF8&iwloc=&output=embed",
       phone: "+91 92071 89111",
       email: "kochi@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
@@ -253,8 +253,8 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-trivandrum', 'https://www.justdial.com/Thiruvananthapuram/WeeSpaces-Coworking', 'https://www.coworker.com/india/trivandrum/weespaces'],
     contactInfo: {
       address: "Wee Space Ventures Pvt.Ltd (Trivandrum) T.C 17/3478,1st Floor, RELCON PLAZA Opposite LIC, Pattom, Thiruvananthapuram – 695004",
-      mapIframe: "https://maps.google.com/maps?q=Relcon%20Plaza,%20Pattom,%20Trivandrum&t=&z=15&ie=UTF8&iwloc=&output=embed",
-      phone: "+91 98765 43211",
+      mapIframe: "https://maps.google.com/maps?q=WeeSpaces%20Trivandrum&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      phone: "+91 92071 89111",
       email: "trivandrum@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
       coordinates: { lat: 8.5398295, lng: 76.8778841 }
@@ -408,8 +408,8 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-calicut', 'https://www.justdial.com/Kozhikode/WeeSpaces-Coworking', 'https://www.coworker.com/india/calicut/weespaces'],
     contactInfo: {
       address: "The Work Lounge (Calicut) Door No:2951/A, Ground Floor, Neeloth Plaza, Holy Cross IMT Road, East Nadakkavu, Kozhikode, Kerala – 673006 (Venture of Weespaces Private Limited)",
-      mapIframe: "https://maps.google.com/maps?q=Neeloth%20Plaza,%20East%20Nadakkave,%20Kozhikode&t=&z=15&ie=UTF8&iwloc=&output=embed",
-      phone: "+91 98765 43212",
+      mapIframe: "https://maps.google.com/maps?q=The%20Work%20Lounge%20Calicut&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      phone: "+91 92071 89111",
       email: "calicut@weespaces.in",
       timings: "Mon-Sat: 9:00 AM - 8:00 PM",
       coordinates: { lat: 11.2384725, lng: 75.8354728 }
@@ -561,8 +561,8 @@ export const cities: Record<string, CityData> = {
     citations: ['https://www.google.com/maps?cid=weespaces-coimbatore', 'https://www.justdial.com/Coimbatore/WeeSpaces-Coworking', 'https://www.coworker.com/india/coimbatore/weespaces'],
     contactInfo: {
       address: "Weespace Ventures Pvt. Ltd (Coimbatore) Kaira Towers, No 8,Vidya nagar 3 rd Street, Civil erodrome post, Coimbatore – 641014",
-      mapIframe: "https://maps.google.com/maps?q=Vidyanagar%203rd%20street,%20Kalapatti,%20Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed",
-      phone: "+91 98765 43213",
+      mapIframe: "https://maps.google.com/maps?q=WeeSpaces%20Coimbatore&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      phone: "+91 92071 89111",
       email: "coimbatore@weespaces.in",
       timings: "Mon-Sat: 8:00 AM - 8:00 PM",
       coordinates: { lat: 11.0118749, lng: 76.9751912 }
