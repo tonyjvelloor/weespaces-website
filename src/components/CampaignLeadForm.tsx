@@ -31,11 +31,27 @@ export default function CampaignLeadForm({ branch = "Campaign Default" }: { bran
     }
 
     try {
-      // Typically you'd send this to an API endpoint
-      // Mock API call for now
-      await new Promise(resolve => setTimeout(resolve, 1200));
+      const pageUrl = typeof window !== 'undefined' ? window.location.href : 'Unknown URL';
+      const source = `${branch} (City: ${formData.city}, Business Type: ${formData.businessType}) - URL: ${pageUrl}`;
+      const phoneRaw = formData.phone;
+      const phone = phoneRaw ? '+91' + phoneRaw : undefined;
+
+      const response = await fetch('/api/capture-lead/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          name: formData.name, 
+          phone, 
+          source, 
+          location: formData.city,
+          requirement: 'Virtual Office (Campaign)',
+          pageUrl 
+        })
+      });
+
+      if (!response.ok) throw new Error('Failed to submit lead');
       
-      console.log('Lead Captured:', { ...formData, branch, source: 'Paid Campaign' });
+      console.log('Lead Captured:', { ...formData, branch, source });
       setIsSubmitted(true);
     } catch (err) {
       setError('Something went wrong. Please try again.');
