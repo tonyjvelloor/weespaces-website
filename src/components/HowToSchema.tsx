@@ -14,14 +14,16 @@ interface HowToSchemaProps {
   totalTime?: string; // ISO 8601 duration e.g. "PT30M"
 }
 
-export default function HowToSchema({ name, description, steps, totalTime }: HowToSchemaProps) {
+export default function HowToSchema({ name, description, steps = [], totalTime }: HowToSchemaProps) {
+  const parsedSteps = typeof steps === 'string' ? JSON.parse(steps) : steps;
+  
   const schema = {
     "@context": "https://schema.org",
     "@type": "HowTo",
     "name": name,
     "description": description,
     ...(totalTime ? { "totalTime": totalTime } : {}),
-    "step": steps.map((step, index) => ({
+    "step": (parsedSteps || []).map((step: any, index: number) => ({
       "@type": "HowToStep",
       "position": index + 1,
       "name": step.name,
