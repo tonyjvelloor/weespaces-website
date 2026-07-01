@@ -338,11 +338,11 @@ export default function MonsoonOfferPage() {
             <div className="mb-12">
               <FAQAccordion 
                 faqs={[
-                  { q: 'Can I use this address for GST Registration?', a: 'Yes! Our Virtual Office package is explicitly designed to be 100% compliant for GST registration. We provide the necessary NOC, Utility Bill, and Rental Agreement.' },
-                  { q: 'Can I use this for MCA (Company Incorporation)?', a: 'Absolutely. It serves as your valid Principal Place of Business for Private Limited, LLP, and other registrations.' },
-                  { q: 'What happens to my physical mail?', a: 'Our professional reception team receives your mail, notifies you immediately via email/WhatsApp, and holds it securely for you to collect or forward.' },
-                  { q: 'Are there any hidden setup fees?', a: 'No hidden fees. The price you see is the total annual cost for the Virtual Office address and compliance documentation.' },
-                  { q: 'How long does approval take?', a: 'Once your KYC is submitted, we typically provide the digital NOC and Agreement within 24 hours.' }
+                  { question: 'Can I use this address for GST Registration?', answer: 'Yes! Our Virtual Office package is explicitly designed to be 100% compliant for GST registration. We provide the necessary NOC, Utility Bill, and Rental Agreement.' },
+                  { question: 'Can I use this for MCA (Company Incorporation)?', answer: 'Absolutely. It serves as your valid Principal Place of Business for Private Limited, LLP, and other registrations.' },
+                  { question: 'What happens to my physical mail?', answer: 'Our professional reception team receives your mail, notifies you immediately via email/WhatsApp, and holds it securely for you to collect or forward.' },
+                  { question: 'Are there any hidden setup fees?', answer: 'No hidden fees. The price you see is the total annual cost for the Virtual Office address and compliance documentation.' },
+                  { question: 'How long does approval take?', answer: 'Once your KYC is submitted, we typically provide the digital NOC and Agreement within 24 hours.' }
                 ]} 
               />
             </div>
