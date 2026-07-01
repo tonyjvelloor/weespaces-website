@@ -7,7 +7,7 @@ export default function CampaignHeader() {
         {/* Logo (Not wrapped in Link to prevent leak) */}
         <div className="flex items-center gap-2 cursor-default">
           <div className="w-10 h-10 relative">
-            <Image src="/images/weespaces-logo.png" alt="WeeSpaces Logo" fill className="object-contain" />
+            <Image src="/images/logo.png" alt="WeeSpaces Logo" fill className="object-contain" />
           </div>
           <span className="text-xl font-bold tracking-tight text-white hidden sm:block">WeeSpaces</span>
         </div>
