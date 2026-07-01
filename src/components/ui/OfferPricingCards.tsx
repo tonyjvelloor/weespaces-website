@@ -20,37 +20,66 @@ export default function OfferPricingCards() {
         </div>
         
         <h3 className="text-2xl font-bold text-white mb-2">Kerala Premium</h3>
-        <p className="text-white/60 mb-6 text-sm">Valid in Trivandrum, Ernakulam & Calicut</p>
+        <p className="text-white/60 mb-8 text-sm">Valid in Trivandrum, Ernakulam & Calicut</p>
         
-        <div className="mb-6 flex items-baseline gap-2">
-          <span className="text-4xl md:text-5xl font-bold text-white">₹7,999</span>
-          <span className="text-white/50 text-sm font-medium">/ year</span>
+        <div className="bg-black/30 rounded-xl p-5 mb-8 border border-white/5">
+          <div className="text-xs uppercase tracking-widest text-white/40 font-bold mb-4">What's Included</div>
+          
+          <ul className="space-y-4">
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Professional Business Address</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹8,000/yr</span>
+            </li>
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">GST Registration Support</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹3,000</span>
+            </li>
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Mail Handling Services</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹2,500</span>
+            </li>
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Compliance Documentation</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹2,000</span>
+            </li>
+            <li className="flex items-start justify-between gap-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Reception Support</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹2,500</span>
+            </li>
+          </ul>
         </div>
         
-        <div className="text-sm text-red-400 line-through mb-8 font-medium">Regular Price: ₹12,000/yr</div>
-
-        <ul className="space-y-4 mb-10 flex-grow">
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Premium Business Address in CBD</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Valid for GST & MCA Registration</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">NOC, Utility Bill & Agreement in 24 hrs</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Professional Mail Handling</span>
-          </li>
-        </ul>
+        <div className="flex justify-between items-end mb-6">
+          <div>
+            <div className="text-sm text-white/50 line-through mb-1 font-medium">Total Value: ₹18,000+</div>
+            <div className="text-sm uppercase tracking-widest text-accent font-bold">Today's Price</div>
+          </div>
+          <div className="text-right">
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl md:text-5xl font-bold text-white">₹7,999</span>
+              <span className="text-white/50 text-sm font-medium">/ year</span>
+            </div>
+          </div>
+        </div>
 
         <button 
           onClick={scrollToForm}
-          className="w-full bg-white text-navy hover:bg-gray-100 font-bold py-4 rounded-xl transition-all shadow-lg text-lg border border-transparent"
+          className="w-full bg-white text-navy hover:bg-gray-100 font-bold py-4 rounded-xl transition-all shadow-lg text-lg border border-transparent mt-auto"
         >
           Claim Kerala Offer
         </button>
@@ -63,37 +92,66 @@ export default function OfferPricingCards() {
         </div>
         
         <h3 className="text-2xl font-bold text-white mb-2 mt-4">Coimbatore Special</h3>
-        <p className="text-white/60 mb-6 text-sm">Valid at Kaira Towers, Kalapatti</p>
+        <p className="text-white/60 mb-8 text-sm">Valid at Kaira Towers, Kalapatti</p>
         
-        <div className="mb-6 flex items-baseline gap-2">
-          <span className="text-4xl md:text-5xl font-bold text-white">₹14,500</span>
-          <span className="text-white/50 text-sm font-medium">/ year</span>
+        <div className="bg-black/30 rounded-xl p-5 mb-8 border border-white/5">
+          <div className="text-xs uppercase tracking-widest text-accent font-bold mb-4">Premium Value Stack</div>
+          
+          <ul className="space-y-4">
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Prime IT Corridor Address</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹10,000/yr</span>
+            </li>
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Fast-Track Approval</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹4,000</span>
+            </li>
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Mail Handling Services</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹3,000</span>
+            </li>
+            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Compliance Documentation</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹2,500</span>
+            </li>
+            <li className="flex items-start justify-between gap-3">
+              <div className="flex gap-3">
+                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                <span className="text-white/90">Dedicated Reception</span>
+              </div>
+              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹3,500</span>
+            </li>
+          </ul>
         </div>
         
-        <div className="text-sm text-red-400 line-through mb-8 font-medium">Regular Price: ₹18,000/yr</div>
-
-        <ul className="space-y-4 mb-10 flex-grow">
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Prime IT Corridor Business Address</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Valid for GST & MCA Registration</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Fast-Track Documentation Approval</span>
-          </li>
-          <li className="flex items-start gap-3">
-            <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-            <span className="text-white/80">Dedicated Reception Services</span>
-          </li>
-        </ul>
+        <div className="flex justify-between items-end mb-6">
+          <div>
+            <div className="text-sm text-white/50 line-through mb-1 font-medium">Total Value: ₹23,000+</div>
+            <div className="text-sm uppercase tracking-widest text-accent font-bold">Today's Price</div>
+          </div>
+          <div className="text-right">
+            <div className="flex items-baseline gap-2">
+              <span className="text-4xl md:text-5xl font-bold text-white">₹14,500</span>
+              <span className="text-white/50 text-sm font-medium">/ year</span>
+            </div>
+          </div>
+        </div>
 
         <button 
           onClick={scrollToForm}
-          className="w-full bg-accent text-white hover:bg-accent-hover font-bold py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(255,107,53,0.4)] hover:shadow-[0_6px_25px_rgba(255,107,53,0.6)] text-lg border border-transparent flex items-center justify-center gap-2"
+          className="w-full bg-accent text-white hover:bg-accent-hover font-bold py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(255,107,53,0.4)] hover:shadow-[0_6px_25px_rgba(255,107,53,0.6)] text-lg border border-transparent flex items-center justify-center gap-2 mt-auto"
         >
           Claim Coimbatore Offer <span className="material-symbols-outlined text-sm">arrow_forward</span>
         </button>
