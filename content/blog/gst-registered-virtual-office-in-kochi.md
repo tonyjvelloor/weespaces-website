@@ -51,3 +51,15 @@ Getting a GST registered virtual office in Kochi with WeeSpaces takes just a few
 5. **Apply for GST:** Use our documents on the GST portal.
 
 Ready to establish your corporate presence in Kerala? **[Contact us today to secure your Virtual Office in Kochi](/virtual-office/kochi)**.
+
+<HowToSchema
+  name="How to Get a GST Registered Virtual Office in Kochi"
+  description="Step-by-step process for acquiring a virtual office in Kochi with the necessary documents for GST and MCA registration."
+  steps={[
+    { name: "Consultation", text: "Contact our team to confirm your business requirements and location preference." },
+    { name: "Documentation", text: "Provide your KYC documents including Founders' PAN and Aadhaar." },
+    { name: "Agreement", text: "Sign the virtual office agreement." },
+    { name: "Receive NOC", text: "We provide the NOC, utility bill, and agreement within 24-48 hours." },
+    { name: "Apply for GST", text: "Use our provided documents on the GST portal to complete your registration." }
+  ]}
+/>

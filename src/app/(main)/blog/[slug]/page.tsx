@@ -5,10 +5,12 @@ import LeadForm from '@/components/LeadForm';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
+import HowToSchema from '@/components/HowToSchema';
 
 const components = {
   LeadForm,
   Image,
+  HowToSchema,
 };
 
 export function generateStaticParams() {

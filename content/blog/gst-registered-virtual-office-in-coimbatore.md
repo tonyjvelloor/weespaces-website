@@ -45,3 +45,15 @@ WeeSpaces operates premium, fully-staffed coworking spaces. When a GST official 
 5. **Register:** File your GST or MCA incorporation.
 
 Don't let the lack of a physical office delay your growth in Tamil Nadu. **[Get your GST Registered Virtual Office in Coimbatore today](/virtual-office/coimbatore)**.
+
+<HowToSchema
+  name="How to Get a GST Registered Virtual Office in Coimbatore"
+  description="Step-by-step process for acquiring a virtual office in Coimbatore with the necessary documents for GST and MCA registration."
+  steps={[
+    { name: "Choose Your Location", text: "Select from our premium Coimbatore hubs." },
+    { name: "Submit KYC", text: "Provide standard identity and business proofs." },
+    { name: "Sign Agreement", text: "Complete the digital paperwork." },
+    { name: "Receive Documents", text: "Get your NOC and utility bills within 24-48 hours." },
+    { name: "Register", text: "File your GST or MCA incorporation using our documents." }
+  ]}
+/>
