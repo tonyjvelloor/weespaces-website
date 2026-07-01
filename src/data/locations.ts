@@ -140,16 +140,16 @@ export const cities: Record<string, CityData> = {
     ],
     microLocations: [
       {
-        id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'IT companies, startups, corporates',
+        id: 'kakkanad', name: 'Kakkanad', slug: 'kakkanad', intent: 'Shared office space, IT companies, startups, corporates',
         nearbyCompanies: ['Leading IT Firms', 'Global Consultancies', 'SaaS Startups', 'Design Agencies'],
-        landmarks: ['Infopark', 'SmartCity', 'CUSAT'],
+        landmarks: ['Infopark Kochi', 'SmartCity Kochi', 'CUSAT'],
         transit: 'Water Metro, Kakkanad Bus Stand, 5 mins to upcoming Metro',
         parking: 'Dedicated ample covered parking',
         gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg']
       },
       {
-        id: 'infopark', name: 'Infopark', slug: 'infopark', intent: 'IT companies, tech startups',
-        nearbyCompanies: ['TCS', 'Cognizant', 'UST Global'],
+        id: 'infopark', name: 'Infopark', slug: 'infopark', intent: 'IT companies, tech startups, managed office space',
+        nearbyCompanies: ['Enterprise Tech Parks', 'Global IT Consultancies', 'Leading Software Development Firms'],
         landmarks: ['Infopark Express Way', 'SmartCity'],
         transit: 'Infopark Bus Stop, Auto Stand',
         parking: 'Multi-level car parking available',
@@ -640,9 +640,9 @@ export const cities: Record<string, CityData> = {
         gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
       },
       {
-        id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'Enterprise IT, scaling startups',
-        nearbyCompanies: ['Cognizant', 'Bosch', 'KGISL'],
-        landmarks: ['CHIL SEZ', 'KGISL Tech Park'],
+        id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'Enterprise IT, scaling startups, premium coworking space',
+        nearbyCompanies: ['Leading Tech Parks', 'Multinational IT Companies', 'Enterprise Engineering Centers'],
+        landmarks: ['CHIL SEZ IT Park', 'KGISL Tech Park'],
         transit: 'Sathy Road',
         parking: 'Tech park scale parking',
         gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
