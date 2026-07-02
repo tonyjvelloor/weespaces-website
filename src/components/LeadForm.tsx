@@ -81,7 +81,7 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
       : `Website Lead (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline}) - URL: ${pageUrl}`;
 
     try {
-      const response = await fetch('/api/capture-lead/', {
+      const response = await fetch('/api/capture-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, source, pageUrl })

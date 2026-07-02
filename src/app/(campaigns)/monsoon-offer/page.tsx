@@ -40,7 +40,7 @@ export default function MonsoonOfferPage() {
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden -z-10">
           <div className="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-accent/20 rounded-full blur-[120px] mix-blend-screen"></div>
           <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[100px] mix-blend-screen"></div>
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
+
         </div>
 
         <div className="container mx-auto px-6 relative z-10">

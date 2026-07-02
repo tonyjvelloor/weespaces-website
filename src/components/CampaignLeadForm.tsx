@@ -36,7 +36,7 @@ export default function CampaignLeadForm({ branch = "Campaign Default" }: { bran
       const phoneRaw = formData.phone;
       const phone = phoneRaw ? '+91' + phoneRaw : undefined;
 
-      const response = await fetch('/api/capture-lead/', {
+      const response = await fetch('/api/capture-lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
