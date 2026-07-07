@@ -336,40 +336,40 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
           </div>
 
           {locationId === 'coimbatore' ? (
-            <div className="bg-navy-light/50 border border-white/20 p-8 rounded-3xl overflow-x-auto shadow-2xl relative">
-              <div className="absolute top-0 right-8 -translate-y-1/2 bg-gradient-to-r from-accent to-accent-light text-navy text-sm font-bold uppercase tracking-wider py-1 px-4 rounded-full animate-pulse shadow-[0_0_15px_rgba(242,156,31,0.4)]">
-                Inaugural Offer - Valid till July 31
+            <div className="max-w-2xl mx-auto bg-navy-light/50 border border-accent p-10 rounded-3xl shadow-[0_0_40px_rgba(242,156,31,0.15)] relative text-center">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-accent to-accent-light text-navy text-sm font-bold uppercase tracking-wider py-1 px-6 rounded-full animate-pulse shadow-[0_0_15px_rgba(242,156,31,0.4)] whitespace-nowrap">
+                Limited-Time Inaugural Offer
               </div>
-              <table className="w-full text-left border-collapse min-w-[600px] mt-2">
-                <thead>
-                  <tr className="border-b border-white/10">
-                    <th className="py-4 px-6 text-white font-bold text-lg">Plan</th>
-                    <th className="py-4 px-6 text-white/50 font-bold text-lg">Typical Coimbatore Premium Rate</th>
-                    <th className="py-4 px-6 text-accent font-bold text-lg">The Offer Price</th>
-                    <th className="py-4 px-6 text-green-400 font-bold text-lg">Annual Savings</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-white/5">
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-6 px-6 font-semibold text-white">Hot Desk <span className="block text-xs text-accent mt-1">12 spots left</span></td>
-                    <td className="py-6 px-6 text-white/50 line-through">₹8,500/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,000/mo</td>
-                    <td className="py-6 px-6 text-green-400 font-semibold">₹30,000</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-6 px-6 font-semibold text-white">Dedicated Desk <span className="block text-xs text-accent mt-1">30 spots left</span></td>
-                    <td className="py-6 px-6 text-white/50 line-through">₹9,500/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">₹6,999/mo</td>
-                    <td className="py-6 px-6 text-green-400 font-semibold">₹30,000+</td>
-                  </tr>
-                  <tr className="hover:bg-white/5 transition-colors bg-accent/5">
-                    <td className="py-6 px-6 font-semibold text-white">Private Cabins <span className="block text-xs text-accent mt-1">8 cabins left</span></td>
-                    <td className="py-6 px-6 text-white/50">₹35,000/mo</td>
-                    <td className="py-6 px-6 text-accent font-bold text-xl">From ₹25,000/mo</td>
-                    <td className="py-6 px-6 text-green-400 font-semibold">Massive CapEx Savings</td>
-                  </tr>
-                </tbody>
-              </table>
+              
+              <h3 className="text-3xl font-bold text-white mb-2 mt-4">Special Inaugural Offer</h3>
+              <div className="text-5xl font-extrabold text-accent mb-2">
+                Starting from ₹6,999<span className="text-2xl text-white/50 font-medium">/Seat*</span>
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 my-8 text-left max-w-md mx-auto">
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle2 className="w-5 h-5 text-green-400" /> Dedicated Desks</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle2 className="w-5 h-5 text-green-400" /> Private Cabins</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle2 className="w-5 h-5 text-green-400" /> Private Offices</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle2 className="w-5 h-5 text-green-400" /> Meeting Rooms</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle2 className="w-5 h-5 text-green-400" /> Virtual Office</div>
+              </div>
+
+              <div className="bg-white/5 inline-block px-6 py-2 rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 font-medium">✨ Bulk Booking Discounts Available</span>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#form-id" className="bg-accent text-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-light transition-all duration-300 shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+                  Book a Free Site Visit
+                </a>
+                <a href="tel:+919207189111" className="bg-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all border border-white/10">
+                  Talk to an Expert
+                </a>
+              </div>
+              
+              <p className="text-xs text-white/40 mt-8 max-w-lg mx-auto leading-relaxed">
+                *Pricing varies by workspace type, floor, and booking requirements. Limited premium cabins remaining.
+              </p>
             </div>
           ) : (
             <div className="grid md:grid-cols-3 gap-6">

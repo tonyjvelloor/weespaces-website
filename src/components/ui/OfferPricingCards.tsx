@@ -86,75 +86,41 @@ export default function OfferPricingCards() {
       </div>
 
       {/* Coimbatore Tier */}
-      <div className="bg-navy-light border-2 border-accent rounded-3xl p-8 relative overflow-hidden flex flex-col shadow-[0_0_40px_rgba(255,107,53,0.15)] transform md:-translate-y-4">
+      <div className="bg-navy-light border-2 border-accent rounded-3xl p-8 relative overflow-hidden flex flex-col shadow-[0_0_40px_rgba(255,107,53,0.15)] transform md:-translate-y-4 text-center">
         <div className="absolute top-0 right-0 left-0 bg-accent text-white text-xs font-bold py-1.5 text-center uppercase tracking-widest flex items-center justify-center gap-1">
-          <Zap className="w-3 h-3" /> Most Popular
+          <Zap className="w-3 h-3" /> Limited-Time Inaugural Offer
         </div>
         
-        <h3 className="text-2xl font-bold text-white mb-2 mt-4">Coimbatore Special</h3>
-        <p className="text-white/60 mb-8 text-sm">Valid at Kaira Towers, Kalapatti</p>
+        <h3 className="text-2xl font-bold text-white mb-2 mt-4">Special Inaugural Offer</h3>
         
-        <div className="bg-black/30 rounded-xl p-5 mb-8 border border-white/5">
-          <div className="text-xs uppercase tracking-widest text-accent font-bold mb-4">Premium Value Stack</div>
-          
-          <ul className="space-y-4">
-            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
-              <div className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/90">Prime IT Corridor Address</span>
-              </div>
-              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹10,000/yr</span>
-            </li>
-            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
-              <div className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/90">Fast-Track Approval</span>
-              </div>
-              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹4,000</span>
-            </li>
-            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
-              <div className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/90">Mail Handling Services</span>
-              </div>
-              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹3,000</span>
-            </li>
-            <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
-              <div className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/90">Compliance Documentation</span>
-              </div>
-              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹2,500</span>
-            </li>
-            <li className="flex items-start justify-between gap-3">
-              <div className="flex gap-3">
-                <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/90">Dedicated Reception</span>
-              </div>
-              <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹3,500</span>
-            </li>
+        <div className="text-4xl md:text-5xl font-extrabold text-accent mb-2 mt-4">
+          Starting from ₹6,999<span className="text-xl text-white/50 font-medium">/Seat*</span>
+        </div>
+        
+        <div className="bg-black/30 rounded-xl p-5 mb-6 mt-6 border border-white/5 text-left">
+          <ul className="space-y-3">
+            <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-green-400 shrink-0" /><span className="text-white/90">Dedicated Desks</span></li>
+            <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-green-400 shrink-0" /><span className="text-white/90">Private Cabins</span></li>
+            <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-green-400 shrink-0" /><span className="text-white/90">Private Offices</span></li>
+            <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-green-400 shrink-0" /><span className="text-white/90">Meeting Rooms</span></li>
+            <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-green-400 shrink-0" /><span className="text-white/90">Virtual Office</span></li>
           </ul>
         </div>
         
-        <div className="flex justify-between items-end mb-6">
-          <div>
-            <div className="text-sm text-white/50 line-through mb-1 font-medium">Total Value: ₹23,000+</div>
-            <div className="text-sm uppercase tracking-widest text-accent font-bold">Today's Price</div>
-          </div>
-          <div className="text-right">
-            <div className="flex items-baseline gap-2">
-              <span className="text-4xl md:text-5xl font-bold text-white">₹14,500</span>
-              <span className="text-white/50 text-sm font-medium">/ year</span>
-            </div>
-          </div>
+        <div className="bg-white/5 inline-block px-4 py-2 rounded-lg mb-6 border border-white/10 mx-auto">
+          <span className="text-white/80 font-medium text-sm">✨ Bulk Booking Discounts Available</span>
         </div>
 
         <button 
           onClick={scrollToForm}
-          className="w-full bg-accent text-white hover:bg-accent-hover font-bold py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(255,107,53,0.4)] hover:shadow-[0_6px_25px_rgba(255,107,53,0.6)] text-lg border border-transparent flex items-center justify-center gap-2 mt-auto"
+          className="w-full bg-accent text-white hover:bg-accent-hover font-bold py-4 rounded-xl transition-all shadow-[0_4px_20px_rgba(255,107,53,0.4)] hover:shadow-[0_6px_25px_rgba(255,107,53,0.6)] text-lg border border-transparent flex items-center justify-center mt-auto"
         >
-          Claim Coimbatore Offer <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          Book a Free Site Visit
         </button>
+
+        <p className="text-[10px] text-white/40 mt-4 leading-relaxed">
+          *Pricing varies by workspace type, floor, and booking requirements. Limited premium cabins remaining.
+        </p>
       </div>
     </div>
   );

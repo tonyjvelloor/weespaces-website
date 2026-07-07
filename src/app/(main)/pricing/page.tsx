@@ -90,14 +90,14 @@ export default function PricingPage() {
                     <td className="py-6 px-4">From {branchData.trivandrum.pricing.hotDesk}</td>
                     <td className="py-6 px-4">From {branchData.ernakulam.pricing.hotDesk}</td>
                     <td className="py-6 px-4">From {branchData.calicut.pricing.hotDesk}</td>
-                    <td className="py-6 px-4">From {branchData.coimbatore.pricing.hotDesk}</td>
+                    <td className="py-6 px-4">{branchData.coimbatore.pricing.hotDesk.startsWith('Starting') ? branchData.coimbatore.pricing.hotDesk : `From ${branchData.coimbatore.pricing.hotDesk}`}</td>
                   </tr>
                   <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                     <th scope="row" className="py-6 px-4 font-bold text-left">Dedicated Desk</th>
                     <td className="py-6 px-4">From {branchData.trivandrum.pricing.dedicatedDesk}</td>
                     <td className="py-6 px-4">From {branchData.ernakulam.pricing.dedicatedDesk}</td>
                     <td className="py-6 px-4">From {branchData.calicut.pricing.dedicatedDesk}</td>
-                    <td className="py-6 px-4">From {branchData.coimbatore.pricing.dedicatedDesk}</td>
+                    <td className="py-6 px-4">{branchData.coimbatore.pricing.dedicatedDesk.startsWith('Starting') ? branchData.coimbatore.pricing.dedicatedDesk : `From ${branchData.coimbatore.pricing.dedicatedDesk}`}</td>
                   </tr>
                   <tr className="border-b border-white/5 hover:bg-white/5 transition-colors">
                     <th scope="row" className="py-6 px-4 font-bold text-left">Private Office</th>
@@ -118,7 +118,43 @@ export default function PricingPage() {
             </MouseGlowCard>
           </ScrollReveal>
         ) : (
-          currentPricing && (
+          activeBranch === 'coimbatore' ? (
+            <div className="max-w-2xl mx-auto bg-navy-light/50 border border-accent p-10 rounded-3xl shadow-[0_0_40px_rgba(242,156,31,0.15)] relative text-center mb-24">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-accent to-accent-light text-navy text-sm font-bold uppercase tracking-wider py-1 px-6 rounded-full animate-pulse shadow-[0_0_15px_rgba(242,156,31,0.4)] whitespace-nowrap">
+                Limited-Time Inaugural Offer
+              </div>
+              
+              <h3 className="text-3xl font-bold text-white mb-2 mt-4">Special Inaugural Offer</h3>
+              <div className="text-5xl font-extrabold text-accent mb-2">
+                Starting from ₹6,999<span className="text-2xl text-white/50 font-medium">/Seat*</span>
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 my-8 text-left max-w-md mx-auto">
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> Dedicated Desks</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> Private Cabins</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> Private Offices</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> Meeting Rooms</div>
+                <div className="flex items-center gap-2 text-white/90"><CheckCircle className="w-5 h-5 text-green-400" /> Virtual Office</div>
+              </div>
+
+              <div className="bg-white/5 inline-block px-6 py-2 rounded-full mb-8 border border-white/10">
+                <span className="text-white/80 font-medium">✨ Bulk Booking Discounts Available</span>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#lead-form" className="bg-accent text-navy px-8 py-4 rounded-xl font-bold text-lg hover:bg-accent-light transition-all duration-300 shadow-[0_0_20px_rgba(242,156,31,0.3)]">
+                  Book a Free Site Visit
+                </a>
+                <a href="tel:+919207189111" className="bg-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all border border-white/10">
+                  Talk to an Expert
+                </a>
+              </div>
+              
+              <p className="text-xs text-white/40 mt-8 max-w-lg mx-auto leading-relaxed">
+                *Pricing varies by workspace type, floor, and booking requirements. Limited premium cabins remaining.
+              </p>
+            </div>
+          ) : currentPricing && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
               {/* Card 1 */}
               <ScrollReveal delay={0.1} className="h-full">

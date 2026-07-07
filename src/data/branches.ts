@@ -9,10 +9,13 @@ export interface BranchData {
   heroImage: string;
   galleryImages: string[];
   pricing: {
+    marketingPrice?: string;
     hotDesk: string;
     dedicatedDesk: string;
     privateOffice: string;
     virtualOffice: string;
+    meetingRoom?: string;
+    note?: string;
   };
 }
 
@@ -82,6 +85,14 @@ export const branchData: Record<string, BranchData> = {
       "/images/branches/coimbatore/amenity3.jpg",
       "/images/branches/coimbatore/amenity4.jpg"
     ],
-    pricing: { hotDesk: '₹5,000/mo', dedicatedDesk: '₹6,500/mo', privateOffice: '₹22,000/mo', virtualOffice: '₹10,000/yr' }
+    pricing: { 
+      marketingPrice: 'Starting from ₹6,999/Seat',
+      hotDesk: 'Starting from ₹6,999/Seat', 
+      dedicatedDesk: 'Starting from ₹6,999/Seat', 
+      privateOffice: 'Custom Pricing', 
+      virtualOffice: '₹10,000/yr',
+      meetingRoom: 'Custom Pricing',
+      note: 'Pricing varies by workspace type, floor and booking requirements.'
+    }
   }
 };
