@@ -205,7 +205,6 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
           title="Common Questions"
           subtitle={`Dive deeper into ${comparison.title}.`}
           faqs={comparison.faqs}
-          textColor="text-navy"
         />
       </div>
       
