@@ -13,7 +13,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
 });
 
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import TrackingProvider from '@/components/TrackingProvider';
 import { constructMetadata } from '@/utils/metadata';
 
@@ -139,6 +139,7 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-[4.5rem] md:pb-0 relative">
         <GoogleTagManager gtmId="GTM-N699QDRZ" />
+        <GoogleAnalytics gaId="G-89N19DEH2N" />
         <TrackingProvider>
           {children}
         </TrackingProvider>
