@@ -1,8 +1,4 @@
-"use client";
-
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
 
 const heroImages = [
   { src: '/images/branches/trivandrum/image1.jpg', alt: 'Premium coworking space in Trivandrum - WeeSpaces' },
@@ -12,34 +8,25 @@ const heroImages = [
 ];
 
 export default function HeroCarousel() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // We are removing the auto-play functionality to align with best practices (anti-pattern fix)
-  // which improves LCP and accessibility.
+  // Using the first image statically to improve Largest Contentful Paint (LCP).
+  // This ensures the image is included in the initial server-rendered HTML 
+  // and picked up by the browser's preload scanner immediately.
 
   return (
     <div className="absolute inset-0 z-0 overflow-hidden bg-navy-dark">
-      <AnimatePresence initial={false}>
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 0.4, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <Image 
-            src={heroImages[currentIndex].src} 
-            alt={heroImages[currentIndex].alt} 
-            fill sizes="100vw" 
-            className="object-cover object-center" 
-            priority={true}
-            fetchPriority="high"
-          />
-        </motion.div>
-      </AnimatePresence>
+      <div className="absolute inset-0">
+        <Image 
+          src={heroImages[0].src} 
+          alt={heroImages[0].alt} 
+          fill 
+          sizes="100vw" 
+          className="object-cover object-center opacity-40" 
+          priority={true}
+          fetchPriority="high"
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-br from-navy/80 via-navy/60 to-navy-dark/90 mix-blend-multiply"></div>
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent/20 rounded-full blur-[120px] -mr-[20vw] -mt-[10vw] pointer-events-none animate-pulse"></div>
+      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent/20 rounded-full blur-[120px] -mr-[20vw] -mt-[10vw] pointer-events-none"></div>
     </div>
   );
 }

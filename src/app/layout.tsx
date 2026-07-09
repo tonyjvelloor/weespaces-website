@@ -48,7 +48,7 @@ export default function RootLayout({
         </noscript>
 
         {/* Secure Privacy */}
-        <Script strategy="beforeInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
+        <Script strategy="afterInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
 
         {/* JSON-LD Schemas */}
         <Script id="organization-schema" type="application/ld+json" strategy="afterInteractive">
