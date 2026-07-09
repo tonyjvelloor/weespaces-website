@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   const isLandmark = 'name' in microLoc && !('intent' in microLoc);
   const locationName = microLoc.name;
 
-  const title = `${service.name} ${isLandmark ? '' : 'in'} ${locationName}, ${city.name} | WeeSpaces`;
-  const description = `Looking for ${service.name.toLowerCase()} ${isLandmark ? '' : 'in'} ${locationName}, ${city.name}? Premium workspaces, 0 setup cost, flexible terms. Perfect for ${!isLandmark ? (microLoc as any).intent : 'startups and businesses'}.`;
+  const title = `${service.name} Near ${locationName}, ${city.name} | WeeSpaces`;
+  const description = `Looking for ${service.name.toLowerCase()} near ${locationName}, ${city.name}? Premium workspaces, 0 setup cost, flexible terms. Perfect for ${!isLandmark ? (microLoc as any).intent : 'startups and businesses'}.`;
 
   return constructMetadata({
     title,
@@ -124,11 +124,11 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Premium {service.name} Designed for Growing Businesses <br/>
-              <span className="text-accent">{isLandmark ? 'Near' : 'in'} {locationName}</span>
+              <span className="text-accent">Near {locationName}</span>
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-xl leading-relaxed font-light">
-              {service.shortDesc} Located perfectly in {locationName}, offering flexible scaling and premium amenities for your team.
+              {service.shortDesc} Located perfectly near {locationName}, offering flexible scaling and premium amenities for your team.
             </p>
             
 
@@ -359,10 +359,10 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
             <div className="space-y-4">
               <h4 className="text-accent font-bold uppercase tracking-wider text-sm mb-4">Other Services here</h4>
               <ul className="space-y-3">
-                <li><Link href={`/coworking-space/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Coworking Space in {locationName}</Link></li>
-                <li><Link href={`/managed-office/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Managed Office in {locationName}</Link></li>
-                <li><Link href={`/virtual-office/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Virtual Office in {locationName}</Link></li>
-                <li><Link href={`/meeting-room/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Meeting Rooms in {locationName}</Link></li>
+                <li><Link href={`/coworking-space/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Coworking Space near {locationName}</Link></li>
+                <li><Link href={`/managed-office/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Managed Office near {locationName}</Link></li>
+                <li><Link href={`/virtual-office/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Virtual Office near {locationName}</Link></li>
+                <li><Link href={`/meeting-room/${city.slug}/${locationObj.slug}`} className="text-white/70 hover:text-white transition-colors">Meeting Rooms near {locationName}</Link></li>
               </ul>
             </div>
             <div className="space-y-4">
