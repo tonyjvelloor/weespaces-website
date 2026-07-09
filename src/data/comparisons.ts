@@ -244,6 +244,51 @@ export const comparisons: Comparison[] = [
     ]
   },
   {
+    id: 'weespaces-vs-awfis',
+    slug: 'weespaces-vs-awfis-alternative',
+    title: 'WeeSpaces vs Awfis',
+    shortDesc: 'Looking for an Awfis alternative in Kochi or Trivandrum? Compare the national chain with Kerala\'s premium local operator.',
+    optionA: {
+      name: 'WeeSpaces',
+      pros: [
+        'Hyper-localized focus on the South Indian startup ecosystem',
+        'Transparent, flat pricing without hidden add-ons',
+        'Boutique, personalized community management',
+        'Highly flexible contracts tailored for growing local teams'
+      ],
+      cons: [
+        'Present only in Kerala and Coimbatore',
+        'No pan-India roaming access'
+      ],
+      idealFor: 'Regional startups, SMEs, and enterprise teams who value a personalized, premium workspace experience without corporate rigidity.'
+    },
+    optionB: {
+      name: 'Awfis',
+      pros: [
+        'Large pan-India presence across Tier 1 and Tier 2 cities',
+        'Ability to roam across different centers nationally',
+        'Standardized national processes'
+      ],
+      cons: [
+        'Can feel highly corporate and impersonal',
+        'Hidden costs often surface for meeting rooms, printing, and parking',
+        'Support relies on a centralized corporate ticketing system rather than local resolution'
+      ],
+      idealFor: 'Frequent national travelers who need basic desk access in multiple Indian states every week.'
+    },
+    verdict: 'If your core team is based in Kerala or Coimbatore, WeeSpaces offers a much warmer, premium, and flexible environment compared to the standardized corporate feel of Awfis.',
+    faqs: [
+      {
+        question: 'What makes WeeSpaces different from national chains like Awfis?',
+        answer: 'As a premium local operator, we have deep roots in the local business ecosystem. We offer a boutique experience, direct access to the founding team for custom requests, and zero hidden costs.'
+      },
+      {
+        question: 'Can I customize my office space with WeeSpaces?',
+        answer: 'Yes! Unlike rigid national chains, we specialize in Managed Offices, meaning we can custom-build your office layout and branding exactly how you want it.'
+      }
+    ]
+  },
+  {
     id: 'weespaces-vs-cofynd',
     slug: 'weespaces-vs-cofynd-alternative',
     title: 'WeeSpaces vs CoFynd',
@@ -284,6 +329,50 @@ export const comparisons: Comparison[] = [
       {
         question: 'Who manages the workspace if I book through an aggregator?',
         answer: 'The local operator manages it. The aggregator simply acts as a booking agent. If the internet goes down, the aggregator cannot fix it—you still rely on the local operator.'
+      }
+    ]
+  },
+  {
+    id: 'weespaces-vs-myhq',
+    slug: 'weespaces-vs-myhq-alternative',
+    title: 'WeeSpaces vs myHQ',
+    shortDesc: 'Understand the difference between booking through a massive aggregator like myHQ versus directly with a premium operator like WeeSpaces.',
+    optionA: {
+      name: 'WeeSpaces (Operator)',
+      pros: [
+        'We design, build, and fully manage our own spaces',
+        'Direct relationship ensures the best possible pricing and custom terms',
+        'Immediate local IT and facility support',
+        'High-end, consistent quality across all our locations'
+      ],
+      cons: [
+        'Inventory is limited strictly to our proprietary premium hubs'
+      ],
+      idealFor: 'Startups and enterprises looking for a reliable, long-term workspace partner with guaranteed SLA and quality.'
+    },
+    optionB: {
+      name: 'myHQ (Aggregator)',
+      pros: [
+        'Massive directory of third-party spaces including cafes and budget hubs',
+        'Great for buying cheap day passes at random locations',
+        'Wide geographical coverage'
+      ],
+      cons: [
+        'They do not own or manage the spaces they list',
+        'Quality control is non-existent (you might end up in a noisy cafe)',
+        'You add a middleman to your lease negotiations'
+      ],
+      idealFor: 'Students or freelancers looking for the absolute cheapest day pass in a cafe.'
+    },
+    verdict: 'Aggregators like myHQ are great for finding a quick cafe to work from for a day. But if you are setting up a professional headquarters for your company, deal directly with an operator like WeeSpaces to guarantee quality and secure the best direct-to-owner pricing.',
+    faqs: [
+      {
+        question: 'Does myHQ own the coworking spaces?',
+        answer: 'No. myHQ is an aggregator platform that lists spaces owned by other people (including cafes and hotels). WeeSpaces is an operator; we own and manage our dedicated facilities.'
+      },
+      {
+        question: 'Will I get a better deal booking directly with WeeSpaces?',
+        answer: 'Yes. By bypassing the aggregator, you avoid broker commissions, allowing us to offer you the most flexible terms and lowest possible rates.'
       }
     ]
   },
