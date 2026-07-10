@@ -60,7 +60,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                 </h1>
 
                 <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 font-medium">
-                  Get a GST-compliant Virtual Office Address from just ₹7,999/year. 
+                  Get a GST-compliant Virtual Office Address from just ₹7,999/year <span className="text-sm opacity-70">+ GST</span>.
                 </p>
 
                 <div className="w-full max-w-lg mx-auto mb-10">
@@ -191,7 +191,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
               </div>
               
               {[
-                ['Annual Cost', '₹3,00,000+', 'From ₹7,999/yr'],
+                ['Annual Cost', '₹3,00,000+', 'From ₹7,999/yr + GST'],
                 ['Security Deposit', '₹1,00,000+', '₹0 (No Deposit)'],
                 ['Setup Time', '3-4 Weeks', '24 Hours'],
                 ['Maintenance', 'You Pay', 'Included (₹0)'],

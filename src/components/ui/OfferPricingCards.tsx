@@ -75,7 +75,7 @@ export default function OfferPricingCards({ city }: { city?: string }) {
           <div className="text-right">
             <div className="flex items-baseline gap-2">
               <span className="text-4xl md:text-5xl font-bold text-white">₹7,999</span>
-              <span className="text-white/50 text-sm font-medium">/ year</span>
+              <span className="text-white/50 text-sm font-medium">/ year <span className="text-xs ml-1">+ GST</span></span>
             </div>
           </div>
         </div>
@@ -97,7 +97,7 @@ export default function OfferPricingCards({ city }: { city?: string }) {
         <h3 className="text-2xl font-bold text-white mb-2 mt-4">Special Inaugural Offer</h3>
         
         <div className="text-4xl md:text-5xl font-extrabold text-accent mb-2 mt-4">
-          Starting from ₹6,999<span className="text-xl text-white/50 font-medium">/Seat*</span>
+          Starting from ₹6,999<span className="text-xl text-white/50 font-medium">/Seat* <span className="text-sm">+ GST</span></span>
         </div>
         
         <div className="bg-black/30 rounded-xl p-5 mb-6 mt-6 border border-white/5 text-left">
