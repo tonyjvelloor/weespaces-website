@@ -12,20 +12,10 @@ export default function ExitIntentPopup() {
     // Only trigger once per session
     if (hasTriggered) return;
 
-    // Trigger on scroll depth (70%)
-    const handleScroll = () => {
-      if (hasTriggered) return;
-      
-      const scrollHeight = document.documentElement.scrollHeight;
-      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-      const clientHeight = document.documentElement.clientHeight;
-      
-      const scrollPercentage = (scrollTop + clientHeight) / scrollHeight;
-      
-      if (scrollPercentage > 0.7) {
-        triggerPopup();
-      }
-    };
+    // Fallback timer (45 seconds) to catch mobile users or long-reading desktop users who haven't moved their mouse out
+    const timer = setTimeout(() => {
+      triggerPopup();
+    }, 45000);
 
     // Trigger on mouse leave (desktop exit intent)
     const handleMouseLeave = (e: MouseEvent) => {
@@ -48,12 +38,11 @@ export default function ExitIntentPopup() {
       return;
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('mouseout', handleMouseLeave); // Changed to mouseout for better exit detection
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mouseleave', handleMouseLeave);
+      clearTimeout(timer);
+      window.removeEventListener('mouseout', handleMouseLeave);
     };
   }, [hasTriggered]);
 
