@@ -3,7 +3,10 @@
 import React from 'react';
 import { CheckCircle, Zap } from 'lucide-react';
 
-export default function OfferPricingCards() {
+export default function OfferPricingCards({ city }: { city?: string }) {
+  const cityName = city ? city.charAt(0).toUpperCase() + city.slice(1) : 'Kerala';
+  const displayCity = city ? cityName : 'Kerala Hubs';
+  const subtitle = city ? `Valid in our ${cityName} Hub` : 'Valid in Trivandrum, Ernakulam & Calicut';
   const scrollToForm = () => {
     const formElement = document.getElementById('offer-lead-form');
     if (formElement) {
@@ -16,11 +19,11 @@ export default function OfferPricingCards() {
       {/* Kerala Tier */}
       <div className="bg-navy border border-white/10 rounded-3xl p-8 relative overflow-hidden flex flex-col hover:border-accent/50 transition-colors duration-300">
         <div className="absolute top-0 right-0 bg-white/5 text-white/40 text-xs font-bold px-4 py-1 rounded-bl-xl uppercase tracking-widest">
-          Kerala Hubs
+          {displayCity}
         </div>
         
-        <h3 className="text-2xl font-bold text-white mb-2">Kerala Premium</h3>
-        <p className="text-white/60 mb-8 text-sm">Valid in Trivandrum, Ernakulam & Calicut</p>
+        <h3 className="text-2xl font-bold text-white mb-2">{cityName} Premium</h3>
+        <p className="text-white/60 mb-8 text-sm">{subtitle}</p>
         
         <div className="bg-black/30 rounded-xl p-5 mb-8 border border-white/5">
           <div className="text-xs uppercase tracking-widest text-white/40 font-bold mb-4">What's Included</div>
@@ -81,7 +84,7 @@ export default function OfferPricingCards() {
           onClick={scrollToForm}
           className="w-full bg-white text-navy hover:bg-gray-100 font-bold py-4 rounded-xl transition-all shadow-lg text-lg border border-transparent mt-auto"
         >
-          Claim Kerala Offer
+          Claim {cityName} Offer
         </button>
       </div>
 
