@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, Loader2, Shield } from 'lucide-react';
 
-export default function CampaignLeadForm({ branch = "Campaign Default" }: { branch?: string }) {
+export default function CampaignLeadForm({ branch = "Campaign Default", defaultCity = "Kochi" }: { branch?: string, defaultCity?: string }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    city: 'Kochi',
+    city: defaultCity,
     businessType: 'Private Limited (Pvt Ltd)'
   });
   
