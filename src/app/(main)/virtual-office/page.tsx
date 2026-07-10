@@ -196,11 +196,11 @@ export default function VirtualOfficeHub() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Virtual Office for GST Registration", link: "/virtual-office/gst-registration", icon: "account_balance" },
-              { title: "Virtual Office for Company Registration", link: "/virtual-office/company-registration", icon: "business_center" },
-              { title: "Virtual Office vs Physical Office", link: "/virtual-office/vs-physical-office", icon: "compare_arrows" },
+              { title: "GST Registration in Kerala (2026 Guide)", link: "/virtual-office/gst-registration-kerala", icon: "account_balance" },
+              { title: "Documents Required for GST", link: "/virtual-office/documents-required", icon: "file_copy" },
+              { title: "Virtual Office vs Physical Office", link: "/virtual-office/virtual-office-vs-physical-office", icon: "compare_arrows" },
               { title: "Virtual Office Pricing Guide", link: "/virtual-office/pricing", icon: "payments" },
-              { title: "Mail Handling & Forwarding Guide", link: "/virtual-office/mail-handling", icon: "local_post_office" },
+              { title: "Company Registration Guide", link: "/virtual-office/company-registration", icon: "business_center" },
               { title: "Frequently Asked Questions", link: "/virtual-office/faq", icon: "quiz" },
             ].map((guide, idx) => (
               <ScrollReveal key={idx} delay={idx * 0.1}>
