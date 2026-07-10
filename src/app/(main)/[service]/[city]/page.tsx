@@ -485,7 +485,9 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
           <div className="max-w-7xl mx-auto px-6">
             <h3 className="text-2xl font-bold text-navy mb-6">Areas near {city.name}</h3>
             <div className="flex flex-wrap gap-3">
-              {[...(city.microLocations || []), ...(city.landmarks || [])].map((loc, idx) => (
+              {[...(city.microLocations || []), ...(city.landmarks || [])]
+                .filter(loc => !('services' in loc) || !loc.services || (loc.services as string[]).includes(service.slug))
+                .map((loc, idx) => (
                 <Link 
                   key={idx} 
                   href={`/${service.slug}/${city.slug}/${loc.slug}`}

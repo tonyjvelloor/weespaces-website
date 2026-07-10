@@ -41,11 +41,13 @@ export function generateStaticParams() {
   services.forEach(service => {
     Object.values(cities).forEach(city => {
       city.microLocations.forEach(micro => {
-        paths.push({
-          service: service.slug,
-          city: city.slug,
-          microLocation: micro.slug
-        });
+        if (!micro.services || micro.services.includes(service.slug)) {
+          paths.push({
+            service: service.slug,
+            city: city.slug,
+            microLocation: micro.slug
+          });
+        }
       });
       city.landmarks.forEach(landmark => {
         paths.push({
@@ -305,6 +307,16 @@ export default async function MicroLocationPage({ params }: { params: Promise<{ 
                   <h4 className="font-bold text-navy mb-2 flex items-center gap-2"><Briefcase className="w-4 h-4 text-accent" /> Corporate Neighbors</h4>
                   <p className="text-gray-600 text-sm">{microLoc.nearbyCompanies.join(', ')}</p>
                 </div>
+                {(microLoc.distanceToBranch || microLoc.travelTime) && (
+                  <div className="border-t border-accent/20 pt-4 bg-accent/5 p-4 rounded-xl mt-4">
+                    <h4 className="font-bold text-navy mb-2 flex items-center gap-2"><MapPin className="w-4 h-4 text-accent" /> Distance to WeeSpaces {city.name} HQ</h4>
+                    <p className="text-gray-700 text-sm font-medium">
+                      {microLoc.distanceToBranch && <span>{microLoc.distanceToBranch}</span>}
+                      {microLoc.distanceToBranch && microLoc.travelTime && <span className="mx-2">•</span>}
+                      {microLoc.travelTime && <span>{microLoc.travelTime}</span>}
+                    </p>
+                  </div>
+                )}
               </div>
             )}
             
