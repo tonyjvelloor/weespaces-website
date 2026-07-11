@@ -25,6 +25,10 @@ const nextConfig: NextConfig = {
       if (city === 'kochi') {
         redirectsList.push({ source: `/locations/kochi`, destination: `/coworking-space/kochi`, permanent: true });
       }
+      
+      // Google Ads rescue redirects (e.g., /calicut/virtual_office) -> pointing to the dedicated Monsoon Offer landing pages
+      redirectsList.push({ source: `/${city}/virtual_office`, destination: `/monsoon-offer/${city}`, permanent: true });
+      redirectsList.push({ source: `/${city}/virtual-office`, destination: `/monsoon-offer/${city}`, permanent: true });
     });
 
     return [
