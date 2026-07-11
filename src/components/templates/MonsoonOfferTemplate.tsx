@@ -52,15 +52,12 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                   Limited Period Monsoon Offer 🌧️
                 </div>
                 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-                  {dynamicHeading} <br className="hidden md:block"/>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-orange-400 drop-shadow-[0_0_30px_rgba(255,107,53,0.3)]">
-                    Without Renting an Office
-                  </span>
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight drop-shadow-lg">
+                  Secure Your Commercial Address in <span className="text-accent">{cityName}</span> Without Renting an Office
                 </h1>
 
                 <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-8 font-medium">
-                  Get a GST-compliant Virtual Office Address from just ₹7,999/year <span className="text-sm opacity-70">+ GST</span>.
+                  Get a premium commercial Virtual Office address required for corporate compliance from just ₹7,999/year <span className="text-sm opacity-70">+ GST</span>.
                 </p>
 
                 <div className="w-full max-w-lg mx-auto mb-10">
@@ -75,7 +72,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                   <ul className="space-y-4">
                     {[
                       'Premium Business Address for Registration',
-                      '100% GST & MCA Compliant',
+                      '100% Documentation Support',
                       'Setup & Documentation within 24 Hours',
                       'Professional Mail & Courier Handling',
                       'Zero Security Deposit Needed'
@@ -196,13 +193,13 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                 ['Setup Time', '3-4 Weeks', '24 Hours'],
                 ['Maintenance', 'You Pay', 'Included (₹0)'],
                 ['Furniture/Internet', 'You Pay', 'Not Needed'],
-                ['GST & MCA Address', 'Yes', 'Yes'],
+                ['Commercial Address', 'Yes', 'Yes'],
               ].map((row, i) => (
                 <div key={i} className="grid grid-cols-3 p-6 border-b border-white/5 hover:bg-white/5 transition-colors items-center text-center md:text-left">
                   <div className="font-bold text-white/90 text-sm md:text-base text-left">{row[0]}</div>
                   <div className="text-red-400 font-medium text-sm md:text-base text-center">{row[1]}</div>
                   <div className="text-green-400 font-bold flex items-center justify-center gap-2 text-sm md:text-base">
-                    {row[0] === 'GST & MCA Address' ? <CheckCircle className="w-5 h-5 hidden md:block" /> : null}
+                    {row[0] === 'Commercial Address' ? <CheckCircle className="w-5 h-5 hidden md:block" /> : null}
                     {row[2]}
                   </div>
                 </div>
@@ -230,7 +227,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
               <ul className="space-y-6">
                 {[
                   'Avoid ₹3–5 lakh/year in dead office rent.',
-                  'Register your business legally with the Govt.',
+                  'Get a professional commercial address.',
                   'Expand instantly into new tier-2 cities.',
                   'Build professional credibility with clients.',
                   'Operate 100% remotely without overheads.'
@@ -301,7 +298,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                     {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                   </div>
                   <p className="text-white/80 italic mb-4 leading-relaxed">
-                    "We got our Private Limited company registered using WeeSpaces in {cityName || 'Kerala'}. The NOC and agreement were delivered in exactly 24 hours. GST officers visited and everything was perfectly compliant."
+                    "We got our Private Limited company registered using WeeSpaces in {cityName || 'Kerala'}. The NOC and agreement were delivered in exactly 24 hours. Everything was perfectly compliant."
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">R</div>
@@ -320,7 +317,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                     {[1,2,3,4,5].map(i => <Star key={i} className="w-4 h-4 fill-accent text-accent" />)}
                   </div>
                   <p className="text-white/80 italic mb-4 leading-relaxed">
-                    "Saved over ₹3 Lakhs in office rent this year! The mail handling is super professional, and they notify me on WhatsApp the second any government letter arrives."
+                    "Saved over ₹3 Lakhs in office rent this year! The mail handling is super professional, and they notify me on WhatsApp the second any official letter arrives."
                   </p>
                   <div className="flex items-center gap-3">
                     <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">A</div>
@@ -431,10 +428,18 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
                 <CampaignLeadForm branch="Monsoon Offer Campaign - Footer" defaultCity={cityName || "Kochi"} />
               </div>
             </ScrollReveal>
-            
           </div>
         </div>
       </section>
+
+      {/* COMPLIANCE DISCLAIMER FOR GOOGLE ADS */}
+      <div className="bg-navy border-t border-white/10 py-8">
+        <div className="container mx-auto px-6 max-w-4xl text-center">
+          <p className="text-xs text-white/40 leading-relaxed">
+            <strong>Disclaimer:</strong> WeeSpaces provides commercial real estate, co-working spaces, and virtual office addresses. We are a private entity and are not affiliated with any government body, nor do we directly issue GST or company registrations. Our service provides the physical location and related address documentation (such as an NOC and Rental Agreement) that businesses may require for their independent corporate compliance processes.
+          </p>
+        </div>
+      </div>
       
     </div>
   );

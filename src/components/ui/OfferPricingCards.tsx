@@ -39,7 +39,7 @@ export default function OfferPricingCards({ city }: { city?: string }) {
             <li className="flex items-start justify-between gap-3 border-b border-white/5 pb-3">
               <div className="flex gap-3">
                 <CheckCircle className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-white/90">GST Registration Support</span>
+                <span className="text-white/90">Address for GST Compliance</span>
               </div>
               <span className="text-white/50 text-sm whitespace-nowrap">Worth ₹3,000</span>
             </li>
