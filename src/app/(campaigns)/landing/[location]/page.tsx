@@ -371,8 +371,10 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                 *Pricing varies by workspace type, floor, and booking requirements. Limited premium cabins remaining.
               </p>
             </div>
-          ) : (
-            <div className="grid md:grid-cols-3 gap-6">
+          )}
+
+          {locationId !== 'coimbatore' && (
+            <div className="grid md:grid-cols-3 gap-6 mt-12">
               {/* Hot Desk */}
               <div className="bg-navy-light/30 border border-white/10 p-8 rounded-3xl hover:border-accent/50 transition-colors flex flex-col">
                 <h3 className="text-2xl font-bold mb-2">Hot Desk</h3>
@@ -533,6 +535,13 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
                  </div>
               ))}
            </div>
+        </div>
+      </section>
+
+      {/* Compliance Section */}
+      <section className="py-20 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <ComplianceBlock />
         </div>
       </section>
 

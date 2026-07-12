@@ -41,6 +41,7 @@ export default function Footer() {
               <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
               <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+              <Link href="/legal/virtual-office-compliance" className="hover:text-accent transition-colors">Virtual Office Compliance</Link>
             </div>
           </div>
         </div>
@@ -130,6 +131,7 @@ export default function Footer() {
               <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
               <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
               <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+              <Link href="/legal/virtual-office-compliance" className="hover:text-accent transition-colors">Virtual Office Compliance</Link>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import GSTChecker from '@/components/tools/GSTChecker';
 import { ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = constructMetadata({
-  title: 'Workspace Compliance Document Checklist | Virtual Office',
+  title: 'Business Address Readiness Checker | Virtual Office',
   description: 'Check what documents you need to rent a virtual office for GST compliance in Kerala and Tamil Nadu. Get a personalized document checklist.',
   canonicalPath: '/gst-checker',
 });
@@ -23,7 +23,7 @@ export default function GSTCheckerPage() {
               <ShieldCheck className="w-4 h-4" /> Compliance Tool
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-black mb-6">
-              Get your Workspace Compliance Checklist.
+              Business Address Readiness Checker
             </h1>
             <p className="text-xl text-white/80 font-light max-w-2xl mx-auto">
               Answer 3 quick questions about your business type to instantly generate a personalized checklist of documents required to rent a GST-compliant business address in Kerala and Tamil Nadu.

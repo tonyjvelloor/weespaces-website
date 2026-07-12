@@ -11,6 +11,8 @@ export default function CampaignFooter() {
           <Link href="/privacy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
           <span>|</span>
           <Link href="/terms" className="hover:text-white/60 transition-colors">Terms of Service</Link>
+          <span>|</span>
+          <Link href="/legal/virtual-office-compliance" className="hover:text-white/60 transition-colors">Virtual Office Compliance</Link>
         </div>
       </div>
     </footer>

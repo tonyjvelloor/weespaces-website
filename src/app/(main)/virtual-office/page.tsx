@@ -11,10 +11,11 @@ import VoHowItWorks from '@/components/ui/VoHowItWorks';
 import LeadForm from '@/components/LeadForm';
 import SEOFAQ from '@/components/SEOFAQ';
 import { virtualOfficeFAQs } from '@/data/faqs';
+import ComplianceBlock from '@/components/ComplianceBlock';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Virtual Office in Kerala & Tamil Nadu | GST-Compliant Business Address | WeeSpaces",
-  description: "India's most transparent virtual office provider. Rent a premium commercial business address that complies with GST and Company Incorporation requirements in Kochi, Coimbatore, Trivandrum & Calicut.",
+  title: "Virtual Office in Kerala & Tamil Nadu | GST Registration | WeeSpaces",
+  description: "India's most transparent virtual office provider. Get a premium business address for GST registration, company incorporation, and mail handling in Kochi, Coimbatore, Trivandrum & Calicut.",
   canonicalPath: "/virtual-office"
 });
 
@@ -67,7 +68,7 @@ export default function VirtualOfficeHub() {
         "provider": {
           "@id": "https://www.weespaces.in/virtual-office/#localbusiness"
         },
-        "description": "Premium virtual workspace and commercial business address provision for GST compliance and Company Incorporation in South India.",
+        "description": "Premium virtual workspace and business address provision for GST registration and Company Incorporation in South India.",
         "offers": {
           "@type": "Offer",
           "price": "7999",
@@ -125,10 +126,10 @@ export default function VirtualOfficeHub() {
               India&apos;s Most Transparent Virtual Office Provider
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight max-w-4xl mx-auto">
-              Rent a <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Premium Business Address</span> for your Registrations
+              Virtual Office for <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">GST Registration</span> & Company Incorporation
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12">
-              Get a legally compliant virtual office with business address, documentation, mail handling and workspace access. Ready in 48 hours.
+              Premium business addresses with supporting commercial documentation for eligible business registrations. Ready in 48 hours.
             </p>
           </ScrollReveal>
         </div>
@@ -169,6 +170,10 @@ export default function VirtualOfficeHub() {
         </div>
       </section>
 
+      <section className="py-20 bg-gray-50 max-w-7xl mx-auto px-6">
+        <ComplianceBlock />
+      </section>
+
       {/* 4. CITY AVAILABILITY */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
@@ -181,10 +186,10 @@ export default function VirtualOfficeHub() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { city: "Coimbatore", title: "Tamil Nadu Expansion", perks: ["TN GST-Compliant Address", "Mail Handling", "Meeting Rooms", "Manufacturing Hub"] },
-              { city: "Kochi", title: "Near Infopark", perks: ["Kerala GST-Compliant Address", "Premium IT Address", "Startup Ecosystem", "Workspace Access"] },
-              { city: "Trivandrum", title: "Near Technopark", perks: ["Kerala GST-Compliant Address", "Govt Contractors", "IT Hub Presence", "Mail Forwarding"] },
-              { city: "Calicut", title: "Flagship Hub", perks: ["Kerala GST-Compliant Address", "Regional Expansion", "SME Friendly", "Flexible Plans"] }
+              { city: "Coimbatore", title: "Tamil Nadu Expansion", perks: ["TN GST Registration", "Mail Handling", "Meeting Rooms", "Manufacturing Hub"] },
+              { city: "Kochi", title: "Near Infopark", perks: ["Kerala GST Registration", "Premium IT Address", "Startup Ecosystem", "Workspace Access"] },
+              { city: "Trivandrum", title: "Near Technopark", perks: ["Kerala GST Registration", "Govt Contractors", "IT Hub Presence", "Mail Forwarding"] },
+              { city: "Calicut", title: "Flagship Hub", perks: ["Kerala GST Registration", "Regional Expansion", "SME Friendly", "Flexible Plans"] }
             ].map((loc, idx) => (
               <ScrollReveal key={idx} delay={idx * 0.1}>
                 <Link href={`/virtual-office/${loc.city.toLowerCase()}`} className="block group h-full">
@@ -272,15 +277,15 @@ export default function VirtualOfficeHub() {
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
               <div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">Virtual Office Compliance Hub</h2>
-                <p className="text-white/60 max-w-2xl">Learn about the commercial real estate requirements for registering companies and maintaining GST-Compliant Business Address using a virtual address.</p>
+                <p className="text-white/60 max-w-2xl">Learn about the commercial real estate requirements for registering companies and maintaining GST compliance using a virtual address.</p>
               </div>
             </div>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "GST Address Compliance in Kerala", link: "/virtual-office/gst-registration-kerala", icon: "account_balance" },
-              { title: "Documents Provided for GST Compliance", link: "/virtual-office/documents-required", icon: "file_copy" },
+              { title: "GST Registration in Kerala (2026 Guide)", link: "/virtual-office/gst-registration-kerala", icon: "account_balance" },
+              { title: "Documents Required for GST Registration", link: "/virtual-office/documents-required", icon: "file_copy" },
               { title: "Virtual Office vs Physical Office", link: "/virtual-office/virtual-office-vs-physical-office", icon: "compare_arrows" },
               { title: "Virtual Office Pricing Guide", link: "/virtual-office/pricing", icon: "payments" },
               { title: "Company Registration Guide", link: "/virtual-office/company-registration", icon: "business_center" },
@@ -314,6 +319,16 @@ export default function VirtualOfficeHub() {
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Get Your Virtual Office Quote</h2>
               <p className="text-gray-500">Fill out the form below and our team will get back to you within 2 hours with the required documentation.</p>
+            </div>
+            <div className="bg-navy-light/5 border border-gray-200 rounded-3xl p-8 mb-10 text-left max-w-2xl mx-auto">
+              <h3 className="text-xl font-bold text-navy mb-4 text-center">What You Receive</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Commercial business address</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Rental agreement</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> NOC (where applicable)</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Mail handling</li>
+                <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Workspace access (if included in plan)</li>
+              </ul>
             </div>
             <LeadForm />
           </ScrollReveal>

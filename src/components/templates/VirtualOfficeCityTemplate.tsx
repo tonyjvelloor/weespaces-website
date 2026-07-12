@@ -88,6 +88,15 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
                 Get Your {city.name} Address
               </div>
               <div className="p-6">
+                <div className="bg-gray-50 border border-gray-100 rounded-xl p-4 mb-6 text-left">
+                  <h3 className="text-sm font-bold text-navy mb-2">What You Receive</h3>
+                  <ul className="space-y-2 text-xs text-gray-600">
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-accent"></span> Commercial business address</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-accent"></span> Rental agreement</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-accent"></span> NOC (where applicable)</li>
+                    <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-accent"></span> Mail handling</li>
+                  </ul>
+                </div>
                 <LeadForm branch={city.name} source={`Virtual Office ${city.name} Hero`} hidePricing />
               </div>
             </div>
