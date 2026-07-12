@@ -335,8 +335,8 @@ export default function Home() {
                   </div>
                   <div className="glass rounded-xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
-                      <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Business Address</h3>
-                      <p className="text-white/60 mb-6 relative z-10 text-sm h-10">GST registration and virtual presence.</p>
+                      <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Virtual Business Address</h3>
+                      <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Registered office solutions and professional virtual workspaces.</p>
                       <Link href="/virtual-office" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Setup Virtual Office <ChevronRight className="w-4 h-4" /></Link>
                   </div>
           </div>

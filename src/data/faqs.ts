@@ -149,16 +149,20 @@ export const privateOfficeFAQs: FAQ[] = [
 
 export const virtualOfficeFAQs: FAQ[] = [
   {
-    question: "What is a virtual office?",
-    answer: "A virtual office gives businesses a professional office address without renting physical workspace. Companies use virtual offices for business registration, communication, and establishing presence in a preferred location."
+    question: "Is a Virtual Workspace the same as a Virtual Office?",
+    answer: "Yes. Both terms refer to a professional business address service that allows you to register your company and manage mail without renting a physical workspace."
   },
   {
-    question: "Can I use a virtual office for GST registration in Kerala?",
-    answer: "Yes. A virtual office can be used for GST registration when it provides the required business address documentation according to applicable regulations."
+    question: "Can I use a Virtual Office for GST Registration in Kerala and Tamil Nadu?",
+    answer: "Yes! Our virtual office plans are designed specifically to be 100% compliant for GST registration. We provide all mandatory documentation, including a No Objection Certificate (NOC), Rental Agreement, and Utility Bill."
   },
   {
-    question: "Who needs a virtual office?",
-    answer: "Virtual offices are useful for startups, ecommerce sellers, consultants, freelancers, and remote businesses that need a professional address without maintaining a physical office."
+    question: "Can I register a Private Limited Company with this address?",
+    answer: "Absolutely. A virtual office provides a valid Principal Place of Business, making it fully legal and suitable for incorporating Private Limited Companies, LLPs, and other corporate entities with the MCA."
+  },
+  {
+    question: "Is a Virtual Office legal in India?",
+    answer: "Yes, virtual offices are completely legal in India. The Ministry of Corporate Affairs (MCA) and GST departments both accept virtual office addresses for registration, provided you can produce the valid NOC and rental agreements—which we supply."
   }
 ];
 

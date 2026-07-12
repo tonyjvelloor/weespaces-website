@@ -11,6 +11,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   category: string;
+  tags?: string[];
   author: string;
   content: string; // raw MDX content
 }
@@ -46,6 +47,7 @@ export function getAllPosts(): Omit<BlogPost, 'content'>[] {
       date: data.date as string,
       readTime: data.readTime as string,
       category: data.category as string,
+      tags: (data.tags as string[]) || [],
       author: (data.author as string) || 'WeeSpaces Team',
     };
   });
@@ -75,6 +77,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     date: data.date as string,
     readTime: data.readTime as string,
     category: data.category as string,
+    tags: (data.tags as string[]) || [],
     author: (data.author as string) || 'WeeSpaces Team',
     content: content,
   };

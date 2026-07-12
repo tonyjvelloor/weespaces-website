@@ -193,5 +193,89 @@ export const virtualOfficeArticles: Record<string, VirtualOfficeArticle> = {
     relatedArticles: [
       { slug: 'gst-registration-kerala', title: 'Kerala Specific Rules' }
     ]
+  },
+  'company-registration': {
+    slug: 'company-registration',
+    title: 'Virtual Office for Company Registration (MCA)',
+    description: 'Use a premium virtual business address as your Principal Place of Business to register a Private Limited Company or LLP in India.',
+    quickAnswer: 'Yes, the Ministry of Corporate Affairs (MCA) permits the use of a Virtual Office as the registered office address for incorporating a Private Limited Company or LLP. You will need a No Objection Certificate (NOC) and rent agreement from the workspace provider, which we provide.',
+    summaryTable: [
+      { label: 'Validity', value: '100% MCA Compliant' },
+      { label: 'Entities', value: 'Pvt Ltd, LLP, OPC, Public Ltd' },
+      { label: 'Timeframe', value: 'Documents ready in 24 hrs' }
+    ],
+    benefits: [
+      { title: 'Protect Privacy', description: 'Avoid listing your residential home address on public government databases.' },
+      { title: 'Premium Corporate Image', description: 'Register your startup at a Grade-A commercial building.' },
+      { title: 'Statutory Compliance', description: 'Receive all official MCA, Income Tax, and legal notices securely.' }
+    ],
+    requirements: {
+      title: 'Documents Required for MCA',
+      items: [
+        'Director KYC (PAN & Aadhaar)',
+        'Proposed Company Name',
+        'NOC from WeeSpaces',
+        'Notarized Rent Agreement',
+        'Latest Utility Bill'
+      ]
+    },
+    processSteps: [
+      { step: 1, title: 'Choose Address', description: 'Select a premium location for your HQ.' },
+      { step: 2, title: 'Get NOC', description: 'Receive the required NOC and utility bill from us.' },
+      { step: 3, title: 'File SPICe+', description: 'Use the address in the SPICe+ incorporation form on the MCA portal.' }
+    ],
+    costInfo: {
+      description: 'Annual Virtual Office Subscription',
+      price: '₹15,000 / year',
+      includes: ['Registered Office Address', 'Mail Handling', 'NOC for MCA']
+    },
+    faqs: [
+      { question: 'Do I need a physical name board?', answer: 'Yes, per MCA rules, a name board must be displayed. We install a digital or physical name board for your company at our premises.' }
+    ],
+    relatedArticles: [
+      { slug: 'gst-registration-kerala', title: 'GST Registration Guide' }
+    ]
+  },
+  'pricing': {
+    slug: 'pricing',
+    title: 'Virtual Office Pricing Guide (2026)',
+    description: 'A complete breakdown of virtual office costs, what is included, and how to choose the right plan for your business.',
+    quickAnswer: 'Virtual office pricing typically ranges from ₹10,000 to ₹25,000 per year depending on the location and services. Basic plans cover business address and mail handling, while premium plans include GST/MCA registration documents (NOC, Rent Agreement) and complimentary meeting room hours.',
+    summaryTable: [
+      { label: 'Basic Business Address', value: '₹10,000/year' },
+      { label: 'GST/MCA Registration Plan', value: '₹15,000/year' },
+      { label: 'Premium Plan (with meeting rooms)', value: '₹25,000/year' }
+    ],
+    benefits: [
+      { title: 'Cost Savings', description: 'Save up to 95% compared to leasing a traditional office.' },
+      { title: 'Zero Hidden Fees', description: 'Our pricing includes document notarization and setup costs.' },
+      { title: 'Scalability', description: 'Easily upgrade to a physical desk or private cabin as your team grows.' }
+    ],
+    requirements: {
+      title: 'What to Look For in Pricing',
+      items: [
+        'Ensure NOC and Rent Agreement are included (no extra cost)',
+        'Check if mail forwarding is included or billed separately',
+        'Verify if meeting room access is discounted for members',
+        'Look for transparent annual billing without deposits'
+      ]
+    },
+    processSteps: [
+      { step: 1, title: 'Identify Needs', description: 'Decide if you just need an address, or full GST/MCA compliance.' },
+      { step: 2, title: 'Compare Plans', description: 'Review our pricing tiers to find the best fit.' },
+      { step: 3, title: 'Subscribe', description: 'Pay securely online and get activated instantly.' }
+    ],
+    costInfo: {
+      description: 'Our most popular plan for complete compliance.',
+      price: '₹15,000 / year',
+      includes: ['GST Registration', 'Company Registration', 'Mail Handling']
+    },
+    faqs: [
+      { question: 'Is there a deposit required?', answer: 'No, virtual office plans operate on a simple annual subscription with zero security deposit.' },
+      { question: 'Can I pay monthly?', answer: 'Virtual office plans are billed annually to ensure continuous legal compliance for your registrations.' }
+    ],
+    relatedArticles: [
+      { slug: 'virtual-office-vs-physical-office', title: 'Compare with Physical Office Costs' }
+    ]
   }
 };

@@ -1,455 +1,157 @@
-export type Comparison = {
-  id: string;
+export interface ComparisonPoint {
+  feature: string;
+  traditional: {
+    value: string;
+    description?: string;
+  };
+  weespaces: {
+    value: string;
+    description?: string;
+  };
+}
+
+export interface Comparison {
   slug: string;
   title: string;
-  shortDesc: string;
-  optionA: {
-    name: string;
-    pros: string[];
-    cons: string[];
-    idealFor: string;
+  description: string;
+  metaTitle: string;
+  metaDescription: string;
+  prosCons: {
+    traditional: { pros: string[]; cons: string[] };
+    weespaces: { pros: string[]; cons: string[] };
   };
-  optionB: {
-    name: string;
-    pros: string[];
-    cons: string[];
-    idealFor: string;
-  };
-  verdict: string;
+  points: ComparisonPoint[];
   faqs: { question: string; answer: string }[];
-};
+}
 
-export const comparisons: Comparison[] = [
-  {
-    id: 'coworking-vs-traditional',
+export const comparisons: Record<string, Comparison> = {
+  'coworking-vs-traditional-office': {
     slug: 'coworking-vs-traditional-office',
-    title: 'Coworking Space vs Traditional Office',
-    shortDesc: 'Compare the costs, flexibility, and setup time between flexible coworking and traditional commercial leasing.',
-    optionA: {
-      name: 'Coworking Space',
-      pros: [
-        'Zero upfront capital expenditure (CapEx)',
-        'Plug-and-play setup—move in tomorrow',
-        'Flexible month-to-month contracts',
-        'All-inclusive pricing (utilities, internet, cleaning included)'
-      ],
-      cons: [
-        'Less privacy in open areas (unless renting a private cabin)',
-        'Limited layout customization'
-      ],
-      idealFor: 'Startups, freelancers, remote teams, and SMEs looking for agility and low risk.'
+    title: 'Coworking Space vs. Traditional Office',
+    description: 'Compare the true costs, flexibility, and operational differences between renting a traditional office and moving into a WeeSpaces coworking space.',
+    metaTitle: 'Coworking Space vs Traditional Office | WeeSpaces Compare',
+    metaDescription: 'Is a coworking space better than a traditional office lease? Compare costs, lock-in periods, and amenities.',
+    prosCons: {
+      traditional: {
+        pros: ['Complete control over branding', 'Full privacy for all areas', 'Perceived stability'],
+        cons: ['High capital expenditure (CapEx)', 'Long lock-in periods (3-5 years)', 'Maintenance overhead']
+      },
+      weespaces: {
+        pros: ['Zero CapEx on fit-outs', 'Flexible terms (monthly/yearly)', 'All-inclusive billing (internet, power, cleaning)'],
+        cons: ['Shared common amenities', 'Standardized core branding']
+      }
     },
-    optionB: {
-      name: 'Traditional Office',
-      pros: [
-        'Complete control over branding and layout',
-        'Absolute privacy for all operations',
-        'Predictable long-term costs'
-      ],
-      cons: [
-        'Heavy upfront deposit (often 6-10 months rent)',
-        'Long lock-in periods (3-5 years)',
-        'Hidden operational costs (maintenance, housekeeping, internet)'
-      ],
-      idealFor: 'Large enterprises with highly specific security/layout needs and predictable headcount.'
-    },
-    verdict: 'For 90% of modern businesses with fewer than 50 employees, the agility and cost savings of a coworking or managed space far outweigh the benefits of a traditional lease.',
-    faqs: [
+    points: [
       {
-        question: 'Which option is actually cheaper?',
-        answer: 'While traditional rent per square foot seems cheaper on paper, when you factor in deposits, fit-out costs, internet, electricity, and housekeeping, coworking spaces are typically 20-30% cheaper over a 2-year horizon.'
+        feature: 'Setup Cost (CapEx)',
+        traditional: { value: '₹1,500 - ₹3,000 per sq.ft', description: 'Significant investment in interiors, furniture, and IT infrastructure.' },
+        weespaces: { value: '₹0', description: 'Fully furnished, plug-and-play spaces ready from day one.' }
       },
       {
-        question: 'Can I get privacy in a coworking space?',
-        answer: 'Yes! Modern coworking spaces offer private, lockable cabins that provide the same privacy as a traditional office, but with shared amenities like cafeterias and meeting rooms.'
+        feature: 'Lock-in Period',
+        traditional: { value: '3 to 5 Years', description: 'Strict lock-ins with heavy penalties for early exit.' },
+        weespaces: { value: '1 to 12 Months', description: 'Highly flexible agreements allowing you to scale up or down.' }
+      },
+      {
+        feature: 'Operational Expenses (OpEx)',
+        traditional: { value: 'Variable & High', description: 'Separate bills for electricity, internet, housekeeping, security, and maintenance.' },
+        weespaces: { value: 'Fixed & Included', description: 'One single invoice covering all operational amenities.' }
+      },
+      {
+        feature: 'Move-in Time',
+        traditional: { value: '45 to 90 Days', description: 'Time lost in negotiations, interior design, and vendor management.' },
+        weespaces: { value: 'Immediate (24 hours)', description: 'Sign the agreement and start working the next day.' }
       }
+    ],
+    faqs: [
+      { question: 'Which option is cheaper for a startup?', answer: 'Coworking spaces offer significantly lower initial costs since there is zero CapEx. For a team of 10-20, coworking remains cheaper over a 3-year period when factoring in hidden maintenance and utility costs of traditional leases.' },
+      { question: 'Can I get a private space in a coworking hub?', answer: 'Yes, WeeSpaces offers Private Cabins within our coworking hubs, giving you lockable, secure spaces while still enjoying shared amenities.' }
     ]
   },
-  {
-    id: 'managed-vs-leasing',
+  'managed-office-vs-leasing': {
     slug: 'managed-office-vs-leasing',
-    title: 'Managed Office vs Traditional Leasing',
-    shortDesc: 'Understand why enterprises are shifting from traditional commercial leases to fully managed office spaces.',
-    optionA: {
-      name: 'Managed Office',
-      pros: [
-        'Custom built to your brand and layout specifications',
-        'Zero CapEx—fit-outs are amortized or covered by the operator',
-        'Single monthly invoice covering rent, operations, and maintenance',
-        'Dedicated secure IT infrastructure'
-      ],
-      cons: [
-        'Slightly higher monthly OpEx compared to raw leased space',
-        'Usually requires a minimum commitment of 1-2 years (though much less than traditional 5-year lock-ins)'
-      ],
-      idealFor: 'Mid-market to enterprise companies (20-500+ employees) wanting a custom headquarters without the operational headache.'
+    title: 'Managed Office vs. Commercial Leasing',
+    description: 'Discover why enterprise teams are shifting from traditional commercial real estate leasing to custom Managed Offices.',
+    metaTitle: 'Managed Office vs Commercial Leasing | Enterprise Compare',
+    metaDescription: 'Compare Managed Offices with Traditional Commercial Leasing. See why large teams save millions in CapEx.',
+    prosCons: {
+      traditional: {
+        pros: ['Direct landlord relationship', 'Absolute structural control', 'Long-term asset stability'],
+        cons: ['Massive upfront capital required', 'Complex vendor management', 'Inflexible footprint if team shrinks']
+      },
+      weespaces: {
+        pros: ['Bespoke enterprise build-outs', 'Zero CapEx', 'Single point of contact for facility management'],
+        cons: ['Premium operational fee', 'Dependent on operator standards']
+      }
     },
-    optionB: {
-      name: 'Traditional Leasing',
-      pros: [
-        'Direct relationship with the landlord',
-        'Long-term stability (5-9 year leases)',
-        'Potentially lower monthly rent if you manage all operations yourself'
-      ],
-      cons: [
-        'Massive upfront costs for interior fit-outs',
-        'Requires dedicated facilities management staff',
-        'Inflexible if the company needs to downsize or rapidly expand'
-      ],
-      idealFor: 'Massive corporations planning to stay in the exact same footprint for 10+ years.'
-    },
-    verdict: 'Managed offices offer the best of both worlds: the customization and privacy of a traditional lease, but the flexibility and zero-CapEx model of coworking.',
-    faqs: [
+    points: [
       {
-        question: 'What is the difference between a managed office and a private office?',
-        answer: 'A private office is an enclosed space within a larger coworking facility. A managed office is an entirely custom-built workspace (often an entire floor or building) managed exclusively for one company.'
+        feature: 'Capital Expenditure',
+        traditional: { value: 'Very High', description: 'You fund the entire interior fit-out, HVAC, and IT network.' },
+        weespaces: { value: 'Zero', description: 'WeeSpaces amortizes the fit-out cost into your monthly fee.' }
       },
       {
-        question: 'Do I get to choose the interior design?',
-        answer: 'Absolutely. With a managed office, the space is designed and built exactly to your brand guidelines before you move in.'
-      }
-    ]
-  },
-  {
-    id: 'private-vs-shared',
-    slug: 'private-office-vs-shared-office',
-    title: 'Private Office vs Shared Office',
-    shortDesc: 'Decide whether your team needs an enclosed private cabin or can thrive in an open shared workspace.',
-    optionA: {
-      name: 'Private Office',
-      pros: [
-        'Enclosed, secure, and lockable space',
-        'Acoustic privacy for meetings and calls',
-        'Ability to store equipment securely overnight',
-        'Team cohesion in a dedicated environment'
-      ],
-      cons: [
-        'More expensive per desk than open seating',
-        'Requires booking the right size for your current team'
-      ],
-      idealFor: 'Teams of 3+ people handling sensitive information, taking frequent calls, or needing dedicated team space.'
-    },
-    optionB: {
-      name: 'Shared Office (Hot/Dedicated Desks)',
-      pros: [
-        'Highly cost-effective',
-        'Maximum networking opportunities with other companies',
-        'Ultimate flexibility to scale desk-by-desk'
-      ],
-      cons: [
-        'Can be noisy during peak hours',
-        'Lack of privacy for confidential conversations (must use phone booths)'
-      ],
-      idealFor: 'Freelancers, solopreneurs, and remote workers who want a professional environment without the cost of a private cabin.'
-    },
-    verdict: 'If you have a team of 3 or more, a private office is almost always the better choice for productivity. For individuals, shared desks are perfect.',
-    faqs: [
-      {
-        question: 'Can shared office users access meeting rooms?',
-        answer: 'Yes, all our shared office members get monthly credits to book private meeting rooms for client pitches or confidential calls.'
+        feature: 'Facility Management',
+        traditional: { value: 'Self-Managed', description: 'You must hire and manage receptionists, cleaners, and IT support.' },
+        weespaces: { value: 'Fully Managed', description: 'We handle 100% of the facility management with enterprise SLAs.' }
       },
       {
-        question: 'Is it safe to leave my monitors in a shared office?',
-        answer: 'If you rent a Dedicated Desk, you can leave your monitors and equipment. Hot Desk users must clear their desks at the end of the day.'
+        feature: 'Time to Market',
+        traditional: { value: '6 to 9 Months', description: 'Site selection, legal, design approvals, and construction.' },
+        weespaces: { value: '45 to 60 Days', description: 'Rapid deployment using our established vendor network.' }
+      },
+      {
+        feature: 'Branding',
+        traditional: { value: 'Custom', description: 'Fully your brand.' },
+        weespaces: { value: 'Custom', description: 'Fully white-labeled to your brand guidelines.' }
       }
+    ],
+    faqs: [
+      { question: 'Do managed offices feel like a coworking space?', answer: 'No. A managed office is a private, dedicated floor or building explicitly designed for your company. There are no shared tenants on your floor.' },
+      { question: 'How is the IT infrastructure handled?', answer: 'We build enterprise-grade IT infrastructure, including private VLANs and secure server rooms, according to your exact compliance specifications.' }
     ]
   },
-  {
-    id: 'virtual-vs-physical',
+  'virtual-office-vs-physical-office': {
     slug: 'virtual-office-vs-physical-office',
-    title: 'Virtual Office vs Physical Office',
-    shortDesc: 'Compare the benefits of a premium business address for registration versus a physical workspace.',
-    optionA: {
-      name: 'Virtual Office',
-      pros: [
-        'Extremely low monthly cost',
-        'Provides a premium commercial address for GST/Company registration',
-        'Includes mail and package handling',
-        'Professional reception to greet your occasional visitors'
-      ],
-      cons: [
-        'No dedicated physical workspace to work from daily',
-        'Must pay extra or use credits for meeting rooms'
-      ],
-      idealFor: 'Remote-first companies, e-commerce sellers, and businesses expanding to a new city without relocating staff.'
+    title: 'Virtual Office vs. Physical Office',
+    description: 'Compare the benefits of a Virtual Office for GST and MCA registration against renting a physical commercial space.',
+    metaTitle: 'Virtual Office vs Physical Office | Which is better?',
+    metaDescription: 'Do you need a physical office, or will a Virtual Office suffice for GST and Company Registration? Compare costs and legality.',
+    prosCons: {
+      traditional: {
+        pros: ['Dedicated physical presence', 'Walk-in customer capabilities', 'In-person team collaboration'],
+        cons: ['High monthly rent', 'Utility bills and maintenance', 'Tied to a specific geographic location']
+      },
+      weespaces: {
+        pros: ['Extremely cost-effective (₹10k - ₹20k/year)', 'Legal compliance for GST/MCA', 'Premium business address'],
+        cons: ['No dedicated daily seating', 'Meeting rooms require hourly booking']
+      }
     },
-    optionB: {
-      name: 'Physical Office',
-      pros: [
-        'A dedicated place for deep work and collaboration',
-        'Full access to all amenities (internet, pantry, events)',
-        'Easier to build company culture'
-      ],
-      cons: [
-        'Higher monthly financial commitment',
-        'Requires commuting'
-      ],
-      idealFor: 'Teams that require in-person collaboration, client meetings, and a structured work environment.'
-    },
-    verdict: 'If your entire team works remotely but you need to comply with government regulations (like GST) or want a professional front, a Virtual Office is a no-brainer.',
-    faqs: [
+    points: [
       {
-        question: 'Can I use a Virtual Office for GST registration?',
-        answer: 'Yes! Our Virtual Office plans provide all the necessary NOCs, utility bills, and rental agreements required by authorities for seamless GST and company registration.'
+        feature: 'Annual Cost',
+        traditional: { value: '₹1.5L - ₹5L+', description: 'Depends heavily on city and square footage.' },
+        weespaces: { value: '₹9,999 - ₹19,999/yr', description: 'A fraction of the cost for the same premium address.' }
       },
       {
-        question: 'Can I upgrade from a Virtual Office to a Physical Office later?',
-        answer: 'Absolutely. Many companies start with a Virtual Office to test a market and upgrade to a physical private office when they hire local staff.'
-      }
-    ]
-  },
-  {
-    id: 'weespaces-vs-regus',
-    slug: 'weespaces-vs-regus-alternative',
-    title: 'WeeSpaces vs Regus',
-    shortDesc: 'Looking for a Regus alternative in Kerala or Tamil Nadu? Compare the global giant with the premier local operator.',
-    optionA: {
-      name: 'WeeSpaces',
-      pros: [
-        '100% Transparent Pricing—no hidden fees for internet, tea/coffee, or meeting rooms',
-        'Deep local expertise in South Indian markets (Kochi, Trivandrum, Calicut, Coimbatore)',
-        'Highly agile contracts with easy exit clauses',
-        'Direct relationship with the founders and local operations team'
-      ],
-      cons: [
-        'Only present in South India (currently 4 cities)',
-        'No global passport access'
-      ],
-      idealFor: 'Startups, SMEs, and enterprise teams looking for premium quality without the rigid bureaucracy and hidden costs of a global operator.'
-    },
-    optionB: {
-      name: 'Regus',
-      pros: [
-        'Massive global network with thousands of locations worldwide',
-        'Strong brand recognition for traditional corporate clients',
-        'Standardized global processes'
-      ],
-      cons: [
-        'Notorious for hidden fees (e.g., charging extra for internet, coffee, or printing)',
-        'Rigid, inflexible contracts that are difficult to terminate',
-        'Support tickets often go to global call centers rather than local staff'
-      ],
-      idealFor: 'Multinational executives who travel globally 300 days a year and need lounge access everywhere.'
-    },
-    verdict: 'If you are building a team in Kerala or Tamil Nadu, WeeSpaces offers a vastly superior, transparent, and personalized experience compared to the rigid, fee-heavy model of global aggregators like Regus.',
-    faqs: [
-      {
-        question: 'Is WeeSpaces cheaper than Regus?',
-        answer: 'Yes. While base prices might look similar, WeeSpaces includes high-speed internet, premium coffee, and meeting room credits in the base price. Regus often charges these as hidden add-ons, making their total cost of ownership 20-40% higher.'
+        feature: 'GST & MCA Registration',
+        traditional: { value: 'Valid', description: 'Rent agreement acts as proof.' },
+        weespaces: { value: 'Valid', description: 'We provide NOC and required documentation for government portals.' }
       },
       {
-        question: 'Does WeeSpaces offer the same quality as global brands?',
-        answer: 'Absolutely. We manage Grade-A commercial real estate with enterprise-grade IT infrastructure, biometric security, and ergonomic furnishings that rival or exceed global standards.'
-      }
-    ]
-  },
-  {
-    id: 'weespaces-vs-awfis',
-    slug: 'weespaces-vs-awfis-alternative',
-    title: 'WeeSpaces vs Awfis',
-    shortDesc: 'Looking for an Awfis alternative in Kochi or Trivandrum? Compare the national chain with Kerala\'s premium local operator.',
-    optionA: {
-      name: 'WeeSpaces',
-      pros: [
-        'Hyper-localized focus on the South Indian startup ecosystem',
-        'Transparent, flat pricing without hidden add-ons',
-        'Boutique, personalized community management',
-        'Highly flexible contracts tailored for growing local teams'
-      ],
-      cons: [
-        'Present only in Kerala and Coimbatore',
-        'No pan-India roaming access'
-      ],
-      idealFor: 'Regional startups, SMEs, and enterprise teams who value a personalized, premium workspace experience without corporate rigidity.'
-    },
-    optionB: {
-      name: 'Awfis',
-      pros: [
-        'Large pan-India presence across Tier 1 and Tier 2 cities',
-        'Ability to roam across different centers nationally',
-        'Standardized national processes'
-      ],
-      cons: [
-        'Can feel highly corporate and impersonal',
-        'Hidden costs often surface for meeting rooms, printing, and parking',
-        'Support relies on a centralized corporate ticketing system rather than local resolution'
-      ],
-      idealFor: 'Frequent national travelers who need basic desk access in multiple Indian states every week.'
-    },
-    verdict: 'If your core team is based in Kerala or Coimbatore, WeeSpaces offers a much warmer, premium, and flexible environment compared to the standardized corporate feel of Awfis.',
-    faqs: [
-      {
-        question: 'What makes WeeSpaces different from national chains like Awfis?',
-        answer: 'As a premium local operator, we have deep roots in the local business ecosystem. We offer a boutique experience, direct access to the founding team for custom requests, and zero hidden costs.'
+        feature: 'Mail & Courier Handling',
+        traditional: { value: 'Self-Managed', description: 'Requires a receptionist.' },
+        weespaces: { value: 'Included', description: 'Our reception handles your mail and notifies you instantly.' }
       },
       {
-        question: 'Can I customize my office space with WeeSpaces?',
-        answer: 'Yes! Unlike rigid national chains, we specialize in Managed Offices, meaning we can custom-build your office layout and branding exactly how you want it.'
+        feature: 'Workspace Usage',
+        traditional: { value: '24/7 Access', description: 'Permanent dedicated space.' },
+        weespaces: { value: 'On-Demand', description: 'Book meeting rooms or desks only when needed.' }
       }
-    ]
-  },
-  {
-    id: 'weespaces-vs-cofynd',
-    slug: 'weespaces-vs-cofynd-alternative',
-    title: 'WeeSpaces vs CoFynd',
-    shortDesc: 'Understand the difference between booking through an aggregator broker like CoFynd versus directly with an operator like WeeSpaces.',
-    optionA: {
-      name: 'WeeSpaces (Operator)',
-      pros: [
-        'Direct operator—we design, build, and manage the spaces ourselves',
-        'Direct negotiation—no middleman margins means better pricing for you',
-        'Immediate local support and facility management',
-        'Guaranteed quality control across all our locations'
-      ],
-      cons: [
-        'Limited to our specific premium locations in South India'
-      ],
-      idealFor: 'Companies that want a direct relationship, the best possible price, and guaranteed premium quality.'
-    },
-    optionB: {
-      name: 'CoFynd (Aggregator)',
-      pros: [
-        'Massive inventory showing hundreds of different spaces across India',
-        'Good for initial market research to see what exists',
-        'Single platform to view multiple options'
-      ],
-      cons: [
-        'They are a broker/aggregator—they do not own or manage the spaces',
-        'You deal with a middleman, which can slow down negotiations and support',
-        'Quality varies wildly since they list 3rd party spaces'
-      ],
-      idealFor: 'People who want to browse every single budget option in a city before making a decision.'
-    },
-    verdict: 'Use aggregators like CoFynd to research the market, but always book directly with a premium operator like WeeSpaces to secure the best rates, direct support, and guaranteed quality.',
+    ],
     faqs: [
-      {
-        question: 'Does CoFynd charge a fee?',
-        answer: 'Aggregators typically take a commission from the operator. By dealing directly with WeeSpaces, you avoid middleman margins and secure more flexible terms.'
-      },
-      {
-        question: 'Who manages the workspace if I book through an aggregator?',
-        answer: 'The local operator manages it. The aggregator simply acts as a booking agent. If the internet goes down, the aggregator cannot fix it—you still rely on the local operator.'
-      }
-    ]
-  },
-  {
-    id: 'weespaces-vs-myhq',
-    slug: 'weespaces-vs-myhq-alternative',
-    title: 'WeeSpaces vs myHQ',
-    shortDesc: 'Understand the difference between booking through a massive aggregator like myHQ versus directly with a premium operator like WeeSpaces.',
-    optionA: {
-      name: 'WeeSpaces (Operator)',
-      pros: [
-        'We design, build, and fully manage our own spaces',
-        'Direct relationship ensures the best possible pricing and custom terms',
-        'Immediate local IT and facility support',
-        'High-end, consistent quality across all our locations'
-      ],
-      cons: [
-        'Inventory is limited strictly to our proprietary premium hubs'
-      ],
-      idealFor: 'Startups and enterprises looking for a reliable, long-term workspace partner with guaranteed SLA and quality.'
-    },
-    optionB: {
-      name: 'myHQ (Aggregator)',
-      pros: [
-        'Massive directory of third-party spaces including cafes and budget hubs',
-        'Great for buying cheap day passes at random locations',
-        'Wide geographical coverage'
-      ],
-      cons: [
-        'They do not own or manage the spaces they list',
-        'Quality control is non-existent (you might end up in a noisy cafe)',
-        'You add a middleman to your lease negotiations'
-      ],
-      idealFor: 'Students or freelancers looking for the absolute cheapest day pass in a cafe.'
-    },
-    verdict: 'Aggregators like myHQ are great for finding a quick cafe to work from for a day. But if you are setting up a professional headquarters for your company, deal directly with an operator like WeeSpaces to guarantee quality and secure the best direct-to-owner pricing.',
-    faqs: [
-      {
-        question: 'Does myHQ own the coworking spaces?',
-        answer: 'No. myHQ is an aggregator platform that lists spaces owned by other people (including cafes and hotels). WeeSpaces is an operator; we own and manage our dedicated facilities.'
-      },
-      {
-        question: 'Will I get a better deal booking directly with WeeSpaces?',
-        answer: 'Yes. By bypassing the aggregator, you avoid broker commissions, allowing us to offer you the most flexible terms and lowest possible rates.'
-      }
-    ]
-  },
-  {
-    id: 'weespaces-vs-flexo',
-    slug: 'weespaces-vs-flexo-alternative',
-    title: 'WeeSpaces vs Flexo',
-    shortDesc: 'Comparing direct premium workspace management against Flexo\'s aggregation model.',
-    optionA: {
-      name: 'WeeSpaces (Operator)',
-      pros: [
-        'We have full control over the IT infrastructure, security, and cleaning',
-        'Direct SLA guarantees without third-party dependencies',
-        'Custom fit-outs handled by our internal design team'
-      ],
-      cons: [
-        'Inventory is limited to our proprietary network in South India'
-      ],
-      idealFor: 'Enterprises and startups that require strict SLA guarantees and direct accountability.'
-    },
-    optionB: {
-      name: 'Flexo (Aggregator)',
-      pros: [
-        'Wide coverage across multiple cities in India',
-        'Platform to compare different operators side-by-side'
-      ],
-      cons: [
-        'No direct control over the quality of the spaces they list',
-        'Brokers can add an unnecessary layer of communication',
-        'Pricing may not reflect direct-to-operator discounts'
-      ],
-      idealFor: 'Companies looking to quickly scan the market across multiple operators.'
-    },
-    verdict: 'If you value direct accountability, stringent security, and enterprise-grade infrastructure, partnering directly with the operator (WeeSpaces) is always superior to using a broker (Flexo).',
-    faqs: [
-      {
-        question: 'Why should I book directly with WeeSpaces instead of Flexo?',
-        answer: 'Booking directly ensures you get the lowest possible price, direct communication for custom fit-outs, and immediate support without navigating through a broker.'
-      }
-    ]
-  },
-  {
-    id: 'weespaces-vs-coworker',
-    slug: 'weespaces-vs-coworker-alternative',
-    title: 'WeeSpaces vs Coworker.com',
-    shortDesc: 'Why direct operator partnerships beat global directory listings for enterprise teams.',
-    optionA: {
-      name: 'WeeSpaces (Operator)',
-      pros: [
-        'End-to-end workspace experience management',
-        'Transparent, localized pricing in INR without conversion markups',
-        'Dedicated community managers at every location'
-      ],
-      cons: [
-        'Does not offer day passes globally'
-      ],
-      idealFor: 'Local and international teams setting up dedicated hubs in Kerala or Tamil Nadu.'
-    },
-    optionB: {
-      name: 'Coworker.com (Directory)',
-      pros: [
-        'The largest global directory of coworking spaces',
-        'Great for digital nomads looking for day passes globally'
-      ],
-      cons: [
-        'Listings are often outdated or lack detailed enterprise pricing',
-        'Not designed for complex enterprise requirements or custom build-outs',
-        'They do not manage the facilities they list'
-      ],
-      idealFor: 'Digital nomads traveling internationally who need a desk for a few days.'
-    },
-    verdict: 'Coworker is a great global directory for nomads, but for permanent, premium enterprise setups in South India, working directly with WeeSpaces provides unmatched value and reliability.',
-    faqs: [
-      {
-        question: 'Can I find WeeSpaces on Coworker.com?',
-        answer: 'While you may find our listings on various directories, the most accurate availability, custom enterprise quotes, and lowest rates are only available directly through our website.'
-      }
+      { question: 'Is a Virtual Office legal for a Private Limited Company?', answer: 'Yes, a Virtual Office is 100% legal for registering a Pvt Ltd company with the MCA and obtaining a GST number in India.' },
+      { question: 'Can I meet clients at my Virtual Office address?', answer: 'Yes, WeeSpaces Virtual Office plans include meeting room credits or discounted access, allowing you to host clients at your registered premium address.' }
     ]
   }
-];
+};

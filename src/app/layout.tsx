@@ -16,6 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 import TrackingProvider from '@/components/TrackingProvider';
 import { constructMetadata } from '@/utils/metadata';
+import ConsentBanner from '@/components/ConsentBanner';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.weespaces.in'),
@@ -143,6 +144,8 @@ export default function RootLayout({
         <TrackingProvider>
           {children}
         </TrackingProvider>
+        
+        <ConsentBanner />
         
         {/* Floating WhatsApp Widget */}
         <a 

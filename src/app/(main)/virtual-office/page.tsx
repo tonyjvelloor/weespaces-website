@@ -9,6 +9,8 @@ import VoPricingCards from '@/components/ui/VoPricingCards';
 import VoDocumentChecklist from '@/components/ui/VoDocumentChecklist';
 import VoHowItWorks from '@/components/ui/VoHowItWorks';
 import LeadForm from '@/components/LeadForm';
+import SEOFAQ from '@/components/SEOFAQ';
+import { virtualOfficeFAQs } from '@/data/faqs';
 
 export const metadata: Metadata = constructMetadata({
   title: "Virtual Office in Kerala & Tamil Nadu | GST & Business Address | WeeSpaces",
@@ -26,8 +28,89 @@ export default function VirtualOfficeHub() {
     { title: "Limited Liability Partnerships", icon: "handshake", link: "/virtual-office/company-registration" }
   ];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.weespaces.in/#organization",
+        "name": "WeeSpaces",
+        "url": "https://www.weespaces.in",
+        "logo": "https://www.weespaces.in/images/weespaces-logo.png",
+        "sameAs": [
+          "https://www.linkedin.com/company/weespaces",
+          "https://www.instagram.com/weespaces"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.weespaces.in/#website",
+        "url": "https://www.weespaces.in",
+        "name": "WeeSpaces",
+        "publisher": {
+          "@id": "https://www.weespaces.in/#organization"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.weespaces.in/virtual-office/#localbusiness",
+        "name": "WeeSpaces Virtual Offices",
+        "image": "https://www.weespaces.in/images/weespaces-logo.png",
+        "url": "https://www.weespaces.in/virtual-office",
+        "telephone": "+919207189111",
+        "priceRange": "₹7999 - ₹24999"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.weespaces.in/virtual-office/#service",
+        "name": "Virtual Office Registration Service",
+        "provider": {
+          "@id": "https://www.weespaces.in/virtual-office/#localbusiness"
+        },
+        "description": "Premium virtual workspace and business address provision for GST registration and Company Incorporation in South India.",
+        "offers": {
+          "@type": "Offer",
+          "price": "7999",
+          "priceCurrency": "INR"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": virtualOfficeFAQs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.weespaces.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Virtual Office",
+            "item": "https://www.weespaces.in/virtual-office"
+          }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* 1. HERO SECTION */}
       <section className="relative pt-32 pb-40 bg-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -132,8 +215,8 @@ export default function VirtualOfficeHub() {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Who Uses a Virtual Office?</h2>
-              <p className="text-white/60 max-w-2xl mx-auto">From solopreneurs to expanding enterprises, our virtual offices solve critical legal and operational challenges.</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4">Why Businesses Choose Our Virtual Workspace Solutions</h2>
+              <p className="text-white/60 max-w-2xl mx-auto">From solopreneurs to expanding enterprises, our flexible business address solves critical legal and operational challenges.</p>
             </div>
           </ScrollReveal>
           
@@ -217,6 +300,12 @@ export default function VirtualOfficeHub() {
           </div>
         </div>
       </section>
+
+      <SEOFAQ 
+        title="Frequently Asked Questions"
+        subtitle="Common queries about using a Virtual Workspace for company registration."
+        faqs={virtualOfficeFAQs} 
+      />
 
       {/* 10. LEAD FORM CTA */}
       <section className="py-24" id="lead-form">
