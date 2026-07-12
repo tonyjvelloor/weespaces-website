@@ -33,6 +33,9 @@ export default function Footer() {
             </div>
           )}
           <div className="text-xs text-white/50">
+            <p className="mb-4 text-white/40 italic">
+              Disclaimer: WeeSpaces is a commercial workspace and real estate provider. We are not a government entity, nor do we provide official government documents or services. Our Virtual Office plans provide a commercial rental agreement and No Objection Certificate (NOC) which businesses may use as proof of address for their own independent regulatory registrations.
+            </p>
             <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
             <div className="flex justify-center gap-6 mt-4">
               <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
@@ -117,12 +120,17 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-white/50">
-          <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
-          <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
-            <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+        <div className="border-t border-white/10 pt-8 mt-16 text-xs text-white/50">
+          <p className="mb-6 text-white/40 italic leading-relaxed text-center max-w-4xl mx-auto">
+            Disclaimer: WeeSpaces is a commercial workspace and real estate provider. We provide physical office space, virtual office addresses, and related workspace amenities. We are not a government entity, nor do we provide official government documents or services. Our Virtual Office plans provide a commercial rental agreement and No Objection Certificate (NOC) which businesses may use as proof of address for their own independent regulatory registrations.
+          </p>
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
+            <div className="flex items-center gap-6 mt-4 md:mt-0">
+              <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
+              <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+              <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+            </div>
           </div>
         </div>
       </div>

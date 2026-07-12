@@ -126,7 +126,7 @@ export default function GSTChecker() {
       case 3:
         return (
           <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
-            <h3 className="text-2xl font-bold text-navy mb-6">Which city are you registering in?</h3>
+            <h3 className="text-2xl font-bold text-navy mb-6">Which city are you looking to rent a business address in?</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {['Kochi', 'Coimbatore', 'Trivandrum', 'Calicut'].map(opt => (
                 <button 
@@ -145,8 +145,8 @@ export default function GSTChecker() {
           <div className="space-y-6 animate-in fade-in slide-in-from-right-4">
              <div className="text-center mb-8">
                <ShieldCheck className="w-16 h-16 text-accent mx-auto mb-4" />
-               <h2 className="text-3xl font-black text-navy mb-2">You are eligible for GST Registration!</h2>
-               <p className="text-gray-600">Based on your answers, here is your personalized document checklist.</p>
+               <h2 className="text-3xl font-black text-navy mb-2">Here is your Address Compliance Checklist!</h2>
+               <p className="text-gray-600">Based on your answers, here is the list of documents required to rent a GST-compliant address with us.</p>
              </div>
 
              <div className="bg-gray-50 border border-gray-200 rounded-3xl p-8 mb-8">

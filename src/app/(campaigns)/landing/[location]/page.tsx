@@ -559,7 +559,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
               },
               {
                 q: "Do you provide GST registration?",
-                a: "Yes, we provide all the necessary NOCs, rental agreements, and legal documentation required for your company's GST registration and ROC filings at our premium address. We make the compliance process seamless for your business."
+                a: "No, we do not provide government services or file GST registrations. We only provide the commercial rental agreement and No Objection Certificate (NOC) required for your company to independently register for GST at our premium business address."
               },
               {
                 q: "Can I customize my office?",
