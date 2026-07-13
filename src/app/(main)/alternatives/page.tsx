@@ -42,7 +42,7 @@ export default function AlternativesHub() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-8">
             {competitorComparisons.map((comp) => (
-              <ScrollReveal key={comp.id} direction="up">
+              <ScrollReveal key={comp.slug} direction="up">
                 <Link href={`/compare/${comp.slug}`} className="block group">
                   <div className="bg-navy-light/5 border border-gray-100 p-8 rounded-2xl hover:shadow-xl hover:border-accent/30 transition-all duration-300 h-full flex flex-col">
                     <h2 className="text-2xl font-bold text-navy mb-4 group-hover:text-accent transition-colors">
