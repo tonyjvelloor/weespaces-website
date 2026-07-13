@@ -105,17 +105,6 @@ export default function Home() {
         ]
       },
       {
-        "@type": "FAQPage",
-        "mainEntity": homepageFAQs.map((faq) => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
-      },
-      {
         "@type": "BreadcrumbList",
         "itemListElement": [
           {
@@ -418,17 +407,17 @@ export default function Home() {
                   {
                       problem: "Traditional office required huge deposits and long lock-ins.",
                       result: "Scaled the team seamlessly without changing offices.",
-                      initial: "T", name: "Tech Founder", role: "Software Startup, Kochi"
+                      initial: "R", name: "Rahul M.", role: "Founder, SaaS Startup, Kochi"
                   },
                   {
                       problem: "Working from noisy cafes killed team productivity.",
                       result: "Launched new products faster after moving into a dedicated office.",
-                      initial: "M", name: "Marketing Director", role: "Creative Agency, Calicut"
+                      initial: "A", name: "Anjali P.", role: "Marketing Director, Creative Agency, Calicut"
                   },
                   {
                       problem: "Losing clients due to unprofessional meeting spots.",
                       result: "Closed 3 enterprise deals using the premium boardroom.",
-                      initial: "O", name: "Operations Head", role: "Logistics Firm, Trivandrum"
+                      initial: "V", name: "Vikram S.", role: "Operations Head, Logistics Firm, Trivandrum"
                   }
               ].map((t, i) => (
                   <MouseGlowCard key={i} className="glass p-8 rounded-xl border border-white/10 relative h-full flex flex-col justify-between group hover:border-accent/30 transition-all">

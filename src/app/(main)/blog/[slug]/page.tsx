@@ -20,6 +20,8 @@ export function generateStaticParams() {
   }));
 }
 
+export const dynamicParams = false;
+
 import { constructMetadata } from '@/utils/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

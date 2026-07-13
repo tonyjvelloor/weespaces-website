@@ -21,7 +21,7 @@ import ConsentBanner from '@/components/ConsentBanner';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.weespaces.in'),
   ...constructMetadata({
-    title: "WeeSpaces | Premium Coworking & Managed Offices",
+    title: "Premium Coworking Spaces in Kochi, Trivandrum, Calicut & Coimbatore | WeeSpaces",
     description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
     canonicalPath: "/",
   }),

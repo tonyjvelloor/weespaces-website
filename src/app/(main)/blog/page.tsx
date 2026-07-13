@@ -2,10 +2,13 @@ import { getAllPosts } from '@/lib/mdx';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import BlogFilter from '@/components/BlogFilter';
 
-export const metadata = {
+import { constructMetadata } from '@/utils/metadata';
+
+export const metadata = constructMetadata({
   title: 'Blog & Insights | WeeSpaces',
   description: 'Insights on the Future of Work, Startup ecosystems, and Workspace trends in Kerala and Tamil Nadu.',
-};
+  canonicalPath: '/blog',
+});
 
 export default function BlogIndex() {
   const posts = getAllPosts();
