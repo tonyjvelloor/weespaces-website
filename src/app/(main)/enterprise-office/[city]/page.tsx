@@ -78,7 +78,7 @@ export default async function EnterpriseCityPage({ params }: { params: Promise<{
                 Request {city.name} Floor Plans
               </div>
               <div className="p-6">
-                <LeadForm branch={city.name} source={`Enterprise ${city.name} Hero`} defaultService="managed-office" hidePricing />
+                <LeadForm branch={city.name} source={`Enterprise ${city.name} Hero`} hidePricing />
               </div>
             </div>
           </ScrollReveal>
