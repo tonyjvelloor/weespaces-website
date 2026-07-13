@@ -60,7 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // 6. Comparison Pages
-  comparisons.forEach((comparison) => {
+  Object.values(comparisons).forEach((comparison) => {
     routes.push({
       url: `${BASE_URL}/compare/${comparison.slug}`,
       lastModified: new Date(),
