@@ -335,7 +335,7 @@ export default async function AdLandingPage({ params }: { params: Promise<{ loca
             </div>
           </div>
 
-          {locationId === 'coimbatore' ? (
+          {locationId === 'coimbatore' && (
             <div className="max-w-2xl mx-auto bg-navy-light/50 border border-accent p-10 rounded-3xl shadow-[0_0_40px_rgba(242,156,31,0.15)] relative text-center">
               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-accent to-accent-light text-navy text-sm font-bold uppercase tracking-wider py-1 px-6 rounded-full animate-pulse shadow-[0_0_15px_rgba(242,156,31,0.4)] whitespace-nowrap">
                 Limited-Time Inaugural Offer
