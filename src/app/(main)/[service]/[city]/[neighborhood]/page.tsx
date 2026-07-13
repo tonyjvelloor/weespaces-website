@@ -220,7 +220,7 @@ export default async function NeighborhoodServicePage({ params }: { params: Prom
               <SEOFAQ 
                 faqs={aeoFaqs} 
                 title={`Frequently Asked Questions`} 
-                description={`Everything you need to know about getting a ${service.name.toLowerCase()} near ${neighborhood.name}.`} 
+                subtitle={`Everything you need to know about getting a ${service.name.toLowerCase()} near ${neighborhood.name}.`} 
                 textColor="text-navy"
               />
 
