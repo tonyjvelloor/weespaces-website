@@ -18,6 +18,7 @@ export type MicroLocation = {
   services?: string[];
   distanceToBranch?: string;
   travelTime?: string;
+  type?: 'neighborhood' | 'landmark';
 };
 
 export type CityData = {
@@ -53,7 +54,8 @@ export type CityData = {
   hubDescription?: string;
   proximityGroups?: {
     title: string;
-    nodes: { name: string; distance: string; slug?: string; travelTime?: string; mapsUrl?: string; }[];
+    nodes: { name: string; distance: string; slug?: string; travelTime?: string;
+  type?: 'neighborhood' | 'landmark'; mapsUrl?: string; }[];
   }[];
   whoChoosesThis?: {
     description: string;
@@ -148,7 +150,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Infopark Kochi', 'SmartCity Kochi', 'CUSAT'],
         transit: 'Water Metro, Kakkanad Bus Stand, 5 mins to upcoming Metro',
         parking: 'Dedicated ample covered parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
         services: ['coworking-space', 'managed-office', 'virtual-office', 'meeting-room'],
         distanceToBranch: '12 km to MG Road HQ',
         travelTime: '25 min drive'
@@ -159,7 +161,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Infopark Express Way', 'SmartCity'],
         transit: 'Infopark Bus Stop, Auto Stand',
         parking: 'Multi-level car parking available',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
         services: ['coworking-space', 'managed-office', 'virtual-office'],
         distanceToBranch: '12 km to MG Road HQ',
         travelTime: '25 min drive'
@@ -170,7 +172,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Lulu Mall', 'Oberon Mall', 'Edappally Church'],
         transit: 'Edappally Metro Station (2 mins walk)',
         parking: 'On-site visitor and dedicated tenant parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
         services: ['coworking-space', 'virtual-office'],
         distanceToBranch: '7 km to MG Road HQ',
         travelTime: '15 mins via Metro'
@@ -181,7 +183,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Maharaja College', 'Kavitha Junction'],
         transit: 'MG Road Metro Station',
         parking: 'Limited on-site, nearby paid parking available',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
         services: ['virtual-office', 'meeting-room', 'private-office'],
         distanceToBranch: 'Located at our MG Road HQ',
         travelTime: '0 mins'
@@ -192,7 +194,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['GCDA Complex', 'Rainbow Bridge'],
         transit: 'Boat Jetty, High Court Bus Stand',
         parking: 'Paid public parking, building basement parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
         services: ['virtual-office', 'meeting-room'],
         distanceToBranch: '2 km to MG Road HQ',
         travelTime: '10 min drive'
@@ -203,7 +205,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['CUSAT', 'KINFRA Hi-Tech Park'],
         transit: 'Kalamassery Metro Station',
         parking: 'Ample on-site parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'vyttila', name: 'Vyttila', slug: 'vyttila', intent: 'SMEs, logistics, corporates',
@@ -211,7 +214,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Vyttila Mobility Hub', 'Gold Souk Grande'],
         transit: 'Vyttila Metro, Vyttila Mobility Hub (Bus/Water Metro)',
         parking: 'Dedicated building parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
         services: ['coworking-space', 'virtual-office'],
         distanceToBranch: '4 km to MG Road HQ',
         travelTime: '12 min drive'
@@ -222,7 +225,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Palarivattom Junction', 'Jawaharlal Nehru Stadium (nearby)'],
         transit: 'Palarivattom Metro Station',
         parking: 'On-site basement parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'kadavanthra', name: 'Kadavanthra', slug: 'kadavanthra', intent: 'Consulting, creatives, SMEs',
@@ -230,7 +234,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['GCDA', 'Panampilly Nagar Walkway (nearby)'],
         transit: 'Kadavanthra Metro Station',
         parking: 'On-street and dedicated building parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'panampilly-nagar', name: 'Panampilly Nagar', slug: 'panampilly-nagar', intent: 'Boutique agencies, premium consulting',
@@ -238,7 +243,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Panampilly Nagar Walkway', 'Avenue Center'],
         transit: 'South Railway Station (10 mins)',
         parking: 'Premium on-site parking',
-        gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/kochi/workspace1.jpg', '/images/branches/kochi/workspace2.jpg', '/images/branches/kochi/workspace3.jpg', '/images/branches/kochi/workspace4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       }
     ],
     landmarks: [
@@ -259,7 +265,8 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Trivandrum is synonymous with government administration, R&D, and enterprise IT. Technopark is one of India’s largest IT parks, driving significant economic activity.',
     transportHubs: 'Trivandrum Central Railway Station and Trivandrum International Airport offer excellent connectivity. Local transit relies heavily on KSRTC buses and a growing highway infrastructure.',
     gstRegistrationRules: 'Registering a business in the capital city provides unparalleled credibility. Our virtual and managed offices supply all required NOCs and rental agreements needed for rapid GST clearance in Kerala.',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
     occupancy: '88% of seats currently occupied',
     caseStudy: {
       client: 'A Healthcare IT Startup',
@@ -323,7 +330,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Technopark Front Gate', 'Kazhakkoottam Junction'],
         transit: 'Kazhakkoottam Railway Station, KSRTC Bus Stand',
         parking: 'Technopark campus parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
         services: ['coworking-space', 'managed-office', 'virtual-office'],
         distanceToBranch: '8 km to Pattom HQ',
         travelTime: '20 min drive'
@@ -334,7 +341,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Infosys Campus', 'UST Campus'],
         transit: 'Bypass Road Bus Stops',
         parking: 'Campus parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
         services: ['coworking-space', 'managed-office', 'virtual-office'],
         distanceToBranch: '9 km to Pattom HQ',
         travelTime: '21 min drive'
@@ -345,7 +352,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Taurus Downtown'],
         transit: 'Bypass Road',
         parking: 'Ample campus parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
         services: ['coworking-space', 'managed-office', 'virtual-office'],
         distanceToBranch: '10 km to Pattom HQ',
         travelTime: '22 min drive'
@@ -356,7 +363,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Kazhakkoottam Junction', 'Al Saj'],
         transit: 'Kazhakkoottam Railway Station',
         parking: 'Building-specific parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
         services: ['coworking-space', 'managed-office'],
         distanceToBranch: '7 km to Pattom HQ',
         travelTime: '15 min drive'
@@ -367,7 +374,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Kowdiar Palace', 'Golf Club'],
         transit: 'Kowdiar Bus Stop',
         parking: 'Premium on-site parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
         services: ['private-office', 'meeting-room'],
         distanceToBranch: '4 km to Pattom HQ',
         travelTime: '10 min drive'
@@ -378,7 +385,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Pattom Junction', 'St. Marys School'],
         transit: 'Pattom Bus Stand',
         parking: 'Dedicated building parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
         services: ['coworking-space', 'virtual-office', 'meeting-room'],
         distanceToBranch: 'Located at our Pattom HQ',
         travelTime: '0 mins'
@@ -389,7 +396,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Connemara Market', 'Martyrs Column'],
         transit: 'Trivandrum Central (10 mins)',
         parking: 'Paid public parking, building basement',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'statue', name: 'Statue', slug: 'statue', intent: 'Legal, government, consulting',
@@ -397,7 +405,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Secretariat', 'Statue Junction'],
         transit: 'Statue Bus Stop',
         parking: 'Extremely limited, public parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'vazhuthacaud', name: 'Vazhuthacaud', slug: 'vazhuthacaud', intent: 'Corporate branch offices, agencies',
@@ -405,7 +414,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Womens College', 'Cotton Hill'],
         transit: 'Vazhuthacaud Bus Stop',
         parking: 'Dedicated building parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'akkulam', name: 'Akkulam', slug: 'akkulam', intent: 'Tech startups, SMEs',
@@ -413,7 +423,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Akkulam Tourist Village', 'Lulu Mall Trivandrum'],
         transit: 'Bypass Road Bus Stops',
         parking: 'Ample on-site parking',
-        gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/trivandrum/image1.jpg', '/images/branches/trivandrum/image2.jpg', '/images/branches/trivandrum/image3.jpg', '/images/branches/trivandrum/image4.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       }
     ],
     landmarks: [
@@ -432,7 +443,8 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Historically a major trading center, Calicut is now a booming IT and startup hub. Government Cyberpark and UL CyberPark are transforming the city into a digital powerhouse.',
     transportHubs: 'Calicut International Airport and Kozhikode Railway Station serve the city. The expanding Bypass road network provides excellent connectivity for logistics and daily commuting.',
     gstRegistrationRules: 'A registered office address in Calicut is mandatory for local GST compliance. Our workspaces offer premium addresses in commercial hubs to ensure your business meets all state regulations effortlessly.',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
     occupancy: '75% of seats currently occupied',
     caseStudy: {
       client: 'A leading E-commerce Logistics firm',
@@ -494,7 +506,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Government Cyberpark'],
         transit: 'Bypass Road, 15 mins to Calicut Railway Station',
         parking: 'Dedicated park parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
         services: ['coworking-space', 'managed-office'],
         distanceToBranch: '4 km to Nadakkavu HQ',
         travelTime: '12 min drive'
@@ -505,7 +517,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['UL CyberPark IT Building'],
         transit: 'NH Bypass',
         parking: 'Ample covered campus parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'hilite-business-park', name: 'HiLite Business Park', slug: 'hilite-business-park', intent: 'Retail brands, consulting, branch offices',
@@ -513,7 +526,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['HiLite Mall', 'Thondayad Bypass'],
         transit: 'Thondayad Bypass Bus Stop',
         parking: 'Massive mall and business park parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
         services: ['coworking-space', 'managed-office'],
         distanceToBranch: '6 km to Nadakkavu HQ',
         travelTime: '15 min drive'
@@ -524,7 +537,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Mofussil Bus Stand', 'Focus Mall'],
         transit: 'New Bus Stand (Mofussil)',
         parking: 'Building basement parking, paid parking nearby',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
         services: ['coworking-space', 'virtual-office', 'meeting-room'],
         distanceToBranch: '1.5 km to Nadakkavu HQ',
         travelTime: '5 min drive'
@@ -535,7 +548,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['HiLite City (nearby)', 'Bypass Junction'],
         transit: 'Bypass Road',
         parking: 'On-site building parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
         services: ['coworking-space', 'managed-office'],
         distanceToBranch: '6 km to Nadakkavu HQ',
         travelTime: '15 min drive'
@@ -546,7 +559,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Thondayad', 'Ramanattukara Highway'],
         transit: 'Highway Bus Stops',
         parking: 'Excellent surface parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'ramanattukara', name: 'Ramanattukara', slug: 'ramanattukara', intent: 'Trading, warehousing, SMEs',
@@ -554,7 +568,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Ramanattukara Junction', 'Farook College (nearby)'],
         transit: 'Ramanattukara Bus Stand, Highway access',
         parking: 'Ample on-site parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'west-hill', name: 'West Hill', slug: 'west-hill', intent: 'Agencies, branch offices, SMEs',
@@ -562,7 +577,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['West Hill Railway Station', 'Govt Engineering College'],
         transit: 'West Hill Railway Station, Kannur Road',
         parking: 'Dedicated building parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
         services: ['coworking-space'],
         distanceToBranch: '4 km to Nadakkavu HQ',
         travelTime: '10 min drive'
@@ -573,7 +588,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Vandipetta', 'English Church'],
         transit: 'Kannur Road Bus Stops',
         parking: 'On-street and building parking',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'sm-street', name: 'SM Street', slug: 'sm-street', intent: 'Retail, wholesale, trading',
@@ -581,7 +597,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Mananchira Square (nearby)', 'Mittai Theruvu'],
         transit: 'Palayam Bus Stand, Calicut Railway Station (10 mins)',
         parking: 'Public parking lots (highly congested)',
-        gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/calicut/reception.jpg', '/images/branches/calicut/workspace1.jpg', '/images/branches/calicut/workspace2.jpg', '/images/calicut_coworking.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       }
     ],
     landmarks: [
@@ -600,7 +617,8 @@ export const cities: Record<string, CityData> = {
     businessEcosystem: 'Coimbatore is a diversified economic engine. It leads in textiles, auto components, and manufacturing, while rapidly expanding its IT footprint through hubs like Tidel Park and Saravanampatti.',
     transportHubs: 'Coimbatore International Airport, Coimbatore Junction, and major national highways connect the city. Avinashi Road acts as the primary commercial and transit artery.',
     gstRegistrationRules: 'As a major commercial hub in Tamil Nadu, GST registration requires a credible physical address. Our managed and virtual offices in Coimbatore provide the necessary documentation for swift approval.',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
     occupancy: 'Grand Opening - Pre-book now!',
     caseStudy: {
       client: 'A SaaS company (Case Study from Kochi)',
@@ -667,7 +685,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['PSG College of Technology', 'Fun Republic Mall'],
         transit: 'Avinashi Road, Peelamedu Railway Station',
         parking: 'Dedicated building parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['coworking-space', 'private-office'],
         distanceToBranch: '4.5 km to Kalapatti HQ',
         travelTime: '12 min drive'
@@ -678,7 +696,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Coimbatore Airport (nearby)', 'KMCH'],
         transit: 'Arterial Road, Frequent Buses',
         parking: 'Premium on-site parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['managed-office', 'virtual-office', 'meeting-room'],
         distanceToBranch: '3.0 km to Kalapatti HQ',
         travelTime: '10 min drive'
@@ -689,7 +707,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Tidel Park (nearby)', 'Hope College Junction'],
         transit: 'Avinashi Road',
         parking: 'On-site parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'sitra', name: 'SITRA', slug: 'sitra', intent: 'Textiles, research, manufacturing, IT',
@@ -697,7 +716,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['SITRA Junction', 'Coimbatore International Airport'],
         transit: 'Airport Road',
         parking: 'Ample campus/building parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'Enterprise IT, scaling startups, premium coworking space',
@@ -705,7 +725,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['CHIL SEZ IT Park', 'KGISL Tech Park'],
         transit: 'Sathy Road',
         parking: 'Tech park scale parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['coworking-space', 'managed-office'],
         distanceToBranch: '8.0 km to Kalapatti HQ',
         travelTime: '15 min drive'
@@ -716,7 +736,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Race Course Walking Track', 'Taj Vivanta'],
         transit: 'Coimbatore Junction Railway Station (5 mins)',
         parking: 'Premium dedicated parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['private-office', 'meeting-room'],
         distanceToBranch: '10 km to Kalapatti HQ',
         travelTime: '18 min drive'
@@ -727,7 +747,7 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Cross Cut Road', 'Gandhipuram Bus Stand'],
         transit: 'Central Bus Stand (Gandhipuram)',
         parking: 'Paid public parking, building basements',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['virtual-office', 'meeting-room'],
         distanceToBranch: '12 km to Kalapatti HQ',
         travelTime: '20 min drive'
@@ -738,7 +758,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['DB Road', 'Annapoorna'],
         transit: 'DB Road, Thadagam Road',
         parking: 'On-street parking (often congested)',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'tidel-park-area', name: 'Tidel Park Area', slug: 'tidel-park-area', intent: 'Enterprise IT, SMEs serving IT',
@@ -746,7 +767,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['Tidel Park Coimbatore', 'ELCOT SEZ'],
         transit: 'Avinashi Road, Peelamedu',
         parking: 'SEZ scale parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
         id: 'neelambur', name: 'Neelambur', slug: 'neelambur', intent: 'Logistics, manufacturing, large corporates',
@@ -754,7 +776,8 @@ export const cities: Record<string, CityData> = {
         landmarks: ['L&T Bypass', 'PSG Itech'],
         transit: 'Highway access',
         parking: 'Massive surface parking',
-        gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg']
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
+        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       }
     ],
     landmarks: [
