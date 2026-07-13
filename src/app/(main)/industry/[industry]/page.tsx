@@ -123,7 +123,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ indus
                 Request a Custom Proposal
               </div>
               <div className="p-6">
-                <LeadForm source={`Industry - ${industry.name}`} defaultService="managed-office" hidePricing />
+                <LeadForm source={`Industry - ${industry.name}`} hidePricing />
               </div>
             </div>
           </ScrollReveal>

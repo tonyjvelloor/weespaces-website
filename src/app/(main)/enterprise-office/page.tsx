@@ -150,7 +150,7 @@ export default function EnterpriseOfficeHub() {
               <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">Discuss Your Enterprise Requirements</h2>
               <p className="text-gray-500">Provide your team size and preferred location. Our enterprise leasing directors will contact you within 2 hours.</p>
             </div>
-            <LeadForm defaultService="managed-office" />
+            <LeadForm />
           </ScrollReveal>
         </div>
       </section>
