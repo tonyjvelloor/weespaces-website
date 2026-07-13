@@ -154,7 +154,6 @@ export default function CaseStudyPage({ params }: Props) {
             <ScrollReveal direction="right">
                <LeadForm 
                   source={`Case Study: ${study.clientName}`}
-                  title="Schedule a Strategy Consultation"
                />
             </ScrollReveal>
          </div>
