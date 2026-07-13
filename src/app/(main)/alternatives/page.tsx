@@ -49,7 +49,7 @@ export default function AlternativesHub() {
                       {comp.title}
                     </h2>
                     <p className="text-gray-600 mb-8 flex-grow">
-                      {comp.shortDesc}
+                      {comp.description}
                     </p>
                     <div className="flex items-center gap-2 font-bold text-navy group-hover:text-accent transition-colors">
                       View Detailed Comparison <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
