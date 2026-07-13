@@ -90,7 +90,7 @@ export default function GstRegistrationPage() {
         <div className="max-w-3xl mx-auto px-6">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-center text-navy mb-12">GST Registration FAQs</h2>
-            <SEOFAQ faqs={faqs} />
+            <SEOFAQ faqs={faqs} textColor="text-navy" />
           </ScrollReveal>
         </div>
       </section>

@@ -310,6 +310,7 @@ export default function VirtualOfficeHub() {
         title="Frequently Asked Questions"
         subtitle="Common queries about using a Virtual Workspace for company registration."
         faqs={virtualOfficeFAQs} 
+        textColor="text-navy"
       />
 
       {/* 10. LEAD FORM CTA */}

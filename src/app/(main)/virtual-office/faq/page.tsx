@@ -35,7 +35,7 @@ export default function VirtualOfficeFaqPage() {
       {/* 2. FAQS */}
       <section className="py-24 max-w-4xl mx-auto px-6">
         <ScrollReveal>
-          <SEOFAQ faqs={virtualOfficeFaqs} />
+          <SEOFAQ faqs={virtualOfficeFaqs} textColor="text-navy" />
         </ScrollReveal>
       </section>
 

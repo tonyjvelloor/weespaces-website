@@ -76,7 +76,7 @@ export default function CompanyRegistrationPage() {
       <section className="py-20 max-w-3xl mx-auto px-6">
         <ScrollReveal>
           <h2 className="text-3xl font-bold text-center text-navy mb-12">Company Registration FAQs</h2>
-          <SEOFAQ faqs={faqs} />
+          <SEOFAQ faqs={faqs} textColor="text-navy" />
         </ScrollReveal>
       </section>
 
