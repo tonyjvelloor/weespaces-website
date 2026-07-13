@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import LeadForm from '@/components/LeadForm';
 import { CheckCircle2, Wifi, Coffee, Clock, ShieldCheck, MapPin, Star, AlertCircle, TrendingUp, Building2, Zap } from 'lucide-react';
+import ComplianceBlock from '@/components/ComplianceBlock';
 
 export function generateStaticParams() {
   return [
