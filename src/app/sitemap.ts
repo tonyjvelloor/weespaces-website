@@ -19,10 +19,11 @@ export async function generateSitemaps() {
   ];
 }
 
-export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
+export default async function sitemap({ id }: { id: string | Promise<string> }): Promise<MetadataRoute.Sitemap> {
+  const resolvedId = await id;
   const routes: MetadataRoute.Sitemap = [];
 
-  if (id === 'core') {
+  if (resolvedId === 'core') {
     // 1. Core Pages
     const corePages = ['', '/about', '/contact', '/pricing', '/locations', '/faq', '/investors', '/enterprise', '/blog'];
     corePages.forEach((path) => {
@@ -45,7 +46,7 @@ export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
     });
   }
 
-  if (id === 'blog') {
+  if (resolvedId === 'blog') {
     const posts = getAllPosts();
     
     // Blog Categories
@@ -71,7 +72,7 @@ export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
   }
 
   // Dynamic Service Sitemaps (virtual-office, coworking-space, etc)
-  const matchingService = services.find(s => s.slug === id);
+  const matchingService = services.find(s => s.slug === resolvedId);
   
   if (matchingService) {
     // Service Hub Page
