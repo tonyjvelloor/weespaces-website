@@ -2,6 +2,7 @@
 
 import { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { pushToDataLayer } from '@/utils/analytics';
 
 function TrackingLogic() {
   const searchParams = useSearchParams();
@@ -44,6 +45,23 @@ function TrackingLogic() {
         sessionStorage.setItem('weespaces_tracking', JSON.stringify(storedParams));
       } catch (e) {}
     }
+
+    // Global Click Listener for WhatsApp and Calls
+    const handleGlobalClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      
+      if (anchor && anchor.href) {
+        if (anchor.href.includes('wa.me')) {
+          pushToDataLayer('whatsapp_click', { url: anchor.href });
+        } else if (anchor.href.startsWith('tel:')) {
+          pushToDataLayer('call_click', { url: anchor.href });
+        }
+      }
+    };
+
+    document.addEventListener('click', handleGlobalClick);
+    return () => document.removeEventListener('click', handleGlobalClick);
   }, [searchParams]);
 
   return null;
