@@ -203,7 +203,7 @@ export default async function IntentServicePage({ params }: { params: Promise<{ 
                 <div className="bg-white p-6 rounded-2xl shadow-xl shadow-navy/5 border border-gray-100">
                   <h3 className="text-xl font-bold text-navy mb-2">Book a Tour</h3>
                   <p className="text-gray-500 text-sm mb-6">Secure your {service.name.toLowerCase()} in {city.name} today.</p>
-                  <LeadForm locationId={city.id} serviceId={service.id} />
+                  <LeadForm source={`${intent.name} - ${service.name}, ${city.name}`} />
                 </div>
                 <TrustLayer />
                 <LocalContactBlock city={city} />
