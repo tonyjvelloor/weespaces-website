@@ -265,7 +265,7 @@ export default async function NeighborhoodServicePage({ params }: { params: Prom
       </section>
 
       <TrustLayer />
-      <LocalContactBlock contact={city.contactInfo!} cityName={city.name} />
+      <LocalContactBlock contactInfo={city.contactInfo!} cityName={city.name} />
     </div>
   );
 }
