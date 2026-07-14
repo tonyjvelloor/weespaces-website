@@ -74,6 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // 7. Blog Categories
+  const posts = getAllPosts();
   const categories = Array.from(new Set(posts.map(p => p.category).filter(Boolean)));
   categories.forEach((category) => {
     routes.push({
