@@ -99,6 +99,7 @@ export default async function NeighborhoodServicePage({ params }: { params: Prom
             alt={`${service.name} in ${neighborhood.name}`}
             fill
             className="object-cover opacity-20"
+            sizes="100vw"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80" />

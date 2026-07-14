@@ -39,23 +39,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       // 4. Micro-location Service Pages
       city.microLocations.forEach((microLoc) => {
-        routes.push({
-          url: `${BASE_URL}/${service.slug}/${city.slug}/${microLoc.slug}`,
-          lastModified: new Date(),
-          changeFrequency: 'monthly',
-          priority: 0.7,
-        });
+        // Only generate this route if the neighborhood supports this service
+        if (microLoc.services && microLoc.services.includes(service.slug)) {
+          routes.push({
+            url: `${BASE_URL}/${service.slug}/${city.slug}/${microLoc.slug}`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+          });
+        }
       });
+    });
+  });
 
-      // 5. Landmark Service Pages
-      city.landmarks.forEach((landmark) => {
-        routes.push({
-          url: `${BASE_URL}/${service.slug}/${city.slug}/${landmark.slug}`,
-          lastModified: new Date(),
-          changeFrequency: 'monthly',
-          priority: 0.6,
-        });
-      });
+  // 5. Virtual Office Funnel Pages
+  const virtualOfficeFunnels = ['gst-registration', 'company-registration', 'llp-registration', 'opc-registration', 'startup-india'];
+  virtualOfficeFunnels.forEach((funnel) => {
+    routes.push({
+      url: `${BASE_URL}/virtual-office/${funnel}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     });
   });
 
@@ -69,11 +73,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // 7. Blog Posts (MDX)
-  const posts = getAllPosts();
+  // 7. Blog Categories
+  const categories = Array.from(new Set(posts.map(p => p.category).filter(Boolean)));
+  categories.forEach((category) => {
+    routes.push({
+      url: `${BASE_URL}/blog/category/${category}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    });
+  });
+
+  // 8. Blog Posts (MDX)
   posts.forEach((post) => {
     routes.push({
-      url: `${BASE_URL}/blog/${post.category}/${post.slug}`,
+      url: `${BASE_URL}/blog/${post.slug}`,
       // Use the post date if available, otherwise fallback
       lastModified: new Date(post.date || new Date()),
       changeFrequency: 'monthly',

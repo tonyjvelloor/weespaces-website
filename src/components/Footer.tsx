@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { MapPin, Clock } from 'lucide-react';
 import { pushToDataLayer } from '@/utils/analytics';
+import { cities, services } from '@/data/locations';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -52,7 +53,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy-dark border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
@@ -90,17 +91,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div>
-            <h4 className="text-lg font-bold mb-6 font-heading">Locations</h4>
-            <ul className="space-y-4 text-sm text-white/70">
-              <li><Link href="/coworking-space/kochi" className="hover:text-accent transition-colors">Coworking Space Kochi</Link></li>
-              <li><Link href="/coworking-space/trivandrum" className="hover:text-accent transition-colors">Coworking Space Trivandrum</Link></li>
-              <li><Link href="/coworking-space/calicut" className="hover:text-accent transition-colors">Coworking Space Calicut</Link></li>
-              <li><Link href="/coworking-space/coimbatore" className="hover:text-accent transition-colors">Coworking Space Coimbatore</Link></li>
-              <li><Link href="/office-space/kochi" className="hover:text-accent transition-colors">Office Space Kochi</Link></li>
-              <li><Link href="/office-space/coimbatore" className="hover:text-accent transition-colors">Office Space Coimbatore</Link></li>
-            </ul>
-          </div>
+          
           <div>
             <h4 className="text-lg font-bold mb-6 font-heading">Solutions</h4>
             <ul className="space-y-4 text-sm text-white/70">
@@ -119,6 +110,46 @@ export default function Footer() {
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
               <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
             </ul>
+          </div>
+        </div>
+
+        {/* SEO Locations Matrix */}
+        <div className="border-t border-white/10 pt-12 pb-4 mt-8">
+          <h4 className="text-2xl font-bold mb-10 font-heading text-center">Explore Our Network</h4>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+            {Object.values(cities).map((city) => (
+              <div key={city.id} className="space-y-8">
+                <div>
+                  <Link href={`/coworking-space/${city.slug}`} className="text-xl font-bold text-accent hover:text-white transition-colors mb-4 block border-b border-white/10 pb-2">
+                    {city.name}
+                  </Link>
+                  <div className="space-y-6 mt-4">
+                    {services.map((service) => {
+                      const validNeighborhoods = city.microLocations.filter(ml => ml.services && ml.services.includes(service.slug));
+                      if (validNeighborhoods.length === 0) return null;
+                      
+                      return (
+                        <div key={service.id}>
+                          <h5 className="text-white font-semibold text-sm mb-2">{service.name}</h5>
+                          <ul className="space-y-2 text-xs text-white/60">
+                            {validNeighborhoods.map((neighborhood) => (
+                              <li key={neighborhood.slug}>
+                                <Link 
+                                  href={`/${service.slug}/${city.slug}/${neighborhood.slug}`}
+                                  className="hover:text-accent transition-colors block"
+                                >
+                                  {service.name} in {neighborhood.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 mt-16 text-xs text-white/50">

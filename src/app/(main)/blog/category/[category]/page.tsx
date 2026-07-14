@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   return constructMetadata({
     title: `${categoryName} | WeeSpaces Blog`,
     description: `Read the latest articles about ${categoryName} from WeeSpaces.`,
-    canonicalPath: `/blog/${resolvedParams.category}`,
+    canonicalPath: `/blog/category/${resolvedParams.category}`,
   });
 }
 
@@ -60,7 +60,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {categoryPosts.map((post, index) => (
             <ScrollReveal key={post.slug} delay={index * 0.1}>
-              <Link href={`/blog/${resolvedParams.category}/${post.slug}`} className="block h-full group">
+              <Link href={`/blog/${post.slug}`} className="block h-full group">
                 <MouseGlowCard className="glass p-8 rounded-3xl h-full flex flex-col border border-white/10 hover:border-accent transition-all">
                   <div className="flex justify-between items-center mb-4 text-xs font-bold uppercase tracking-wider text-white/50">
                     <span className="bg-navy-light px-3 py-1 rounded-full text-accent">{post.category}</span>

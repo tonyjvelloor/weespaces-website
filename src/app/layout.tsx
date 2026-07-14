@@ -76,6 +76,7 @@ export default function RootLayout({
                 ]
               },
               {
+                "@type": "CoworkingSpace",
                 "name": "WeeSpaces Trivandrum",
                 "image": "https://weespaces.in/images/branches/trivandrum/image4.jpg",
                 "telephone": "+91-9207189111",
