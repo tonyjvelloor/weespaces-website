@@ -140,7 +140,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-[4.5rem] md:pb-0 relative">
-        <GoogleTagManager gtmId="GTM-N699QDRZ" />
+        <GoogleTagManager gtmId="GTM-N4W8NLQW" />
         <GoogleAnalytics gaId="G-89N19DEH2N" />
         <TrackingProvider>
           {children}
