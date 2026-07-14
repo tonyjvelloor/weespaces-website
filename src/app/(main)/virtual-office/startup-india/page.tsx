@@ -80,8 +80,6 @@ export default function StartupIndiaPage() {
             <div className="sticky top-32">
               <LeadForm 
                 source="Startup India Virtual Office" 
-                title="Get Your Startup Address" 
-                subtitle="Fill out the form below to get your NOC and utility bills within 48 hours." 
               />
             </div>
           </div>

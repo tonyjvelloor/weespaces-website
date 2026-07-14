@@ -82,8 +82,6 @@ export default function LLPRegistrationPage() {
             <div className="sticky top-32">
               <LeadForm 
                 source="LLP Registration Virtual Office" 
-                title="Get Your LLP Address" 
-                subtitle="Fill out the form below to get your NOC and utility bills within 48 hours." 
               />
             </div>
           </div>

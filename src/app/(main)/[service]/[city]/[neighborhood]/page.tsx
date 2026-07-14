@@ -257,8 +257,6 @@ export default async function NeighborhoodServicePage({ params }: { params: Prom
               <div className="sticky top-32">
                 <LeadForm 
                   source={`${service.name} - ${neighborhood.name}, ${city.name}`} 
-                  title="Book Your Space Today" 
-                  subtitle="Get custom pricing and availability within 2 hours." 
                 />
               </div>
             </div>
