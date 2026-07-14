@@ -199,19 +199,20 @@ export default async function IntentServicePage({ params }: { params: Promise<{ 
             </div>
 
             <div className="lg:w-1/3">
-              <div className="sticky top-24 space-y-8">
+              <div className="sticky top-24">
                 <div className="bg-white p-6 rounded-2xl shadow-xl shadow-navy/5 border border-gray-100">
                   <h3 className="text-xl font-bold text-navy mb-2">Book a Tour</h3>
                   <p className="text-gray-500 text-sm mb-6">Secure your {service.name.toLowerCase()} in {city.name} today.</p>
                   <LeadForm source={`${intent.name} - ${service.name}, ${city.name}`} />
                 </div>
-                <TrustLayer />
-                <LocalContactBlock city={city} />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      <TrustLayer />
+      <LocalContactBlock contactInfo={city.contactInfo!} cityName={city.name} />
     </div>
   );
 }
