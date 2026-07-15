@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cities } from '@/data/locations';
 import CityServicePage, { generateMetadata as cityGenerateMetadata } from '../../[service]/[city]/page';
+import { constructMetadata } from '@/utils/metadata';
 import { virtualOfficeContent } from '@/data/virtualOfficeContent';
 import VirtualOfficeLandingTemplate from '@/components/templates/VirtualOfficeLandingTemplate';
 
@@ -16,13 +17,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const content = virtualOfficeContent[slug];
   if (!content) return notFound();
 
-  return {
+  return constructMetadata({
     title: `${content.seo.title} | WeeSpaces`,
     description: content.seo.description,
-    alternates: {
-      canonical: `https://weespaces.in/virtual-office/${slug}`,
-    }
-  };
+    canonicalPath: `/virtual-office/${slug}`,
+    keywords: content.seo.secondaryKeywords ? [content.seo.primaryKeyword, ...content.seo.secondaryKeywords] : [content.seo.primaryKeyword]
+  });
 }
 
 export function generateStaticParams() {

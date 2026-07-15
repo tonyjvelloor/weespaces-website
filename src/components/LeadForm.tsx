@@ -67,6 +67,16 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
     setIsSubmitting(true);
     setFormStatus({ message: '', type: null });
 
+    let recaptchaToken = 'stub_token';
+    // Stub for Google reCAPTCHA v3
+    if (process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (window as any).grecaptcha) {
+      try {
+        recaptchaToken = await (window as any).grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit_lead' });
+      } catch (err) {
+        console.warn('reCAPTCHA execution failed', err);
+      }
+    }
+
     const phoneRaw = formDataState.phone;
     const phone = phoneRaw ? '+91' + phoneRaw : undefined;
     const name = formDataState.name;
@@ -86,7 +96,8 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
 
     const finalPayload = {
       ...attributionPayload,
-      lead: leadData
+      lead: leadData,
+      recaptchaToken
     };
 
     try {
@@ -317,6 +328,9 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
               <p className="text-center text-xs text-white/50 mt-4 flex items-center justify-center gap-2">
                 <span className="material-symbols-outlined text-[14px]">lock</span>
                 No Credit Card Required • No Hidden Fees
+              </p>
+              <p className="text-center text-[10px] text-white/30 mt-3 max-w-xs mx-auto">
+                This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noreferrer" className="underline hover:text-white/50">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noreferrer" className="underline hover:text-white/50">Terms of Service</a> apply.
               </p>
             </div>
           )}

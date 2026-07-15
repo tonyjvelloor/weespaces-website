@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { track } from '@/lib/tracking';
-import Script from 'next/script';
 
 interface FAQ {
   question: string;
@@ -33,10 +32,10 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
 
   return (
     <div className="space-y-4">
-      {/* Inject FAQ JSON-LD */}
-      <Script id={`faq-schema-${faqs.length}-${faqs[0]?.question?.slice(0, 10).replace(/\s+/g, '-').toLowerCase() || 'default'}`} type="application/ld+json" strategy="afterInteractive">
-        {JSON.stringify(schema)}
-      </Script>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;

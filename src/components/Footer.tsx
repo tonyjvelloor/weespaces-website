@@ -35,7 +35,7 @@ export default function Footer() {
           )}
           <div className="text-xs text-white/50">
             <p className="mb-4 text-white/40 italic">
-              Disclaimer: Wee Spaces is a private provider of commercial workspaces and virtual office addresses. We are not a government agency and do not directly process official government registrations.
+              Disclaimer: WeeSpaces is a premium workspace provider. We assist with documentation (NOC and rent agreement) but are not a government entity.
             </p>
             <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
             <div className="flex justify-center gap-6 mt-4">
@@ -154,7 +154,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/10 pt-8 mt-16 text-xs text-white/50">
           <p className="mb-6 text-white/40 italic leading-relaxed text-center max-w-4xl mx-auto">
-            Disclaimer: Wee Spaces is a private provider of commercial workspaces and virtual office addresses. We are not a government agency and do not directly process official government registrations.
+            Disclaimer: WeeSpaces is a premium workspace provider. We assist with documentation (NOC and rent agreement) but are not a government entity.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>

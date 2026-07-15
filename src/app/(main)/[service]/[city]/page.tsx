@@ -136,7 +136,6 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
 
   return (
     <div className="relative">
-      <LocalBusinessSchema cityData={city} />
       {/* STICKY CTA (Desktop Side, Mobile Bottom) */}
       <div className="fixed bottom-0 left-0 right-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-4 lg:left-auto lg:w-48 z-50 bg-white lg:bg-transparent lg:shadow-none shadow-[0_-4px_20px_rgba(0,0,0,0.1)] border-t lg:border-t-0 border-gray-200">
         <div className="flex lg:flex-col lg:gap-3 p-4 lg:p-0 justify-around">

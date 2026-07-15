@@ -79,8 +79,26 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
         </div>
       </section>
 
+      {/* 1.5 MINI-TOC */}
+      <section className="bg-gray-50 border-b border-gray-100 py-4">
+        <div className="max-w-7xl mx-auto px-6 overflow-x-auto no-scrollbar">
+          <ul className="flex items-center gap-6 text-sm font-bold text-navy whitespace-nowrap">
+            <li><a href="#quick-answer" className="hover:text-accent transition-colors">Overview</a></li>
+            <li><a href="#benefits" className="hover:text-accent transition-colors">Benefits</a></li>
+            {(content.routing.type === 'registration' || content.routing.type === 'persona') && (
+              <li><a href="#documents" className="hover:text-accent transition-colors">Documents Required</a></li>
+            )}
+            <li><a href="#how-it-works" className="hover:text-accent transition-colors">Process</a></li>
+            <li><a href="#pricing" className="hover:text-accent transition-colors">Pricing</a></li>
+            {content.schema.faqs && content.schema.faqs.length > 0 && (
+              <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
+            )}
+          </ul>
+        </div>
+      </section>
+
       {/* 2. TRUST & QUICK ANSWER */}
-      <section className="py-16 max-w-4xl mx-auto px-6">
+      <section id="quick-answer" className="py-16 max-w-4xl mx-auto px-6">
         <ScrollReveal>
           <div className="bg-gray-50 rounded-3xl p-8 border border-gray-100 mb-12 shadow-sm">
             <h2 className="text-2xl font-bold text-navy mb-4">The Short Answer</h2>
@@ -102,7 +120,7 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
       </section>
 
       {/* 3. BENEFITS */}
-      <section className="py-16 bg-navy-light/5 border-y border-gray-100">
+      <section id="benefits" className="py-16 bg-navy-light/5 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-center text-navy mb-12">Why Choose WeeSpaces?</h2>
@@ -123,13 +141,13 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
 
       {/* 4. DOCUMENTS CHECKLIST (If applicable) */}
       {(content.routing.type === 'registration' || content.routing.type === 'persona') && (
-        <section className="py-20 max-w-7xl mx-auto px-6">
+        <section id="documents" className="py-20 max-w-7xl mx-auto px-6">
           <VoDocumentChecklist />
         </section>
       )}
 
       {/* 5. PROCESS STEPS */}
-      <section className="py-16 max-w-4xl mx-auto px-6">
+      <section id="how-it-works" className="py-16 max-w-4xl mx-auto px-6">
         <ScrollReveal>
           <h2 className="text-3xl font-bold text-center text-navy mb-12">How It Works</h2>
           <div className="space-y-6">
@@ -154,7 +172,7 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
       </section>
 
       {/* 7. PRICING */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
+      <section id="pricing" className="py-20 max-w-7xl mx-auto px-6">
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-navy mb-4">Transparent Pricing</h2>
@@ -166,7 +184,7 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
 
       {/* 8. FAQs */}
       {content.schema.faqs && content.schema.faqs.length > 0 && (
-        <section className="py-20 bg-gray-50 border-t border-gray-100">
+        <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-3xl mx-auto px-6">
             <ScrollReveal>
               <h2 className="text-3xl font-bold text-center text-navy mb-12">Frequently Asked Questions</h2>
