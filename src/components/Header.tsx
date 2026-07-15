@@ -65,37 +65,51 @@ export default function Header() {
             <button className="hover:text-accent transition-colors flex items-center gap-1 py-4">
               Locations <ChevronDown className="w-4 h-4" />
             </button>
-            <div className="absolute top-full -left-24 mt-0 w-[600px] glass border border-white/10 rounded-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-2xl">
-              <div className="grid grid-cols-2 p-6 gap-8">
-                {/* City Hubs */}
-                <div>
-                  <h4 className="text-white/50 text-xs font-bold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Main City Hubs</h4>
-                  <ul className="space-y-3">
-                    <li><Link href="/coworking-space/kochi" className="hover:text-accent transition-colors block text-[15px] font-semibold">Kochi</Link></li>
-                    <li><Link href="/coworking-space/trivandrum" className="hover:text-accent transition-colors block text-[15px] font-semibold">Trivandrum</Link></li>
-                    <li><Link href="/coworking-space/calicut" className="hover:text-accent transition-colors block text-[15px] font-semibold">Calicut</Link></li>
+            <div className="absolute top-full -left-6 mt-0 w-72 bg-[#0B1E4A] border border-white/10 rounded-2xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+              <div className="p-6">
+                {/* Kerala */}
+                <div className="mb-6">
+                  <h4 className="text-white/40 text-[11px] font-bold uppercase tracking-wider mb-3 border-b border-white/10 pb-2">Kerala</h4>
+                  <ul className="space-y-1">
                     <li>
-                      <Link href="/coworking-space/coimbatore" className="hover:text-accent transition-colors flex items-center justify-between text-[15px] font-semibold">
-                        Coimbatore <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
+                      <Link href="/coworking-space/kochi" className="group/item flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <span className="text-lg opacity-80 group-hover/item:opacity-100">📍</span>
+                        <span className="text-[17px] font-bold text-white group-hover/item:text-accent transition-colors">Kochi</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/coworking-space/trivandrum" className="group/item flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <span className="text-lg opacity-80 group-hover/item:opacity-100">📍</span>
+                        <span className="text-[17px] font-bold text-white group-hover/item:text-accent transition-colors">Trivandrum</span>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/coworking-space/calicut" className="group/item flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <span className="text-lg opacity-80 group-hover/item:opacity-100">📍</span>
+                        <span className="text-[17px] font-bold text-white group-hover/item:text-accent transition-colors">Calicut</span>
                       </Link>
                     </li>
                   </ul>
                 </div>
-                {/* Popular Neighborhoods */}
+                {/* Tamil Nadu */}
                 <div>
-                  <h4 className="text-white/50 text-xs font-bold uppercase tracking-wider mb-4 border-b border-white/10 pb-2">Top Neighborhoods</h4>
-                  <ul className="space-y-3">
-                    <li><Link href="/coworking-space/kochi/kakkanad" className="hover:text-accent transition-colors block text-sm">Coworking near InfoPark, Kakkanad</Link></li>
-                    <li><Link href="/virtual-office/kochi/edappally" className="hover:text-accent transition-colors block text-sm">Virtual Office in Edappally</Link></li>
-                    <li><Link href="/coworking-space/trivandrum/kazhakkoottam" className="hover:text-accent transition-colors block text-sm">Coworking near Technopark</Link></li>
-                    <li><Link href="/coworking-space/coimbatore/avinashi-road" className="hover:text-accent transition-colors block text-sm">Workspace on Avinashi Road</Link></li>
-                    <li><Link href="/coworking-space/coimbatore/saravanampatti" className="hover:text-accent transition-colors block text-sm">IT Hub Saravanampatti</Link></li>
+                  <h4 className="text-white/40 text-[11px] font-bold uppercase tracking-wider mb-3 border-b border-white/10 pb-2">Tamil Nadu</h4>
+                  <ul className="space-y-1">
+                    <li>
+                      <Link href="/coworking-space/coimbatore" className="group/item flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <span className="text-lg opacity-80 group-hover/item:opacity-100">📍</span>
+                        <div className="flex items-center justify-between w-full">
+                          <span className="text-[17px] font-bold text-white group-hover/item:text-accent transition-colors">Coimbatore</span>
+                          <span className="text-[10px] bg-accent/20 text-accent px-2 py-0.5 rounded-full font-bold border border-accent/30">NEW</span>
+                        </div>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
-              <div className="bg-navy-light/50 p-4 text-center border-t border-white/10">
-                <Link href="/locations" className="text-accent text-sm font-bold hover:text-white transition-colors">
-                  View All 20+ Locations &rarr;
+              <div className="bg-black/20 p-4 text-center border-t border-white/10">
+                <Link href="/locations" className="text-accent text-sm font-bold hover:text-white transition-colors flex items-center justify-center gap-1 group/link">
+                  View All Locations <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
@@ -105,12 +119,12 @@ export default function Header() {
             <button className="hover:text-accent transition-colors flex items-center gap-1 py-4">
               Workspace Solutions <ChevronDown className="w-4 h-4" />
             </button>
-            <div className="absolute top-full left-0 mt-0 w-56 glass border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              <Link href="/coworking-space" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Coworking Space</Link>
-              <Link href="/private-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Private Office</Link>
-              <Link href="/virtual-office" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Virtual Office</Link>
-              <Link href="/meeting-room" className="block px-4 py-3 hover:bg-white/10 border-b border-white/10">Meeting Room</Link>
-              <Link href="/managed-office" className="block px-4 py-3 hover:bg-white/10">Managed Office</Link>
+            <div className="absolute top-full left-0 mt-0 w-56 bg-[#0B1E4A] border border-white/10 rounded-xl overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+              <Link href="/coworking-space" className="block px-4 py-3 hover:bg-white/5 border-b border-white/10 hover:text-accent transition-colors font-medium">Coworking Space</Link>
+              <Link href="/private-office" className="block px-4 py-3 hover:bg-white/5 border-b border-white/10 hover:text-accent transition-colors font-medium">Private Office</Link>
+              <Link href="/virtual-office" className="block px-4 py-3 hover:bg-white/5 border-b border-white/10 hover:text-accent transition-colors font-medium">Virtual Office</Link>
+              <Link href="/meeting-room" className="block px-4 py-3 hover:bg-white/5 border-b border-white/10 hover:text-accent transition-colors font-medium">Meeting Room</Link>
+              <Link href="/managed-office" className="block px-4 py-3 hover:bg-white/5 hover:text-accent transition-colors font-medium">Managed Office</Link>
             </div>
           </div>
 
