@@ -21,7 +21,7 @@ export default function ConversionPage() {{
   return (
     <div className="pt-24 pb-20">
       <section className="relative py-20 overflow-hidden bg-navy-dark border-b border-white/10">
-        <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center opacity-10 z-0"></div>
+        <div className="absolute inset-0 bg-grid bg-center opacity-10 z-0"></div>
         <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
           <ScrollReveal direction="up">
             <div className="inline-flex items-center gap-2 bg-navy-light/80 border border-accent/30 text-accent text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full mb-8">

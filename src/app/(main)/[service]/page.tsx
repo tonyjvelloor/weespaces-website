@@ -53,7 +53,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
   return (
     <>
       <section className="relative min-h-[60vh] flex items-center justify-center pt-20 overflow-hidden bg-navy">
-        <div className="absolute inset-0 bg-[url(/images/branches/kochi/reception.jpg)] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: "url('/images/branches/kochi/reception.jpg')" }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/80 to-navy/40"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center py-20">

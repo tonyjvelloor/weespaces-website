@@ -14,7 +14,7 @@ export const metadata: Metadata = constructMetadata({
 export default function BookTourPage() {
   return (
     <div className="min-h-screen pt-24 pb-12 bg-navy-dark relative overflow-hidden flex items-center">
-      <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center opacity-10 z-0"></div>
+      <div className="absolute inset-0 bg-grid bg-center opacity-10 z-0"></div>
       
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

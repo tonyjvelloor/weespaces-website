@@ -151,7 +151,7 @@ export default function Home() {
           <HeroCarousel />
           
           <div className="absolute inset-0 bg-navy/80 z-0"></div>
-          <div className="absolute inset-0 bg-[url(/grid.svg)] bg-center opacity-20 z-0"></div>
+          <div className="absolute inset-0 bg-grid bg-center opacity-20 z-0"></div>
           
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center py-20">
               <ScrollReveal className="lg:col-span-7 text-center lg:text-left">

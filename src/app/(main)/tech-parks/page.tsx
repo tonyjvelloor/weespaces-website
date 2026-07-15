@@ -102,7 +102,7 @@ export default function TechParksPage() {
   return (
     <>
       <section className="relative pt-32 pb-20 bg-navy text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url(/images/pattern.svg)]"></div>
+        <div className="absolute inset-0 opacity-10 bg-pattern"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center max-w-4xl">
           <ScrollReveal>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold mb-6">
