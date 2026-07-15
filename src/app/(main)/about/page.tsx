@@ -84,7 +84,7 @@ export default function AboutPage() {
             <ScrollReveal delay={0.2}>
               <MouseGlowCard className="glass p-6 rounded-xl border border-white/10 h-full">
                 <h3 className="text-accent font-bold uppercase tracking-wider text-sm mb-3">What We Do</h3>
-                <p className="text-white/80 leading-relaxed">We provide fully furnished private offices, dedicated desks, virtual office addresses for GST registration, and on-demand meeting rooms.</p>
+                <p className="text-white/80 leading-relaxed">We provide fully furnished private offices, dedicated desks, virtual office addresses for GST compliance, and on-demand meeting rooms.</p>
               </MouseGlowCard>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>

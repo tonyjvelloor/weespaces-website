@@ -18,7 +18,7 @@ export const virtualOfficePlans: VirtualOfficePlan[] = [
     yearlyPrice: 15000,
     setupFee: 1500,
     features: [
-      "GST Registration Support",
+      "Address for GST compliance",
       "Premium Business Address",
       "Rental Agreement & NOC",
       "Mail & Package Handling",
@@ -35,7 +35,7 @@ export const virtualOfficePlans: VirtualOfficePlan[] = [
     recommended: true,
     features: [
       "Everything in Starter",
-      "Company Incorporation Support (Pvt Ltd / LLP)",
+      "MCA Compliance Support (Pvt Ltd / LLP)",
       "Mail Forwarding",
       "Reception Support",
       "2 Meeting Room Credits / month"
@@ -60,7 +60,7 @@ export const virtualOfficePlans: VirtualOfficePlan[] = [
 
 export const virtualOfficeFaqs = [
   {
-    question: "Can I use this for GST registration?",
+    question: "Can I use this for GST compliance?",
     answer: "Yes, our Virtual Office plans include all necessary documentation (NOC, Rental Agreement, Utility Bill) required for a hassle-free GST registration in Kerala and Tamil Nadu."
   },
   {

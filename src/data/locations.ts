@@ -19,6 +19,10 @@ export type MicroLocation = {
   distanceToBranch?: string;
   travelTime?: string;
   type?: 'neighborhood' | 'landmark';
+  businessEcosystem?: string;
+  gstSuitability?: string;
+  whoChoosesThis?: string;
+  nearestLandmark?: string;
 };
 
 export type CityData = {
@@ -69,7 +73,7 @@ export const services: ServiceType[] = [
   { id: 'coworking', name: 'Coworking Space', slug: 'coworking-space', shortDesc: 'Flexible desks and shared amenities for freelancers and small teams.' },
   { id: 'private-office', name: 'Private Office', slug: 'private-office', shortDesc: 'Secure, enclosed workspaces for growing teams and established businesses.' },
   { id: 'managed-office', name: 'Managed Office', slug: 'managed-office', shortDesc: 'Fully custom, dedicated headquarters without the hassle of traditional leasing.' },
-  { id: 'virtual-office', name: 'Virtual Office', slug: 'virtual-office', shortDesc: 'Premium business address for GST registration and mail handling.' },
+  { id: 'virtual-office', name: 'Virtual Office', slug: 'virtual-office', shortDesc: 'Premium business address for GST compliance and mail handling.' },
   { id: 'meeting-room', name: 'Meeting Room', slug: 'meeting-room', shortDesc: 'Professional conference rooms equipped with AV and presentation tools.' },
   { id: 'office-space', name: 'Office Space for Rent', slug: 'office-space', shortDesc: 'Flexible, ready-to-move-in commercial office spaces.' },
 ];
@@ -706,6 +710,127 @@ export const cities: Record<string, CityData> = {
         parking: 'On-site parking',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
+      },
+
+      {
+        id: 'rs-puram', name: 'RS Puram', slug: 'rs-puram', intent: 'Premium Retail, Consulting, Finance',
+        nearbyCompanies: ['Boutiques', 'Financial Institutions', 'Consultancies'],
+        landmarks: ['DB Road', 'Annapoorna'],
+        transit: 'RS Puram Bus Stop',
+        parking: 'On-street',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'The most affluent commercial and residential neighborhood in Coimbatore.',
+        gstSuitability: 'Highly prestigious address for premium brands and financial services.',
+        whoChoosesThis: 'Wealth managers, boutique retail brands, and premium consultants.'
+      },
+      {
+        id: 'avinashi-road', name: 'Avinashi Road', slug: 'avinashi-road', intent: 'Corporate, IT, Education, Healthcare',
+        nearbyCompanies: ['IT Parks', 'Hospitals', 'Colleges', 'Corporate HQs'],
+        landmarks: ['Tidel Park', 'PSG Tech', 'KMCH'],
+        transit: 'Avinashi Road arterial buses',
+        parking: 'Building-specific',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/interior-lounge.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'The main arterial road of Coimbatore, hosting the biggest institutions and IT parks.',
+        gstSuitability: 'Ideal for corporate branch offices and large enterprises.',
+        whoChoosesThis: 'Corporate enterprises, IT companies, and healthcare organizations.'
+      },
+      {
+        id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'IT, Software, Startups',
+        nearbyCompanies: ['Cognizant', 'Bosch', 'Tech Parks'],
+        landmarks: ['CHIL SEZ', 'KGISL Campus'],
+        transit: 'Sathy Road',
+        parking: 'Tech park parking',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/reception.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'The IT corridor of Coimbatore, teeming with tech parks and an engineering talent pool.',
+        gstSuitability: 'Essential for IT exports and tech startups.',
+        whoChoosesThis: 'Software development companies, tech startups, and BPOs.'
+      },
+      {
+        id: 'peelamedu', name: 'Peelamedu', slug: 'peelamedu', intent: 'Education, Manufacturing, IT',
+        nearbyCompanies: ['Textile mills', 'Engineering colleges', 'IT firms'],
+        landmarks: ['Coimbatore Airport', 'PSG'],
+        transit: 'Avinashi Road, Airport',
+        parking: 'Available',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/workspace.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'Major educational and industrial hub near the airport.',
+        gstSuitability: 'Great for manufacturing, ed-tech, and logistics firms.',
+        whoChoosesThis: 'Manufacturing companies, educational consultants, and logistics providers.'
+      },
+      {
+        id: 'race-course', name: 'Race Course', slug: 'race-course', intent: 'Premium Corporate, Government, Finance',
+        nearbyCompanies: ['Corporate offices', 'Government bungalows'],
+        landmarks: ['Race Course Walking Track', 'Taj Vivanta'],
+        transit: 'Central location, near Railway Station',
+        parking: 'Available',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'The "Switzerland of Coimbatore", known for elite corporate offices and greenery.',
+        gstSuitability: 'Prestigious address for corporate HQs and high-end finance.',
+        whoChoosesThis: 'Corporate HQs, financial institutions, and premium agencies.'
+      },
+      {
+        id: 'ramanathapuram', name: 'Ramanathapuram', slug: 'ramanathapuram', intent: 'Retail, SMEs, Trade',
+        nearbyCompanies: ['Retail showrooms', 'Local businesses'],
+        landmarks: ['Ramanathapuram Junction', 'Trichy Road'],
+        transit: 'Trichy Road',
+        parking: 'Available',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/interior-lounge.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'Busy commercial and residential area connecting to the southern highways.',
+        gstSuitability: 'Suitable for retail, trading, and regional distributors.',
+        whoChoosesThis: 'Retailers, distributors, and local SMEs.'
+      },
+      {
+        id: 'saibaba-colony', name: 'Saibaba Colony', slug: 'saibaba-colony', intent: 'Retail, Healthcare, Food & Beverage',
+        nearbyCompanies: ['Restaurants', 'Retailers', 'Clinics'],
+        landmarks: ['Saibaba Temple', 'NSR Road'],
+        transit: 'Mettupalayam Road',
+        parking: 'On-street',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/reception.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'Vibrant residential area with a strong retail and F&B commercial presence.',
+        gstSuitability: 'Ideal for retail, F&B, and healthcare services.',
+        whoChoosesThis: 'F&B brands, retail chains, and clinics.'
+      },
+      {
+        id: 'gandhipuram', name: 'Gandhipuram', slug: 'gandhipuram', intent: 'Commercial, Retail, Transit Hub',
+        nearbyCompanies: ['Textile shops', 'Electronics markets', 'Travel agencies'],
+        landmarks: ['Cross Cut Road', 'Gandhipuram Bus Stand'],
+        transit: 'Central Bus Terminals',
+        parking: 'Very congested',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/workspace.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'The commercial heart and main transit hub of Coimbatore.',
+        gstSuitability: 'Crucial for wholesale, retail, and trading businesses.',
+        whoChoosesThis: 'Wholesalers, retailers, and travel companies.'
+      },
+      {
+        id: 'town-hall', name: 'Town Hall', slug: 'town-hall', intent: 'Wholesale, Textiles, Heritage Trade',
+        nearbyCompanies: ['Textile wholesalers', 'Jewelers', 'Hardware traders'],
+        landmarks: ['Oppanakara Street', 'Clock Tower'],
+        transit: 'Near Railway Station',
+        parking: 'Limited',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'The oldest and densest wholesale trading market in the city.',
+        gstSuitability: 'Essential for traditional trading and wholesale businesses.',
+        whoChoosesThis: 'Textile merchants, jewelers, and wholesale traders.'
+      },
+      {
+        id: 'kalapatti', name: 'Kalapatti', slug: 'kalapatti', intent: 'Manufacturing, IT, Logistics',
+        nearbyCompanies: ['Foundries', 'Manufacturing units', 'IT firms'],
+        landmarks: ['Kalapatti Junction', 'Near Airport'],
+        transit: 'Kalapatti Road',
+        parking: 'Available',
+        type: 'neighborhood', gallery: ['/images/branches/coimbatore/interior-lounge.jpg'],
+        services: ['virtual-office', 'coworking-space'],
+        businessEcosystem: 'A rapidly industrializing suburb known for foundries, manufacturing, and growing IT presence.',
+        gstSuitability: 'Perfect for manufacturing, engineering, and logistics companies.',
+        whoChoosesThis: 'Manufacturing SMEs, engineering firms, and logistics providers.'
       },
       {
         id: 'sitra', name: 'SITRA', slug: 'sitra', intent: 'Textiles, research, manufacturing, IT',

@@ -24,7 +24,7 @@ export default function VirtualOfficeCompliancePage() {
           <div className="prose prose-lg max-w-none text-gray-600 prose-headings:text-navy prose-a:text-accent hover:prose-a:text-accent-light">
             <h2>1. Our Role as a Commercial Workspace Provider</h2>
             <p>
-              WeeSpaces is a provider of premium physical and virtual workspaces. <strong>We are not a government entity, nor are we an authorized agent for government services.</strong> We do not provide, process, or file applications for GST registration, Ministry of Corporate Affairs (MCA) incorporation, or any other government or regulatory approvals.
+              WeeSpaces is a provider of premium physical and virtual workspaces. <strong>We are not a government entity, nor are we an authorized agent for government services.</strong> We do not provide, process, or file applications for GST compliance, Ministry of Corporate Affairs (MCA) incorporation, or any other government or regulatory approvals.
             </p>
 
             <h2>2. What WeeSpaces Provides</h2>

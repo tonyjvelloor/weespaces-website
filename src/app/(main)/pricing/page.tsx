@@ -243,7 +243,7 @@ export default function PricingPage() {
                   <ul className="space-y-4 mb-8 text-sm text-white/80 flex-grow">
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Prime Business Address</li>
                     <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Mail Handling</li>
-                    <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> GST Registration Proof</li>
+                    <li className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-accent" /> Address for GST compliance</li>
                   </ul>
                   <div className="mt-auto">
                     <Link href={`/book-tour?plan=virtual-office&branch=${activeBranch}`} className="block text-center w-full py-3 rounded-xl border border-white/20 hover:bg-white/10 transition-colors font-medium relative z-10 text-sm">Check Availability & Offers</Link>

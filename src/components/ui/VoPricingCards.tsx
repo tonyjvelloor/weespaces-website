@@ -26,7 +26,7 @@ export default function VoPricingCards() {
           <ul className="space-y-4 mb-8">
             {[
               "Premium Business Address",
-              "GST Registration Support",
+              "Address for GST compliance",
               "Rental Agreement & NOC",
               "Mail & Package Handling",
               "Company Name Board at Entrance",

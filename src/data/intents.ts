@@ -43,7 +43,7 @@ export const intents: Record<string, IntentData> = {
     ],
     faqs: [
       {
-        question: 'Is a Virtual Office legal for GST registration?',
+        question: 'Is a Virtual Office legal for GST compliance?',
         answer: 'Yes, it is 100% legal. The GST department allows businesses to use a shared space or virtual office as their Principal Place of Business, provided you have the correct documentation (NOC and Utility Bill), which we provide.'
       },
       {

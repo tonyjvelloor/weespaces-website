@@ -153,8 +153,8 @@ export const virtualOfficeFAQs: FAQ[] = [
     answer: "Yes. Both terms refer to a professional business address service that allows you to register your company and manage mail without renting a physical workspace."
   },
   {
-    question: "Can I use a Virtual Office for GST Registration in Kerala and Tamil Nadu?",
-    answer: "Yes! Our virtual office plans are designed specifically to be 100% compliant for GST registration. We provide all mandatory documentation, including a No Objection Certificate (NOC), Rental Agreement, and Utility Bill."
+    question: "Can I use a Virtual Office for GST Compliance in Kerala and Tamil Nadu?",
+    answer: "Yes! Our virtual office plans are designed specifically to be 100% compliant for GST compliance. We provide all mandatory documentation, including a No Objection Certificate (NOC), Rental Agreement, and Utility Bill."
   },
   {
     question: "Can I register a Private Limited Company with this address?",

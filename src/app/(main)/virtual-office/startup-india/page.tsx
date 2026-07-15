@@ -15,7 +15,7 @@ export const metadata: Metadata = constructMetadata({
 export default function StartupIndiaPage() {
   const faqs = [
     { question: "Do I need a commercial address for DPIIT Recognition?", answer: "While a home address can technically be used, a commercial address adds significant credibility when applying for Startup India DPIIT recognition and dealing with government grants or angel investors." },
-    { question: "Can a Virtual Office be used for Startup India benefits?", answer: "Yes, a legally compliant Virtual Office address with proper NOC and lease agreements satisfies the address requirements for company incorporation, which is the first step to applying for DPIIT recognition." },
+    { question: "Can a Virtual Office be used for Startup India benefits?", answer: "Yes, a legally compliant Virtual Office address with proper NOC and lease agreements satisfies the address requirements for MCA compliance, which is the first step to applying for DPIIT recognition." },
     { question: "Will I get mail handling services for government correspondence?", answer: "Yes, our Virtual Office plans include dedicated mail handling. Any official letters from the MCA, Income Tax Department, or Startup India will be received, sorted, and forwarded to you." },
     { question: "Can I use the address to open a startup bank account?", answer: "Absolutely. Once your company is incorporated using our address, you can use the incorporation documents to open your corporate bank account." }
   ];
@@ -54,7 +54,7 @@ export default function StartupIndiaPage() {
 
                 <h3>What We Provide</h3>
                 <ul>
-                  <li><strong>NOC & Agreement:</strong> Legal documentation for company incorporation (the prerequisite for DPIIT).</li>
+                  <li><strong>NOC & Agreement:</strong> Legal documentation for MCA compliance (the prerequisite for DPIIT).</li>
                   <li><strong>Premium Address:</strong> A recognizable commercial address in prime business districts.</li>
                   <li><strong>Mail Handling:</strong> Secure receipt of important government and legal correspondence.</li>
                   <li><strong>Meeting Room Access:</strong> Book professional meeting rooms when you need to meet with investors or partners.</li>

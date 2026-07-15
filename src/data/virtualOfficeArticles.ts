@@ -56,10 +56,10 @@ export interface VirtualOfficeArticle {
 export const virtualOfficeArticles: Record<string, VirtualOfficeArticle> = {
   'gst-registration-kerala': {
     slug: 'gst-registration-kerala',
-    title: 'How to Get a Virtual Office for GST Registration in Kerala (2026)',
+    title: 'How to Get a Virtual Office for GST Compliance in Kerala (2026)',
     description: 'Learn the exact documents, process, and costs to register your business for GST in Kerala using a premium virtual office address.',
     targetState: 'Kerala',
-    quickAnswer: 'Yes, a virtual office is 100% legal for GST registration in Kerala. You need a No Objection Certificate (NOC) and a Rental Agreement from the workspace provider, along with a recent utility bill. WeeSpaces provides all compliant documents within 24 hours of sign-up.',
+    quickAnswer: 'Yes, a virtual office is 100% legal for GST compliance in Kerala. You need a No Objection Certificate (NOC) and a Rental Agreement from the workspace provider, along with a recent utility bill. WeeSpaces provides all compliant documents within 24 hours of sign-up.',
     summaryTable: [
       { label: 'Time Required', value: '24 Hours for NOC' },
       { label: 'Legal Validity', value: '100% Compliant with Kerala GST Dept' },
@@ -150,7 +150,7 @@ export const virtualOfficeArticles: Record<string, VirtualOfficeArticle> = {
   },
   'documents-required': {
     slug: 'documents-required',
-    title: 'Documents Required for GST Registration using a Virtual Office',
+    title: 'Documents Required for GST compliance using a Virtual Office',
     description: 'The definitive checklist of documents required by the government to register for GST using a virtual office in 2026.',
     quickAnswer: 'To register for GST using a virtual office, you must provide your business KYC (PAN, Aadhaar, Incorporation cert) along with three critical documents from the workspace provider: A signed No Objection Certificate (NOC), a Notarized Rental Agreement, and a copy of the latest Electricity Bill for the premises.',
     summaryTable: [

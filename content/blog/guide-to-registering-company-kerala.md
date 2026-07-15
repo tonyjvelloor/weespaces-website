@@ -18,7 +18,7 @@ author: "WeeSpaces Team"
 
 <h2>Step 3: The Virtual Office Advantage</h2>
 <p>When registering a company, you need a physical address for GST and official communication. Instead of signing a heavy 3-year commercial lease, modern startups use <strong>Virtual Offices</strong>. <br/><br/>
-A Virtual Office provides you with a premium address (like MG Road, Ernakulam or Pattom, Trivandrum) without the overhead. You get mail handling and GST registration proof instantly.</p>
+A Virtual Office provides you with a premium address (like MG Road, Ernakulam or Pattom, Trivandrum) without the overhead. You get mail handling and Address for GST compliance instantly.</p>
 
 <h2>Step 4: Incorporation Documents</h2>
 <p>Draft the Memorandum of Association (MoA) and Articles of Association (AoA) with your company secretary.</p>

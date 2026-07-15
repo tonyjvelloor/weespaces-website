@@ -22,7 +22,7 @@ Under the Goods and Services Tax (GST) Act, every business operating in Kerala r
 3. **Professional Image:** Gives your business a premium address (like East Nadakkave or Cyberpark area) on your website, invoices, and business cards.
 4. **Mail & Courier Handling:** A dedicated team receives and forwards your official government correspondence.
 
-## Required Documents for GST Registration via Virtual Office
+## Required Documents for GST compliance via Virtual Office
 
 When you apply for GST using a virtual office, the GST portal requires specific proofs to ensure the address is legitimate. If you sign up with WeeSpaces for [a virtual office in Calicut](/virtual-office/calicut), we provide you with the following essential documents:
 

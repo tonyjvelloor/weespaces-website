@@ -15,7 +15,7 @@ import ComplianceBlock from '@/components/ComplianceBlock';
 
 export const metadata: Metadata = constructMetadata({
   title: "Virtual Office in Kerala & Tamil Nadu | GST Registration | WeeSpaces",
-  description: "India's most transparent virtual office provider. Get a premium business address for GST registration, company incorporation, and mail handling in Kochi, Coimbatore, Trivandrum & Calicut.",
+  description: "India's most transparent virtual office provider. Get a premium business address for GST compliance, company incorporation, and mail handling in Kochi, Coimbatore, Trivandrum & Calicut.",
   canonicalPath: "/virtual-office"
 });
 
@@ -68,7 +68,7 @@ export default function VirtualOfficeHub() {
         "provider": {
           "@id": "https://www.weespaces.in/virtual-office/#localbusiness"
         },
-        "description": "Premium virtual workspace and business address provision for GST registration and Company Incorporation in South India.",
+        "description": "Premium virtual workspace and business address provision for GST compliance and Company Incorporation in South India.",
         "offers": {
           "@type": "Offer",
           "price": "7999",
@@ -126,7 +126,7 @@ export default function VirtualOfficeHub() {
               India&apos;s Most Transparent Virtual Office Provider
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight max-w-4xl mx-auto">
-              Virtual Office for <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">GST Registration</span> & Company Incorporation
+              Virtual Office for <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">GST Compliance</span> & Company Incorporation
             </h1>
             <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12">
               Premium business addresses with supporting commercial documentation for eligible business registrations. Ready in 48 hours.
@@ -285,7 +285,7 @@ export default function VirtualOfficeHub() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { title: "GST Registration in Kerala (2026 Guide)", link: "/virtual-office/gst-registration-kerala", icon: "account_balance" },
-              { title: "Documents Required for GST Registration", link: "/virtual-office/documents-required", icon: "file_copy" },
+              { title: "Documents Required for GST compliance", link: "/virtual-office/documents-required", icon: "file_copy" },
               { title: "Virtual Office vs Physical Office", link: "/virtual-office/virtual-office-vs-physical-office", icon: "compare_arrows" },
               { title: "Virtual Office Pricing Guide", link: "/virtual-office/pricing", icon: "payments" },
               { title: "Company Registration Guide", link: "/virtual-office/company-registration", icon: "business_center" },

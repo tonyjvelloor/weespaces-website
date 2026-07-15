@@ -10,8 +10,8 @@ import SEOFAQ from '@/components/SEOFAQ';
 import ComplianceBlock from '@/components/ComplianceBlock';
 
 export const metadata: Metadata = constructMetadata({
-  title: "Virtual Office for GST Registration in Kerala & TN | WeeSpaces",
-  description: "Get a legally compliant Virtual Office address for GST registration in Kochi, Trivandrum, Coimbatore, and Calicut. Includes NOC and utility bills.",
+  title: "Virtual Office for GST Compliance in Kerala & TN | WeeSpaces",
+  description: "Get a legally compliant Virtual Office address for GST compliance in Kochi, Trivandrum, Coimbatore, and Calicut. Includes NOC and utility bills.",
   canonicalPath: "/virtual-office/gst-registration"
 });
 
@@ -32,7 +32,7 @@ export default function GstRegistrationPage() {
               Knowledge Center
             </div>
             <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-              Virtual Office for <span className="text-accent">GST Registration</span>
+              Virtual Office for <span className="text-accent">GST Compliance</span>
             </h1>
             <p className="text-xl text-white/70 mb-8 leading-relaxed">
               Everything you need to know about registering your GST number using a premium business address in Kerala and Tamil Nadu.
@@ -80,7 +80,7 @@ export default function GstRegistrationPage() {
       {/* 4. PLANS */}
       <section className="py-20 max-w-7xl mx-auto px-6">
         <ScrollReveal>
-          <h2 className="text-3xl font-bold text-center text-navy mb-12">Recommended Plans for GST Registration</h2>
+          <h2 className="text-3xl font-bold text-center text-navy mb-12">Recommended Plans for GST compliance</h2>
           <VoPricingCards />
         </ScrollReveal>
       </section>

@@ -17,7 +17,7 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
   // Custom hero content based on city
   let heroTitle = `Premium Virtual Office & GST Address in ${city.name}`;
   let heroSub = `Get a legally compliant business address in ${city.name} with complete documentation, mail handling, and on-demand workspace.`;
-  let perks = ["GST Registration Support", "Premium Business Address", "Mail Handling"];
+  let perks = ["Address for GST compliance", "Premium Business Address", "Mail Handling"];
 
   if (city.slug === 'kochi') {
     heroTitle = `Kerala GST Support & Virtual Office Near Infopark, Kochi`;
@@ -141,7 +141,7 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
           <ScrollReveal>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-bold mb-4">Choose Your {city.name} Plan</h2>
-              <p className="text-white/60 max-w-2xl mx-auto">From simple GST registration to full company incorporation support.</p>
+              <p className="text-white/60 max-w-2xl mx-auto">From simple GST registration to full MCA Compliance Support.</p>
             </div>
           </ScrollReveal>
           
