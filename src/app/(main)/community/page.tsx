@@ -59,7 +59,7 @@ export default function CommunityPage() {
   return (
     <>
       <section className="relative pt-32 pb-20 bg-navy text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[url('/images/pattern.svg')]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[url(/images/pattern.svg)]"></div>
         <div className="absolute top-1/4 -right-20 w-[500px] h-[500px] bg-accent/20 rounded-full blur-[120px] pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
