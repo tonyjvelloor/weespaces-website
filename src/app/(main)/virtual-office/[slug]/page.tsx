@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { cities } from '@/data/locations';
 import CityServicePage, { generateMetadata as cityGenerateMetadata } from '../../[service]/[city]/page';
-import { virtualOfficeArticles } from '@/data/virtualOfficeArticles';
-import VirtualOfficeArticleTemplate from '@/components/templates/VirtualOfficeArticleTemplate';
+import { virtualOfficeContent } from '@/data/virtualOfficeContent';
+import VirtualOfficeLandingTemplate from '@/components/templates/VirtualOfficeLandingTemplate';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -13,12 +13,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return cityGenerateMetadata({ params: Promise.resolve({ service: 'virtual-office', city: slug }) });
   }
 
-  const article = virtualOfficeArticles[slug];
-  if (!article) return notFound();
+  const content = virtualOfficeContent[slug];
+  if (!content) return notFound();
 
   return {
-    title: `${article.title} | WeeSpaces`,
-    description: article.description,
+    title: `${content.seo.title} | WeeSpaces`,
+    description: content.seo.description,
     alternates: {
       canonical: `https://weespaces.in/virtual-office/${slug}`,
     }
@@ -33,9 +33,9 @@ export function generateStaticParams() {
     paths.push({ slug: citySlug });
   });
 
-  // 2. Generate paths for all knowledge hub articles
-  Object.keys(virtualOfficeArticles).forEach(articleSlug => {
-    paths.push({ slug: articleSlug });
+  // 2. Generate paths for all commercial landing pages
+  Object.keys(virtualOfficeContent).forEach(contentSlug => {
+    paths.push({ slug: contentSlug });
   });
 
   return paths;
@@ -50,12 +50,12 @@ export default async function VirtualOfficeSlugPage({ params }: { params: Promis
     return <CityServicePage params={Promise.resolve({ service: 'virtual-office', city: slug })} />;
   }
 
-  // Route 2: If slug is an article, render the Article Template
-  const article = virtualOfficeArticles[slug];
+  // Route 2: If slug is a commercial landing page, render the Landing Template
+  const content = virtualOfficeContent[slug];
   
-  if (!article) {
+  if (!content) {
     return notFound();
   }
 
-  return <VirtualOfficeArticleTemplate article={article} />;
+  return <VirtualOfficeLandingTemplate content={content} />;
 }

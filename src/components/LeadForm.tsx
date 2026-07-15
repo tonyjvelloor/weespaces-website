@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { pushToDataLayer } from '@/utils/analytics';
+import { track } from '@/lib/tracking';
 
-export default function LeadForm({ branch = "", source: defaultSource, hidePricing }: { branch?: string, source?: string, hidePricing?: boolean }) {
+export default function LeadForm({ branch = "", source: defaultSource, hidePricing, pageType = 'unknown', pageSlug = 'unknown' }: { branch?: string, source?: string, hidePricing?: boolean, pageType?: string, pageSlug?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
   const router = useRouter();
@@ -13,8 +13,8 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
   const hasStartedRef = useRef(false);
 
   useEffect(() => {
-    pushToDataLayer('lead_form_view');
-  }, []);
+    track.form('view', { pageType, pageSlug, city: branch });
+  }, [pageType, pageSlug, branch]);
 
   const [formDataState, setFormDataState] = useState({
     requirement: '',
@@ -31,31 +31,26 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
 
     if (!hasStartedRef.current) {
       hasStartedRef.current = true;
-      pushToDataLayer('lead_form_start');
+      track.form('start', { pageType, pageSlug, city: formDataState.location });
     }
 
     if (step === 1 && !formDataState.requirement) {
-      pushToDataLayer('lead_form_error', { field: 'requirement' });
       setFormStatus({ message: 'Please select your requirement', type: 'error' });
       return;
     }
     if (step === 2 && !formDataState.teamSize) {
-      pushToDataLayer('lead_form_error', { field: 'teamSize' });
       setFormStatus({ message: 'Please select your team size', type: 'error' });
       return;
     }
     if (step === 3 && !formDataState.location) {
-      pushToDataLayer('lead_form_error', { field: 'location' });
       setFormStatus({ message: 'Please select a location', type: 'error' });
       return;
     }
     if (step === 4 && !formDataState.budget) {
-      pushToDataLayer('lead_form_error', { field: 'budget' });
       setFormStatus({ message: 'Please select your budget expectation', type: 'error' });
       return;
     }
     if (step === 5 && !formDataState.timeline) {
-      pushToDataLayer('lead_form_error', { field: 'timeline' });
       setFormStatus({ message: 'Please select your timeline', type: 'error' });
       return;
     }
@@ -75,28 +70,37 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
     const phoneRaw = formDataState.phone;
     const phone = phoneRaw ? '+91' + phoneRaw : undefined;
     const name = formDataState.name;
-    const pageUrl = typeof window !== 'undefined' ? window.location.href : 'Unknown URL';
-    const source = defaultSource
-      ? `${defaultSource} (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline}) - URL: ${pageUrl}`
-      : `Website Lead (Req: ${formDataState.requirement}, Team: ${formDataState.teamSize}, Loc: ${formDataState.location}, Budget: ${formDataState.budget}, Timeline: ${formDataState.timeline}) - URL: ${pageUrl}`;
+
+    // Get structured attribution payload from Marketing SDK
+    const attributionPayload = track.getAttributionPayload({
+      pageType,
+      pageSlug,
+      city: formDataState.location
+    });
+
+    const leadData = {
+      ...formDataState,
+      name,
+      phone
+    };
+
+    const finalPayload = {
+      ...attributionPayload,
+      lead: leadData
+    };
 
     try {
-      const response = await fetch('/api/capture-lead', {
+      // POST to new versioned API
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, source, pageUrl })
+        body: JSON.stringify(finalPayload)
       });
 
       if (!response.ok) throw new Error('Failed to submit lead');
 
-      // Unified GTM DataLayer Push
-      pushToDataLayer('generate_lead', {
-        service: formDataState.requirement,
-        city: formDataState.location,
-        team_size: formDataState.teamSize,
-        lead_source: source,
-        landing_page: pageUrl
-      });
+      // Track Submission
+      track.form('submit', { pageType, pageSlug, city: formDataState.location }, leadData);
 
       router.push('/landing/thank-you');
     } catch (error) {

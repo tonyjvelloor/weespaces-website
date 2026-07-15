@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
-import { pushToDataLayer } from '@/utils/analytics';
+import { track } from '@/lib/tracking';
 import Script from 'next/script';
 
 interface FAQ {
@@ -48,7 +48,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
                 const willOpen = !isOpen;
                 setOpenIndex(willOpen ? index : null);
                 if (willOpen) {
-                  pushToDataLayer('faq_expand', { question: faq.question });
+                  track.cta('faq_expand', '', { question: faq.question });
                 }
               }}
             >

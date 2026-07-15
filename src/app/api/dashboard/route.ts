@@ -17,7 +17,23 @@ export async function GET() {
       calculatorGrowth: '+45%',
       finderCompletions: 215,
       gstCheckerCompletions: 512,
-      avgSessionTime: '3m 14s'
+      avgSessionTime: '3m 14s',
+      events: {
+        'vo.page_view': 45200,
+        'vo.scroll': 32100,
+        'vo.cta_click': 8400,
+        'vo.form_start': 1200,
+        'vo.form_submit': 850
+      }
+    },
+    attribution: {
+      topSources: [
+        { source: 'google', medium: 'cpc', leads: 450, conversionRate: '4.2%' },
+        { source: 'google', medium: 'organic', leads: 320, conversionRate: '2.8%' },
+        { source: 'facebook', medium: 'cpc', leads: 150, conversionRate: '1.5%' },
+        { source: 'linkedin', medium: 'cpc', leads: 85, conversionRate: '3.1%' },
+        { source: '(direct)', medium: '(none)', leads: 120, conversionRate: '5.2%' }
+      ]
     },
     sales: {
       virtualOfficeLeads: 420,

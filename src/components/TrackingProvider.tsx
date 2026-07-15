@@ -2,7 +2,7 @@
 
 import { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { pushToDataLayer } from '@/utils/analytics';
+import { track, TrackingStorage } from '@/lib/tracking';
 
 function TrackingLogic() {
   const searchParams = useSearchParams();
@@ -10,40 +10,43 @@ function TrackingLogic() {
   useEffect(() => {
     if (!searchParams) return;
 
-    // Keys we want to capture and persist
+    // Keys we want to capture and persist for attribution
     const trackingKeys = [
       'utm_source',
       'utm_medium',
       'utm_campaign',
       'utm_term',
       'utm_content',
+      'utm_id',
       'gclid',
       'fbclid',
       'msclkid',
+      'ttclid'
     ];
 
-    let storedParams: Record<string, string> = {};
-    try {
-      const stored = sessionStorage.getItem('weespaces_tracking');
-      if (stored) {
-        storedParams = JSON.parse(stored);
-      }
-    } catch (e) {}
-
+    const currentSessionData = TrackingStorage.getSessionData();
+    let updatedData: Record<string, string> = {};
     let updated = false;
 
     trackingKeys.forEach(key => {
       const val = searchParams.get(key);
       if (val) {
-        storedParams[key] = val;
+        updatedData[key] = val;
         updated = true;
       }
     });
 
+    // Capture initial referrer if not set
+    if (!currentSessionData.referrer && document.referrer) {
+      // Don't capture our own domain as referrer
+      if (!document.referrer.includes(window.location.hostname)) {
+        updatedData.referrer = document.referrer;
+        updated = true;
+      }
+    }
+
     if (updated) {
-      try {
-        sessionStorage.setItem('weespaces_tracking', JSON.stringify(storedParams));
-      } catch (e) {}
+      TrackingStorage.setSessionData(updatedData);
     }
 
     // Global Click Listener for WhatsApp and Calls
@@ -53,9 +56,9 @@ function TrackingLogic() {
       
       if (anchor && anchor.href) {
         if (anchor.href.includes('wa.me')) {
-          pushToDataLayer('whatsapp_click', { url: anchor.href });
+          track.cta('whatsapp_click', anchor.href);
         } else if (anchor.href.startsWith('tel:')) {
-          pushToDataLayer('call_click', { url: anchor.href });
+          track.cta('call_click', anchor.href);
         }
       }
     };

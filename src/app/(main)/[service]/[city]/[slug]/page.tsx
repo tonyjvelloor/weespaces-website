@@ -8,18 +8,31 @@ import LeadForm from '@/components/LeadForm';
 import SEOFAQ from '@/components/SEOFAQ';
 import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 import { services, cities } from '@/data/locations';
+import { virtualOfficeContent } from '@/data/virtualOfficeContent';
+import VirtualOfficeLandingTemplate from '@/components/templates/VirtualOfficeLandingTemplate';
 import { MapPin, Building, ChevronRight, CheckCircle, Clock, Users, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string, neighborhood: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string, slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
   const service = services.find(s => s.slug === resolvedParams.service);
   const city = cities[resolvedParams.city];
   
   if (!service || !city) return notFound();
 
-  const neighborhood = city.microLocations.find(m => m.slug === resolvedParams.neighborhood);
+  // Route 1: Commercial Intent (e.g., /virtual-office/kochi/gst-registration)
+  if (service.slug === 'virtual-office' && virtualOfficeContent[resolvedParams.slug]) {
+    const content = virtualOfficeContent[resolvedParams.slug];
+    return constructMetadata({
+      title: `${content.seo.title} in ${city.name} | WeeSpaces`,
+      description: content.seo.description,
+      canonicalPath: `/${service.slug}/${city.slug}/${resolvedParams.slug}`
+    });
+  }
+
+  // Route 2: Neighborhood (e.g., /virtual-office/kochi/edappally)
+  const neighborhood = city.microLocations.find(m => m.slug === resolvedParams.slug);
   if (!neighborhood || !neighborhood.services?.includes(service.slug)) return notFound();
 
   const titlePrefix = neighborhood.type === 'landmark' ? 'near' : 'in';
@@ -33,33 +46,56 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
 }
 
 export function generateStaticParams() {
-  const paths: { service: string, city: string, neighborhood: string }[] = [];
+  const paths: { service: string, city: string, slug: string }[] = [];
   
   services.forEach(service => {
     Object.values(cities).forEach(city => {
+      // 1. Generate paths for micro-locations
       city.microLocations.forEach(micro => {
         if (micro.services && micro.services.includes(service.slug)) {
           paths.push({
             service: service.slug,
             city: city.slug,
-            neighborhood: micro.slug
+            slug: micro.slug
           });
         }
       });
+
+      // 2. Generate paths for commercial intents (Virtual Office only)
+      if (service.slug === 'virtual-office') {
+        Object.keys(virtualOfficeContent).forEach(intentSlug => {
+          // If the content explicitly lists related cities, only generate for those. Otherwise generate for all.
+          const content = virtualOfficeContent[intentSlug];
+          if (!content.routing.relatedCities || content.routing.relatedCities.includes(city.slug)) {
+            paths.push({
+              service: service.slug,
+              city: city.slug,
+              slug: intentSlug
+            });
+          }
+        });
+      }
     });
   });
   
   return paths;
 }
 
-export default async function NeighborhoodServicePage({ params }: { params: Promise<{ service: string, city: string, neighborhood: string }> }) {
+export default async function CitySlugPage({ params }: { params: Promise<{ service: string, city: string, slug: string }> }) {
   const resolvedParams = await params;
   const service = services.find(s => s.slug === resolvedParams.service);
   const city = cities[resolvedParams.city];
   
   if (!service || !city) return notFound();
 
-  const neighborhood = city.microLocations.find(m => m.slug === resolvedParams.neighborhood);
+  // Route 1: Commercial Intent (e.g., /virtual-office/kochi/gst-registration)
+  if (service.slug === 'virtual-office' && virtualOfficeContent[resolvedParams.slug]) {
+    const content = virtualOfficeContent[resolvedParams.slug];
+    return <VirtualOfficeLandingTemplate content={content} city={city.slug} />;
+  }
+
+  // Route 2: Neighborhood (e.g., /virtual-office/kochi/edappally)
+  const neighborhood = city.microLocations.find(m => m.slug === resolvedParams.slug);
   if (!neighborhood || !neighborhood.services?.includes(service.slug)) return notFound();
 
   // AEO Specific FAQs

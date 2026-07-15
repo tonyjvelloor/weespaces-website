@@ -1,6 +1,6 @@
 "use client";
 
-import { pushToDataLayer } from '@/utils/analytics';
+import { track } from '@/lib/tracking';
 
 export default function FloatingWhatsApp() {
   return (
@@ -8,7 +8,7 @@ export default function FloatingWhatsApp() {
       href="https://wa.me/919207189111" 
       target="_blank" 
       rel="noopener noreferrer"
-      onClick={() => pushToDataLayer('contact_whatsapp', { button_position: 'floating_widget' })}
+      onClick={() => track.cta('contact_whatsapp', 'https://wa.me/919207189111', { button_position: 'floating_widget' })}
       className="fixed bottom-24 md:bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:scale-110 transition-all duration-300"
       aria-label="Chat with us on WhatsApp"
     >
