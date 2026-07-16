@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import LeadForm from '@/components/LeadForm';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
-import { ShieldCheck, Layers, LayoutPanelLeft, Zap, CheckCircle, Building2, Users } from 'lucide-react';
+import { ShieldCheck, Layers, LayoutPanelLeft, Zap, Building2 } from 'lucide-react';
+import EnterpriseConsultationForm from '@/components/EnterpriseConsultationForm';
 
 import { constructMetadata } from '@/utils/metadata';
 
@@ -73,13 +73,8 @@ export default function EnterprisePage() {
             </div>
           </ScrollReveal>
           
-          <ScrollReveal direction="left" delay={0.2} className="relative">
-            <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 to-transparent rounded-2xl blur-lg"></div>
-            <div className="glass p-8 md:p-10 rounded-xl border border-white/10 relative z-10 shadow-2xl">
-              <h3 className="text-2xl font-bold mb-2">Request Enterprise Pricing</h3>
-              <p className="text-white/60 text-sm mb-6">Skip the standard tour. Let's discuss a custom solution for your team.</p>
-              <LeadForm branch="Enterprise Inquiry" />
-            </div>
+          <ScrollReveal direction="left" delay={0.2} className="relative w-full max-w-lg justify-self-end">
+            <EnterpriseConsultationForm />
           </ScrollReveal>
         </div>
       </section>
@@ -178,8 +173,8 @@ export default function EnterprisePage() {
                <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to scale without limits?</h2>
                <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto">Contact our Enterprise Solutions team today to start designing your next headquarters.</p>
                
-               <div className="glass p-8 md:p-12 rounded-xl border border-white/10 text-left">
-                  <LeadForm branch="Enterprise Final CTA" />
+               <div className="max-w-xl mx-auto text-left">
+                  <EnterpriseConsultationForm />
                </div>
             </ScrollReveal>
          </div>

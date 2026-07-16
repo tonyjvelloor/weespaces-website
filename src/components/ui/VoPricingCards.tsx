@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckCircle } from 'lucide-react';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function VoPricingCards() {
   const scrollForm = () => {
@@ -44,9 +45,12 @@ export default function VoPricingCards() {
           <button onClick={scrollForm} className="flex-1 py-4 rounded-full font-bold transition-colors bg-navy text-white hover:bg-accent hover:text-navy">
             Get Started
           </button>
-          <a href="https://wa.me/919207189111" target="_blank" rel="noopener noreferrer" className="flex-1 py-4 rounded-full font-bold transition-colors border-2 border-navy text-navy hover:bg-navy hover:text-white text-center flex items-center justify-center">
+          <WhatsAppButton 
+            className="flex-1 py-4 rounded-full font-bold transition-colors border-2 border-navy text-navy hover:bg-navy hover:text-white text-center flex items-center justify-center"
+            contextOverride={{ city: 'Kochi', service: 'Virtual Office' }}
+          >
             WhatsApp Us
-          </a>
+          </WhatsAppButton>
         </div>
       </div>
 
@@ -86,9 +90,12 @@ export default function VoPricingCards() {
           <button onClick={scrollForm} className="flex-1 py-4 rounded-full font-bold transition-colors bg-accent text-navy hover:bg-white">
             Get Started
           </button>
-          <a href="https://wa.me/919207189111" target="_blank" rel="noopener noreferrer" className="flex-1 py-4 rounded-full font-bold transition-colors border-2 border-accent text-accent hover:bg-accent hover:text-navy text-center flex items-center justify-center">
+          <WhatsAppButton 
+            className="flex-1 py-4 rounded-full font-bold transition-colors border-2 border-accent text-accent hover:bg-accent hover:text-navy text-center flex items-center justify-center"
+            contextOverride={{ city: 'Coimbatore', service: 'Virtual Office' }}
+          >
             WhatsApp Us
-          </a>
+          </WhatsAppButton>
         </div>
       </div>
     </div>

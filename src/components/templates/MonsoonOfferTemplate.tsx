@@ -7,7 +7,7 @@ import CountdownTimer from '@/components/ui/CountdownTimer';
 import OfferPricingCards from '@/components/ui/OfferPricingCards';
 import ROICalculator from '@/components/ui/ROICalculator';
 import ExitIntentPopup from '@/components/ui/ExitIntentPopup';
-import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import FloatingWhatsAppWidget from '@/components/FloatingWhatsAppWidget';
 import FAQAccordion from '@/components/FAQAccordion';
 import { CheckCircle, Shield, ArrowRight, Check, Star, MapPin, Building, Users } from 'lucide-react';
 
@@ -18,7 +18,7 @@ export default function MonsoonOfferTemplate({ city }: { city?: string }) {
   return (
     <div className="bg-[#050B14] min-h-screen pb-32">
       <ExitIntentPopup />
-      <FloatingWhatsApp />
+      <FloatingWhatsAppWidget />
 
       {/* STICKY MOBILE CTA */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-navy border-t border-white/10 p-4 z-[90] flex items-center justify-between shadow-[0_-10px_30px_rgba(0,0,0,0.5)]">

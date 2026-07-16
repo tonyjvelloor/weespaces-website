@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { MapPin, Clock } from 'lucide-react';
 import { track } from '@/lib/tracking';
 import { cities, services } from '@/data/locations';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -79,16 +80,12 @@ export default function Footer() {
               <a href="https://x.com/weespaces" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="X (Twitter)">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
-              <a 
-                href="https://wa.me/919207189111" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <WhatsAppButton 
                 className="w-10 h-10 rounded-full bg-[#25D366]/20 border border-[#25D366]/50 flex items-center justify-center hover:bg-[#25D366] hover:text-white transition-all text-[#25D366]" 
-                aria-label="WhatsApp"
-                onClick={() => track.cta('contact_whatsapp', 'https://wa.me/919207189111', { button_position: 'footer' })}
+                contextOverride={{ service: 'Footer Inquiry' }}
               >
                 <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="fill-current"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-              </a>
+              </WhatsAppButton>
             </div>
           </div>
           

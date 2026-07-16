@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Phone, MessageCircle, CalendarCheck } from 'lucide-react';
 import { track } from '@/lib/tracking';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function MobileStickyCTA() {
   const [visible, setVisible] = useState(false);
@@ -35,17 +36,13 @@ export default function MobileStickyCTA() {
         </a>
 
         {/* WhatsApp — Primary / Largest */}
-        <a
-          href="https://wa.me/919207189111?text=Hi%20WeeSpaces,%20I%20am%20interested%20in%20workspace..."
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => track.cta('contact_whatsapp', 'https://wa.me/919207189111', { button_position: 'mobile_sticky' })}
+        <WhatsAppButton
           className="flex-[2] flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white font-bold py-3 px-4 rounded-xl transition-all shadow-[0_0_16px_rgba(37,211,102,0.4)] active:scale-95"
-          aria-label="WhatsApp WeeSpaces"
+          contextOverride={{ service: 'Mobile Sticky Nav' }}
         >
           <MessageCircle className="w-5 h-5" />
           <span className="text-sm">WhatsApp Us</span>
-        </a>
+        </WhatsAppButton>
 
         {/* Book Tour */}
         <a

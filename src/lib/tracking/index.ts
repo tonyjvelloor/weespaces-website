@@ -20,7 +20,12 @@ export const EventNames = {
   CALCULATOR_START: 'vo.calculator_start',
   CALCULATOR_COMPLETE: 'vo.calculator_complete',
   FINDER_START: 'vo.finder_start',
-  FINDER_COMPLETE: 'vo.finder_complete'
+  FINDER_COMPLETE: 'vo.finder_complete',
+  WHATSAPP_GATE_VIEW: 'vo.whatsapp_gate_view',
+  WHATSAPP_GATE_START: 'vo.whatsapp_gate_start',
+  WHATSAPP_GATE_SUBMIT: 'vo.whatsapp_gate_submit',
+  WHATSAPP_GATE_SKIP: 'vo.whatsapp_gate_skip',
+  WHATSAPP_REDIRECT: 'vo.whatsapp_redirect'
 };
 
 /**

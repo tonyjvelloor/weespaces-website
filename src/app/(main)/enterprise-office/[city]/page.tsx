@@ -3,7 +3,7 @@ import { constructMetadata } from '@/utils/metadata';
 import { notFound } from 'next/navigation';
 import { cities } from '@/data/locations';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import LeadForm from '@/components/LeadForm';
+import EnterpriseConsultationForm from '@/components/EnterpriseConsultationForm';
 import SEOFAQ from '@/components/SEOFAQ';
 import LocalContactBlock from '@/components/ui/LocalContactBlock';
 import { MapPin, Building, ShieldCheck, Briefcase, Zap, Network, ChevronRight, CheckCircle } from 'lucide-react';
@@ -77,9 +77,7 @@ export default async function EnterpriseCityPage({ params }: { params: Promise<{
               <div className="bg-accent text-navy p-4 text-center font-bold text-lg">
                 Request {city.name} Floor Plans
               </div>
-              <div className="p-6">
-                <LeadForm branch={city.name} source={`Enterprise ${city.name} Hero`} hidePricing />
-              </div>
+              <EnterpriseConsultationForm city={city.name} />
             </div>
           </ScrollReveal>
         </div>
