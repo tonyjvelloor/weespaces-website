@@ -56,8 +56,27 @@ export async function POST(request: Request) {
       processedAt: new Date().toISOString()
     };
 
-    // TODO: Send to CRM / Google Sheets / Email
-    // For now, we will just log it.
+    // Send to Google Sheets Webhook
+    const sheetsWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby-ZZi3pA2o7oW_i0ESKH3qAPc4UT2KZSfTQcGCNxk5a1q0AV3Jq7KSeEdxWqCAhViF/exec";
+    if (sheetsWebhook) {
+      await fetch(sheetsWebhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: lead.name,
+          phone: lead.phone,
+          source: `Main Form - ${content?.pageType || 'Unknown'} - ${lead.location || 'Unknown'}`,
+          requirement: lead.requirement || '',
+          teamSize: lead.teamSize || '',
+          location: lead.location || '',
+          budget: lead.budget || '',
+          timeline: lead.timeline || '',
+          timestamp: new Date().toISOString()
+        }),
+        redirect: 'manual'
+      }).catch(err => console.error("Failed to push to Google Sheets:", err));
+    }
+
     console.log('[Lead API V2] New Lead Captured:', JSON.stringify(enrichedLead, null, 2));
 
     return NextResponse.json({ 
