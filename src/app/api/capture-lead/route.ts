@@ -18,6 +18,7 @@ export async function POST(request: Request) {
           body: JSON.stringify({
             name: body.name,
             phone: body.phone,
+            email: body.email || '',
             source: body.source,
             requirement: body.requirement || '',
             teamSize: body.teamSize || '',

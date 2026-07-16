@@ -65,6 +65,7 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           name: lead.name,
           phone: lead.phone,
+          email: lead.email || '',
           source: `Main Form - ${content?.pageType || 'Unknown'} - ${lead.location || 'Unknown'}`,
           requirement: lead.requirement || '',
           teamSize: lead.teamSize || '',
