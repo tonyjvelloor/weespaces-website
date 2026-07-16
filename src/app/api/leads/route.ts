@@ -57,7 +57,7 @@ export async function POST(request: Request) {
     };
 
     // Send to Google Sheets Webhook
-    const sheetsWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycby-ZZi3pA2o7oW_i0ESKH3qAPc4UT2KZSfTQcGCNxk5a1q0AV3Jq7KSeEdxWqCAhViF/exec";
+    const sheetsWebhook = process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbw_5a5IhlPBZvP3e4vCOoaBmLGpDXnKBx7QWogRmwn3rd_dsBlLTlwziFXPkzay9vpD/exec";
     if (sheetsWebhook) {
       await fetch(sheetsWebhook, {
         method: 'POST',
