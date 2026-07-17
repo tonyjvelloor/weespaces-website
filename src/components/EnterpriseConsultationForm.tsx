@@ -9,12 +9,14 @@ interface EnterpriseConsultationFormProps {
 }
 
 export default function EnterpriseConsultationForm({ city }: EnterpriseConsultationFormProps) {
+  const isCoimbatore = city?.toLowerCase() === 'coimbatore';
+
   const [formData, setFormData] = useState({
     companyName: '',
     contactPerson: '',
     email: '',
     phone: '',
-    teamSize: '50-100',
+    teamSize: isCoimbatore ? '100-250' : '50-100',
     preferredCity: city || 'Kochi',
     timeline: 'Immediate'
   });
@@ -180,7 +182,8 @@ export default function EnterpriseConsultationForm({ city }: EnterpriseConsultat
               <option value="10-50">10 - 50 Seats</option>
               <option value="50-100">50 - 100 Seats</option>
               <option value="100-250">100 - 250 Seats</option>
-              <option value="250+">250+ Seats</option>
+              <option value="250-500">250 - 500 Seats</option>
+              <option value="500+">500+ Seats</option>
             </select>
           </div>
           <div>

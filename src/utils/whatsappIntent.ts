@@ -18,6 +18,22 @@ export function getPageContext(pathname: string): PageContext {
     city = city.charAt(0).toUpperCase() + city.slice(1);
   }
   
+  // Coimbatore is enterprise-level by default (100+ seating)
+  if (city?.toLowerCase() === 'coimbatore') {
+    // For Coimbatore, all service pages are enterprise intent
+    let service = 'Enterprise Office';
+    if (path.includes('/virtual-office')) service = 'Virtual Office';
+    else if (path.includes('/coworking')) service = 'Coworking Space (Enterprise)';
+    else if (path.includes('/private-office')) service = 'Private Office (Enterprise)';
+    else if (path.includes('/managed-office')) service = 'Managed Office';
+    
+    return {
+      intent: 'enterprise',
+      service,
+      city: 'Coimbatore'
+    };
+  }
+
   // Enterprise intent
   if (path.includes('/enterprise') || path.includes('/managed-office')) {
     return {

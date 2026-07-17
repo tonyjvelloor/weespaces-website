@@ -141,7 +141,9 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
     { label: 'Just me', value: '1 person' },
     { label: '2–5 people', value: '2-5' },
     { label: '6–20 people', value: '6-20' },
-    { label: '20+ people', value: '20+' },
+    { label: '20–50 people', value: '20-50' },
+    { label: '50–100 people', value: '50-100' },
+    { label: '100+ people', value: '100+' },
   ];
 
   const budgets = [
