@@ -26,8 +26,7 @@ export async function POST(request: Request) {
             budget: body.budget || '',
             timeline: body.timeline || '',
             timestamp: new Date().toISOString()
-          }),
-          redirect: 'manual' // Prevent Next.js from following the 302 redirect, which can cause network errors
+          })
         })
         .then(res => {
           if (res.status >= 400) {

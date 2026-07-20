@@ -62,7 +62,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
                  <thead>
                    <tr className="bg-navy text-white">
                      <th className="p-6 text-lg font-bold w-1/3">Feature</th>
-                     <th className="p-6 text-lg font-bold w-1/3 border-l border-white/10 opacity-70">Traditional</th>
+                     <th className="p-6 text-lg font-bold w-1/3 border-l border-white/10 opacity-70">{comparison.opponentName || 'Traditional'}</th>
                      <th className="p-6 text-lg font-bold w-1/3 bg-accent text-navy border-l border-white/10">WeeSpaces</th>
                    </tr>
                  </thead>
@@ -95,7 +95,7 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
             {/* Traditional Pros/Cons */}
             <ScrollReveal>
                <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200 h-full">
-                  <h3 className="text-2xl font-bold text-gray-700 mb-6 border-b border-gray-200 pb-4">Traditional Approach</h3>
+                  <h3 className="text-2xl font-bold text-gray-700 mb-6 border-b border-gray-200 pb-4">{comparison.opponentName || 'Traditional Approach'}</h3>
                   
                   <div className="mb-8">
                      <h4 className="flex items-center gap-2 font-bold text-green-700 mb-4"><CheckCircle className="w-5 h-5" /> Advantages</h4>

@@ -117,16 +117,31 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
         </div>
       </section>
 
-      {/* 3. DOCUMENTATION TRANSPARENCY */}
+      {/* 3. DOCUMENTATION TRANSPARENCY & GST RULES */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
+          <ScrollReveal>
+            <div className="bg-white p-8 md:p-12 rounded-3xl border border-accent/20 shadow-lg mb-16 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-4 flex items-center gap-3">
+                <span className="material-symbols-outlined text-accent text-3xl">gavel</span>
+                {city.slug === 'coimbatore' ? 'Tamil Nadu' : 'Kerala'} GST Registration Rules for {city.name}
+              </h2>
+              <p className="text-gray-600 leading-relaxed text-lg mb-6">
+                {city.gstRegistrationRules}
+              </p>
+              <div className="inline-flex items-center gap-2 text-sm font-bold text-navy bg-accent/10 px-4 py-2 rounded-full border border-accent/20">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                WeeSpaces virtual offices are 100% compliant with these local regulations.
+              </div>
+            </div>
+          </ScrollReveal>
+
           <VoHowItWorks />
           
           {city.contactInfo && (
             <LocalContactBlock contactInfo={city.contactInfo} cityName={city.name} />
           )}
-
-          {/* Removed fake logos TrustLayer here */}
 
           <VoDocumentChecklist />
         </div>

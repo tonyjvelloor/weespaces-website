@@ -16,6 +16,7 @@ export interface Comparison {
   description: string;
   metaTitle: string;
   metaDescription: string;
+  opponentName?: string;
   prosCons: {
     traditional: { pros: string[]; cons: string[] };
     weespaces: { pros: string[]; cons: string[] };
@@ -152,6 +153,122 @@ export const comparisons: Record<string, Comparison> = {
     faqs: [
       { question: 'Is a Virtual Office legal for a Private Limited Company?', answer: 'Yes, a Virtual Office is 100% legal for registering a Pvt Ltd company with the MCA and obtaining a GST number in India.' },
       { question: 'Can I meet clients at my Virtual Office address?', answer: 'Yes, WeeSpaces Virtual Office plans include meeting room credits or discounted access, allowing you to host clients at your registered premium address.' }
+    ]
+  },
+  'weespaces-vs-wework': {
+    slug: 'weespaces-vs-wework',
+    title: 'WeeSpaces vs. WeWork',
+    description: 'Compare WeeSpaces and WeWork to find the best coworking and enterprise office solution in South India.',
+    metaTitle: 'WeeSpaces vs WeWork | Which is better for your business?',
+    metaDescription: 'A transparent comparison of WeeSpaces vs WeWork. Compare pricing, hidden fees, lock-in periods, and regional expertise.',
+    opponentName: 'WeWork',
+    prosCons: {
+      traditional: {
+        pros: ['Global network of spaces', 'Highly standardized design aesthetic', 'Large global community'],
+        cons: ['Expensive premium pricing', 'Hidden fees and strict lock-ins', 'Less focus on Tier 2 regional hubs']
+      },
+      weespaces: {
+        pros: ['Deep regional expertise in South India', 'Zero hidden fees (all-inclusive pricing)', 'Highly flexible terms for startups and enterprises'],
+        cons: ['Fewer global locations', 'Regional community focus']
+      }
+    },
+    points: [
+      {
+        feature: 'Pricing Transparency',
+        traditional: { value: 'Variable', description: 'Base rent often excludes meeting room credits, printing, and specific IT setup fees.' },
+        weespaces: { value: 'All-Inclusive', description: 'What you see is what you pay. High-speed WiFi, credits, and utilities are included.' }
+      },
+      {
+        feature: 'South India Presence',
+        traditional: { value: 'Metro Focused', description: 'Primarily focused on Tier 1 cities like Bangalore and Chennai.' },
+        weespaces: { value: 'Regional Leader', description: 'Deep presence in fast-growing hubs like Kochi, Coimbatore, Trivandrum, and Calicut.' }
+      },
+      {
+        feature: 'Custom Build-outs',
+        traditional: { value: 'Available', description: 'Typically for very large enterprises only.' },
+        weespaces: { value: 'Core Focus', description: 'Bespoke managed offices for teams as small as 20, built in 45 days.' }
+      }
+    ],
+    faqs: [
+      { question: 'Is WeeSpaces cheaper than WeWork?', answer: 'Yes, WeeSpaces generally offers 20-30% better value for equivalent enterprise-grade amenities, primarily due to our transparent, all-inclusive pricing without hidden operational fees.' },
+      { question: 'Can WeeSpaces handle a 100+ person team?', answer: 'Absolutely. We specialize in custom Managed Offices for large enterprise teams, handling the entire build-out and facility management.' }
+    ]
+  },
+  'weespaces-vs-regus': {
+    slug: 'weespaces-vs-regus',
+    title: 'WeeSpaces vs. Regus',
+    description: 'A detailed comparison of WeeSpaces and Regus (IWG) for private offices and virtual offices.',
+    metaTitle: 'WeeSpaces vs Regus | Private & Virtual Office Comparison',
+    metaDescription: 'Comparing WeeSpaces and Regus for your next office. See how they stack up on pricing, flexibility, and modern amenities.',
+    opponentName: 'Regus',
+    prosCons: {
+      traditional: {
+        pros: ['Massive global footprint', 'Legacy corporate brand', 'Good for basic virtual offices'],
+        cons: ['Dated interior designs in older centers', 'Notorious for hidden fees (internet, beverages)', 'Rigid corporate contracts']
+      },
+      weespaces: {
+        pros: ['Modern, vibrant office designs', 'Transparent pricing (free WiFi & beverages)', 'Agile contracts tailored for modern teams'],
+        cons: ['Smaller total footprint compared to Regus legacy network']
+      }
+    },
+    points: [
+      {
+        feature: 'Internet & Beverages',
+        traditional: { value: 'Often Extra', description: 'Business-grade internet and premium coffee are often billed separately.' },
+        weespaces: { value: 'Included', description: 'Enterprise-grade WiFi and unlimited tea/coffee included in all memberships.' }
+      },
+      {
+        feature: 'Workspace Vibe',
+        traditional: { value: 'Corporate / Traditional', description: 'Standardized, older corporate aesthetic.' },
+        weespaces: { value: 'Modern & Vibrant', description: 'Ergonomic furniture, natural light, and modern tech-enabled spaces.' }
+      },
+      {
+        feature: 'Contract Flexibility',
+        traditional: { value: 'Rigid', description: 'Strict corporate exit clauses and renewal terms.' },
+        weespaces: { value: 'Agile', description: 'Flexible lock-ins designed for scaling companies.' }
+      }
+    ],
+    faqs: [
+      { question: 'Does WeeSpaces charge for internet like Regus?', answer: 'No. Secure, high-speed internet is included in all our coworking and private office plans at no additional cost.' },
+      { question: 'Which is better for a tech startup?', answer: 'WeeSpaces is generally preferred by modern tech companies due to our vibrant design, inclusive amenities, and agile community.' }
+    ]
+  },
+  'weespaces-vs-incuspaze': {
+    slug: 'weespaces-vs-incuspaze',
+    title: 'WeeSpaces vs. Incuspaze',
+    description: 'Compare WeeSpaces and Incuspaze to see which workspace provider offers the best value in Tier 2 cities.',
+    metaTitle: 'WeeSpaces vs Incuspaze | Coworking Comparison',
+    metaDescription: 'Comparing WeeSpaces and Incuspaze. Discover the differences in amenities, build quality, and local expertise.',
+    opponentName: 'Incuspaze',
+    prosCons: {
+      traditional: {
+        pros: ['Growing footprint in Tier 2 cities', 'Budget-friendly options', 'Decent enterprise solutions'],
+        cons: ['Inconsistent quality across centers', 'Community management can vary', 'Less focus on premium architectural design']
+      },
+      weespaces: {
+        pros: ['Premium Grade-A architectural build quality', 'Highly consistent hospitality standards', 'Deep integration into the local South Indian ecosystem'],
+        cons: ['Focused exclusively on South India']
+      }
+    },
+    points: [
+      {
+        feature: 'Build Quality',
+        traditional: { value: 'Variable', description: 'Quality can vary significantly between older and newer centers.' },
+        weespaces: { value: 'Premium Grade-A', description: 'Consistent, high-end ergonomic design and acoustic treatment across all hubs.' }
+      },
+      {
+        feature: 'Local Ecosystem',
+        traditional: { value: 'Pan-India Approach', description: 'Standardized approach across India.' },
+        weespaces: { value: 'Deeply Localized', description: 'Strong ties to local government, IT parks, and startup ecosystems in Kerala and Tamil Nadu.' }
+      },
+      {
+        feature: 'Hospitality',
+        traditional: { value: 'Standard', description: 'Basic reception and facility management.' },
+        weespaces: { value: 'Hotel-Grade', description: 'Trained community managers focused on member experience.' }
+      }
+    ],
+    faqs: [
+      { question: 'Why choose WeeSpaces in South India?', answer: 'WeeSpaces specializes in South India. Our deep local knowledge helps us secure the best commercial real estate and provide localized operational support that pan-India players often lack.' }
     ]
   }
 };

@@ -74,7 +74,6 @@ export async function POST(request: Request) {
           timeline: lead.timeline || '',
           timestamp: new Date().toISOString()
         }),
-        redirect: 'manual'
       }).catch(err => console.error("Failed to push to Google Sheets:", err));
     }
 

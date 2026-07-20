@@ -23,9 +23,23 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   
   if (!service || !city) return notFound();
 
+  let metaTitle = `${service.name} in ${city.name} | Premium Workspaces | WeeSpaces`;
+  let metaDesc = `Move your team into a fully operational ${service.name.toLowerCase()} in ${city.name} within 24 hours. Zero setup costs, flexible terms, and enterprise-grade amenities.`;
+
+  if (service.slug === 'virtual-office') {
+    metaTitle = `Virtual Office in ${city.name} | GST & Company Registration | WeeSpaces`;
+    metaDesc = `Get a premium virtual office and business address in ${city.name} for GST compliance and company incorporation. Fast setup in 48 hours.`;
+  } else if (service.slug === 'coworking-space') {
+    metaTitle = `Coworking Space in ${city.name} | From ₹4,999/mo | WeeSpaces`;
+    metaDesc = `Premium coworking space in ${city.name}. Dedicated desks, high-speed internet, meeting rooms, and 24/7 access with zero hidden fees.`;
+  } else if (service.slug === 'private-office' || service.slug === 'managed-office') {
+    metaTitle = `${service.name} in ${city.name} | Secure & Custom Built | WeeSpaces`;
+    metaDesc = `Fully managed, secure private offices in ${city.name} for teams of 10 to 100+. Custom layouts, biometric access, and zero CapEx.`;
+  }
+
   return constructMetadata({
-    title: `${service.name} in ${city.name} | ${service.slug === 'virtual-office' ? 'Business Address for GST' : 'Private Offices & Managed Workspaces'}`,
-    description: `Move your team into a fully operational ${service.name.toLowerCase()} in ${city.name} within 24 hours. No setup costs. Flexible terms.`,
+    title: metaTitle,
+    description: metaDesc,
     canonicalPath: `/${service.slug}/${city.slug}`,
     image: city.gallery[0],
   });
