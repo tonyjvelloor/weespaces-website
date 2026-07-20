@@ -123,11 +123,12 @@ export default function Footer() {
                   <div className="space-y-6 mt-4">
                     {services.map((service) => {
                       const validNeighborhoods = city.microLocations.filter(ml => ml.services && ml.services.includes(service.slug));
-                      if (validNeighborhoods.length === 0) return null;
                       
                       return (
                         <div key={service.id}>
-                          <h5 className="text-white font-semibold text-sm mb-2">{service.name}</h5>
+                          <Link href={`/${service.slug}/${city.slug}`} className="text-white font-semibold text-sm mb-2 hover:text-accent transition-colors block">
+                            {service.name} in {city.name}
+                          </Link>
                           <ul className="space-y-2 text-xs text-white/60">
                             {validNeighborhoods.map((neighborhood) => (
                               <li key={neighborhood.slug}>

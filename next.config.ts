@@ -4,6 +4,8 @@ const nextConfig: NextConfig = {
   trailingSlash: false,
   async redirects() {
     const cities = ['kochi', 'trivandrum', 'calicut', 'coimbatore'];
+    const services = ['coworking-space', 'private-office', 'managed-office', 'virtual-office', 'meeting-room', 'office-space'];
+    
     const redirectsList = [
       // --- Service redirects ---
       { source: '/services/virtual-office', destination: '/virtual-office', permanent: true },
@@ -11,15 +13,18 @@ const nextConfig: NextConfig = {
 
     // Build programmatic redirects for legacy flat URLs
     cities.forEach(city => {
-      // Coworking
-      redirectsList.push({ source: `/coworking-space-in-${city}`, destination: `/coworking-space/${city}`, permanent: true });
-      redirectsList.push({ source: `/coworking-space-${city}`, destination: `/coworking-space/${city}`, permanent: true });
-      // Private Office
-      redirectsList.push({ source: `/private-office-space-in-${city}`, destination: `/private-office/${city}`, permanent: true });
-      redirectsList.push({ source: `/private-office-space-${city}`, destination: `/private-office/${city}`, permanent: true });
-      // Managed Office
-      redirectsList.push({ source: `/managed-office-space-in-${city}`, destination: `/managed-office/${city}`, permanent: true });
-      redirectsList.push({ source: `/managed-office-space-${city}`, destination: `/managed-office/${city}`, permanent: true });
+      // Service level legacy URLs
+      services.forEach(service => {
+        // e.g. /virtual-office-in-kochi -> /virtual-office/kochi
+        redirectsList.push({ source: `/${service}-in-${city}`, destination: `/${service}/${city}`, permanent: true });
+        redirectsList.push({ source: `/${service}-${city}`, destination: `/${service}/${city}`, permanent: true });
+        
+        // Some older URLs had "space" appended unnecessarily (e.g. /private-office-space-in-kochi)
+        if (!service.includes('space')) {
+           redirectsList.push({ source: `/${service}-space-in-${city}`, destination: `/${service}/${city}`, permanent: true });
+           redirectsList.push({ source: `/${service}-space-${city}`, destination: `/${service}/${city}`, permanent: true });
+        }
+      });
       // Locations
       redirectsList.push({ source: `/locations/${city === 'kochi' ? 'ernakulam' : city}`, destination: `/coworking-space/${city}`, permanent: true });
       if (city === 'kochi') {
