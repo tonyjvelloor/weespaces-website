@@ -10,6 +10,7 @@ export function generateStaticParams() {
   return [
     { location: 'trivandrum' },
     { location: 'ernakulam' },
+    { location: 'kochi' },
     { location: 'calicut' },
     { location: 'coimbatore' },
   ];
@@ -19,7 +20,8 @@ import { constructMetadata } from '@/utils/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ location: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const locationId = resolvedParams.location;
+  let locationId = resolvedParams.location;
+  if (locationId === 'kochi') locationId = 'ernakulam'; // Map kochi to ernakulam data
   const data = branchData[locationId];
   
   if (!data) return { title: 'Not Found | WeeSpaces' };
@@ -44,7 +46,8 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
 
 export default async function AdLandingPage({ params }: { params: Promise<{ location: string }> }) {
   const resolvedParams = await params;
-  const locationId = resolvedParams.location;
+  let locationId = resolvedParams.location;
+  if (locationId === 'kochi') locationId = 'ernakulam'; // Map kochi to ernakulam data
   const data = branchData[locationId];
 
   if (!data) return <div className="text-white text-center pt-32">Location not found.</div>;
