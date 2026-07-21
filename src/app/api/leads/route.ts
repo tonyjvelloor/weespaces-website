@@ -1,14 +1,64 @@
 import { NextResponse } from 'next/server';
 
+// Simple in-memory rate limiter for serverless environment
+// Note: In Vercel, this is per-instance, but still deters rapid automated spam.
+const rateLimitMap = new Map<string, { count: number; lastReset: number }>();
+const RATE_LIMIT = 5; // max 5 requests
+const RATE_LIMIT_WINDOW = 60000; // 1 minute
+
 export async function POST(request: Request) {
   try {
+    // 0. Basic Rate Limiting
+    const ip = request.headers.get('x-forwarded-for') || 'unknown';
+    const now = Date.now();
+    const clientRecord = rateLimitMap.get(ip);
+
+    if (clientRecord) {
+      if (now - clientRecord.lastReset < RATE_LIMIT_WINDOW) {
+        if (clientRecord.count >= RATE_LIMIT) {
+          console.warn(`[Lead API] Rate limit exceeded for IP: ${ip}`);
+          return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+        }
+        clientRecord.count += 1;
+      } else {
+        rateLimitMap.set(ip, { count: 1, lastReset: now });
+      }
+    } else {
+      rateLimitMap.set(ip, { count: 1, lastReset: now });
+    }
+
     const payload = await request.json();
 
-    // 1. Extract Event Model Data
+    // 1. Server-Side reCAPTCHA Verification
+    const recaptchaToken = payload.recaptchaToken;
+    if (recaptchaToken && process.env.RECAPTCHA_SECRET_KEY && recaptchaToken !== 'stub_token') {
+      const verifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`;
+      const recaptchaResponse = await fetch(verifyUrl, { method: 'POST' });
+      const recaptchaData = await recaptchaResponse.json();
+      
+      if (!recaptchaData.success || recaptchaData.score < 0.5) {
+        console.warn(`[Lead API] Bot detected by reCAPTCHA. Score: ${recaptchaData.score}`);
+        return NextResponse.json({ error: 'Failed reCAPTCHA verification' }, { status: 400 });
+      }
+    }
+
+    // 2. Extract Event Model Data
     const { lead, content, marketing, session, technical } = payload;
 
-    if (!lead || !lead.name || !lead.phone) {
-      return NextResponse.json({ error: 'Missing required lead details' }, { status: 400 });
+    // 3. Strict Manual Validation
+    if (!lead || typeof lead !== 'object') {
+      return NextResponse.json({ error: 'Invalid payload structure' }, { status: 400 });
+    }
+
+    const name = String(lead.name || '').trim();
+    const phone = String(lead.phone || '').trim();
+
+    if (!name || name.length < 2 || name.length > 100) {
+      return NextResponse.json({ error: 'Invalid name' }, { status: 400 });
+    }
+
+    if (!phone || phone.length < 10 || phone.length > 15 || !/^[0-9+]+$/.test(phone)) {
+      return NextResponse.json({ error: 'Invalid phone number format' }, { status: 400 });
     }
 
     // 2. Dynamic Lead Scoring
