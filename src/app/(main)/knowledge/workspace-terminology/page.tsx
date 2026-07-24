@@ -45,14 +45,14 @@ export default function WorkspaceTerminology() {
   ];
 
   const breadcrumbs = [
-    { label: 'Knowledge Hub', href: '/knowledge' },
-    { label: 'Workspace Terminology' }
+    { name: 'Knowledge Hub', url: '/knowledge' },
+    { name: 'Workspace Terminology', url: '/knowledge/workspace-terminology' }
   ];
 
   return (
     <div className="min-h-screen bg-background-200 pt-24 pb-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <Breadcrumbs items={breadcrumbs} />
+        <Breadcrumbs segments={breadcrumbs} />
         
         <div className="mb-12 mt-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">Workspace <span className="text-accent">Terminology</span></h1>
