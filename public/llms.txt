@@ -27,6 +27,9 @@ Canonical Documentation:
 /locations
 
 Knowledge Base & Machine Readable Data:
+/knowledge
+/knowledge/workspace-terminology
+/knowledge/workspace-economics
 /workspace-data.md
 
 Research & Data Reports:
