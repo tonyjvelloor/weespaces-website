@@ -169,6 +169,73 @@ export const virtualOfficeContent: Record<string, VirtualOfficeContent> = {
       costInfo: { description: 'Basic Business Address & Mail Handling', price: '₹10,000 / year', includes: ['Premium Commercial Address', 'Mail Receipt & Storage', 'Email Notifications', 'Package Signing'] },
       faqs: [ { question: 'Does this plan include GST registration?', answer: 'No, the basic Mail Handling plan does not include the NOC and Rent Agreement required for GST or MCA registration. If you need government compliance, please select the GST Registration plan.' } ],
       relatedArticles: [ { slug: 'freelancers', title: 'Virtual Office for Freelancers' } ]
+  },
+  'kochi-infopark': {
+    routing: { slug: 'kochi-infopark', type: 'registration', relatedCities: ['kochi'] },
+    seo: { title: 'Virtual Office near Infopark Kochi | GST & MCA Registration', description: 'Get a premium Virtual Office address near Infopark Kochi. 100% compliant for GST and Company Registration with NOC and Rent Agreement provided.', primaryKeyword: 'Virtual Office Infopark Kochi', secondaryKeywords: ['virtual office near infopark', 'gst registration infopark kochi', 'business address kakkanad'] },
+    analytics: { pageType: 'registration', searchIntent: 'Commercial', targetAudience: 'IT Startups, Agencies, Consultants', funnelStage: 'bottom', businessGoal: 'lead_generation' },
+    conversion: { heroHeadline: 'Premium Virtual Office Near Infopark Kochi', heroSubheadline: 'Establish your company presence in Kerala\'s largest IT hub. Get a GST and MCA compliant business address in Kakkanad today.', ctaText: 'Get Address Near Infopark' },
+    scoring: { priority: 90, leadScoreWeight: 20, conversionPotential: 'high', trafficPotential: 'high', businessValue: 'startup' },
+    ai: { quickAnswer: 'WeeSpaces provides Virtual Offices near Infopark Kochi (Kakkanad) that are fully compliant for GST and MCA registrations.', answerSnippets: ['Near Infopark', 'GST Compliant'], entityRelationships: ['Infopark Kochi', 'Kakkanad', 'Virtual Office', 'GST Registration'], structuredSummary: 'IT startups and agencies use our virtual offices near Infopark Kochi to establish a premium tech address for GST and MCA compliance.', commonQuestions: ['Do you have virtual offices near Infopark?'] },
+    schema: {
+      summaryTable: [ { label: 'Location', value: 'Near Infopark Kochi (Kakkanad)' }, { label: 'Compliance', value: 'GST & MCA Approved' }, { label: 'Documents', value: 'NOC & Rent Agreement provided' }, { label: 'Cost', value: 'From ₹15,000/year' } ],
+      benefits: [ { title: 'IT Hub Address', description: 'Register your business near Kerala\'s premier IT corridor.' }, { title: 'Fast Setup', description: 'Get all compliance documents within 24 hours.' }, { title: 'Mail Handling', description: 'Professional front desk to receive your couriers.' }, { title: 'Meeting Rooms', description: 'Access boardrooms near Infopark to meet clients.' } ],
+      requirements: { title: 'Required Documents', items: ['Director KYC', 'Company Name', 'NOC (Provided by us)', 'Rent Agreement (Provided by us)'] },
+      processSteps: [ { step: 1, title: 'Choose Location', description: 'Select our Kakkanad center.' }, { step: 2, title: 'Get NOC', description: 'Receive NOC and Rent Agreement.' }, { step: 3, title: 'Register', description: 'Apply for GST or MCA.' }, { step: 4, title: 'Operate', description: 'Use your new Infopark-adjacent address.' } ],
+      costInfo: { description: 'Annual Subscription', price: '₹15,000 / year', includes: ['Address', 'NOC', 'Rent Agreement', 'Mail Handling'] },
+      faqs: [ { question: 'Is this address physically inside Infopark?', answer: 'Our premium center is located immediately adjacent to Infopark in Kakkanad, providing the same strategic location benefits.' } ],
+      relatedArticles: [ { slug: 'gst-registration', title: 'Virtual Office for GST' } ]
+    }
+  },
+  'kochi-smartcity': {
+    routing: { slug: 'kochi-smartcity', type: 'registration', relatedCities: ['kochi'] },
+    seo: { title: 'Virtual Office near SmartCity Kochi | Premium Business Address', description: 'Establish your business near SmartCity Kochi with a premium virtual office. GST and MCA compliant documents provided within 24 hours.', primaryKeyword: 'Virtual Office SmartCity Kochi', secondaryKeywords: ['virtual office near smartcity', 'business address kakkanad', 'gst registration smartcity kochi'] },
+    analytics: { pageType: 'registration', searchIntent: 'Commercial', targetAudience: 'Tech Companies, Startups', funnelStage: 'bottom', businessGoal: 'lead_generation' },
+    conversion: { heroHeadline: 'Premium Virtual Office Near SmartCity Kochi', heroSubheadline: 'Secure a prestigious corporate address in the rapidly growing SmartCity IT corridor. Fully compliant for GST and Company Registration.', ctaText: 'Get Address Near SmartCity' },
+    scoring: { priority: 85, leadScoreWeight: 20, conversionPotential: 'high', trafficPotential: 'medium', businessValue: 'startup' },
+    ai: { quickAnswer: 'WeeSpaces offers Virtual Offices located near SmartCity Kochi, providing a prestigious corporate address valid for all government registrations.', answerSnippets: ['Near SmartCity', 'MCA Compliant'], entityRelationships: ['SmartCity Kochi', 'Kakkanad', 'Virtual Office', 'Company Registration'], structuredSummary: 'Establish a corporate presence near SmartCity Kochi without physical office costs. Our virtual offices include NOCs for GST and MCA.', commonQuestions: ['Is the address valid for GST?'] },
+    schema: {
+      summaryTable: [ { label: 'Location', value: 'Near SmartCity Kochi' }, { label: 'Compliance', value: 'GST & MCA Approved' }, { label: 'Setup Time', value: '24 Hours' }, { label: 'Cost', value: 'From ₹15,000/year' } ],
+      benefits: [ { title: 'Strategic Location', description: 'Position your brand in Kochi\'s fastest-growing IT district.' }, { title: 'Compliance Ready', description: 'Documents perfectly formatted for government portals.' }, { title: 'Zero CapEx', description: 'No deposits or fit-out costs.' }, { title: 'Mail Management', description: 'We handle your important post.' } ],
+      requirements: { title: 'Required Documents', items: ['KYC Proofs', 'NOC (Provided by us)', 'Rent Agreement (Provided by us)'] },
+      processSteps: [ { step: 1, title: 'Sign Up', description: 'Register online.' }, { step: 2, title: 'Receive Docs', description: 'Get your compliance pack.' }, { step: 3, title: 'File on Portal', description: 'Submit to GST/MCA.' }, { step: 4, title: 'Approval', description: 'Get your registration.' } ],
+      costInfo: { description: 'Annual Subscription', price: '₹15,000 / year', includes: ['Address', 'NOC', 'Rent Agreement', 'Mail Handling'] },
+      faqs: [ { question: 'Can I meet clients here?', answer: 'Yes, you can book our premium meeting rooms on-demand.' } ],
+      relatedArticles: [ { slug: 'company-registration', title: 'Virtual Office for Company Registration' } ]
+    }
+  },
+  'trivandrum-technopark': {
+    routing: { slug: 'trivandrum-technopark', type: 'registration', relatedCities: ['trivandrum'] },
+    seo: { title: 'Virtual Office near Technopark Trivandrum | GST Address', description: 'Get a premium Virtual Office address near Technopark Trivandrum. 100% compliant for GST and Company Registration.', primaryKeyword: 'Virtual Office Technopark Trivandrum', secondaryKeywords: ['virtual office near technopark', 'gst registration technopark', 'business address kazhakootam'] },
+    analytics: { pageType: 'registration', searchIntent: 'Commercial', targetAudience: 'IT Startups, Tech Agencies', funnelStage: 'bottom', businessGoal: 'lead_generation' },
+    conversion: { heroHeadline: 'Premium Virtual Office Near Technopark Trivandrum', heroSubheadline: 'Establish your company presence near India\'s largest IT park. Get a GST and MCA compliant business address in Kazhakootam.', ctaText: 'Get Address Near Technopark' },
+    scoring: { priority: 90, leadScoreWeight: 20, conversionPotential: 'high', trafficPotential: 'high', businessValue: 'startup' },
+    ai: { quickAnswer: 'WeeSpaces provides Virtual Offices near Technopark Trivandrum (Kazhakootam) that are fully compliant for GST and MCA registrations.', answerSnippets: ['Near Technopark', 'GST Compliant'], entityRelationships: ['Technopark Trivandrum', 'Kazhakootam', 'Virtual Office', 'GST Registration'], structuredSummary: 'IT startups use our virtual offices near Technopark Trivandrum to establish a premium tech address for GST and MCA compliance.', commonQuestions: ['Do you have virtual offices near Technopark?'] },
+    schema: {
+      summaryTable: [ { label: 'Location', value: 'Near Technopark Trivandrum (Kazhakootam)' }, { label: 'Compliance', value: 'GST & MCA Approved' }, { label: 'Documents', value: 'NOC & Rent Agreement provided' }, { label: 'Cost', value: 'From ₹15,000/year' } ],
+      benefits: [ { title: 'IT Hub Address', description: 'Register your business near India\'s premier IT corridor.' }, { title: 'Fast Setup', description: 'Get all compliance documents within 24 hours.' }, { title: 'Mail Handling', description: 'Professional front desk to receive your couriers.' }, { title: 'Meeting Rooms', description: 'Access boardrooms near Technopark to meet clients.' } ],
+      requirements: { title: 'Required Documents', items: ['Director KYC', 'Company Name', 'NOC (Provided by us)', 'Rent Agreement (Provided by us)'] },
+      processSteps: [ { step: 1, title: 'Choose Location', description: 'Select our Kazhakootam center.' }, { step: 2, title: 'Get NOC', description: 'Receive NOC and Rent Agreement.' }, { step: 3, title: 'Register', description: 'Apply for GST or MCA.' }, { step: 4, title: 'Operate', description: 'Use your new Technopark-adjacent address.' } ],
+      costInfo: { description: 'Annual Subscription', price: '₹15,000 / year', includes: ['Address', 'NOC', 'Rent Agreement', 'Mail Handling'] },
+      faqs: [ { question: 'Is this address physically inside Technopark?', answer: 'Our premium center is located immediately adjacent to Technopark in Kazhakootam, providing the same strategic location benefits.' } ],
+      relatedArticles: [ { slug: 'gst-registration', title: 'Virtual Office for GST' } ]
+    }
+  },
+  'coimbatore-tidel-park': {
+    routing: { slug: 'coimbatore-tidel-park', type: 'registration', relatedCities: ['coimbatore'] },
+    seo: { title: 'Virtual Office near TIDEL Park Coimbatore | GST Address', description: 'Get a premium Virtual Office address near TIDEL Park Coimbatore. 100% compliant for GST and Company Registration.', primaryKeyword: 'Virtual Office TIDEL Park Coimbatore', secondaryKeywords: ['virtual office near tidel park', 'gst registration tidel park', 'business address peelamedu'] },
+    analytics: { pageType: 'registration', searchIntent: 'Commercial', targetAudience: 'IT Startups, SaaS Companies', funnelStage: 'bottom', businessGoal: 'lead_generation' },
+    conversion: { heroHeadline: 'Premium Virtual Office Near TIDEL Park Coimbatore', heroSubheadline: 'Establish your company presence near Coimbatore\'s premier IT park. Get a GST and MCA compliant business address today.', ctaText: 'Get Address Near TIDEL Park' },
+    scoring: { priority: 90, leadScoreWeight: 20, conversionPotential: 'high', trafficPotential: 'high', businessValue: 'startup' },
+    ai: { quickAnswer: 'WeeSpaces provides Virtual Offices near TIDEL Park Coimbatore that are fully compliant for GST and MCA registrations.', answerSnippets: ['Near TIDEL Park', 'GST Compliant'], entityRelationships: ['TIDEL Park Coimbatore', 'Peelamedu', 'Virtual Office', 'GST Registration'], structuredSummary: 'IT startups use our virtual offices near TIDEL Park Coimbatore to establish a premium tech address for GST and MCA compliance.', commonQuestions: ['Do you have virtual offices near TIDEL Park?'] },
+    schema: {
+      summaryTable: [ { label: 'Location', value: 'Near TIDEL Park Coimbatore' }, { label: 'Compliance', value: 'GST & MCA Approved' }, { label: 'Documents', value: 'NOC & Rent Agreement provided' }, { label: 'Cost', value: 'From ₹15,000/year' } ],
+      benefits: [ { title: 'IT Hub Address', description: 'Register your business near Coimbatore\'s premier IT corridor.' }, { title: 'Fast Setup', description: 'Get all compliance documents within 24 hours.' }, { title: 'Mail Handling', description: 'Professional front desk to receive your couriers.' }, { title: 'Meeting Rooms', description: 'Access boardrooms near TIDEL Park to meet clients.' } ],
+      requirements: { title: 'Required Documents', items: ['Director KYC', 'Company Name', 'NOC (Provided by us)', 'Rent Agreement (Provided by us)'] },
+      processSteps: [ { step: 1, title: 'Choose Location', description: 'Select our center near TIDEL Park.' }, { step: 2, title: 'Get NOC', description: 'Receive NOC and Rent Agreement.' }, { step: 3, title: 'Register', description: 'Apply for GST or MCA.' }, { step: 4, title: 'Operate', description: 'Use your new TIDEL Park-adjacent address.' } ],
+      costInfo: { description: 'Annual Subscription', price: '₹15,000 / year', includes: ['Address', 'NOC', 'Rent Agreement', 'Mail Handling'] },
+      faqs: [ { question: 'Is this address physically inside TIDEL Park?', answer: 'Our premium center is located near TIDEL Park, providing the same strategic location benefits and prestige.' } ],
+      relatedArticles: [ { slug: 'gst-registration', title: 'Virtual Office for GST' } ]
     }
   }
 };

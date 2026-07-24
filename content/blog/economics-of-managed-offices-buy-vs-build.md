@@ -66,4 +66,6 @@ The financial modeling is clear: For teams ranging from 20 to 200 employees, the
 
 However, the greatest return on investment (ROI) is intangible. By outsourcing real estate and facility management to experts like WeeSpaces, enterprise leaders are free to focus 100% of their bandwidth on their core business.
 
+*(Note: For companies expanding to a new city but not yet ready to commit to a physical headcount, utilizing a [Virtual Office for Company Registration](/virtual-office/company-registration) in [Coimbatore](/virtual-office/coimbatore) or [Kochi](/virtual-office/kochi) is the most capital-efficient way to establish a legal entity prior to transitioning into a Managed Office).*
+
 *Are you evaluating commercial real estate in Kerala or Tamil Nadu? Contact our enterprise team to get a custom [Managed Office](/managed-office) financial breakdown for your exact headcount.*

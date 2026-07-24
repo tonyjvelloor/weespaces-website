@@ -30,7 +30,7 @@ By setting up in these cities, foreign enterprises tap into the exact same talen
 Before hiring, your enterprise must establish a legal presence in India. The most common structure for an ODC is a Private Limited Company acting as a wholly-owned subsidiary of your foreign parent company.
 
 **Key Requirements:**
-1. **Registered Office Address:** To incorporate, you need a physical address in India. You do not need to sign a commercial lease for this. You can instantly acquire a premium business address using a [Virtual Office](/virtual-office) specifically tailored for GST and company registration.
+1. **Registered Office Address:** To incorporate, you need a physical address in India. You do not need to sign a commercial lease for this. You can instantly acquire a premium business address using a [Virtual Office in Trivandrum](/virtual-office/trivandrum) or [Kochi](/virtual-office/kochi) specifically tailored for [GST and company registration](/virtual-office/gst-registration).
 2. **Director Identification Number (DIN) & Digital Signature Certificate (DSC):** Required for the directors of your new Indian entity.
 3. **GST Registration:** Mandatory for invoicing and tax compliance.
 
