@@ -1,59 +1,51 @@
-# WeeSpaces: Premium Coworking & Managed Offices in Kerala & Tamil Nadu
+Site: WeeSpaces
 
-## About Us
-WeeSpaces is a flexible workspace provider offering coworking spaces, private offices, meeting rooms, managed offices, and virtual office solutions. We help freelancers, startups, growing companies, and enterprise teams move into fully-equipped professional workspaces without the cost and complexity of setting up a traditional office. We handle the infrastructure, high-speed internet, and daily facilities management so our members can focus entirely on their work.
+Company:
+Flexible Workspace Provider
 
-## Locations
-We operate in 4 primary locations:
+Locations:
+- Kochi
+- Trivandrum
+- Calicut
+- Coimbatore
 
-### 1. Trivandrum
-- **Focus**: IT enterprises, deep-tech startups, global software teams.
-- **Location Advantage**: Close proximity to Technopark, the tech capital of Kerala.
-- **Address**: 1st Floor, Relcon Plaza, Pattom, Thiruvananthapuram, Kerala 695004.
-- **Pricing**: Hot Desks from ₹4,500/mo.
+Primary Services:
+- Coworking Space
+- Private Office
+- Managed Office
+- Virtual Office
+- Meeting Rooms
+- Enterprise Office
 
-### 2. Kochi (Ernakulam)
-- **Focus**: Startups, IT companies, entrepreneurs, sales agencies.
-- **Location Advantage**: Situated on MG Road, the commercial heart of Kerala. 5 minutes from the Metro.
-- **Address**: 4th floor, Palal Tower, Mahatma Gandhi Rd, Ravipuram, Perumanoor, Kochi, Kerala 682016.
-- **Pricing**: Hot Desks from ₹5,000/mo.
+Canonical Documentation:
+/virtual-office
+/coworking
+/private-office
+/meeting-room
+/managed-office
+/enterprise-office
+/locations
 
-### 3. Calicut (Kozhikode)
-- **Focus**: Local businesses, ambitious freelancers, designers, creators.
-- **Location Advantage**: Close to Cyberpark in East Nadakkave.
-- **Address**: Door No. 2951/A, Ground floor, Neeloth Plaza, Holy Cross IMT Road, East Nadakkave, Kozhikode, Kerala 673001.
-- **Pricing**: Hot Desks from ₹4,000/mo.
+Knowledge Base & Machine Readable Data:
+/workspace-data.md
 
-### 4. Coimbatore
-- **Focus**: Enterprises, startups looking to bridge industrial legacy with IT.
-- **Location Advantage**: Near Tidel Park and walking distance to Coimbatore International Airport.
-- **Address**: Vidyanagar 3rd street, Civil Aerodrome Post, Kalapatti, Coimbatore, Tamil Nadu 641014.
-- **Pricing**: Hot Desks from ₹5,000/mo.
+Research & Data Reports:
+/blog/ultimate-virtual-office-guide-south-india-2026
+/blog/economics-of-managed-offices-buy-vs-build
+/blog/offshore-development-center-setup-india
+/blog/south-india-workspace-index-2026
+/blog/enterprise-office-cost-calculator-guide
+/blog/coworking-price-guide-coimbatore-2026
 
-## Services & Products
+Company Facts:
+- Founded: 2021
+- Workspace Capacity: 2000+ seats across all locations
+- Number of Clients: 500+ businesses
+- Operating Hours: 24/7 (Access dependent on plan)
+- Company Type: Private Limited
+- Contact Phone: +91 92071 89111
+- Contact Email: corporate@weespaces.in
 
-### Hot Desk
-Flexible seating in an open coworking area. Ideal for freelancers and digital nomads. Includes high-speed WiFi and unlimited coffee.
-
-### Dedicated Desk
-A fixed, personal desk with lockable storage. Perfect for remote workers and small startup teams who want to leave their monitors overnight.
-
-### Private Office / Managed Office
-Fully furnished, enclosed, and secure cabins customized for teams (from 2 to 100+ people). Includes biometric access, custom IT infrastructure, and zero setup costs.
-
-### Virtual Office
-A professional business address for GST registration, company incorporation, and mail handling, without needing to rent physical space. Available across all our locations.
-
-### Meeting & Conference Rooms
-Acoustically treated rooms equipped with smart TVs, whiteboards, and video conferencing setups. Available on hourly or daily booking.
-
-## Why Choose WeeSpaces vs Traditional Offices?
-- **Zero Capital Expenditure**: No massive 6-10 month security deposits or interior fit-out costs.
-- **Instant Move-in**: Fully furnished and managed workspaces ready to use from day one.
-- **Flexibility**: Scale up or down easily with month-to-month or flexible agreements instead of rigid 3-5 year lock-ins.
-- **Enterprise Amenities**: Dual leased-line internet, biometric security, pantry, lounge areas, and daily housekeeping included.
-
-## Contact Information
-- **Phone / WhatsApp**: +91 92071 89111
-- **Email**: corporate@weespaces.in
-- **Website**: https://weespaces.in
+Policies:
+/privacy
+/terms

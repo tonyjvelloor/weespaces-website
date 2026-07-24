@@ -59,6 +59,7 @@ export default function RootLayout({
         <noscript>
           <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         </noscript>
+        <link rel="llms-txt" href="/llms.txt" />
 
         {/* Secure Privacy */}
         <Script strategy="afterInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
