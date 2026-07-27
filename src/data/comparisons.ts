@@ -270,5 +270,119 @@ export const comparisons: Record<string, Comparison> = {
     faqs: [
       { question: 'Why choose WeeSpaces in South India?', answer: 'WeeSpaces specializes in South India. Our deep local knowledge helps us secure the best commercial real estate and provide localized operational support that pan-India players often lack.' }
     ]
+  },
+  'weespaces-vs-awfis': {
+    slug: 'weespaces-vs-awfis',
+    title: 'WeeSpaces vs. Awfis',
+    description: 'Compare WeeSpaces and Awfis to find the best coworking and enterprise office solution in India.',
+    metaTitle: 'WeeSpaces vs Awfis | Coworking Comparison',
+    metaDescription: 'A transparent comparison of WeeSpaces vs Awfis. Compare pricing, hospitality standards, and build quality.',
+    opponentName: 'Awfis',
+    prosCons: {
+      traditional: {
+        pros: ['Massive pan-India network', 'Good for small teams needing basic desk space', 'Multiple centers per city'],
+        cons: ['Can feel crowded or dense', 'Hospitality standards can vary', 'Meeting rooms often booked out']
+      },
+      weespaces: {
+        pros: ['Premium, uncrowded layouts', 'Hotel-grade hospitality', 'All-inclusive pricing with zero hidden fees'],
+        cons: ['Fewer locations outside South India']
+      }
+    },
+    points: [
+      {
+        feature: 'Space Density',
+        traditional: { value: 'High Density', description: 'Optimized for maximum seat count per square foot.' },
+        weespaces: { value: 'Spacious & Ergonomic', description: 'Generous desk sizes and wide walkways for better focus.' }
+      },
+      {
+        feature: 'Pricing Transparency',
+        traditional: { value: 'Tiered Add-ons', description: 'Base price is low, but premium amenities cost extra.' },
+        weespaces: { value: 'All-Inclusive', description: 'High-speed internet, beverages, and meeting room credits included.' }
+      },
+      {
+        feature: 'Hospitality',
+        traditional: { value: 'Standard Facility Management', description: 'Basic operational support.' },
+        weespaces: { value: 'Premium Concierge', description: 'Dedicated community managers focused on member experience.' }
+      }
+    ],
+    faqs: [
+      { question: 'Is WeeSpaces better for enterprise teams than Awfis?', answer: 'For teams that value premium design, uncrowded layouts, and strict data security, WeeSpaces is the preferred choice for custom managed offices.' }
+    ]
+  },
+  'weespaces-vs-smartworks': {
+    slug: 'weespaces-vs-smartworks',
+    title: 'WeeSpaces vs. Smartworks',
+    description: 'Compare WeeSpaces and Smartworks for custom enterprise managed offices.',
+    metaTitle: 'WeeSpaces vs Smartworks | Managed Office Comparison',
+    metaDescription: 'Comparing WeeSpaces and Smartworks. See which provider offers the best agile enterprise solutions for mid-sized teams.',
+    opponentName: 'Smartworks',
+    prosCons: {
+      traditional: {
+        pros: ['Massive enterprise campuses', 'Heavy focus on large MNCs', 'Strong tech integrations'],
+        cons: ['High minimum seat commitments', 'Less agile for mid-sized teams', 'Can feel like a traditional corporate park']
+      },
+      weespaces: {
+        pros: ['Agile build-outs for mid-sized teams (20-200 seats)', 'Boutique, highly customized designs', 'Faster deployment timelines'],
+        cons: ['Does not build massive 1,000+ seat standalone campuses']
+      }
+    },
+    points: [
+      {
+        feature: 'Target Audience',
+        traditional: { value: 'Large Enterprises', description: 'Typically caters to teams of 300+.' },
+        weespaces: { value: 'Agile Mid-Market', description: 'Perfect for scaling teams of 20 to 200.' }
+      },
+      {
+        feature: 'Deployment Speed',
+        traditional: { value: '60 - 90 Days', description: 'Longer lead times due to massive scale.' },
+        weespaces: { value: '45 - 60 Days', description: 'Rapid, agile deployment using our local vendor network.' }
+      },
+      {
+        feature: 'Flexibility',
+        traditional: { value: 'Corporate Commitments', description: 'Longer lock-in periods required for custom builds.' },
+        weespaces: { value: 'Agile Scaling', description: 'Easily expand your footprint month-over-month.' }
+      }
+    ],
+    faqs: [
+      { question: 'Can WeeSpaces build a custom office for a 50-person team?', answer: 'Yes, our core expertise is building fully bespoke Managed Offices for mid-sized teams, offering the same level of customization as massive enterprise campuses.' }
+    ]
+  },
+  'weespaces-vs-91springboard': {
+    slug: 'weespaces-vs-91springboard',
+    title: 'WeeSpaces vs. 91springboard',
+    description: 'Compare WeeSpaces and 91springboard to see which coworking space suits your startup.',
+    metaTitle: 'WeeSpaces vs 91springboard | Coworking Comparison',
+    metaDescription: 'Comparing WeeSpaces and 91springboard. Discover the differences in design, community, and tech infrastructure.',
+    opponentName: '91springboard',
+    prosCons: {
+      traditional: {
+        pros: ['Very budget-friendly', 'Strong early-stage startup community', 'Casual, laid-back vibe'],
+        cons: ['Bare-bones industrial design', 'Acoustics can be noisy', 'Limited enterprise-grade privacy']
+      },
+      weespaces: {
+        pros: ['Premium, professional aesthetic', 'Acoustically treated private cabins', 'Enterprise-grade IT security'],
+        cons: ['Higher price point than budget options']
+      }
+    },
+    points: [
+      {
+        feature: 'Design Aesthetic',
+        traditional: { value: 'Industrial / Basic', description: 'Exposed ceilings and basic functional furniture.' },
+        weespaces: { value: 'Premium Corporate', description: 'Grade-A finishes, ergonomic seating, and biophilic design.' }
+      },
+      {
+        feature: 'Noise Levels',
+        traditional: { value: 'High', description: 'Open layouts can get noisy during peak hours.' },
+        weespaces: { value: 'Controlled', description: 'Acoustically treated glass and zoned quiet areas.' }
+      },
+      {
+        feature: 'IT Security',
+        traditional: { value: 'Basic Shared Network', description: 'Standard coworking WiFi.' },
+        weespaces: { value: 'Enterprise-Grade', description: 'Private VLANs, dedicated bandwidth, and secure firewalls available.' }
+      }
+    ],
+    faqs: [
+      { question: 'Is WeeSpaces worth the premium over budget coworking?', answer: 'Yes. The slight premium translates to significantly higher employee productivity due to better acoustics, ergonomic seating, and a professional environment that impresses B2B clients.' }
+    ]
   }
 };

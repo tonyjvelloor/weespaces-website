@@ -150,9 +150,9 @@ export default async function ComparisonPage({ params }: { params: Promise<{ slu
             <ScrollReveal>
                <h2 className="text-3xl font-bold mb-4">See your actual savings</h2>
                <p className="text-lg mb-8 opacity-80">Use our Workspace Savings Calculator to estimate your 3-year OpEx and CapEx savings by switching to WeeSpaces.</p>
-               <button className="bg-navy text-white px-8 py-4 rounded-xl font-bold shadow-lg opacity-50 cursor-not-allowed">
-                  Calculator Coming Soon
-               </button>
+               <Link href="/calculator" className="inline-block bg-navy text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl hover:bg-navy-light transition-all">
+                  Open Savings Calculator
+               </Link>
             </ScrollReveal>
          </div>
       </section>
