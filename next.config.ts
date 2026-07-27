@@ -66,6 +66,10 @@ const nextConfig: NextConfig = {
         source: '/sitemap.xml',
         destination: '/sitemap-index.xml',
       },
+      {
+        source: '/.well-known/llms.txt',
+        destination: '/llms.txt',
+      },
     ];
   },
   async headers() {

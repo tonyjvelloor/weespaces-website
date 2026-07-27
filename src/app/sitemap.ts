@@ -15,7 +15,8 @@ export async function generateSitemaps() {
     { id: 'coworking-space' },
     { id: 'private-office' },
     { id: 'meeting-room' },
-    { id: 'managed-office' }
+    { id: 'managed-office' },
+    { id: 'knowledge' }
   ];
 }
 
@@ -67,6 +68,22 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
         lastModified: new Date(post.date || new Date()),
         changeFrequency: 'monthly',
         priority: 0.6,
+      });
+    });
+  }
+
+  if (resolvedId === 'knowledge') {
+    const knowledgePages = [
+      '/knowledge/workspace-terminology',
+      '/knowledge/workspace-economics'
+    ];
+    
+    knowledgePages.forEach((path) => {
+      routes.push({
+        url: `${BASE_URL}${path}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: 0.9, // High priority for LLM SEO
       });
     });
   }
