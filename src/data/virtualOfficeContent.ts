@@ -169,6 +169,7 @@ export const virtualOfficeContent: Record<string, VirtualOfficeContent> = {
       costInfo: { description: 'Basic Business Address & Mail Handling', price: '₹10,000 / year', includes: ['Premium Commercial Address', 'Mail Receipt & Storage', 'Email Notifications', 'Package Signing'] },
       faqs: [ { question: 'Does this plan include GST registration?', answer: 'No, the basic Mail Handling plan does not include the NOC and Rent Agreement required for GST or MCA registration. If you need government compliance, please select the GST Registration plan.' } ],
       relatedArticles: [ { slug: 'freelancers', title: 'Virtual Office for Freelancers' } ]
+    }
   },
   'kochi-infopark': {
     routing: { slug: 'kochi-infopark', type: 'registration', relatedCities: ['kochi'] },
