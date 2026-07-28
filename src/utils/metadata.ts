@@ -32,12 +32,17 @@ export function constructMetadata({
     },
   ];
 
+  // Ensure the canonical path is fully absolute to prevent trailing-slash mismatch indexing issues on Vercel
+  const absoluteCanonical = canonicalPath.startsWith('http') 
+    ? canonicalPath 
+    : `https://www.weespaces.in${canonicalPath.startsWith('/') ? canonicalPath : `/${canonicalPath}`}`;
+
   return {
     title,
     description,
     ...(keywords && { keywords }),
     alternates: {
-      canonical: canonicalPath,
+      canonical: absoluteCanonical,
     },
     ...(noIndex && {
       robots: {
@@ -48,7 +53,7 @@ export function constructMetadata({
     openGraph: {
       title,
       description,
-      url: canonicalPath,
+      url: absoluteCanonical,
       siteName: 'WeeSpaces',
       locale: 'en_IN',
       type: ogType as any,
