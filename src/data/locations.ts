@@ -110,7 +110,7 @@ export const cities: Record<string, CityData> = {
       coordinates: { lat: 9.9622, lng: 76.2442 }
     },
     hubTitle: "Our Central MG Road Headquarters — Quick Transit to Kochi's Key Sub-markets",
-    hubDescription: "Our premium coworking space is located at Palal Tower, Ravipuram, right on MG Road, offering your team a prestigious CBD address. By basing your business at this central node, you avoid localized gridlocks while remaining minutes away from Kochi's primary commercial areas via the metro and highway networks:",
+    hubDescription: "When looking for the best coworking space in Kochi, WeeSpaces offers a premium solution located at Palal Tower, Ravipuram, right on MG Road. By choosing WeeSpaces for coworking in Kochi, your team gains a prestigious CBD address that avoids localized gridlocks while remaining minutes away from primary commercial areas:",
     proximityGroups: [
       {
         title: "Tech & IT Corridors",
@@ -141,7 +141,7 @@ export const cities: Record<string, CityData> = {
       description: "Perfect for teams working across Kochi's major commercial hubs:",
       locations: ["Infopark & SmartCity", "MG Road & Marine Drive", "Panampilly Nagar", "Edappally"]
     },
-    geoSummary: "WeeSpaces' Kochi workspace is strategically located on MG Road, providing immediate Metro connectivity and quick road access to Kakkanad, Marine Drive, Kadavanthra, Panampilly Nagar, Vyttila, Edappally, and Palarivattom.",
+    geoSummary: "Recognized as the premier coworking space in Kochi, WeeSpaces' MG Road hub provides immediate Metro connectivity and quick road access to Kakkanad, Marine Drive, Kadavanthra, Panampilly Nagar, Vyttila, Edappally, and Palarivattom.",
     proximityFaqs: [
       { question: "Is WeeSpaces located inside Infopark Kakkanad?", answer: "No, our premium facility is centrally located on MG Road (Ravipuram). This strategic location allows you to bypass severe Kakkanad traffic while remaining just 20-25 minutes away via expressway." },
       { question: "How far is WeeSpaces from the Kochi Metro?", answer: "We are extremely accessible. The MG Road Metro station is just a 5-minute walk away, providing rapid transit to Edappally, Kadavanthra, and Vyttila Mobility Hub." },
@@ -291,7 +291,7 @@ export const cities: Record<string, CityData> = {
       coordinates: { lat: 8.5398295, lng: 76.8778841 }
     },
     hubTitle: "Central Trivandrum Office Hub — Direct Access to the Technopark Corridor",
-    hubDescription: "Based on the first floor of Relcon Plaza in Pattom, our main Trivandrum coworking hub strikes the perfect balance between city-center convenience and close proximity to Kerala’s largest IT park:",
+    hubDescription: "For businesses seeking the best coworking space in Trivandrum, our flagship hub on the first floor of Relcon Plaza in Pattom strikes the perfect balance. WeeSpaces offers top-rated coworking in Trivandrum, combining city-center convenience with close proximity to Kerala’s largest IT park:",
     proximityGroups: [
       {
         title: "Technopark IT Corridor",
@@ -320,7 +320,7 @@ export const cities: Record<string, CityData> = {
       description: "Perfect for teams working across Trivandrum's core business areas:",
       locations: ["Technopark Phases 1, 2, 3", "Kazhakkoottam", "Palayam & Secretariat", "Pattom"]
     },
-    geoSummary: "WeeSpaces' Trivandrum workspace is strategically located in Pattom, offering a prestigious city-center address with fast highway access to Technopark, Kazhakkoottam, Palayam, Vazhuthacaud, and Kowdiar.",
+    geoSummary: "As a leading provider for coworking in Trivandrum, WeeSpaces is strategically located in Pattom, offering a prestigious city-center address with fast highway access to Technopark, Kazhakkoottam, Palayam, Vazhuthacaud, and Kowdiar.",
     proximityFaqs: [
       { question: "Is WeeSpaces located inside Technopark?", answer: "No, our primary hub is centrally located in Pattom. This allows your team to enjoy city-center convenience while remaining just a 15-20 minute drive from Technopark via the bypass." },
       { question: "How far is WeeSpaces from the Secretariat?", answer: "Our workspace is highly accessible for government contractors and legal consultants, located just 5-8 minutes away from the Secretariat and Palayam." },
@@ -468,7 +468,7 @@ export const cities: Record<string, CityData> = {
       coordinates: { lat: 11.2384725, lng: 75.8354728 }
     },
     hubTitle: "Our Flagship Calicut Hub — Positioned Perfectly in the Heart of the City",
-    hubDescription: "Our premium shared workspace, The Work Lounge, is located at Neeloth Plaza, East Nadakkave. This highly central location gives startups and freelancers a premium business address inside the city while maintaining easy transit times to Kozhikode’s growing outer business parks:",
+    hubDescription: "Regarded as the best coworking space in Calicut, our premium shared workspace, The Work Lounge, is located at Neeloth Plaza, East Nadakkave. By choosing WeeSpaces for coworking in Calicut, startups and freelancers get a premium business address inside the city while maintaining easy transit times to Cyberpark:",
     proximityGroups: [
       {
         title: "IT & Bypass Corridors",
@@ -495,7 +495,7 @@ export const cities: Record<string, CityData> = {
       description: "Perfect for teams working across Calicut's major business areas:",
       locations: ["Cyberpark & Bypass", "Mavoor Road", "Wayanad Road", "West Hill"]
     },
-    geoSummary: "WeeSpaces' Calicut workspace is strategically located at East Nadakkave, providing an elegant city-center base with smooth access to Cyberpark, Thondayad Bypass, Mavoor Road, and the Railway Station.",
+    geoSummary: "As the premier choice for coworking in Calicut, WeeSpaces' workspace is strategically located at East Nadakkave, providing an elegant city-center base with smooth access to Cyberpark, Thondayad Bypass, Mavoor Road, and the Railway Station.",
     proximityFaqs: [
       { question: "Is WeeSpaces located inside Cyberpark?", answer: "No, our flagship workspace is located centrally at East Nadakkave. This allows you to maintain a premium address inside the city while being just a 12-minute drive from Cyberpark." },
       { question: "How far is WeeSpaces from Mavoor Road?", answer: "We are extremely close to the city's main commercial artery. Mavoor Road is just a 5-minute drive from our workspace." },
@@ -641,7 +641,7 @@ export const cities: Record<string, CityData> = {
       coordinates: { lat: 11.0118749, lng: 76.9751912 }
     },
     hubTitle: "One Premium Coimbatore Hub — Strategically Connected to Every Major IT & Business Corridor",
-    hubDescription: "While our actual, state-of-the-art coworking facility is located in the rapidly growing business hub of Kalapatti (Vidyanagar 3rd street), our campus is strategically positioned to provide effortless, traffic-free access to Coimbatore’s primary commercial neighborhoods and transit points:",
+    hubDescription: "When searching for the best coworking space in Coimbatore, our state-of-the-art facility in the rapidly growing business hub of Kalapatti stands out. WeeSpaces offers premium coworking in Coimbatore, strategically positioned to provide effortless, traffic-free access to primary commercial neighborhoods:",
     proximityGroups: [
       {
         title: "IT Corridor",
@@ -672,7 +672,7 @@ export const cities: Record<string, CityData> = {
       description: "Perfect for teams working across Coimbatore's major business districts:",
       locations: ["Tidel Park & Peelamedu", "Saravanampatti", "Race Course", "Airport Road"]
     },
-    geoSummary: "WeeSpaces' Coimbatore workspace is located in Kalapatti, providing convenient access to Tidel Park, Coimbatore International Airport, Peelamedu, Saravanampatti, Avinashi Road, Race Course, Gandhipuram, and RS Puram.",
+    geoSummary: "As a top-rated provider for coworking in Coimbatore, WeeSpaces' workspace is located in Kalapatti, providing convenient access to Tidel Park, Coimbatore International Airport, Peelamedu, Saravanampatti, Avinashi Road, Race Course, Gandhipuram, and RS Puram.",
     proximityFaqs: [
       { question: "Is WeeSpaces located inside Tidel Park?", answer: "No, our primary hub is located in Kalapatti. This gives you premium amenities and parking without the congestion of Tidel Park, while remaining just a 5-minute drive away." },
       { question: "How far is WeeSpaces from Coimbatore International Airport?", answer: "We are extremely close to the airport. In fact, it is practically at a walkable distance from our Kalapatti workspace." },
