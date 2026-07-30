@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { BarChart3, Users, Target, Activity, MapPin, Building2, TrendingUp, DollarSign } from 'lucide-react';
+import { BarChart3, Users, Target, Activity, MapPin, Building2, TrendingUp, DollarSign, Bot, Sparkles } from 'lucide-react';
 
 export default function RevenueDashboard() {
   const [data, setData] = useState<any>(null);
@@ -50,6 +50,36 @@ export default function RevenueDashboard() {
                 <KpiCard label="Avg. CPC" value={data.acquisition.cpc} />
                 <KpiCard label="Blended CTR" value={data.acquisition.ctr} />
                 <KpiCard label="Cost Per Lead" value={data.acquisition.costPerLead} highlight />
+             </div>
+          </section>
+
+          {/* AI READINESS */}
+          <section className="mb-12">
+             <div className="flex items-center gap-3 mb-6">
+                <Sparkles className="w-6 h-6 text-accent" />
+                <h2 className="text-2xl font-bold text-navy">AI Search & GEO Readiness</h2>
+             </div>
+             
+             <div className="grid md:grid-cols-4 gap-4 mb-8">
+                <KpiCard label="LLM Crawler Hits" value={data.aiReadiness.llmCrawlerHits.toLocaleString()} growth={data.aiReadiness.llmHitsGrowth} highlight />
+                <KpiCard label="Pages Referenced" value={data.aiReadiness.pagesReferenced} />
+                <KpiCard label="Knowledge Hub Traffic" value={data.aiReadiness.knowledgeHubTraffic.toLocaleString()} growth={data.aiReadiness.knowledgeGrowth} />
+                <KpiCard label="AI-Originated Leads" value={data.aiReadiness.aiOriginatedLeads} />
+             </div>
+
+             <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm">
+                <h3 className="font-bold text-navy mb-6 flex items-center gap-2"><Bot className="w-5 h-5 text-gray-400" /> Top AI Sources</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                   {data.aiReadiness.topAiSources.map((source: any, i: number) => (
+                      <div key={i} className="p-4 bg-gray-50 rounded-xl border border-gray-100 flex flex-col justify-between">
+                         <div className="font-bold text-navy mb-4">{source.source}</div>
+                         <div>
+                            <div className="text-3xl font-black text-navy">{source.hits} <span className="text-sm font-normal text-gray-500">hits</span></div>
+                            <div className="text-xs font-bold uppercase tracking-wider text-accent mt-2 bg-accent/10 inline-block px-2 py-1 rounded">{source.mentions}</div>
+                         </div>
+                      </div>
+                   ))}
+                </div>
              </div>
           </section>
 

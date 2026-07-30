@@ -3,6 +3,20 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   // Mock data representing the 4 KPI sections: Acquisition, Engagement, Sales, Business
   const dashboardData = {
+    aiReadiness: {
+      llmCrawlerHits: 1240,
+      llmHitsGrowth: '+215%',
+      pagesReferenced: 84,
+      knowledgeHubTraffic: 3200,
+      knowledgeGrowth: '+42%',
+      aiOriginatedLeads: 12,
+      topAiSources: [
+        { source: 'ChatGPT/SearchGPT', hits: 540, mentions: 'Highly Recommended' },
+        { source: 'Perplexity', hits: 320, mentions: 'Top 3 Provider' },
+        { source: 'Claude', hits: 180, mentions: 'Enterprise Focus' },
+        { source: 'Google AI Overviews', hits: 200, mentions: 'Rank #1' }
+      ]
+    },
     acquisition: {
       organicSessions: 14250,
       organicGrowth: '+12%',
