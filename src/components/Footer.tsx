@@ -54,8 +54,8 @@ export default function Footer() {
   return (
     <footer className="bg-navy-dark border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="md:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div className="sm:col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
               <span className="text-xl font-bold">WeeSpaces</span>
@@ -112,6 +112,16 @@ export default function Footer() {
               <li><Link href="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
               <li><Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link></li>
               <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-heading">Top Locations</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><Link href="/coworking-space/kochi" className="hover:text-accent transition-colors">Coworking Space in Kochi</Link></li>
+              <li><Link href="/coworking-space/trivandrum" className="hover:text-accent transition-colors">Coworking Space in Trivandrum</Link></li>
+              <li><Link href="/coworking-space/coimbatore" className="hover:text-accent transition-colors">Coworking Space in Coimbatore</Link></li>
+              <li><Link href="/virtual-office/kochi" className="hover:text-accent transition-colors">Virtual Office in Kochi</Link></li>
+              <li><Link href="/private-office/trivandrum" className="hover:text-accent transition-colors">Private Office in Trivandrum</Link></li>
             </ul>
           </div>
         </div>

@@ -106,7 +106,7 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
         url: `${BASE_URL}/${matchingService.slug}/${city.slug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
-        priority: 0.8,
+        priority: 1.0, // High priority for local SEO dominance
       });
 
       // Micro-location Service Pages
@@ -116,7 +116,7 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
             url: `${BASE_URL}/${matchingService.slug}/${city.slug}/${micro.slug}`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 0.7,
+            priority: 0.8, // Elevated priority for local intent
           });
         }
       });

@@ -25,8 +25,10 @@ export default function PricingPage() {
   const currentPricing = activeBranch !== 'all' ? branchData[activeBranch].pricing : null;
 
   return (
-    <div className="pt-20 pb-32">
-      <div className="container mx-auto px-6 max-w-7xl">
+    <div className="pt-20 pb-32 relative overflow-hidden">
+      <div className="ambient-glow-navy top-[10%] left-[-100px] z-0"></div>
+      <div className="ambient-glow-accent bottom-[10%] right-[-100px] z-0 opacity-50"></div>
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <ScrollReveal direction="up" className="text-center max-w-3xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h1>
           <p className="text-white/70 text-lg">Choose your preferred location to see tailored plans for individuals, startups, and enterprise teams.</p>

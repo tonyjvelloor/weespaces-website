@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   trailingSlash: false,
+  images: {
+    unoptimized: true,
+  },
   async redirects() {
     const cities = ['kochi', 'trivandrum', 'calicut', 'coimbatore'];
     const services = ['coworking-space', 'private-office', 'managed-office', 'virtual-office', 'meeting-room', 'office-space'];

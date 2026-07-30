@@ -131,7 +131,7 @@ export default function Header() {
           <Link href="/pricing" className="hover:text-accent transition-colors">Pricing</Link>
           <Link href="/about" className="hover:text-accent transition-colors">About</Link>
           <Link href="/contact" className="hover:text-accent transition-colors">Contact</Link>
-          <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Book Tour</Link>
+          <Link href="/book-tour" className="hover:text-accent transition-colors lg:hidden">Find Workspace</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <button 
@@ -150,7 +150,7 @@ export default function Header() {
                 transition={{ duration: 0.2 }}
               >
                 <Link href="/book-tour" className="bg-accent hover:bg-accent-hover text-navy font-bold py-2 px-5 rounded-full transition-colors text-sm shadow-[0_0_15px_rgba(242,156,31,0.2)] hover:shadow-[0_0_20px_rgba(242,156,31,0.4)] flex items-center gap-1">
-                  Book a Tour <ArrowRight className="w-4 h-4" />
+                  Get Live Availability <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>
             )}
@@ -210,7 +210,7 @@ export default function Header() {
             
             <div className="flex flex-col gap-4 mt-2">
               <Link href="/book-tour" onClick={() => setIsMobileMenuOpen(false)} className="bg-accent text-center hover:bg-accent-hover text-navy font-bold py-3 rounded-xl transition-colors shadow-lg">
-                Book a Tour
+                Get Live Availability
               </Link>
             </div>
           </motion.div>

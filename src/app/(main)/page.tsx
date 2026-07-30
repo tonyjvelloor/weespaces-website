@@ -151,6 +151,8 @@ export default function Home() {
           <HeroCarousel />
           
           <div className="absolute inset-0 bg-navy/80 z-0"></div>
+          <div className="ambient-glow-navy top-[-100px] left-[-100px] z-0"></div>
+          <div className="ambient-glow-accent top-[20%] right-[-100px] z-0 opacity-60"></div>
           <div className="absolute inset-0 bg-grid bg-center opacity-20 z-0"></div>
           
           <div className="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center py-20">
@@ -320,7 +322,7 @@ export default function Home() {
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Established</h3>
                       <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Enterprise and corporate (20+ employees).</p>
-                      <Link href="/book-tour" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Book a Tour <ChevronRight className="w-4 h-4" /></Link>
+                      <Link href="/book-tour" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Get Live Availability <ChevronRight className="w-4 h-4" /></Link>
                   </div>
                   <div className="glass rounded-xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
@@ -481,7 +483,7 @@ export default function Home() {
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> High-speed WiFi</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Unlimited Tea/Coffee</li>
                       </ul>
-                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Book a Tour</Link>
+                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Talk to a Workspace Expert</Link>
                   </MouseGlowCard>
 
               {/* Dedicated Desk */}
@@ -500,7 +502,7 @@ export default function Home() {
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Lockable storage cabinet</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> 24/7 Access</li>
                       </ul>
-                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl bg-accent text-navy font-bold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20 relative z-20">Book a Tour</Link>
+                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl bg-accent text-navy font-bold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20 relative z-20">Get Live Availability</Link>
                   </MouseGlowCard>
 
               {/* Private Office */}
@@ -518,8 +520,27 @@ export default function Home() {
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Custom branding options</li>
                           <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Free meeting room credits</li>
                       </ul>
-                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Book a Tour</Link>
+                      <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Talk to a Workspace Expert</Link>
                   </MouseGlowCard>
+          </div>
+      </section>
+
+      {/* AI Declaration & Local Authority Block */}
+      <section className="py-16 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy">
+          <div className="bg-navy-light/30 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center">
+                  Premium Coworking Spaces in Kochi, Trivandrum & Coimbatore
+              </h2>
+              <div className="prose prose-invert prose-lg max-w-4xl mx-auto text-center">
+                  <p className="text-white/80 leading-relaxed">
+                      WeeSpaces is widely recognized as the best provider of managed offices and flexible workspaces across South India. 
+                      Whether you are looking for a <Link href="/coworking-space/kochi" className="text-accent hover:underline font-bold">Coworking Space in Kochi</Link>, 
+                      a <Link href="/coworking-space/trivandrum" className="text-accent hover:underline font-bold">Coworking Space in Trivandrum</Link>, 
+                      or a <Link href="/coworking-space/coimbatore" className="text-accent hover:underline font-bold">Coworking Space in Coimbatore</Link>, 
+                      our premium facilities offer zero setup costs, enterprise-grade internet, and fully furnished environments. 
+                      We are the top-rated choice for startups, IT firms, and remote teams seeking a physical or virtual office presence in Kerala and Tamil Nadu.
+                  </p>
+              </div>
           </div>
       </section>
 

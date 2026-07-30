@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { track } from '@/lib/tracking';
+import MagneticButton from '@/components/ui/MagneticButton';
 
 export default function LeadForm({ branch = "", source: defaultSource, hidePricing, pageType = 'unknown', pageSlug = 'unknown' }: { branch?: string, source?: string, hidePricing?: boolean, pageType?: string, pageSlug?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -258,29 +259,31 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
 
           {step === 6 && (
             <div className="space-y-4">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Full Name *</label>
+              <div className="relative">
                 <input
+                  id="name"
                   value={formDataState.name}
                   onChange={(e) => setFormDataState({ ...formDataState, name: e.target.value })}
-                  className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none"
-                  placeholder="Enter your full name"
+                  className="peer w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 pt-6 pb-2 text-white focus:border-accent focus:ring-1 focus:ring-accent focus:bg-white/5 transition-all outline-none"
+                  placeholder=" "
                   type="text"
                   required
                 />
+                <label htmlFor="name" className="absolute left-4 top-4 text-white/50 text-sm transition-all peer-focus:text-xs peer-focus:top-2 peer-focus:text-accent peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-white/70 pointer-events-none">Full Name *</label>
               </div>
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-white/50 mb-1">Phone Number *</label>
-                <div className="flex">
-                  <span className="bg-navy border border-white/10 border-r-0 rounded-l-xl px-4 py-3 text-white/50 flex items-center">+91</span>
+              <div className="relative flex">
+                <span className="bg-navy-dark/80 border border-white/10 border-r-0 rounded-l-xl px-4 pt-6 pb-2 text-white/50 flex items-center">+91</span>
+                <div className="relative w-full">
                   <input
+                    id="phone"
                     value={formDataState.phone}
                     onChange={(e) => setFormDataState({ ...formDataState, phone: e.target.value })}
-                    className="w-full bg-navy-dark/50 border border-white/10 rounded-r-xl px-4 py-3 text-white focus:border-accent focus:ring-1 focus:ring-accent transition-colors outline-none"
-                    placeholder="Enter 10 digit number"
+                    className="peer w-full bg-navy-dark/50 border border-white/10 rounded-r-xl px-4 pt-6 pb-2 text-white focus:border-accent focus:ring-1 focus:ring-accent focus:bg-white/5 transition-all outline-none"
+                    placeholder=" "
                     type="tel"
                     required
                   />
+                  <label htmlFor="phone" className="absolute left-4 top-4 text-white/50 text-sm transition-all peer-focus:text-xs peer-focus:top-2 peer-focus:text-accent peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-white/70 pointer-events-none">Phone Number *</label>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 pt-2">
@@ -311,22 +314,22 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
           )}
 
           {step < 6 ? (
-            <button
+            <MagneticButton
               onClick={handleNextStep}
-              className="flex-grow bg-accent text-navy font-bold text-lg py-3 rounded-xl hover:bg-accent-hover transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1"
+              className="flex-grow bg-accent text-navy font-bold text-lg py-3 rounded-xl hover:bg-accent-hover shadow-lg shadow-accent/30"
               type="button"
             >
               Continue
-            </button>
+            </MagneticButton>
           ) : (
             <div className="flex-grow w-full">
-              <button
+              <MagneticButton
                 disabled={isSubmitting}
-                className={`w-full bg-accent text-navy font-bold text-lg py-3 rounded-xl hover:bg-accent-hover transition-all shadow-lg shadow-accent/30 hover:shadow-accent/50 transform hover:-translate-y-1 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                className={`w-full bg-accent text-navy font-bold text-lg py-3 rounded-xl hover:bg-accent-hover shadow-lg shadow-accent/30 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                 type="submit"
               >
                 {isSubmitting ? 'Checking...' : 'Get Workspace Availability'}
-              </button>
+              </MagneticButton>
               <p className="text-center text-xs text-white/50 mt-4 flex items-center justify-center gap-2">
                 <span className="material-symbols-outlined text-[14px]">lock</span>
                 No Credit Card Required • No Hidden Fees
