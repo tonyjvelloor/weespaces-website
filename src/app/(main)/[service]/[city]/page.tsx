@@ -382,15 +382,15 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
                 <CheckCircle className="text-accent w-6 h-6 shrink-0" />
-                <span><strong className="text-navy">Hot Desks:</strong> Perfect for freelancers. Flexible daily/monthly passes.</span>
+                <span><strong className="text-navy">Coworking Space:</strong> Starting from ₹7,999/month. Perfect for freelancers and agile teams.</span>
               </div>
               <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
                 <CheckCircle className="text-accent w-6 h-6 shrink-0" />
-                <span><strong className="text-navy">Private Cabins:</strong> For teams of 3 to 20+. Lockable, secure, and fully furnished.</span>
+                <span><strong className="text-navy">Virtual Office:</strong> Starting from ₹10,000/year. Premium business address for GST compliance.</span>
               </div>
               <div className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
                 <CheckCircle className="text-accent w-6 h-6 shrink-0" />
-                <span><strong className="text-navy">Managed Offices:</strong> Custom-built floors for 50+ employees with your branding.</span>
+                <span><strong className="text-navy">Managed Offices:</strong> Custom enterprise pricing available. Built for teams of 50+.</span>
               </div>
             </div>
           </ScrollReveal>
@@ -419,7 +419,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             {city.localGuideExpanded && city.localGuideExpanded.map((guide, i) => (
                <div key={i} className="mb-8">
                  <h3 className="text-xl font-bold text-navy mb-3">{guide.title}</h3>
-                 <p className="text-gray-600 leading-relaxed">{guide.content}</p>
+                 <p className="text-gray-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: guide.content }} />
                </div>
             ))}
           </ScrollReveal>

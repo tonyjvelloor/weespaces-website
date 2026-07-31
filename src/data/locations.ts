@@ -97,8 +97,8 @@ export const cities: Record<string, CityData> = {
     },
     nearbyCompaniesList: ['Leading IT Firms', 'Global Consultancies', 'Fast-growing Startups', 'Logistics Companies', 'Healthcare Tech', 'Digital Agencies'],
     localGuideExpanded: [
-      { title: 'Why Kakkanad is Kochi\'s Next Business Hub', content: 'Kakkanad is witnessing explosive growth driven by Phase 2 of Infopark and SmartCity. With the upcoming Water Metro extensions and Phase 2 of the Kochi Metro, connectivity will be unmatched.' },
-      { title: 'Talent Availability', content: 'Proximity to institutions like CUSAT and Model Engineering College ensures a steady pipeline of top-tier engineering and management talent.' }
+      { title: 'The Kochi Commercial Cluster', content: 'Our premium workspaces strategically bridge Kochi\'s major business districts. While our flagship hub is located on <a href="/coworking-space/kochi/mg-road" class="text-accent hover:underline font-bold">MG Road</a>, we provide seamless connectivity to major IT corridors including <a href="/coworking-space/kochi/infopark" class="text-accent hover:underline font-bold">Infopark</a> and <a href="/coworking-space/kochi/kakkanad" class="text-accent hover:underline font-bold">SmartCity in Kakkanad</a>. For financial and consulting firms, the proximity to <a href="/coworking-space/kochi/marine-drive" class="text-accent hover:underline font-bold">Marine Drive</a> is invaluable, while retail and growing startups benefit from our quick transit links to <a href="/coworking-space/kochi/edappally" class="text-accent hover:underline font-bold">Edappally</a>.' },
+      { title: 'Talent Availability & Ecosystem', content: 'Proximity to institutions like CUSAT and Model Engineering College ensures a steady pipeline of top-tier engineering and management talent, supporting the explosive growth driven by Phase 2 of the Kochi Metro and the Water Metro expansion.' }
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-kochi', 'https://www.justdial.com/Ernakulam/WeeSpaces-Coworking', 'https://www.coworker.com/india/kochi/weespaces'],
     contactInfo: {
@@ -632,8 +632,9 @@ export const cities: Record<string, CityData> = {
     },
     nearbyCompaniesList: ['Bosch', 'Cognizant', 'Capgemini', 'ThoughtWorks', 'TCS', 'Zoho Teams', 'L&T Technology', 'Tech Mahindra'],
     localGuideExpanded: [
-      { title: 'Why Kalapatti is Coimbatore\'s next business hub', content: 'Kalapatti is strategically positioned between the Airport, Tidel Park, and major residential corridors. It offers the perfect blend of enterprise infrastructure without the congestion of Avinashi Road.' },
-      { title: 'Talent Availability', content: 'Proximity to premier institutions like PSG Tech and CIT ensures that IT and manufacturing companies have unparalleled access to world-class engineering talent.' }
+      { title: 'Why Companies Choose Coimbatore', content: 'Coimbatore offers a unique blend of world-class engineering talent from institutions like PSG Tech, significantly lower operating costs compared to Tier 1 cities, and immediate airport access. Its rich manufacturing ecosystem is now fostering rapid startup growth and expanding IT Parks.' },
+      { title: 'TIDEL Park & Key IT Hubs', content: 'TIDEL Park (1.5 km, 5 min drive) and CHIL SEZ (8.0 km, 15 min drive) anchor the city\'s IT growth. Surrounded by major tech and automotive industries, these hubs provide unparalleled networking and business opportunities.' },
+      { title: 'Local Business Statistics', content: 'The city boasts a rapidly growing IT workforce with over 50,000 professionals, a thriving business ecosystem with 25,000+ registered MSMEs, and infrastructure highlights including the upcoming metro and airport expansion.' }
     ],
     citations: ['https://www.google.com/maps?cid=weespaces-coimbatore', 'https://www.justdial.com/Coimbatore/WeeSpaces-Coworking', 'https://www.coworker.com/india/coimbatore/weespaces'],
     contactInfo: {

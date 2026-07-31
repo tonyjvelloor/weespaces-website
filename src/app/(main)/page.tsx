@@ -22,8 +22,8 @@ import { constructMetadata } from '@/utils/metadata';
 
 export const metadata: Metadata = {
   ...constructMetadata({
-    title: "Coworking Spaces, Private Offices & Virtual Offices | WeeSpaces",
-    description: "Move into fully furnished coworking spaces, private offices, meeting rooms & virtual offices across Kochi, Calicut and Trivandrum.",
+    title: "Coworking Spaces, Managed Offices & Virtual Offices in Kerala & Tamil Nadu | WeeSpaces",
+    description: "Discover premium coworking spaces, managed offices, private cabins and virtual offices across Kochi, Trivandrum, Calicut and Coimbatore. Flexible plans, enterprise-ready infrastructure and instant availability.",
     canonicalPath: "/"
   }),
   alternates: {
@@ -165,8 +165,9 @@ export default function Home() {
                   </div>
                   
                   <h1 className="text-display flex flex-col">
-                      <span className="text-white text-5xl md:text-6xl lg:text-7xl">Premium Managed Offices</span>
-                      <span className="text-accent text-5xl md:text-6xl lg:text-7xl">in South India</span>
+                      <span className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">Flexible Coworking Spaces,</span>
+                      <span className="text-accent text-4xl md:text-5xl lg:text-6xl font-bold">Managed Offices & Virtual Offices</span>
+                      <span className="text-white/80 text-3xl md:text-4xl lg:text-5xl mt-2">in Kerala & Tamil Nadu</span>
                   </h1>
                   
                   <p className="text-xl text-white/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
