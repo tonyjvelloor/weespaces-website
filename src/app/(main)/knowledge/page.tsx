@@ -71,25 +71,25 @@ export default function KnowledgeHubIndex() {
             <p className="text-white/70 mb-6">Deep-dive economic models and market analysis across Tier-2 IT hubs.</p>
             <ul className="space-y-4">
               <li>
-                <Link href="/blog/economics-of-managed-offices-buy-vs-build" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
+                <Link href="/blog" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   The Economics of Managed Offices: Buy vs. Build
                 </Link>
               </li>
               <li>
-                <Link href="/blog/south-india-workspace-index-2026" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
+                <Link href="/blog" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   South India Workspace Index 2026
                 </Link>
               </li>
               <li>
-                <Link href="/blog/offshore-development-center-setup-india" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
+                <Link href="/blog" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   Guide to Setting Up an ODC in South India
                 </Link>
               </li>
               <li>
-                <Link href="/blog/ultimate-virtual-office-guide-south-india-2026" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
+                <Link href="/blog" className="flex items-center gap-3 text-white hover:text-accent transition-colors">
                   <span className="material-symbols-outlined text-sm">arrow_forward</span>
                   Ultimate Virtual Office Expansion Guide 2026
                 </Link>

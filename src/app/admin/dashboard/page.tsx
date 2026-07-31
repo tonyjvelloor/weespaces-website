@@ -33,8 +33,13 @@ export default function RevenueDashboard() {
                 <h1 className="text-4xl font-black text-navy mb-2">Revenue & Authority OS</h1>
                 <p className="text-gray-500 font-medium">Real-time Marketing, Sales, and Operational metrics.</p>
              </div>
-             <div className="bg-white px-4 py-2 rounded-lg border border-gray-200 shadow-sm font-bold text-sm text-gray-700">
-                Last Updated: Just now
+             <div className="flex items-center gap-4">
+                <a href="/admin/link-engine" className="px-4 py-2 bg-navy text-white rounded-lg font-bold text-sm shadow-sm hover:bg-navy/90 flex items-center gap-2">
+                   <Sparkles className="w-4 h-4" /> Link Engine
+                </a>
+                <div className="bg-white px-4 py-2 rounded-lg border border-gray-200 shadow-sm font-bold text-sm text-gray-700">
+                   Last Updated: Just now
+                </div>
              </div>
           </header>
 

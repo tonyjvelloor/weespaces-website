@@ -7,7 +7,7 @@ readTime: "8 min read"
 excerpt: "A comprehensive analysis of coworking and managed office demand across Kochi, Coimbatore, Trivandrum, and Calicut. Discover why enterprises are abandoning traditional leases."
 ---
 
-# The 2026 South India Workspace Index
+## The 2026 South India Workspace Index
 
 The commercial real estate landscape in South India is undergoing a massive transformation. Over the last 12 months, we have analyzed the workspace transition of over 500 SMEs and enterprise teams across four major IT hubs: **Kochi, Coimbatore, Trivandrum, and Calicut**.
 

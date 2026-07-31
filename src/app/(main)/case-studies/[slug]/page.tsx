@@ -7,13 +7,14 @@ import Link from 'next/link';
 import { ArrowRight, Building2, Target, Lightbulb, TrendingUp, Clock, Quote } from 'lucide-react';
 
 interface Props {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const study = getCaseStudyBySlug(params.slug);
+  const resolvedParams = await params;
+  const study = getCaseStudyBySlug(resolvedParams.slug);
   if (!study) return { title: 'Case Study Not Found' };
 
   return {
@@ -29,8 +30,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CaseStudyPage({ params }: Props) {
-  const study = getCaseStudyBySlug(params.slug);
+export default async function CaseStudyPage({ params }: Props) {
+  const resolvedParams = await params;
+  const study = getCaseStudyBySlug(resolvedParams.slug);
   if (!study) notFound();
 
   return (

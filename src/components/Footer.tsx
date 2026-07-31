@@ -54,8 +54,8 @@ export default function Footer() {
   return (
     <footer className="bg-navy-dark border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          <div className="sm:col-span-2 md:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
+          <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image src="/images/logo.png" alt="WeeSpaces Logo" width={48} height={48} className="w-12 h-12 rounded-full object-cover" />
               <span className="text-xl font-bold">WeeSpaces</span>
@@ -65,25 +65,25 @@ export default function Footer() {
               WeeSpaces is a premium managed workspace provider operating coworking spaces, private offices, managed offices, and virtual offices across Coimbatore, Kochi, Trivandrum, and Calicut.
             </p>
             <div className="flex items-center gap-4 flex-wrap">
-              <a href="https://www.instagram.com/weespaces.coworking" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Instagram">
+              <a href="https://www.instagram.com/weespaces.coworking" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Instagram">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.88z"/></svg>
               </a>
-              <a href="https://www.linkedin.com/company/wee-spaces-coworking" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/wee-spaces-coworking" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="LinkedIn">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
               </a>
-              <a href="https://www.facebook.com/WeeSpaces.Coworking/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Facebook">
+              <a href="https://www.facebook.com/WeeSpaces.Coworking/" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Facebook">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </a>
-              <a href="https://x.com/weespacescowork" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="X (Twitter)">
+              <a href="https://x.com/weespacescowork" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="X (Twitter)">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
-              <a href="https://pin.it/1MsCMuC00" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Pinterest">
+              <a href="https://pin.it/1MsCMuC00" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Pinterest">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.951-7.252 4.168 0 7.41 2.967 7.41 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.367 18.624 0 12.017 0z"/></svg>
               </a>
-              <a href="https://www.quora.com/profile/Weespacescoworkingads" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Quora">
+              <a href="https://www.quora.com/profile/Weespacescoworkingads" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Quora">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M11.97 0C5.352 0 0 5.372 0 12c0 5.37 3.518 9.92 8.398 11.458.745-.989 1.488-2.072 2.163-3.084-.336-.084-.668-.198-.992-.326C4.856 18.236 2.054 14.545 2.054 12c0-4.996 4.343-9.524 9.916-9.524 5.57 0 9.918 4.528 9.918 9.524 0 3.738-2.055 6.843-5.048 8.441a10.02 10.02 0 0 1-2.923 1.002c-1.397-1.748-2.723-3.52-3.79-5.32 1.332-1.018 2.215-2.616 2.215-4.407 0-3.056-2.523-5.545-5.63-5.545-3.107 0-5.63 2.489-5.63 5.545 0 2.222 1.337 4.14 3.238 5.011 1.082 1.83 2.413 3.627 3.823 5.39.296.37.597.74.903 1.109C15.01 23.774 18.293 22.025 20.61 19.3 22.756 16.782 24 13.568 24 12c0-6.628-5.352-12-11.97-12zm-3.235 6.884c-1.773 0-3.216 1.455-3.216 3.245 0 1.79 1.443 3.245 3.216 3.245 1.774 0 3.216-1.455 3.216-3.245 0-1.79-1.442-3.245-3.216-3.245z"/></svg>
               </a>
-              <a href="https://www.reddit.com/user/Impossible-Eye9095/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Reddit">
+              <a href="https://www.reddit.com/user/Impossible-Eye9095/" target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent hover:border-accent hover:text-navy transition-all" aria-label="Reddit">
                 <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.688-.561-1.25-1.25-1.25zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
               </a>
               <WhatsAppButton 
@@ -103,6 +103,16 @@ export default function Footer() {
               <li><Link href="/managed-office" className="hover:text-accent transition-colors">Managed Office</Link></li>
               <li><Link href="/meeting-room" className="hover:text-accent transition-colors">Meeting Room</Link></li>
               <li><Link href="/coworking-space" className="hover:text-accent transition-colors">Coworking Space</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold mb-6 font-heading">Knowledge & Research</h4>
+            <ul className="space-y-4 text-sm text-white/70">
+              <li><Link href="/compare/virtual-office-vs-physical-office" className="hover:text-accent transition-colors">Workspace Comparison</Link></li>
+              <li><Link href="/blog/workspace-cost-index-2026" className="hover:text-accent transition-colors">Cost Index 2026</Link></li>
+              <li><Link href="/knowledge/workspace-economics" className="hover:text-accent transition-colors">Workspace Economics</Link></li>
+              <li><Link href="/calculator" className="hover:text-accent transition-colors">Cost Calculator</Link></li>
+              <li><Link href="/blog" className="hover:text-accent transition-colors">Coworking & Office Guides</Link></li>
             </ul>
           </div>
           <div>

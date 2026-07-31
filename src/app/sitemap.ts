@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { services, cities } from '@/data/locations';
 import { intents } from '@/data/intents';
 import { comparisons } from '@/data/comparisons';
+import { virtualOfficeContent } from '@/data/virtualOfficeContent';
 import { getAllPosts } from '@/lib/mdx';
 
 const BASE_URL = 'https://www.weespaces.in';
@@ -53,8 +54,9 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
     // Blog Categories
     const categories = Array.from(new Set(posts.map(p => p.category).filter(Boolean)));
     categories.forEach((category) => {
+      const categorySlug = (category || 'uncategorized').toLowerCase().replace(/ /g, '-');
       routes.push({
-        url: `${BASE_URL}/blog/category/${category}`,
+        url: `${BASE_URL}/blog/category/${categorySlug}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -74,6 +76,7 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
 
   if (resolvedId === 'knowledge') {
     const knowledgePages = [
+      '/knowledge',
       '/knowledge/workspace-terminology',
       '/knowledge/workspace-economics'
     ];
@@ -120,6 +123,21 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
           });
         }
       });
+
+      // Commercial Intent Pages (Virtual Office specific)
+      if (matchingService.slug === 'virtual-office') {
+        Object.keys(virtualOfficeContent).forEach((intentSlug) => {
+          const content = virtualOfficeContent[intentSlug];
+          if (!content.routing.relatedCities || content.routing.relatedCities.includes(city.slug)) {
+            routes.push({
+              url: `${BASE_URL}/${matchingService.slug}/${city.slug}/${intentSlug}`,
+              lastModified: new Date(),
+              changeFrequency: 'weekly',
+              priority: 0.8,
+            });
+          }
+        });
+      }
 
       // Intent Pages
       Object.values(intents).forEach((intent) => {

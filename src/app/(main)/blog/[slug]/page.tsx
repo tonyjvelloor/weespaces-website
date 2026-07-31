@@ -9,6 +9,7 @@ import HowToSchema from '@/components/HowToSchema';
 import OfficeCalculator from '@/components/OfficeCalculator';
 import AnswerBlock from '@/components/AnswerBlock';
 import { ArrowRight, Building2, MapPin } from 'lucide-react';
+import { SemanticClusterLinks } from '@/components/SemanticClusterLinks';
 
 const components = {
   LeadForm,
@@ -159,46 +160,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </ScrollReveal>
         
-        {/* Related Workspace */}
-        <ScrollReveal direction="up" className="mt-16 pt-12 border-t border-white/10">
-          <div className="bg-gradient-to-br from-navy-light to-navy border border-accent/20 rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-64 h-64 bg-accent/10 rounded-full blur-[60px] pointer-events-none"></div>
-            <div className="relative z-10">
-              <div className="flex items-center gap-2 text-accent mb-2">
-                <Building2 className="w-5 h-5" />
-                <span className="font-bold uppercase tracking-wider text-sm">Workspace Solutions</span>
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2">Explore Premium {workspaceName}</h3>
-              <p className="text-white/70 max-w-md">Find the perfect workspace tailored to your business needs across Kochi, Trivandrum, Coimbatore, and Calicut.</p>
-            </div>
-            <Link href={workspaceLink} className="relative z-10 shrink-0 bg-accent text-navy px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-navy transition-all flex items-center gap-2">
-              View {workspaceName} <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
+        {/* Semantic Cluster & AI Citation Graph */}
+        <ScrollReveal direction="up" className="mt-16">
+          <SemanticClusterLinks 
+            theme="dark"
+            commercial={{ title: `Premium ${workspaceName}`, href: workspaceLink }}
+            comparison={{ title: `${workspaceName} vs Traditional Office`, href: `/compare/${workspaceLink.replace('/', '')}-vs-physical-office` }}
+            research={{ title: 'Workspace Cost Index 2026', href: '/blog/workspace-cost-index-2026' }}
+            knowledge={{ title: 'Workspace Economics Guide', href: '/knowledge/workspace-economics' }}
+            related={relatedArticles.map(a => ({ title: a.title, href: `/blog/${a.slug}` }))}
+          />
         </ScrollReveal>
 
         {/* Calculator */}
         <ScrollReveal direction="up" className="mt-16">
           <OfficeCalculator />
         </ScrollReveal>
-
-        {/* Related Articles */}
-        {relatedArticles.length > 0 && (
-          <ScrollReveal direction="up" className="mt-16 pt-12 border-t border-white/10">
-            <h3 className="text-2xl font-bold text-white mb-8">Related Articles</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {relatedArticles.map((relPost) => (
-                <Link key={relPost.slug} href={`/blog/${relPost.slug}`} className="block group">
-                  <div className="bg-navy-light border border-white/10 rounded-2xl p-6 h-full transition-all group-hover:border-accent/50 group-hover:-translate-y-1">
-                    <span className="text-accent text-xs font-bold uppercase tracking-wider mb-3 block">{relPost.category}</span>
-                    <h4 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">{relPost.title}</h4>
-                    <p className="text-white/60 text-sm line-clamp-3">{relPost.excerpt}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </ScrollReveal>
-        )}
         
         {/* Contact (Lead Form) */}
         <ScrollReveal direction="up" className="mt-16 pt-16 border-t border-white/10">

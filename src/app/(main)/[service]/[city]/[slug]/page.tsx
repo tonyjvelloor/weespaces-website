@@ -10,7 +10,8 @@ import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 import { services, cities } from '@/data/locations';
 import { virtualOfficeContent } from '@/data/virtualOfficeContent';
 import VirtualOfficeLandingTemplate from '@/components/templates/VirtualOfficeLandingTemplate';
-import { MapPin, Building, ChevronRight, CheckCircle, Clock, Users, ArrowRight } from 'lucide-react';
+import { ArrowRight, Building, CheckCircle2, ChevronRight, Clock, MapPin, Users } from 'lucide-react';
+import { SemanticClusterLinks } from '@/components/SemanticClusterLinks';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -261,33 +262,18 @@ export default async function CitySlugPage({ params }: { params: Promise<{ servi
                 textColor="text-navy"
               />
 
-              {/* AEO Internal Linking Cluster */}
-              <div className="mt-16 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="text-xl font-bold text-navy mb-6">Explore WeeSpaces</h3>
-                <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                  <div className="flex flex-col gap-3">
-                    <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Locations</h4>
-                    <Link href={`/${service.slug}/${city.slug}`} className="text-gray-600 hover:text-accent transition-colors">{city.name} Overview</Link>
-                    {city.microLocations.filter(m => m.slug !== neighborhood.slug).slice(0,3).map(m => (
-                      <Link key={m.slug} href={`/${service.slug}/${city.slug}/${m.slug}`} className="text-gray-600 hover:text-accent transition-colors">
-                        Near {m.name}
-                      </Link>
-                    ))}
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Solutions</h4>
-                    <Link href={`/coworking-space/${city.slug}`} className="text-gray-600 hover:text-accent transition-colors">Coworking Space</Link>
-                    <Link href={`/private-office/${city.slug}`} className="text-gray-600 hover:text-accent transition-colors">Private Office</Link>
-                    <Link href={`/virtual-office/${city.slug}`} className="text-gray-600 hover:text-accent transition-colors">Virtual Office</Link>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <h4 className="font-semibold text-gray-900 text-sm uppercase tracking-wider">Resources</h4>
-                    <Link href="/calculator" className="text-gray-600 hover:text-accent transition-colors">Office Cost Calculator</Link>
-                    <Link href="/virtual-office/gst-registration" className="text-gray-600 hover:text-accent transition-colors">GST Registration Guide</Link>
-                    <Link href="/case-studies" className="text-gray-600 hover:text-accent transition-colors">Success Stories</Link>
-                  </div>
-                </div>
-              </div>
+              {/* AI Citation Graph & Semantic Linking */}
+              <SemanticClusterLinks 
+                theme="light"
+                commercial={{ title: `${city.name} Overview`, href: `/${service.slug}/${city.slug}` }}
+                comparison={{ title: 'Virtual vs Physical Office', href: `/compare/virtual-office-vs-physical-office` }}
+                research={{ title: 'Workspace Cost Index 2026', href: '/blog/workspace-cost-index-2026' }}
+                knowledge={{ title: 'Workspace Economics Guide', href: '/knowledge/workspace-economics' }}
+                related={[
+                  { title: `GST Registration in ${city.name}`, href: `/virtual-office/gst-registration` },
+                  { title: `Coworking Space in ${city.name}`, href: `/coworking-space/${city.slug}` }
+                ]}
+              />
             </div>
             
             <div className="lg:w-1/3">

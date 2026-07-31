@@ -139,7 +139,21 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
                 "areaServed": {
                   "@type": "City",
                   "name": city.name
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "INR",
+                  "price": "10000",
+                  "availability": "https://schema.org/InStock",
+                  "url": `https://weespaces.in/${service.slug}/${city.slug}`
                 }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "https://weespaces.in/",
+                "name": "WeeSpaces",
+                "description": "Premium Workspaces in South India"
               }
             ])
           }}
@@ -502,6 +516,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             <div className="flex flex-wrap gap-3">
               {[...(city.microLocations || []), ...(city.landmarks || [])]
                 .filter(loc => !('services' in loc) || !loc.services || (loc.services as string[]).includes(service.slug))
+                .slice(0, 8)
                 .map((loc, idx) => (
                 <Link 
                   key={idx} 
@@ -535,7 +550,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
               <ul className="space-y-3">
                 <li><Link href="/compare/coworking-vs-traditional-office" className="text-white/70 hover:text-white transition-colors">Coworking vs Traditional</Link></li>
                 <li><Link href="/compare/managed-office-vs-leasing" className="text-white/70 hover:text-white transition-colors">Managed Office vs Leasing</Link></li>
-                <li><Link href="/compare/private-office-vs-shared-office" className="text-white/70 hover:text-white transition-colors">Private vs Shared Office</Link></li>
+                <li><Link href="/compare/weespaces-vs-wework" className="text-white/70 hover:text-white transition-colors">WeeSpaces vs WeWork</Link></li>
                 <li><Link href="/compare/virtual-office-vs-physical-office" className="text-white/70 hover:text-white transition-colors">Virtual vs Physical Office</Link></li>
               </ul>
             </div>
@@ -612,7 +627,21 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
               "areaServed": {
                 "@type": "City",
                 "name": city.name
+              },
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "price": service.slug === 'virtual-office' ? "10000" : service.slug === 'coworking-space' ? "7999" : "25000",
+                "availability": "https://schema.org/InStock",
+                "url": `https://weespaces.in/${service.slug}/${city.slug}`
               }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://weespaces.in/",
+              "name": "WeeSpaces",
+              "description": "Premium Workspaces in South India"
             },
             {
               "@context": "https://schema.org",

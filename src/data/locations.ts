@@ -694,7 +694,10 @@ export const cities: Record<string, CityData> = {
         transit: 'Avinashi Road, Peelamedu Railway Station',
         parking: 'Dedicated building parking',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['coworking-space', 'private-office'],
+        businessEcosystem: 'Major educational and industrial hub near the airport.',
+        gstSuitability: 'Great for manufacturing, ed-tech, and logistics firms.',
+        whoChoosesThis: 'Manufacturing companies, educational consultants, and logistics providers.',
+        services: ['coworking-space', 'private-office', 'virtual-office'],
         distanceToBranch: '4.5 km to Kalapatti HQ',
         travelTime: '12 min drive'
       },
@@ -705,7 +708,10 @@ export const cities: Record<string, CityData> = {
         transit: 'Arterial Road, Frequent Buses',
         parking: 'Premium on-site parking',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['managed-office', 'virtual-office', 'meeting-room'],
+        businessEcosystem: 'The main arterial road of Coimbatore, hosting the biggest institutions and IT parks.',
+        gstSuitability: 'Ideal for corporate branch offices and large enterprises.',
+        whoChoosesThis: 'Corporate enterprises, IT companies, and healthcare organizations.',
+        services: ['managed-office', 'virtual-office', 'meeting-room', 'coworking-space'],
         distanceToBranch: '3.0 km to Kalapatti HQ',
         travelTime: '10 min drive'
       },
@@ -718,7 +724,6 @@ export const cities: Record<string, CityData> = {
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
-
       {
         id: 'rs-puram', name: 'RS Puram', slug: 'rs-puram', intent: 'Premium Retail, Consulting, Finance',
         nearbyCompanies: ['Boutiques', 'Financial Institutions', 'Consultancies'],
@@ -726,22 +731,10 @@ export const cities: Record<string, CityData> = {
         transit: 'RS Puram Bus Stop',
         parking: 'On-street',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg'],
-        services: ['virtual-office', 'coworking-space'],
+        services: ['virtual-office', 'coworking-space', 'private-office', 'meeting-room'],
         businessEcosystem: 'The most affluent commercial and residential neighborhood in Coimbatore.',
         gstSuitability: 'Highly prestigious address for premium brands and financial services.',
         whoChoosesThis: 'Wealth managers, boutique retail brands, and premium consultants.'
-      },
-      {
-        id: 'avinashi-road', name: 'Avinashi Road', slug: 'avinashi-road', intent: 'Corporate, IT, Education, Healthcare',
-        nearbyCompanies: ['IT Parks', 'Hospitals', 'Colleges', 'Corporate HQs'],
-        landmarks: ['Tidel Park', 'PSG Tech', 'KMCH'],
-        transit: 'Avinashi Road arterial buses',
-        parking: 'Building-specific',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/interior-lounge.jpg'],
-        services: ['virtual-office', 'coworking-space'],
-        businessEcosystem: 'The main arterial road of Coimbatore, hosting the biggest institutions and IT parks.',
-        gstSuitability: 'Ideal for corporate branch offices and large enterprises.',
-        whoChoosesThis: 'Corporate enterprises, IT companies, and healthcare organizations.'
       },
       {
         id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'IT, Software, Startups',
@@ -750,22 +743,12 @@ export const cities: Record<string, CityData> = {
         transit: 'Sathy Road',
         parking: 'Tech park parking',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/reception.jpg'],
-        services: ['virtual-office', 'coworking-space'],
+        distanceToBranch: '8.0 km to Kalapatti HQ',
+        travelTime: '15 min drive',
+        services: ['virtual-office', 'coworking-space', 'managed-office'],
         businessEcosystem: 'The IT corridor of Coimbatore, teeming with tech parks and an engineering talent pool.',
         gstSuitability: 'Essential for IT exports and tech startups.',
         whoChoosesThis: 'Software development companies, tech startups, and BPOs.'
-      },
-      {
-        id: 'peelamedu', name: 'Peelamedu', slug: 'peelamedu', intent: 'Education, Manufacturing, IT',
-        nearbyCompanies: ['Textile mills', 'Engineering colleges', 'IT firms'],
-        landmarks: ['Coimbatore Airport', 'PSG'],
-        transit: 'Avinashi Road, Airport',
-        parking: 'Available',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/workspace.jpg'],
-        services: ['virtual-office', 'coworking-space'],
-        businessEcosystem: 'Major educational and industrial hub near the airport.',
-        gstSuitability: 'Great for manufacturing, ed-tech, and logistics firms.',
-        whoChoosesThis: 'Manufacturing companies, educational consultants, and logistics providers.'
       },
       {
         id: 'race-course', name: 'Race Course', slug: 'race-course', intent: 'Premium Corporate, Government, Finance',
@@ -774,7 +757,9 @@ export const cities: Record<string, CityData> = {
         transit: 'Central location, near Railway Station',
         parking: 'Available',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg'],
-        services: ['virtual-office', 'coworking-space'],
+        distanceToBranch: '10 km to Kalapatti HQ',
+        travelTime: '18 min drive',
+        services: ['virtual-office', 'coworking-space', 'private-office', 'meeting-room'],
         businessEcosystem: 'The "Switzerland of Coimbatore", known for elite corporate offices and greenery.',
         gstSuitability: 'Prestigious address for corporate HQs and high-end finance.',
         whoChoosesThis: 'Corporate HQs, financial institutions, and premium agencies.'
@@ -810,7 +795,9 @@ export const cities: Record<string, CityData> = {
         transit: 'Central Bus Terminals',
         parking: 'Very congested',
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/workspace.jpg'],
-        services: ['virtual-office', 'coworking-space'],
+        distanceToBranch: '12 km to Kalapatti HQ',
+        travelTime: '20 min drive',
+        services: ['virtual-office', 'coworking-space', 'meeting-room'],
         businessEcosystem: 'The commercial heart and main transit hub of Coimbatore.',
         gstSuitability: 'Crucial for wholesale, retail, and trading businesses.',
         whoChoosesThis: 'Wholesalers, retailers, and travel companies.'
@@ -849,48 +836,6 @@ export const cities: Record<string, CityData> = {
         services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
       {
-        id: 'saravanampatti', name: 'Saravanampatti', slug: 'saravanampatti', intent: 'Enterprise IT, scaling startups, premium coworking space',
-        nearbyCompanies: ['Leading Tech Parks', 'Multinational IT Companies', 'Enterprise Engineering Centers'],
-        landmarks: ['CHIL SEZ IT Park', 'KGISL Tech Park'],
-        transit: 'Sathy Road',
-        parking: 'Tech park scale parking',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['coworking-space', 'managed-office'],
-        distanceToBranch: '8.0 km to Kalapatti HQ',
-        travelTime: '15 min drive'
-      },
-      {
-        id: 'race-course', name: 'Race Course', slug: 'race-course', intent: 'Premium consulting, HNIs, financial services',
-        nearbyCompanies: ['Wealth management firms', 'Boutique agencies'],
-        landmarks: ['Race Course Walking Track', 'Taj Vivanta'],
-        transit: 'Coimbatore Junction Railway Station (5 mins)',
-        parking: 'Premium dedicated parking',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['private-office', 'meeting-room'],
-        distanceToBranch: '10 km to Kalapatti HQ',
-        travelTime: '18 min drive'
-      },
-      {
-        id: 'gandhipuram', name: 'Gandhipuram', slug: 'gandhipuram', intent: 'Trading, traditional businesses, retail',
-        nearbyCompanies: ['Hundreds of commercial shops', 'Hotels'],
-        landmarks: ['Cross Cut Road', 'Gandhipuram Bus Stand'],
-        transit: 'Central Bus Stand (Gandhipuram)',
-        parking: 'Paid public parking, building basements',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['virtual-office', 'meeting-room'],
-        distanceToBranch: '12 km to Kalapatti HQ',
-        travelTime: '20 min drive'
-      },
-      {
-        id: 'rs-puram', name: 'RS Puram', slug: 'rs-puram', intent: 'Retail, consulting, medical, agencies',
-        nearbyCompanies: ['Jewellery brands', 'High-end retail'],
-        landmarks: ['DB Road', 'Annapoorna'],
-        transit: 'DB Road, Thadagam Road',
-        parking: 'On-street parking (often congested)',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
-      },
-      {
         id: 'tidel-park-area', name: 'Tidel Park Area', slug: 'tidel-park-area', intent: 'Enterprise IT, SMEs serving IT',
         nearbyCompanies: ['MNC Branches', 'Hardware Tech', 'EdTech Startups', 'Fintech Teams'],
         landmarks: ['Tidel Park Coimbatore', 'ELCOT SEZ'],
@@ -899,15 +844,6 @@ export const cities: Record<string, CityData> = {
         type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
         services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
       },
-      {
-        id: 'neelambur', name: 'Neelambur', slug: 'neelambur', intent: 'Logistics, manufacturing, large corporates',
-        nearbyCompanies: ['L&T Bypass companies', 'Logistics hubs'],
-        landmarks: ['L&T Bypass', 'PSG Itech'],
-        transit: 'Highway access',
-        parking: 'Massive surface parking',
-        type: 'neighborhood', gallery: ['/images/branches/coimbatore/exterior-tall.jpg', '/images/branches/coimbatore/amenity1.jpg', '/images/branches/coimbatore/amenity2.jpg', '/images/branches/coimbatore/amenity3.jpg'],
-        services: ['coworking-space', 'private-office', 'virtual-office', 'meeting-room'],
-      }
     ],
     landmarks: [
       { name: 'Airport', slug: 'near-airport' },
