@@ -13,6 +13,10 @@ The commercial real estate landscape in South India is undergoing a massive tran
 
 The data reveals a definitive shift away from traditional commercial leasing toward flexible, managed office solutions.
 
+<AnswerBlock question="What is the cost of renting an office in South India?">
+  In 2026, the 3-year Total Cost of Ownership (TCO) for a 50-person traditional office in Kochi is **₹2.4 Crores**, compared to **₹1.6 Crores** for a managed office—a 33% saving. Similar savings of 34-38% are seen across Coimbatore, Trivandrum, and Calicut due to the elimination of CapEx and interior fit-out costs.
+</AnswerBlock>
+
 ## Key Findings
 
 1. **CapEx Elimination is the #1 Driver**: 78% of enterprise decision-makers cited "avoiding capital expenditure on interior fit-outs" as their primary reason for choosing managed offices over traditional leases.

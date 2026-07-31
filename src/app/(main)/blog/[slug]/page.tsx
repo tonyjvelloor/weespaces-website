@@ -7,12 +7,14 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import Image from 'next/image';
 import HowToSchema from '@/components/HowToSchema';
 import OfficeCalculator from '@/components/OfficeCalculator';
+import AnswerBlock from '@/components/AnswerBlock';
 import { ArrowRight, Building2, MapPin } from 'lucide-react';
 
 const components = {
   LeadForm,
   Image,
   HowToSchema,
+  AnswerBlock,
 };
 
 export function generateStaticParams() {
