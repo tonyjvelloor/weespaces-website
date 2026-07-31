@@ -90,7 +90,7 @@ export const branchData: Record<string, BranchData> = {
       hotDesk: 'Starting from ₹6,999/Seat', 
       dedicatedDesk: 'Starting from ₹6,999/Seat', 
       privateOffice: 'Custom Pricing', 
-      virtualOffice: '₹10,000/yr',
+      virtualOffice: '₹16,999/yr',
       meetingRoom: 'Custom Pricing',
       note: 'Pricing varies by workspace type, floor and booking requirements.'
     }
