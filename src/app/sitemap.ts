@@ -26,7 +26,7 @@ export default async function sitemap({ id }: { id: string | Promise<string> }):
 
   if (resolvedId === 'core') {
     // 1. Core Pages
-    const corePages = ['', '/about', '/contact', '/pricing', '/locations', '/faq', '/investors', '/enterprise', '/blog'];
+    const corePages = ['', '/about', '/contact', '/pricing', '/locations', '/faq', '/investors', '/enterprise', '/blog', '/book-tour'];
     corePages.forEach((path) => {
       routes.push({
         url: `${BASE_URL}${path}`,
