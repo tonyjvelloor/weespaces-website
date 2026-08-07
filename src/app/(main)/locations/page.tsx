@@ -7,6 +7,8 @@ import { MapPin, ArrowRight, Building2, Phone } from 'lucide-react';
 import { branchData } from '@/data/branches';
 import { cities, services } from '@/data/locations';
 import { intents } from '@/data/intents';
+import LocationCard from '@/components/LocationCard';
+import inventoryData from '@/data/inventory.json';
 
 import { constructMetadata } from '@/utils/metadata';
 
@@ -80,29 +82,16 @@ export default function LocationsPage() {
               const mapEmbedSrc = activeLocation.mapEmbedUrl;
               
               return (
-                <ScrollReveal key={idx} delay={idx * 0.1}>
-                  <MouseGlowCard className="glass p-8 rounded-3xl h-full border border-white/10 hover:border-accent/30 transition-all flex flex-col justify-between group">
-                    <div>
-                      <div className="flex items-start justify-between mb-6">
-                         <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center">
-                          <Building2 className="text-accent w-6 h-6" />
-                        </div>
-                        <span className="bg-white/5 border border-white/10 text-xs px-3 py-1 rounded-full font-medium">
-                          {loc.name}
-                        </span>
-                      </div>
-                      <h2 className="text-3xl font-bold text-white mb-3">WeeSpaces {loc.name}</h2>
-                      <p className="text-white/70 mb-6 text-sm">{loc.address}</p>
-                    </div>
-                    <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
-                      <a href={activeLocation.directionsUrl} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto flex-1 bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-6 rounded-xl flex items-center justify-center gap-2 transition-all glow text-sm">
-                        Get Directions <ArrowRight className="w-4 h-4" />
-                      </a>
-                      <a href="tel:+919207189111" className="w-full sm:w-auto flex items-center justify-center gap-2 py-3 px-6 border border-white/20 hover:bg-white/5 rounded-xl transition-colors text-sm font-medium">
-                        <Phone className="w-4 h-4 text-accent" /> Call Now
-                      </a>
-                    </div>
-                  </MouseGlowCard>
+                <ScrollReveal key={idx} delay={idx * 0.1} className="h-full">
+                  <LocationCard 
+                    id={loc.id}
+                    name={loc.name}
+                    address={loc.address}
+                    heroImage={loc.heroImage}
+                    galleryImages={loc.galleryImages}
+                    pricing={loc.pricing}
+                    inventory={inventoryData[loc.id as keyof typeof inventoryData]}
+                  />
                 </ScrollReveal>
               );
             })}

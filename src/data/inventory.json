@@ -1,0 +1,110 @@
+{
+  "trivandrum": {
+    "availability": {
+      "privateOffices": 2,
+      "dedicatedDesks": 14,
+      "meetingRooms": 1,
+      "virtualOffice": "Available Immediately",
+      "lastUpdated": "Today"
+    },
+    "metrics": {
+      "capacity": 150,
+      "internetSpeed": "300 Mbps",
+      "powerBackup": "100% DG Backup",
+      "parking": "2/4 Wheeler Available"
+    },
+    "commute": {
+      "nearestITPark": { "name": "Technopark", "time": "2 mins" },
+      "nearestTransit": { "name": "Pattom Bus Stop", "time": "5 mins walk" },
+      "airport": { "time": "20 mins" }
+    },
+    "scores": {
+      "overall": 9.4,
+      "internet": 9.8,
+      "transit": 9.0,
+      "food": 9.5
+    },
+    "demand": "14 companies viewed Trivandrum this week."
+  },
+  "ernakulam": {
+    "availability": {
+      "privateOffices": 0,
+      "dedicatedDesks": 5,
+      "meetingRooms": 2,
+      "virtualOffice": "Available Immediately",
+      "lastUpdated": "Today"
+    },
+    "metrics": {
+      "capacity": 120,
+      "internetSpeed": "300 Mbps",
+      "powerBackup": "100% DG Backup",
+      "parking": "Street / Paid Basement"
+    },
+    "commute": {
+      "nearestITPark": { "name": "Infopark", "time": "30 mins" },
+      "nearestTransit": { "name": "MG Road Metro", "time": "3 mins walk" },
+      "airport": { "time": "45 mins" }
+    },
+    "scores": {
+      "overall": 9.6,
+      "internet": 9.8,
+      "transit": 9.9,
+      "food": 9.7
+    },
+    "demand": "High Demand: 4 private offices booked this month."
+  },
+  "calicut": {
+    "availability": {
+      "privateOffices": 3,
+      "dedicatedDesks": 22,
+      "meetingRooms": 1,
+      "virtualOffice": "Available Immediately",
+      "lastUpdated": "Today"
+    },
+    "metrics": {
+      "capacity": 80,
+      "internetSpeed": "200 Mbps",
+      "powerBackup": "100% DG Backup",
+      "parking": "2/4 Wheeler Available"
+    },
+    "commute": {
+      "nearestITPark": { "name": "Cyberpark", "time": "15 mins" },
+      "nearestTransit": { "name": "Nadakkave Stand", "time": "5 mins walk" },
+      "airport": { "time": "40 mins" }
+    },
+    "scores": {
+      "overall": 9.2,
+      "internet": 9.5,
+      "transit": 9.0,
+      "food": 9.1
+    },
+    "demand": "8 companies viewed Calicut today."
+  },
+  "coimbatore": {
+    "availability": {
+      "privateOffices": 5,
+      "dedicatedDesks": 40,
+      "meetingRooms": 3,
+      "virtualOffice": "Available Immediately",
+      "lastUpdated": "Today"
+    },
+    "metrics": {
+      "capacity": 250,
+      "internetSpeed": "500 Mbps",
+      "powerBackup": "100% DG Backup",
+      "parking": "Ample 2/4 Wheeler"
+    },
+    "commute": {
+      "nearestITPark": { "name": "Tidel Park", "time": "5 mins" },
+      "nearestTransit": { "name": "Airport", "time": "Walkable" },
+      "airport": { "time": "3 mins" }
+    },
+    "scores": {
+      "overall": 9.8,
+      "internet": 9.9,
+      "transit": 9.8,
+      "food": 9.4
+    },
+    "demand": "Just Launched - Filling Fast!"
+  }
+}

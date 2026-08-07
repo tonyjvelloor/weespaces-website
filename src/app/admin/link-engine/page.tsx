@@ -23,7 +23,7 @@ export default function LinkEngineDashboard() {
     fetchData();
   }, []);
 
-  if (loading) return <div className="min-h-screen bg-gray-50 flex items-center justify-center text-navy font-bold text-2xl">Loading Engine...</div>;
+  if (loading) return <h1 className="min-h-screen bg-gray-50 flex items-center justify-center text-navy font-bold text-2xl">Loading Engine...</h1>;
   if (!data) return <div className="min-h-screen bg-gray-50 flex items-center justify-center text-red-500 font-bold text-2xl">Failed to load data.</div>;
 
   return (

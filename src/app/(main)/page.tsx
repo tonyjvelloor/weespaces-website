@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import LeadForm from '@/components/LeadForm';
+import { ConversationalForm } from '@/components/ui/ConversationalForm';
 import { Metadata } from 'next';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
@@ -67,27 +67,6 @@ export default function Home() {
             "/html/head/meta[@name='description']/@content"
           ]
         }
-      },
-      {
-        "@type": "LocalBusiness",
-        "name": "WeeSpaces Coimbatore",
-        "image": "https://www.weespaces.in/images/branches/coimbatore/exterior-tall.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Vidyanagar 3rd Street, Vidya Nagar, Civil Aerodrome Post, Kalapatti",
-          "addressLocality": "Coimbatore",
-          "addressRegion": "Tamil Nadu",
-          "postalCode": "641014",
-          "addressCountry": "IN"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 11.0367,
-          "longitude": 77.0373
-        },
-        "url": "https://www.weespaces.in/coworking-space/coimbatore",
-        "telephone": "+919207189111",
-        "priceRange": "₹4000 - ₹50000"
       },
       {
         "@type": "ServiceAreaBusiness",
@@ -210,8 +189,8 @@ export default function Home() {
                   </div>
               </ScrollReveal>
               
-              <ScrollReveal direction="right" delay={0.2} className="lg:col-span-5 w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
-                <LeadForm />
+              <ScrollReveal className="lg:col-span-5 relative z-10 hidden lg:block" delay={0.2}>
+                  <ConversationalForm />
               </ScrollReveal>
           </div>
       </section>

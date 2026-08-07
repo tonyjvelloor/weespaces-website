@@ -177,6 +177,16 @@ export const track = {
       lead: leadData
     };
     pushStructuredEvent(eventName, payload);
+
+    // Fire hardcoded ad conversions only on successful genuine submit
+    if (step === 'submit' && typeof window !== 'undefined') {
+      if (typeof (window as any).gtag !== 'undefined') {
+        (window as any).gtag('event', 'conversion', {'send_to': 'AW-11477720476/9J3rCNmWrIsZEJy7gOEq'});
+      }
+      if (typeof (window as any).fbq !== 'undefined') {
+        (window as any).fbq('track', 'Lead');
+      }
+    }
   },
   cta: (ctaName: string, destinationUrl: string, contentContext?: Record<string, any>) => {
     pushStructuredEvent(EventNames.CTA_CLICK, { 
