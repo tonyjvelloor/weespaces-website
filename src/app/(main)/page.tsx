@@ -146,10 +146,10 @@ export default function Home() {
                   <h1 className="text-display flex flex-col">
                       <span className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">Flexible Coworking Spaces,</span>
                       <span className="text-accent text-4xl md:text-5xl lg:text-6xl font-bold">Managed Offices & Virtual Offices</span>
-                      <span className="text-white/80 text-3xl md:text-4xl lg:text-5xl mt-2">in Kerala & Tamil Nadu</span>
+                      <span className="text-navy/80 text-3xl md:text-4xl lg:text-5xl mt-2">in Kerala & Tamil Nadu</span>
                   </h1>
                   
-                  <p className="text-xl text-white/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                  <p className="text-xl text-navy/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
                       Move into fully furnished workspaces in <strong className="text-white">Kochi, Calicut, Trivandrum & Coimbatore</strong> without deposits, setup costs, or long-term commitments.
                   </p>
                   
@@ -174,16 +174,16 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Established 2018
                       </span>
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Multiple Kerala & TN Locations
                       </span>
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Fully Managed Offices
                       </span>
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Startups • Freelancers • Growing Teams
                       </span>
                   </div>
@@ -196,45 +196,45 @@ export default function Home() {
       </section>
 
       {/* Problem Agitation Section */}
-      <section className="py-20 max-w-7xl mx-auto px-6 border-b border-white/10 bg-navy-light/10">
+      <section className="py-32 max-w-7xl mx-auto px-6 border-b border-gray-200 bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Setting Up An Office <span className="text-accent">Shouldn't Take Months</span></h2>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-navy">Setting Up An Office <span className="text-accent">Shouldn't Take Months</span></h2>
+              <p className="text-xl text-navy/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
           </ScrollReveal>
 
           <div className="max-w-4xl mx-auto relative overflow-x-auto">
-              <table className="w-full text-left border-collapse glass rounded-2xl overflow-hidden border border-white/10 min-w-[600px]">
+              <table className="w-full text-left border-collapse bg-white shadow-soft rounded-2xl overflow-hidden border border-gray-200 min-w-[600px]">
                   <thead>
                       <tr>
-                          <th className="p-6 md:p-8 text-xl md:text-2xl font-bold text-white border-b border-white/10 bg-red-500/5 w-1/2">
+                          <th className="p-6 md:p-8 text-xl md:text-2xl font-bold text-navy border-b border-gray-200 bg-red-50 w-1/2">
                               Traditional Office
                           </th>
-                          <th className="p-6 md:p-8 text-xl md:text-2xl font-bold text-white border-b border-white/10 border-l border-white/10 bg-accent/5 w-1/2 relative overflow-hidden">
+                          <th className="p-6 md:p-8 text-xl md:text-2xl font-bold text-navy border-b border-gray-200 border-l border-gray-200 bg-accent/5 w-1/2 relative overflow-hidden">
                               <div className="absolute top-0 right-0 w-40 h-40 bg-accent/20 rounded-full blur-[60px] -mr-10 -mt-10"></div>
                               <span className="relative z-10">WeeSpaces</span>
                           </th>
                       </tr>
                   </thead>
-                  <tbody className="text-white/80">
+                  <tbody className="text-navy/80">
                       <tr>
-                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> ₹5L+ interior investment</td>
-                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Walk in tomorrow</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 bg-red-50/50"><span className="text-red-400 mr-2 text-sm">❌</span> ₹5L+ interior investment</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 border-l border-gray-200 bg-accent/5 text-navy font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Walk in tomorrow</td>
                       </tr>
                       <tr>
-                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Long rental agreements</td>
-                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Fully furnished & designed</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 bg-red-50/50"><span className="text-red-400 mr-2 text-sm">❌</span> Long rental agreements</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 border-l border-gray-200 bg-accent/5 text-navy font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Fully furnished & designed</td>
                       </tr>
                       <tr>
-                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Furniture purchase</td>
-                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Flexible scaling (up or down)</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 bg-red-50/50"><span className="text-red-400 mr-2 text-sm">❌</span> Furniture purchase</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 border-l border-gray-200 bg-accent/5 text-navy font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Flexible scaling (up or down)</td>
                       </tr>
                       <tr>
-                          <td className="p-5 md:p-6 border-b border-white/5 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Internet & utilities setup</td>
-                          <td className="p-5 md:p-6 border-b border-white/5 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Zero internet setup required</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 bg-red-50/50"><span className="text-red-400 mr-2 text-sm">❌</span> Internet & utilities setup</td>
+                          <td className="p-5 md:p-6 border-b border-gray-100 border-l border-gray-200 bg-accent/5 text-navy font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> Zero internet setup required</td>
                       </tr>
                       <tr>
-                          <td className="p-5 md:p-6 bg-red-500/5"><span className="text-red-400 mr-2 text-sm">❌</span> Daily admin management</td>
-                          <td className="p-5 md:p-6 border-l border-white/10 bg-accent/5 text-white font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> One simple monthly cost</td>
+                          <td className="p-5 md:p-6 bg-red-50/50"><span className="text-red-400 mr-2 text-sm">❌</span> Daily admin management</td>
+                          <td className="p-5 md:p-6 border-l border-gray-200 bg-accent/5 text-navy font-medium"><CheckCircle className="w-5 h-5 text-accent inline-block mr-2 shrink-0 -mt-0.5" /> One simple monthly cost</td>
                       </tr>
                   </tbody>
               </table>
@@ -248,30 +248,30 @@ export default function Home() {
       </section>
 
       {/* Build Cost Calculator */}
-      <section className="py-20 max-w-7xl mx-auto px-6 relative z-10">
+      <section className="py-32 max-w-7xl mx-auto px-6 relative z-10 bg-white-warm">
           <ScrollReveal direction="up">
               <OfficeCalculator />
           </ScrollReveal>
       </section>
 
       {/* Trust Markers Stat Block */}
-      <section className="bg-navy-dark border-b border-white/10 py-12 overflow-hidden relative z-20">
+      <section className="bg-white-core border-b border-gray-200 py-24 overflow-hidden relative z-20">
           <div className="max-w-7xl mx-auto px-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                   <ScrollReveal delay={0.1}>
-                      <div className="text-4xl md:text-5xl font-bold text-white mb-2">4</div>
+                      <div className="text-4xl md:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy-lighter">4</div>
                       <div className="text-xs font-bold text-accent uppercase tracking-wider">Premium Locations</div>
                   </ScrollReveal>
                   <ScrollReveal delay={0.2}>
-                      <div className="text-4xl md:text-5xl font-bold text-white mb-2">50K+</div>
+                      <div className="text-4xl md:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy-lighter">50K+</div>
                       <div className="text-xs font-bold text-accent uppercase tracking-wider">Sq. Ft. Managed</div>
                   </ScrollReveal>
                   <ScrollReveal delay={0.3}>
-                      <div className="text-4xl md:text-5xl font-bold text-white mb-2">100%</div>
+                      <div className="text-4xl md:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy-lighter">100%</div>
                       <div className="text-xs font-bold text-accent uppercase tracking-wider">Plug & Play</div>
                   </ScrollReveal>
                   <ScrollReveal delay={0.4}>
-                      <div className="text-4xl md:text-5xl font-bold text-white mb-2">0</div>
+                      <div className="text-4xl md:text-5xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy-lighter">0</div>
                       <div className="text-xs font-bold text-accent uppercase tracking-wider">Setup Costs</div>
                   </ScrollReveal>
               </div>
@@ -279,45 +279,45 @@ export default function Home() {
       </section>
 
       {/* Audience Segmentation */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-b border-white/10">
+      <section className="py-32 max-w-7xl mx-auto px-6 border-b border-gray-200 bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Find a Workspace That <span className="text-accent">Fits You</span></h2>
-              <p className="text-xl text-white/70">Tailored environments built for maximum productivity.</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-navy">Find a Workspace That <span className="text-accent">Fits You</span></h2>
+              <p className="text-xl text-navy/70">Tailored environments built for maximum productivity.</p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="glass rounded-xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
+                  <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
-                      <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Just Me</h3>
-                      <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Freelancers & remote professionals.</p>
-                      <Link href="/pricing" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Find My Desk <ChevronRight className="w-4 h-4" /></Link>
+                      <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Just Me</h3>
+                      <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Freelancers & remote professionals.</p>
+                      <Link href="/pricing" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Find My Desk <ChevronRight className="w-4 h-4" /></Link>
                   </div>
-                  <div className="glass rounded-xl p-8 border border-accent/30 h-full relative overflow-hidden group bg-navy-light/20 hover:border-accent hover:scale-[1.02] transition-all duration-300">
+                  <div className="bg-gray-50 rounded-xl p-8 border border-accent/30 shadow-soft h-full relative overflow-hidden group hover:border-accent hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/20 transition-colors"></div>
-                      <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Growing Team</h3>
-                      <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Startups and SMEs (2-20 people).</p>
-                      <Link href="/pricing" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Explore Team Offices <ChevronRight className="w-4 h-4" /></Link>
+                      <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Growing Team</h3>
+                      <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Startups and SMEs (2-20 people).</p>
+                      <Link href="/pricing" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Explore Team Offices <ChevronRight className="w-4 h-4" /></Link>
                   </div>
-                  <div className="glass rounded-xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
+                  <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
-                      <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Established</h3>
-                      <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Enterprise and corporate (20+ employees).</p>
-                      <Link href="/book-tour" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Get Live Availability <ChevronRight className="w-4 h-4" /></Link>
+                      <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Established</h3>
+                      <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Enterprise and corporate (20+ employees).</p>
+                      <Link href="/book-tour" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Get Live Availability <ChevronRight className="w-4 h-4" /></Link>
                   </div>
-                  <div className="glass rounded-xl p-8 border border-white/10 h-full relative overflow-hidden group hover:border-accent/50 hover:scale-[1.02] transition-all duration-300">
+                  <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
-                      <h3 className="text-2xl font-bold text-white mb-1 relative z-10">Virtual Business Address</h3>
-                      <p className="text-white/60 mb-6 relative z-10 text-sm h-10">Registered office solutions and professional virtual workspaces.</p>
-                      <Link href="/virtual-office" className="text-accent font-bold hover:text-white flex items-center gap-1 text-sm relative z-10">Setup Virtual Office <ChevronRight className="w-4 h-4" /></Link>
+                      <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Virtual Business Address</h3>
+                      <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Registered office solutions and professional virtual workspaces.</p>
+                      <Link href="/virtual-office" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Setup Virtual Office <ChevronRight className="w-4 h-4" /></Link>
                   </div>
           </div>
       </section>
 
       {/* Locations Summary */}
-      <section id="locations" className="py-24 max-w-7xl mx-auto px-6">
+      <section id="locations" className="py-32 max-w-7xl mx-auto px-6 bg-white-warm">
           <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Prime Locations Across <span className="text-accent">South India</span></h2>
-              <p className="text-white/70 max-w-2xl mx-auto">Strategically located hubs offering seamless connectivity and premium business addresses.</p>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy">Prime Locations Across <span className="text-accent">South India</span></h2>
+              <p className="text-navy/70 max-w-2xl mx-auto">Strategically located hubs offering seamless connectivity and premium business addresses.</p>
           </ScrollReveal>
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -331,8 +331,8 @@ export default function Home() {
                       <Image src={item.img} alt={`${item.city} Coworking Space`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent"></div>
                       <div className="absolute bottom-6 left-6">
-                          <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{item.city}</h3>
-                          <p className="text-white/70 text-sm flex items-center gap-1 mt-1"><MapPin className="w-4 h-4" /> View Hub</p>
+                          <h3 className="text-2xl font-bold text-navy group-hover:text-accent transition-colors">{item.city}</h3>
+                          <p className="text-navy/70 text-sm flex items-center gap-1 mt-1"><MapPin className="w-4 h-4" /> View Hub</p>
                       </div>
                   </Link>
               ))}
@@ -341,37 +341,37 @@ export default function Home() {
 
 
       {/* Workspace Gallery & Amenities */}
-      <section className="py-24 max-w-7xl mx-auto px-6 overflow-hidden">
+      <section className="py-32 max-w-7xl mx-auto px-6 overflow-hidden bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Workspace <span className="text-accent">Amenities</span></h2>
-              <p className="text-xl text-white/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10 text-navy">Workspace <span className="text-accent">Amenities</span></h2>
+              <p className="text-xl text-navy/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
           </ScrollReveal>
 
           <InteractiveAmenities />
       </section>
 
       {/* Founder Story Section */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+      <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-warm">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">Built From Kerala. Built For <span className="text-accent">Kerala's Entrepreneurs.</span></h2>
-                  <p className="text-lg text-white/70 mb-6 leading-relaxed">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-navy">Built From Kerala. Built For <span className="text-accent">Kerala's Entrepreneurs.</span></h2>
+                  <p className="text-lg text-navy/70 mb-6 leading-relaxed">
                       Founded in 2018, WeeSpaces was born out of a genuine need. We realized that setting up an office in Kerala meant heavy deposits, rigid leases, and constant operational headaches—distractions that entrepreneurs simply don't need.
                   </p>
-                  <p className="text-lg text-white/70 mb-8 leading-relaxed">
+                  <p className="text-lg text-navy/70 mb-8 leading-relaxed">
                       Our mission is to provide premium, fully-managed workspaces that let you focus entirely on your growth. Whether you are a freelancer or a 100-person enterprise, we have built a community where your business can thrive from day one.
                   </p>
                   <div className="flex items-center gap-4">
                       <Image src="/images/founder_sankesh.jpg" alt="Sankesh Sreenivas" width={64} height={64} className="w-16 h-16 rounded-full object-cover border-2 border-accent" />
                       <div>
-                          <p className="font-bold text-white text-lg">Sankesh Sreenivas</p>
+                          <p className="font-bold text-navy text-lg">Sankesh Sreenivas</p>
                           <p className="text-accent text-sm font-bold uppercase tracking-wider">Founder, WeeSpaces</p>
                       </div>
                   </div>
               </ScrollReveal>
               <ScrollReveal direction="right" className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                  <div className="relative aspect-video rounded-2xl overflow-hidden glass border border-white/10 flex items-center justify-center bg-navy-dark">
+                  <div className="relative aspect-video rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-soft flex items-center justify-center">
                       <Image src="/images/branches/kochi/reception.jpg" alt="WeeSpaces Video" fill className="object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
                   </div>
               </ScrollReveal>
@@ -379,10 +379,10 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10">
+      <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl font-bold mb-4">Trusted by <span className="text-accent">Growing Teams</span></h2>
-              <p className="text-xl text-white/70">Join a vibrant community of startups, freelancers, and established companies.</p>
+              <h2 className="text-4xl font-bold mb-4 text-navy">Trusted by <span className="text-accent">Growing Teams</span></h2>
+              <p className="text-xl text-navy/70">Join a vibrant community of startups, freelancers, and established companies.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -402,7 +402,7 @@ export default function Home() {
                       initial: "V", name: "Vikram S.", role: "Operations Head, Logistics Firm, Trivandrum"
                   }
               ].map((t, i) => (
-                  <MouseGlowCard key={i} className="glass p-8 rounded-xl border border-white/10 relative h-full flex flex-col justify-between group hover:border-accent/30 transition-all">
+                  <MouseGlowCard key={i} className="bg-white p-8 rounded-xl border border-gray-200 shadow-soft relative h-full flex flex-col justify-between group hover:border-accent/30 hover:shadow-hover-lift transition-all">
                       <div>
                           <Quote className="w-12 h-12 text-accent/20 absolute top-4 right-4" />
                           <div className="flex gap-1 text-accent mb-6">
@@ -411,25 +411,25 @@ export default function Home() {
                           
                           <div className="space-y-4 mb-8 relative z-10">
                               <div>
-                                  <span className="text-xs font-bold uppercase tracking-wider text-white/40 block mb-1">The Problem</span>
-                                  <p className="text-white/70 text-sm">"{t.problem}"</p>
+                                  <span className="text-xs font-bold uppercase tracking-wider text-navy/40 block mb-1">The Problem</span>
+                                  <p className="text-navy/70 text-sm">"{t.problem}"</p>
                               </div>
                               <div className="pl-4 border-l-2 border-accent">
                                   <span className="text-xs font-bold uppercase tracking-wider text-accent block mb-1">The Result</span>
-                                  <p className="text-white font-medium italic">"{t.result}"</p>
+                                  <p className="text-navy font-medium italic">"{t.result}"</p>
                               </div>
                           </div>
                       </div>
-                      <div className="flex items-center gap-4 mt-auto border-t border-white/5 pt-6">
+                      <div className="flex items-center gap-4 mt-auto border-t border-gray-100 pt-6">
                           <div className="w-12 h-12 rounded-full bg-accent/10 text-accent flex items-center justify-center font-bold text-xl shrink-0 border border-accent/20">
                               {t.initial}
                           </div>
                           <div>
-                              <h4 className="font-bold flex items-center gap-2 text-white text-sm">
+                              <h4 className="font-bold flex items-center gap-2 text-navy text-sm">
                                 {t.name}
                                 <BadgeCheck className="w-4 h-4 text-[#25D366]" />
                               </h4>
-                              <p className="text-white/50 text-xs">{t.role}</p>
+                              <p className="text-navy/50 text-xs">{t.role}</p>
                           </div>
                       </div>
                   </MouseGlowCard>
@@ -440,65 +440,65 @@ export default function Home() {
       {/* Trust Logos Section - Temporarily Hidden until real client logos are secured */}
 
       {/* Pricing Preview Section */}
-      <section className="py-24 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy-dark">
+      <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-warm">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10">Flexible <span className="text-accent">Pricing</span></h2>
-              <p className="text-xl text-white/70 relative z-10">Find the right workspace plan for your needs.</p>
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10 text-navy">Flexible <span className="text-accent">Pricing</span></h2>
+              <p className="text-xl text-navy/70 relative z-10">Find the right workspace plan for your needs.</p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {/* Hot Desk */}
-                  <MouseGlowCard className="glass rounded-xl p-8 border border-white/10 h-full hover:scale-[1.02] transition-transform duration-300">
+                  <MouseGlowCard className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <Monitor className="w-8 h-8" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Hot Desk</h3>
-                      <p className="text-sm text-white/50 mb-6 h-10">Flexible seating in our open coworking area.</p>
-                      <div className="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
-                          <span className="text-lg text-white/70 font-bold">Flexible plans for freelancers</span>
+                      <h3 className="text-2xl font-bold text-navy mb-2">Hot Desk</h3>
+                      <p className="text-sm text-navy/50 mb-6 h-10">Flexible seating in our open coworking area.</p>
+                      <div className="flex items-baseline gap-2 mb-6 border-b border-gray-200 pb-6">
+                          <span className="text-lg text-navy/70 font-bold">Flexible plans for freelancers</span>
                       </div>
                       <ul className="space-y-4 mb-8">
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Flexible any-desk access</li>
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> High-speed WiFi</li>
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Unlimited Tea/Coffee</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Flexible any-desk access</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> High-speed WiFi</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Unlimited Tea/Coffee</li>
                       </ul>
                       <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Talk to a Workspace Expert</Link>
                   </MouseGlowCard>
 
               {/* Dedicated Desk */}
-                  <MouseGlowCard className="glass rounded-xl p-8 border border-accent/50 shadow-[0_0_30px_rgba(242,156,31,0.15)] transform md:-translate-y-4 bg-navy-light/40 h-full hover:scale-[1.02] transition-transform duration-300">
+                  <MouseGlowCard className="bg-gray-50 rounded-xl p-8 border border-accent/50 shadow-soft transform md:-translate-y-4 h-full hover:shadow-hover-lift hover:scale-[1.02] transition-transform duration-300">
                       <div className="absolute top-0 right-0 bg-accent text-navy text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">Most Popular</div>
                       <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center text-navy mb-6 shadow-lg shadow-accent/30">
                           <LayoutDashboard className="w-8 h-8" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Dedicated Desk</h3>
-                      <p className="text-sm text-white/50 mb-6 h-10">Your own reserved desk in a shared space.</p>
-                      <div className="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
-                          <span className="text-lg text-white/70 font-bold">Flexible plans for growing teams</span>
+                      <h3 className="text-2xl font-bold text-navy mb-2">Dedicated Desk</h3>
+                      <p className="text-sm text-navy/50 mb-6 h-10">Your own reserved desk in a shared space.</p>
+                      <div className="flex items-baseline gap-2 mb-6 border-b border-gray-200 pb-6">
+                          <span className="text-lg text-navy/70 font-bold">Flexible plans for growing teams</span>
                       </div>
                       <ul className="space-y-4 mb-8">
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Reserved dedicated desk</li>
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Lockable storage cabinet</li>
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> 24/7 Access</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Reserved dedicated desk</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Lockable storage cabinet</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> 24/7 Access</li>
                       </ul>
                       <Link href="/pricing" className="block text-center w-full py-3 rounded-xl bg-accent text-navy font-bold hover:bg-accent-hover transition-colors shadow-lg shadow-accent/20 relative z-20">Get Live Availability</Link>
                   </MouseGlowCard>
 
               {/* Private Office */}
-                  <MouseGlowCard className="glass rounded-xl p-8 border border-white/10 h-full hover:scale-[1.02] transition-transform duration-300">
+                  <MouseGlowCard className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <Users className="w-8 h-8" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Private Office</h3>
-                      <p className="text-sm text-white/50 mb-6 h-10">Custom workspace solutions for teams of 2–100+ members.</p>
-                      <div className="flex items-baseline gap-2 mb-6 border-b border-white/10 pb-6">
-                          <span className="text-2xl font-bold text-white">Built Around Your Team</span>
+                      <h3 className="text-2xl font-bold text-navy mb-2">Private Office</h3>
+                      <p className="text-sm text-navy/50 mb-6 h-10">Custom workspace solutions for teams of 2–100+ members.</p>
+                      <div className="flex items-baseline gap-2 mb-6 border-b border-gray-200 pb-6">
+                          <span className="text-2xl font-bold text-navy">Built Around Your Team</span>
                       </div>
                       <ul className="space-y-4 mb-8">
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Fully furnished office</li>
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Custom branding options</li>
-                          <li className="flex items-center gap-3 text-sm text-white/80"><CheckCircle className="w-5 h-5 text-accent" /> Free meeting room credits</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Fully furnished office</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Custom branding options</li>
+                          <li className="flex items-center gap-3 text-sm text-navy/80"><CheckCircle className="w-5 h-5 text-accent" /> Free meeting room credits</li>
                       </ul>
                       <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Talk to a Workspace Expert</Link>
                   </MouseGlowCard>
@@ -512,7 +512,7 @@ export default function Home() {
                   Premium Coworking Spaces in Kochi, Trivandrum & Coimbatore
               </h2>
               <div className="prose prose-invert prose-lg max-w-4xl mx-auto text-center">
-                  <p className="text-white/80 leading-relaxed">
+                  <p className="text-navy/80 leading-relaxed">
                       WeeSpaces is widely recognized as the best provider of managed offices and flexible workspaces across South India. 
                       Whether you are looking for a <Link href="/coworking-space/kochi" className="text-accent hover:underline font-bold">Coworking Space in Kochi</Link>, 
                       a <Link href="/coworking-space/trivandrum" className="text-accent hover:underline font-bold">Coworking Space in Trivandrum</Link>, 
