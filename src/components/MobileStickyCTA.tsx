@@ -28,7 +28,7 @@ export default function MobileStickyCTA() {
         <a
           href="tel:+919207189111"
           onClick={() => track.cta('contact_phone', 'tel:+919207189111', { button_location: 'mobile_sticky' })}
-          className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl transition-all active:scale-95"
+          className="flex-1 flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold py-3 px-3 rounded-xl transition-all active:scale-95 min-h-[44px]"
           aria-label="Call WeeSpaces"
         >
           <Phone className="w-4 h-4 text-accent" />
@@ -37,7 +37,7 @@ export default function MobileStickyCTA() {
 
         {/* WhatsApp — Primary / Largest */}
         <WhatsAppButton
-          className="flex-[2] flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white font-bold py-3 px-4 rounded-xl transition-all shadow-[0_0_16px_rgba(37,211,102,0.4)] active:scale-95"
+          className="flex-[2] flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white font-bold py-3 px-4 rounded-xl transition-all shadow-[0_0_16px_rgba(37,211,102,0.4)] active:scale-95 min-h-[44px]"
           contextOverride={{ service: 'Mobile Sticky Nav' }}
         >
           <MessageCircle className="w-5 h-5" />
@@ -48,7 +48,7 @@ export default function MobileStickyCTA() {
         <a
           href="/book-tour"
           onClick={() => track.cta('Get Live Availability', '/book-tour', { cta_position: 'mobile_sticky' })}
-          className="flex-1 flex items-center justify-center gap-1 bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-2 rounded-xl transition-all shadow-[0_0_16px_rgba(242,156,31,0.4)] active:scale-95"
+          className="flex-1 flex items-center justify-center gap-1 bg-accent hover:bg-accent-hover text-navy font-bold py-3 px-2 rounded-xl transition-all shadow-[0_0_16px_rgba(242,156,31,0.4)] active:scale-95 min-h-[44px]"
           aria-label="Get Live Availability"
         >
           <CalendarCheck className="w-4 h-4 shrink-0" />

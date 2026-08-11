@@ -169,14 +169,14 @@ export function ConversationalForm() {
 
               <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <input type="text" placeholder="Full Name" aria-label="Full Name" className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-navy focus:bg-white focus:ring-1 focus:ring-navy transition-all text-navy placeholder:text-navy/30" />
+                  <input type="text" placeholder="Full Name" aria-label="Full Name" className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-accent focus:bg-white focus:ring-2 focus:ring-accent/50 transition-all text-navy placeholder:text-navy/30" />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  <input type="email" placeholder="Work Email" aria-label="Work Email" className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-navy focus:bg-white focus:ring-1 focus:ring-navy transition-all text-navy placeholder:text-navy/30" />
-                  <input type="tel" placeholder="Phone Number" aria-label="Phone Number" className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-navy focus:bg-white focus:ring-1 focus:ring-navy transition-all text-navy placeholder:text-navy/30" />
+                  <input type="email" placeholder="Work Email" aria-label="Work Email" className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-accent focus:bg-white focus:ring-2 focus:ring-accent/50 transition-all text-navy placeholder:text-navy/30" />
+                  <input type="tel" placeholder="Phone Number" aria-label="Phone Number" className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-accent focus:bg-white focus:ring-2 focus:ring-accent/50 transition-all text-navy placeholder:text-navy/30" />
                 </div>
                 <div>
-                  <textarea placeholder="Tell us about your requirement..." aria-label="Tell us about your requirement" rows={3} className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-navy focus:bg-white focus:ring-1 focus:ring-navy transition-all text-navy placeholder:text-navy/30 resize-none"></textarea>
+                  <textarea placeholder="Tell us about your requirement..." aria-label="Tell us about your requirement" rows={3} className="w-full p-4 bg-gray-50/50 border border-gray-200 rounded-xl text-[15px] font-medium focus:outline-none focus:border-accent focus:bg-white focus:ring-2 focus:ring-accent/50 transition-all text-navy placeholder:text-navy/30 resize-none"></textarea>
                 </div>
                 <Button variant="primary" className="w-full justify-center py-4 mt-2 text-[16px]">
                   Request Callback

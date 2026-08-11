@@ -198,8 +198,8 @@ export default function Home() {
       {/* Problem Agitation Section */}
       <section className="py-32 max-w-7xl mx-auto px-6 border-b border-gray-200 bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-navy">Setting Up An Office <span className="text-accent">Shouldn't Take Months</span></h2>
-              <p className="text-xl text-navy/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
+              <h2 className="text-h2 mb-4 text-navy">Setting Up An Office <span className="text-accent">Shouldn't Take Months</span></h2>
+              <p className="text-body text-navy/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
           </ScrollReveal>
 
           <div className="max-w-4xl mx-auto relative overflow-x-auto">
@@ -281,30 +281,30 @@ export default function Home() {
       {/* Audience Segmentation */}
       <section className="py-32 max-w-7xl mx-auto px-6 border-b border-gray-200 bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-navy">Find a Workspace That <span className="text-accent">Fits You</span></h2>
-              <p className="text-xl text-navy/70">Tailored environments built for maximum productivity.</p>
+              <h2 className="text-h2 mb-4 text-navy">Find a Workspace That <span className="text-accent">Fits You</span></h2>
+              <p className="text-body text-navy/70">Tailored environments built for maximum productivity.</p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
+                  <div className="glass-light p-8 h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Just Me</h3>
                       <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Freelancers & remote professionals.</p>
                       <Link href="/pricing" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Find My Desk <ChevronRight className="w-4 h-4" /></Link>
                   </div>
-                  <div className="bg-gray-50 rounded-xl p-8 border border-accent/30 shadow-soft h-full relative overflow-hidden group hover:border-accent hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
+                  <div className="glass-light border-accent/30 p-8 h-full relative overflow-hidden group hover:border-accent hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/20 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Growing Team</h3>
                       <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Startups and SMEs (2-20 people).</p>
                       <Link href="/pricing" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Explore Team Offices <ChevronRight className="w-4 h-4" /></Link>
                   </div>
-                  <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
+                  <div className="glass-light p-8 h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Established</h3>
                       <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Enterprise and corporate (20+ employees).</p>
                       <Link href="/book-tour" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Get Live Availability <ChevronRight className="w-4 h-4" /></Link>
                   </div>
-                  <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
+                  <div className="glass-light p-8 h-full relative overflow-hidden group hover:border-accent/50 hover:shadow-hover-lift hover:scale-[1.02] transition-all duration-300">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-[50px] -mr-10 -mt-10 group-hover:bg-accent/10 transition-colors"></div>
                       <h3 className="text-2xl font-bold text-navy mb-1 relative z-10">Virtual Business Address</h3>
                       <p className="text-navy/60 mb-6 relative z-10 text-sm h-10">Registered office solutions and professional virtual workspaces.</p>
@@ -316,7 +316,7 @@ export default function Home() {
       {/* Locations Summary */}
       <section id="locations" className="py-32 max-w-7xl mx-auto px-6 bg-white-warm">
           <ScrollReveal direction="up" className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy">Prime Locations Across <span className="text-accent">South India</span></h2>
+              <h2 className="text-h2 mb-4 text-navy">Prime Locations Across <span className="text-accent">South India</span></h2>
               <p className="text-navy/70 max-w-2xl mx-auto">Strategically located hubs offering seamless connectivity and premium business addresses.</p>
           </ScrollReveal>
           
@@ -343,8 +343,8 @@ export default function Home() {
       {/* Workspace Gallery & Amenities */}
       <section className="py-32 max-w-7xl mx-auto px-6 overflow-hidden bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10 text-navy">Workspace <span className="text-accent">Amenities</span></h2>
-              <p className="text-xl text-navy/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
+              <h2 className="text-h2 mb-4 relative z-10 text-navy">Workspace <span className="text-accent">Amenities</span></h2>
+              <p className="text-body text-navy/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
           </ScrollReveal>
 
           <InteractiveAmenities />
@@ -354,11 +354,11 @@ export default function Home() {
       <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-warm">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-navy">Built From Kerala. Built For <span className="text-accent">Kerala's Entrepreneurs.</span></h2>
-                  <p className="text-lg text-navy/70 mb-6 leading-relaxed">
+                  <h2 className="text-h2 mb-6 text-navy">Built From Kerala. Built For <span className="text-accent">Kerala's Entrepreneurs.</span></h2>
+                  <p className="text-body text-navy/70 mb-6">
                       Founded in 2018, WeeSpaces was born out of a genuine need. We realized that setting up an office in Kerala meant heavy deposits, rigid leases, and constant operational headaches—distractions that entrepreneurs simply don't need.
                   </p>
-                  <p className="text-lg text-navy/70 mb-8 leading-relaxed">
+                  <p className="text-body text-navy/70 mb-8">
                       Our mission is to provide premium, fully-managed workspaces that let you focus entirely on your growth. Whether you are a freelancer or a 100-person enterprise, we have built a community where your business can thrive from day one.
                   </p>
                   <div className="flex items-center gap-4">
@@ -381,8 +381,8 @@ export default function Home() {
       {/* Testimonials */}
       <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-core">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
-              <h2 className="text-4xl font-bold mb-4 text-navy">Trusted by <span className="text-accent">Growing Teams</span></h2>
-              <p className="text-xl text-navy/70">Join a vibrant community of startups, freelancers, and established companies.</p>
+              <h2 className="text-h2 mb-4 text-navy">Trusted by <span className="text-accent">Growing Teams</span></h2>
+              <p className="text-body text-navy/70">Join a vibrant community of startups, freelancers, and established companies.</p>
           </ScrollReveal>
           <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -402,7 +402,7 @@ export default function Home() {
                       initial: "V", name: "Vikram S.", role: "Operations Head, Logistics Firm, Trivandrum"
                   }
               ].map((t, i) => (
-                  <MouseGlowCard key={i} className="bg-white p-8 rounded-xl border border-gray-200 shadow-soft relative h-full flex flex-col justify-between group hover:border-accent/30 hover:shadow-hover-lift transition-all">
+                  <MouseGlowCard key={i} className="glass-light p-8 relative h-full flex flex-col justify-between group hover:border-accent/30 hover:shadow-hover-lift transition-all">
                       <div>
                           <Quote className="w-12 h-12 text-accent/20 absolute top-4 right-4" />
                           <div className="flex gap-1 text-accent mb-6">
@@ -443,13 +443,13 @@ export default function Home() {
       <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-warm">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4 relative z-10 text-navy">Flexible <span className="text-accent">Pricing</span></h2>
-              <p className="text-xl text-navy/70 relative z-10">Find the right workspace plan for your needs.</p>
+              <h2 className="text-h2 mb-4 relative z-10 text-navy">Flexible <span className="text-accent">Pricing</span></h2>
+              <p className="text-body text-navy/70 relative z-10">Find the right workspace plan for your needs.</p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
               {/* Hot Desk */}
-                  <MouseGlowCard className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full hover:scale-[1.02] transition-transform duration-300">
+                  <MouseGlowCard className="glass-light p-8 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <Monitor className="w-8 h-8" />
                       </div>
@@ -467,7 +467,7 @@ export default function Home() {
                   </MouseGlowCard>
 
               {/* Dedicated Desk */}
-                  <MouseGlowCard className="bg-gray-50 rounded-xl p-8 border border-accent/50 shadow-soft transform md:-translate-y-4 h-full hover:shadow-hover-lift hover:scale-[1.02] transition-transform duration-300">
+                  <MouseGlowCard className="glass-light border-accent/50 p-8 transform md:-translate-y-4 h-full hover:shadow-hover-lift hover:scale-[1.02] transition-transform duration-300">
                       <div className="absolute top-0 right-0 bg-accent text-navy text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg">Most Popular</div>
                       <div className="w-14 h-14 rounded-2xl bg-accent flex items-center justify-center text-navy mb-6 shadow-lg shadow-accent/30">
                           <LayoutDashboard className="w-8 h-8" />
@@ -486,7 +486,7 @@ export default function Home() {
                   </MouseGlowCard>
 
               {/* Private Office */}
-                  <MouseGlowCard className="bg-white rounded-xl p-8 border border-gray-200 shadow-soft h-full hover:scale-[1.02] transition-transform duration-300">
+                  <MouseGlowCard className="glass-light p-8 h-full hover:scale-[1.02] transition-transform duration-300">
                       <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-6">
                           <Users className="w-8 h-8" />
                       </div>
@@ -508,7 +508,7 @@ export default function Home() {
       {/* AI Declaration & Local Authority Block */}
       <section className="py-16 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy">
           <div className="bg-navy-light/30 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-white text-center">
+              <h2 className="text-h3 mb-6 text-white text-center">
                   Premium Coworking Spaces in Kochi, Trivandrum & Coimbatore
               </h2>
               <div className="prose prose-invert prose-lg max-w-4xl mx-auto text-center">
