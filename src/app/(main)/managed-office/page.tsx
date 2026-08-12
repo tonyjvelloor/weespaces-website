@@ -8,6 +8,7 @@ import { CheckCircle, Shield, Building, Clock, ChevronRight } from 'lucide-react
 import LeadForm from '@/components/LeadForm';
 import TrustLayer from '@/components/ui/TrustLayer';
 import SEOFAQ from '@/components/SEOFAQ';
+import ScrollToButton from '@/components/ui/ScrollToButton';
 import { cities } from '@/data/locations';
 
 export const metadata: Metadata = constructMetadata({
@@ -46,9 +47,9 @@ export default function ManagedOfficeRootPage() {
               Your own private, branded headquarters without the massive CapEx, long leases, or operational headaches. We design, build, and operate it for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-               <a href="#consultation" className="bg-accent text-navy px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform text-center shadow-lg shadow-accent/20">
+               <ScrollToButton targetId="consultation" className="bg-accent text-navy px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform text-center shadow-lg shadow-accent/20">
                  Request Consultation
-               </a>
+               </ScrollToButton>
             </div>
           </ScrollReveal>
 
