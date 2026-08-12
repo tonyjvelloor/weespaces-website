@@ -143,13 +143,13 @@ export default function Home() {
                       </p>
                   </div>
                   
-                  <h1 className="text-display flex flex-col">
-                      <span className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">Flexible Coworking Spaces,</span>
-                      <span className="text-accent text-4xl md:text-5xl lg:text-6xl font-bold">Managed Offices & Virtual Offices</span>
-                      <span className="text-navy/80 text-3xl md:text-4xl lg:text-5xl mt-2">in Kerala & Tamil Nadu</span>
+                  <h1 className="flex flex-col gap-2">
+                      <span className="text-h1 text-white">Flexible Coworking Spaces,</span>
+                      <span className="text-h1 text-accent">Managed Offices & Virtual Offices</span>
+                      <span className="text-h2 text-white/80 mt-2">in Kerala & Tamil Nadu</span>
                   </h1>
                   
-                  <p className="text-xl text-navy/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                  <p className="text-body text-white/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 font-light">
                       Move into fully furnished workspaces in <strong className="text-white">Kochi, Calicut, Trivandrum & Coimbatore</strong> without deposits, setup costs, or long-term commitments.
                   </p>
                   
@@ -196,7 +196,8 @@ export default function Home() {
       </section>
 
       {/* Problem Agitation Section */}
-      <section className="py-32 max-w-7xl mx-auto px-6 border-b border-gray-200 bg-white-core">
+      <section className="py-32 border-b border-gray-200 bg-white-core">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-h2 mb-4 text-navy">Setting Up An Office <span className="text-accent">Shouldn't Take Months</span></h2>
               <p className="text-body text-navy/70 max-w-2xl mx-auto">Skip the heavy deposits, interior investments, and administrative headaches.</p>
@@ -245,13 +246,16 @@ export default function Home() {
                 Calculate Your Savings <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
+              </div>
       </section>
 
       {/* Build Cost Calculator */}
-      <section className="py-32 max-w-7xl mx-auto px-6 relative z-10 bg-white-warm">
+      <section className="py-32 relative z-10 bg-white-warm">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up">
               <OfficeCalculator />
           </ScrollReveal>
+              </div>
       </section>
 
       {/* Trust Markers Stat Block */}
@@ -279,7 +283,8 @@ export default function Home() {
       </section>
 
       {/* Audience Segmentation */}
-      <section className="py-32 max-w-7xl mx-auto px-6 border-b border-gray-200 bg-white-core">
+      <section className="py-32 border-b border-gray-200 bg-white-core">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-h2 mb-4 text-navy">Find a Workspace That <span className="text-accent">Fits You</span></h2>
               <p className="text-body text-navy/70">Tailored environments built for maximum productivity.</p>
@@ -311,10 +316,12 @@ export default function Home() {
                       <Link href="/virtual-office" className="text-accent font-bold hover:text-navy flex items-center gap-1 text-sm relative z-10">Setup Virtual Office <ChevronRight className="w-4 h-4" /></Link>
                   </div>
           </div>
+              </div>
       </section>
 
       {/* Locations Summary */}
-      <section id="locations" className="py-32 max-w-7xl mx-auto px-6 bg-white-warm">
+      <section id="locations" className="py-32 bg-white-warm">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16">
               <h2 className="text-h2 mb-4 text-navy">Prime Locations Across <span className="text-accent">South India</span></h2>
               <p className="text-navy/70 max-w-2xl mx-auto">Strategically located hubs offering seamless connectivity and premium business addresses.</p>
@@ -331,27 +338,31 @@ export default function Home() {
                       <Image src={item.img} alt={`${item.city} Coworking Space`} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent"></div>
                       <div className="absolute bottom-6 left-6">
-                          <h3 className="text-2xl font-bold text-navy group-hover:text-accent transition-colors">{item.city}</h3>
-                          <p className="text-navy/70 text-sm flex items-center gap-1 mt-1"><MapPin className="w-4 h-4" /> View Hub</p>
+                          <h3 className="text-2xl font-bold text-white group-hover:text-accent transition-colors">{item.city}</h3>
+                          <p className="text-white/70 text-sm flex items-center gap-1 mt-1"><MapPin className="w-4 h-4" /> View Hub</p>
                       </div>
                   </Link>
               ))}
           </div>
+              </div>
       </section>
 
 
       {/* Workspace Gallery & Amenities */}
-      <section className="py-32 max-w-7xl mx-auto px-6 overflow-hidden bg-white-core">
+      <section className="py-32 overflow-hidden bg-white-core">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <h2 className="text-h2 mb-4 relative z-10 text-navy">Workspace <span className="text-accent">Amenities</span></h2>
               <p className="text-body text-navy/70 relative z-10">Take a peek inside our functional and ready-to-use offices.</p>
           </ScrollReveal>
 
           <InteractiveAmenities />
+              </div>
       </section>
 
       {/* Founder Story Section */}
-      <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-warm">
+      <section className="py-32 border-t border-gray-200 bg-white-warm">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
               <ScrollReveal direction="left">
                   <h2 className="text-h2 mb-6 text-navy">Built From Kerala. Built For <span className="text-accent">Kerala's Entrepreneurs.</span></h2>
@@ -376,10 +387,12 @@ export default function Home() {
                   </div>
               </ScrollReveal>
           </div>
+              </div>
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-core">
+      <section className="py-32 border-t border-gray-200 bg-white-core">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <h2 className="text-h2 mb-4 text-navy">Trusted by <span className="text-accent">Growing Teams</span></h2>
               <p className="text-body text-navy/70">Join a vibrant community of startups, freelancers, and established companies.</p>
@@ -435,12 +448,14 @@ export default function Home() {
                   </MouseGlowCard>
               ))}
           </div>
+              </div>
       </section>
 
       {/* Trust Logos Section - Temporarily Hidden until real client logos are secured */}
 
       {/* Pricing Preview Section */}
-      <section className="py-32 max-w-7xl mx-auto px-6 border-t border-gray-200 bg-white-warm">
+      <section className="py-32 border-t border-gray-200 bg-white-warm">
+        <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center mb-16 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-accent/5 rounded-full blur-[80px] pointer-events-none"></div>
               <h2 className="text-h2 mb-4 relative z-10 text-navy">Flexible <span className="text-accent">Pricing</span></h2>
@@ -503,10 +518,12 @@ export default function Home() {
                       <Link href="/pricing" className="block text-center w-full py-3 rounded-xl border border-accent text-accent font-bold hover:bg-accent hover:text-navy transition-colors relative z-20">Talk to a Workspace Expert</Link>
                   </MouseGlowCard>
           </div>
+              </div>
       </section>
 
       {/* AI Declaration & Local Authority Block */}
-      <section className="py-16 max-w-7xl mx-auto px-6 border-t border-white/10 bg-navy">
+      <section className="py-16 border-t border-white/10 bg-navy">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="bg-navy-light/30 border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
               <h2 className="text-h3 mb-6 text-white text-center">
                   Premium Coworking Spaces in Kochi, Trivandrum & Coimbatore
@@ -522,14 +539,17 @@ export default function Home() {
                   </p>
               </div>
           </div>
+              </div>
       </section>
 
       {/* SEO FAQ Section */}
-      <SEOFAQ 
-        title="Everything You Need To Know About WeeSpaces"
-        subtitle="Frequently asked questions about our coworking spaces and services."
-        faqs={homepageFAQs} 
-      />
+      <div className="bg-navy">
+        <SEOFAQ 
+          title="Everything You Need To Know About WeeSpaces"
+          subtitle="Frequently asked questions about our coworking spaces and services."
+          faqs={homepageFAQs} 
+        />
+      </div>
 
       {/* Sticky Mobile CTA */}
       <div className="fixed bottom-0 left-0 w-full z-50 md:hidden flex shadow-[0_-10px_20px_rgba(0,0,0,0.5)]">
