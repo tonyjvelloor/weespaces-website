@@ -8,7 +8,7 @@ import {
   MapPin, Award, Wifi, Users, ChevronRight, CheckCircle,
   Monitor, LayoutDashboard, Handshake, Mail, Rocket, Map,
   Quote, Star, BadgeCheck, TrendingUp, Calendar, FileText,
-  Phone, CalendarCheck, HelpCircle
+  Phone, CalendarCheck, HelpCircle, Play
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import HeroCarousel from '@/components/HeroCarousel';
@@ -143,10 +143,10 @@ export default function Home() {
                       </p>
                   </div>
                   
-                  <h1 className="flex flex-col gap-2">
-                      <span className="text-h1 text-white">Flexible Coworking Spaces,</span>
-                      <span className="text-h1 text-accent">Managed Offices & Virtual Offices</span>
-                      <span className="text-h2 text-white/80 mt-2">in Kerala & Tamil Nadu</span>
+                  <h1 className="leading-tight text-center lg:text-left">
+                      <span className="block text-h1 text-white mb-2">Flexible Coworking Spaces,</span>
+                      <span className="block text-h1 text-accent mb-2">Managed Offices & Virtual Offices</span>
+                      <span className="block text-h2 text-white/80 mt-2">in Kerala & Tamil Nadu</span>
                   </h1>
                   
                   <p className="text-body text-white/80 mt-6 mb-10 max-w-2xl mx-auto lg:mx-0 font-light">
@@ -174,16 +174,16 @@ export default function Home() {
                   </div>
 
                   <div className="flex flex-wrap justify-center lg:justify-start gap-3 mt-8">
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/90 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Established 2018
                       </span>
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/90 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Multiple Kerala & TN Locations
                       </span>
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/90 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Fully Managed Offices
                       </span>
-                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-navy/80 flex items-center gap-2">
+                      <span className="glass rounded-xl px-4 py-2 text-xs font-bold tracking-wider uppercase text-white/90 flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-accent" /> Startups • Freelancers • Growing Teams
                       </span>
                   </div>
@@ -382,8 +382,13 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal direction="right" className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                  <div className="relative aspect-video rounded-2xl overflow-hidden bg-white border border-gray-200 shadow-soft flex items-center justify-center">
-                      <Image src="/images/branches/kochi/reception.jpg" alt="WeeSpaces Video" fill className="object-cover opacity-60 mix-blend-overlay group-hover:scale-105 transition-transform duration-700" />
+                  <div className="relative aspect-video rounded-2xl overflow-hidden bg-white shadow-soft flex items-center justify-center cursor-pointer group/video">
+                      <Image src="/images/branches/kochi/reception.jpg" alt="WeeSpaces Video" fill className="object-cover group-hover/video:scale-105 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-navy/30 flex items-center justify-center group-hover/video:bg-navy/40 transition-colors">
+                         <div className="w-16 h-16 rounded-full bg-accent text-navy flex items-center justify-center pl-1 shadow-xl transform group-hover/video:scale-110 transition-transform">
+                            <Play className="w-8 h-8 fill-navy" />
+                         </div>
+                      </div>
                   </div>
               </ScrollReveal>
           </div>
@@ -529,7 +534,7 @@ export default function Home() {
                   Premium Coworking Spaces in Kochi, Trivandrum & Coimbatore
               </h2>
               <div className="prose prose-invert prose-lg max-w-4xl mx-auto text-center">
-                  <p className="text-navy/80 leading-relaxed">
+                  <p className="text-white/90 leading-relaxed">
                       WeeSpaces is widely recognized as the best provider of managed offices and flexible workspaces across South India. 
                       Whether you are looking for a <Link href="/coworking-space/kochi" className="text-accent hover:underline font-bold">Coworking Space in Kochi</Link>, 
                       a <Link href="/coworking-space/trivandrum" className="text-accent hover:underline font-bold">Coworking Space in Trivandrum</Link>, 

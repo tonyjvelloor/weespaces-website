@@ -17,7 +17,7 @@ export default function Footer() {
   // Show a minimal footer on landing pages
   if (pathname?.startsWith('/landing')) {
     return (
-      <footer className="bg-navy-dark border-t border-white/10 pt-12 pb-8">
+      <footer className="bg-navy-dark text-white border-t border-white/10 pt-12 pb-8">
         <div className="container mx-auto px-6 text-center">
           {locationId === 'coimbatore' && (
             <div className="mb-8 p-6 bg-navy-light/30 border border-white/10 rounded-2xl max-w-2xl mx-auto text-center flex flex-col items-center gap-4 shadow-lg">
@@ -52,7 +52,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-navy-dark border-t border-white/10 pt-20 pb-10">
+    <footer className="bg-navy-dark text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6 max-w-7xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           <div className="sm:col-span-2 lg:col-span-1">
