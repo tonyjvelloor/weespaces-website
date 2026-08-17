@@ -44,7 +44,7 @@ export default function VirtualOfficeFaqPage() {
         <ScrollReveal>
           <h2 className="text-3xl font-bold text-navy mb-6">Still have questions?</h2>
           <p className="text-gray-500 mb-8">Our local experts can walk you through the entire registration process.</p>
-          <LeadForm source="VO FAQ Page" hidePricing />
+          <LeadForm source="VO FAQ Page" hidePricing defaultRequirement="Virtual Office" />
         </ScrollReveal>
       </section>
     </div>

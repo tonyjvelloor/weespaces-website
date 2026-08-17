@@ -331,7 +331,7 @@ export default function VirtualOfficeHub() {
                 <li className="flex items-center gap-3"><span className="w-1.5 h-1.5 rounded-full bg-accent"></span> Workspace access (if included in plan)</li>
               </ul>
             </div>
-            <LeadForm />
+            <LeadForm defaultRequirement="Virtual Office" />
           </ScrollReveal>
         </div>
       </section>

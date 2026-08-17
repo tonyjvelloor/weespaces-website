@@ -71,6 +71,7 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
                     pageType={content.routing.type}
                     pageSlug={content.routing.slug}
                     branch={city}
+                    defaultRequirement="Virtual Office"
                   />
                 </div>
               </ScrollReveal>

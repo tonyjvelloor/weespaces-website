@@ -5,12 +5,12 @@ import { useRouter } from 'next/navigation';
 import { track } from '@/lib/tracking';
 import MagneticButton from '@/components/ui/MagneticButton';
 
-export default function LeadForm({ branch = "", source: defaultSource, hidePricing, pageType = 'unknown', pageSlug = 'unknown' }: { branch?: string, source?: string, hidePricing?: boolean, pageType?: string, pageSlug?: string }) {
+export default function LeadForm({ branch = "", source: defaultSource, hidePricing, pageType = 'unknown', pageSlug = 'unknown', defaultRequirement = '' }: { branch?: string, source?: string, hidePricing?: boolean, pageType?: string, pageSlug?: string, defaultRequirement?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<{ message: string; type: 'success' | 'error' | null }>({ message: '', type: null });
   const router = useRouter();
 
-  const [step, setStep] = useState(1);
+  const [stepIndex, setStepIndex] = useState(0);
   const hasStartedRef = useRef(false);
 
   useEffect(() => {
@@ -18,14 +18,29 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
   }, [pageType, pageSlug, branch]);
 
   const [formDataState, setFormDataState] = useState({
-    requirement: '',
+    requirement: defaultRequirement,
     teamSize: '',
     location: branch || '',
+    voPlan: '',
     budget: '',
     timeline: '',
     name: '',
     phone: ''
   });
+
+  const allSteps = [
+    { id: 'requirement', title: 'What do you need?', condition: () => true },
+    { id: 'teamSize', title: 'How big is your team?', condition: (data: any) => !['Virtual Office', 'Meeting Room'].includes(data.requirement) },
+    { id: 'location', title: 'Which city?', condition: () => true },
+    { id: 'voPlan', title: 'What do you need it for?', condition: (data: any) => data.requirement === 'Virtual Office' },
+    { id: 'budget', title: 'Budget Expectation (Per Seat)', condition: (data: any) => !['Virtual Office', 'Meeting Room'].includes(data.requirement) },
+    { id: 'timeline', title: 'When do you need it?', condition: (data: any) => !['Virtual Office'].includes(data.requirement) },
+    { id: 'contact', title: 'Your contact details', condition: () => true }
+  ];
+
+  const activeSteps = allSteps.filter(s => s.condition(formDataState));
+  const currentStep = activeSteps[stepIndex] || activeSteps[0];
+  const totalSteps = activeSteps.length;
 
   const handleNextStep = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -35,32 +50,36 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
       track.form('start', { pageType, pageSlug, city: formDataState.location });
     }
 
-    if (step === 1 && !formDataState.requirement) {
+    if (currentStep.id === 'requirement' && !formDataState.requirement) {
       setFormStatus({ message: 'Please select your requirement', type: 'error' });
       return;
     }
-    if (step === 2 && !formDataState.teamSize) {
+    if (currentStep.id === 'teamSize' && !formDataState.teamSize) {
       setFormStatus({ message: 'Please select your team size', type: 'error' });
       return;
     }
-    if (step === 3 && !formDataState.location) {
+    if (currentStep.id === 'location' && !formDataState.location) {
       setFormStatus({ message: 'Please select a location', type: 'error' });
       return;
     }
-    if (step === 4 && !formDataState.budget) {
+    if (currentStep.id === 'voPlan' && !formDataState.voPlan) {
+      setFormStatus({ message: 'Please select your plan', type: 'error' });
+      return;
+    }
+    if (currentStep.id === 'budget' && !formDataState.budget) {
       setFormStatus({ message: 'Please select your budget expectation', type: 'error' });
       return;
     }
-    if (step === 5 && !formDataState.timeline) {
+    if (currentStep.id === 'timeline' && !formDataState.timeline) {
       setFormStatus({ message: 'Please select your timeline', type: 'error' });
       return;
     }
     setFormStatus({ message: '', type: null });
-    setStep(step + 1);
+    setStepIndex(stepIndex + 1);
   };
 
   const handleBackStep = () => {
-    setStep(step - 1);
+    setStepIndex(stepIndex - 1);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -122,13 +141,12 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
     }
   };
 
-  const stepTitles = [
-    "What do you need?",
-    "How big is your team?",
-    "Which city?",
-    "Budget Expectation (Per Seat)",
-    "When do you need it?",
-    "Your contact details"
+
+  const voPlans = [
+    { label: 'Business Address', value: 'Business Address' },
+    { label: 'GST Registration', value: 'GST Registration' },
+    { label: 'Company Incorporation', value: 'Company Incorporation' },
+    { label: 'Mail Handling / Forwarding', value: 'Mail Handling' },
   ];
 
   const requirements = [
@@ -170,18 +188,18 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
       <form onSubmit={handleSubmit} className="flex flex-col flex-grow">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-white/50">Step {step} of 6</span>
-            <span className="text-xs font-bold text-accent">{Math.round((step / 6) * 100)}%</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-white/50">Step {stepIndex + 1} of {totalSteps}</span>
+            <span className="text-xs font-bold text-accent">{Math.round(((stepIndex + 1) / totalSteps) * 100)}%</span>
           </div>
           <div className="w-full bg-white/10 rounded-full h-1.5">
-            <div className="bg-accent h-1.5 rounded-full transition-all duration-300" style={{ width: `${(step / 6) * 100}%` }}></div>
+            <div className="bg-accent h-1.5 rounded-full transition-all duration-300" style={{ width: `${((stepIndex + 1) / totalSteps) * 100}%` }}></div>
           </div>
         </div>
 
-        <h4 className="text-lg font-semibold mb-4 text-white">{stepTitles[step - 1]}</h4>
+        <h4 className="text-lg font-semibold mb-4 text-white">{currentStep.title}</h4>
 
         <div className="flex-grow space-y-3">
-          {step === 1 && (
+          {currentStep.id === 'requirement' && (
             <div className="grid grid-cols-2 gap-3">
               {requirements.map(({ label, icon }) => (
                 <button
@@ -197,7 +215,7 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
             </div>
           )}
 
-          {step === 2 && (
+          {currentStep.id === 'teamSize' && (
             <div className="grid grid-cols-2 gap-3">
               {teamSizes.map(({ label, value }) => (
                 <button
@@ -212,7 +230,7 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
             </div>
           )}
 
-          {step === 3 && (
+          {currentStep.id === 'location' && (
             <div className="grid grid-cols-2 gap-3">
               {['Kochi', 'Trivandrum', 'Calicut', 'Coimbatore'].map((loc) => (
                 <button
@@ -227,7 +245,22 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
             </div>
           )}
 
-          {step === 4 && (
+                    {currentStep.id === 'voPlan' && (
+            <div className="grid grid-cols-1 gap-3">
+              {voPlans.map(({ label, value }) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setFormDataState({ ...formDataState, voPlan: value })}
+                  className={`p-4 rounded-xl border text-center transition-all ${formDataState.voPlan === value ? 'border-accent bg-accent/10 text-accent font-bold' : 'border-white/10 bg-navy-dark/30 text-white/70 hover:border-white/30 hover:bg-navy-dark/50'}`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {currentStep.id === 'budget' && (
             <div className="grid grid-cols-1 gap-3">
               {budgets.map(({ label, value }) => (
                 <button
@@ -242,7 +275,7 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
             </div>
           )}
 
-          {step === 5 && (
+          {currentStep.id === 'timeline' && (
             <div className="grid grid-cols-2 gap-3">
               {timelines.map(({ label, value }) => (
                 <button
@@ -257,7 +290,7 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
             </div>
           )}
 
-          {step === 6 && (
+          {currentStep.id === 'contact' && (
             <div className="space-y-4">
               <div className="relative">
                 <input
@@ -307,13 +340,13 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
         )}
 
         <div className="mt-8 pt-4 border-t border-white/10 flex gap-3">
-          {step > 1 && (
+          {stepIndex > 0 && (
             <button type="button" onClick={handleBackStep} className="px-4 py-3 rounded-xl border border-white/20 text-white/70 hover:bg-white/5 transition-colors">
               Back
             </button>
           )}
 
-          {step < 6 ? (
+          {stepIndex < totalSteps - 1 ? (
             <MagneticButton
               onClick={handleNextStep}
               className="flex-grow bg-accent text-navy font-bold text-lg py-3 rounded-xl hover:bg-accent-hover shadow-lg shadow-accent/30"

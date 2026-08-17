@@ -552,7 +552,8 @@ export default function Home() {
         <SEOFAQ 
           title="Everything You Need To Know About WeeSpaces"
           subtitle="Frequently asked questions about our coworking spaces and services."
-          faqs={homepageFAQs} 
+          faqs={homepageFAQs}
+          textColor="text-white"
         />
       </div>
 

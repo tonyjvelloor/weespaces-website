@@ -97,7 +97,7 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
                     <li className="flex items-center gap-2"><span className="w-1 h-1 rounded-full bg-accent"></span> Mail handling</li>
                   </ul>
                 </div>
-                <LeadForm branch={city.name} source={`Virtual Office ${city.name} Hero`} hidePricing />
+                <LeadForm branch={city.name} source={`Virtual Office ${city.name} Hero`} hidePricing defaultRequirement="Virtual Office" />
               </div>
             </div>
           </ScrollReveal>

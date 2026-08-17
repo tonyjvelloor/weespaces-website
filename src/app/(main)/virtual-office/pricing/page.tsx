@@ -92,7 +92,7 @@ export default function VirtualOfficePricingPage() {
       <section className="py-20 max-w-3xl mx-auto px-6 text-center">
         <ScrollReveal>
           <h2 className="text-3xl font-bold text-navy mb-6">Need a custom enterprise plan?</h2>
-          <LeadForm source="Virtual Office Pricing Page" hidePricing />
+          <LeadForm source="Virtual Office Pricing Page" hidePricing defaultRequirement="Virtual Office" />
         </ScrollReveal>
       </section>
     </div>
