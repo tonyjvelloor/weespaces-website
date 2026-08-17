@@ -9,8 +9,13 @@ import VoPricingCards from '@/components/ui/VoPricingCards';
 import VoDocumentChecklist from '@/components/ui/VoDocumentChecklist';
 import SEOFAQ from '@/components/SEOFAQ';
 import ComplianceBlock from '@/components/ComplianceBlock';
+import LocalBusinessSchema from '@/components/LocalBusinessSchema';
+import StrategicProximity from '@/components/ui/StrategicProximity';
+import LocalTrustSignals from '@/components/ui/LocalTrustSignals';
+import MobileStickyCTA from '@/components/MobileStickyCTA';
 import { track } from '@/lib/tracking';
 import { useScrollTracking } from '@/hooks/useScrollTracking';
+import { cities } from '@/data/locations';
 
 interface VirtualOfficeLandingTemplateProps {
   content: VirtualOfficeContent;
@@ -19,6 +24,7 @@ interface VirtualOfficeLandingTemplateProps {
 
 export default function VirtualOfficeLandingTemplate({ content, city }: VirtualOfficeLandingTemplateProps) {
   const pageContext = { pageType: content.routing.type, pageSlug: content.routing.slug, city };
+  const cityData = city ? cities[city as keyof typeof cities] : undefined;
 
   useEffect(() => {
     track.page(pageContext);
@@ -29,6 +35,8 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
 
   return (
     <div className="bg-white pt-24">
+      {cityData && <LocalBusinessSchema cityData={cityData} />}
+      
       {/* 1. HERO & LEAD FORM SECTION */}
       <section className="bg-navy text-white py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px] pointer-events-none"></div>
@@ -167,10 +175,49 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
         </ScrollReveal>
       </section>
 
+      {/* 5.5 LOCAL TRUST SIGNALS */}
+      {cityData && <LocalTrustSignals cityData={cityData} />}
+
       {/* 6. COMPLIANCE BLOCK */}
       <section className="py-20 bg-gray-50 border-y border-gray-100 max-w-7xl mx-auto px-6">
         <ComplianceBlock />
       </section>
+
+      {/* 6.25 STRATEGIC PROXIMITY */}
+      {cityData && cityData.proximityGroups && (
+        <StrategicProximity
+          hubTitle={cityData.hubTitle!}
+          hubDescription={cityData.hubDescription!}
+          proximityGroups={cityData.proximityGroups}
+          whoChoosesThis={cityData.whoChoosesThis}
+          geoSummary={cityData.geoSummary}
+          proximityFaqs={cityData.proximityFaqs}
+          mapIframe={cityData.contactInfo?.mapIframe}
+          cityName={cityData.name}
+          serviceSlug={content.routing.type}
+          citySlug={cityData.slug}
+        />
+      )}
+
+      {/* 6.5 GST INTENT BRIDGE */}
+      {city && (
+        <section className="py-12 bg-white max-w-5xl mx-auto px-6 text-center">
+          <ScrollReveal>
+            <div className="bg-navy rounded-3xl p-8 md:p-12 shadow-xl border border-accent/20">
+              <h2 className="text-3xl font-bold text-white mb-4">Need Virtual Office for GST Registration?</h2>
+              <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
+                If your primary requirement is obtaining a commercial address for GST compliance, we have a specialized fast-track process for <span className="capitalize">{city}</span>.
+              </p>
+              <Link 
+                href={`/virtual-office/${city}/gst-registration`}
+                className="inline-flex items-center gap-2 bg-accent text-navy px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
+              >
+                View GST Registration Package
+              </Link>
+            </div>
+          </ScrollReveal>
+        </section>
+      )}
 
       {/* 7. PRICING */}
       <section id="pricing" className="py-20 max-w-7xl mx-auto px-6">
@@ -183,12 +230,38 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
         </ScrollReveal>
       </section>
 
+      {/* 7.5 COMPARISON ENGINE HOOK */}
+      <section className="py-16 bg-gray-50 border-t border-gray-100 text-center">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-2xl font-bold text-navy mb-4">Evaluating Other Providers?</h2>
+            <p className="text-gray-600 mb-8">
+              See exactly how WeeSpaces compares to other virtual office providers in India on compliance, pricing, and mail handling.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/virtual-office/alternatives/regus" className="px-6 py-3 bg-white border border-gray-200 hover:border-accent hover:text-accent font-bold text-navy rounded-xl transition-all shadow-sm">
+                Vs Regus
+              </Link>
+              <Link href="/virtual-office/alternatives/wework" className="px-6 py-3 bg-white border border-gray-200 hover:border-accent hover:text-accent font-bold text-navy rounded-xl transition-all shadow-sm">
+                Vs WeWork
+              </Link>
+              <Link href="/virtual-office/alternatives/awfis" className="px-6 py-3 bg-white border border-gray-200 hover:border-accent hover:text-accent font-bold text-navy rounded-xl transition-all shadow-sm">
+                Vs Awfis
+              </Link>
+              <Link href="/virtual-office/alternatives/mybranch" className="px-6 py-3 bg-white border border-gray-200 hover:border-accent hover:text-accent font-bold text-navy rounded-xl transition-all shadow-sm">
+                Vs MyBranch
+              </Link>
+            </div>
+          </div>
+        </ScrollReveal>
+      </section>
+
       {/* 8. FAQs */}
       {content.schema.faqs && content.schema.faqs.length > 0 && (
         <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
           <div className="max-w-3xl mx-auto px-6">
             <ScrollReveal>
-              <h2 className="text-3xl font-bold text-center text-navy mb-12">Frequently Asked Questions</h2>
+              <h2 className="text-3xl font-bold center text-navy mb-12">Frequently Asked Questions</h2>
               <SEOFAQ faqs={content.schema.faqs} textColor="text-navy" />
             </ScrollReveal>
           </div>
@@ -212,6 +285,8 @@ export default function VirtualOfficeLandingTemplate({ content, city }: VirtualO
           </div>
         </section>
       )}
+
+      <MobileStickyCTA />
     </div>
   );
 }

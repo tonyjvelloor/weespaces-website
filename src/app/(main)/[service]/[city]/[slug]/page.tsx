@@ -10,6 +10,7 @@ import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 import { services, cities } from '@/data/locations';
 import { virtualOfficeContent } from '@/data/virtualOfficeContent';
 import VirtualOfficeLandingTemplate from '@/components/templates/VirtualOfficeLandingTemplate';
+import GSTRegistrationTemplate from '@/components/templates/GSTRegistrationTemplate';
 import { ArrowRight, Building, CheckCircle2, ChevronRight, Clock, MapPin, Users } from 'lucide-react';
 import { SemanticClusterLinks } from '@/components/SemanticClusterLinks';
 import Link from 'next/link';
@@ -92,6 +93,9 @@ export default async function CitySlugPage({ params }: { params: Promise<{ servi
   // Route 1: Commercial Intent (e.g., /virtual-office/kochi/gst-registration)
   if (service.slug === 'virtual-office' && virtualOfficeContent[resolvedParams.slug]) {
     const content = virtualOfficeContent[resolvedParams.slug];
+    if (resolvedParams.slug === 'gst-registration') {
+      return <GSTRegistrationTemplate city={city} />;
+    }
     return <VirtualOfficeLandingTemplate content={content} city={city.slug} />;
   }
 

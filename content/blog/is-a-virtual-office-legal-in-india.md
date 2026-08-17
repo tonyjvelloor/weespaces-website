@@ -34,10 +34,12 @@ The GST framework requires every taxpayer to declare a "Principal Place of Busin
 
 The Central Board of Indirect Taxes and Customs (CBIC) recognizes shared workspaces, coworking spaces, and virtual offices as valid places of business. In fact, many state tax authorities have issued internal circulars specifically acknowledging the coworking model.
 
-**What you need:** To legally use a [virtual office for GST compliance](/blog/documents-required-for-gst-registration-virtual-office), you must provide:
+**What you need:** To legally use a [virtual office for GST compliance](/virtual-office/kochi/gst-registration), you must provide:
 1. An NOC from the property owner.
 2. A formal Rental Agreement.
 3. A recent Utility Bill (electricity or property tax) matching the address.
+
+> **Applying for GST?** See exactly what documentation we provide in our specialized [GST Virtual Office packages for Kochi](/virtual-office/kochi/gst-registration) and [Coimbatore](/virtual-office/coimbatore/gst-registration).
 
 ## The Physical Verification Rule
 
@@ -45,7 +47,7 @@ This is where many businesses get confused. Recently, both the MCA and GST depar
 
 If a tax inspector visits your registered address, what happens?
 
-This is why you **must** use a legitimate virtual office provider (like WeeSpaces) that operates a real, physical commercial workspace. If an inspector visits one of our locations in [Kochi](/virtual-office/kochi) or [Coimbatore](/virtual-office/coimbatore), they will find:
+This is why you **must** use a legitimate virtual office provider (like WeeSpaces) that operates a real, physical commercial workspace. If an inspector visits one of our locations for [GST registration in Kochi](/virtual-office/kochi/gst-registration) or [Coimbatore](/virtual-office/coimbatore/gst-registration), they will find:
 * A professional reception desk.
 * A digital registry confirming your company is an active, paying member holding a legal lease agreement.
 * Secure storage where your company's mail is kept.
@@ -62,4 +64,4 @@ The legality hinges entirely on the authenticity of the documentation and the ph
 
 Get a commercial business address, rental agreement, and supporting documentation from WeeSpaces. We provide enterprise-grade virtual offices that are fully compliant with MCA and GST regulations across Kerala and Tamil Nadu.
 
-**[Explore Virtual Office Plans](/virtual-office) | [Calculate Costs](/calculator)**
+**[Virtual Office for GST in Kochi](/virtual-office/kochi/gst-registration) | [Virtual Office for GST in Coimbatore](/virtual-office/coimbatore/gst-registration)**

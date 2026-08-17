@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
     const redirectsList = [
       // --- Service redirects ---
       { source: '/services/virtual-office', destination: '/virtual-office', permanent: true },
+      // --- Comparison consolidate redirects ---
+      { source: '/virtual-office/vs-physical-office', destination: '/compare/virtual-office-vs-physical-office', permanent: true },
     ];
 
     // Build programmatic redirects for legacy flat URLs

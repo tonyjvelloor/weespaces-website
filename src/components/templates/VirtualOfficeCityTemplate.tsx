@@ -10,30 +10,33 @@ import VoDocumentChecklist from '@/components/ui/VoDocumentChecklist';
 import VoHowItWorks from '@/components/ui/VoHowItWorks';
 import LocalContactBlock from '@/components/ui/LocalContactBlock';
 import TrustLayer from '@/components/ui/TrustLayer';
+import VoComplianceLayer from '@/components/ui/VoComplianceLayer';
+import VoInternalLinks from '@/components/ui/VoInternalLinks';
 import { virtualOfficeFaqs } from '@/data/pricing';
 
 export default function VirtualOfficeCityTemplate({ city, service }: { city: CityData, service: ServiceType }) {
   
   // Custom hero content based on city
-  let heroTitle = `Premium Virtual Office & GST Address in ${city.name}`;
-  let heroSub = `Get a legally compliant business address in ${city.name} with complete documentation, mail handling, and on-demand workspace.`;
+  let heroTitle = `Virtual Office in ${city.name}`;
+  let heroSub = `Get a premium virtual office and legally compliant business address in ${city.name} with complete documentation, mail handling, and on-demand workspace. Starting from ₹10,000/year.`;
   let perks = ["Address for GST compliance", "Premium Business Address", "Mail Handling"];
+  let quickAnswer = `A Virtual Office in ${city.name} by WeeSpaces provides a premium commercial address for GST registration, company incorporation, and professional mail handling, starting at ₹10,000 per year. It includes a legal rental agreement and NOC for instant government compliance without the overhead of physical space.`;
 
   if (city.slug === 'kochi') {
-    heroTitle = `Kerala GST Support & Virtual Office Near Infopark, Kochi`;
-    heroSub = `The perfect launchpad for IT startups and growing companies. Get a premium Kochi address for GST and company incorporation.`;
+    heroTitle = `Virtual Office in Kochi (Infopark)`;
+    heroSub = `The perfect launchpad for IT startups. Get a premium Kochi address for GST and company incorporation. Starting from ₹10,000/year.`;
     perks = ["Near Infopark", "Kerala GST Support", "Startup Ecosystem"];
   } else if (city.slug === 'trivandrum') {
-    heroTitle = `Premium Business Address Near Technopark, Trivandrum`;
-    heroSub = `Establish your presence among government contractors and IT giants in Kerala's capital.`;
+    heroTitle = `Virtual Office in Trivandrum (Technopark)`;
+    heroSub = `Establish your presence among government contractors and IT giants in Kerala's capital. Starting from ₹10,000/year.`;
     perks = ["Near Technopark", "IT Companies & Govt Contractors", "Mail Forwarding"];
   } else if (city.slug === 'coimbatore') {
-    heroTitle = `Tamil Nadu GST Registration & Virtual Office in Coimbatore`;
-    heroSub = `Fast-track your business expansion into Tamil Nadu's manufacturing and SME hub with a compliant registered office.`;
+    heroTitle = `Virtual Office in Coimbatore`;
+    heroSub = `Fast-track your business expansion into Tamil Nadu's manufacturing and SME hub with a compliant registered office. Starting from ₹10,000/year.`;
     perks = ["Tamil Nadu GST", "Manufacturing & SMEs", "Meeting Room Access"];
   } else if (city.slug === 'calicut') {
-    heroTitle = `Flexible Virtual Office Plans in Calicut`;
-    heroSub = `Expand your regional footprint in Kozhikode with a professional business address for GST and mail handling.`;
+    heroTitle = `Virtual Office in Calicut`;
+    heroSub = `Expand your regional footprint in Kozhikode with a professional business address for GST and mail handling. Starting from ₹10,000/year.`;
     perks = ["Kozhikode Businesses", "Startups & SMEs", "Regional Expansion"];
   }
 
@@ -79,6 +82,16 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
                   <span className="text-sm font-bold">{perk}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-xl p-5 max-w-2xl backdrop-blur-sm relative">
+              <div className="absolute -top-3 -left-3 bg-accent text-navy p-2 rounded-lg shadow-lg">
+                <span className="material-symbols-outlined text-xl leading-none">robot_2</span>
+              </div>
+              <h2 className="text-accent font-bold text-sm uppercase tracking-wider mb-2 ml-4">Quick Answer</h2>
+              <p className="text-white/90 text-sm leading-relaxed ml-4">
+                {quickAnswer}
+              </p>
             </div>
           </ScrollReveal>
           
@@ -142,6 +155,8 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
           {city.contactInfo && (
             <LocalContactBlock contactInfo={city.contactInfo} cityName={city.name} />
           )}
+
+          <VoComplianceLayer />
 
           <VoDocumentChecklist />
         </div>
@@ -215,6 +230,9 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
           <SEOFAQ faqs={virtualOfficeFaqs} />
         </div>
       </section>
+
+      {/* 8. INTERNAL LINKING ENGINE */}
+      <VoInternalLinks city={city} service={service} />
       
     </div>
   );
