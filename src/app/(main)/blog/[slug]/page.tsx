@@ -8,6 +8,7 @@ import Image from 'next/image';
 import HowToSchema from '@/components/HowToSchema';
 import OfficeCalculator from '@/components/OfficeCalculator';
 import AnswerBlock from '@/components/AnswerBlock';
+import VoInternalLinks from '@/components/ui/VoInternalLinks';
 import { ArrowRight, Building2, MapPin } from 'lucide-react';
 import { SemanticClusterLinks } from '@/components/SemanticClusterLinks';
 
@@ -16,6 +17,7 @@ const components = {
   Image,
   HowToSchema,
   AnswerBlock,
+  VoInternalLinks,
 };
 
 export function generateStaticParams() {

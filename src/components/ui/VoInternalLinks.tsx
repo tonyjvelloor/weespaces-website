@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { CityData, ServiceType, cities } from '@/data/locations';
 import { ArrowRight, MapPin, Building, BookOpen, Layers } from 'lucide-react';
 
-export default function VoInternalLinks({ city, service }: { city: CityData, service: ServiceType }) {
-  const otherCities = Object.values(cities).filter(c => c.slug !== city.slug);
+export default function VoInternalLinks({ city, service }: { city?: CityData, service?: ServiceType }) {
+  const currentCity = city || cities['kochi'];
+  const otherCities = Object.values(cities).filter(c => c.slug !== currentCity.slug);
 
   return (
     <section className="py-16 bg-navy text-white border-t border-white/10">
@@ -38,18 +39,18 @@ export default function VoInternalLinks({ city, service }: { city: CityData, ser
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link href={`/coworking-space/${city.slug}`} className="text-white/70 hover:text-white hover:pl-2 transition-all flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3 text-white/30" /> Coworking in {city.name}
+                <Link href={`/coworking-space/${currentCity.slug}`} className="text-white/70 hover:text-white hover:pl-2 transition-all flex items-center gap-2">
+                  <ArrowRight className="w-3 h-3 text-white/30" /> Coworking in {currentCity.name}
                 </Link>
               </li>
               <li>
-                <Link href={`/managed-office/${city.slug}`} className="text-white/70 hover:text-white hover:pl-2 transition-all flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3 text-white/30" /> Managed Office in {city.name}
+                <Link href={`/managed-office/${currentCity.slug}`} className="text-white/70 hover:text-white hover:pl-2 transition-all flex items-center gap-2">
+                  <ArrowRight className="w-3 h-3 text-white/30" /> Managed Office in {currentCity.name}
                 </Link>
               </li>
               <li>
-                <Link href={`/private-office/${city.slug}`} className="text-white/70 hover:text-white hover:pl-2 transition-all flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3 text-white/30" /> Private Office in {city.name}
+                <Link href={`/private-office/${currentCity.slug}`} className="text-white/70 hover:text-white hover:pl-2 transition-all flex items-center gap-2">
+                  <ArrowRight className="w-3 h-3 text-white/30" /> Private Office in {currentCity.name}
                 </Link>
               </li>
             </ul>
@@ -84,7 +85,7 @@ export default function VoInternalLinks({ city, service }: { city: CityData, ser
             <div className="glass p-6 rounded-2xl border border-white/10">
               <h3 className="text-sm font-bold text-accent uppercase tracking-wider mb-3">Knowledge Hub</h3>
               <h4 className="text-lg font-bold text-white mb-2">Company Registration Guide</h4>
-              <p className="text-white/60 text-sm mb-4">Learn exactly what documents are needed for GST and MCA registration in {city.name}.</p>
+              <p className="text-white/60 text-sm mb-4">Learn exactly what documents are needed for GST and MCA registration in {currentCity.name}.</p>
               <Link href="/blog" className="text-sm font-bold text-accent hover:underline flex items-center gap-1">
                 Read Guides <ArrowRight className="w-3 h-3" />
               </Link>

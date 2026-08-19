@@ -16,6 +16,10 @@ It is a valid concern. The GST department regularly conducts physical verificati
 
 Fortunately, using a Virtual Office is **100% legal and compliant**, provided your workspace operator knows how to handle the compliance protocols. Here is exactly how WeeSpaces ensures you pass physical verification with flying colors.
 
+
+<VoInternalLinks />
+
+
 ## The Physical Verification Process
 
 When you apply for a new GST number, or sometimes randomly post-registration, the jurisdictional GST officer may initiate a physical verification. 

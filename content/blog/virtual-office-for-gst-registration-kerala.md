@@ -14,6 +14,10 @@ This 2026 guide explains everything you need to know about using a [Virtual Offi
 
 ---
 
+
+<VoInternalLinks />
+
+
 ## TL;DR
 
 You **can** use a Virtual Office address for GST registration in Kerala, provided the workspace operator issues a valid **Rental Agreement** and a **No Objection Certificate (NOC)**. WeeSpaces provides these documents alongside a premium commercial address, ensuring your business has the required proof of address to file for GST independently.

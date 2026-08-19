@@ -16,6 +16,10 @@ This creates a Catch-22: How do you sign a commercial lease for an office when y
 
 The answer lies in the [Virtual Office](/virtual-office).
 
+
+<VoInternalLinks />
+
+
 ## Bypassing the Real Estate Catch-22
 
 Historically, foreign founders had to rely on local directors to use their personal residential addresses, or they had to fly to India, engage real estate brokers, and sign expensive personal guarantees for 5-year lock-in commercial leases just to get a legal address.

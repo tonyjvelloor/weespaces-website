@@ -18,6 +18,10 @@ In this guide, we break down exactly how the law views virtual offices and what 
 
 ---
 
+
+<VoInternalLinks />
+
+
 ## 1. MCA and Company Incorporation
 
 Under Section 12 of the Companies Act, 2013, every company must have a "Registered Office" within 30 days of its incorporation. The Act requires you to have a physical address capable of receiving and acknowledging official communications and notices. 

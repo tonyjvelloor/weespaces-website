@@ -18,6 +18,10 @@ The short answer is no. This guide explains how you can use a [Virtual Office](/
 
 ---
 
+
+<VoInternalLinks />
+
+
 ## What is a Registered Office Address?
 
 According to Section 12 of the Companies Act, 2013, a company must have a registered office within 30 days of its incorporation and at all times thereafter. 

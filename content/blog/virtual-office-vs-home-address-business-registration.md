@@ -14,6 +14,10 @@ While registering your business at your home address is legally permissible in I
 
 Here is why upgrading to a [Virtual Office for Company Registration](/virtual-office/company-registration) is the smartest first investment you can make for your new business.
 
+
+<VoInternalLinks />
+
+
 ## 1. The Privacy Nightmare
 
 This is the most critical reason founders abandon their home addresses. 

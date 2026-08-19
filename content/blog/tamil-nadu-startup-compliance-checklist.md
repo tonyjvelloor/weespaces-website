@@ -12,6 +12,10 @@ Setting up a business in Tamil Nadu—whether in the bustling tech hubs of Chenn
 
 Missing a compliance step can lead to hefty penalties or delays in opening your corporate bank account. Here is the definitive 2026 compliance checklist for Tamil Nadu startups.
 
+
+<VoInternalLinks />
+
+
 ## 1. Company Incorporation (ROC)
 
 Before you can do business, you need a legal entity. 

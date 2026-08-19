@@ -16,6 +16,10 @@ This quick guide breaks down the mechanics, pros, and cons of both coworking mod
 
 ---
 
+
+<VoInternalLinks />
+
+
 ## What is a Hot Desk?
 
 A Hot Desk (sometimes called a Flexi-Desk) is the ultimate flexible workspace solution. 

@@ -14,6 +14,10 @@ If you are deciding between a [Virtual Office](/virtual-office) and a traditiona
 
 ---
 
+
+<VoInternalLinks />
+
+
 ## 1. The Cost Comparison
 
 The most obvious difference between a virtual and physical office is the capital required.
