@@ -38,7 +38,7 @@ export default function LocationCard({ id, name, address, heroImage, galleryImag
   const seoUrl = `/coworking-space/${id === 'ernakulam' ? 'kochi' : id}`;
 
   return (
-    <div className="glass rounded-3xl overflow-hidden border border-white/10 hover:border-accent/30 transition-all flex flex-col relative group h-full">
+    <div className="bg-navy rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl border border-white/10 hover:border-accent/30 transition-all flex flex-col relative group h-full">
       
       {/* "Available Today" Badge */}
       <div className="absolute top-4 left-4 z-10 bg-green-500/90 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 backdrop-blur-md">
