@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import TourBookingWidget from '@/components/TourBookingWidget';
+
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
 import { CheckCircle } from 'lucide-react';
@@ -285,16 +285,7 @@ export default function PricingPage() {
            </WhatsAppButton>
         </ScrollReveal>
 
-        {/* Calendly Booking Widget Section */}
-        <ScrollReveal direction="up" className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-4">Not sure which plan fits?</h2>
-            <p className="text-white/70">Book a free tour at our {branches.find(b => b.id === activeBranch)?.name} location and experience the space yourself.</p>
-          </div>
-          <MouseGlowCard className="glass rounded-3xl overflow-hidden border border-white/10">
-            <TourBookingWidget branch={activeBranch} />
-          </MouseGlowCard>
-        </ScrollReveal>
+
 
       </div>
     </div>

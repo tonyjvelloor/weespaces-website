@@ -21,7 +21,7 @@ export default function LocalBusinessSchema({ cityData, areaServed }: LocalBusin
       "@type": "PostalAddress",
       "streetAddress": cityData.contactInfo.address,
       "addressLocality": cityData.name,
-      "addressRegion": "Kerala", // Can map this dynamically later if expanding outside Kerala/TN
+      "addressRegion": cityData.name === "Coimbatore" ? "Tamil Nadu" : "Kerala",
       "addressCountry": "IN"
     },
     "geo": {

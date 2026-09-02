@@ -32,10 +32,10 @@ export function getAllPosts(): Omit<BlogPost, 'content'>[] {
     return [];
   }
 
-  const fileNames = fs.readdirSync(postsDirectory).filter((f) => f.endsWith('.md'));
+  const fileNames = fs.readdirSync(postsDirectory).filter((f) => f.endsWith('.md') || f.endsWith('.mdx'));
 
   const posts = fileNames.map((fileName) => {
-    const slug = fileName.replace(/\.md$/, '');
+    const slug = fileName.replace(/\.(md|mdx)$/, '');
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data } = matter(fileContents);
@@ -57,11 +57,14 @@ export function getAllPosts(): Omit<BlogPost, 'content'>[] {
 }
 
 /**
- * Read a specific .md file by slug, parse frontmatter,
+ * Read a specific .md or .mdx file by slug, parse frontmatter,
  * and convert the markdown/HTML body to HTML using remark + remark-html.
  */
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+  let fullPath = path.join(postsDirectory, `${slug}.mdx`);
+  if (!fs.existsSync(fullPath)) {
+    fullPath = path.join(postsDirectory, `${slug}.md`);
+  }
 
   if (!fs.existsSync(fullPath)) {
     return null;
