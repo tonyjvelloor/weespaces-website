@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { track } from '@/lib/tracking';
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 
 interface FAQ {
   question: string;
@@ -16,54 +15,33 @@ interface FAQAccordionProps {
 export default function FAQAccordion({ faqs }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  // Generate FAQPage JSON-LD Schema
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
-      }
-    }))
+  const toggleFaq = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
   };
 
   return (
-    <div className="space-y-4">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-
+    <div className="flex flex-col gap-space-md w-full">
       {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={index} className={`glass rounded-2xl border transition-colors duration-300 ${isOpen ? 'border-accent/40 bg-white/5' : 'border-white/10 hover:border-white/20'}`}>
+          <div key={index} className="bg-surface-card rounded-2xl p-space-lg shadow-sm">
             <button
-              className="w-full flex items-center justify-between p-6 text-left"
-              onClick={() => {
-                const willOpen = !isOpen;
-                setOpenIndex(willOpen ? index : null);
-                if (willOpen) {
-                  track.cta('faq_expand', '', { question: faq.question });
-                }
-              }}
+              className="w-full flex items-center justify-between text-left gap-space-md group"
+              onClick={() => toggleFaq(index)}
+              type="button"
             >
-              <span className={`font-bold pr-8 transition-colors ${isOpen ? 'text-accent' : 'text-white'}`}>
+              <span className={`font-headline-sm text-headline-sm font-bold transition-colors ${isOpen ? 'text-secondary' : 'text-on-surface group-hover:text-secondary'}`}>
                 {faq.question}
               </span>
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-accent/20 text-accent' : 'bg-white/5 text-white/50'}`}>
-                <ChevronDown className="w-4 h-4" />
-              </div>
+              <ChevronDown 
+                className={`w-6 h-6 text-on-surface-variant transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} 
+              />
             </button>
             <div 
-              className="overflow-hidden transition-all duration-300 ease-in-out"
-              style={{ maxHeight: isOpen ? '1000px' : '0', opacity: isOpen ? 1 : 0 }}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mt-space-md pt-space-xs' : 'max-h-0 opacity-0'}`}
             >
-              <div className="p-6 pt-0 text-white/70 leading-relaxed border-t border-white/5 mt-2">
-                {faq.answer}
+              <div className="font-body-md text-body-md text-on-surface-variant">
+                <p dangerouslySetInnerHTML={{ __html: faq.answer }}></p>
               </div>
             </div>
           </div>
