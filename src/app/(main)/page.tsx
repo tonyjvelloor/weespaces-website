@@ -515,7 +515,7 @@ export default function Home() {
 
 <div className="bg-surface-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
 <div className="relative h-48 w-full overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern glass exterior of an IT park in Kakkanad Kochi near Infopark under bright daylight, clean architecture, palm trees, warm Kerala sunlight, professional photography, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVUQAYFEy72X3IGqRnRDII5smUQQsukXvS9fDPMNo58Up4gwkYaK2S7PXS2Ca-zYBRixRmtLvav3z4cu-1a3dYrM14N6TaRKh8aD0-mowleTt2fa8-pLyBIe9GLBEUalxuNoUg6zGEiU4KZanJ6nx719KjQq5iji941N_gRjS86bKtUCTOODEkk5mp4RM44EOeq25qI49tednJspvnfOTW8TVsDAkeTmX-CtUF02-aa28-eUSno2uPKA"/>
+<Image className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Modern glass exterior of an IT park in Kakkanad Kochi near Infopark under bright daylight, clean architecture, palm trees, warm Kerala sunlight, professional photography, crisp focus." src="/images/kochi_coworking.jpg" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 <div className="absolute top-3 left-3 bg-surface-navy/90 text-on-primary backdrop-blur px-space-xs py-1 rounded font-label-caps text-label-caps uppercase tracking-wider">
               Kerala Tech Capital
             </div>
@@ -543,7 +543,7 @@ export default function Home() {
 
 <div className="bg-surface-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
 <div className="relative h-48 w-full overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High-tech corporate campus at Technopark Trivandrum with landscaped greenery, modern glass facade office buildings, sunny blue sky, premium enterprise aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_Rv-gm8isAxrMDICH-6MU8e0vKkIJRyVlIK9C34R_UMmXogfpGRRgclH7oiKEHpKYxd8dAivXsamA0DaDPy_4yeJ-rMbSCy_4m9L5Ljgtehi4QwxLSqX0mmDaRXvs_PEIjasGSN6tS4uSiN9vZmcWbab-ro3BexUZ0F9jSQOcYCY8Hm2ZA1JtGtsB_M_lcRrhBGJ0GbaaCNTuoY833xtALUiFLN8PHPPt6pMIePy0LPOm_RUmSHRwg"/>
+<Image className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="High-tech corporate campus at Technopark Trivandrum with landscaped greenery, modern glass facade office buildings, sunny blue sky, premium enterprise aesthetic." src="/images/trivandrum_coworking.jpg" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 <div className="absolute top-3 left-3 bg-surface-navy/90 text-on-primary backdrop-blur px-space-xs py-1 rounded font-label-caps text-label-caps uppercase tracking-wider">
               Capital IT Corridor
             </div>
@@ -571,7 +571,7 @@ export default function Home() {
 
 <div className="bg-surface-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
 <div className="relative h-48 w-full overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="State-of-the-art coworking interior in Cyberpark Calicut with warm wooden accents, modern minimalist workstations, lush indoor plants, soft interior natural lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKiXz8eB2GRa2-ZWfL4tI3iauQPuebp87g-aZ0tqSSNimDGzwEQQNm0TOp_-FMhBoUGD5CoKIpbHIPbNcKM-rZSeQStiG4XdaSigLHfPL7nUfxMwrRAZq4dFVgpZ-DomI2vJg1WkfNb1O3lWfVKYgWziWLEzfxt_ZHWgSZ2KjulSfwXdXsck33-871PX7yu1NgEiy3nDOojyhRDMOFMMdGKhQb5Uqu1qTy88ofxgc4wQIY0HD8ugg1Rg"/>
+<Image className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="State-of-the-art coworking interior in Cyberpark Calicut with warm wooden accents, modern minimalist workstations, lush indoor plants, soft interior natural lighting." src="/images/calicut_coworking.jpg" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 <div className="absolute top-3 left-3 bg-surface-navy/90 text-on-primary backdrop-blur px-space-xs py-1 rounded font-label-caps text-label-caps uppercase tracking-wider">
               North Kerala Hub
             </div>
@@ -599,7 +599,7 @@ export default function Home() {
 
 <div className="bg-surface-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
 <div className="relative h-48 w-full overflow-hidden">
-<img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Contemporary commercial building at Avinashi Road Coimbatore near Tidel Park, sleek architectural facade with glass and steel, midday sunlight, business district ambiance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArhNvJwLdvJuR6sfMMKIQ_Ezp1PSoFiVsAzYjj72q3ror1y-6x8OhSJl4fGR1vdR3WE1pgZvxCCdYw3ct5bBpyQ0_onIXbGO-eL3num1b-tXaE0VFaaTNTKfkg2yXvg8VRzB0l2TmZx3eUJXUd0koE0ECeqouu9wAs8XcMXW8rmbl3x553YsFXtf21eycQIce1fzgIorERMADVT93edvXSkxveGDT88gnh0gJd3KdS0p3In4b5j9Tv1A"/>
+<Image className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Contemporary commercial building at Avinashi Road Coimbatore near Tidel Park, sleek architectural facade with glass and steel, midday sunlight, business district ambiance." src="/images/branches/coimbatore/amenity1.jpg" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 <div className="absolute top-3 left-3 bg-secondary text-on-secondary px-space-xs py-1 rounded font-label-caps text-label-caps uppercase tracking-wider font-bold">
               New Hub • Tamil Nadu
             </div>
