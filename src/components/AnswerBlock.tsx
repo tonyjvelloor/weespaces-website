@@ -7,9 +7,13 @@ interface AnswerBlockProps {
 
 export default function AnswerBlock({ question, children }: AnswerBlockProps) {
   return (
-    <div className="bg-white/5 border-l-4 border-accent p-6 rounded-r-xl my-8 ai-answer-block" data-answer-engine="true">
-      <h3 className="text-xl font-bold mb-2 !mt-0">{question}</h3>
-      <div className="!mb-0 text-white/90">
+    <div className="bg-surface-container-high border-l-4 border-secondary p-space-lg rounded-r-xl my-space-lg ai-answer-block" data-answer-engine="true">
+      <div className="flex items-center gap-2 mb-2">
+        <span className="material-symbols-outlined text-secondary text-sm">bolt</span>
+        <span className="font-label-caps text-label-caps uppercase tracking-wider text-secondary font-bold">Quick Answer</span>
+      </div>
+      <h3 className="font-headline-sm text-headline-sm font-bold text-on-surface mb-space-sm !mt-0">{question}</h3>
+      <div className="font-body-md text-body-md text-on-surface-variant !mb-0">
         {children}
       </div>
     </div>

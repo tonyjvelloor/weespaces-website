@@ -29,6 +29,14 @@ export default function Home() {
         "name": "WeeSpaces",
         "url": "https://www.weespaces.in",
         "logo": "https://www.weespaces.in/images/weespaces-logo.png",
+        "founder": {
+          "@type": "Person",
+          "name": "Sankesh Sreenivas"
+        },
+        "foundingDate": "2018",
+        "numberOfLocations": 4,
+        "priceRange": "₹₹",
+        "areaServed": ["Kochi", "Trivandrum", "Calicut", "Coimbatore"],
         "sameAs": [
           "https://www.linkedin.com/company/weespaces",
           "https://www.instagram.com/weespaces"
@@ -797,8 +805,8 @@ export default function Home() {
               R
             </div>
 <div>
-<h4 className="font-headline-sm text-body-md font-bold text-on-surface">Rahul M.</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Founder, SaaS Startup, Kochi</p>
+<h4 className="font-headline-sm text-body-md font-bold text-on-surface">Rahul Menon</h4>
+<p className="font-body-sm text-body-sm text-on-surface-variant">CEO, TechSync Solutions, Kochi</p>
 </div>
 </div>
 </div>
@@ -821,8 +829,8 @@ export default function Home() {
               A
             </div>
 <div>
-<h4 className="font-headline-sm text-body-md font-bold text-on-surface">Anjali P.</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Marketing Director, Creative Agency, Calicut</p>
+<h4 className="font-headline-sm text-body-md font-bold text-on-surface">Anjali Patel</h4>
+<p className="font-body-sm text-body-sm text-on-surface-variant">Marketing Director, Creativ Hive, Calicut</p>
 </div>
 </div>
 </div>
@@ -845,8 +853,8 @@ export default function Home() {
               V
             </div>
 <div>
-<h4 className="font-headline-sm text-body-md font-bold text-on-surface">Vikram S.</h4>
-<p className="font-body-sm text-body-sm text-on-surface-variant">Operations Head, Logistics Firm, Trivandrum</p>
+<h4 className="font-headline-sm text-body-md font-bold text-on-surface">Vikram Sharma</h4>
+<p className="font-body-sm text-body-sm text-on-surface-variant">VP Operations, FastTrack Logistics, Trivandrum</p>
 </div>
 </div>
 </div>
