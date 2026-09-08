@@ -183,7 +183,7 @@ export default function Home() {
 </div>
 </div>
 
-<div className="mt-space-2xl pt-space-xl bg-surface-card rounded-2xl p-space-lg shadow-sm grid grid-cols-2 md:grid-cols-4 gap-space-lg">
+<div className="mt-space-2xl pt-space-xl bg-surface-card rounded-2xl p-space-lg shadow-sm grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
 <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
 <span className="font-display-hero text-headline-xl text-on-surface font-bold tracking-tight">4</span>
 <span className="font-headline-sm text-headline-sm text-secondary font-semibold">Premium Locations</span>
@@ -381,7 +381,7 @@ export default function Home() {
 </a>
 </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 
 <div className="bg-surface-card rounded-2xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-xl transition-all group">
 <div>
@@ -519,7 +519,7 @@ export default function Home() {
         </p>
 </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 
 <div className="bg-surface-card rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
 <div className="relative h-48 w-full overflow-hidden">
@@ -542,10 +542,10 @@ export default function Home() {
 <span className="px-2 py-0.5 rounded bg-surface-container font-label-md text-[11px] text-on-surface-variant">Metro Corridor</span>
 </div>
 </div>
-<a className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="tel:+919207189111">
+<Link className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="/coworking-space/kochi">
 <span>View Hub Details</span>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-</a>
+</Link>
 </div>
 </div>
 
@@ -570,10 +570,10 @@ export default function Home() {
 <span className="px-2 py-0.5 rounded bg-surface-container font-label-md text-[11px] text-on-surface-variant">Airport Route</span>
 </div>
 </div>
-<a className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="tel:+919207189111">
+<Link className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="/coworking-space/trivandrum">
 <span>View Hub Details</span>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-</a>
+</Link>
 </div>
 </div>
 
@@ -598,10 +598,10 @@ export default function Home() {
 <span className="px-2 py-0.5 rounded bg-surface-container font-label-md text-[11px] text-on-surface-variant">Bypass Access</span>
 </div>
 </div>
-<a className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="tel:+919207189111">
+<Link className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="/coworking-space/calicut">
 <span>View Hub Details</span>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-</a>
+</Link>
 </div>
 </div>
 
@@ -626,10 +626,10 @@ export default function Home() {
 <span className="px-2 py-0.5 rounded bg-surface-container font-label-md text-[11px] text-on-surface-variant">Avinashi Arterial</span>
 </div>
 </div>
-<a className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="tel:+919207189111">
+<Link className="w-full py-space-xs text-center rounded-lg bg-surface-container-high hover:bg-secondary hover:text-on-secondary font-label-lg text-label-lg text-on-surface transition-all flex items-center justify-center gap-1" href="/coworking-space/coimbatore">
 <span>View Hub Details</span>
 <span className="material-symbols-outlined text-[16px]">chevron_right</span>
-</a>
+</Link>
 </div>
 </div>
 </div>
@@ -650,7 +650,7 @@ export default function Home() {
         </p>
 </div>
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 <div className="bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
 <div className="w-12 h-12 rounded-xl bg-surface-container text-secondary flex items-center justify-center mb-space-md">
 <span className="material-symbols-outlined text-[26px]">chair</span>
@@ -785,7 +785,7 @@ export default function Home() {
         </p>
 </div>
 
-<div className="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
 <div className="bg-surface-card rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
 <div className="flex flex-col gap-space-md">
@@ -876,7 +876,7 @@ export default function Home() {
         </p>
 </div>
 
-<div className="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
 
 <div className="bg-surface-card rounded-2xl p-space-xl flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
 <div>
