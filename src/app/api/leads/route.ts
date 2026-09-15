@@ -45,20 +45,25 @@ export async function POST(request: Request) {
     // 2. Extract Event Model Data
     const { lead, content, marketing, session, technical } = payload;
 
-    // 3. Strict Manual Validation
+    // 3. Flexible & Robust Validation
     if (!lead || typeof lead !== 'object') {
       return NextResponse.json({ error: 'Invalid payload structure' }, { status: 400 });
     }
 
-    const name = String(lead.name || '').trim();
-    const phone = String(lead.phone || '').trim();
+    const name = String(lead.name || 'Website Lead').trim();
+    const email = String(lead.email || '').trim();
+    let phone = String(lead.phone || '').trim().replace(/[\s\-\(\)]/g, '');
 
-    if (!name || name.length < 2 || name.length > 100) {
-      return NextResponse.json({ error: 'Invalid name' }, { status: 400 });
+    if (!phone && !email) {
+      return NextResponse.json({ error: 'Either phone number or email is required' }, { status: 400 });
     }
 
-    if (!phone || phone.length < 10 || phone.length > 15 || !/^[0-9+]+$/.test(phone)) {
+    if (phone && (!/^[0-9+]+$/.test(phone) || phone.length < 7 || phone.length > 16)) {
       return NextResponse.json({ error: 'Invalid phone number format' }, { status: 400 });
+    }
+
+    if (!phone) {
+      phone = 'Not provided';
     }
 
     // 2. Dynamic Lead Scoring

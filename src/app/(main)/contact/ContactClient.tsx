@@ -10,8 +10,16 @@ function ContactForm() {
   const planParam = searchParams.get('plan');
   const branchParam = searchParams.get('branch');
 
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [selectedPlan, setSelectedPlan] = useState("Private Cabin");
   const [selectedBranch, setSelectedBranch] = useState("Trivandrum");
+  const [message, setMessage] = useState('');
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     if (planParam) {
@@ -22,27 +30,114 @@ function ContactForm() {
       setSelectedPlan(formattedPlan);
     }
     if (branchParam) {
-      // capitalize first letter
       setSelectedBranch(branchParam.charAt(0).toUpperCase() + branchParam.slice(1));
     }
   }, [planParam, branchParam]);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setErrorMsg('');
+
+    try {
+      const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://weespaces.in/contact';
+      const source = `Contact Page Enquiry - ${selectedPlan} (${selectedBranch})`;
+
+      const res = await fetch('/api/capture-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          requirement: selectedPlan,
+          location: selectedBranch,
+          source,
+          message,
+          pageUrl,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to submit enquiry');
+      }
+
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Something went wrong. Please try again or call us.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div className="bg-green-500/10 border border-green-500/30 p-8 rounded-2xl text-center flex flex-col items-center justify-center min-h-[350px]">
+        <span className="material-symbols-outlined text-green-400 text-6xl mb-4">check_circle</span>
+        <h3 className="text-2xl font-bold text-white mb-2">Enquiry Submitted!</h3>
+        <p className="text-white/70 text-base max-w-md">
+          Thank you, <span className="text-accent font-semibold">{name}</span>. Our workspace team will contact you within 2–4 hours.
+        </p>
+        <button
+          onClick={() => {
+            setIsSubmitted(false);
+            setName('');
+            setPhone('');
+            setEmail('');
+            setMessage('');
+          }}
+          className="mt-6 text-sm text-accent underline hover:text-accent-hover transition-colors"
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <form className="space-y-6" action="#" method="POST" onSubmit={(e) => { e.preventDefault(); alert('Please use the number/email above to contact us directly or use the Get a Quote form on the homepage.'); }}>
+    <form className="space-y-6" onSubmit={handleSubmit}>
+      {errorMsg && (
+        <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-xl text-sm font-medium">
+          {errorMsg}
+        </div>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="block text-sm font-bold text-white/70 mb-2">Name</label>
-          <input type="text" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="John Doe" required />
+          <label className="block text-sm font-bold text-white/70 mb-2">Name *</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"
+            placeholder="John Doe"
+            required
+          />
         </div>
         <div>
-          <label className="block text-sm font-bold text-white/70 mb-2">Phone</label>
-          <input type="tel" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="+91 90000 00000" required />
+          <label className="block text-sm font-bold text-white/70 mb-2">Phone *</label>
+          <input
+            type="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"
+            placeholder="+91 92071 89111"
+            required
+          />
         </div>
       </div>
       
       <div>
-        <label className="block text-sm font-bold text-white/70 mb-2">Email</label>
-        <input type="email" className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="john@company.com" required />
+        <label className="block text-sm font-bold text-white/70 mb-2">Email *</label>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"
+          placeholder="john@company.com"
+          required
+        />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -68,12 +163,30 @@ function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-bold text-white/70 mb-2">Message</label>
-        <textarea rows={4} className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="How can we help you?" required></textarea>
+        <label className="block text-sm font-bold text-white/70 mb-2">Message *</label>
+        <textarea
+          rows={4}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors"
+          placeholder="How can we help you?"
+          required
+        ></textarea>
       </div>
 
-      <button type="submit" className="w-full bg-accent hover:bg-accent-hover text-navy font-bold py-4 rounded-xl transition-colors text-lg glow">
-        Submit Enquiry
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-accent hover:bg-accent-hover text-navy font-bold py-4 rounded-xl transition-colors text-lg glow disabled:opacity-70 flex items-center justify-center gap-2"
+      >
+        {isSubmitting ? (
+          <>
+            <span className="w-5 h-5 border-2 border-navy border-t-transparent rounded-full animate-spin"></span>
+            Submitting...
+          </>
+        ) : (
+          'Submit Enquiry'
+        )}
       </button>
     </form>
   );

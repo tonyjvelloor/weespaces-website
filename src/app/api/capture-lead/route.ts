@@ -41,20 +41,25 @@ export async function POST(request: Request) {
       }
     }
 
-    // 2. Strict Manual Validation
+    // 2. Flexible & Robust Validation
     if (!body || typeof body !== 'object') {
       return NextResponse.json({ error: 'Invalid payload structure' }, { status: 400 });
     }
 
-    const name = String(body.name || '').trim();
-    const phone = String(body.phone || '').trim();
+    const name = String(body.name || 'Website Lead').trim();
+    const email = String(body.email || '').trim();
+    let phone = String(body.phone || '').trim().replace(/[\s\-\(\)]/g, '');
 
-    if (!name || name.length < 2 || name.length > 100) {
-      return NextResponse.json({ error: 'Invalid name' }, { status: 400 });
+    if (!phone && !email) {
+      return NextResponse.json({ error: 'Either phone number or email is required' }, { status: 400 });
     }
 
-    if (!phone || phone.length < 10 || phone.length > 15 || !/^[0-9+]+$/.test(phone)) {
+    if (phone && (!/^[0-9+]+$/.test(phone) || phone.length < 7 || phone.length > 16)) {
       return NextResponse.json({ error: 'Invalid phone number format' }, { status: 400 });
+    }
+
+    if (!phone) {
+      phone = 'Not provided';
     }
 
     const promises = [];

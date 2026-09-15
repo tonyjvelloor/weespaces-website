@@ -10,8 +10,8 @@ import { Phone, CalendarCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   ...constructMetadata({
-    title: "Coworking Spaces, Managed Offices & Virtual Offices in Kerala & Tamil Nadu | WeeSpaces",
-    description: "Discover premium coworking spaces, managed offices, private cabins and virtual offices across Kochi, Trivandrum, Calicut and Coimbatore. Flexible plans, enterprise-ready infrastructure and instant availability.",
+    title: "Coworking & Managed Offices in Kerala & Tamil Nadu | WeeSpaces",
+    description: "Flexible coworking spaces, managed offices & virtual offices in Kochi, Trivandrum, Calicut & Coimbatore. Zero setup costs, instant move-in.",
     canonicalPath: "/"
   }),
   alternates: {

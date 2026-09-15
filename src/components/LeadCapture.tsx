@@ -4,14 +4,41 @@ import React, { useState } from 'react';
 
 export default function LeadCapture() {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setErrorMsg('');
+
+    try {
+      const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://weespaces.in';
+      const res = await fetch('/api/capture-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          name: 'Report Download Lead',
+          requirement: '2026 Kerala Office Cost Report',
+          source: 'Lead Magnet Banner',
+          pageUrl,
+        }),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || 'Failed to capture lead');
+      }
+
       setSubmitted(true);
-      // Here you would integrate with your API or CRM
-      console.log("Lead captured:", email);
+    } catch (err: any) {
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -20,7 +47,7 @@ export default function LeadCapture() {
       <div className="bg-surface-navy-muted text-on-primary p-space-md md:p-space-xl text-center rounded-2xl mx-gutter-mobile lg:mx-auto max-w-[1280px] my-space-2xl border border-secondary/20">
         <h3 className="font-headline-md text-headline-md font-bold mb-2">Check your inbox!</h3>
         <p className="font-body-md text-body-md text-on-primary-fixed-variant">
-          We've sent the 2026 Office Cost Report to your email.
+          We've recorded your email (<span className="text-secondary">{email}</span>) and queued the 2026 Office Cost Report for delivery.
         </p>
       </div>
     );
@@ -41,6 +68,12 @@ export default function LeadCapture() {
           See exactly how much you can save compared to a traditional lease. Access real data on fit-out costs, deposits, and monthly overheads in Kochi, Trivandrum, and Calicut.
         </p>
 
+        {errorMsg && (
+          <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-xl text-sm mb-4">
+            {errorMsg}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-space-sm max-w-md mx-auto">
           <input 
             type="email" 
@@ -52,9 +85,17 @@ export default function LeadCapture() {
           />
           <button 
             type="submit"
-            className="px-space-lg py-space-md bg-secondary text-on-secondary font-bold rounded-xl hover:bg-accent-orange-hover transition-colors whitespace-nowrap"
+            disabled={isSubmitting}
+            className="px-space-lg py-space-md bg-secondary text-on-secondary font-bold rounded-xl hover:bg-accent-orange-hover transition-colors whitespace-nowrap disabled:opacity-70 flex items-center justify-center gap-2"
           >
-            Send Me the Report
+            {isSubmitting ? (
+              <>
+                <span className="w-4 h-4 border-2 border-on-secondary border-t-transparent rounded-full animate-spin"></span>
+                Sending...
+              </>
+            ) : (
+              'Send Me the Report'
+            )}
           </button>
         </form>
       </div>

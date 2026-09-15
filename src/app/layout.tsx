@@ -22,8 +22,8 @@ import FloatingWhatsAppWidget from '@/components/FloatingWhatsAppWidget';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.weespaces.in'),
   ...constructMetadata({
-    title: "Premium Coworking Spaces in Kochi, Trivandrum, Calicut & Coimbatore | WeeSpaces",
-    description: "Premium coworking spaces & managed offices in Trivandrum, Kochi, Calicut & Coimbatore. Book your workspace today.",
+    title: "Coworking & Managed Offices in Kerala & Tamil Nadu | WeeSpaces",
+    description: "Flexible coworking spaces, managed offices & virtual offices in Kochi, Trivandrum, Calicut & Coimbatore. Zero setup costs, instant move-in.",
     canonicalPath: "/",
   }),
   verification: {
@@ -64,7 +64,12 @@ export default function RootLayout({
         {/* Secure Privacy */}
         <Script strategy="afterInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
 
-
+        {/* Crisp Live Chat */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="PLACEHOLDER";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`
+          }}
+        />
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-[4.5rem] md:pb-0 relative">
         <noscript>
