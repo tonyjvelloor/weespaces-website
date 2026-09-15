@@ -181,12 +181,24 @@ export default function Footer() {
           <p className="mb-6 text-white/40 italic leading-relaxed text-center max-w-4xl mx-auto">
             Disclaimer: WeeSpaces is a premium workspace provider. We assist with documentation (NOC and rent agreement) but are not a government entity.
           </p>
-          <div className="flex flex-col md:flex-row items-center justify-between">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p>&copy; {new Date().getFullYear()} WeeSpaces. All rights reserved.</p>
-            <div className="flex items-center gap-6 mt-4 md:mt-0">
+            <p className="text-white/60 text-xs flex items-center gap-1.5">
+              <span>Growth Engineered &amp; Designed by</span>
+              <a 
+                href="https://www.thebrandmaniacs.online/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-accent font-semibold hover:underline transition-all inline-flex items-center gap-0.5 group"
+              >
+                <span>The Brand Maniacs</span>
+                <span className="material-symbols-outlined text-[14px] opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all">north_east</span>
+              </a>
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-6">
               <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
               <Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link>
+              <Link href="/terms" className="hover:text-accent transition-colors">Terms &amp; Conditions</Link>
               <Link href="/legal/virtual-office-compliance" className="hover:text-accent transition-colors">Virtual Office Compliance</Link>
             </div>
           </div>
