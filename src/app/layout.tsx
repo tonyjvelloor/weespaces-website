@@ -64,12 +64,14 @@ export default function RootLayout({
         {/* Secure Privacy */}
         <Script strategy="afterInteractive" src="https://app.secureprivacy.ai/script/6a3d33187767b7b58dc06dab.js" />
 
-        {/* Crisp Live Chat */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="PLACEHOLDER";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`
-          }}
-        />
+        {/* Crisp Live Chat - Only load if valid CRISP_WEBSITE_ID is configured */}
+        {process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID && process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID !== 'PLACEHOLDER' && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.$crisp=[];window.CRISP_WEBSITE_ID="${process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID}";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();`
+            }}
+          />
+        )}
       </head>
       <body suppressHydrationWarning className="antialiased selection:bg-accent selection:text-navy font-sans bg-navy min-h-screen flex flex-col pt-24 pb-[4.5rem] md:pb-0 relative">
         <noscript>
