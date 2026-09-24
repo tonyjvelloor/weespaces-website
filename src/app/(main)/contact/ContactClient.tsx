@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import MouseGlowCard from '@/components/ui/MouseGlowCard';
+import { track } from '@/lib/tracking';
 
 function ContactForm() {
   const searchParams = useSearchParams();
@@ -62,6 +63,8 @@ function ContactForm() {
         const data = await res.json();
         throw new Error(data.error || 'Failed to submit enquiry');
       }
+
+      track.form('submit', { pageType: 'contact', pageSlug: '/contact', city: selectedBranch }, { name, phone, email, requirement: selectedPlan, message });
 
       setIsSubmitted(true);
     } catch (err: any) {

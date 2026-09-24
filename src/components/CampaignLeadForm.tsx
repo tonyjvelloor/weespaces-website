@@ -53,6 +53,7 @@ export default function CampaignLeadForm({ branch = "Campaign Default", defaultC
 
       if (!response.ok) throw new Error('Failed to submit lead');
       
+      track.form('submit', { pageType: 'campaign', pageSlug: branch, city: formData.city }, formData);
       console.log('Lead Captured:', { ...formData, branch, source });
       setIsSubmitted(true);
     } catch (err) {
