@@ -11,5 +11,9 @@
 
 - [Home Page](/)
 - [Virtual Office Landing](/virtual-office)
+- [Virtual Office in Kerala](/virtual-office/kerala)
+- [Virtual Office in Kochi](/virtual-office/kochi)
+- [Virtual Office in South India](/virtual-office/south-india)
+- [Virtual Office for GST Registration in Kerala](/virtual-office/gst-registration-kerala)
 - [Coworking Landing](/coworking-space)
 - [Managed Office Landing](/managed-office)
