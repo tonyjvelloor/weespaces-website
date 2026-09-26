@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   trailingSlash: false,
   images: {
-    unoptimized: true,
+    unoptimized: false,
   },
   async redirects() {
     const cities = ['kochi', 'trivandrum', 'calicut', 'coimbatore'];
