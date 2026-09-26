@@ -13,7 +13,7 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function AlternativesHub() {
-  const competitorComparisons = Object.values(comparisons).filter(c => c.slug.includes('weespaces-vs-'));
+  const competitorComparisons = Object.values(comparisons).filter(c => c.slug !== '');
 
   return (
     <>
