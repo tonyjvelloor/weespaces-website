@@ -1,5 +1,5 @@
 ---
-title: "Get a GST Registered Virtual Office in Kochi: Step-by-Step Guide"
+title: "Get a GST Registered [Virtual Office in Kochi](/virtual-office/kochi): Step-by-Step Guide"
 excerpt: "Looking for a GST registered virtual office in Kochi? Learn the compliance requirements, MCA registration steps, and why WeeSpaces is the premium choice for startups."
 date: "July 1, 2026"
 readTime: "5 min read"

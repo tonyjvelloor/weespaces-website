@@ -1,5 +1,5 @@
 ---
-title: "GST Registration with a Virtual Office in Kerala & Tamil Nadu (2026 Guide)"
+title: "GST Registration with a [Virtual Office in Kerala](/virtual-office/kerala) & Tamil Nadu (2026 Guide)"
 date: "2026-07-31"
 author: "WeeSpaces Team"
 categories: ["Virtual Office", "Compliance"]

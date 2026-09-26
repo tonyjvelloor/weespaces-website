@@ -1,5 +1,5 @@
 ---
-title: "The Hidden Cost of Renting Commercial Office Space in Kochi"
+title: "The Hidden Cost of Renting Commercial [Office Space in Kochi](/coworking-space/kochi)"
 excerpt: "Renting an office in Ernakulam or Kakkanad? We break down the true costs, hidden fees, and why coworking spaces might save you 30% annually."
 date: "July 9, 2026"
 readTime: "7 min read"

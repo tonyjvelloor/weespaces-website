@@ -1,5 +1,5 @@
 ---
-title: "Cost of Coworking Space in Coimbatore: 2026 Pricing Guide"
+title: "Cost of [Coworking Space in Coimbatore](/coworking-space/coimbatore): 2026 Pricing Guide"
 excerpt: "Compare coworking space prices in Coimbatore vs traditional office rentals. Find out how much a hot desk, private cabin, or managed office costs per seat."
 date: "July 1, 2026"
 readTime: "4 min read"

@@ -1,6 +1,6 @@
 ---
 title: "Plug and Play Office Space vs Bare Shell: The ROI for Startups"
-excerpt: "Looking for a fully furnished office space in Kochi or Trivandrum? Discover why 'Plug and Play' managed offices offer massive ROI over traditional leases."
+excerpt: "Looking for a fully furnished [office space in Kochi](/coworking-space/kochi) or Trivandrum? Discover why 'Plug and Play' managed offices offer massive ROI over traditional leases."
 date: "July 10, 2026"
 readTime: "6 min read"
 category: "Business Guide"

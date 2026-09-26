@@ -1,5 +1,5 @@
 ---
-title: "Get a GST Registered Virtual Office in Trivandrum: Step-by-Step Guide"
+title: "Get a GST Registered [Virtual Office in Trivandrum](/virtual-office/trivandrum): Step-by-Step Guide"
 excerpt: "Looking for a GST registered virtual office in Trivandrum? Learn the compliance requirements, MCA registration steps, and why WeeSpaces is the premium choice for startups."
 date: "July 9, 2026"
 readTime: "5 min read"

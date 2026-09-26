@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide to Registering a Company in Kerala (2026)"
-excerpt: "Step-by-step instructions on navigating the MCA portal, GST registration, and finding a virtual office in Kochi or Trivandrum."
+excerpt: "Step-by-step instructions on navigating the MCA portal, GST registration, and finding a [virtual office in Kochi](/virtual-office/kochi) or Trivandrum."
 date: "June 1, 2026"
 readTime: "6 min read"
 category: "Startups"

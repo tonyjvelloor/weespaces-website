@@ -47,7 +47,7 @@ With your name reserved and address proofs secured, your Company Secretary can f
 Once your Certificate of Incorporation (CoI) is issued, you must apply for a local GST number. The GST department accepts virtual office addresses, provided your documentation is flawless. WeeSpaces issues MCA-compliant and GST-verified document kits in Kochi within 24 to 48 hours, ensuring zero friction with jurisdictional officers.
 
 ## Anchor Your Kochi Business Today
-Registering your company doesn't have to drain your runway. By leveraging WeeSpaces' Virtual Office in Kochi starting at just ₹10,000/year, you secure a prime commercial presence while preserving your capital for core growth and product development.
+Registering your company doesn't have to drain your runway. By leveraging WeeSpaces' [Virtual Office in Kochi](/virtual-office/kochi) starting at just ₹10,000/year, you secure a prime commercial presence while preserving your capital for core growth and product development.
 
 Need compliant documents for your MCA or GST filing? Get your WeeSpaces Kochi Virtual Office address today!
 

@@ -1,5 +1,5 @@
 ---
-title: "Cost of Coworking Space in Kochi: A Comprehensive Guide"
+title: "Cost of [Coworking Space in Kochi](/coworking-space/kochi): A Comprehensive Guide"
 excerpt: "Understanding the true cost of renting a coworking space in Kochi vs traditional office spaces. A breakdown for startups and freelancers."
 date: "June 25, 2026"
 readTime: "4 min read"
