@@ -23,22 +23,21 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
   let quickAnswer = `A Virtual Office in ${city.name} by WeeSpaces provides a premium commercial address for GST registration, company incorporation, and professional mail handling, starting at ₹10,000 per year. It includes a legal rental agreement and NOC for instant government compliance without the overhead of physical space.`;
 
   if (city.slug === 'kochi') {
-    heroTitle = `Virtual Office in Kochi (Infopark)`;
-    heroSub = `The perfect launchpad for IT startups. Get a premium Kochi address for GST and company incorporation. Starting from ₹10,000/year.`;
-    perks = ["Near Infopark", "Kerala GST Support", "Startup Ecosystem"];
+    heroTitle = `Virtual Office in Kochi | Palarivattom & Infopark`;
+    heroSub = `The perfect launchpad for IT startups. Get a premium virtual office in Ernakulam, Palarivattom, and Infopark for GST and company incorporation.`;
+    perks = ["Near Infopark", "Virtual Office Ernakulam", "Virtual Office Palarivattom"];
   } else if (city.slug === 'trivandrum') {
     heroTitle = `Virtual Office in Trivandrum (Technopark)`;
-    heroSub = `Establish your presence among government contractors and IT giants in Kerala's capital. Starting from ₹10,000/year.`;
+    heroSub = `Establish your presence among government contractors and IT giants in Kerala's capital. Get your virtual office in Trivandrum today.`;
     perks = ["Near Technopark", "IT Companies & Govt Contractors", "Mail Forwarding"];
   } else if (city.slug === 'coimbatore') {
     heroTitle = `Virtual Office in Coimbatore`;
-    heroSub = `Fast-track your business expansion into Tamil Nadu's manufacturing and SME hub with a compliant registered office. Starting from ₹10,000/year.`;
+    heroSub = `Fast-track your business expansion into Tamil Nadu's SME hub with a compliant registered office. Get your virtual office in Coimbatore today.`;
     perks = ["Tamil Nadu GST", "Manufacturing & SMEs", "Meeting Room Access"];
   } else if (city.slug === 'calicut') {
-    heroTitle = `Virtual Office in Calicut`;
-    heroSub = `Expand your regional footprint in Kozhikode with a professional business address for GST and mail handling. Starting from ₹10,000/year.`;
-    perks = ["Kozhikode Businesses", "Startups & SMEs", "Regional Expansion"];
-  }
+    heroTitle = `Virtual Office Kozhikode (Calicut)`;
+    heroSub = `Expand your regional footprint with a premium virtual office in Kozhikode (Calicut) for GST and mail handling.`;
+    perks = ["Virtual Office Kozhikode", "Startups & SMEs", "Regional Expansion"];
 
   return (
     <div className="relative">

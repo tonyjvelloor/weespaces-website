@@ -27,11 +27,39 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   let metaDesc = `Move your team into a fully operational ${service.name.toLowerCase()} in ${city.name} within 24 hours. Zero setup costs, flexible terms, and enterprise-grade amenities.`;
 
   if (service.slug === 'virtual-office') {
-    metaTitle = `Virtual Office in ${city.name} | GST & Company Registration | WeeSpaces`;
-    metaDesc = `Get a premium virtual office and business address in ${city.name} for GST compliance and company incorporation. Fast setup in 48 hours.`;
+    if (city.slug === 'kochi') {
+      metaTitle = `Virtual Office in Kochi | Palarivattom, Infopark & Ernakulam | WeeSpaces`;
+      metaDesc = `Get a premium virtual office and business address in Kochi (Palarivattom, Infopark, Ernakulam) for GST compliance and company incorporation.`;
+    } else if (city.slug === 'calicut') {
+      metaTitle = `Virtual Office Kozhikode | HiLite Business Park Address | WeeSpaces`;
+      metaDesc = `Get a premium virtual office in Kozhikode (Calicut) at HiLite Business Park for GST compliance and company incorporation. Fast setup in 24 hours.`;
+    } else if (city.slug === 'trivandrum') {
+      metaTitle = `Virtual Office in Trivandrum | Near Technopark & Kazhakootam | WeeSpaces`;
+      metaDesc = `Premium virtual office in Trivandrum. Establish your business address near Technopark for GST and company registration.`;
+    } else if (city.slug === 'coimbatore') {
+      metaTitle = `Virtual Office in Coimbatore | Premium Business Address | WeeSpaces`;
+      metaDesc = `Get a virtual office in Coimbatore for GST and company registration. Establish a premium presence in Saravanampatti and RS Puram.`;
+    } else {
+      metaTitle = `Virtual Office in ${city.name} | GST & Company Registration | WeeSpaces`;
+      metaDesc = `Get a premium virtual office and business address in ${city.name} for GST compliance and company incorporation. Fast setup in 48 hours.`;
+    }
   } else if (service.slug === 'coworking-space') {
-    metaTitle = `Coworking Space in ${city.name} | From ₹4,999/mo | WeeSpaces`;
-    metaDesc = `Premium coworking space in ${city.name}. Dedicated desks, high-speed internet, meeting rooms, and 24/7 access with zero hidden fees.`;
+    if (city.slug === 'kochi') {
+      metaTitle = `Best Coworking Space Kochi | Workspace & Office Space in Kochi | WeeSpaces`;
+      metaDesc = `Premium workspace in Kochi. Find the best coworking space in Ernakulam and Kakkanad with dedicated desks, meeting rooms, and high-speed internet.`;
+    } else if (city.slug === 'calicut') {
+      metaTitle = `Coworking Space Kozhikode | Working Space Calicut | WeeSpaces`;
+      metaDesc = `Premium coworking space in Calicut. Find your perfect working space at HiLite Business Park with 24/7 access and zero hidden fees.`;
+    } else if (city.slug === 'trivandrum') {
+      metaTitle = `Coworking Space Trivandrum | Workspace near Kazhakootam & Technopark`;
+      metaDesc = `Premium coworking space in Trivandrum. Find your ideal workspace near Technopark and Kazhakootam with dedicated desks and meeting rooms.`;
+    } else if (city.slug === 'coimbatore') {
+      metaTitle = `Coworking Space Coimbatore | Workspace in Saravanampatti | WeeSpaces`;
+      metaDesc = `Premium workspace in Coimbatore. Find flexible office space and coworking options in Saravanampatti and Gandhipuram.`;
+    } else {
+      metaTitle = `Coworking Space in ${city.name} | From ₹4,999/mo | WeeSpaces`;
+      metaDesc = `Premium coworking space in ${city.name}. Dedicated desks, high-speed internet, meeting rooms, and 24/7 access with zero hidden fees.`;
+    }
   } else if (service.slug === 'private-office' || service.slug === 'managed-office') {
     metaTitle = `${service.name} in ${city.name} | Secure & Custom Built | WeeSpaces`;
     metaDesc = `Fully managed, secure private offices in ${city.name} for teams of 10 to 100+. Custom layouts, biometric access, and zero CapEx.`;
@@ -194,7 +222,16 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
             </h1>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed font-light">
-              No deposits. No setup. No hidden costs. Expand your business instantly without the traditional office headaches.
+              {city.slug === 'kochi' 
+                ? `Find the perfect workspace in Kochi. Whether you need an office space in Kochi, or flexible coworking in Ernakulam and Kakkanad, we have you covered with zero hidden costs.` 
+                : city.slug === 'calicut' 
+                ? `Discover premium coworking in Kozhikode. Our HiLite Business Park location provides the ideal working space in Calicut for growing teams.`
+                : city.slug === 'trivandrum' 
+                ? `Your ideal workspace in Trivandrum. Join our premium coworking space in Kazhakootam, right next to Technopark, with zero setup costs.`
+                : city.slug === 'coimbatore' 
+                ? `Elevate your workspace in Coimbatore. Find flexible office space in Coimbatore and premium coworking in Saravanampatti with enterprise-grade amenities.`
+                : `No deposits. No setup. No hidden costs. Expand your business instantly without the traditional office headaches.`
+              }
             </p>
             
             <div className="flex flex-wrap gap-4 mb-8">
