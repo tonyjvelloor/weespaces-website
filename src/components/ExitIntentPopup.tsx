@@ -43,14 +43,35 @@ export default function ExitIntentPopup() {
     };
   }, [hasTriggered]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || isSubmitting) return;
     
-    // In a real app, send to API. For now, simulate success.
-    setSubmitted(true);
+    setIsSubmitting(true);
     
-    // Simulate pixel event for Lead Magnet
+    try {
+      await fetch('/api/capture-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          name: 'Exit Intent Lead',
+          source: 'Exit Intent Popup',
+          leadMagnet: 'pricing_guide'
+        })
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      // Fallback success to not block user experience
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
+    
+    // Fire pixel event for Lead Magnet
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'generate_lead', {
         event_category: 'engagement',
@@ -138,10 +159,11 @@ export default function ExitIntentPopup() {
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full bg-accent hover:bg-accent/90 text-navy px-5 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-accent/30"
+                  disabled={isSubmitting}
+                  className="w-full bg-accent hover:bg-accent/90 text-navy px-5 py-4 rounded-xl font-bold transition-all flex items-center justify-center gap-2 group shadow-lg hover:shadow-accent/30 disabled:opacity-70"
                 >
-                  Send Me The Guide
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? 'Sending...' : 'Send Me The Guide'}
+                  {!isSubmitting && <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
                 </button>
                 <p className="text-center text-xs text-gray-400 mt-3">
                   100% free. No spam. Unsubscribe anytime.

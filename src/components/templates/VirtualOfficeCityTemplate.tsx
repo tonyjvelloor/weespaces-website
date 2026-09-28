@@ -38,6 +38,7 @@ export default function VirtualOfficeCityTemplate({ city, service }: { city: Cit
     heroTitle = `Virtual Office Kozhikode (Calicut)`;
     heroSub = `Expand your regional footprint with a premium virtual office in Kozhikode (Calicut) for GST and mail handling.`;
     perks = ["Virtual Office Kozhikode", "Startups & SMEs", "Regional Expansion"];
+  }
 
   return (
     <div className="relative">

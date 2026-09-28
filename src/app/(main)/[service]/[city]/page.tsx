@@ -14,6 +14,7 @@ import { MapPin, Building, ChevronRight, CheckCircle, Star, Shield, Zap, Image a
 import Link from 'next/link';
 import Image from 'next/image';
 import VirtualOfficeCityTemplate from '@/components/templates/VirtualOfficeCityTemplate';
+import ABTestCTA from '@/components/ABTestCTA';
 import LocalBusinessSchema from '@/components/LocalBusinessSchema';
 
 export async function generateMetadata({ params }: { params: Promise<{ service: string, city: string }> }): Promise<Metadata> {
@@ -214,9 +215,7 @@ export default async function CityServicePage({ params }: { params: Promise<{ se
       {/* STICKY CTA (Desktop Side, Mobile Bottom) */}
       <div className="fixed bottom-0 left-0 right-0 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-4 lg:left-auto lg:w-48 z-50 bg-white lg:bg-transparent lg:shadow-none shadow-[0_-4px_20px_rgba(0,0,0,0.1)] border-t lg:border-t-0 border-gray-200">
         <div className="flex lg:flex-col lg:gap-3 p-4 lg:p-0 justify-around">
-           <a href="#book-tour" className="flex items-center justify-center gap-2 lg:bg-accent lg:text-navy text-accent bg-accent/10 px-4 py-3 lg:py-4 rounded-xl font-bold lg:shadow-lg hover:lg:scale-105 transition-all text-sm w-full lg:w-auto">
-             <Clock className="w-4 h-4" /> Book Tour
-           </a>
+           <ABTestCTA experimentId="hero_cta_v1" className="lg:bg-accent lg:text-navy text-accent bg-accent/10 px-4 py-3 lg:py-4 rounded-xl font-bold lg:shadow-lg text-sm w-full lg:w-auto" />
            <a href="tel:+919207189111" className="flex items-center justify-center gap-2 lg:bg-white lg:text-navy text-navy bg-gray-100 px-4 py-3 lg:py-4 rounded-xl font-bold lg:shadow-lg hover:lg:scale-105 transition-all text-sm w-full lg:w-auto ml-2 lg:ml-0">
              📞 Call
            </a>
