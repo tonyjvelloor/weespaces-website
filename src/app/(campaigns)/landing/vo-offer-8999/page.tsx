@@ -1,90 +1,100 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import { CheckCircle2, Shield, MapPin, Building, FileText, ArrowRight } from 'lucide-react';
-import LeadForm from '@/components/LeadForm';
+import { CheckCircle2, MapPin, Star, ShieldCheck, Clock, Zap } from 'lucide-react';
+import VirtualOfficeLeadForm from '@/components/VirtualOfficeLeadForm';
 import CountdownTimer from '@/components/CountdownTimer';
 import TrustLayer from '@/components/ui/TrustLayer';
 
 export const metadata: Metadata = {
   title: 'Virtual Office for ₹8,999/Year | Premium Address & GST Registration | WeeSpaces',
   description: 'Limited time offer! Get a premium Virtual Office in Kerala for just ₹8,999/year. Includes NOC, Rent Agreement, and Mail Handling. Perfect for GST registration.',
-  robots: 'noindex, nofollow', // Ad landing pages shouldn't index organically to avoid duplicate content penalties
+  robots: 'noindex, nofollow',
 };
 
 export default function VirtualOfficeOfferPage() {
   return (
-    <div className="bg-gray-50 min-h-screen">
-      {/* 1. HERO SECTION */}
+    <div className="bg-[#f8fafc] min-h-screen font-sans selection:bg-accent selection:text-navy">
+      
+      {/* 1. URGENCY BANNER */}
+      <div className="bg-red-500 text-white text-center py-2 px-4 text-sm font-bold tracking-wider flex items-center justify-center gap-2">
+        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+        Q3 COMPLIANCE DRIVE: SAVE ₹6,000 ON VIRTUAL OFFICE PACKAGES. ENDS SOON.
+      </div>
+
+      {/* 2. HERO SECTION */}
       <section className="relative pt-12 pb-20 overflow-hidden bg-navy">
-        <div className="absolute inset-0 bg-[url('/images/kochi_coworking.jpg')] opacity-20 mix-blend-overlay bg-cover bg-center" />
+        <div className="absolute inset-0 bg-[url('/images/kochi_coworking.jpg')] opacity-[0.07] mix-blend-overlay bg-cover bg-center" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/50 to-navy" />
         
         <div className="container relative z-10 mx-auto px-4 max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
-            {/* Left: Copy & Value Prop */}
-            <div className="text-white">
-              <div className="inline-flex items-center gap-2 bg-red-500 text-white px-4 py-1.5 rounded-full text-sm font-bold tracking-wider mb-8 shadow-lg shadow-red-500/30">
-                <span className="animate-pulse w-2 h-2 rounded-full bg-white"></span>
-                FLASH SALE ACTIVE
-              </div>
+            {/* Left: Direct Response Copy */}
+            <div className="lg:col-span-7 text-white pt-4">
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.1]">
-                Premium Virtual Office for Just <span className="text-accent">₹8,999</span><span className="text-2xl text-gray-400 font-medium">/Year</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light leading-relaxed">
-                Legally register your company and get your GST number in 48 hours using a premium commercial address in Kochi, Trivandrum, or Calicut.
-              </p>
-              
-              <ul className="space-y-4 mb-10">
-                {[
-                  'Valid Rent Agreement & NOC for GST',
-                  'Premium Grade-A Commercial Address',
-                  'Professional Mail & Package Handling',
-                  'Dedicated Center Manager Support',
-                  'Zero Setup Fees or Hidden Charges'
-                ].map((feature, i) => (
-                  <li key={i} className="flex items-start text-lg">
-                    <CheckCircle2 className="w-6 h-6 text-accent mr-4 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-100">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <div className="flex flex-wrap gap-4 items-center bg-white/5 border border-white/10 rounded-2xl p-6">
-                <div className="flex -space-x-4">
-                  {['S', 'M', 'R', 'P'].map((initial, i) => (
-                    <div key={i} className="w-12 h-12 rounded-full border-2 border-navy bg-accent flex items-center justify-center text-navy font-bold text-lg">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="flex -space-x-2">
+                  {['S','A','R','M'].map((initial, i) => (
+                    <div key={i} className="w-8 h-8 rounded-full bg-accent/20 border border-accent/50 flex items-center justify-center text-accent text-xs font-bold">
                       {initial}
                     </div>
                   ))}
                 </div>
-                <div className="ml-2">
-                  <div className="flex items-center text-accent">
-                    {/* Stars */}
-                    ★ ★ ★ ★ ★
-                  </div>
-                  <p className="text-sm text-gray-300">Trusted by 500+ startups & SMEs</p>
+                <div className="flex items-center text-accent text-sm">
+                  <Star className="w-4 h-4 fill-current" />
+                  <Star className="w-4 h-4 fill-current" />
+                  <Star className="w-4 h-4 fill-current" />
+                  <Star className="w-4 h-4 fill-current" />
+                  <Star className="w-4 h-4 fill-current" />
+                  <span className="ml-2 text-gray-400 font-medium">(4.9/5 from 500+ Startups)</span>
                 </div>
               </div>
+              
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.1] tracking-tight">
+                Legally Register Your Company For Just <span className="text-accent underline decoration-4 underline-offset-8">₹8,999/Year</span>
+              </h1>
+              
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light leading-relaxed max-w-2xl">
+                Get a premium Grade-A commercial address in Kerala. We provide the <strong className="text-white">NOC and Rent Agreement in 48 hours</strong> so you can file for GST immediately.
+              </p>
+              
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-10 max-w-2xl">
+                <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-accent" /> What's Included in the ₹8,999 Rate?
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    'Valid Rent Agreement & NOC for GST Registration',
+                    'Premium Commercial Address for Website & Cards',
+                    'Professional Mail & Courier Handling',
+                    'Dedicated Local Manager for Physical Verifications',
+                    'Zero Security Deposit. Zero Hidden Fees.'
+                  ].map((feature, i) => (
+                    <li key={i} className="flex items-start text-lg">
+                      <CheckCircle2 className="w-6 h-6 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-200">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex items-center gap-4 text-sm text-gray-400 font-medium">
+                <div className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-accent"/> MCA Compliant</div>
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                <div className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-accent"/> GST Ready</div>
+                <div className="w-1.5 h-1.5 rounded-full bg-gray-600"></div>
+                <div className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-accent"/> 100% Legal</div>
+              </div>
+
             </div>
             
-            {/* Right: Form & Timer */}
-            <div className="relative">
+            {/* Right: The High-Converting Squeeze Form */}
+            <div className="lg:col-span-5 relative">
               <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full transform -translate-x-10 translate-y-10" />
               
-              <div className="bg-white rounded-3xl p-6 md:p-8 shadow-2xl relative border border-gray-100">
+              <div className="relative">
                 <CountdownTimer hours={48} />
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold text-navy">Claim This Offer</h3>
-                  <p className="text-gray-500 text-sm mt-2">Fill the form to lock in your ₹8,999 rate. Our team will contact you within 15 minutes.</p>
-                </div>
-                
-                <LeadForm 
-                  source="Ad Campaign - VO Offer 8999" 
-                  branch="Offer Selection" 
-                />
+                <VirtualOfficeLeadForm />
               </div>
             </div>
             
@@ -92,75 +102,79 @@ export default function VirtualOfficeOfferPage() {
         </div>
       </section>
 
-      {/* 2. HOW IT WORKS */}
+      {/* 3. LOCATIONS SECTION (Coimbatore Removed) */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">How Fast Can You Get Registered?</h2>
-            <p className="text-xl text-gray-600">Our process is fully digital and streamlined so you can submit your GST application in record time.</p>
+            <h2 className="text-3xl md:text-4xl font-black text-navy mb-4">Prime Kerala Locations</h2>
+            <p className="text-xl text-gray-600">Establish your presence in Kerala's fastest-growing IT and business hubs.</p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 relative group hover:shadow-xl transition-all">
-              <div className="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center text-2xl font-black mb-6 group-hover:bg-accent group-hover:text-navy transition-colors">1</div>
-              <h3 className="text-xl font-bold text-navy mb-4">Book Your Plan</h3>
-              <p className="text-gray-600">Lock in the ₹8,999/year rate and submit your basic KYC documents online.</p>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-accent/50 hover:shadow-xl transition-all text-center group cursor-default">
+              <div className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-2">Kochi</h3>
+              <p className="text-gray-500 text-sm">Palarivattom & Infopark</p>
+              <div className="mt-4 text-xs font-bold text-green-600 bg-green-100 py-1 px-3 rounded-full inline-block">Available</div>
             </div>
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 relative group hover:shadow-xl transition-all">
-              <div className="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center text-2xl font-black mb-6 group-hover:bg-accent group-hover:text-navy transition-colors">2</div>
-              <h3 className="text-xl font-bold text-navy mb-4">Get Documentation</h3>
-              <p className="text-gray-600">Receive your signed Rent Agreement, NOC, and Utility Bill within 48 hours.</p>
+
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-accent/50 hover:shadow-xl transition-all text-center group cursor-default">
+              <div className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-2">Trivandrum</h3>
+              <p className="text-gray-500 text-sm">Near Technopark</p>
+              <div className="mt-4 text-xs font-bold text-green-600 bg-green-100 py-1 px-3 rounded-full inline-block">Available</div>
             </div>
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-100 relative group hover:shadow-xl transition-all">
-              <div className="w-14 h-14 bg-navy text-white rounded-xl flex items-center justify-center text-2xl font-black mb-6 group-hover:bg-accent group-hover:text-navy transition-colors">3</div>
-              <h3 className="text-xl font-bold text-navy mb-4">File for GST</h3>
-              <p className="text-gray-600">Apply for your GST. When the inspector visits, our professional staff will handle the verification.</p>
+
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:border-accent/50 hover:shadow-xl transition-all text-center group cursor-default">
+              <div className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-navy mb-2">Kozhikode</h3>
+              <p className="text-gray-500 text-sm">HiLite Business Park</p>
+              <div className="mt-4 text-xs font-bold text-green-600 bg-green-100 py-1 px-3 rounded-full inline-block">Available</div>
             </div>
+
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm text-red-500 font-bold bg-red-50 py-2 px-4 rounded-lg inline-block border border-red-100">
+              Note: Coimbatore (Tamil Nadu) location is currently 100% Sold Out.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 3. LOCATIONS */}
+      {/* 4. PROCESS / TRUST */}
       <section className="py-20 bg-gray-50 border-t border-gray-200">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">Choose From Premium Grade-A Locations</h2>
-              <p className="text-lg text-gray-600 mb-8">This offer is valid across our premier South Indian workspace hubs. Elevate your brand image instantly.</p>
-              
-              <ul className="space-y-4">
-                <li className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-navy" />
-                  </div>
-                  <span className="text-lg font-semibold text-navy">Kochi (Palarivattom & Infopark)</span>
-                </li>
-                <li className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-navy" />
-                  </div>
-                  <span className="text-lg font-semibold text-navy">Trivandrum (Near Technopark)</span>
-                </li>
-                <li className="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
-                  <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-navy" />
-                  </div>
-                  <span className="text-lg font-semibold text-navy">Kozhikode (HiLite Business Park)</span>
-                </li>
-              </ul>
-            </div>
-            <div className="md:w-1/2">
-              <div className="relative rounded-2xl overflow-hidden h-[400px] shadow-2xl">
-                <Image src="/images/meeting-room-hero.jpg" alt="Premium Workspace" fill className="object-cover" />
+         <div className="container mx-auto px-4 max-w-7xl text-center">
+            <h2 className="text-3xl font-black text-navy mb-12">GST Registration Made Completely Frictionless</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl font-black text-navy mx-auto mb-4 border border-gray-100">1</div>
+                <h4 className="font-bold text-navy text-lg mb-2">Submit Details</h4>
+                <p className="text-gray-500 text-sm">Fill the form above to lock your ₹8,999 rate.</p>
+              </div>
+              <div>
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl font-black text-navy mx-auto mb-4 border border-gray-100">2</div>
+                <h4 className="font-bold text-navy text-lg mb-2">KYC & Agreement</h4>
+                <p className="text-gray-500 text-sm">We prepare your NOC and Rent Agreement within 48 hours.</p>
+              </div>
+              <div>
+                <div className="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center text-2xl font-black text-navy mx-auto mb-4 border border-gray-100">3</div>
+                <h4 className="font-bold text-navy text-lg mb-2">Government Filing</h4>
+                <p className="text-gray-500 text-sm">File for GST. We handle the physical inspector verification.</p>
               </div>
             </div>
-          </div>
-        </div>
+         </div>
       </section>
 
       <TrustLayer />
       
-      {/* LOCALBUSINESS SCHEMA */}
     </div>
   );
 }
