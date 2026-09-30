@@ -7,6 +7,7 @@ export default function VOExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
   const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -56,7 +57,7 @@ export default function VOExitIntentPopup() {
         body: JSON.stringify({
           name: 'VO Exit Intent Lead',
           phone: phone,
-          email: 'no-email@exitintent.com',
+          email: email,
           location: 'Any',
           source: 'VO Offer 8999 - Exit Intent',
           requirement: 'Virtual Office (Callback Requested)'
@@ -125,6 +126,21 @@ export default function VOExitIntentPopup() {
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <div className="relative text-left">
+                  <input 
+                    type="email" 
+                    id="exit-email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="peer w-full bg-gray-50 border border-gray-200 text-navy px-4 pt-6 pb-2 rounded-xl focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all font-medium placeholder-transparent"
+                    placeholder="Enter Email Address"
+                  />
+                  <label htmlFor="exit-email" className="absolute left-4 top-2 text-xs font-bold text-gray-400 uppercase tracking-wider transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-focus:top-2 peer-focus:text-xs peer-focus:font-bold peer-focus:text-accent">
+                    Email Address
+                  </label>
+                </div>
+
                 <div className="relative text-left">
                   <input 
                     type="tel" 
