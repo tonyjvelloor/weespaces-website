@@ -4,6 +4,10 @@ import { CheckCircle2, MapPin, Star, ShieldCheck, Zap } from 'lucide-react';
 import VirtualOfficeLeadForm from '@/components/VirtualOfficeLeadForm';
 import CountdownTimer from '@/components/CountdownTimer';
 import TrustLayer from '@/components/ui/TrustLayer';
+import LiveSignupToast from '@/components/LiveSignupToast';
+import StickyMobileCTA from '@/components/StickyMobileCTA';
+import DynamicCityHeadline from '@/components/DynamicCityHeadline';
+
 
 // Re-using proven components from the main VO page
 import VoDocumentChecklist from '@/components/ui/VoDocumentChecklist';
@@ -31,6 +35,8 @@ export default function VirtualOfficeOfferPage() {
 
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans selection:bg-accent selection:text-navy">
+      <LiveSignupToast />
+      <StickyMobileCTA />
       
       {/* 1. URGENCY BANNER */}
       <div className="bg-red-500 text-white text-center py-2 px-4 text-sm font-bold tracking-wider flex items-center justify-center gap-2">
@@ -67,9 +73,7 @@ export default function VirtualOfficeOfferPage() {
                 </div>
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-[1.1] tracking-tight">
-                Legally Register Your Company For Just <span className="text-accent underline decoration-4 underline-offset-8">₹8,999/Year</span>
-              </h1>
+              <DynamicCityHeadline />
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light leading-relaxed max-w-2xl">
                 Get a premium Grade-A commercial address in Kerala. We provide the <strong className="text-white">NOC and Rent Agreement in 48 hours</strong> so you can file for GST immediately.
@@ -129,38 +133,53 @@ export default function VirtualOfficeOfferPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[600px]">
-            <div className="relative rounded-3xl overflow-hidden group">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-auto md:h-[500px]">
+            {/* Left large image */}
+            <div className="relative rounded-3xl overflow-hidden group h-[300px] md:h-full">
               <Image src="/images/exterior.jpg" alt="Premium Building Exterior" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 text-white">
-                <h3 className="text-2xl font-bold">Grade-A IT Parks</h3>
-                <p className="text-gray-300">Impressive infrastructure</p>
+                <h3 className="text-xl font-bold">Grade-A IT Parks</h3>
+                <p className="text-gray-300 text-sm">Impressive infrastructure</p>
               </div>
             </div>
-            <div className="grid grid-rows-2 gap-4 h-full">
+            
+            {/* Center stack */}
+            <div className="grid grid-rows-2 gap-4 h-[600px] md:h-full">
               <div className="relative rounded-3xl overflow-hidden group">
                 <Image src="/images/kochi_coworking.jpg" alt="Modern Reception Area" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-xl font-bold">Professional Receptions</h3>
-                  <p className="text-gray-300">We handle your mail and guests</p>
+                  <p className="text-gray-300 text-sm">We handle your mail and guests</p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative rounded-3xl overflow-hidden group">
-                  <Image src="/images/meeting-room-hero.jpg" alt="Meeting Rooms" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <p className="font-bold text-sm">Meeting Room Access</p>
-                  </div>
+              <div className="relative rounded-3xl overflow-hidden group">
+                <Image src="/images/calicut_coworking.jpg" alt="Premium Workspaces" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-xl font-bold">Modern Interiors</h3>
+                  <p className="text-gray-300 text-sm">Fully furnished layouts</p>
                 </div>
-                <div className="relative rounded-3xl overflow-hidden group">
-                  <Image src="/images/calicut_coworking.jpg" alt="Premium Workspaces" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-black/20" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <p className="font-bold text-sm">Modern Interiors</p>
-                  </div>
+              </div>
+            </div>
+
+            {/* Right stack - Coimbatore */}
+            <div className="grid grid-rows-2 gap-4 h-[600px] md:h-full">
+              <div className="relative rounded-3xl overflow-hidden group">
+                <Image src="/images/branches/coimbatore/exterior-tall.jpg" alt="Coimbatore Exterior" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-xl font-bold">Coimbatore Hub</h3>
+                  <p className="text-gray-300 text-sm">Premium business park</p>
+                </div>
+              </div>
+              <div className="relative rounded-3xl overflow-hidden group">
+                <Image src="/images/branches/coimbatore/amenity1.jpg" alt="Coimbatore Amenity" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-xl font-bold">World-Class Amenities</h3>
+                  <p className="text-gray-300 text-sm">Access to premium facilities</p>
                 </div>
               </div>
             </div>
