@@ -4,6 +4,7 @@ import { CheckCircle2, MapPin, Star, ShieldCheck, Zap } from 'lucide-react';
 import VirtualOfficeLeadForm from '@/components/VirtualOfficeLeadForm';
 import CountdownTimer from '@/components/CountdownTimer';
 import TrustLayer from '@/components/ui/TrustLayer';
+import VOExitIntentPopup from '@/components/VOExitIntentPopup';
 import LiveSignupToast from '@/components/LiveSignupToast';
 import StickyMobileCTA from '@/components/StickyMobileCTA';
 import DynamicCityHeadline from '@/components/DynamicCityHeadline';
@@ -35,6 +36,7 @@ export default function VirtualOfficeOfferPage() {
 
   return (
     <div className="bg-[#f8fafc] min-h-screen font-sans selection:bg-accent selection:text-navy">
+      <VOExitIntentPopup />
       <LiveSignupToast />
       <StickyMobileCTA />
       
