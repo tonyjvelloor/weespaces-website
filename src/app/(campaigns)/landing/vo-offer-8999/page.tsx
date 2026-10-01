@@ -65,7 +65,10 @@ export default function VirtualOfficeOfferPage() {
                 </div>
               </div>
               
-              <DynamicCityHeadline />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] tracking-tight mb-6">
+              Your GST-ready business address in <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-light">Kerala</span><br/>
+              — ₹8,999/year
+            </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light leading-relaxed max-w-2xl">
                 Get a premium Grade-A commercial address in Kerala. We provide the <strong className="text-white">NOC and Rent Agreement in 48 hours</strong> so you can file for GST immediately.
