@@ -17,7 +17,7 @@ export default function CampaignHeader() {
           <a href="tel:+919207189111" className="hidden sm:inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors font-medium text-sm">
             📞 +91 92071 89111
           </a>
-          <a href="#form-id" className="bg-accent text-navy px-6 py-2 rounded-lg font-bold text-sm hover:bg-accent-light transition-all duration-300 shadow-[0_0_15px_rgba(242,156,31,0.2)]">
+          <a href="#lead-form" className="bg-accent text-navy px-6 py-2 rounded-lg font-bold text-sm hover:bg-accent-light transition-all duration-300 shadow-[0_0_15px_rgba(242,156,31,0.2)]">
             Get Pricing
           </a>
         </div>

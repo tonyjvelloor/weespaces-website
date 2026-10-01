@@ -1,4 +1,8 @@
-'use client';
+file_path = "src/components/VirtualOfficeLeadForm.tsx"
+with open(file_path, "r") as f:
+    content = f.read()
+
+new_content = """'use client';
 
 import { useState, useEffect } from 'react';
 import { ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
@@ -206,3 +210,6 @@ export default function VirtualOfficeLeadForm() {
     </div>
   );
 }
+"""
+with open(file_path, "w") as f:
+    f.write(new_content)

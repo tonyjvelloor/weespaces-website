@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 import { CheckCircle2, MapPin, Star, ShieldCheck, Zap } from 'lucide-react';
 import VirtualOfficeLeadForm from '@/components/VirtualOfficeLeadForm';
-import CountdownTimer from '@/components/CountdownTimer';
+
 import TrustLayer from '@/components/ui/TrustLayer';
 import VOExitIntentPopup from '@/components/VOExitIntentPopup';
 import LiveSignupToast from '@/components/LiveSignupToast';
@@ -41,10 +41,7 @@ export default function VirtualOfficeOfferPage() {
       <StickyMobileCTA />
       
       {/* 1. URGENCY BANNER */}
-      <div className="bg-red-500 text-white text-center py-2 px-4 text-sm font-bold tracking-wider flex items-center justify-center gap-2">
-        <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
-        Q3 COMPLIANCE DRIVE: SAVE ₹6,000 ON VIRTUAL OFFICE PACKAGES. ENDS SOON.
-      </div>
+      
 
       {/* 2. HERO SECTION */}
       <section className="relative pt-12 pb-20 overflow-hidden bg-navy">
@@ -58,13 +55,6 @@ export default function VirtualOfficeOfferPage() {
             <div className="lg:col-span-7 text-white pt-4">
               
               <div className="flex items-center gap-2 mb-6">
-                <div className="flex -space-x-2">
-                  {['S','A','R','M'].map((initial, i) => (
-                    <div key={i} className="w-8 h-8 rounded-full bg-accent/20 border border-accent/50 flex items-center justify-center text-accent text-xs font-bold">
-                      {initial}
-                    </div>
-                  ))}
-                </div>
                 <div className="flex items-center text-accent text-sm">
                   <Star className="w-4 h-4 fill-current" />
                   <Star className="w-4 h-4 fill-current" />
@@ -116,7 +106,7 @@ export default function VirtualOfficeOfferPage() {
               <div className="absolute inset-0 bg-accent/20 blur-3xl rounded-full transform -translate-x-10 translate-y-10" />
               
               <div className="relative">
-                <CountdownTimer hours={48} />
+                
                 <VirtualOfficeLeadForm />
               </div>
             </div>

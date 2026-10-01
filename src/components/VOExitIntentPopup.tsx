@@ -67,7 +67,7 @@ export default function VOExitIntentPopup() {
       
       // Fire pixel event
       if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'generate_lead', {
+        (window as any).gtag('event', 'lead_callback', {
           event_category: 'form',
           event_label: 'vo_8999_exit_intent'
         });

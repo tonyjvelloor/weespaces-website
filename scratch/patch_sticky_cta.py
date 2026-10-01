@@ -1,4 +1,8 @@
-'use client';
+file_path = "src/components/StickyMobileCTA.tsx"
+with open(file_path, "r") as f:
+    content = f.read()
+
+new_content = """'use client';
 
 import { useState, useEffect } from 'react';
 import { ArrowRight, Phone, MessageCircle } from 'lucide-react';
@@ -56,3 +60,6 @@ export default function StickyMobileCTA() {
     </div>
   );
 }
+"""
+with open(file_path, "w") as f:
+    f.write(new_content)

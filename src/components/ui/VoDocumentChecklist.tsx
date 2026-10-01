@@ -28,10 +28,10 @@ export default function VoDocumentChecklist() {
               Complete documentation transparency. Here is exactly what you need to provide, and what we deliver for your GST and MCA registration.
             </p>
           </div>
-          <button className="flex items-center gap-2 bg-accent text-navy px-6 py-3 rounded-xl font-bold hover:bg-accent/90 transition-colors shrink-0">
+          <a href="https://wa.me/919999999999?text=Hi!%20Please%20send%20me%20the%20PDF%20Document%20Checklist%20for%20Virtual%20Office%20GST%20Registration." target="_blank" rel="noreferrer" className="flex items-center gap-2 bg-accent text-navy px-6 py-3 rounded-xl font-bold hover:bg-accent/90 transition-colors shrink-0">
             <Download className="w-5 h-5" />
-            Download PDF Checklist
-          </button>
+            Get Checklist on WhatsApp
+          </a>
         </div>
       </ScrollReveal>
 

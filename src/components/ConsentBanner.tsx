@@ -29,38 +29,34 @@ export default function ConsentBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 pointer-events-none">
-      <div className="max-w-4xl mx-auto bg-navy/95 backdrop-blur-md text-white rounded-2xl shadow-2xl p-6 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pointer-events-auto relative overflow-hidden">
-        {/* Glow effect */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-accent/20 rounded-full blur-[50px] -translate-y-1/2 translate-x-1/2"></div>
-        
+      <div className="max-w-3xl mx-auto bg-navy/95 backdrop-blur-md text-white rounded-xl shadow-2xl p-4 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-auto relative overflow-hidden">
         <div className="flex-grow pr-8 relative z-10">
-          <h3 className="font-bold text-lg mb-2">We respect your privacy</h3>
-          <p className="text-white/70 text-sm">
-            We use strictly necessary cookies to provide basic site functionality, and optionally, we store anonymous journey data (like the city you searched for) to personalize your experience. We do not sell your data.
+          <p className="text-white/80 text-xs leading-tight">
+            <strong>Privacy Policy:</strong> We use cookies to ensure you get the best experience. By continuing, you agree to our use of cookies.
           </p>
         </div>
         
-        <div className="flex items-center gap-3 w-full sm:w-auto relative z-10">
+        <div className="flex items-center gap-2 w-full sm:w-auto relative z-10 mt-2 sm:mt-0">
           <button 
             onClick={handleDecline}
-            className="flex-1 sm:flex-none px-4 py-2 text-sm font-bold text-white/60 hover:text-white transition-colors"
+            className="flex-1 sm:flex-none px-3 py-1.5 text-xs font-bold text-white/60 hover:text-white transition-colors"
           >
             Decline
           </button>
           <button 
             onClick={handleAccept}
-            className="flex-1 sm:flex-none px-6 py-2 bg-accent text-navy rounded-lg text-sm font-bold hover:bg-accent-hover transition-colors shadow-lg"
+            className="flex-1 sm:flex-none px-4 py-1.5 bg-accent text-navy rounded-lg text-xs font-bold hover:bg-accent-hover transition-colors shadow-lg"
           >
-            Accept
+            Accept All
           </button>
         </div>
 
         <button 
           onClick={handleDecline}
-          className="absolute top-4 right-4 text-white/40 hover:text-white transition-colors z-20"
+          className="absolute top-2 right-2 text-white/40 hover:text-white transition-colors z-20"
           aria-label="Close"
         >
-          <X className="w-5 h-5" />
+          <X className="w-4 h-4" />
         </button>
       </div>
     </div>
