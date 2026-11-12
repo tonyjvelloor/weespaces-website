@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { track, EventNames } from '@/lib/tracking';
+import { track, EventNames, fireGoogleAdsConversion } from '@/lib/tracking';
 import { getPageContext } from '@/utils/whatsappIntent';
 import WhatsAppGate from './WhatsAppGate';
 
@@ -26,6 +26,14 @@ export default function FloatingWhatsAppWidget() {
     try {
       hasGated = sessionStorage.getItem('weespaces_whatsapp_gated') === 'true';
     } catch {}
+
+    // Fire Google Ads Conversion Event immediately on floating button click for Smart Bidding
+    fireGoogleAdsConversion({
+      eventLabel: 'Floating WhatsApp Widget Click',
+      source: 'floating_widget',
+      intent: context.intent,
+      page_url: typeof window !== 'undefined' ? window.location.href : '',
+    });
 
     // Track click
     track.cta('whatsapp_click', 'floating_widget', { button_position: 'floating_widget', intent: context.intent });

@@ -25,6 +25,7 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
     budget: '',
     timeline: '',
     name: '',
+    companyName: '',
     phone: ''
   });
 
@@ -303,6 +304,17 @@ export default function LeadForm({ branch = "", source: defaultSource, hidePrici
                   required
                 />
                 <label htmlFor="name" className="absolute left-4 top-4 text-white/50 text-sm transition-all peer-focus:text-xs peer-focus:top-2 peer-focus:text-accent peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-white/70 pointer-events-none">Full Name *</label>
+              </div>
+              <div className="relative">
+                <input
+                  id="companyName"
+                  value={formDataState.companyName}
+                  onChange={(e) => setFormDataState({ ...formDataState, companyName: e.target.value })}
+                  className="peer w-full bg-navy-dark/50 border border-white/10 rounded-xl px-4 pt-6 pb-2 text-white focus:border-accent focus:ring-1 focus:ring-accent focus:bg-white/5 transition-all outline-none"
+                  placeholder=" "
+                  type="text"
+                />
+                <label htmlFor="companyName" className="absolute left-4 top-4 text-white/50 text-sm transition-all peer-focus:text-xs peer-focus:top-2 peer-focus:text-accent peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-white/70 pointer-events-none">Company / Business Name (Optional)</label>
               </div>
               <div className="relative flex">
                 <span className="bg-navy-dark/80 border border-white/10 border-r-0 rounded-l-xl px-4 pt-6 pb-2 text-white/50 flex items-center">+91</span>

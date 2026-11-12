@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { ArrowRight, ShieldCheck, MapPin } from 'lucide-react';
+import { fireGoogleAdsConversion } from '@/lib/tracking';
 
 export default function VirtualOfficeLeadForm() {
   const [formData, setFormData] = useState({
     name: '',
+    companyName: '',
     phone: '',
     email: '',
     location: ''
@@ -58,6 +60,15 @@ export default function VirtualOfficeLeadForm() {
 
       setSubmitted(true);
       
+      // Fire Google Ads conversion & GA4 events
+      fireGoogleAdsConversion({
+        eventLabel: 'Virtual Office ₹8999 Lead Form Submitted',
+        source: 'vo_offer_form',
+        value: 8999,
+        currency: 'INR',
+        location: formData.location
+      });
+
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'lead_form_full', {
           event_category: 'conversion',
@@ -125,6 +136,20 @@ export default function VirtualOfficeLeadForm() {
             placeholder="Full Name"
           />
           <label htmlFor="vo-name" className="absolute left-4 top-2 text-xs font-bold text-gray-400 uppercase tracking-wider transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-focus:top-2 peer-focus:text-xs peer-focus:font-bold peer-focus:text-accent">Full Name</label>
+        </div>
+
+        <div className="relative">
+          <input 
+            type="text" 
+            id="vo-company"
+            name="companyName"
+            autoComplete="organization"
+            value={formData.companyName}
+            onChange={e => setFormData({...formData, companyName: e.target.value})}
+            className="peer w-full bg-gray-50 border border-gray-200 text-navy px-4 pt-6 pb-2 rounded-xl focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none transition-all font-medium placeholder-transparent"
+            placeholder="Company / Business Name (Optional)"
+          />
+          <label htmlFor="vo-company" className="absolute left-4 top-2 text-xs font-bold text-gray-400 uppercase tracking-wider transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-medium peer-focus:top-2 peer-focus:text-xs peer-focus:font-bold peer-focus:text-accent">Company / Business Name (Optional)</label>
         </div>
 
         <div className="relative flex">

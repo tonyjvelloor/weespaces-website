@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { track, EventNames } from '@/lib/tracking';
+import { track, EventNames, fireGoogleAdsConversion } from '@/lib/tracking';
 import { getPageContext, PageContext } from '@/utils/whatsappIntent';
 import WhatsAppGate from './WhatsAppGate';
 
@@ -33,6 +33,14 @@ export default function WhatsAppButton({ children, className, contextOverride }:
     try {
       hasGated = sessionStorage.getItem('weespaces_whatsapp_gated') === 'true';
     } catch {}
+
+    // Fire Google Ads conversion event
+    fireGoogleAdsConversion({
+      eventLabel: 'Inline WhatsApp Button Click',
+      source: 'inline_button',
+      intent: context.intent,
+      page_url: typeof window !== 'undefined' ? window.location.href : '',
+    });
 
     track.cta('whatsapp_click', 'inline_button', { button_position: 'inline_button', intent: context.intent });
 

@@ -16,10 +16,16 @@ WeeSpaces offers Virtual Offices in the following cities:
 - **Calicut / Kozhikode, Kerala** (Hubs in Cyberpark, Thondayad, Mavoor Road)
 - **Coimbatore, Tamil Nadu** (Hubs near TIDEL Park, Saravanampatti, RS Puram, Peelamedu)
 
-## Pricing
-- **Business Address Plan**: ₹9,999 per year
-- **GST Registration Plan**: ₹14,999 per year
-- **Company Registration (MCA) Plan**: ₹19,999 per year
+## Statutory Legal Framework & Compliance Rules
+- **Legality under CGST Act**: Recognized under Section 2(85) of the Central Goods and Services Tax (CGST) Act, 2017 as a valid "Place of Business".
+- **Companies Act Compliance**: Satisfies Section 12 of the Companies Act, 2013 for MCA registered office addresses capable of receiving official communications.
+- **Rule 21 Physical Inspection Defense**: WeeSpaces directly operates physical Grade-A properties with on-site staff, physical signage display boards, and digital tenant registries, completely preventing GST registration cancellation or rejection under Rule 21(a) of the CGST Rules.
+- **State Tax Jurisdiction**: Provides Principal Place of Business (PPoB) and Additional Place of Business (APoB) in Kerala (State Code 32) and Tamil Nadu (State Code 33).
+
+## Pricing (2026 Transparent Annual Rates)
+- **Business Address Plan**: ₹9,999 per year (Corporate mailing address, courier reception, branding usage)
+- **GST Registration Plan**: ₹8,999 – ₹14,999 per year (Includes Rent Agreement, NOC, Electricity Bill, physical verification support)
+- **Company Registration (MCA) Plan**: ₹12,999 – ₹19,999 per year (Full MCA incorporation package, SPICe+ support, meeting room credits)
 
 ## Key Benefits
 - **Zero Hidden Fees**: Flat annual pricing.

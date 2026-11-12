@@ -69,6 +69,10 @@ export async function POST(request: Request) {
     // 2. Dynamic Lead Scoring
     let score = 0;
     
+    // Company Name provided (+10 points for corporate lead)
+    const companyName = lead.companyName || lead.company || '';
+    if (companyName) score += 10;
+
     // Team Size (More people = higher score)
     const teamSize = lead.teamSize || '';
     if (teamSize.includes('20+')) score += 30;
@@ -119,6 +123,7 @@ export async function POST(request: Request) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: lead.name,
+          companyName: companyName,
           phone: lead.phone,
           email: lead.email || '',
           source: `Main Form - ${content?.pageType || 'Unknown'} - ${lead.location || 'Unknown'}`,

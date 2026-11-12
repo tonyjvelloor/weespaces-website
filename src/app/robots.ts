@@ -10,8 +10,8 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'Claude-Web', 'ClaudeBot', 'anthropic-ai', 'PerplexityBot'],
-        allow: ['/knowledge/', '/llms.txt', '/.well-known/llms.txt', '/workspace-data.md'],
+        userAgent: ['GPTBot', 'ChatGPT-User', 'Google-Extended', 'Claude-Web', 'ClaudeBot', 'anthropic-ai', 'PerplexityBot', 'Applebot-Extended'],
+        allow: '/',
       }
     ],
     sitemap: 'https://www.weespaces.in/sitemap.xml',

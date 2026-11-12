@@ -161,6 +161,94 @@ const pushStructuredEvent = (eventName: string, customPayload: Partial<TrackingE
 };
 
 /**
+ * Google Ads & Multi-Channel Conversion Tracking
+ */
+let lastConversionTimestamp = 0;
+
+export interface ConversionOptions {
+  eventLabel?: string;
+  source?: string;
+  value?: number;
+  currency?: string;
+  [key: string]: any;
+}
+
+/**
+ * Fires the Google Ads conversion event for Smart Bidding and lead tracking.
+ * Includes client-side 2-second debounce to avoid accidental double-counting on quick taps.
+ */
+export const fireGoogleAdsConversion = (options: ConversionOptions = {}) => {
+  if (typeof window === 'undefined') return;
+
+  const now = Date.now();
+  if (now - lastConversionTimestamp < 2000) {
+    return;
+  }
+  lastConversionTimestamp = now;
+
+  const {
+    eventLabel = 'WhatsApp Lead',
+    source = 'whatsapp_click',
+    value = 1.0,
+    currency = 'INR',
+    ...rest
+  } = options;
+
+  // Ensure dataLayer exists
+  (window as any).dataLayer = (window as any).dataLayer || [];
+
+  // Ensure window.gtag exists
+  if (typeof (window as any).gtag !== 'function') {
+    (window as any).gtag = function () {
+      (window as any).dataLayer.push(arguments);
+    };
+  }
+
+  // 1. Google Ads Conversion Event for Smart Bidding
+  try {
+    (window as any).gtag('event', 'conversion', {
+      send_to: 'AW-11477720476/9J3rCNmWrIsZEJy7gOEq',
+      value: value,
+      currency: currency,
+      ...rest,
+    });
+  } catch (err) {
+    console.error('Failed to dispatch Google Ads conversion:', err);
+  }
+
+  // 2. GA4 standard generate_lead event
+  try {
+    (window as any).gtag('event', 'generate_lead', {
+      event_category: 'Leads',
+      event_label: eventLabel,
+      source: source,
+      value: value,
+      currency: currency,
+    });
+  } catch (err) {
+    console.error('Failed to dispatch GA4 lead event:', err);
+  }
+
+  // 3. Push to GTM dataLayer for custom tags/triggers
+  (window as any).dataLayer.push({
+    event: 'whatsapp_conversion',
+    conversion_id: 'AW-11477720476',
+    conversion_label: '9J3rCNmWrIsZEJy7gOEq',
+    event_label: eventLabel,
+    source: source,
+    value: value,
+    currency: currency,
+  });
+
+  // 4. Meta Pixel Contact/Lead fallback
+  if (typeof (window as any).fbq === 'function') {
+    try {
+      (window as any).fbq('track', 'Contact', { content_name: eventLabel });
+    } catch {}
+  }
+};
+
+/**
  * Marketing SDK Methods
  */
 export const track = {
@@ -180,9 +268,10 @@ export const track = {
 
     // Fire hardcoded ad conversions only on successful genuine submit
     if (step === 'submit' && typeof window !== 'undefined') {
-      if (typeof (window as any).gtag !== 'undefined') {
-        (window as any).gtag('event', 'conversion', {'send_to': 'AW-11477720476/9J3rCNmWrIsZEJy7gOEq'});
-      }
+      fireGoogleAdsConversion({
+        eventLabel: contentContext?.form_name || 'form_submit',
+        source: 'form_submit',
+      });
       if (typeof (window as any).fbq !== 'undefined') {
         (window as any).fbq('track', 'Lead');
       }
@@ -192,6 +281,23 @@ export const track = {
     pushStructuredEvent(EventNames.CTA_CLICK, { 
       content: { ...contentContext, ctaName, destinationUrl } 
     });
+
+    // If it's a WhatsApp action, also trigger the Google Ads conversion event
+    if (
+      ctaName === 'whatsapp_click' ||
+      ctaName === EventNames.WHATSAPP_REDIRECT ||
+      ctaName === EventNames.WHATSAPP_GATE_SUBMIT ||
+      (destinationUrl && destinationUrl.includes('wa.me'))
+    ) {
+      fireGoogleAdsConversion({
+        eventLabel: ctaName,
+        source: contentContext?.button_position || 'whatsapp_cta',
+        ...contentContext,
+      });
+    }
+  },
+  whatsappConversion: (options?: ConversionOptions) => {
+    fireGoogleAdsConversion(options);
   },
   calculator: (action: 'start' | 'complete', data: Record<string, any>) => {
     pushStructuredEvent(action === 'start' ? EventNames.CALCULATOR_START : EventNames.CALCULATOR_COMPLETE, { content: data });

@@ -75,6 +75,7 @@ export async function POST(request: Request) {
           },
           body: JSON.stringify({
             name: body.name,
+            companyName: body.companyName || body.company || '',
             phone: body.phone,
             email: body.email || '',
             source: body.source,
@@ -110,11 +111,13 @@ export async function POST(request: Request) {
           body: JSON.stringify({
             from: 'WeeSpaces Leads <onboarding@resend.dev>',
             to: notificationEmail,
-            subject: `New Lead: ${body.name} (${body.source})`,
+            subject: `New Lead: ${body.name} ${body.companyName ? `(${body.companyName})` : ''} - ${body.source}`,
             html: `
               <h2>New Lead Captured!</h2>
               <p><strong>Name:</strong> ${body.name}</p>
+              <p><strong>Company Name:</strong> ${body.companyName || body.company || 'N/A'}</p>
               <p><strong>Phone:</strong> ${body.phone}</p>
+              <p><strong>Email:</strong> ${body.email || 'N/A'}</p>
               <p><strong>Source:</strong> ${body.source}</p>
               <p><strong>Requirement:</strong> ${body.requirement || 'N/A'}</p>
               <p><strong>Team Size:</strong> ${body.teamSize || 'N/A'}</p>

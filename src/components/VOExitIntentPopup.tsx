@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { X, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { fireGoogleAdsConversion } from '@/lib/tracking';
 
 export default function VOExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -65,6 +66,11 @@ export default function VOExitIntentPopup() {
       });
       setSubmitted(true);
       
+      fireGoogleAdsConversion({
+        eventLabel: 'VO Exit Intent Callback Requested',
+        source: 'vo_8999_exit_intent'
+      });
+
       // Fire pixel event
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'lead_callback', {

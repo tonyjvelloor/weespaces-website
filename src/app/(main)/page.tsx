@@ -124,6 +124,14 @@ export default function Home() {
 <div className="max-w-[1280px] mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10">
 
 <div className="flex flex-wrap items-center gap-space-xs mb-space-lg">
+<Link 
+  href="/blog/diwali-offers-virtual-office-coworking-spaces-2026"
+  className="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-secondary/10 border border-secondary/30 text-on-surface font-label-caps text-label-caps uppercase tracking-wider font-bold hover:bg-secondary/20 transition-all shadow-sm group"
+>
+  <span className="text-base leading-none">🪔</span>
+  <span>Diwali Festive Offers: Special Rates on Virtual Offices &amp; Desks</span>
+  <span className="material-symbols-outlined text-[14px] text-secondary group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</Link>
 <span className="inline-flex items-center gap-space-2xs px-space-sm py-space-2xs rounded-full bg-surface-container-high text-on-surface font-label-caps text-label-caps uppercase tracking-wider">
 <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
           Established 2018

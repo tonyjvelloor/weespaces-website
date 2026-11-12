@@ -76,6 +76,18 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Google Ads Tag Config & Conversion Linker */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){window.dataLayer.push(arguments);}
+              window.gtag = window.gtag || gtag;
+              gtag('config', 'AW-11477720476');
+            `,
+          }}
+        />
         <link rel="preload" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" as="style" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
         <noscript>

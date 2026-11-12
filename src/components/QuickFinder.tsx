@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from "react";
+import { fireGoogleAdsConversion } from "@/lib/tracking";
 
 export default function QuickFinder() {
   const [step, setStep] = useState(1);
@@ -55,6 +56,15 @@ export default function QuickFinder() {
       });
 
       if (!res.ok) throw new Error('Failed to submit lead');
+
+      // Fire Google Ads conversion event
+      fireGoogleAdsConversion({
+        eventLabel: 'Homepage QuickFinder Form Submitted',
+        source: 'QuickFinder',
+        city,
+        spaceType,
+        teamSize
+      });
 
       // Fire conversion event
       if (typeof window !== 'undefined' && (window as any).gtag) {

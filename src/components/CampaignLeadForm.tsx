@@ -8,6 +8,7 @@ import WhatsAppButton from '@/components/WhatsAppButton';
 export default function CampaignLeadForm({ branch = "Campaign Default", defaultCity = "Kochi" }: { branch?: string, defaultCity?: string }) {
   const [formData, setFormData] = useState({
     name: '',
+    companyName: '',
     phone: '',
     city: defaultCity,
     businessType: 'Private Limited (Pvt Ltd)'
@@ -43,6 +44,7 @@ export default function CampaignLeadForm({ branch = "Campaign Default", defaultC
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           name: formData.name, 
+          companyName: formData.companyName,
           phone, 
           source, 
           location: formData.city,
@@ -92,6 +94,17 @@ export default function CampaignLeadForm({ branch = "Campaign Default", defaultC
           onChange={(e) => setFormData({...formData, name: e.target.value})}
           className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
           placeholder="Enter your name"
+        />
+      </div>
+
+      <div>
+        <label className="block text-white/60 text-xs font-bold uppercase tracking-wider mb-2">Company / Business Name (Optional)</label>
+        <input 
+          type="text" 
+          value={formData.companyName}
+          onChange={(e) => setFormData({...formData, companyName: e.target.value})}
+          className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-white/20 focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
+          placeholder="Company or Business Name"
         />
       </div>
 

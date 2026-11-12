@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, MessageCircle, Send, CheckCircle2, Building2 } from 'lucide-react';
-import { track, EventNames, TrackingStorage } from '@/lib/tracking';
+import { track, EventNames, TrackingStorage, fireGoogleAdsConversion } from '@/lib/tracking';
 import { buildWhatsAppMessage, PageContext } from '@/utils/whatsappIntent';
 
 interface WhatsAppGateProps {
@@ -63,6 +63,11 @@ export default function WhatsAppGate({ isOpen, onClose, context, pageUrl }: What
   };
 
   const handleSkip = () => {
+    fireGoogleAdsConversion({
+      eventLabel: 'WhatsApp Gate Skipped to Direct Chat',
+      source: 'whatsapp_gate_skip',
+      page_url: pageUrl
+    });
     track.cta(EventNames.WHATSAPP_GATE_SKIP, window.location.href, { context });
     redirectToWhatsApp(false);
   };
@@ -103,6 +108,14 @@ export default function WhatsAppGate({ isOpen, onClose, context, pageUrl }: What
         })
       });
 
+      fireGoogleAdsConversion({
+        eventLabel: 'WhatsApp Gate Form Submitted',
+        source: 'whatsapp_gate_form',
+        service: formData.service || context.service,
+        location: formData.city,
+        page_url: pageUrl
+      });
+
       track.cta(EventNames.WHATSAPP_GATE_SUBMIT, window.location.href, { context });
       
       // Redirect to WA on success
@@ -111,6 +124,11 @@ export default function WhatsAppGate({ isOpen, onClose, context, pageUrl }: What
     } catch (err) {
       console.error(err);
       // Even if API fails, we still let them chat to not block them
+      fireGoogleAdsConversion({
+        eventLabel: 'WhatsApp Gate Fallback Redirect',
+        source: 'whatsapp_gate_error_fallback',
+        page_url: pageUrl
+      });
       redirectToWhatsApp(true);
     } finally {
       setIsSubmitting(false);
