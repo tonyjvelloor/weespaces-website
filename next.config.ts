@@ -36,10 +36,20 @@ const nextConfig: NextConfig = {
         redirectsList.push({ source: `/locations/kochi`, destination: `/coworking-space/kochi`, permanent: true });
       }
       
-      // Google Ads rescue redirects (e.g., /calicut/virtual_office) -> pointing to the dedicated Monsoon Offer landing pages
-      redirectsList.push({ source: `/${city}/virtual_office`, destination: `/monsoon-offer/${city}`, permanent: true });
-      redirectsList.push({ source: `/${city}/virtual-office`, destination: `/monsoon-offer/${city}`, permanent: true });
+      // Google Ads rescue redirects (e.g., /calicut/virtual_office) -> pointing directly to core virtual office pages
+      redirectsList.push({ source: `/${city}/virtual_office`, destination: `/virtual-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/${city}/virtual-office`, destination: `/virtual-office/${city}`, permanent: true });
+
+      // Monsoon Offer legacy URLs -> redirect directly to active virtual office location pages
+      redirectsList.push({ source: `/monsoon-offer/${city}`, destination: `/virtual-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/monsoon-offer/${city.charAt(0).toUpperCase() + city.slice(1)}`, destination: `/virtual-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/monsoonoffer/${city}`, destination: `/virtual-office/${city}`, permanent: true });
+      redirectsList.push({ source: `/monsoonoffer/${city.charAt(0).toUpperCase() + city.slice(1)}`, destination: `/virtual-office/${city}`, permanent: true });
     });
+
+    // General monsoon offer fallbacks
+    redirectsList.push({ source: '/monsoon-offer', destination: '/virtual-office', permanent: true });
+    redirectsList.push({ source: '/monsoonoffer', destination: '/virtual-office', permanent: true });
 
     return [
       ...redirectsList,
