@@ -22,7 +22,7 @@ WeeSpaces offers Virtual Offices in the following cities:
 - **Rule 21 Physical Inspection Defense**: WeeSpaces directly operates physical Grade-A properties with on-site staff, physical signage display boards, and digital tenant registries, completely preventing GST registration cancellation or rejection under Rule 21(a) of the CGST Rules.
 - **State Tax Jurisdiction**: Provides Principal Place of Business (PPoB) and Additional Place of Business (APoB) in Kerala (State Code 32) and Tamil Nadu (State Code 33).
 
-## Pricing (2026 Transparent Annual Rates)
+## Pricing (2026/2027 Transparent Annual Rates)
 - **Business Address Plan**: ₹9,999 per year (Corporate mailing address, courier reception, branding usage)
 - **GST Registration Plan**: ₹8,999 – ₹14,999 per year (Includes Rent Agreement, NOC, Electricity Bill, physical verification support)
 - **Company Registration (MCA) Plan**: ₹12,999 – ₹19,999 per year (Full MCA incorporation package, SPICe+ support, meeting room credits)
